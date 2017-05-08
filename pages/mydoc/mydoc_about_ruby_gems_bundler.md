@@ -4,7 +4,7 @@ tags: [getting_started, troubleshooting]
 keywords:
 summary: "information on our technology, how you gain access, how much experiments costs, and our 'hands-on' philosophy."
 sidebar: mydoc_sidebar
-permalink: mydoc_about_ruby_gems_etc.html
+permalink: mydoc_RNAseq_FAQs.md
 folder: mydoc
 ---
 
@@ -30,18 +30,18 @@ Costs vary widely, but come down to three things: 1) how many samples are involv
 
 ## How long will it take?
 
-Once you have isolated quality RNA, expect to spend 2 days preparing libraries. We QC these libraries in a few minutes using an Agilent tapestation.  Baring any issues in library prep, sequencing can begin.  Plan to devote half a day to diluting an denaturing your library, thawing the reagent pack for sequencing and setting up the sequencer.  Each run takes 16-36hrs depending on the type of sequencing being done.  Putting all these steps together and allowing for some amount of troubleshooting and scheduling around other runs, we typically take 1-2wks to get from start to finish.
+Once you have isolated high quality RNA from your samples, expect to spend 2 days preparing libraries. We QC these libraries in a few minutes using an Agilent tapestation.  Baring any issues in library prep, sequencing can begin.  Plan to devote half a day to diluting an denaturing your library, thawing the reagent pack for sequencing and setting up the sequencer.  Each run takes 16-36hrs depending on the type of sequencing being done.  Putting all these steps together and allowing for some amount of troubleshooting and scheduling around other runs, we typically take 1-2wks to get from start to finish.
 
-## So once I have data.....?
+## Do you analyze the data for us?
 
-Right, well, analysis is a whole other issues.  To help labs naviate
+Not exactly, though we are fully capable of RNAseq data analysis.  CHMI offers a free [semester-long course]() on the bioinformatics associated with RNAseq data analysis.  Assistance is also available through 1:1 consultations with Dan Beiting.
 
 ## So I can just give you my samples then?
 
-No.  CHMI does not operate as a fee-for-service core facility.  Rather, we 
+No.  CHMI does not operate as a fee-for-service core facility, but rather is an interdisciplinary genomics lab.  We teach trainees how to carry out every step in the RNAseq pipeline.  This makes for a fantastic training experimence for students and postdocs, and help build capacity for labs to be independent with RNAseq.  Finally, this hands-on approach has the added benefit of keeping costs lower, since you are providing the labor.
 
 ## Do I get RNAseq reagents from CHMI?
 
-No.  We encourage labs to order their own consumables.  This cuts down dramatically on how much time we have to devote to invoicing and inventory management.  If you have questions about exactly what you need to order, we help you navigate that process.
+No.  With few exceptions, we encourage labs to order their own consumables.  This cuts down dramatically on how much time we have to devote to invoicing and inventory management.  If you have questions about exactly what you need to order, we help you navigate that process.
 
 {% include links.html %}
