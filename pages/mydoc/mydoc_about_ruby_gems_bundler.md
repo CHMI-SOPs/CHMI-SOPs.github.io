@@ -4,7 +4,7 @@ tags: [getting_started, troubleshooting]
 keywords:
 summary: "information on our technology, how you gain access, how much experiments costs, and our 'hands-on' philosophy."
 sidebar: mydoc_sidebar
-permalink: mydoc_RNAseq_FAQs.md
+permalink: mydoc_about_ruby_gems_bundler.md
 folder: mydoc
 ---
 
