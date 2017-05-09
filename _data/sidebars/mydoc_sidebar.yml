@@ -21,8 +21,8 @@ entries:
 
   - title: Overview
     output: web, pdf
+    
     folderitems:
-
     - title: What is CHMI?
       url: /index.html
       output: web, pdf
@@ -46,8 +46,8 @@ entries:
 
   - title: RNAseq
     output: web, pdf
+    
     folderitems:
-
     - title: RNAseq FAQs
       url: /mydoc_about_ruby_gems_etc.html
       output: web, pdf
@@ -67,10 +67,18 @@ entries:
     - title: ATAC-seq protocol
       url: /mydoc_install_jekyll_on_windows.html
       output: web, pdf
+      
+      subfolders:
+      - title: informatics pipelines
+        url: /mydoc_install_jekyll_on_windows.html
+        output: web, pdf
+        
+        subfolderitems:
+        - title: Kallisto
+          url: /tag_formatting.html
+          output: web
 
-    - title: informatics pipelines
-      url: /mydoc_install_jekyll_on_windows.html
-      output: web, pdf
+
 
   - title: Microbiology assays
     output: web, pdf
