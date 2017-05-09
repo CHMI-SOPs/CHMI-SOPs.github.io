@@ -4,7 +4,7 @@ tags: [getting_started, troubleshooting]
 keywords:
 summary: "Kallisto is our first choice for aligning reads because of its speed, accuracy, and ability to leverage bootstraps for understanding technical variance"
 sidebar: mydoc_sidebar
-permalink: kallisto.html
+permalink: mydoc_kallisto.html
 folder: mydoc
 ---
 

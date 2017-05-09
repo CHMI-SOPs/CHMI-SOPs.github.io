@@ -53,7 +53,7 @@ entries:
       output: web, pdf
 
     - title: QC analysis
-      url: /mydoc_about_ruby_gems_etc.html
+      url: /mydoc_kallisto.html
       output: web, pdf
 
     - title: Standard protocol
@@ -75,8 +75,8 @@ entries:
         
         subfolderitems:
         - title: Kallisto + Sleuth
-          url: /kallisto.html
-          output: web
+          url: /mydoc_kallisto.html
+          output: web, pdf
 
         - title: RSEM
           url: /tag_formatting.html
