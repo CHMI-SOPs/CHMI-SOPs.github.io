@@ -74,7 +74,7 @@ entries:
         output: web, pdf
         
         subfolderitems:
-        - title: Kallisto
+        - title: Kallisto + Sleuth
           url: /tag_formatting.html
           output: web
 
@@ -82,7 +82,11 @@ entries:
           url: /tag_formatting.html
           output: web
 
-        - title: Subread
+        - title: RSubread
+          url: /tag_formatting.html
+          output: web
+
+        - title: data deposition
           url: /tag_formatting.html
           output: web
 
@@ -102,13 +106,27 @@ entries:
       url: /mydoc_install_jekyll_on_mac.html
       output: web, pdf
 
-    - title: informatics pipelines
-      url: /mydoc_install_jekyll_on_windows.html
-      output: web, pdf
-
     - title: mock communities and controls
       url: /mydoc_install_jekyll_on_windows.html
       output: web, pdf
+
+     subfolders:
+      - title: informatics pipelines
+        url: /mydoc_install_jekyll_on_windows.html
+        output: web, pdf
+        
+        subfolderitems:
+        - title: microbiomeDB
+          url: /tag_formatting.html
+          output: web
+
+        - title: QIIME
+          url: /tag_formatting.html
+          output: web
+
+        - title: data deposition
+          url: /tag_formatting.html
+          output: web
 
   - title: Cell culture
     output: web, pdf
