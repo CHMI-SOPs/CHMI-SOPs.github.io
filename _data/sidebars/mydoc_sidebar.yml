@@ -75,7 +75,7 @@ entries:
         
         subfolderitems:
         - title: Kallisto + Sleuth
-          url: /tag_formatting.html
+          url: /kallisto.html
           output: web
 
         - title: RSEM
