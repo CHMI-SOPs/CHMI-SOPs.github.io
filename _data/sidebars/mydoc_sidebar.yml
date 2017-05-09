@@ -78,7 +78,13 @@ entries:
           url: /tag_formatting.html
           output: web
 
+        - title: RSEM
+          url: /tag_formatting.html
+          output: web
 
+        - title: Subread
+          url: /tag_formatting.html
+          output: web
 
   - title: Microbiology assays
     output: web, pdf
