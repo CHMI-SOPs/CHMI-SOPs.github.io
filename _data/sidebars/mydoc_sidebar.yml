@@ -23,7 +23,7 @@ entries:
     output: web, pdf
     
     folderitems:
-    - title: What is CHMI?
+    - title: Welcome
       url: /index.html
       output: web, pdf
       type: homepage
