@@ -8,21 +8,24 @@ permalink: mydoc_kallisto.html
 folder: mydoc
 ---
 
+## Intro
+a bit about Kallisto and why we like it for alignments
+
 ## Installing Kallisto on a Mac OS
 
-If you're running a Mac OS, then being by downloading [Homebrew](https://brew.sh/). 
+If you're running a Mac OS, then being by downloading and installing [Homebrew](https://brew.sh/) with this single line of code: 
 
 ```
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-Now installing Kallisto is simple
+This makes installing Kallisto simple:
 ```
 brew tap homebrew/science
 brew install kallisto
 ```
 
-Test whether it is properly installed by typing ```kallisto```
+Test whether Kallisto is properly installed by typing ```kallisto```
 
 ## Installing Kallisto on a Windows OS
 
@@ -36,5 +39,29 @@ Build the index
 kallisto index -i myNewIndex InputFasta.fasta
 ```
 
+## align single-end reads
+
+Run the following command for pseudoalignment of single-end reads to index. 
+
+NOTE1: bootstrapping (-b command in the line below) adds significant time to the mapping, but is essential for accurate quantification. With a ‘typical’ fastq file for the mouse or human transcriptome, I find it takes about 15sec per bootstrap. So expect this to add ~30 min to the mapping time for each sample.
+
+NOTE2: avoid putting hyphens in the name of the kallisto output, as this could cause problems later
+
+```
+kallisto quant -i myHumanIndex -o Sample1.mapped -b 100 —-single -l 275 -s 20 read1.fastq.gz
+```
+
+
+## align paired-end reads
+```
+kallisto quant -i myMouseIndex -o Sample1.mapped -b 100 read1.fastq.gz read2.fastq.gz
+```
+
+## install Sleuth
+Open RStudio and install the [rhdf5 package]() from the BioC website
+
+install [devtools]() package (if you don’t already have it)
+
+install sleuth from lior’s github page using ```devtools::install_github("pachterlab/sleuth")```
 
 {% include links.html %}
