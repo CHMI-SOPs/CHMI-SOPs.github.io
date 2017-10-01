@@ -110,7 +110,7 @@ entries:
       url: /mydoc_install_jekyll_on_windows.html
       output: web, pdf
 
-     subfolders:
+      subfolders:
       - title: informatics pipelines
         url: /mydoc_install_jekyll_on_windows.html
         output: web, pdf
