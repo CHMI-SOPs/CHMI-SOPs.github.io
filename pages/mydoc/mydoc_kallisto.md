@@ -43,7 +43,7 @@ kallisto index -i myNewIndex InputFasta.fasta
 
 Run the following command for pseudoalignment of single-end reads to index. 
 
-{% include note.html content="Note: bootstrapping (-b command in the line below) adds significant time to the mapping, but is essential for accurate quantification. With a typical reference index for the mouse or human transcriptome, I find it takes about 15sec per bootstrap. So expect this to add ~30 min to the mapping time for each sample.  Also, avoid putting hyphens in the name of the kallisto output, as this could cause problems later" %}
+{% include note.html content="bootstrapping (-b command in the line below) adds significant time to the mapping, but is essential for accurate quantification. With a typical reference index for the mouse or human transcriptome, I find it takes about 15sec per bootstrap. So expect this to add ~30 min to the mapping time for each sample.  Also, avoid putting hyphens in the name of the kallisto output, as this could cause problems later" %}
 
 
 ```
