@@ -49,7 +49,7 @@ entries:
     
     folderitems:
     - title: RNAseq FAQs
-      url: /mydoc_about_ruby_gems_etc.html
+      url: /mydoc_RNAseq_FAQs.html
       output: web, pdf
 
     - title: QC analysis
