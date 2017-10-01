@@ -6,7 +6,7 @@ entries:
   version: 
   folders:
 
-  - title:
+  - title: 
     output: pdf
     type: frontmatter
     folderitems:
@@ -74,7 +74,7 @@ entries:
         output: web, pdf
         
         subfolderitems:
-        - title: Kallisto + Sleuth
+        - title: Kallisto and Sleuth
           url: /mydoc_kallisto.html
           output: web
 
