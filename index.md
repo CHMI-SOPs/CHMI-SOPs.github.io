@@ -1,5 +1,5 @@
 ---
-title: Welcome to the protocols page for CHMI
+title: Getting started with the Documentation Theme for Jekyll
 keywords: sample homepage
 tags: [getting_started]
 sidebar: mydoc_sidebar
