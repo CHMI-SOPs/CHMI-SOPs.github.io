@@ -1,5 +1,5 @@
 ---
-title: RNAseq FAQs
+title: Kallisto
 tags: [getting_started, troubleshooting]
 keywords:
 summary: "Kallisto is our first choice for aligning reads because of its speed, accuracy, and ability to leverage bootstraps for understanding technical variance"
@@ -42,13 +42,10 @@ kallisto index -i myNewIndex InputFasta.fasta
 ## align single-end reads
 
 Run the following command for pseudoalignment of single-end reads to index. 
-
-{% include note.html content="bootstrapping (-b command in the line below) adds significant time to the mapping, but is essential for accurate quantification. With a typical reference index for the mouse or human transcriptome, I find it takes about 15sec per bootstrap. So expect this to add ~30 min to the mapping time for each sample.  Also, avoid putting hyphens in the name of the kallisto output, as this could cause problems later" %}
-
-
 ```
 kallisto quant -i myHumanIndex -o Sample1.mapped -b 100 —-single -l 275 -s 20 read1.fastq.gz
 ```
+{% include note.html content="bootstrapping (-b command in the line below) adds significant time to the mapping, but is essential for accurate quantification. With a typical reference index for the mouse or human transcriptome, I find it takes about 15sec per bootstrap. So expect this to add ~30 min to the mapping time for each sample.  Also, avoid putting hyphens in the name of the kallisto output, as this could cause problems later" %}
 
 
 ## align paired-end reads
@@ -61,8 +58,9 @@ Open RStudio and install the [rhdf5 package]() from the BioC website
 
 install [devtools]() package (if you don’t already have it)
 
-install sleuth from lior’s github page using:
-```devtools::install_github("pachterlab/sleuth")
+install sleuth from Lior Pachter github page using:
+```
+devtools::install_github("pachterlab/sleuth")
 ```
 
 {% include links.html %}

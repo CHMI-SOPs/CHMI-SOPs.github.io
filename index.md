@@ -11,7 +11,15 @@ summary: A brief overview on the PennVet Center for Host-Microbial Interactions
 
 Follow these instructions to build the theme.
 
-## What we do
+## Technology
+Illumina NextSeq 500
+Qubit 3
+Agilent Bioanalyzer 2100
+Agilent Tapestation 4000
+3D culture system
+2 Mac Pro (dual CPU, 8 cores, 64 Gb RAM, 1Tb SSD)
+1 linux server (dual CPU, 24 cores, 500 Gb RAM, 2Tb SSD + expansion slots)
+
 
 You can also use Docker to directly build and run the site on your local machine. Just clone the repo and run the following from your working dir:
 
