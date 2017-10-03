@@ -102,7 +102,7 @@ entries:
       url: /mydoc_about_ruby_gems_etc.html
       output: web, pdf
 
-    - title: 'shotgun' metagenomics
+    - title: shotgun metagenomics
       url: /mydoc_install_jekyll_on_mac.html
       output: web, pdf
 
