@@ -9,7 +9,7 @@ folder: mydoc
 ---
 
 ## Intro
-a bit about Kallisto and why we like it for alignments
+[Kallisto](https://pachterlab.github.io/kallisto/about) is a relatively new tool from Lior Pachter's lab at UC Berkeley and is described in [this 2016 Nature Biotechnology paper](http://CHMI-sops.github.io/papers/Kallisto.pdf).  
 
 ## Installing Kallisto on a Mac OS
 
