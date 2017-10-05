@@ -18,15 +18,15 @@ This depends on the size of the transcriptome (mammalian vs bacterial), as well 
 
 ## Single-end or paired-end?
 
-My default answer to this question is almost always to go with single-end.  The reason for recommending this is that it is MUCH cheaper, and numerous studies, like [this one](), have shown that in terms of measuring gene expression, once you go beyond about 50 bp of sequence, very little is gained.  I recommend paired-end data if your reference genome is poor (or non-existent), or if your primary goal is to understand alternative splicing.  In these cases, it is worth spending the extra money.
+My default answer to this question is almost always to go with single-end.  The reason for recommending this is that it is MUCH cheaper, and numerous studies, like [this one](http://CHMI-sops.github.io/papers/readlength.pdf), have shown that in terms of measuring gene expression, once you go beyond about 50 bp of sequence, very little is gained.  I recommend paired-end data if your reference genome is poor (or non-existent), or if your primary goal is to understand alternative splicing.  In these cases, it is worth spending the extra money.
 
 ## How many replicates should I have?
 
-As many as you can reasonably afford.  Seriously.  When it comes to boosting your statistical power to detect differentially expressed genes, you are always better served by increasing group sizes than you are by increasing depth of sequencing.  This has been shown many times in the literaure, most recently and thoroughly [here]().  As a general rule, the more variance you expect in your experiment, the more replicates you should try to include.  This means that simple *in vitro* experiments with a homogenous cell line will likely need fewer replicates than would a study of primary cells derived from human subjects.  
+As many as you can reasonably afford.  Seriously.  When it comes to boosting your statistical power to detect differentially expressed genes, you are always better served by increasing group sizes than you are by increasing depth of sequencing.  This has been shown many times in the literaure, such as [here](http://CHMI-sops.github.io/papers/readdepth).  As a general rule, the more variance you expect in your experiment, the more replicates you should try to include.  This means that simple *in vitro* experiments with a homogenous cell line will likely need fewer replicates than would a study of primary cells derived from human subjects.  
 
 ## How much will it cost?
 
-Costs vary widely, but are primarily drivent by three factors: 1) how many samples are involved; 2) what kind of library you will prepare from these samples; and 3) what lenght and depth of sequencing will be carried out on these samples.  The costs of consumables direclty from Illumina can be viewed [here](note the UPenn discount price).  These prices go up each year in April, so take that into account when ordering.  Here is a schematic I prepared that shows the cost of consumables to carry out a few types of RNAseq expeirments.  
+Costs vary widely, but are primarily driven by three factors: 1) the number of samples you plan to sequence; 2) the kind of library you will prepare from these samples; and 3) the length and depth of sequencing carried out on these samples.  The costs of consumables direclty from Illumina can be viewed [here](http://CHMI-sops.github.io/papers/Illumina_Pricelist_April2017.pdf)(note the UPenn discount price).  These prices go up each year in April, so take that into account when ordering.  Here is a schematic I prepared that shows the cost of consumables to carry out a few types of RNAseq expeirments.  
 
 ## How long will it take?
 

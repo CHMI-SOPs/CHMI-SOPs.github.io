@@ -64,9 +64,16 @@ Open RStudio and install the [rhdf5 package](http://bioconductor.org/packages/re
 
 install the [devtools package](https://cran.r-project.org/web/packages/devtools/README.html) (if you don’t already have it)
 
-install the [Sleuth package](https://github.com/pachterlab/sleuth) directly from Lior Pachter github page using:
+install the [Sleuth package](https://github.com/pachterlab/sleuth) directly from Lior Pachter's github page using:
 ```
 devtools::install_github("pachterlab/sleuth")
 ```
+
+## Using Sleuth
+
+* open Rstudio and load the Sleuth package ```library(sleuth)```
+* read in a study design file with column called 'path' which lists the path to each Kallisto output folder
+* set-up a study design using the model.matrix function in R, with an intercept: ```myDesign <- model.matrix(~treatment)```
+
 
 {% include links.html %}
