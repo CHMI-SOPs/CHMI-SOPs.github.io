@@ -13,7 +13,7 @@ folder: mydoc
 
 ## Installing Kallisto on a Mac OS
 
-If you're running a Mac OS, then being by downloading and installing [Homebrew](https://brew.sh/) with this single line of code: 
+If you're running a Mac OS, then begin by downloading and installing [Homebrew](https://brew.sh/) with this single line of code: 
 
 ```
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -28,6 +28,12 @@ brew install kallisto
 Test whether Kallisto is properly installed by typing ```kallisto```
 
 ## Installing Kallisto on a Windows OS
+
+* Download Kallisto for Windows and unzip.  You'll need to have the Kallisto.exe in the same folder with the .fastq files you wish to align.  Alternatively, you could add the .exe to your path, but I'm not sure how to do this on a Windows machine.
+* To run Kallisto on a PC, open the Command Prompt (All programs -> Accessories -> Command Prompt), 
+* use the ```cd``` command to change your working directory to the location of the .fastq files and Kallisto.exe.
+* Drag and drop the Kallisto.exe file onto your open Command Prompt window
+* type the word 'kallisto' to make sure the program is running
 
 ## Build an index from reference transcriptome .fasta file
 
@@ -54,11 +60,11 @@ kallisto quant -i myMouseIndex -o Sample1.mapped -b 100 read1.fastq.gz read2.fas
 ```
 
 ## install Sleuth
-Open RStudio and install the [rhdf5 package]() from the BioC website
+Open RStudio and install the [rhdf5 package](http://bioconductor.org/packages/release/bioc/html/rhdf5.html) from the BioC website
 
-install [devtools]() package (if you don’t already have it)
+install the [devtools package](https://cran.r-project.org/web/packages/devtools/README.html) (if you don’t already have it)
 
-install sleuth from Lior Pachter github page using:
+install the [Sleuth package](https://github.com/pachterlab/sleuth) directly from Lior Pachter github page using:
 ```
 devtools::install_github("pachterlab/sleuth")
 ```
