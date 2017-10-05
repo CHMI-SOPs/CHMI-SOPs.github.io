@@ -12,7 +12,7 @@ site_title: CHMI services
 company_name: PennVet Center for Host-Microbial Interactions
 # this appears in the footer
 
-github_editme_path: https://github.com/CHMI-SOPs/CHMI-SOPs.github.io/tree/Edits
+github_editme_path: CHMI-SOPs/CHMI-SOPs.github.io/tree/Edits
 # if you're using Github, provide the basepath to the branch you've created for reviews, following the sample here. if not, leave this value blank.
 
 disqus_shortname: hostmicrobe
