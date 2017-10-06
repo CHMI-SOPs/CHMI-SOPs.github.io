@@ -1,24 +1,34 @@
 ---
-title: Welcome to CHMI
+title: Welcome to the CHMI SOP page
 keywords:
 tags: [getting_started]
 sidebar: mydoc_sidebar
 permalink: index.html
-summary: A brief overview on the PennVet Center for Host-Microbial Interactions
+summary: This is home to all the standard protocols, procedures and services of the PennVet Center for Host-Microbial Interactions (CHMI).
 ---
 
 ## What we do
 
-Follow these instructions to build the theme.
 
-## Technology
-Illumina NextSeq 500
-Qubit 3
-Agilent Bioanalyzer 2100
-Agilent Tapestation 4000
-3D culture system
+## Technology and toys
+### sequencing
+* Illumina NextSeq 500
+* Oxford Nanopore MinION
+
+### QA of RNA/DNA
+* Qubit 3
+* Agilent Bioanalyzer 2100
+* Agilent Tapestation 4200
+
+### Cell culture
+* 3D culture system
+
+### Computer workstations
 2 Mac Pro (dual CPU, 8 cores, 64 Gb RAM, 1Tb SSD)
-1 linux server (dual CPU, 24 cores, 500 Gb RAM, 2Tb SSD + expansion slots)
+1 linux server (dual CPU, 24 cores, 500 Gb RAM, 10Tb RAID1 storage)
+
+### PCR/QPCR
+
 
 
 You can also use Docker to directly build and run the site on your local machine. Just clone the repo and run the following from your working dir:
