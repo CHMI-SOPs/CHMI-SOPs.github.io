@@ -24,8 +24,12 @@ summary: This is home to all the standard protocols, procedures and services of 
 * 3D culture system
 
 ### Computer workstations
-2 Mac Pro (dual CPU, 8 cores, 64 Gb RAM, 1Tb SSD)
-1 linux server (dual CPU, 24 cores, 500 Gb RAM, 10Tb RAID1 storage)
+* Mac Pro 
+** dual CPU
+** 8 cores
+** 64 Gb RAM
+** 1Tb SSD
+* linux server (dual CPU, 24 cores, 500 Gb RAM, 10Tb RAID1 storage)
 
 ### PCR/QPCR
 
