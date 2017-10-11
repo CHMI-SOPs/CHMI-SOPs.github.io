@@ -13,9 +13,9 @@ folder: mydoc
 ## Documentation
 [TruSeq Stranded mRNA Sample Preparation Guide](https://support.illumina.com/content/dam/illumina-support/documents/documentation/chemistry_documentation/samplepreps_truseq/truseqstrandedmrna/truseq-stranded-mrna-sample-prep-guide-15031047-e.pdf). This method makes a cDNA library of the polyadenylated mRNA in your eukaryotic samples of interest.
 
-## What you'll need to get started
+## What you'll need for Day 1
 
-{% include important.html content="The following items are included Illumina kit" %}
+{% include important.html content="The following items are included in the Illumina kit" %}
 
 * RNA purification beads (These are the oligo dT beads) (bring these to room temperature before use)
 * Bead washing buffer
@@ -162,7 +162,9 @@ Step 30: Place plate in thermocycler and run the ‘2nd strand’ reaction - 16C
 
 # Day 2
 
-## Required Materials for Day 2 (included with the Illumina TruSeq kit):
+## What you'll need for Day 2
+
+{% include important.html content="The following items are included in the Illumina kit" %}
 
 * A-tailing mix
 * Resuspension buffer
