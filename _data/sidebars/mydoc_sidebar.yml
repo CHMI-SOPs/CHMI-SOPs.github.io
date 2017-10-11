@@ -57,7 +57,7 @@ entries:
       output: web, pdf
 
     - title: Standard protocol
-      url: /mydoc_install_jekyll_on_mac.html
+      url: /mydoc_TruSeq.html
       output: web, pdf
 
     - title: Low input protocol
