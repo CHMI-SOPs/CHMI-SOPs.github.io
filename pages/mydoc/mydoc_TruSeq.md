@@ -8,8 +8,29 @@ permalink: mydoc_TruSeq.html
 folder: mydoc
 ---
 
+# Day 1
+
 ## Documentation
 [TruSeq Stranded mRNA Sample Preparation Guide](https://support.illumina.com/content/dam/illumina-support/documents/documentation/chemistry_documentation/samplepreps_truseq/truseqstrandedmrna/truseq-stranded-mrna-sample-prep-guide-15031047-e.pdf). This method makes a cDNA library of the polyadenylated mRNA in your eukaryotic samples of interest.
+
+## Required Materials for Day 1 (included with Illumina TruSeq kit):
+
+* RNA purification beads (These are the oligo dT beads) (bring these to room temperature before use)
+* Bead washing buffer
+* Bead binding buffer
+* Fragment prime finish mix
+* First strand synthesis (in a brown tube)
+* Second strand marking mix
+* Resuspension buffer
+
+{% include important.html content="The following items are not included with the Illumina kit and must be purchased separately" %}
+
+* RNase-free water
+* Magnetic plate for a 96-well tray
+* 96-well trays
+* 80% ethanol (make this fresh the day of use)
+* Superscript II (Invitrogen)
+* AMPureXP beads (Beckman-Coulter)
 
 ## Notes before starting:
 
@@ -27,30 +48,9 @@ folder: mydoc
 * Use only filter pipette tips and clean your area so it is free of RNases.
 * Ensure that the AMPureXP beads are mixed well immediately prior to use.
 * There are many mixing steps in this protocol - I frequently use a multi-channel pipette to help speed up this process, particularly if many libraries are being prepared.
-
-## RNA quality control:
-
 * We use a Tapestation or a BioAnalyzer to assay the input RNA quality. Ribosomal integrity numbers of 7 and higher are preferred.
 * We quantify the input RNA using a Qubit fluorometer.
 
-## Required Materials for Day 1 (These come with the Illumina TruSeq kit):
-
-* RNA purification beads (These are the oligo dT beads) (bring these to room temperature before use)
-* Bead washing buffer
-* Bead binding buffer
-* Fragment prime finish mix
-* First strand synthesis (in a brown tube)
-* Second strand marking mix
-* Resuspension buffer
-
-## Required Materials for Day 1 (These do not come with the Illumina TruSeq kit and must be purchased separately):
-
-* RNase-free water
-* Magnetic plate for a 96-well tray
-* 96-well trays
-* 80% ethanol (make this fresh the day of use)
-* Superscript II (Invitrogen)
-* AMPureXP beads (Beckman-Coulter)
 
 ## Step 1: Isolate mRNA
 
@@ -157,7 +157,9 @@ Step 30: Place plate in thermocycler and run the ‘2nd strand’ reaction - 16C
 
 {% include warning.html content="Do not store your DNA at this stage for longer than a week. We usually perform the rest of the protocol the next day." %}
 
-## Required Materials for Day 2 (These come with the Illumina TruSeq kit):
+# Day 2
+
+## Required Materials for Day 2 (included with the Illumina TruSeq kit):
 
 * A-tailing mix
 * Resuspension buffer
@@ -167,7 +169,7 @@ Step 30: Place plate in thermocycler and run the ‘2nd strand’ reaction - 16C
 * PCR primer cocktail
 * PCR master mix
 
-## Required Materials for Day 2 (These do not come with the Illumina TruSeq kit and must be purchased separately):
+{% include important.html content="The following items are not included with the Illumina kit and must be purchased separately" %}
 
 * Magnetic plate for a 96-well tray
 * 96-well trays
@@ -254,11 +256,11 @@ Step 30: Place plate in thermocycler and run the ‘2nd strand’ reaction - 16C
 
 71. Remove 30 uL of supernatant from each sample and move it into a new plate. This is the final cDNA product.
 
-{% include important.html content="Congratulations! You're done...well, almost" %}
+{% include important.html content="Congratulations! You're done!...well, almost" %}
 
 {% include note.html content="Perform quality control steps - we use a Tapestation to determine the library size and qubit to quantify the libraries." %}
 
-{% include note.html content="CWe recommend sequencing the libraries within 3 weeks." %}
+{% include note.html content="We recommend sequencing the libraries within 3 weeks." %}
 
 
 {% include links.html %}
