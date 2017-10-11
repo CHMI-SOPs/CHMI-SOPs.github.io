@@ -13,7 +13,9 @@ folder: mydoc
 ## Documentation
 [TruSeq Stranded mRNA Sample Preparation Guide](https://support.illumina.com/content/dam/illumina-support/documents/documentation/chemistry_documentation/samplepreps_truseq/truseqstrandedmrna/truseq-stranded-mrna-sample-prep-guide-15031047-e.pdf). This method makes a cDNA library of the polyadenylated mRNA in your eukaryotic samples of interest.
 
-## Required Materials for Day 1 (included with Illumina TruSeq kit):
+## What you'll need to get started
+
+{% include important.html content="The following items are included Illumina kit" %}
 
 * RNA purification beads (These are the oligo dT beads) (bring these to room temperature before use)
 * Bead washing buffer
@@ -23,7 +25,7 @@ folder: mydoc
 * Second strand marking mix
 * Resuspension buffer
 
-{% include important.html content="The following items are not included with the Illumina kit and must be purchased separately" %}
+{% include important.html content="The following items are NOT included with the Illumina kit and must be purchased separately" %}
 
 * RNase-free water
 * Magnetic plate for a 96-well tray
@@ -32,8 +34,9 @@ folder: mydoc
 * Superscript II (Invitrogen)
 * AMPureXP beads (Beckman-Coulter)
 
-## Notes before starting:
+## A few important comments before you start
 
+{% include callout.html content="
 * We use the Low Sample ‘LS’ protocol as we are typically working with fewer than 48 samples at a time
 * The recommended starting amount of total RNA is 100 ng - 4 ug, but we usually try to stay away from the extreme ends of this spectrum.
 * The lowest input of RNA we have successfully used in this protocol is 70 ng.
@@ -49,7 +52,7 @@ folder: mydoc
 * Ensure that the AMPureXP beads are mixed well immediately prior to use.
 * There are many mixing steps in this protocol - I frequently use a multi-channel pipette to help speed up this process, particularly if many libraries are being prepared.
 * We use a Tapestation or a BioAnalyzer to assay the input RNA quality. Ribosomal integrity numbers of 7 and higher are preferred.
-* We quantify the input RNA using a Qubit fluorometer.
+* We quantify the input RNA using a Qubit fluorometer." type="primary" %}
 
 
 ## Step 1: Isolate mRNA
