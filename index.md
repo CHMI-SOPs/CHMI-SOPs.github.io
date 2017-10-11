@@ -7,7 +7,7 @@ permalink: index.html
 summary: This is home to all the standard protocols, procedures and services of the PennVet Center for Host-Microbial Interactions (CHMI).
 ---
 
-## What we do
+## What you can find here
 
 
 ## Technology and toys
@@ -24,7 +24,7 @@ summary: This is home to all the standard protocols, procedures and services of 
 * 3D culture system
 
 ### Computer workstations
-* Mac Pro 
+* Mac Pro
 ** dual CPU
 ** 8 cores
 ** 64 Gb RAM
