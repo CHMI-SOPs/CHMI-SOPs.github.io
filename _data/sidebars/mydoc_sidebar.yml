@@ -56,8 +56,12 @@ entries:
       url: /mydoc_kallisto.html
       output: web, pdf
 
-    - title: Standard protocol
+    - title: mRNA library prep
       url: /mydoc_TruSeq.html
+      output: web, pdf
+
+    - title: total transcriptome library prep
+      url: /mydoc_total_TruSeq.html
       output: web, pdf
 
     - title: Low input protocol
