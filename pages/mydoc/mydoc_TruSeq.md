@@ -37,11 +37,11 @@ folder: mydoc
 ## A few important comments before you start
 
 {% include callout.html content="
-* We use the Low Sample ‘LS’ protocol as we are typically working with fewer than 48 samples at a time
-* The recommended starting amount of total RNA is 100 ng - 4 ug, but we usually try to stay away from the extreme ends of this spectrum.
-* The lowest input of RNA we have successfully used in this protocol is 70 ng.
-* Split this protocol into two days, stopping on the first day after you have double stranded cDNA. On second day, do the A-tailing, adapter ligation, PCR, cleanup, and quality control steps.
-* For 12 samples, you will need approximately 6-7 hours on the first day, and 6-7 hours the second day.
+* We use the Low Sample ‘LS’ protocol as we are typically working with fewer than 48 samples at a time  
+* The recommended starting amount of total RNA is 100 ng - 4 ug, but we usually try to stay away from the extreme ends of this spectrum.  
+* The lowest input of RNA we have successfully used in this protocol is 70 ng.\s\s
+* Split this protocol into two days, stopping on the first day after you have double stranded cDNA. On second day, do the A-tailing, adapter ligation, PCR, cleanup, and quality control steps.<b>
+* For 12 samples, you will need approximately 6-7 hours on the first day, and 6-7 hours the second day.<\b>
 * Keep all reagents on ice unless otherwise stated.
 * We typically remove the reagents from storage during an incubation period in the previous step.
 * Have the beads at room temperature at least 30 minutes prior to use.
