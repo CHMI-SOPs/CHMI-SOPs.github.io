@@ -124,13 +124,13 @@ folder: mydoc
 
 ## Step 3:  2<sup>nd</sup> strand cDNA synthesis
 
-* When the first strand synthesis is completed, immediately proceed to the second strand synthesis.
+{% include important.html content="When the first strand synthesis is completed, immediately proceed to the second strand synthesis" %}
 
-Step 28: Add 20 uL second strand marking mix and 5 uL resuspension buffer to each well. Pipette up and down 6 times.
+28. Add 20 uL second strand marking mix and 5 uL resuspension buffer to each well. Pipette up and down 6 times.
 
-Step 29: Centrifuge the plate at 600 x g for 30 sec.
+29. Centrifuge the plate at 600 x g for 30 sec.
 
-Step 30: Place plate in thermocycler and run the ‘2nd strand’ reaction - 16C for 1hr, with the lid set to 30C.
+30. Place plate in thermocycler and run the ‘2nd strand’ reaction - 16C for 1hr, with the lid set to 30C.
 
 {% include note.html content="This is your second large break of the day." %}
 
@@ -193,9 +193,11 @@ Step 30: Place plate in thermocycler and run the ‘2nd strand’ reaction - 16C
 
 41. Add 2.5 ul of resuspension buffer, 2.5 ul of ligation mix, and 2.5 ul of a unique RNA adapter index to each well, mix well by pipetting.
 
-* Remove the ligation mix immediately before use and return to -20C storage immediately after use.
-* I moved individual adapter index tubes to strip tubes to make it easier to add the unique indexes to the wells with a multichannel pipette.
-* Make sure to record which sample received which index adapter number.
+{% include note.html content="Remove the ligation mix immediately before use and return to -20C storage immediately after use." %}
+
+{% include note.html content="I moved individual adapter index tubes to strip tubes to make it easier to add the unique indexes to the wells with a multichannel pipette." %}
+
+{% include important.html content="Make sure to record which sample received which index adapter number." %}
 
 42. Seal the plate and incubate at 30C in thermocycler for 10 min using the 'LIGADAPTER' program.
 
@@ -266,6 +268,5 @@ Step 30: Place plate in thermocycler and run the ‘2nd strand’ reaction - 16C
 {% include note.html content="Perform quality control steps - we use a Tapestation to determine the library size and qubit to quantify the libraries." %}
 
 {% include note.html content="We recommend sequencing the libraries within 3 weeks." %}
-
 
 {% include links.html %}
