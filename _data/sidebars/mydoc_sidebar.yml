@@ -52,10 +52,6 @@ entries:
       url: /mydoc_RNAseq_FAQs.html
       output: web, pdf
 
-    - title: QC analysis
-      url: /mydoc_kallisto.html
-      output: web, pdf
-
     - title: mRNA library prep
       url: /mydoc_TruSeq.html
       output: web, pdf
