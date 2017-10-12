@@ -24,6 +24,7 @@ folder: mydoc
 * First strand synthesis (in a brown tube)
 * Second strand marking mix
 * Resuspension buffer
+* TESTING
 
 {% include important.html content="The following items are NOT included with the Illumina kit and must be purchased separately" %}
 
