@@ -14,7 +14,7 @@ folder: mydoc
 
 [TruSeq Stranded Total RNA Sample Prep Guide](https://support.illumina.com/content/dam/illumina-support/documents/documentation/chemistry_documentation/samplepreps_truseq/truseqstrandedtotalrna/truseq-stranded-total-rna-sample-prep-guide-15031048-e.pdf). This method makes a cDNA library of all RNA molecules present in your sample after rRNA depletion.
 
-{% include important.html content="the success of this kit is dependent on the ability of Illumina's rRNA depletion beads to bind rRNAs in your target species.  Check [this list]() for compatability of this reagent across different species." %}
+{% include important.html content="the success of this kit is dependent on the ability of Illumina's rRNA depletion beads to bind rRNAs in your target species.  Check [this list](https://www.illumina.com/products/selection-tools/ribo-zero-kit-species-compatibility.html#hmr) for compatability of the mouse/rat/human rRNA 'riboGold' depletion reagent with other species." %}
 
 
 ## What you'll need for Day 1
