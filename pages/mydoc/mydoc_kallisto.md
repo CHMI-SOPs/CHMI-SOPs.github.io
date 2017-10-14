@@ -19,13 +19,30 @@ If you're running a Mac OS, then begin by downloading and installing [Homebrew](
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-This makes installing Kallisto simple:
+Now, installing Kallisto is simple:
 ```
 brew tap homebrew/science
 brew install kallisto
 ```
 
-Test whether Kallisto is properly installed by typing ```kallisto```
+Test whether Kallisto is properly installed by typing ```kallisto```, and you should see this output
+
+```
+kallisto 0.43.1
+
+Usage: kallisto <CMD> [arguments] ..
+
+Where <CMD> can be one of:
+
+    index         Builds a kallisto index 
+    quant         Runs the quantification algorithm 
+    pseudo        Runs the pseudoalignment step 
+    h5dump        Converts HDF5-formatted results to plaintext
+    version       Prints version information
+    cite          Prints citation information
+
+Running kallisto <CMD> without arguments prints usage information for <CMD>
+```
 
 ## Installing Kallisto on a Windows OS
 
@@ -38,7 +55,7 @@ Test whether Kallisto is properly installed by typing ```kallisto```
 ## Build an index from reference transcriptome .fasta file
 
 Get reference transcriptome files from [here](http://useast.ensembl.org/info/data/ftp/index.html)
-Choose organism and cDNA, then download the file that ends in “cDNA.all.fa.gz”
+Choose your the cDNA file for your organism, then download the file that ends in “cDNA.all.fa.gz”
 
 Build the index
 ```
@@ -51,8 +68,9 @@ Run the following command for pseudoalignment of single-end reads to index.
 ```
 kallisto quant -i myHumanIndex -o Sample1.mapped -b 100 —-single -l 275 -s 20 read1.fastq.gz
 ```
-{% include note.html content="bootstrapping (-b command in the line below) adds significant time to the mapping, but is essential for accurate quantification. With a typical reference index for the mouse or human transcriptome, I find it takes about 15sec per bootstrap. So expect this to add ~30 min to the mapping time for each sample.  Also, avoid putting hyphens in the name of the kallisto output, as this could cause problems later" %}
+{% include note.html content="bootstrapping (-b command in the line above) adds significant time to the mapping, but is essential for accurate quantification. With a typical reference index for the mouse or human transcriptome, I find it takes about 15sec per bootstrap. So expect this to add ~30 min to the mapping time for each sample." %}
 
+{% include warning.html content="avoid putting hyphens in the name of the kallisto output, as this could cause problems later" %}
 
 ## align paired-end reads
 ```
