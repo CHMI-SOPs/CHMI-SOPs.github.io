@@ -46,11 +46,21 @@ Running kallisto <CMD> without arguments prints usage information for <CMD>
 
 ## Installing Kallisto on a Windows OS
 
-* Download Kallisto for Windows and unzip.  You'll need to have the Kallisto.exe in the same folder with the .fastq files you wish to align.  Alternatively, you could add the .exe to your path, but I'm not sure how to do this on a Windows machine.
-* To run Kallisto on a PC, open the Command Prompt (All programs -> Accessories -> Command Prompt), 
-* use the ```cd``` command to change your working directory to the location of the .fastq files and Kallisto.exe.
-* Drag and drop the Kallisto.exe file onto your open Command Prompt window
-* type the word 'kallisto' to make sure the program is running
+1.	Obtain administrative access for your computer
+2.	Go to https://pachterlab.github.io/kallisto/download
+
+3.	Download the latest Windows release (v0.43.1 for Fall 2017)
+
+4.	Extract to Program Files or Applications.  Kallisto is now installed on your computer but it cannot be accessed from any location in the command prompt/terminal until you add it to your computer’s path system variable 
+
+5.	Add the kallisto directory to your PATH to allow for access from any directory
+* Start the System Control Panel applet (Start -> Settings -> Control Panel -> System)
+* Select the Advanced tab.
+* Click the Environment Variables button.
+* Under System Variables, select Path, then click Edit.
+Note: You'll see a list of folders, as this example for my system shows: C:\Program Files\Windows Resource Kits\Tools\; etc
+* Add the name of the path to your kallisto directory (e.g. including semicolon ;C:\Program Files\kallisto_windows-v0.43.1
+6.	Relaunch command prompt and check for proper installation by typing kallisto (Windows equivalent of Terminal)
 
 ## Build an index from reference transcriptome .fasta file
 
