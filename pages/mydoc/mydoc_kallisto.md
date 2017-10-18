@@ -73,11 +73,16 @@ kallisto index -i myNewIndex InputFasta.fasta
 
 Run the following command for pseudoalignment of single-end reads to index. 
 ```
-kallisto quant -i myHumanIndex -o Sample1.mapped -b 100 —-single -l 275 -s 20 read1.fastq.gz
+kallisto quant -i myHumanIndex -o Sample1.mapped -b 60 —-single -l 275 -s 20 read1.fastq.gz
 ```
-{% include note.html content="bootstrapping (-b command in the line above) adds significant time to the mapping, but is essential for accurate quantification. With a typical reference index for the mouse or human transcriptome, I find it takes about 15sec per bootstrap. So expect this to add ~30 min to the mapping time for each sample." %}
-
 {% include warning.html content="avoid putting hyphens in the name of the kallisto output, as this could cause problems later" %}
+
+{% include important.html content="bootstrapping (-b command in the line above) adds significant time to the mapping, but is essential for accurate quantification. With a typical reference index for the mouse or human transcriptome, I find it takes about 15sec per bootstrap. So expect this to add ~30 min to the mapping time for each sample." %}
+
+{% include note.html content="If you want a .bam file output with your alignment, use ```--pseudobam```." %}
+
+{% include note.html content="If you have multiple cores on your computer, you can speed up the aligment with the ```-t``` argument followed by the number of threads you have on your machine.  If you're on a mac, you can find out the number of virtual cores (i.e. threads) using the ```sysctl hw.ncpu``` command directly in the terminal %}
+
 
 ## align paired-end reads
 ```
