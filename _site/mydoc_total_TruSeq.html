@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Preparation of total transcriptome libraries for sequencing on an Illumina platform">
+<meta name="keywords" content="library construction,  transcriptomics, library preparation">
+<title>Illumina TruSeq Stranded total Sample Preparation Protocol | CHMI services</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<link rel="stylesheet" href="css/lavish-bootstrap.css">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Center for Host-Microbial Interactions</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:beiting@upenn.edu?subject=CHMI services feedback&body=I have some feedback about the Illumina TruSeq Stranded total Sample Preparation Protocol page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Illumina TruSeq Stranded total Sample Preparation Protocol">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+    <div class="col-lg-12">&nbsp;</div>
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+
+
+
+
+
+
+
+
+
+
+
+<ul id="mysidebar" class="nav">
+    <li class="sidebarTitle">CHMI services </li>
+    
+    
+    
+        
+    
+    <li>
+        <a href="#">Overview</a>
+        <ul>
+            
+            
+            
+            <li><a href="index.html">Welcome</a></li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">RNAseq</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_RNAseq_FAQs.html">RNAseq FAQs</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_TruSeq.html">mRNA library prep</a></li>
+            
+            
+            
+            
+            
+            
+            <li class="active"><a href="mydoc_total_TruSeq.html">total transcriptome library prep</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_install_jekyll_on_windows.html">Low input protocol</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_install_jekyll_on_windows.html">ATAC-seq protocol</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">informatics pipelines</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="mydoc_kallisto.html">Kallisto and Sleuth</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="tag_formatting.html">RSEM</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="tag_formatting.html">RSubread</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="tag_formatting.html">data deposition</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Microbiology</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_about_ruby_gems_etc.html">Microbiology FAQs</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_about_ruby_gems_etc.html">16S rRNA gene sequencing</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_install_jekyll_on_mac.html">shotgun metagenomics</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_install_jekyll_on_windows.html">mock communities and controls</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">informatics pipelines</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="tag_formatting.html">microbiomeDB</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="tag_formatting.html">QIIME</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="tag_formatting.html">data deposition</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Cell culture</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_sidebar_navigation.html">3D Caco-2 organoids</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_sidebar_navigation.html">veterinary microbial collections</a></li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Mobile/networked diagnostics</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_adding_tooltips.html">Biomeme portable QPCR</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_alerts.html">Oxford Nanopore MinION</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_icons.html">Microbial Design Studio</a></li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+        
+        <!-- if you aren't using the accordion, uncomment this block:
+           <p class="external">
+               <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+           </p>
+           -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">Illumina TruSeq Stranded total Sample Preparation Protocol</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+    <div class="summary">Preparation of total transcriptome libraries for sequencing on an Illumina platform</div>
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+    <a target="_blank" href="https://github.com/CHMI-SOPs/CHMI-SOPs.github.io/tree/master/pages/mydoc/mydoc_total_TruSeq.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+    
+
+  <h1 id="day-1">Day 1</h1>
+
+<h2 id="documentation">Documentation</h2>
+
+<p><a href="https://support.illumina.com/content/dam/illumina-support/documents/documentation/chemistry_documentation/samplepreps_truseq/truseqstrandedtotalrna/truseq-stranded-total-rna-sample-prep-guide-15031048-e.pdf">TruSeq Stranded Total RNA Sample Prep Guide</a>. This method makes a cDNA library of all RNA molecules present in your sample after rRNA depletion.</p>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> the success of this kit is dependent on the ability of Illumina’s rRNA depletion beads to bind rRNAs in your target species.  Check <a href="https://www.illumina.com/products/selection-tools/ribo-zero-kit-species-compatibility.html#hmr">this list</a> for compatability of the mouse/rat/human rRNA ‘riboGold’ depletion reagent with other species.</div>
+
+<h2 id="what-youll-need-for-day-1">What you’ll need for Day 1</h2>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> The following items are included in the Illumina kit</div>
+
+<ul>
+  <li>RNA purification beads (These are the beads for rRNA depletion) (bring these to room temperature before use)</li>
+  <li>rRNA removal mix</li>
+  <li>rRNA binding buffer</li>
+  <li>Elute, Prime, Fragment High mix</li>
+  <li>First strand synthesis (in a brown tube)</li>
+  <li>Second strand marking mix</li>
+  <li>Resuspension buffer</li>
+</ul>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> The following items are NOT included with the Illumina kit and must be purchased separately</div>
+
+<ul>
+  <li>RNase-free water</li>
+  <li>Magnetic plate for a 96-well tray</li>
+  <li>96-well trays</li>
+  <li>80% ethanol (make this fresh the day of use)</li>
+  <li>70% ethanol (make this fresh the day of use)</li>
+  <li>Superscript II (Invitrogen)</li>
+  <li>RNAClean XP beads (Beckman-Coulter) (bring these to room temperature before use)</li>
+  <li>AMPureXP beads (Beckman-Coulter)</li>
+</ul>
+
+<h2 id="a-few-important-comments-before-you-start">A few important comments before you start</h2>
+
+<div class="bs-callout bs-callout-primary">
+- We use the Low Sample ‘LS’ protocol as we are typically working with fewer than 48 samples at a time<br />
+- The recommended starting amount of total RNA is 100 ng - 1 ug, but we usually try to stay away from the extreme ends of this spectrum.<br />
+- Split this protocol into two days, stopping on the first day after you have double stranded cDNA. On second day, do the A-tailing, adapter ligation, PCR, cleanup, and quality control steps.<br />
+- For 12 samples, you will need approximately 6-7 hours on the first day, and 6-7 hours the second day.<br />
+- Keep all reagents on ice unless otherwise stated.<br />
+- We typically remove the reagents from storage during an incubation period in the previous step.<br />
+- Have the beads at room temperature at least 30 minutes prior to use.<br />
+- Aliquot the reagents that arrive in large quantities (such as the resuspension buffer and the bead washing buffer) into 2 mL Eppendorf tubes.<br />
+- We do not perform any of the in-line controls.<br />
+- We do not use the plate barcode stickers that come with the kit.<br />
+- Use only filter pipette tips and clean your area so it is free of RNases.<br />
+- Ensure that the AMPureXP beads are mixed well immediately prior to use.<br />
+- There are many mixing steps in this protocol - I frequently use a multi-channel pipette to help speed up this process, particularly if many libraries are being prepared.<br />
+- We use a Tapestation or a BioAnalyzer to assay the input RNA quality. Ribosomal integrity numbers of 7 and higher are preferred.<br />
+- We quantify the input RNA using a Qubit fluorometer.</div>
+
+<h2 id="step-1-deplete-rrna">Step 1: Deplete rRNA</h2>
+
+<ol>
+  <li>
+    <p>Dilute the RNA with RNase-free water to a final volume of 10 uL per sample.</p>
+  </li>
+  <li>
+    <p>Add 5 uL of rRNA binding buffer and 5 uL of rRNA removal mix to each well. Pipette up and down 6 times.</p>
+  </li>
+  <li>
+    <p>Seal the plate and place the plate in the thermocycler and run the “RNA DENATURATION PROGRAM” (68C for 5 min).</p>
+  </li>
+  <li>
+    <p>Remove the plate from the thermocycler and leave on the bench at room temperature for 1 minute.</p>
+  </li>
+  <li>
+    <p>Vortex the rRNA removal beads (Illumina) and add 35 uL of beads to each well of a new plate.</p>
+  </li>
+</ol>
+
+<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> Don’t skip this step by adding the beads to the sample in the old plate. Adding the sample to the beads will ensure optimal performance.</div>
+
+<ol>
+  <li>Remove the adhesive seal from the plate and add the sample (20 uL each) to the beads. Quickly pipette up and down 20 times to mix thoroughly.</li>
+  <li>Incubate at room temperature for 1 minute.</li>
+  <li>Place the plate on the magnetic stand for 1 minute.</li>
+  <li>Transfer the supernatant to a new plate.</li>
+  <li>Vortex the RNAClean XP beads to resuspend. Add 99 ul of beads directly to the ribo-depleted RNA samples from above. Mix gently by pipetting 10 times.</li>
+</ol>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> If your starting RNA sample is degraded, use 193 uL RNAClean XP beads.</div>
+
+<ol>
+  <li>incubate at RT for 15 min.</li>
+  <li>Place the plate on the magnetic stand at RT for 5 min.</li>
+  <li>Remove and discard the supernatant.</li>
+  <li>With the plate still on magnet, add 190 ul of fresh 70% EtOH to each well without disturbing the beads.</li>
+</ol>
+
+<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> The TruSeq manual indicates that 200 uL should be used, however, the maximum volume of our 96-well plates is 200 uL, thus we use less so the wells do not overflow.</div>
+
+<ol>
+  <li>Incubate EtOH wash for 30 sec, then discard the supernatant.</li>
+  <li>let the samples sit on the magnet for 15min to dry. Remove excess EtOH with a p10 pipette.</li>
+  <li>Remove the plate from the magnet, gently add 11 ul of Elution Buffer to each well. Mix thoroughly by pipetting up and down 10 times. You will have to work to get the dried beads off the side of the well and resuspended in the buffer.</li>
+  <li>Incubate the plate at RT for 2 minutes.</li>
+  <li>Place the sample on the magnet for 2 minutes.</li>
+  <li>Transfer 8.5 uL of the supernatant from each well to a new PCR plate.</li>
+  <li>Add 8.5 uL Elute, Prime, Fragment High mix to each well. Mix by pipetting up and down 10 times.</li>
+  <li>Place the wells in the thermocyler and run the Elu2Frag program.</li>
+</ol>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> If your RNA is degraded, you may shorten the fragmentation time. See Appendix A in the Illumina TruSeq Total RNA Handbook.</div>
+
+<ol>
+  <li>Remove the plate once it reaches 4C, centrifuge briefly, and then proceed immediately through the next steps.</li>
+</ol>
+
+<h2 id="step-2-1supstsup-strand-cdna-synthesis">Step 2: 1<sup>st</sup> strand cDNA synthesis</h2>
+
+<ol>
+  <li>Remove First Strand Synthesis Act D Mix from -20C and thaw at RT. Centrifuge this reagent at 600 x g for 5 sec.</li>
+  <li>Add 50 ul SuperScript II to the First Strand Synthesis Act D Mix well. If you’re not going to use the entire well of mix, then add SuperScript at a ratio of 1 ul SuperScript for every 9 ul of First Strand reagent.  For example, for 12 reactions, mix 90 ul with 10 ul of SS II.  Excess mix can be stored in the -20C freezer.</li>
+  <li>Add 8 ul of First Strand SuperScript mix to each well containing the mRNA.</li>
+  <li>Place the plate in thermocycler and run the “Synthesize 1st Strand” program (25C for 10 min, 42C for 15 min, 70C for 15 min, hold at 4C).</li>
+</ol>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> This step takes 40 minutes and is your first large break.</div>
+
+<h2 id="step-3--2supndsup-strand-cdna-synthesis">Step 3:  2<sup>nd</sup> strand cDNA synthesis</h2>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> When the first strand synthesis is completed, immediately proceed to the second strand synthesis</div>
+
+<ol>
+  <li>Add 20 uL second strand marking mix and 5 uL resuspension buffer to each well. Pipette up and down 6 times.</li>
+  <li>Centrifuge the plate at 600 x g for 30 sec.</li>
+  <li>Place plate in thermocycler and run the ‘2nd strand’ reaction - 16C for 1hr, with the lid set to 30C.</li>
+</ol>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> This is your second large break of the day.</div>
+
+<h2 id="step-4-reaction-clean-up">Step 4: Reaction clean-up</h2>
+
+<ol>
+  <li>When the reaction is complete, add 90 ul of well-mixed AMPure XP beads to each well containing 50 ul of double stranded cDNA. Incubate RT for 15 min.</li>
+  <li>Place the plate on the magnet and let sit for 5 min.</li>
+  <li>Remove and discard 135 ul per well, being careful not to disturb the beads.</li>
+  <li>Wash beads on magnet by adding 190 ul of 80% EtOH to each well, without disturbing the beads incubate 30 sec at RT.</li>
+  <li>Remove and discard the supernatant, repeat the wash step and remove the supernatant again. Let the plate stand on the magnet at RT for 15 min to dry.</li>
+</ol>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Use a p10 pipette to remove any residual ethanol from the bottom of the well.</div>
+
+<ol>
+  <li>Add 17.5 ul of Resuspension Buffer to each well and pipette up and down 10 time to mix. Incubate for 2 min at RT.</li>
+</ol>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The beads may be dry and you may have to pipette up and down more than 10 times until the beads are fully resuspended.</div>
+
+<ol>
+  <li>Place the plate on the magnetic stand for 5 minutes.</li>
+  <li>Transfer 15 ul of the supernatant (contains the ds cDNA) to new a new plate.</li>
+</ol>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> This is a safe-stopping place. You can cover the plate and store at -20C until you are ready to continue to the second day of the protocol.</div>
+
+<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> Do not store your DNA at this stage for longer than a week. We usually perform the rest of the protocol the next day.</div>
+
+<h1 id="day-2">Day 2</h1>
+
+<h2 id="what-youll-need-for-day-2">What you’ll need for Day 2</h2>
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> The following items are included in the Illumina kit</div>
+
+<ul>
+  <li>A-tailing mix</li>
+  <li>Resuspension buffer</li>
+  <li>Ligation mix</li>
+  <li>Index adapters</li>
+  <li>Stop ligation buffer</li>
+  <li>PCR primer cocktail</li>
+  <li>PCR master mix</li>
+</ul>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> The following items are not included with the Illumina kit and must be purchased separately</div>
+
+<ul>
+  <li>Magnetic plate for a 96-well tray</li>
+  <li>96-well trays</li>
+  <li>80% Ethanol (make this fresh the day of use)</li>
+  <li>AMPureXP beads (Beckman-Coulter)</li>
+</ul>
+
+<h2 id="step-5-adenylate-cdna-ends">Step 5: Adenylate cDNA ends</h2>
+
+<ol>
+  <li>Add 12.5 ul of thawed A-tailing mix and 2.5 uL of resuspension buffer to each well. Pipette up and down 10 times.</li>
+  <li>Carry out A-tailing by running the thermocycler ‘ATAIL70’ program.</li>
+</ol>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> This step takes 35 minutes and is the first large break of the day.</div>
+
+<h2 id="step-6-ligate-adapters-to-ends">Step 6: ligate adapters to ends</h2>
+
+<ol>
+  <li>Add 2.5 ul of resuspension buffer, 2.5 ul of ligation mix, and 2.5 ul of a unique RNA adapter index to each well, mix well by pipetting.</li>
+</ol>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Remove the ligation mix immediately before use and return to -20C storage immediately after use.</div>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> I moved individual adapter index tubes to strip tubes to make it easier to add the unique indexes to the wells with a multichannel pipette.</div>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Make sure to record which sample received which index adapter number.</div>
+
+<ol>
+  <li>Seal the plate and incubate at 30C in thermocycler for 10 min using the ‘LIGADAPTER’ program.</li>
+  <li>Remove the plate from the thermocycler and add 5 ul of stop ligation buffer to each reaction, mix well by pipetting.</li>
+  <li>Add 42 ul of AMPure XP beads to each reaction, mix well by pipetting, and incubate at RT for 15 min.</li>
+  <li>Place on magnetic stand for 5 min at RT.</li>
+  <li>With the plate on the magnetic stand, remove 79.5 ul of supernatant from each sample, being careful not to disturb the beads.</li>
+  <li>With the plate on the magnetic stand, wash with 190 ul 80% EtOH for 30 sec, then remove the ethanol.</li>
+  <li>Perform the wash step again.</li>
+  <li>Use a p10 pipette to remove residual ethanol. Leave the plate on the stand to dry for 15 minutes.</li>
+  <li>Remove the plate from the magnetic stand and add 52.5 ul of Resuspension Buffer to each well, and mix well by pipetting. Incubate at RT for 2 min</li>
+  <li>Place the plate on magnet for 5 min.</li>
+  <li>Recover 50 ul from each well and transfer to a new plate.</li>
+  <li>Carry out a second cleanup round. Add 50 uL of mixed AMPure beads to each well, mix well, incubate for 15 min at RT.</li>
+  <li>Place the plate on the magnetic stand for 5 min.</li>
+  <li>With the plate on the magnetic stand, remove and discard 95 ul of supernatant from each sample.</li>
+  <li>With the plate on the magnetic stand, wash the beads with 190 ul of 80% EtOH for 30 s, then remove the ethanol.</li>
+  <li>With the plate on the magnetic stand, wash the beads again with 190 uL of 80% EtOH for 30 s, then remove the ethanol.</li>
+  <li>With the plate on the magnetic stand, use a p10 pipette to remove residual EtOH, then let the plate air dry for 15 min.</li>
+  <li>Resuspend beads in 22.5 ul of resuspension Buffer, mix well by pipetting, and incubate 2 min at RT.</li>
+  <li>Transfer the plate to the magnetic stand and incubate for 5 min.</li>
+  <li>Recover 20 ul from each well and transfer to a new plate.</li>
+</ol>
+
+<h2 id="step-7-pcr-amplify-library">Step 7: PCR amplify library</h2>
+
+<ol>
+  <li>Add 5 ul of PCR primer cocktail and 25 ul of PCR master mix to each well, place the plate in the thermocycler and run the “PCR” program.</li>
+</ol>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> This is another break for 30 minutes.</div>
+
+<ol>
+  <li>Add 50 ul of AMPure beads to each well and mix well by pipetting. Incubate 15 min at RT.</li>
+  <li>Place the plate on the magnet for 5 min.</li>
+  <li>Remove and discard 95 ul of supernatant from each well.</li>
+  <li>Wash the beads 190 ul/well of 80% EtOH, wait 30s, remove the supernatant.</li>
+  <li>Repeat the ethanol wash step.</li>
+  <li>Remove residual ethanol with a p10 pipette, let the beads air dry for 15 minutes on the magnetic plate.</li>
+  <li>Remove the plate from the magnetic stand, add 32.5 ul of resuspension buffer and mix well, by pipetting, and incubate for 2 min at room temperature.</li>
+  <li>Place the plate back on the magnetic stand for 5 minutes.</li>
+  <li>Remove 30 uL of supernatant from each sample and move it into a new plate. This is the final cDNA product.</li>
+</ol>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Congratulations! You’re done!…well, almost</div>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Perform quality control steps - we use a Tapestation to determine the library size and qubit to quantify the libraries.</div>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> We recommend sequencing the libraries within 3 weeks.</div>
+
+
+
+    <div class="tags">
+        
+        <b>Tags: </b>
+        
+        
+        
+        
+        
+    </div>
+
+
+
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'http-hostmicrobe-org'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2017 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
+ Site last generated: Oct 17, 2017 <br />
+<p><img src="images/CHMI_logo.png" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+    </div>
+
+</body>
+
+</html>

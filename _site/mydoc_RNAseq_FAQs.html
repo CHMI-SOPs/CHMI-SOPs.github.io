@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="information on our technology, how you gain access, how much experiments cost, and our 'hands-on' philosophy.">
+<meta name="keywords" content="getting_startedtroubleshooting,  ">
+<title>RNAseq FAQs | CHMI services</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<link rel="stylesheet" href="css/lavish-bootstrap.css">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Center for Host-Microbial Interactions</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:beiting@upenn.edu?subject=CHMI services feedback&body=I have some feedback about the RNAseq FAQs page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="RNAseq FAQs">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+    <div class="col-lg-12">&nbsp;</div>
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+
+
+
+
+
+
+
+
+
+
+
+<ul id="mysidebar" class="nav">
+    <li class="sidebarTitle">CHMI services </li>
+    
+    
+    
+        
+    
+    <li>
+        <a href="#">Overview</a>
+        <ul>
+            
+            
+            
+            <li><a href="index.html">Welcome</a></li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">RNAseq</a>
+        <ul>
+            
+            
+            
+            <li class="active"><a href="mydoc_RNAseq_FAQs.html">RNAseq FAQs</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_TruSeq.html">mRNA library prep</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_total_TruSeq.html">total transcriptome library prep</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_install_jekyll_on_windows.html">Low input protocol</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_install_jekyll_on_windows.html">ATAC-seq protocol</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">informatics pipelines</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="mydoc_kallisto.html">Kallisto and Sleuth</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="tag_formatting.html">RSEM</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="tag_formatting.html">RSubread</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="tag_formatting.html">data deposition</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Microbiology</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_about_ruby_gems_etc.html">Microbiology FAQs</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_about_ruby_gems_etc.html">16S rRNA gene sequencing</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_install_jekyll_on_mac.html">shotgun metagenomics</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_install_jekyll_on_windows.html">mock communities and controls</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">informatics pipelines</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="tag_formatting.html">microbiomeDB</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="tag_formatting.html">QIIME</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="tag_formatting.html">data deposition</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Cell culture</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_sidebar_navigation.html">3D Caco-2 organoids</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_sidebar_navigation.html">veterinary microbial collections</a></li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Mobile/networked diagnostics</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_adding_tooltips.html">Biomeme portable QPCR</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_alerts.html">Oxford Nanopore MinION</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_icons.html">Microbial Design Studio</a></li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+        
+        <!-- if you aren't using the accordion, uncomment this block:
+           <p class="external">
+               <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+           </p>
+           -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">RNAseq FAQs</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+    <div class="summary">information on our technology, how you gain access, how much experiments cost, and our 'hands-on' philosophy.</div>
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+    <a target="_blank" href="https://github.com/CHMI-SOPs/CHMI-SOPs.github.io/tree/master/pages/mydoc/mydoc_RNAseq_FAQs.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+    
+
+  <h2 id="what-sequencing-hardware-do-you-have">What sequencing hardware do you have?</h2>
+
+<p>We operate an Illumina NextSeq 500 machine, which is capable of producing reads ranging in length 75-150 bp.  These reads can be produced as single- or paired-end reads (dictated by the reagents, not the hardware).  The machine has two basic operating modes.  In ‘mid-output’ mode, approximately 130 million reads are produced (or read pairs, if paired-end reagents are used).  In high-output mode, approximately 400 million reads or read pairs are produced.  The total data output depends on library quality and clustering density (more on that below).</p>
+
+<h2 id="how-deep-should-i-sequence-each-sample">How ‘deep’ should I sequence each sample?</h2>
+
+<p>This depends on the size of the transcriptome (mammalian vs bacterial), as well as the complexity of the library that is prepared (mRNA vs total transcriptome).  That said, there is no generally accepted rule for depth of sequencing, only a range that has been reported in the literature and which serves as a useful, albeit broad, set of guidelines.  Generally, for RNAseq on mammalian cells or tissues, it would be typical to aim for 20-40 million reads per sample if you were sequencing an mRNA library, or 40-80 million reads/sample for a library with both mRNAs as well as non-coding RNAs.  The added sequencing depth in the later case helps ensure adequate coverage across the more diverse pool of molecules present in your library.  Illumina provides <a href="https://support.illumina.com/downloads/sequencing_coverage_calculator.html">this tool</a> for estimating the depth required for your organism.  Remember, our machine produces about 400 million reads, so if you sequenced 10 samples on one run, your depth would ideally be about 40 million reads per sample.  For this reason, experiments involving mammalian cells or tissues will generally have 8-12 samples per run on our machine.</p>
+
+<h2 id="single-end-or-paired-end">Single-end or paired-end?</h2>
+
+<p>My default answer to this question is almost always to go with single-end.  The reason for recommending this is that it is MUCH cheaper, and numerous studies, like <a href="http://CHMI-sops.github.io/papers/readlength.pdf">this one</a>, have shown that in terms of measuring gene expression, once you go beyond about 50 bp of sequence, very little is gained.  I recommend paired-end data if your reference genome is poor (or non-existent), or if your primary goal is to understand alternative splicing.  In these cases, it is worth spending the extra money.</p>
+
+<h2 id="how-many-replicates-should-i-have">How many replicates should I have?</h2>
+
+<p>As many as you can reasonably afford.  Seriously.  When it comes to boosting your statistical power to detect differentially expressed genes, you are always better served by increasing group sizes than you are by increasing depth of sequencing.  This has been shown many times in the literaure, such as <a href="http://CHMI-sops.github.io/papers/readdepth">here</a>.  As a general rule, the more variance you expect in your experiment, the more replicates you should try to include.  This means that simple <em>in vitro</em> experiments with a homogenous cell line will likely need fewer replicates than would a study of primary cells derived from human subjects.</p>
+
+<h2 id="how-much-will-it-cost">How much will it cost?</h2>
+
+<p>Costs vary widely, but are primarily driven by three factors: 1) the number of samples you plan to sequence; 2) the kind of library you will prepare from these samples; and 3) the length and depth of sequencing carried out on these samples.  The costs of consumables direclty from Illumina can be viewed <a href="http://CHMI-sops.github.io/papers/Illumina_Pricelist_April2017.pdf">here</a>(note the UPenn discount price).  These prices go up each year in April, so take that into account when ordering.  Here is a schematic I prepared that shows the cost of consumables to carry out a few types of RNAseq expeirments.</p>
+
+<h2 id="how-long-will-it-take">How long will it take?</h2>
+
+<p>Once you have isolated high quality RNA from your samples, expect to spend 2 days preparing mRNA or total transcriptome libraries. We QC these libraries in a few minutes using our Agilent tapestation.  Barring any issues in library prep, sequencing can begin almost immediately.  Plan to devote half a day to diluting an denaturing your library, thawing the reagent pack for sequencing and setting up the sequencer.  Each run takes 16-36hrs depending on the type of sequencing being done.  Putting all these steps together and allowing for some amount of troubleshooting and scheduling around other runs, we typically take 1-2wks to get from start to finish.</p>
+
+<h2 id="do-you-analyze-the-data-for-us">Do you analyze the data for us?</h2>
+
+<p>Not exactly, though we are fully capable of RNAseq data analysis.  CHMI offers a free <a href="DIYtranscriptomics.org">semester-long course</a> on the bioinformatics associated with RNAseq data analysis.  Assistance is also available through 1:1 consultations with Dan Beiting.</p>
+
+<h2 id="so-i-can-just-give-you-my-samples-then">So I can just give you my samples then?</h2>
+
+<p>No.  CHMI does not operate as a fee-for-service core facility, but rather we function as an interdisciplinary genomics lab.  We teach <em>you</em> how to carry out every step involved in the RNAseq pipeline.  This makes for a fantastic training experimence for students and postdocs, and helps build capacity for labs to be independent with RNAseq.  Finally, this hands-on approach has the added benefit of keeping costs lower, since you are providing the labor.</p>
+
+<h2 id="do-i-get-rnaseq-reagents-from-chmi">Do I get RNAseq reagents from CHMI?</h2>
+
+<p>No.  With few exceptions, we encourage labs to order their own consumables.  This cuts down dramatically on how much time we have to devote to invoicing and inventory management.  If you have questions about exactly what you need to order, we are happy to help you navigate that process.</p>
+
+
+
+    <div class="tags">
+        
+        <b>Tags: </b>
+        
+        
+        
+        <a href="tag_getting_started.html" class="btn btn-default navbar-btn cursorNorm" role="button">getting_started</a>
+        
+        
+        
+        <a href="tag_troubleshooting.html" class="btn btn-default navbar-btn cursorNorm" role="button">troubleshooting</a>
+        
+        
+        
+    </div>
+
+
+
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'http-hostmicrobe-org'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2017 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
+ Site last generated: Oct 17, 2017 <br />
+<p><img src="images/CHMI_logo.png" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+    </div>
+
+</body>
+
+</html>

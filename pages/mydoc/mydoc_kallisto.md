@@ -46,21 +46,18 @@ Running kallisto <CMD> without arguments prints usage information for <CMD>
 
 ## Installing Kallisto on a Windows OS
 
-* Obtain administrative access for your computer
-* Go to https://pachterlab.github.io/kallisto/download
-
-* Download the latest Windows release (v0.43.1 for Fall 2017)
-
-* Extract to Program Files or Applications.  Kallisto is now installed on your computer but it cannot be accessed from any location in the command prompt/terminal until you add it to your computer’s path system variable 
-
-* Add the kallisto directory to your PATH to allow for access from any directory
+1. Obtain administrative access for your computer
+2. Go to https://pachterlab.github.io/kallisto/download
+3. Download the latest Windows release (v0.43.1 for Fall 2017)
+4. Extract to Program Files or Applications.  Kallisto is now installed on your computer but it cannot be accessed from any location in the command prompt/terminal until you add it to your computer’s path system variable 
+5. Add the kallisto directory to your PATH to allow for access from any directory
 * Start the System Control Panel applet (Start -> Settings -> Control Panel -> System)
 * Select the Advanced tab.
 * Click the Environment Variables button.
 * Under System Variables, select Path, then click Edit.
 Note: You'll see a list of folders, as this example for my system shows: C:\Program Files\Windows Resource Kits\Tools\; etc
 * Add the name of the path to your kallisto directory (e.g. including semicolon ;C:\Program Files\kallisto_windows-v0.43.1
-* Relaunch command prompt and check for proper installation by typing kallisto (Windows equivalent of Terminal)
+6. Relaunch command prompt and check for proper installation by typing kallisto (Windows equivalent of Terminal)
 
 ## Build an index from reference transcriptome .fasta file
 
