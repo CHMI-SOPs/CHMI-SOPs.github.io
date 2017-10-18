@@ -521,11 +521,15 @@ kallisto index -i myNewIndex InputFasta.fasta
 
 <p>Run the following command for pseudoalignment of single-end reads to index. 
 <code class="highlighter-rouge">
-kallisto quant -i myHumanIndex -o Sample1.mapped -b 100 —-single -l 275 -s 20 read1.fastq.gz
+kallisto quant -i myHumanIndex -o Sample1.mapped -b 60 —-single -l 275 -s 20 read1.fastq.gz
 </code></p>
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> bootstrapping (-b command in the line above) adds significant time to the mapping, but is essential for accurate quantification. With a typical reference index for the mouse or human transcriptome, I find it takes about 15sec per bootstrap. So expect this to add ~30 min to the mapping time for each sample.</div>
-
 <div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> avoid putting hyphens in the name of the kallisto output, as this could cause problems later</div>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> bootstrapping (-b command in the line above) adds significant time to the mapping, but is essential for accurate quantification. With a typical reference index for the mouse or human transcriptome, I find it takes about 15sec per bootstrap. So expect this to add ~30 min to the mapping time for each sample.</div>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> If you want a .bam file output with your alignment, use <code class="highlighter-rouge">--pseudobam</code>.</div>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> If you have multiple cores on your computer, you can speed up the aligment with the <code class="highlighter-rouge">-t</code> argument followed by the number of threads you have on your machine.  If you’re on a mac, you can find out the number of virtual cores (i.e. threads) using the <code class="highlighter-rouge">sysctl hw.ncpu</code> command directly in the terminal</div>
 
 <h2 id="align-paired-end-reads">align paired-end reads</h2>
 <div class="highlighter-rouge"><pre class="highlight"><code>kallisto quant -i myMouseIndex -o Sample1.mapped -b 100 read1.fastq.gz read2.fastq.gz
@@ -593,7 +597,7 @@ devtools::install_github("pachterlab/sleuth")
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2017 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
- Site last generated: Oct 17, 2017 <br />
+ Site last generated: Oct 18, 2017 <br />
 <p><img src="images/CHMI_logo.png" alt="Company logo"/></p>
                 </div>
             </div>
