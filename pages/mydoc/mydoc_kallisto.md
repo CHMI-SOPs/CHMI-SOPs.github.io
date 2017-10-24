@@ -58,6 +58,7 @@ Running kallisto <CMD> without arguments prints usage information for <CMD>
 Note: You'll see a list of folders, as this example for my system shows: C:\Program Files\Windows Resource Kits\Tools\; etc
 * Add the name of the path to your kallisto directory (e.g. including semicolon ;C:\Program Files\kallisto_windows-v0.43.1
 6. Relaunch command prompt and check for proper installation by typing kallisto (Windows equivalent of Terminal)
+7. although not required for running kallisto, you should install [Cygwin](https://www.cygwin.com/) to give your PC some linux functionality (like running shell scripts)
 
 ## Build an index from reference transcriptome .fasta file
 
