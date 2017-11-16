@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Preparation of V4 region, 16S dual-indexed libraries for sequencing on an Illumina platform">
+<meta name="keywords" content="library construction,  ">
+<title>16S rRNA gene sequencing | CHMI services</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<link rel="stylesheet" href="css/lavish-bootstrap.css">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Center for Host-Microbial Interactions</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:beiting@upenn.edu?subject=CHMI services feedback&body=I have some feedback about the 16S rRNA gene sequencing page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="16S rRNA gene sequencing">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+    <div class="col-lg-12">&nbsp;</div>
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+
+
+
+
+
+
+
+
+
+
+
+<ul id="mysidebar" class="nav">
+    <li class="sidebarTitle">CHMI services </li>
+    
+    
+    
+        
+    
+    <li>
+        <a href="#">Overview</a>
+        <ul>
+            
+            
+            
+            <li><a href="index.html">Welcome</a></li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">RNAseq</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_RNAseq_FAQs.html">RNAseq FAQs</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_TruSeq.html">mRNA library prep</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_total_TruSeq.html">total transcriptome library prep</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_install_jekyll_on_windows.html">Low input protocol</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_install_jekyll_on_windows.html">ATAC-seq protocol</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">informatics pipelines</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="mydoc_linux.html">Compute resources</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_kallisto.html">Kallisto and Sleuth</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="tag_formatting.html">RSEM</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="tag_formatting.html">RSubread</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="tag_formatting.html">data deposition</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Microbiology</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_micro_FAQs.html">Microbiology FAQs</a></li>
+            
+            
+            
+            
+            
+            
+            <li class="active"><a href="mydoc_16S.html">16S rRNA gene sequencing</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_install_jekyll_on_mac.html">shotgun metagenomics</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_mock.html">mock communities and controls</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">informatics pipelines</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="mydoc_linux.html">Compute resources</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="tag_formatting.html">microbiomeDB</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_qiime.html">QIIME</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="tag_formatting.html">data deposition</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Cell culture</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_sidebar_navigation.html">3D Caco-2 organoids</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_sidebar_navigation.html">veterinary microbial collections</a></li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Mobile/networked diagnostics</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_adding_tooltips.html">Biomeme portable QPCR</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_alerts.html">Oxford Nanopore MinION</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_icons.html">Microbial Design Studio</a></li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+        
+        <!-- if you aren't using the accordion, uncomment this block:
+           <p class="external">
+               <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+           </p>
+           -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">16S rRNA gene sequencing</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+    <div class="summary">Preparation of V4 region, 16S dual-indexed libraries for sequencing on an Illumina platform</div>
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+    <a target="_blank" href="https://github.com/CHMI-SOPs/CHMI-SOPs.github.io/tree/master/pages/mydoc/mydoc_16S.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+    
+
+  <h2 id="before-starting">Before starting</h2>
+<p>This protocol is derived from Pat Schloss’ Laboratory at the University of Michigan. Please cite their work.  If you use the protocol below, please cite <a href="http://aem.asm.org/content/early/2013/06/17/AEM.01043-13">their manuscript on the dual-index sequencing strategy</a>.  Also, see the <a href="http://aem.asm.org/content/early/2013/06/17/AEM.01043-13/suppl/DCSupplemental">Supplemental materials</a> for a detailed look at the primer design for this strategy.</p>
+
+<h2 id="materials">Materials</h2>
+<ul>
+  <li>Order primers from IDT</li>
+  <li><a href="https://www.thermofisher.com/order/catalog/product/A1051001">SequalPrep Normalization Kit, Invitrogen, A10510-01</a></li>
+  <li>RT-PCR Grade Water, Ambion, AM9935</li>
+  <li>AccuPrime PFX Supermix, Invitrogen, 12344040</li>
+</ul>
+
+<h2 id="step-1-initial-setup">Step 1: Initial Setup</h2>
+
+<ol>
+  <li>Reconstitute indexed primers to 100 μM. See <a href="http://aem.asm.org/content/early/2013/06/17/AEM.01043-13/suppl/DCSupplemental">Appendix D of the supplement</a> from the Schloss lab paper for primer design.  We purchase our primers from IDT with standard purification and no additonal modifications.</li>
+</ol>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Use high quality nuclease-free water that is PCR grade. Any contaminations in your primer will be carried into your experimental setup.</div>
+
+<ol>
+  <li>Array aliquots into four 96 well plates using the scheme below. Into each well of these plates, aliquot 1.5 uL of a 700 primer, 1.5 uL of a 500 primer, and 27 uL water. The final primer concentration is 10 μM. Label the primer plates and store at -20C:
+    <ul>
+      <li>plate a: A701 – A712 with A501 – A508</li>
+      <li>plate b: A701 – A712 with B501 – B508</li>
+      <li>plate c: B701 – B712 with B501 – B508</li>
+      <li>plate d: B701 – B712 with A501 – A508</li>
+    </ul>
+  </li>
+  <li>Extract template DNA and array in 96-well format leaving two wells open (one for a negative water control and another for the positive Mock Community control).</li>
+</ol>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Depending on your thermocycler, plates or seals, you may experience problems with evaporation around the edges of plates.  To avoid having this confound your PCR reaction, consider leaving the border wells empty (rows A and H, columns 1 and 12), leaving 60 samples per plate.</div>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> We use the Qiagen PowerSoil DNA kit to extract DNA from our samples. You may use this method or a different method, just make sure to choose a consistent method for all of your experiments to minimize experimental variation and subsequent problems with data analysis.</div>
+
+<h2 id="step-2-pcr">Step 2: PCR</h2>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> These steps may be performed using an epMotion or similar automated pipetting system.</div>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Perform each reaction in duplicate to minimize experimental error and jackpotting.</div>
+
+<ol>
+  <li>
+    <p>Dispense 17 μl of Accuprime Pfx Supermix into each well of a new 96 well plate.</p>
+  </li>
+  <li>
+    <p>Using a multichannel pipette, transfer 2 μl of each paired set of index primers to the corresponding well on the PCR plate. Be sure to follow the layout chosen in the sample sheet.</p>
+  </li>
+  <li>
+    <p>Using a multichannel pipette, transfer 1 μl of template DNA per well to the corresponding well on the PCR plate.</p>
+  </li>
+  <li>Add 1 μl of PCR grade dH2O to the negative control well, and 1 μl of Mock Community to the positive control well.
+    <ul>
+      <li>I sometimes use other sequencing controls, such as DNA extracted from a pure culture.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Repeat for up to four 96-well plates. Seal plates, vortex briefly and spin down contents.</p>
+  </li>
+  <li>Place in thermocycler and run the following program (bold denotes steps to be run for 30 cycles)</li>
+</ol>
+
+<table>
+  <thead>
+    <tr>
+      <th>Temp (C)</th>
+      <th>Time (min:sec)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>95</td>
+      <td>2:00</td>
+    </tr>
+    <tr>
+      <td><strong>95</strong></td>
+      <td><strong>0:20</strong></td>
+    </tr>
+    <tr>
+      <td><strong>55</strong></td>
+      <td><strong>0:15</strong></td>
+    </tr>
+    <tr>
+      <td><strong>72</strong></td>
+      <td><strong>5:00</strong></td>
+    </tr>
+    <tr>
+      <td>72</td>
+      <td>10:00</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>hold</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="gel-electrophoresis">Gel Electrophoresis</h3>
+<ol>
+  <li>A random row of wells should be selected from each PCR plate and run on a gel to confirm success of the PCR.</li>
+  <li>Use 2 μl of sample, 4 μl of loading dye in a 1% agarose gel.</li>
+  <li>Run at 100v for 30 minutes alongside a standard ladder.</li>
+  <li>Photograph gel under UV. Check to be sure there is a band for every well.
+    <ul>
+      <li>I do not typically do this anymore as I perform the reactions in duplicate.</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="step-3-cleanup-normalization-and-pooling">Step 3: Cleanup, Normalization, and Pooling</h2>
+
+<p>Use the SequalPrep Normalization Plate Kit to normalize concentrations of PCR reactions prior to pooling</p>
+
+<ol>
+  <li>
+    <p>Pool duplicate PCR reactions (20 μl + 20 μl for a total of 40 μl).</p>
+  </li>
+  <li>
+    <p>Transfer 18 μl of pooled PCR product from plate to corresponding well on the normalization plate.</p>
+  </li>
+  <li>
+    <p>Add 18 μl/well of Binding Buffer. Mix by pipetting, then seal, vortex, and spin briefly.</p>
+  </li>
+  <li>
+    <p>Incubate at room temperature for 60 minutes.</p>
+  </li>
+</ol>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> can incubate overnight if needed, however this extra time does not improve binding.</div>
+
+<ol>
+  <li>
+    <p>Aspirate liquid from the wells, being careful not to scrape the sides of the wells.</p>
+  </li>
+  <li>
+    <p>Add 50 μl of Wash Buffer and pipette up and down twice, then aspirate <em>immediately</em>. Ensure there is no residual wash buffer in any wells.</p>
+  </li>
+  <li>
+    <p>Add 20 μl of Elution Buffer. Mix by pipetting up and down 5 times. Seal, vortex, and spin briefly.</p>
+  </li>
+  <li>
+    <p>Incubate at room temperature for 5 minutes.</p>
+  </li>
+  <li>
+    <p>Create a pool from each plate. Take 5 μl of each well to pool. The use of an empty 96-well plate may facilitate the use of multichannel pipettes.</p>
+  </li>
+  <li>
+    <p>Freeze the remaining sample for later use.</p>
+  </li>
+</ol>
+
+<h2 id="step-4-library-qc-and-normalization">Step 4: Library QC and normalization</h2>
+
+<h3 id="agilent-tapestation">Agilent Tapestation</h3>
+<p>Use Agilent HS DNA 1000 Tapes.  If significant primer peaks are seen (~120 bp), these can be removed by cleaning up with 1 round of purification using AMPureXP beads at a volume ratio of 0.6: 1 (beads:volume DNA).</p>
+
+<h3 id="qubit">Qubit</h3>
+<p>use the high sensitivity DNA assay.  Create normalized pools from each plate by diluting all samples down to match the least concentrated plate. Create a single final pool by adding equal amounts of each post PCR normalized pool. Final pool must be &gt;10μl in total volume. 40-80μl is ideal.  The target concentration is 1 or 2 nM.</p>
+
+<h2 id="step-5-miseq-sequencing">Step 5: MiSeq Sequencing</h2>
+
+<h3 id="run-set-up">Run set-up</h3>
+<ol>
+  <li>
+    <p>Remove a 500 cycle reagent cartridge from the -20 °C freezer. Place in room temperature water bath for one hour. Place HT1 buffer tube in the 4 °C fridge.</p>
+  </li>
+  <li>Copy sample sheet to sample sheet folder on MiSeq. Rename sample sheet to match barcode of reagent cartridge.
+    <ul>
+      <li>I use dummy barcodes AAAAAAAA and AAAAAAAA. The files can be downloaded from Basespace in an “undetermined.fastq.gz” format, and I use these files and then perform the demultiplexing in QIIME.</li>
+    </ul>
+  </li>
+  <li>
+    <p>When the reagent cartridge has thawed, dry bottom with paper towel. Invert the cartridge repeatedly to check each well is thawed. This also serves to mix the reagents. Place in hood.</p>
+  </li>
+  <li>
+    <p>Thaw library, PhiX, and sequencing primers. Check to make sure HT1 is thawed.</p>
+  </li>
+  <li>
+    <p>Place 3 μl of the Read 1 Sequencing Primer(s) into a clean PCR tube. Repeat in separate tubes for the Index Primer(s) and Read 2 Sequencing Primer(s).</p>
+  </li>
+  <li>
+    <p>Using a 1000 μl pipette tip, break the foil over wells 12, 13, 14, and 17.</p>
+  </li>
+  <li>
+    <p>Use an extra long 100 μl tip with the pipettor set on 75 μl to transfer the 3 μl of Read 1 Sequencing Primer to the bottom of well 12 and pipette 10X to mix. Repeat this process spiking the Index Primer into well 13 and the Read 2 Sequencing Primer into well 14.</p>
+  </li>
+  <li>
+    <p>Prepare a fresh dilution of 0.2N NaOH.</p>
+  </li>
+  <li>
+    <p>To a 1.5ml tube add 10 μl of library, and 10 μl of 0.2N NaOH. To a separate tube add 2 μl PhiX, 3 μl PCR grade water, and 5 μl of 0.2N NaOH. Vortex both tubes to mix and spin for 1 minute at 400rcf. Note: NaOH concentration on the flow cell must remain under 0.001N. Adjusting the concentration of the NaOH used to denature the DNA to 0.1N may be necessary.</p>
+  </li>
+  <li>
+    <p>Allow the tubes to incubate at room temperature for 5 minutes. Immediately add 980 μl of HT1 to the library tube, and 990 μl HT1 to the PhiX tube.</p>
+  </li>
+  <li>Use HT1 to dilute both the library and PhiX to 10pM. For a 5% PhiX run, combine 950 μl of 3.5pM Library and 50 μl PhiX in a final tube. Vortex. Load 600 μl of this solution into well 17 on the reagent cartridge. See example below:
+    <ul>
+      <li>(1.45 nM library x 10 μl) + (0.2N NaOH x 10 μl) + 980 μl HT1 = 14.5pM Lib, 0.002N NaOH</li>
+      <li>(14.5pM lib x 241.38 μl) + 758.62 μl HT1 = 3.5pM lib, 0.00048N NaOH</li>
+      <li>[(10nMPhiXx2μl)+3μlH2O]+(0.2NNaOHx5μl)+990μlHT1=20pMPhiX,
+0.001N NaOH</li>
+      <li>(20pM PhiX x 175 μl) + 825 μl HT1 = 3.5pM PhiX, 0.0000175N NaOH</li>
+      <li>(3.5pM Lib x 950 μl) + (3.5M PhiX x 50 μl) = solution loaded</li>
+      <li>Solution loaded is 3.5pM overall with a 3.325pM Library concentration, 0.175pM
+PhiX concentration, and 0.0000457N NaOH</li>
+    </ul>
+  </li>
+  <li>
+    <p>Set reagent cartridge aside. Unbox flow cell and PR2 bottle.</p>
+  </li>
+  <li>
+    <p>Thoroughly rinse the flow cell with Milli-Q water. Carefully dry by blotting with lint free wipes (Kimwipes). Give special attention to the edges and points of intersection between the glass and plastic.</p>
+  </li>
+  <li>
+    <p>Wet a new wipe with 100% alcohol and wipe the glass on both sides avoiding the rubber intake ports.</p>
+  </li>
+  <li>
+    <p>Visually inspect the flow cell to ensure there are no blemishes, particles, or fibers on the glass.</p>
+  </li>
+  <li>
+    <p>Follow on screen instructions and load the flow cell, reagent cartridge, and PR2 bottle. Empty and replace the waste bottle.</p>
+  </li>
+  <li>
+    <p>Ensure the machine recognizes the correct sample sheet and the run parameters are correct.</p>
+  </li>
+  <li>Wait for the MiSeq to perform its pre-run checks, and press start.</li>
+</ol>
+
+<h3 id="run-monitoring">Run Monitoring</h3>
+
+<ol>
+  <li>
+    <p>The run should be monitored periodically using Illumina Sequence Analysis Viewer.</p>
+  </li>
+  <li>
+    <p>Ideal parameters for a 95% 16S run:</p>
+    <ul>
+      <li>Cluster density 700-800k/mm2</li>
+      <li>greater than 85% clusters passing filter</li>
+      <li>5% aligned (amount of PhiX)</li>
+      <li>No spikes in corrected intensity plot</li>
+      <li>All indices identified following index reads</li>
+      <li>Final &gt;Q30 score of &gt;70%</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="final-steps">Final Steps</h3>
+
+<ol>
+  <li>
+    <p>Perform post run wash.</p>
+  </li>
+  <li>
+    <p>Dispose of liquid waste in appropriate hazardous jug and reagent cartridge in hazardous
+bucket.</p>
+  </li>
+  <li>
+    <p>When MiSeq Reporter finishes, copy the fastq files from the analysis folder to the run folder
+on the NAS drive.</p>
+  </li>
+  <li>
+    <p>Perform maintenance wash if required.</p>
+  </li>
+  <li>
+    <p>Confirm with investigator that data are of sufficient quality and quantity.</p>
+  </li>
+</ol>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> We recommend sequencing the libraries within 3 weeks.</div>
+
+
+
+    <div class="tags">
+        
+        <b>Tags: </b>
+        
+        
+        
+        
+        
+    </div>
+
+
+
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'http-hostmicrobe-org'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2017 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
+ Site last generated: Nov 16, 2017 <br />
+<p><img src="images/CHMI_logo.png" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+    </div>
+
+</body>
+
+</html>

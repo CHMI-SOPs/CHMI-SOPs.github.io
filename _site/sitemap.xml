@@ -34,6 +34,12 @@
   
   
   <url>
+    <loc>http://localhost:4000/mydoc_16S.html</loc>
+  </url>
+  
+  
+  
+  <url>
     <loc>http://localhost:4000/mydoc_RNAseq_FAQs.html</loc>
   </url>
   
@@ -202,7 +208,25 @@
   
   
   <url>
+    <loc>http://localhost:4000/mydoc_linux.html</loc>
+  </url>
+  
+  
+  
+  <url>
     <loc>http://localhost:4000/mydoc_lists.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/mydoc_micro_FAQs.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/mydoc_mock.html</loc>
   </url>
   
   
@@ -239,6 +263,12 @@
   
   <url>
     <loc>http://localhost:4000/mydoc_push_build_to_server.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/mydoc_qiime.html</loc>
   </url>
   
   

@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="CHMI maintains a custom configured compute server that runs Linux Ubuntu 16.04 LTS.  This machine has two 6-core Intel Xeon E5-2643v4 CPUs (12 cores total), ...">
+<meta name="keywords" content="library construction,  ">
+<title>CHMI linux cluster | CHMI services</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<link rel="stylesheet" href="css/lavish-bootstrap.css">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Center for Host-Microbial Interactions</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:beiting@upenn.edu?subject=CHMI services feedback&body=I have some feedback about the CHMI linux cluster page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="CHMI linux cluster">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+    <div class="col-lg-12">&nbsp;</div>
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+
+
+
+
+
+
+
+
+
+
+
+<ul id="mysidebar" class="nav">
+    <li class="sidebarTitle">CHMI services </li>
+    
+    
+    
+        
+    
+    <li>
+        <a href="#">Overview</a>
+        <ul>
+            
+            
+            
+            <li><a href="index.html">Welcome</a></li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">RNAseq</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_RNAseq_FAQs.html">RNAseq FAQs</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_TruSeq.html">mRNA library prep</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_total_TruSeq.html">total transcriptome library prep</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_install_jekyll_on_windows.html">Low input protocol</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_install_jekyll_on_windows.html">ATAC-seq protocol</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">informatics pipelines</a>
+                <ul>
+                    
+                    
+                    
+                    <li class="active"><a href="mydoc_linux.html">Compute resources</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_kallisto.html">Kallisto and Sleuth</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="tag_formatting.html">RSEM</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="tag_formatting.html">RSubread</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="tag_formatting.html">data deposition</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Microbiology</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_micro_FAQs.html">Microbiology FAQs</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_16S.html">16S rRNA gene sequencing</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_install_jekyll_on_mac.html">shotgun metagenomics</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_mock.html">mock communities and controls</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">informatics pipelines</a>
+                <ul>
+                    
+                    
+                    
+                    <li class="active"><a href="mydoc_linux.html">Compute resources</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="tag_formatting.html">microbiomeDB</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_qiime.html">QIIME</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="tag_formatting.html">data deposition</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Cell culture</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_sidebar_navigation.html">3D Caco-2 organoids</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_sidebar_navigation.html">veterinary microbial collections</a></li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Mobile/networked diagnostics</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_adding_tooltips.html">Biomeme portable QPCR</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_alerts.html">Oxford Nanopore MinION</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_icons.html">Microbial Design Studio</a></li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+        
+        <!-- if you aren't using the accordion, uncomment this block:
+           <p class="external">
+               <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+           </p>
+           -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">CHMI linux cluster</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+    <div class="summary">CHMI maintains a custom configured compute server that runs Linux Ubuntu 16.04 LTS.  This machine has two 6-core Intel Xeon E5-2643v4 CPUs (12 cores total), 512 Gb of RAM and 10Tb of RAID1 storage.  If you are a PennVet lab and wish to use this machine, please contact Dan Beiting (beiting@upenn.edu) for more information.</div>
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+    <a target="_blank" href="https://github.com/CHMI-SOPs/CHMI-SOPs.github.io/tree/master/pages/mydoc/mydoc_linux.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+    
+
+  <h2 id="general-rules">General rules</h2>
+<p>Use of the cluster is free-of-charge to approved labs.  However, to protect the cluster from abuse and prevent issues with storage, we have a few rules all users must follow.  Failure to adhere to these rules will result in a warning. Additional rule violations will result in suspension of your account.  Here are the rules:</p>
+
+<ul>
+  <li>We will set-up your account and install any software you may need.  Please do not install software yourself.</li>
+  <li>In addition to your home account with is present at /home/username on the server, you will also be given a data folder that is located on /home/data/username.  All data must be stored in this directory <strong>not</strong> your home/username folder.</li>
+  <li>Data storage space is limited (10Tb goes quickly!), so we periodically montior storage space and may request that data not currently in use be moved off the cluster.</li>
+  <li>We require a strong password for each account.  We will set this password for you, and ask that you do not change it.</li>
+</ul>
+
+<h2 id="configuring-a-new-user-chmi-only">Configuring a new user (CHMI only)</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo adduser [username] #adds a new user to the home directory
+usermod -aG sudo username #gives the new user sudo priveledges
+</code></pre>
+</div>
+
+<p>Give the user access to all software on the server
+* navigate to <code class="highlighter-rouge">/home/shared/softwares/</code> and open the text file called <code class="highlighter-rouge">shared_software_list</code>.  This contains that paths to all software.  We routinely update this, so be sure to check back for new software path:</p>
+
+<ul>
+  <li>copy the contents of this file (highlight all, right-click, choose copy)</li>
+  <li>open the terminal, and type <code class="highlighter-rouge">nano .profile</code>.</li>
+  <li>scroll to the bottom of this file in the terminal and paste the paths under the last line</li>
+  <li>hit ‘control x’ to exit nano.  You’ll be asked if you want to save changes – select ‘y’ to save, then hit enter to finalize changes and close nano.</li>
+  <li>for these changes to take effect, close the terminal, log out and then back in.</li>
+  <li>you should now have access to all the software listed below</li>
+</ul>
+
+<h2 id="connecting-to-the-server">Connecting to the server</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ssh username@130.91.255.137
+#you'll be prompted to enter your password and then you'll be connected
+#once connected you'll see a new prompt with username@ubuntu1604
+</code></pre>
+</div>
+
+<h2 id="available-software">Available software</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>software</th>
+      <th>category</th>
+      <th>how to run</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://www.mothur.org/">mothur</a></td>
+      <td>16S marker gene</td>
+      <td><code class="highlighter-rouge">mothur</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://qiime2.org/">QIIME2</a></td>
+      <td>16S marker gene</td>
+      <td><code class="highlighter-rouge">source activate /home/beiting/anaconda3/envs/qiime2-2017.10</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/eclarke/sunbeam/blob/master/Readme.md">Sunbeam</a></td>
+      <td>metagenomics</td>
+      <td><code class="highlighter-rouge">source activate sunbeam</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://bitbucket.org/biobakery/metaphlan2">MetaPhlAn</a></td>
+      <td>metagenomics</td>
+      <td><code class="highlighter-rouge">metaphlan2.py</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://bitbucket.org/nsegata/graphlan/wiki/Home">GraPhlAn</a></td>
+      <td>metagenomics, visualization</td>
+      <td><code class="highlighter-rouge">graphlan.py</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/merenlab/anvio">anvi’o</a></td>
+      <td>metagenomics, visualization</td>
+      <td><code class="highlighter-rouge">source activate /home/beiting/anaconda3/envs/anvio3</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://circos.ca/">Circos</a></td>
+      <td>general visualization</td>
+      <td><code class="highlighter-rouge">circos</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://www.cytoscape.org/">Cytoscape</a></td>
+      <td>network analysis</td>
+      <td>navigate to /home/shared/softwares/Cytoscape_v3.5.1 folder.  Double click to open program</td>
+    </tr>
+    <tr>
+      <td><a href="http://bowtie-bio.sourceforge.net/bowtie2/index.shtml">bowtie2</a></td>
+      <td>sequence alignment</td>
+      <td><code class="highlighter-rouge">bowtie2</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://bio-bwa.sourceforge.net/">bwa</a></td>
+      <td>sequence alignment</td>
+      <td><code class="highlighter-rouge">bwa</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/alexdobin/STAR">Star</a></td>
+      <td>sequence alignment</td>
+      <td><code class="highlighter-rouge">STAR</code> (all caps)</td>
+    </tr>
+    <tr>
+      <td><a href="https://pachterlab.github.io/kallisto/">kallisto</a></td>
+      <td>mapping reads to transcripts</td>
+      <td><code class="highlighter-rouge">kallisto</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/deweylab/RSEM">rsem</a></td>
+      <td>mapping reads to transcripts</td>
+      <td><code class="highlighter-rouge">rsem-(function)</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://mash.readthedocs.io/en/latest/">Mash</a></td>
+      <td>comparative genomics</td>
+      <td><code class="highlighter-rouge">mash</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://www.nextflow.io">Nextflow</a></td>
+      <td>workflow management</td>
+      <td><code class="highlighter-rouge">nextflow</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/trinityrnaseq/trinityrnaseq/wiki">Trinity</a></td>
+      <td>de novo transcriptome assembly</td>
+      <td><code class="highlighter-rouge">Chrysalis</code> (uppercase ‘C’), <code class="highlighter-rouge">inchworm</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://broadinstitute.github.io/picard/">Picard tools</a></td>
+      <td>handling HTS file formats</td>
+      <td><code class="highlighter-rouge">picard</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://samtools.sourceforge.net/">samtools</a></td>
+      <td>handling HTS file formats</td>
+      <td><code class="highlighter-rouge">samtools</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/lh3/seqtk">seqtk</a></td>
+      <td>handling HTS file formats</td>
+      <td><code class="highlighter-rouge">seqtk</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://deeptools.readthedocs.io/en/latest/">deeptools</a></td>
+      <td>analysis of HTS data</td>
+      <td><code class="highlighter-rouge">deeptools</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://samtools.github.io/bcftools/bcftools.html">bcftools</a></td>
+      <td>SNP/variant discovery and genotyping</td>
+      <td><code class="highlighter-rouge">bcftools</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://software.broadinstitute.org/gatk/">genome analysis toolkit (gatk)</a></td>
+      <td>SNP/variant discovery and genotyping</td>
+      <td><code class="highlighter-rouge">java -jar /home/shared/softwares/gatk-3.8-0/GenomeAnalysisTK.jar</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi">blast</a></td>
+      <td>sequence search</td>
+      <td>option include <code class="highlighter-rouge">blastn</code>, <code class="highlighter-rouge">blastp</code>, pr <code class="highlighter-rouge">blastx</code></td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+    <div class="tags">
+        
+        <b>Tags: </b>
+        
+        
+        
+        
+        
+    </div>
+
+
+
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'http-hostmicrobe-org'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2017 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
+ Site last generated: Nov 16, 2017 <br />
+<p><img src="images/CHMI_logo.png" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+    </div>
+
+</body>
+
+</html>
