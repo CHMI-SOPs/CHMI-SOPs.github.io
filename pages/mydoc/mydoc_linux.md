@@ -12,7 +12,7 @@ folder: mydoc
 Use of the cluster is free-of-charge to approved labs.  However, to protect the cluster from abuse and prevent issues with storage, we have a few rules all users must follow.  Failure to adhere to these rules will result in a warning. Additional rule violations will result in suspension of your account.  Here are the rules:
 
 * We will set-up your account and install any software you may need.  Please do not install software yourself.
-* In addition to your home account with is present at /home/username on the server, you will also be given a data folder that is located on /home/data/username.  All data must be stored in this directory **not** your home/username folder.
+* In addition to your home account with is present at ```/home/username``` on the server, you will also be given a data folder that is located on ```/data/username```.  All data must be stored in this directory **not** your ```home/username``` folder.
 * Data storage space is limited (10Tb goes quickly!), so we periodically montior storage space and may request that data not currently in use be moved off the cluster.
 * We require a strong password for each account.  We will set this password for you, and ask that you do not change it.
 
@@ -24,7 +24,7 @@ usermod -aG sudo username #gives the new user sudo priveledges
 ```
 
 Give the user access to all software on the server
-* navigate to ```/home/shared/softwares/``` and open the text file called ```shared_software_list```.  This contains that paths to all software.  We routinely update this, so be sure to check back for new software path:
+* navigate to ```/home/shared/softwares/``` and open the text file called ```shared_software_list```.  This contains paths to all software.  We routinely update this, so be sure to check back for new software paths:
 
 * copy the contents of this file (highlight all, right-click, choose copy)
 * open the terminal, and type ```nano .profile```.

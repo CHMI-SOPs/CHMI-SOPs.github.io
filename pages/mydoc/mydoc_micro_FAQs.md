@@ -72,7 +72,7 @@ In addition to the SOPs provided on this site, we have also put together a numbe
 
 ## So I can just give you my samples then?
 
-No.  CHMI does not operate as a fee-for-service core facility, but rather we function as an interdisciplinary genomics lab.  We teach *you* how to carry out every step involved in marker gene sequencing and shotgun metagenomics.  This makes for a fantastic training experience for students and postdocs, and helps build capacity for labs to be independent with RNAseq.  Finally, this hands-on approach has the added benefit of keeping costs lower, since you are providing the labor.
+No.  CHMI does not operate as a fee-for-service core facility, but rather we function as an interdisciplinary genomics lab.  We teach *you* how to carry out every step involved in marker gene sequencing and shotgun metagenomics.  This makes for a fantastic training experience for students and postdocs, and helps build capacity for labs to be independent with these methods.  Finally, this hands-on approach has the added benefit of keeping costs lower, since you are providing the labor.
 
 ## Do I get sequencing reagents from CHMI?
 
