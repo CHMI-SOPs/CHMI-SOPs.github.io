@@ -67,10 +67,10 @@ ssh username@130.91.255.137
 | [Picard tools](http://broadinstitute.github.io/picard/)                     | handling HTS file formats            | ```picard```                                                                              |
 | [samtools](http://samtools.sourceforge.net/)                                | handling HTS file formats            | ```samtools```                                                                            |
 | [seqtk](https://github.com/lh3/seqtk)                                       | handling HTS file formats            | ```seqtk```                                                                               |
-| [deeptools](https://deeptools.readthedocs.io/en/latest/)                    | analysis of HTS data           | ```deeptools```                                                                           |
+| [deeptools](https://deeptools.readthedocs.io/en/latest/)                    | analysis of HTS data                 | ```deeptools```                                                                           |
 | [bcftools](https://samtools.github.io/bcftools/bcftools.html)               | SNP/variant discovery and genotyping | ```bcftools```                                                                            |
 | [genome analysis toolkit (gatk)](https://software.broadinstitute.org/gatk/) | SNP/variant discovery and genotyping | ```java -jar /home/shared/softwares/gatk-3.8-0/GenomeAnalysisTK.jar```                    |
 | [blast](https://blast.ncbi.nlm.nih.gov/Blast.cgi)                           | sequence search                      | option include ```blastn```, ```blastp```, pr ```blastx```                                |
-
+| [clust](https://github.com/BaselAbujamous/clust)                            | co-expression modules                | ```clust```                                                                               |
 {% include links.html %}
 

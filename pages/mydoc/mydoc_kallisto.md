@@ -90,6 +90,27 @@ kallisto quant -i myHumanIndex -o Sample1.mapped -b 60 —-single -l 275 -s 20 r
 kallisto quant -i myMouseIndex -o Sample1.mapped -b 100 read1.fastq.gz read2.fastq.gz
 ```
 
+## stranded alignments and bigwigs
+In some cases, you may want to carry out a stranded alignment with the end goal of views read 'pile-ups' on a genome browser track.  This can also be done using Kallisto, but requires a few other programs and steps to get from the Kallisto alignment to bigwig.
+
+Stranded alignment using pseudobam. SAM creation is also possible at this step.
+```
+kallisto quant -i [yourindex] -o [outputname] --fr-stranded -b 60 --pseudobam [input1] [input2] | samtools view -Sb - > [kallisto.fr.bam]
+kallisto quant -i [yourindex] -o [outputname] --rf-stranded -b 60 --pseudobam [input1] [input2] | samtools view -Sb - > [kallisto.rf.bam]
+```
+
+Sort and index using [samtools](http://samtools.sourceforge.net/)
+```
+samtools sort [kallisto.fr.bam] [kallisto.fr.sorted.bam]
+samtools sort [kallisto.rf.bam] [kallisto.rf.sorted.bam]
+samtools index [kallisto.fr.sorted.bam]
+samtools index [kallisto.fr.sorted.bam]
+```
+
+BAM to BigWig conversion using [deeptools](https://deeptools.readthedocs.io/en/latest/)
+bamCoverage –b {kallisto.fr.sorted.bam} –o {kallisto.fr.sorted.bw}
+bamCoverage –b {kallisto.rf.sorted.bam} –o {kallisto.rf.sorted.bw}
+
 ## install Sleuth
 Open RStudio and install the [rhdf5 package](http://bioconductor.org/packages/release/bioc/html/rhdf5.html) from the BioC website
 
