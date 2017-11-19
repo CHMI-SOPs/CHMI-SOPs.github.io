@@ -91,7 +91,9 @@ kallisto quant -i myMouseIndex -o Sample1.mapped -b 100 read1.fastq.gz read2.fas
 ```
 
 ## stranded alignments and bigwigs
-In some cases, you may want to carry out a stranded alignment with the end goal of views read 'pile-ups' on a genome browser track.  This can also be done using Kallisto, but requires a few other programs and steps to get from the Kallisto alignment to bigwig.
+In some cases, you may want to carry out a stranded alignment with the end goal of viewing read 'pile-ups' on a genome browser track.  This can also be done using Kallisto, but requires a few other programs and steps to get from the Kallisto alignment to bigwig. 
+
+{% include warning.html content="If you've been using your laptop thus far, now would be a good time to consider finding some more compute resources. Working with .bam files may be too much for your laptop to handle." %}
 
 Stranded alignment using pseudobam. SAM creation is also possible at this step.
 ```
