@@ -110,8 +110,10 @@ samtools index [kallisto.fr.sorted.bam]
 ```
 
 BAM to BigWig conversion using [deeptools](https://deeptools.readthedocs.io/en/latest/)
+```
 bamCoverage –b {kallisto.fr.sorted.bam} –o {kallisto.fr.sorted.bw}
 bamCoverage –b {kallisto.rf.sorted.bam} –o {kallisto.rf.sorted.bw}
+```
 
 ## install Sleuth
 Open RStudio and install the [rhdf5 package](http://bioconductor.org/packages/release/bioc/html/rhdf5.html) from the BioC website
