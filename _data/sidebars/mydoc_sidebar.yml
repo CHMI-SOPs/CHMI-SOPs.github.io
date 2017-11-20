@@ -137,7 +137,7 @@ entries:
 
     folderitems:
     - title: Biomeme portable QPCR
-      url: /mydoc_adding_tooltips.html
+      url: /mydoc_biomeme.html
       output: web, pdf
 
     - title: Oxford Nanopore MinION
