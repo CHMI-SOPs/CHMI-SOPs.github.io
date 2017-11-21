@@ -132,7 +132,7 @@ entries:
       url: /mydoc_sidebar_navigation.html
       output: web, pdf
 
-  - title: Mobile/networked diagnostics
+  - title: In the field
     output: web, pdf
 
     folderitems:
