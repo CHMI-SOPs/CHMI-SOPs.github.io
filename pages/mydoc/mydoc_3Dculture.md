@@ -1,5 +1,5 @@
 ---
-title: 3-dimensional culture of intestinal cells in STLV bioreactors
+title: 3D organotypic intestinal cell cultures
 tags: [tissue culture]
 keywords: organotypic, in vitro assay
 summary: "Our lab protocol for growing Caco-2 cells in 3D using Slow Turning Lateral Vessels (STLV).  The protocol was adapted from "
@@ -31,11 +31,11 @@ folder: mydoc
 
 ## Preparing the STLVs
 
-* Day 1: Get a clean STLV, tighten the central screw and fill the vessel with 70% ethanol. Be careful when closing it. Leave overnight on the bench.
-* Day 2: Discard ethanol of the vessel and replace it with sterilized water. Leave overnight on the benchtop.
-* Day 3: Discard the contents and replace with another aliquot of sterilized water. Leave it overnight.
-* Day 4: Loosen the screws halfway, take out the center port, remove the luer caps and autoclave the open vessel and the center port, inside an autoclave pouch (15 min, gravity cycle, 121C). Remove from autoclave immediately after the cycle is done. Let it cool and use it immediately or store it for later use, as needed in a clean, dry area. 
-* Day before use: tighten the screw, fill the STLV with sterile DPBS, close the center port. Screw one-way stopcocks to the other two openings and plug one luer-lock syringes (5 and 10ml) in each side. Let it rotate overnight in the STLV, 20 rpm and monitor for leaks. 
+* **Day 1**: Get a clean STLV, tighten the central screw and fill the vessel with 70% ethanol. Be careful when closing it. Leave overnight on the bench.
+* **Day 2**: Discard ethanol of the vessel and replace it with sterilized water. Leave overnight on the benchtop.
+* **Day 3**: Discard the contents and replace with another aliquot of sterilized water. Leave it overnight.
+* **Day 4**: Loosen the screws halfway, take out the center port, remove the luer caps and autoclave the open vessel and the center port, inside an autoclave pouch (15 min, gravity cycle, 121C). Remove from autoclave immediately after the cycle is done. Let it cool and use it immediately or store it for later use, as needed in a clean, dry area. 
+* **Day before use**: tighten the screw, fill the STLV with sterile DPBS, close the center port. Screw one-way stopcocks to the other two openings and plug one luer-lock syringes (5 and 10ml) in each side. Let it rotate overnight in the STLV, 20 rpm and monitor for leaks. 
 
 ## Preparing culture beads
 
@@ -81,8 +81,8 @@ folder: mydoc
 
 ## STLV clean-up
 
-* Day 1: fill empty vessel with 70% ethanol through the center port. Close all the openings. Be careful when closing it. It may spill. Wear goggle. Leave overnight on bench.
-* Day 2: Drain the contents through the center port and refill the vessel with a new aliquot of 70% ethanol.
+* **Day 1**: fill empty vessel with 70% ethanol through the center port. Close all the openings. Be careful when closing it. It may spill. Wear goggle. Leave overnight on bench.
+* **Day 2**: Drain the contents through the center port and refill the vessel with a new aliquot of 70% ethanol.
 * Unscrew and take apart all the components. Wash by hand carefully. To wash parts with beads adhered, it is OK to use a toothbrush 
 
 {% include warning.html content="the central membrane is very delicate and is easily damaged- it should **only** be washed with gentle rubbing...no brushes of any kind" %}
