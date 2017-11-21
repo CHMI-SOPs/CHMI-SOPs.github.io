@@ -124,7 +124,7 @@ entries:
     output: web, pdf
 
     folderitems:
-    - title: 3D Caco-2 organoids
+    - title: 3D intestinal cultures
       url: /mydoc_3Dculture.html
       output: web, pdf
 

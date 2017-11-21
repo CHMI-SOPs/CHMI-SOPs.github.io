@@ -2,13 +2,15 @@
 title: 3D organotypic intestinal cell cultures
 tags: [tissue culture]
 keywords: organotypic, in vitro assay
-summary: "This is our lab protocol for growing organotypic intestinal cultures using Slow Turning Lateral Vessels (STLV).  The protocol was adapted from [this JOVE video protocol](https://www.jove.com/video/3367/rotating-cell-culture-systems-for-human-cell-culture-human) and from published work from the laboratory of [Carolyn Coyne](http://www.mmg.pitt.edu/person/carolyn-coyne), particularly [this 2015 mSphere paper](http://msphere.asm.org/content/1/1/e00030-15)"
+summary: "This is our lab protocol for growing organotypic intestinal cultures using Caco-2 cells and the Slow Turning Lateral Vessels (STLV) bioreactor set-up from Synthecon.  "
 sidebar: mydoc_sidebar
 permalink: mydoc_3Dculture.html
 folder: mydoc
 ---
 
 ## Before starting
+
+The protocol below adapted from [this JOVE video](https://www.jove.com/video/3367/rotating-cell-culture-systems-for-human-cell-culture-human) and published work from the laboratory of [Carolyn Coyne](http://www.mmg.pitt.edu/person/carolyn-coyne), particularly [this 2015 mSphere paper](http://msphere.asm.org/content/1/1/e00030-15)
 
 1. Use sterile tissue culture technique throughout all aspects of this protocol. 
 2. **Do not use bleach on the STLV machine or parts at any point** Use of bleach may damage the center membrane of the STLV and/or leave residues that affect cell viability.
@@ -44,7 +46,7 @@ folder: mydoc
 * Allow the the beads to cool and settle. Remove the supernatant and discard.
 * Wash beads with 15 ml of  D10 media.  Agitate manually, let the beads settle and discard supernatant. Repeat 3x. 
 
-{% include note.html content="The sterilized beads can be maintained at 4oC for many weeks for later use. Do an extra wash with fresh D10 on the day of experiment and set the final volume to ~15 ml" %}
+{% include note.html content="Sterile beads can be stored at 4C for weeks for later use. Do an extra wash with fresh D10 on the day of experiment and bring the final volume to ~15 ml" %}
 
 ## Caco-2 cell culture
 * Pull cells from liquid nitrogen storage.  Thaw rapidly in 37C water bath. 
