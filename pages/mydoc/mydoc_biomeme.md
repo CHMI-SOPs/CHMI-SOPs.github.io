@@ -1,6 +1,6 @@
 ---
 title: Portable QPCR
-tags: [QPCR, field-ready, diagnostics]
+tags: [QPCR, mobile, diagnostics]
 keywords:
 summary: "Using the Biomeme platform for end-to-end QPCR-based detection of pathogens in the field"
 sidebar: mydoc_sidebar
