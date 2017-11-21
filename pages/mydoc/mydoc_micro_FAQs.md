@@ -1,6 +1,6 @@
 ---
 title: Microbiology FAQs
-tags: [getting_started, troubleshooting]
+tags: [getting_started, FAQs, microbiome]
 keywords:
 summary: "information on our technology, how you gain access, how much experiments cost, and our 'hands-on' philosophy."
 sidebar: mydoc_sidebar

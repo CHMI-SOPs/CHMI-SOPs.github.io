@@ -1,6 +1,6 @@
 ---
 title: Mock Communities
-tags: [getting_started, troubleshooting]
+tags: [resources, microbiome]
 keywords:
 summary: "Synthetic communities of known identity for use as controls in your microbiome profiling experiments"
 sidebar: mydoc_sidebar

@@ -1,6 +1,6 @@
 ---
 title: Kallisto
-tags: [getting_started, troubleshooting]
+tags: [bioinformatics, RNAseq]
 keywords:
 summary: "Kallisto is our first choice for aligning reads because it combines speed, accuracy, and ability to leverage bootstraps for modeling technical variance"
 sidebar: mydoc_sidebar

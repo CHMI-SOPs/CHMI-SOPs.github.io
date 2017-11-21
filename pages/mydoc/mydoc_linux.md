@@ -1,6 +1,6 @@
 ---
 title: CHMI linux cluster
-tags: [library construction]
+tags: [bioinformatics, computing]
 keywords:
 summary: "CHMI maintains a custom configured compute server that runs Linux Ubuntu 16.04 LTS.  This machine has two 6-core Intel Xeon E5-2643v4 CPUs (12 cores total), 512 Gb of RAM and 10Tb of RAID1 storage.  If you are a PennVet lab and wish to use this machine, please contact Dan Beiting (beiting@upenn.edu) for more information."
 sidebar: mydoc_sidebar

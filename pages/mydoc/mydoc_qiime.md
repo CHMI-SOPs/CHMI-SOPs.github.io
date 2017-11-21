@@ -1,6 +1,6 @@
 ---
 title: analysis of 16S rRNA gene sequencing data
-tags: [library construction]
+tags: [bioinformatics, microbiome]
 keywords:
 summary: "Preparation of V4 region, 16S dual-indexed libraries for sequencing on an Illumina platform"
 sidebar: mydoc_sidebar
