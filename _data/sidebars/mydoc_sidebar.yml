@@ -125,7 +125,7 @@ entries:
 
     folderitems:
     - title: 3D Caco-2 organoids
-      url: /mydoc_sidebar_navigation.html
+      url: /mydoc_3Dculture.html
       output: web, pdf
 
     - title: veterinary microbial collections
