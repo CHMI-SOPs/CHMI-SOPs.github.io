@@ -26,7 +26,7 @@ folder: mydoc
 * Dulbecco's Phosphate Buffered Saline (DPBS)
 * Heat inactivated Fetal Bovine Serum (HI-FBS)
 * D10 media: DMEM + 10% HI-FBS + 0.05% antibiotic (Pen/Strep)
-* Use Cytodex® 3 microcarrier beads (Sigma, cat# C3275).  
+* Cytodex 3 microcarrier beads (Sigma, cat# C3275).  
 
 
 ## Preparing the STLVs
@@ -53,7 +53,7 @@ folder: mydoc
 * Expand cells to three T75 flasks. 
 * Keep working cultures of the cells by subculturing them once or twice a week, as needed.
 
-## seeding the STLVs
+## Seeding the STLVs
 * Remove STLV that was rotating with DPBS overnight.  Remove the syringes and the luer caps and drain the DPBS. Replace with new stopcocks and syringes (without the plungers; keep them sterile for later use).
 * Trypsinize one T75 flask and respend in 10 ml of DMEM. 
 * Add 10 ml bead suspension with the cells to give 20 ml of volume. 
@@ -65,7 +65,7 @@ folder: mydoc
 * Examine the STLV and remove any remaining air bubbles
 * Set STLV to rotate at 20 rpm at 37C, 5% CO2 for 21-28 days, 
 
-## feeding the STLV
+## Feeding the STLV
 * Exchanging the culture medium every other day. 
 * Remove STLV from incubator, remove syringes, let the beads settle
 * Hold the STLV inclined, tapping the center port for the beads to stay in the bottom side of the reactor. Carefully remove ~80% of the spent culture medium through the stopcocks, 
