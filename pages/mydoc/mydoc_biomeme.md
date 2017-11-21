@@ -56,7 +56,7 @@ Resuspend bulk lyophilized LyoDNA or LyoRNA Biomeme master mix with 135 ul of PC
 
 ### *Mycoplasma gallisepticum* and *Mycoplasma synoviae* (Mg/Ms)
 
-The primer and probe sequences below are from [Raviv and Klevin, 2009](http://www.bioone.org/doi/10.1637/8469-091508-Reg.1?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%3dpubmed)
+The primer and probe sequences below are from [Raviv and Kleven, 2009](http://www.bioone.org/doi/10.1637/8469-091508-Reg.1?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%3dpubmed)
 
 | name | Sequence (5' -> 3') |
 |-------|--------|
