@@ -52,13 +52,13 @@ The protocol below adapted from [this JOVE video](https://www.jove.com/video/336
 * Pull cells from liquid nitrogen storage.  Thaw rapidly in 37C water bath. 
 * transfer thawed contents to a T25 flask with 8-10 ml of prewarmed D10 media.
 * Incubate at 37C and wait for confluent growth.
-* Expand cells to three T75 flasks. 
+* Expand cells to four T75 flasks. 
 * Keep working cultures of the cells by subculturing them once or twice a week, as needed.
 
 ## Seeding the STLVs
 * Remove STLV that was rotating with DPBS overnight.  Remove the syringes and the luer caps and drain the DPBS. Replace with new stopcocks and syringes (without the plungers; keep them sterile for later use).
-* Trypsinize one T75 flask and respend in 10 ml of DMEM. 
-* Add 10 ml bead suspension with the cells to give 20 ml of volume. 
+* Trypsinize one T75 flask and respend in 10 ml of DMEM. Each flask is used to seed a single reactor
+* Mix 10 ml bead suspension with cells to give 20 ml of volume. 
 * Transfer the cell-bead suspension carefully to the STLV vessel through the center port. 
 * Recover residual cell-bead mix from tube with D10 media and transfer to the STLV.
 * Close the center port and q.s. volume in STLV vessel to 50 ml with D10 media (until liquid starts overflow back into the syring). 

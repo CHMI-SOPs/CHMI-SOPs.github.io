@@ -25,7 +25,7 @@ All avian assays begin with tracheal swabs collected in brain-heart infusion (BH
 10. Expel the elution buffer into a final collection tube.  Typical elution volume is 50-70 ul.  We use 5ul of this DNA for any of the assays listed below, which means a single eluate is enough for at least 9-10 QPCR assays.
 
 ### Bulk master mix prep
-Resuspend bulk lyophilized Biomeme master mix with 135 ul of PCR grade water.  For each reaction you intend to run, mix the following in a single tube, distribute 20ul aliquots to each reaction tube, then add DNA template to each tube
+Resuspend bulk lyophilized LyoDNA or LyoRNA Biomeme master mix with 135 ul of PCR grade water.  LyoRNA master mix contains a reverse transcriptase, which makes it ideal for assays targeting RNA viruses, such as IBV (see below).  For Mycoplasma, we use LyoDNA.  For each reaction you intend to run, mix the following in a single tube, distribute 20ul aliquots to each reaction tube, then add DNA template to each tube
 
 | Reagent | vol (ul) |
 |-------|--------|
@@ -56,14 +56,16 @@ Resuspend bulk lyophilized Biomeme master mix with 135 ul of PCR grade water.  F
 
 ### *Mycoplasma gallisepticum* and *Mycoplasma synoviae* (Mg/Ms)
 
+The primer and probe sequences below are from [Raviv and Klevin, 2009](http://www.bioone.org/doi/10.1637/8469-091508-Reg.1?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%3dpubmed)
+
 | name | Sequence (5' -> 3') |
 |-------|--------|
-| MG fwd | TTG GGT TTA GGG ATT GGGA TT |
-| MG rev | CCA AGGG ATT CAA CCA TCT T |
-| MG probe | *5TexRd-XN*-TGA TGA TCC AAG AAC GTG AAG AAC ACC *BHQ-2* |
-| MS fwd | CTA AAT ACA ATA GCC CAA GGC AA |
-| MS rev | CCT CCT TTC TTA CGG AGT ACA |
-| MS probe | *FAM*-AGC GAT ACA CAA CCG CTT TTA GAA T-*BHQ-1* |
+| Mg fwd | TTG GGT TTA GGG ATT GGGA TT |
+| Mg rev | CCA AGGG ATT CAA CCA TCT T |
+| Mg probe | *5TexRd-XN*-TGA TGA TCC AAG AAC GTG AAG AAC ACC *BHQ-2* |
+| Ms fwd | CTA AAT ACA ATA GCC CAA GGC AA |
+| Ms rev | CCT CCT TTC TTA CGG AGT ACA |
+| Ms probe | *FAM*-AGC GAT ACA CAA CCG CTT TTA GAA T-*BHQ-1* |
 
 | Temp (C) | Time (min:sec) |
 |-------|--------|
