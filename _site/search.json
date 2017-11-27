@@ -18,7 +18,7 @@
 
 {
 "title": "16S rRNA gene sequencing",
-"tags": "library construction",
+"tags": "library constructionmicrobiome",
 "keywords": "",
 "url": "mydoc_16S.html",
 "summary": "Preparation of V4 region, 16S dual-indexed libraries for sequencing on an Illumina platform"
@@ -28,8 +28,19 @@
 
 
 {
+"title": "3D organotypic intestinal cell cultures",
+"tags": "tissue culture",
+"keywords": "organotypic, in vitro assay",
+"url": "mydoc_3Dculture.html",
+"summary": "This is our lab protocol for growing organotypic intestinal cultures using Caco-2 cells and the Slow Turning Lateral Vessels (STLV) bioreactor set-up from Synthecon."
+}
+,
+
+
+
+{
 "title": "RNAseq FAQs",
-"tags": "getting_startedtroubleshooting",
+"tags": "getting_startedFAQsRNAseq",
 "keywords": "",
 "url": "mydoc_RNAseq_FAQs.html",
 "summary": "information on our technology, how you gain access, how much experiments cost, and our 'hands-on' philosophy."
@@ -88,6 +99,17 @@
 "keywords": "atom, text editor,",
 "url": "mydoc_atom_text_editor.html",
 "summary": "Atom is a free text editor that is a favorite tool of many writers because it is free. This page provides some tips for using Atom."
+}
+,
+
+
+
+{
+"title": "Portable QPCR",
+"tags": "QPCRmobilediagnostics",
+"keywords": "",
+"url": "mydoc_biomeme.html",
+"summary": "Using the Biomeme platform for end-to-end QPCR-based detection of pathogens in the field"
 }
 ,
 
@@ -165,6 +187,17 @@
 "keywords": "includes, conref, dita, transclusion, transclude, inclusion, reference",
 "url": "mydoc_content_reuse.html",
 "summary": "You can reuse chunks of content by storing these files in the includes folder. You then choose to include the file where you need it. This works similar to conref in DITA, except that you can include the file in any content type."
+}
+,
+
+
+
+{
+"title": "Culture collection",
+"tags": "tissue culture",
+"keywords": "organotypic, in vitro assay",
+"url": "mydoc_cultureCollection.html",
+"summary": "This is our lab protocol for growing organotypic intestinal cultures using Caco-2 cells and the Slow Turning Lateral Vessels (STLV) bioreactor set-up from Synthecon."
 }
 ,
 
@@ -304,7 +337,7 @@
 
 {
 "title": "Kallisto",
-"tags": "getting_startedtroubleshooting",
+"tags": "bioinformaticsRNAseq",
 "keywords": "",
 "url": "mydoc_kallisto.html",
 "summary": "Kallisto is our first choice for aligning reads because it combines speed, accuracy, and ability to leverage bootstraps for modeling technical variance"
@@ -337,7 +370,7 @@
 
 {
 "title": "CHMI linux cluster",
-"tags": "library construction",
+"tags": "bioinformaticscomputing",
 "keywords": "",
 "url": "mydoc_linux.html",
 "summary": "CHMI maintains a custom configured compute server that runs Linux Ubuntu 16.04 LTS.  This machine has two 6-core Intel Xeon E5-2643v4 CPUs (12 cores total), 512 Gb of RAM and 10Tb of RAID1 storage.  If you are a PennVet lab and wish to use this machine, please contact Dan Beiting (beiting@upenn.edu) for more information."
@@ -359,7 +392,7 @@
 
 {
 "title": "Microbiology FAQs",
-"tags": "getting_startedtroubleshooting",
+"tags": "getting_startedFAQsmicrobiome",
 "keywords": "",
 "url": "mydoc_micro_FAQs.html",
 "summary": "information on our technology, how you gain access, how much experiments cost, and our 'hands-on' philosophy."
@@ -370,7 +403,7 @@
 
 {
 "title": "Mock Communities",
-"tags": "getting_startedtroubleshooting",
+"tags": "resourcesmicrobiome",
 "keywords": "",
 "url": "mydoc_mock.html",
 "summary": "Synthetic communities of known identity for use as controls in your microbiome profiling experiments"
@@ -447,7 +480,7 @@
 
 {
 "title": "analysis of 16S rRNA gene sequencing data",
-"tags": "library construction",
+"tags": "bioinformaticsmicrobiome",
 "keywords": "",
 "url": "mydoc_qiime.html",
 "summary": "Preparation of V4 region, 16S dual-indexed libraries for sequencing on an Illumina platform"
@@ -678,7 +711,7 @@
 
 {
 "title": "Illumina TruSeq Stranded total Sample Preparation Protocol",
-"tags": "library construction",
+"tags": "library constructionRNAseq",
 "keywords": "transcriptomics, library preparation",
 "url": "mydoc_total_TruSeq.html",
 "summary": "Preparation of total transcriptome libraries for sequencing on an Illumina platform"
@@ -1003,6 +1036,8 @@
 "summary": "This is just a sample topic..."
 }
 ,
+
+
 
 
 

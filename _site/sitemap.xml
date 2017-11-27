@@ -40,6 +40,12 @@
   
   
   <url>
+    <loc>http://localhost:4000/mydoc_3Dculture.html</loc>
+  </url>
+  
+  
+  
+  <url>
     <loc>http://localhost:4000/mydoc_RNAseq_FAQs.html</loc>
   </url>
   
@@ -71,6 +77,12 @@
   
   <url>
     <loc>http://localhost:4000/mydoc_atom_text_editor.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/mydoc_biomeme.html</loc>
   </url>
   
   
@@ -113,6 +125,12 @@
   
   <url>
     <loc>http://localhost:4000/mydoc_content_reuse.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/mydoc_cultureCollection.html</loc>
   </url>
   
   
@@ -570,6 +588,8 @@
   <url>
     <loc>http://localhost:4000/p2_sample9.html</loc>
   </url>
+  
+  
   
   
   

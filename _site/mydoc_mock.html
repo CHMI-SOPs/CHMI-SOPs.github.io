@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Synthetic communities of known identity for use as controls in your microbiome profiling experiments">
-<meta name="keywords" content="getting_startedtroubleshooting,  ">
+<meta name="keywords" content="resourcesmicrobiome,  ">
 <title>Mock Communities | CHMI services</title>
 <link rel="stylesheet" href="css/syntax.css">
 
@@ -85,6 +85,25 @@
                 $("#tg-sb-icon").toggleClass('fa-toggle-off');
             });
         });
+    </script>
+    
+    <!-- Include the standard DataTables bits -->
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.js"></script>
+    <!-- First, this walks through the tables that occur between ...-begin
+         and ...-end and add the "datatable" class to them.
+         Then it invokes DataTable's standard initializer
+         Credit here: http://www.beardedhacker.com/blog/2015/08/28/add-class-attribute-to-markdown-table/
+      -->
+    <script>
+      $(document).ready(function(){
+          $('div.datatable-begin').nextUntil('div.datatable-end', 'table').addClass('display');
+          $('table.display').DataTable( {
+              paging: true,
+              stateSave: true,
+              searching: true
+          });
+       });
     </script>
     
 
@@ -356,7 +375,7 @@
             
             
             
-            <li><a href="mydoc_sidebar_navigation.html">3D Caco-2 organoids</a></li>
+            <li><a href="mydoc_3Dculture.html">3D intestinal cultures</a></li>
             
             
             
@@ -374,12 +393,12 @@
         
     
     <li>
-        <a href="#">Mobile/networked diagnostics</a>
+        <a href="#">In the field</a>
         <ul>
             
             
             
-            <li><a href="mydoc_adding_tooltips.html">Biomeme portable QPCR</a></li>
+            <li><a href="mydoc_biomeme.html">Biomeme portable QPCR</a></li>
             
             
             
@@ -593,6 +612,361 @@ $('#toc').on('click', 'a', function() {
   </tbody>
 </table>
 
+<div class="datatable-begin"></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>species identified</th>
+      <th>Clinical case ID</th>
+      <th>dog breed</th>
+      <th>status</th>
+      <th>isolates</th>
+      <th>media</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Enterococcus faecium</td>
+      <td>CI66-29</td>
+      <td>Cavalier King Charles Spaniel</td>
+      <td>remission</td>
+      <td>11</td>
+      <td>BHI, GMM</td>
+    </tr>
+    <tr>
+      <td>Escherichia coli</td>
+      <td>CI66-29</td>
+      <td>Cavalier King Charles Spaniel</td>
+      <td>remission</td>
+      <td>4</td>
+      <td>BHI, GMM</td>
+    </tr>
+    <tr>
+      <td>Streptococcus gallolyticus subsp. gallolyticus</td>
+      <td>CI66-29</td>
+      <td>Cavalier King Charles Spaniel</td>
+      <td>remission</td>
+      <td>3</td>
+      <td>BHI, GMM</td>
+    </tr>
+    <tr>
+      <td>Staphylococcus hominis subsp. Hominis</td>
+      <td>CI66-29</td>
+      <td>Cavalier King Charles Spaniel</td>
+      <td>remission</td>
+      <td>1</td>
+      <td>GMM</td>
+    </tr>
+    <tr>
+      <td>Tumebacillus flagellatus</td>
+      <td>CI66-29</td>
+      <td>Cavalier King Charles Spaniel</td>
+      <td>remission</td>
+      <td>1</td>
+      <td>GMM</td>
+    </tr>
+    <tr>
+      <td>Clostridium perfringens</td>
+      <td>CI66-35</td>
+      <td>Yorkshire terrier</td>
+      <td>disease</td>
+      <td>4</td>
+      <td>BHI, YCFA</td>
+    </tr>
+    <tr>
+      <td>Lactobacillus salivarius</td>
+      <td>CI66-35</td>
+      <td>Yorkshire terrier</td>
+      <td>disease</td>
+      <td>4</td>
+      <td>GMM, LMRS</td>
+    </tr>
+    <tr>
+      <td>Proteus mirabilis</td>
+      <td>CI66-35</td>
+      <td>Yorkshire terrier</td>
+      <td>disease</td>
+      <td>1</td>
+      <td>LKV</td>
+    </tr>
+    <tr>
+      <td>Bifidobacterium longum</td>
+      <td>CI66-35</td>
+      <td>Yorkshire terrier</td>
+      <td>disease</td>
+      <td>1</td>
+      <td>YCFA</td>
+    </tr>
+    <tr>
+      <td>Lactobacillus rhamnosus</td>
+      <td>CI66-35</td>
+      <td>Yorkshire terrier</td>
+      <td>disease</td>
+      <td>1</td>
+      <td>BHI</td>
+    </tr>
+    <tr>
+      <td>Ruminococcus gnavus</td>
+      <td>CI66-35</td>
+      <td>Yorkshire terrier</td>
+      <td>disease</td>
+      <td>1</td>
+      <td>BHI</td>
+    </tr>
+    <tr>
+      <td>Fusobacterium mortiferum</td>
+      <td>CI66-36</td>
+      <td>English Mastiff</td>
+      <td>disease</td>
+      <td>6</td>
+      <td>BBE, LKV, LMRS</td>
+    </tr>
+    <tr>
+      <td>Megamonas funiformis</td>
+      <td>CI66-36</td>
+      <td>English Mastiff</td>
+      <td>disease</td>
+      <td>3</td>
+      <td>YCFA, LMRS</td>
+    </tr>
+    <tr>
+      <td>Tumebacillus flagellatus or Escherichia coli O83:H1</td>
+      <td>CI66-36</td>
+      <td>English Mastiff</td>
+      <td>disease</td>
+      <td>4</td>
+      <td>GMM, BHI</td>
+    </tr>
+    <tr>
+      <td>Streptococcus gallolyticus subsp. gallolyticus</td>
+      <td>CI66-36</td>
+      <td>English Mastiff</td>
+      <td>disease</td>
+      <td>5</td>
+      <td>BHI, LMRS, YCFA</td>
+    </tr>
+    <tr>
+      <td>Clostridium lactatifermentans</td>
+      <td>CI66-36</td>
+      <td>English Mastiff</td>
+      <td>disease</td>
+      <td>1</td>
+      <td>LKV</td>
+    </tr>
+    <tr>
+      <td>Pediococcus acidilactici</td>
+      <td>CI66-36</td>
+      <td>English Mastiff</td>
+      <td>disease</td>
+      <td>1</td>
+      <td>GMM</td>
+    </tr>
+    <tr>
+      <td>Ruminococcus gnavus</td>
+      <td>CI66-36</td>
+      <td>English Mastiff</td>
+      <td>disease</td>
+      <td>1</td>
+      <td>BHI</td>
+    </tr>
+    <tr>
+      <td>Clostridium perfringens</td>
+      <td>CI66-39</td>
+      <td>Pomeranian</td>
+      <td>disease</td>
+      <td>6</td>
+      <td>GMM, YCFA</td>
+    </tr>
+    <tr>
+      <td>Megamonas funiformis</td>
+      <td>CI66-39</td>
+      <td>Pomeranian</td>
+      <td>disease</td>
+      <td>10</td>
+      <td>BHI, LMRS, YCFA</td>
+    </tr>
+    <tr>
+      <td>Escherichia coli O83 HIst NRG 8576</td>
+      <td>CI66-39</td>
+      <td>Pomeranian</td>
+      <td>disease</td>
+      <td>1</td>
+      <td>LMRS</td>
+    </tr>
+    <tr>
+      <td>Fusobacterium perfoetens</td>
+      <td>CI66-39</td>
+      <td>Pomeranian</td>
+      <td>disease</td>
+      <td>2</td>
+      <td>YCFA</td>
+    </tr>
+    <tr>
+      <td>Enterobacter hormaechei subsp. steigermati strain</td>
+      <td>CI66-39</td>
+      <td>Pomeranian</td>
+      <td>disease</td>
+      <td>1</td>
+      <td>LMRS</td>
+    </tr>
+    <tr>
+      <td>Erysipelatous clostridium ramosum</td>
+      <td>CI66-39</td>
+      <td>Pomeranian</td>
+      <td>disease</td>
+      <td>1</td>
+      <td>LMRS</td>
+    </tr>
+    <tr>
+      <td>Fusobacterium ulcerans</td>
+      <td>CI66-39</td>
+      <td>Pomeranian</td>
+      <td>disease</td>
+      <td>1</td>
+      <td>YCFA</td>
+    </tr>
+    <tr>
+      <td>Bacillus licheniformis ATCC</td>
+      <td>CI66-39</td>
+      <td>Pomeranian</td>
+      <td>disease</td>
+      <td>1</td>
+      <td>BHI</td>
+    </tr>
+    <tr>
+      <td>Clostridium Sartagoforme AAU1</td>
+      <td>CI66-39</td>
+      <td>Pomeranian</td>
+      <td>remission</td>
+      <td>2</td>
+      <td>BHI</td>
+    </tr>
+    <tr>
+      <td>Fusobacterium Ulcerans ATCC 49185</td>
+      <td>CI66-39</td>
+      <td>Pomeranian</td>
+      <td>remission</td>
+      <td>4</td>
+      <td>BA, SA</td>
+    </tr>
+    <tr>
+      <td>Megamonas Funiformis YIT 11815</td>
+      <td>CI66-39</td>
+      <td>Pomeranian</td>
+      <td>remission</td>
+      <td>8</td>
+      <td>BHI, YCFA</td>
+    </tr>
+    <tr>
+      <td>Eubacterium dolichum DSM 3991</td>
+      <td>CI66-39</td>
+      <td>Pomeranian</td>
+      <td>remission</td>
+      <td>2</td>
+      <td>BHI</td>
+    </tr>
+    <tr>
+      <td>Clostridium hiranonis DSM 13275</td>
+      <td>CI66-39</td>
+      <td>Pomeranian</td>
+      <td>remission</td>
+      <td>1</td>
+      <td>YCFA</td>
+    </tr>
+    <tr>
+      <td>Intestinibacter barlettii DSM 16795</td>
+      <td>CI66-39</td>
+      <td>Pomeranian</td>
+      <td>remission</td>
+      <td>1</td>
+      <td>SA</td>
+    </tr>
+    <tr>
+      <td>Escherichia coli st. K-12 sub. MG1655</td>
+      <td>CI66-39</td>
+      <td>Pomeranian</td>
+      <td>remission</td>
+      <td>3</td>
+      <td>BHI</td>
+    </tr>
+    <tr>
+      <td>Enterococcus Faecalis V583</td>
+      <td>CI66-39</td>
+      <td>Pomeranian</td>
+      <td>remission</td>
+      <td>3</td>
+      <td>BHI</td>
+    </tr>
+    <tr>
+      <td>Bacteroides vulgatus ATCC 8482</td>
+      <td>CI66-39</td>
+      <td>Pomeranian</td>
+      <td>remission</td>
+      <td>1</td>
+      <td>SA</td>
+    </tr>
+    <tr>
+      <td>Bacteroides stercoris ATCC 43183</td>
+      <td>CI66-39</td>
+      <td>Pomeranian</td>
+      <td>remission</td>
+      <td>1</td>
+      <td>SA</td>
+    </tr>
+    <tr>
+      <td>Clostridium hiranonis DSM 13275</td>
+      <td>CI66-40</td>
+      <td>mixed breed</td>
+      <td>remission</td>
+      <td>4</td>
+      <td>BHI</td>
+    </tr>
+    <tr>
+      <td>Fusobacterium Ulcerans ATCC 49185</td>
+      <td>CI66-40</td>
+      <td>mixed breed</td>
+      <td>remission</td>
+      <td>5</td>
+      <td>BHI, LMRS</td>
+    </tr>
+    <tr>
+      <td>Clostridium Sartagoforme AAU1</td>
+      <td>CI66-40</td>
+      <td>mixed breed</td>
+      <td>remission</td>
+      <td>4</td>
+      <td>LMRS</td>
+    </tr>
+    <tr>
+      <td>Megamonas Funiformis YIT 11815</td>
+      <td>CI66-40</td>
+      <td>mixed breed</td>
+      <td>remission</td>
+      <td>8</td>
+      <td>YCFA</td>
+    </tr>
+    <tr>
+      <td>Intestinibacter barlettii DSM 16795</td>
+      <td>CI66-40</td>
+      <td>mixed breed</td>
+      <td>remission</td>
+      <td>1</td>
+      <td>BHI</td>
+    </tr>
+    <tr>
+      <td>Terrisporobacter glycolicus ATCC 148804</td>
+      <td>CI66-40</td>
+      <td>mixed breed</td>
+      <td>remission</td>
+      <td>1</td>
+      <td>BHI</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="datatable-end"></div>
+
 
 
     <div class="tags">
@@ -601,11 +975,7 @@ $('#toc').on('click', 'a', function() {
         
         
         
-        <a href="tag_getting_started.html" class="btn btn-default navbar-btn cursorNorm" role="button">getting_started</a>
         
-        
-        
-        <a href="tag_troubleshooting.html" class="btn btn-default navbar-btn cursorNorm" role="button">troubleshooting</a>
         
         
         
@@ -636,7 +1006,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2017 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
- Site last generated: Nov 16, 2017 <br />
+ Site last generated: Nov 27, 2017 <br />
 <p><img src="images/CHMI_logo.png" alt="Company logo"/></p>
                 </div>
             </div>

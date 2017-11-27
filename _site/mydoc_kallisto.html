@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Kallisto is our first choice for aligning reads because it combines speed, accuracy, and ability to leverage bootstraps for modeling technical variance">
-<meta name="keywords" content="getting_startedtroubleshooting,  ">
+<meta name="keywords" content="bioinformaticsRNAseq,  ">
 <title>Kallisto | CHMI services</title>
 <link rel="stylesheet" href="css/syntax.css">
 
@@ -356,7 +356,7 @@
             
             
             
-            <li><a href="mydoc_sidebar_navigation.html">3D Caco-2 organoids</a></li>
+            <li><a href="mydoc_3Dculture.html">3D intestinal cultures</a></li>
             
             
             
@@ -374,12 +374,12 @@
         
     
     <li>
-        <a href="#">Mobile/networked diagnostics</a>
+        <a href="#">In the field</a>
         <ul>
             
             
             
-            <li><a href="mydoc_adding_tooltips.html">Biomeme portable QPCR</a></li>
+            <li><a href="mydoc_biomeme.html">Biomeme portable QPCR</a></li>
             
             
             
@@ -549,6 +549,31 @@ kallisto quant -i myHumanIndex -o Sample1.mapped -b 60 —-single -l 275 -s 20 r
 </code></pre>
 </div>
 
+<h2 id="stranded-alignments-and-bigwigs">stranded alignments and bigwigs</h2>
+<p>In some cases, you may want to carry out a stranded alignment with the end goal of viewing read ‘pile-ups’ on a genome browser track.  This can also be done using Kallisto, but requires a few other programs and steps to get from the Kallisto alignment to bigwig.</p>
+
+<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> If you’ve been using your laptop thus far, now would be a good time to consider finding some more compute resources. Working with .bam files may be too much for your laptop to handle.</div>
+
+<p>Stranded alignment using pseudobam. SAM creation is also possible at this step.
+<code class="highlighter-rouge">
+kallisto quant -i [yourindex] -o [outputname] --fr-stranded -b 60 --pseudobam [input1] [input2] | samtools view -Sb - &gt; [kallisto.fr.bam]
+kallisto quant -i [yourindex] -o [outputname] --rf-stranded -b 60 --pseudobam [input1] [input2] | samtools view -Sb - &gt; [kallisto.rf.bam]
+</code></p>
+
+<p>Sort and index using <a href="http://samtools.sourceforge.net/">samtools</a>
+<code class="highlighter-rouge">
+samtools sort [kallisto.fr.bam] [kallisto.fr.sorted.bam]
+samtools sort [kallisto.rf.bam] [kallisto.rf.sorted.bam]
+samtools index [kallisto.fr.sorted.bam]
+samtools index [kallisto.fr.sorted.bam]
+</code></p>
+
+<p>BAM to BigWig conversion using <a href="https://deeptools.readthedocs.io/en/latest/">deeptools</a>
+<code class="highlighter-rouge">
+bamCoverage –b {kallisto.fr.sorted.bam} –o {kallisto.fr.sorted.bw}
+bamCoverage –b {kallisto.rf.sorted.bam} –o {kallisto.rf.sorted.bw}
+</code></p>
+
 <h2 id="install-sleuth">install Sleuth</h2>
 <p>Open RStudio and install the <a href="http://bioconductor.org/packages/release/bioc/html/rhdf5.html">rhdf5 package</a> from the BioC website</p>
 
@@ -575,11 +600,7 @@ devtools::install_github("pachterlab/sleuth")
         
         
         
-        <a href="tag_getting_started.html" class="btn btn-default navbar-btn cursorNorm" role="button">getting_started</a>
         
-        
-        
-        <a href="tag_troubleshooting.html" class="btn btn-default navbar-btn cursorNorm" role="button">troubleshooting</a>
         
         
         
@@ -610,7 +631,7 @@ devtools::install_github("pachterlab/sleuth")
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2017 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
- Site last generated: Nov 16, 2017 <br />
+ Site last generated: Nov 27, 2017 <br />
 <p><img src="images/CHMI_logo.png" alt="Company logo"/></p>
                 </div>
             </div>

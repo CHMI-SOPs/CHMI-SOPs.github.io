@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Preparation of V4 region, 16S dual-indexed libraries for sequencing on an Illumina platform">
-<meta name="keywords" content="library construction,  ">
+<meta name="keywords" content="library constructionmicrobiome,  ">
 <title>16S rRNA gene sequencing | CHMI services</title>
 <link rel="stylesheet" href="css/syntax.css">
 
@@ -356,7 +356,7 @@
             
             
             
-            <li><a href="mydoc_sidebar_navigation.html">3D Caco-2 organoids</a></li>
+            <li><a href="mydoc_3Dculture.html">3D intestinal cultures</a></li>
             
             
             
@@ -374,12 +374,12 @@
         
     
     <li>
-        <a href="#">Mobile/networked diagnostics</a>
+        <a href="#">In the field</a>
         <ul>
             
             
             
-            <li><a href="mydoc_adding_tooltips.html">Biomeme portable QPCR</a></li>
+            <li><a href="mydoc_biomeme.html">Biomeme portable QPCR</a></li>
             
             
             
@@ -476,23 +476,22 @@ $('#toc').on('click', 'a', function() {
 
 <h2 id="step-1-initial-setup">Step 1: Initial Setup</h2>
 
-<ol>
+<ul>
   <li>Reconstitute indexed primers to 100 μM. See <a href="http://aem.asm.org/content/early/2013/06/17/AEM.01043-13/suppl/DCSupplemental">Appendix D of the supplement</a> from the Schloss lab paper for primer design.  We purchase our primers from IDT with standard purification and no additonal modifications.</li>
-</ol>
+</ul>
 
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Use high quality nuclease-free water that is PCR grade. Any contaminations in your primer will be carried into your experimental setup.</div>
 
-<ol>
-  <li>Array aliquots into four 96 well plates using the scheme below. Into each well of these plates, aliquot 1.5 uL of a 700 primer, 1.5 uL of a 500 primer, and 27 uL water. The final primer concentration is 10 μM. Label the primer plates and store at -20C:
-    <ul>
-      <li>plate a: A701 – A712 with A501 – A508</li>
-      <li>plate b: A701 – A712 with B501 – B508</li>
-      <li>plate c: B701 – B712 with B501 – B508</li>
-      <li>plate d: B701 – B712 with A501 – A508</li>
-    </ul>
+<ul>
+  <li>Array aliquots into four 96 well plates using the scheme below. Into each well of these plates, aliquot 1.5 uL of a 700 primer, 1.5 uL of a 500 primer, and 27 uL water. The final primer concentration is 10 μM. Label the primer plates and store at -20C:</li>
+  <li>plate a: A701 – A712 with A501 – A508</li>
+  <li>plate b: A701 – A712 with B501 – B508</li>
+  <li>plate c: B701 – B712 with B501 – B508</li>
+  <li>
+    <p>plate d: B701 – B712 with A501 – A508</p>
   </li>
   <li>Extract template DNA and array in 96-well format leaving two wells open (one for a negative water control and another for the positive Mock Community control).</li>
-</ol>
+</ul>
 
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Depending on your thermocycler, plates or seals, you may experience problems with evaporation around the edges of plates.  To avoid having this confound your PCR reaction, consider leaving the border wells empty (rows A and H, columns 1 and 12), leaving 60 samples per plate.</div>
 
@@ -504,7 +503,7 @@ $('#toc').on('click', 'a', function() {
 
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Perform each reaction in duplicate to minimize experimental error and jackpotting.</div>
 
-<ol>
+<ul>
   <li>
     <p>Dispense 17 μl of Accuprime Pfx Supermix into each well of a new 96 well plate.</p>
   </li>
@@ -523,7 +522,7 @@ $('#toc').on('click', 'a', function() {
     <p>Repeat for up to four 96-well plates. Seal plates, vortex briefly and spin down contents.</p>
   </li>
   <li>Place in thermocycler and run the following program (bold denotes steps to be run for 30 cycles)</li>
-</ol>
+</ul>
 
 <table>
   <thead>
@@ -561,22 +560,18 @@ $('#toc').on('click', 'a', function() {
 </table>
 
 <h3 id="gel-electrophoresis">Gel Electrophoresis</h3>
-<ol>
+<ul>
   <li>A random row of wells should be selected from each PCR plate and run on a gel to confirm success of the PCR.</li>
   <li>Use 2 μl of sample, 4 μl of loading dye in a 1% agarose gel.</li>
   <li>Run at 100v for 30 minutes alongside a standard ladder.</li>
-  <li>Photograph gel under UV. Check to be sure there is a band for every well.
-    <ul>
-      <li>I do not typically do this anymore as I perform the reactions in duplicate.</li>
-    </ul>
-  </li>
-</ol>
+  <li>Photograph gel under UV. Check to be sure there is a band for every well.</li>
+</ul>
 
 <h2 id="step-3-cleanup-normalization-and-pooling">Step 3: Cleanup, Normalization, and Pooling</h2>
 
 <p>Use the SequalPrep Normalization Plate Kit to normalize concentrations of PCR reactions prior to pooling</p>
 
-<ol>
+<ul>
   <li>
     <p>Pool duplicate PCR reactions (20 μl + 20 μl for a total of 40 μl).</p>
   </li>
@@ -589,11 +584,11 @@ $('#toc').on('click', 'a', function() {
   <li>
     <p>Incubate at room temperature for 60 minutes.</p>
   </li>
-</ol>
+</ul>
 
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> can incubate overnight if needed, however this extra time does not improve binding.</div>
 
-<ol>
+<ul>
   <li>
     <p>Aspirate liquid from the wells, being careful not to scrape the sides of the wells.</p>
   </li>
@@ -612,7 +607,7 @@ $('#toc').on('click', 'a', function() {
   <li>
     <p>Freeze the remaining sample for later use.</p>
   </li>
-</ol>
+</ul>
 
 <h2 id="step-4-library-qc-and-normalization">Step 4: Library QC and normalization</h2>
 
@@ -625,13 +620,13 @@ $('#toc').on('click', 'a', function() {
 <h2 id="step-5-miseq-sequencing">Step 5: MiSeq Sequencing</h2>
 
 <h3 id="run-set-up">Run set-up</h3>
-<ol>
+<ul>
   <li>
     <p>Remove a 500 cycle reagent cartridge from the -20 °C freezer. Place in room temperature water bath for one hour. Place HT1 buffer tube in the 4 °C fridge.</p>
   </li>
   <li>Copy sample sheet to sample sheet folder on MiSeq. Rename sample sheet to match barcode of reagent cartridge.
     <ul>
-      <li>I use dummy barcodes AAAAAAAA and AAAAAAAA. The files can be downloaded from Basespace in an “undetermined.fastq.gz” format, and I use these files and then perform the demultiplexing in QIIME.</li>
+      <li>use dummy barcodes AAAAAAAA and AAAAAAAA. The files can be downloaded from Basespace in an “undetermined.fastq.gz” format, and I use these files and then perform the demultiplexing in QIIME.</li>
     </ul>
   </li>
   <li>
@@ -689,16 +684,16 @@ PhiX concentration, and 0.0000457N NaOH</li>
     <p>Ensure the machine recognizes the correct sample sheet and the run parameters are correct.</p>
   </li>
   <li>Wait for the MiSeq to perform its pre-run checks, and press start.</li>
-</ol>
+</ul>
 
 <h3 id="run-monitoring">Run Monitoring</h3>
 
-<ol>
+<ul>
   <li>
     <p>The run should be monitored periodically using Illumina Sequence Analysis Viewer.</p>
   </li>
   <li>
-    <p>Ideal parameters for a 95% 16S run:</p>
+    <p>deal parameters for a 95% 16S run:</p>
     <ul>
       <li>Cluster density 700-800k/mm2</li>
       <li>greater than 85% clusters passing filter</li>
@@ -708,11 +703,11 @@ PhiX concentration, and 0.0000457N NaOH</li>
       <li>Final &gt;Q30 score of &gt;70%</li>
     </ul>
   </li>
-</ol>
+</ul>
 
 <h3 id="final-steps">Final Steps</h3>
 
-<ol>
+<ul>
   <li>
     <p>Perform post run wash.</p>
   </li>
@@ -730,7 +725,7 @@ on the NAS drive.</p>
   <li>
     <p>Confirm with investigator that data are of sufficient quality and quantity.</p>
   </li>
-</ol>
+</ul>
 
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> We recommend sequencing the libraries within 3 weeks.</div>
 
@@ -739,6 +734,8 @@ on the NAS drive.</p>
     <div class="tags">
         
         <b>Tags: </b>
+        
+        
         
         
         
@@ -771,7 +768,7 @@ on the NAS drive.</p>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2017 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
- Site last generated: Nov 16, 2017 <br />
+ Site last generated: Nov 27, 2017 <br />
 <p><img src="images/CHMI_logo.png" alt="Company logo"/></p>
                 </div>
             </div>

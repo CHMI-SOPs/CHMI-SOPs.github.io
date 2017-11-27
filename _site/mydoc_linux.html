@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="CHMI maintains a custom configured compute server that runs Linux Ubuntu 16.04 LTS.  This machine has two 6-core Intel Xeon E5-2643v4 CPUs (12 cores total), ...">
-<meta name="keywords" content="library construction,  ">
+<meta name="keywords" content="bioinformaticscomputing,  ">
 <title>CHMI linux cluster | CHMI services</title>
 <link rel="stylesheet" href="css/syntax.css">
 
@@ -356,7 +356,7 @@
             
             
             
-            <li><a href="mydoc_sidebar_navigation.html">3D Caco-2 organoids</a></li>
+            <li><a href="mydoc_3Dculture.html">3D intestinal cultures</a></li>
             
             
             
@@ -374,12 +374,12 @@
         
     
     <li>
-        <a href="#">Mobile/networked diagnostics</a>
+        <a href="#">In the field</a>
         <ul>
             
             
             
-            <li><a href="mydoc_adding_tooltips.html">Biomeme portable QPCR</a></li>
+            <li><a href="mydoc_biomeme.html">Biomeme portable QPCR</a></li>
             
             
             
@@ -468,7 +468,7 @@ $('#toc').on('click', 'a', function() {
 
 <ul>
   <li>We will set-up your account and install any software you may need.  Please do not install software yourself.</li>
-  <li>In addition to your home account with is present at /home/username on the server, you will also be given a data folder that is located on /home/data/username.  All data must be stored in this directory <strong>not</strong> your home/username folder.</li>
+  <li>In addition to your home account with is present at <code class="highlighter-rouge">/home/username</code> on the server, you will also be given a data folder that is located on <code class="highlighter-rouge">/data/username</code>.  All data must be stored in this directory <strong>not</strong> your <code class="highlighter-rouge">home/username</code> folder.</li>
   <li>Data storage space is limited (10Tb goes quickly!), so we periodically montior storage space and may request that data not currently in use be moved off the cluster.</li>
   <li>We require a strong password for each account.  We will set this password for you, and ask that you do not change it.</li>
 </ul>
@@ -481,7 +481,7 @@ usermod -aG sudo username #gives the new user sudo priveledges
 </div>
 
 <p>Give the user access to all software on the server
-* navigate to <code class="highlighter-rouge">/home/shared/softwares/</code> and open the text file called <code class="highlighter-rouge">shared_software_list</code>.  This contains that paths to all software.  We routinely update this, so be sure to check back for new software path:</p>
+* navigate to <code class="highlighter-rouge">/home/shared/softwares/</code> and open the text file called <code class="highlighter-rouge">shared_software_list</code>.  This contains paths to all software.  We routinely update this, so be sure to check back for new software paths:</p>
 
 <ul>
   <li>copy the contents of this file (highlight all, right-click, choose copy)</li>
@@ -626,6 +626,11 @@ usermod -aG sudo username #gives the new user sudo priveledges
       <td>sequence search</td>
       <td>option include <code class="highlighter-rouge">blastn</code>, <code class="highlighter-rouge">blastp</code>, pr <code class="highlighter-rouge">blastx</code></td>
     </tr>
+    <tr>
+      <td><a href="https://github.com/BaselAbujamous/clust">clust</a></td>
+      <td>co-expression modules</td>
+      <td><code class="highlighter-rouge">clust</code></td>
+    </tr>
   </tbody>
 </table>
 
@@ -634,6 +639,8 @@ usermod -aG sudo username #gives the new user sudo priveledges
     <div class="tags">
         
         <b>Tags: </b>
+        
+        
         
         
         
@@ -666,7 +673,7 @@ usermod -aG sudo username #gives the new user sudo priveledges
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2017 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
- Site last generated: Nov 16, 2017 <br />
+ Site last generated: Nov 27, 2017 <br />
 <p><img src="images/CHMI_logo.png" alt="Company logo"/></p>
                 </div>
             </div>

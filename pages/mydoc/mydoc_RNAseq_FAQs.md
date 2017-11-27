@@ -34,7 +34,7 @@ Once you have isolated high quality RNA from your samples, expect to spend 2 day
 
 ## Do you analyze the data for us?
 
-Not exactly, though we are fully capable of RNAseq data analysis.  CHMI offers a free [semester-long course](DIYtranscriptomics.org) on the bioinformatics associated with RNAseq data analysis.  Assistance is also available through 1:1 consultations with Dan Beiting.
+Not exactly, though we are fully capable of RNAseq data analysis.  CHMI offers a free [semester-long course](http://DIYtranscriptomics.org) on the bioinformatics associated with RNAseq data analysis.  Assistance is also available through 1:1 consultations with Dan Beiting.
 
 ## So I can just give you my samples then?
 
