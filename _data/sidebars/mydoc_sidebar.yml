@@ -94,7 +94,7 @@ entries:
       url: /mydoc_install_jekyll_on_mac.html
       output: web, pdf
 
-    - title: mock communities and controls
+    - title: culture collection
       url: /mydoc_mock.html
       output: web, pdf
 
