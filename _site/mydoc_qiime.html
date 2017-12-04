@@ -475,7 +475,13 @@ $('#toc').on('click', 'a', function() {
 
 <p>Enter the interactive bash shell</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>bsub -Is 
+<div class="highlighter-rouge"><pre class="highlight"><code>bsub -Is bash
+</code></pre>
+</div>
+
+<p>or for larger datasets:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>bsub -Is -q denovo -n 5 bash 
 </code></pre>
 </div>
 
@@ -491,58 +497,188 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h2 id="join-forward-and-reverse-reads">Join forward and reverse reads</h2>
-<div class="highlighter-rouge"><pre class="highlight"><code>join_paired_ends.py -f myForwardReads.fastq -r myReverseReads.fastq -o JoinedReads
-</code></pre>
-</div>
+<h2 id="check-your-mapping-file">check your mapping file</h2>
 
-<h2 id="validated-mapping-files">Validated mapping files</h2>
+<p>In order to use QIIME, you must have your mapping file correctly formatted.  An example of this format is shown in the table below.  ‘#SampleID’, ‘BarcodeSequence’, ‘LinkerPrimerSequence’ and ‘Description’ must all be present in the file and named exactly as we’ve written (case sensitive).  Specific details about your experiment (treatment, sample type, cage, etc) are added between the ‘LinkerPrimerSequence’ and ‘Description’ columns.  Here we’ve simply listed these as covariate1, covariate2, etc.  You can have as many of these columns as necessary to describe your experiment.  Note the sampleID column must be unique.</p>
 
-<p>Just keep trying until it works. Visualize the output html file. Yellow is ok, red is an error that needs to be fixed.</p>
+<table>
+  <thead>
+    <tr>
+      <th>#SampleID</th>
+      <th>BarcodeSequence</th>
+      <th>LinkerPrimerSequence</th>
+      <th>covariate1</th>
+      <th>covariate2</th>
+      <th>covariate3</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>001</td>
+      <td>ATCGCTACTTAGCGCT</td>
+      <td>GTGCCAGCMGCCGCGGTAA</td>
+      <td>cageA</td>
+      <td>control</td>
+      <td>wild-type</td>
+      <td>WT naive mouse #1</td>
+    </tr>
+    <tr>
+      <td>002</td>
+      <td>TGCGCCACTAACCGCT</td>
+      <td>GTGCCAGCMGCCGCGGTAA</td>
+      <td>cageB</td>
+      <td>treated</td>
+      <td>wild-type</td>
+      <td>WT infected mouse #1</td>
+    </tr>
+    <tr>
+      <td>003</td>
+      <td>GGCAATCACTAACCGC</td>
+      <td>GTGCCAGCMGCCGCGGTAA</td>
+      <td>cageA</td>
+      <td>treated</td>
+      <td>wild-type</td>
+      <td>WT infected mouse #2</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Once you think you have your mapping file ready to go, run the <code class="highlighter-rouge">validate_mapping_file.py</code> line below to confirm that the format is correct.  Visualize the output html file. Yellow is ok, red is an error that needs to be fixed.</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>validate_mapping_file.py -m MappingFile.txt
 </code></pre>
 </div>
 
+<h2 id="join-forward-and-reverse-reads">Join forward and reverse reads</h2>
+
+<p>We begin by taking our forward and reverse reads and joining these reads.  The resulting output file (called ‘joinedReads’ in the example below) will be a single fastq file containing all of your data.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>join_paired_ends.py -f myForwardReads.fastq -r myReverseReads.fastq -o JoinedReads
+</code></pre>
+</div>
+
+<h2 id="dealing-with-barcodes">dealing with barcodes</h2>
+<p>Our UPenn sequencing core delivers fastq files that have the barcode listed in the header.  After joining paired ends, both barcodes will be listed in the header, with a ‘+’ separating the two.  We’ll use a perl script to remove the ‘+’ in order to prevent issues later.</p>
+
 <div class="highlighter-rouge"><pre class="highlight"><code>perl Testscript.pl JoinedReads/fastqjoin.join.fastq &gt; JoinedReads.fastq
 </code></pre>
 </div>
 
-<p>perl script to remove the plus sign from the barcodes</p>
+<p>With the ‘+’ removed, we then extract the barcodes and put these into new file called ‘barcodes’</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>extract_barcodes.py -f JoinedReads.fastq -l 16 -o Barcodes -c barcode_in_label
+</code></pre>
+</div>
+
+<p>Right now, each of your sequences is associated with a specific barcode, but we haven’t yet matched these barcodes with our original sample identifiers.  This is where your mapping file comes in.  In the process of doing this mapping, we’ll also discard any sequences with <a href="https://en.wikipedia.org/wiki/Phred_quality_score">Phred</a> scores &lt; 30.</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>split_libraries_fastq.py -i JoinedReads.fastq -o sl_out -q 29 -b Barcodes/barcodes.fastq -m MappingFile.txt --barcode_type 16
 </code></pre>
 </div>
 
-<p>Assign sequences to a sample number in your mapping file</p>
+<h2 id="quality-filtering">Quality filtering</h2>
 
-<h2 id="quality-filtering-using-mothurhttpswwwmothurorg">Quality filtering using <a href="https://www.mothur.org/">Mothur</a></h2>
-
-<p>start mothur</p>
+<p>We use <a href="(https://www.mothur.org/)">Mothur</a> to trim our sequences, but you can also use other programs such as the FASTX toolkit.  We’ll begin by firing up Mothur:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>mothur
 </code></pre>
 </div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>#at the mother prompt, run:
-summary.seqs(fasta=sl_out/seqs.fna)
-trim.seqs(fasta=sl_out/seqs.fna, maxhomop=10, minlength=248, maxlength=256)
+<p>First, let’s use Mothur’s handy <code class="highlighter-rouge">summary.seqs</code> function to sumarize information about the sequence file, including binning sequences by length,  looking at the number of sequences in each bin, and finding homopolymers</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>summary.seqs(fasta=sl_out/seqs.fna)
+</code></pre>
+</div>
+
+<p>Now, we’ll use Mothur to trim the sequences and remove homopolymer runs.  You can adjust these values based on the region you are looking at. For 16S V4 we expect sequences of 250 bp, so we trim based on that expectiation.  If you’re using another 16S region, then you may want to adjust the <code class="highlighter-rouge">minlength</code> and <code class="highlighter-rouge">maxlength</code> parameters accordingly. Once complete, we run <code class="highlighter-rouge">summary.seqs</code> again to visualize the impact of trimming on our data.  Finally, we quit mothur.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>trim.seqs(fasta=sl_out/seqs.fna, maxhomop=10, minlength=248, maxlength=256)
 summary.seqs(fasta=sl_out/seqs.trim.fasta)
 quit()
 </code></pre>
 </div>
 
-<h2 id="generate-otu-table">Generate OTU table</h2>
+<h2 id="optional-concatenate-fasta-data-from-multiple-runs">Optional: Concatenate fasta data from multiple runs</h2>
+<p>We typically put data from each run into a single large file that contains all data from all past runs.  This is something we do internally at CHMI, so if you’re running though this on your own, feel free to skip this step.</p>
 
-<p>At this point, you’ll have to decide if you want to pick OTU’s <em>de novo</em>, or use a closed reference method, or an open reference method.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>pick_de_novo_otus.py -i sl_out/seqs.trim.fasta -o DeNovoOTUs 
+<div class="highlighter-rouge"><pre class="highlight"><code>cat MiSeq1234567_seqs.fna MiSeq8_seqs.fna &gt; MiSeq12345678_seqs.fna
 </code></pre>
 </div>
 
-<h2 id="filter-singletons">Filter singletons</h2>
+<h2 id="generate-a-fasta-file-that-has-only-your-sequences-of-interest">Generate a fasta file that has only your sequences of interest</h2>
 
-<h2 id="remove-chimeras">Remove chimeras</h2>
+<p>16S microbiome sequencing runs often include 100’s of samples.  Since you many not want to analyze all the samples from a single run at the same time, you can use the QIIME <code class="highlighter-rouge">filter_fasta.py</code> function to select only samples of interest.  You’ll need to provide a simple text file with the samples IDs you’d like to keep arranged in a single column (in the example below, we have called this ‘sample_id_fp’).</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>filter_fasta.py -i MiSeq12345678_seqs.fna --sample_id_fp MappingFile.txt -o Project.fna
+</code></pre>
+</div>
+
+<h2 id="generate-otu-table">Generate OTU table</h2>
+
+<p>At this point, you’ll have to decide if you want to pick OTU’s <em>de novo</em>, use a closed reference method, or use an open reference method.  You can read more about these methods, and their respective advantages/disadvantages <a href="">here</a>. Don’t be deceived by this short line of code.  There’s a lot of important stuff that’s happening here, so you may want to read up a bit on this.</p>
+
+<h3 id="option-1">Option 1:</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>pick_de_novo_otus.py -i Project.fna -o DeNovoOTUs 
+</code></pre>
+</div>
+
+<h3 id="option-2-longer-way-but-easier-to-extract-the-chimeras">Option 2: (longer way, but easier to extract the chimeras)</h3>
+
+<p>pick_otus.py -i Project.fna –enable_rev_strand_match –otu_picking_method cdhit -s 0.97 –prefix_prefilter_length 200 -o otus</p>
+
+<p>pick_rep_set.py -f Project.fna -i otus/Project_otus.txt –rep_set_picking_method most_abundant -o rep_set.fna</p>
+
+<p>align_seqs.py -i rep_set.fna -t /home/Reference/core_set_aligned.fasta.imputed.txt -o aligned_seqs</p>
+
+<p>assign_taxonomy.py -i rep_set.fna -o assigned_taxonomy –confidence 0.8</p>
+
+<h2 id="remove-pcr-chimeras">Remove PCR chimeras</h2>
+
+<p><a href="http://genome.cshlp.org/cgi/pmidlookup?view=long&amp;pmid=21212162">chimeras</a> are PCR amplicons formed from two separate parent DNA molecules during the PCR reaction.  These need to be removed, otherwise they would be interpreted as novel organisms and would therefore erroneously inflate community diveristy. The output file is a txt file that has the list of sequence numbers.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>identify_chimeric_seqs.py -i aligned_seqs/rep_set_aligned.fasta -m ChimeraSlayer -o chimeric_seqs.txt -a /home/misic/Reference/core_set_aligned.fasta.imputed.txt
+</code></pre>
+</div>
+
+<h2 id="filtering-and-subsetting">Filtering and subsetting</h2>
+
+<p>Produce a .biom file from your data.  You can read about the .biom file format <a href="http://biom-format.org/">here</a></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>make_otu_table.py -i otus/Project_otus.txt -t assigned_taxonomy/rep_set_tax_assignments.txt -o otu_table.biom -e chimeric_seqs.txt
+</code></pre>
+</div>
+
+<p>Remove OTUs from the table that only have a single representative sequence, a.k.a. ‘singletons’, as well as OTUs with fewer than 10 sequences</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>filter_otus_from_otu_table.py -i otu_table.biom -n 10 -o otu_table2.biom
+</code></pre>
+</div>
+
+<p>If you want to see the most (or least) abundant OTUs in your table</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>filter_otus_from_otu_table.py -i otu_table_2.biom --min_count_fraction 0.01 -o otu_table_onlygreaterthan1percent.biom
+</code></pre>
+</div>
+
+<p>We use file with the otu names of the mitochondria, cyanobacteria, and unassigned taxa and remove those from the OTU table.  Depending on your project, you may or may not want to remove these. For work involving stool, I remove cyanobacteria. However, if you are performing an enviornmental study, you may choose to keep these in.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ filter_otus_from_otu_table.py -i otu_table2.biom -e Mito_Cyano_and_unassigned.txt -o otu_table3.biom
+</code></pre>
+</div>
+
+<p>Now subset your data to select only those columns of the taxa table the correspond to the samples you’re interested in analyzing</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>filter_samples_from_otu_table.py -i otu_table_3.biom --sample_id_fp MappingFile_SoilOnly.txt -o otu_table_4SoilOnly.biom
+</code></pre>
+</div>
+
+<p>Summarize your .biom file to produce a simple text file with taxa</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>biom summarize-table -i otu_table3.biom -o Table3Summary.txt
+</code></pre>
+</div>
 
 <h2 id="rarify-to-desired-depth">rarify to desired depth</h2>
 
@@ -557,24 +693,152 @@ quit()
 </div>
 
 <h2 id="get-counts-for-taxa">Get counts for taxa</h2>
+
 <div class="highlighter-rouge"><pre class="highlight"><code>summarize_taxa.py -i otu_table_3.biom -a -o TaxaSumAbs -m /home/misic/MAD/Files/MappingFile_MAD_v3.txt 
 # Flag: -L 2 phylum ; -L 3 class ; -L 4 order ; -L 5 family -L 6 genus ; -L 7 species
 example: summarize_taxa_through_plots.py -m /home/misic/MAD/Files/MappingFile_MAD_v3.txt -c Treatment -o TaxaSumTreatment -i otu_table_3.biom  -L 5
 </code></pre>
 </div>
 
-<h2 id="groups-samples-into-treatment-groups">Groups samples into treatment groups</h2>
+<h2 id="group-samples-by-treatment-group">Group samples by treatment group</h2>
+
 <div class="highlighter-rouge"><pre class="highlight"><code>filter_samples_from_otu_table.py -i otu_table_3.biom --sample_id_fp MappingFile_MAD_SoilOnly.txt -o otu_table_4soilonly.biom
 </code></pre>
 </div>
 
 <h2 id="generate-beta-diversity-plots">Generate beta diversity plots</h2>
+
 <div class="highlighter-rouge"><pre class="highlight"><code>beta_diversity_through_plots.py -i otu_table_5_soil_2900.biom -m MappingFile_MAD_SoilOnly.txt -o BetaDiv_Soil -t rep_set.tre 
 </code></pre>
 </div>
 
 <h2 id="filter-taxa-based-on-rel-abund">filter taxa based on rel abund</h2>
+
 <div class="highlighter-rouge"><pre class="highlight"><code>$ filter_otus_from_otu_table.py -i otu_table_3.biom --min_count_fraction 0.01 -o otu_table_onlygreaterthan1percent.biom
+</code></pre>
+</div>
+
+<h2 id="relative-abundance-and-plots">relative abundance and plots</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>summarize_taxa_through_plots.py -m MappingFile.txt -c Treatment -o TaxaSumTreatment -i otu_table_3.biom 
+</code></pre>
+</div>
+
+<p>Optional flags include for this function include: 
+* <code class="highlighter-rouge">-L 2</code> for phylum 
+* <code class="highlighter-rouge">-L 3</code> for class
+* <code class="highlighter-rouge">-L 4</code> for order
+* <code class="highlighter-rouge">-L 5</code> for family
+* <code class="highlighter-rouge">-L 6</code> for genus
+* <code class="highlighter-rouge">-L 7</code> for species</p>
+
+<p>Example: summarize_taxa_through_plots.py -m MappingFile.txt -c Treatment -o TaxaSumTreatment -i otu_table_3.biom -L 5.  Only gives data at family level. Groups samples into treatment groups</p>
+
+<p>Produce a table with absolute sequence counts.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>summarize_taxa.py -i otu_table_3.biom -a -o TaxaSumAbs -m MappingFile.txt 
+</code></pre>
+</div>
+
+<p>Identify the core microbiome in your samples at different taxanomic levels (for example, which OTUs are found in 90% of the samples).</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>compute_core_microbiome.py -i otu_table.biom -o otu_table_core_fast --mapping_fp MappingFile.txt --valid_states "Treatment:Fast"
+</code></pre>
+</div>
+
+<h2 id="alpha-diversity">Alpha diversity</h2>
+
+<p>Obtain the alpha diversity values for the listed at 4 phylogenetic levels</p>
+
+<p>There are many options for alpha diversity metrics, but the ones we use most commonly include:</p>
+
+<ul>
+  <li>observed_species</li>
+  <li>shannon</li>
+  <li>simpson</li>
+  <li>simpson_e</li>
+  <li>PD_whole_tree</li>
+  <li>chao1</li>
+  <li>fisher_alpha</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>alpha_diversity.py -m shannon,chao1,PD_whole_tree,observed_species -i otu_table.biom -o AlphaDiv.txt -t rep_set_aligned.tre 
+</code></pre>
+</div>
+
+<h2 id="rarefaction">rarefaction</h2>
+
+<p>Generate ‘collectors curves’ (A.K.A. rarefaction plots) that can be visualized as HTML</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>alpha_rarefaction.py -O 10 -a -i otu_table3.biom -o alpha_rare_curves -m MappingFile.txt -t rep_set_aligned.tre -p parameters.txt
+</code></pre>
+</div>
+
+<p>rarify to desired depth, in this example, 2900 sequences</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>single_rarefaction.py -i otu_table.biom -d 2900 -o otu_table_2900.biom
+</code></pre>
+</div>
+
+<h2 id="optional-qiime-core-diversity-analysis">Optional: QIIME ‘core diversity analysis’</h2>
+
+<p>If so desired, you can use the function below to carry out several QIIME diversity analyses together.  This is a basic workflow that begins with a BIOM table, mapping file, and optional phylogenetic tree.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>core_diversity_analyses.py -i otu_table.biom -m MappingFile.txt -o CoreAnalyses -t rep_set_aligned.tre -c Timepoint,Exper_name,Breed_Strain -e 5000
+</code></pre>
+</div>
+
+<p>The included scripts are those run by the workflow scripts alpha_rarefaction.py, beta_diversity_through_plots.py, summarize_taxa_through_plots.py, plus the (non-workflow) scripts make_distance_boxplots.py, compare_alpha_diversity.py, and otu_category_significance.py. To update parameters to the workflow scripts, you should pass the same parameters file that you would pass if calling the workflow script directly.</p>
+
+<p>Additionally, a table summary is generated by running the ‘biom summarize-table’ command (part of the biom-format package). To update parameters to this command, your parameters file should use ‘biom-summarize-table’ (without quotes) as the script name. See http://qiime.org/documentation/qiime_parameters_files.html for more details.</p>
+
+<h2 id="beta-diversity">Beta diversity</h2>
+
+<p>This is to create the distance matrix which is then used for the next script, compare categories</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>beta_diversity_through_plots.py -i otu_table.biom -m MappingFile.txt -o BetaDiv -t rep_set.tre -p parameters.txt
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>beta_diversity.py -i otu_table.biom -m weighted_unifrac,unweighted_unifrac,bray_curtis,binary_jaccard -t rep_set_aligned.tre -o BetaDivMatricesV10
+</code></pre>
+</div>
+
+<p>With Beta diversity you also have many choices for metrics to you.  We most often look at:
+* weighted_unifrac
+* unweighted_unifrac
+* bray_curtis
+* binary_jaccard</p>
+
+<p>This script uses anosim (Analysis of similarities) to analyze if groups vary by timepoint. Output is an R value (from -1 to 1) and a p value. The more a category influences microbiota, the larger the R values will be, and the smaller the p value will be.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>compare_categories.py -i otu_table.biom -m MappingFile.txt -i BetaDivMatrices/weighted_unifrac_otu_table.txt -c Timepoint --method anosim -o WU_Timepoint
+</code></pre>
+</div>
+
+<p>Note: you must explicitly state which statisical test you would like to use to compare categories.  You options include:
+Also Note: you input biom. file could be rarefied (or not), or filtered to only be certain groups</p>
+
+<ul>
+  <li>adonis</li>
+  <li>anosim</li>
+  <li>best</li>
+  <li>morans_i</li>
+  <li>mrpp</li>
+  <li>permanova</li>
+  <li>permdisp</li>
+  <li>dbrda</li>
+</ul>
+
+<p>You may also find it useful to make boxplots showing distances.  You can do this as follows:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>make_distance_boxplots.py -d BetaDivMatrices/unweighted_unifrac_otu_table.txt -o DistanceHist -m MappingFile.txt -f Treatment
+</code></pre>
+</div>
+
+<h2 id="machine-learning-approaches">Machine learning approaches</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>supervised_learning.py -i otu_table.biom -m MappingFile.txt -c Treatment -o MachineLearningResults -v -e cv10
 </code></pre>
 </div>
 
@@ -617,7 +881,7 @@ example: summarize_taxa_through_plots.py -m /home/misic/MAD/Files/MappingFile_MA
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2017 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
- Site last generated: Nov 27, 2017 <br />
+ Site last generated: Dec 2, 2017 <br />
 <p><img src="images/CHMI_logo.png" alt="Company logo"/></p>
                 </div>
             </div>
