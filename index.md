@@ -18,7 +18,7 @@ This website provides convenient access to all the standard protocols and proced
 * Agilent Tapestation 4200
 * [Synthecon 'STLV' 3D culture system (RCCS-4H)](http://synthecon.com/pages/autoclavable_vessel_culture_systems_rccs-4h_synthecon_25.asp)
 * Mac Pro workstation (dual CPU, 6 cores, 64Gb RAM, 1TB SSD storage)
-* [Linux workstation (dual CPU, 12 cores, 512 Gb RAM, 10Tb RAID1 storage)](http://)
+* [Linux workstation (dual CPU, 12 cores, 512 Gb RAM, 10Tb RAID1 storage)](https://chmi-sops.github.io/mydoc_linux.html)
 * [Biomeme 'two3' hand-held QPCR system](http://biomeme.com/)
 
 ## Costs
