@@ -1,6 +1,6 @@
 ---
 title: Illumina TruSeq Stranded total Sample Preparation Protocol
-tags: [library construction, RNAseq]
+tags: [library_prep, transcriptomics]
 keywords: transcriptomics, library preparation
 summary: "Preparation of total transcriptome libraries for sequencing on an Illumina platform"
 sidebar: mydoc_sidebar

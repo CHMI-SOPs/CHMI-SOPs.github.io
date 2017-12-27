@@ -1,4 +1,4 @@
-# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+ # This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
 
 entries:
 - title: sidebar
@@ -91,7 +91,7 @@ entries:
       output: web
 
     - title: shotgun metagenomics
-      url: /mydoc_install_jekyll_on_mac.html
+      url: /mydoc_NexteraXT.html
       output: web, pdf
 
     - title: culture collection

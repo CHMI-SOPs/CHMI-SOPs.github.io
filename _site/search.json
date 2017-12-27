@@ -18,7 +18,7 @@
 
 {
 "title": "16S rRNA gene sequencing",
-"tags": "library constructionmicrobiome",
+"tags": "library_prepmicrobiome",
 "keywords": "",
 "url": "mydoc_16S.html",
 "summary": "Preparation of V4 region, 16S dual-indexed libraries for sequencing on an Illumina platform"
@@ -39,8 +39,19 @@
 
 
 {
+"title": "Illumina Nextera XT Sample Preparation Protocol",
+"tags": "library_preptranscriptomicsmicrobiomemetagenomics",
+"keywords": "metagenomics, transcriptomics, library preparation",
+"url": "mydoc_NexteraXT.html",
+"summary": "Preparation of sequencing libraries from DNA or cDNA for sequencing on an Illumina platform"
+}
+,
+
+
+
+{
 "title": "RNAseq FAQs",
-"tags": "getting_startedFAQsRNAseq",
+"tags": "getting_startedFAQstranscriptomics",
 "keywords": "",
 "url": "mydoc_RNAseq_FAQs.html",
 "summary": "information on our technology, how you gain access, how much experiments cost, and our 'hands-on' philosophy."
@@ -51,7 +62,7 @@
 
 {
 "title": "Illumina TruSeq Stranded mRNA Sample Preparation Protocol",
-"tags": "library construction",
+"tags": "library_preptranscriptomics",
 "keywords": "transcriptomics, library preparation",
 "url": "mydoc_TruSeq.html",
 "summary": "Preparation of mRNA libraries for sequencing on an Illumina platform"
@@ -337,7 +348,7 @@
 
 {
 "title": "Kallisto",
-"tags": "bioinformaticsRNAseq",
+"tags": "bioinformaticstranscriptomics",
 "keywords": "",
 "url": "mydoc_kallisto.html",
 "summary": "Kallisto is our first choice for aligning reads because it combines speed, accuracy, and ability to leverage bootstraps for modeling technical variance"
@@ -370,7 +381,7 @@
 
 {
 "title": "CHMI linux cluster",
-"tags": "bioinformaticscomputing",
+"tags": "bioinformatics",
 "keywords": "",
 "url": "mydoc_linux.html",
 "summary": "CHMI maintains a custom configured compute server that runs Linux Ubuntu 16.04 LTS.  This machine has two 6-core Intel Xeon E5-2643v4 CPUs (12 cores total), 512 Gb of RAM and 10Tb of RAID1 storage.  If you are a PennVet lab and wish to use this machine, please contact Dan Beiting (beiting@upenn.edu) for more information."
@@ -711,7 +722,7 @@
 
 {
 "title": "Illumina TruSeq Stranded total Sample Preparation Protocol",
-"tags": "library constructionRNAseq",
+"tags": "library_preptranscriptomics",
 "keywords": "transcriptomics, library preparation",
 "url": "mydoc_total_TruSeq.html",
 "summary": "Preparation of total transcriptome libraries for sequencing on an Illumina platform"
@@ -1036,6 +1047,8 @@
 "summary": "This is just a sample topic..."
 }
 ,
+
+
 
 
 

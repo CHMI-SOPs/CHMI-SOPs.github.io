@@ -1,12 +1,14 @@
 allowed-tags:
   - getting_started
-  - content_types
-  - navigation
-  - formatting
+  - metagenomics 
+  - transcriptomics 
+  - library_prep
   - publishing
-  - single_sourcing
+  - FAQs
   - special_layouts
   - collaboration
   - news
   - troubleshooting
   - mobile
+  - bioinformatics
+  - microbiome

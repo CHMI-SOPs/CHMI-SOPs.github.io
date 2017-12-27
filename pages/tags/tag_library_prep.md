@@ -1,8 +1,8 @@
 ---
-title: "Content types pages"
-tagName: content_types
+title: "Sequencing library preparation"
+tagName: library_prep
 search: exclude
-permalink: tag_content_types.html
+permalink: tag_library_prep.html
 sidebar: mydoc_sidebar
 folder: tags
 ---

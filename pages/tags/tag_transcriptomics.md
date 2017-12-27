@@ -1,8 +1,8 @@
 ---
-title: "Special layout pages"
-tagName: special_layouts
+title: "Protocols for studying the transcriptome"
+tagName: transcriptomics
 search: exclude
-permalink: tag_special_layouts.html
+permalink: tag_transcriptomics.html
 sidebar: mydoc_sidebar
 folder: tags
 ---

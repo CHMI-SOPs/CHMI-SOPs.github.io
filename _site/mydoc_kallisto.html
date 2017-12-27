@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Kallisto is our first choice for aligning reads because it combines speed, accuracy, and ability to leverage bootstraps for modeling technical variance">
-<meta name="keywords" content="bioinformaticsRNAseq,  ">
+<meta name="keywords" content="bioinformaticstranscriptomics,  ">
 <title>Kallisto | CHMI services</title>
 <link rel="stylesheet" href="css/syntax.css">
 
@@ -300,7 +300,7 @@
             
             
             
-            <li><a href="mydoc_install_jekyll_on_mac.html">shotgun metagenomics</a></li>
+            <li><a href="mydoc_NexteraXT.html">shotgun metagenomics</a></li>
             
             
             
@@ -562,16 +562,16 @@ kallisto quant -i [yourindex] -o [outputname] --rf-stranded -b 60 --pseudobam [i
 
 <p>Sort and index using <a href="http://samtools.sourceforge.net/">samtools</a>
 <code class="highlighter-rouge">
-samtools sort [kallisto.fr.bam] [kallisto.fr.sorted.bam]
-samtools sort [kallisto.rf.bam] [kallisto.rf.sorted.bam]
+samtools sort -@ 24 [kallisto.fr.bam] [kallisto.fr.sorted]
+samtools sort -@ 24 [kallisto.rf.bam] [kallisto.rf.sorted]
 samtools index [kallisto.fr.sorted.bam]
 samtools index [kallisto.fr.sorted.bam]
 </code></p>
 
 <p>BAM to BigWig conversion using <a href="https://deeptools.readthedocs.io/en/latest/">deeptools</a>
 <code class="highlighter-rouge">
-bamCoverage –b {kallisto.fr.sorted.bam} –o {kallisto.fr.sorted.bw}
-bamCoverage –b {kallisto.rf.sorted.bam} –o {kallisto.rf.sorted.bw}
+bamCoverage –b [kallisto.fr.sorted.bam] –o [kallisto.fr.sorted.bw] -p max
+bamCoverage –b [kallisto.rf.sorted.bam] –o [kallisto.rf.sorted.bw] -p max
 </code></p>
 
 <h2 id="install-sleuth">install Sleuth</h2>
@@ -600,7 +600,11 @@ devtools::install_github("pachterlab/sleuth")
         
         
         
+        <a href="tag_bioinformatics.html" class="btn btn-default navbar-btn cursorNorm" role="button">bioinformatics</a>
         
+        
+        
+        <a href="tag_transcriptomics.html" class="btn btn-default navbar-btn cursorNorm" role="button">transcriptomics</a>
         
         
         
@@ -631,7 +635,7 @@ devtools::install_github("pachterlab/sleuth")
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2017 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
- Site last generated: Dec 2, 2017 <br />
+ Site last generated: Dec 27, 2017 <br />
 <p><img src="images/CHMI_logo.png" alt="Company logo"/></p>
                 </div>
             </div>

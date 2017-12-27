@@ -1,6 +1,6 @@
 ---
 title: RNAseq FAQs
-tags: [getting_started, FAQs, RNAseq]
+tags: [getting_started, FAQs, transcriptomics]
 keywords:
 summary: "information on our technology, how you gain access, how much experiments cost, and our 'hands-on' philosophy."
 sidebar: mydoc_sidebar

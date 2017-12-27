@@ -1,8 +1,8 @@
 ---
-title: "Navigation pages"
-tagName: navigation
+title: "Protocols related to studing metagenomes"
+tagName: metagenomics
 search: exclude
-permalink: tag_navigation.html
+permalink: tag_metagenomics.html
 sidebar: mydoc_sidebar
 folder: tags
 ---

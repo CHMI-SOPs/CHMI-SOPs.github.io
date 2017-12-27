@@ -1,6 +1,6 @@
 ---
 title: Kallisto
-tags: [bioinformatics, RNAseq]
+tags: [bioinformatics, transcriptomics]
 keywords:
 summary: "Kallisto is our first choice for aligning reads because it combines speed, accuracy, and ability to leverage bootstraps for modeling technical variance"
 sidebar: mydoc_sidebar
@@ -103,16 +103,16 @@ kallisto quant -i [yourindex] -o [outputname] --rf-stranded -b 60 --pseudobam [i
 
 Sort and index using [samtools](http://samtools.sourceforge.net/)
 ```
-samtools sort [kallisto.fr.bam] [kallisto.fr.sorted.bam]
-samtools sort [kallisto.rf.bam] [kallisto.rf.sorted.bam]
+samtools sort -@ 24 [kallisto.fr.bam] [kallisto.fr.sorted]
+samtools sort -@ 24 [kallisto.rf.bam] [kallisto.rf.sorted]
 samtools index [kallisto.fr.sorted.bam]
 samtools index [kallisto.fr.sorted.bam]
 ```
 
 BAM to BigWig conversion using [deeptools](https://deeptools.readthedocs.io/en/latest/)
 ```
-bamCoverage –b {kallisto.fr.sorted.bam} –o {kallisto.fr.sorted.bw}
-bamCoverage –b {kallisto.rf.sorted.bam} –o {kallisto.rf.sorted.bw}
+bamCoverage –b [kallisto.fr.sorted.bam] –o [kallisto.fr.sorted.bw] -p max
+bamCoverage –b [kallisto.rf.sorted.bam] –o [kallisto.rf.sorted.bw] -p max
 ```
 
 ## install Sleuth

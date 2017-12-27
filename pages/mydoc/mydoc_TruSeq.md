@@ -1,6 +1,6 @@
 ---
 title: Illumina TruSeq Stranded mRNA Sample Preparation Protocol
-tags: [library construction]
+tags: [library_prep, transcriptomics]
 keywords: transcriptomics, library preparation
 summary: "Preparation of mRNA libraries for sequencing on an Illumina platform"
 sidebar: mydoc_sidebar

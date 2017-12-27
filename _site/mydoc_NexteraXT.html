@@ -4,9 +4,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="This is our lab protocol for growing organotypic intestinal cultures using Caco-2 cells and the Slow Turning Lateral Vessels (STLV) bioreactor set-up from Sy...">
-<meta name="keywords" content="tissue culture,  organotypic, in vitro assay">
-<title>Culture collection | CHMI services</title>
+<meta name="description" content="Preparation of sequencing libraries from DNA or cDNA for sequencing on an Illumina platform">
+<meta name="keywords" content="library_preptranscriptomicsmicrobiomemetagenomics,  metagenomics, transcriptomics, library preparation">
+<title>Illumina Nextera XT Sample Preparation Protocol | CHMI services</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -87,25 +87,6 @@
         });
     </script>
     
-    <!-- Include the standard DataTables bits -->
-    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.css">
-    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.js"></script>
-    <!-- First, this walks through the tables that occur between ...-begin
-         and ...-end and add the "datatable" class to them.
-         Then it invokes DataTable's standard initializer
-         Credit here: http://www.beardedhacker.com/blog/2015/08/28/add-class-attribute-to-markdown-table/
-      -->
-    <script>
-      $(document).ready(function(){
-          $('div.datatable-begin').nextUntil('div.datatable-end', 'table').addClass('display');
-          $('table.display').DataTable( {
-              paging: true,
-              stateSave: true,
-              searching: true
-          });
-       });
-    </script>
-    
 
 </head>
 <body>
@@ -139,7 +120,7 @@
 
 
 
-  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:beiting@upenn.edu?subject=CHMI services feedback&body=I have some feedback about the Culture collection page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:beiting@upenn.edu?subject=CHMI services feedback&body=I have some feedback about the Illumina Nextera XT Sample Preparation Protocol page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
 
 </li>
 
@@ -157,7 +138,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Culture collection">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Illumina Nextera XT Sample Preparation Protocol">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -319,7 +300,7 @@
             
             
             
-            <li><a href="mydoc_NexteraXT.html">shotgun metagenomics</a></li>
+            <li class="active"><a href="mydoc_NexteraXT.html">shotgun metagenomics</a></li>
             
             
             
@@ -439,7 +420,7 @@
         <!-- Content Column -->
         <div class="col-md-9" id="tg-sb-content">
             <div class="post-header">
-   <h1 class="post-title-main">Culture collection</h1>
+   <h1 class="post-title-main">Illumina Nextera XT Sample Preparation Protocol</h1>
 </div>
 
 
@@ -447,7 +428,7 @@
 <div class="post-content">
 
    
-    <div class="summary">This is our lab protocol for growing organotypic intestinal cultures using Caco-2 cells and the Slow Turning Lateral Vessels (STLV) bioreactor set-up from Synthecon.  </div>
+    <div class="summary">Preparation of sequencing libraries from DNA or cDNA for sequencing on an Illumina platform</div>
    
 
     
@@ -478,99 +459,237 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    <a target="_blank" href="https://github.com/CHMI-SOPs/CHMI-SOPs.github.io/tree/master/pages/mydoc/mydoc_cultureCollection.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+    <a target="_blank" href="https://github.com/CHMI-SOPs/CHMI-SOPs.github.io/tree/master/pages/mydoc/mydoc_NexteraXT.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
 
     
 
-  <h2 id="before-starting">Before starting</h2>
+  <h2 id="documentation">Documentation</h2>
 
-<p>The protocol below adapted from <a href="https://www.jove.com/video/3367/rotating-cell-culture-systems-for-human-cell-culture-human">this JOVE video</a> and published work from the laboratory of <a href="http://www.mmg.pitt.edu/person/carolyn-coyne">Carolyn Coyne</a>, particularly <a href="http://msphere.asm.org/content/1/1/e00030-15">this 2015 mSphere paper</a></p>
+<p>The full protocol can be found <a href="https://support.illumina.com/content/dam/illumina-support/documents/documentation/chemistry_documentation/samplepreps_nextera/nextera-xt/nextera-xt-library-prep-reference-guide-15031942-02.pdf">here</a></p>
 
-<ol>
-  <li>Use sterile tissue culture technique throughout all aspects of this protocol.</li>
-  <li><strong>Do not use bleach on the STLV machine or parts at any point</strong> Use of bleach may damage the center membrane of the STLV and/or leave residues that affect cell viability.</li>
-  <li><strong>Do not use general stock glassware</strong>, even if it has been autoclaved. Use only sterile packaged plasticware.  We have had numerous situations where the general use glassware has residual detergents that affect cell viability.</li>
-</ol>
+<h2 id="what-youll-need">What you’ll need</h2>
 
-<h2 id="materials-and-supplies">Materials and supplies</h2>
-
-<h2 id="preparing-the-stlvs">Preparing the STLVs</h2>
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> The following items are included in the Illumina kit</div>
 
 <ul>
-  <li><strong>Day 1</strong>: Get a clean STLV, tighten the central screw and fill the vessel with 70% ethanol. Be careful when closing it. Leave overnight on the bench.</li>
-  <li><strong>Day 2</strong>: Discard ethanol of the vessel and replace it with sterilized water. Leave overnight on the benchtop.</li>
-  <li><strong>Day 3</strong>: Discard the contents and replace with another aliquot of sterilized water. Leave it overnight.</li>
-  <li><strong>Day 4</strong>: Loosen the screws halfway, take out the center port, remove the luer caps and autoclave the open vessel and the center port, inside an autoclave pouch (15 min, gravity cycle, 121C). Remove from autoclave immediately after the cycle is done. Let it cool and use it immediately or store it for later use, as needed in a clean, dry area.</li>
-  <li><strong>Day before use</strong>: tighten the screw, fill the STLV with sterile DPBS, close the center port. Screw one-way stopcocks to the other two openings and plug one luer-lock syringes (5 and 10ml) in each side. Let it rotate overnight in the STLV, 20 rpm and monitor for leaks.</li>
+  <li>Tagment DNA buffer (TD) (Stored at -20C)</li>
+  <li>Amplicon Tagmentation Mix (ATM) (-20C)</li>
+  <li>Neutralization buffer (NT) (Room Temperature)</li>
+  <li>Nextera PCR Mix (NPM) (-20C)</li>
+  <li>Resuspension Buffer (RSB) (-20C)</li>
+  <li>TruSeq Index Plate Fixture (Room Temperature)</li>
 </ul>
 
-<h2 id="preparing-culture-beads">Preparing culture beads</h2>
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> The following items are NOT included with the Illumina kit and must be purchased separately</div>
 
 <ul>
-  <li>Add 250 μl of Cytodex bead solution to a 50 ml conical tube contain 15 ml of DPBS.</li>
-  <li>Autoclave it in <strong>liquid cycle</strong>, 30 min at 121C.  Keep the cap loose, and keep tube in a beaker or heat resistant rack.</li>
-  <li>Allow the the beads to cool and settle. Remove the supernatant and discard.</li>
-  <li>Wash beads with 15 ml of  D10 media.  Agitate manually, let the beads settle and discard supernatant. Repeat 3x.</li>
+  <li>80% Ethanol, made fresh the same day</li>
+  <li>Magnetic stand</li>
+  <li>AMPureXP beads (Beckman-Coulter)</li>
 </ul>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Sterile beads can be stored at 4C for weeks for later use. Do an extra wash with fresh D10 on the day of experiment and bring the final volume to ~15 ml</div>
+<h2 id="a-few-important-comments-before-you-start">A few important comments before you start</h2>
 
-<h2 id="caco-2-cell-culture">Caco-2 cell culture</h2>
 <ul>
-  <li>Pull cells from liquid nitrogen storage.  Thaw rapidly in 37C water bath.</li>
-  <li>transfer thawed contents to a T25 flask with 8-10 ml of prewarmed D10 media.</li>
-  <li>Incubate at 37C and wait for confluent growth.</li>
-  <li>Expand cells to four T75 flasks.</li>
-  <li>Keep working cultures of the cells by subculturing them once or twice a week, as needed.</li>
+  <li>We use the Low Sample ‘LS’ protocol as we are typically working with fewer than 48 samples at a time</li>
+  <li>The recommended starting amount of total RNA is 100 ng - 1 ug, but we usually try to stay away from the extreme ends of this spectrum.</li>
+  <li>Split this protocol into two days, stopping on the first day after you have double stranded cDNA. On second day, do the A-tailing, adapter ligation, PCR, cleanup, and quality control steps.</li>
+  <li>For 12 samples, you will need approximately 6-7 hours on the first day, and 6-7 hours the second day.</li>
+  <li>Keep all reagents on ice unless otherwise stated.</li>
+  <li>We typically remove the reagents from storage during an incubation period in the previous step.</li>
+  <li>Have the beads at room temperature at least 30 minutes prior to use.</li>
+  <li>Aliquot the reagents that arrive in large quantities (such as the resuspension buffer and the bead washing buffer) into 2 mL Eppendorf tubes.</li>
+  <li>We do not perform any of the in-line controls.</li>
+  <li>We do not use the plate barcode stickers that come with the kit.</li>
+  <li>Use only filter pipette tips and clean your area so it is free of RNases.</li>
+  <li>Ensure that the AMPureXP beads are mixed well immediately prior to use.</li>
+  <li>There are many mixing steps in this protocol - I frequently use a multi-channel pipette to help speed up this process, particularly if many libraries are being prepared.</li>
+  <li>We use a Tapestation or a BioAnalyzer to assay the input RNA quality. Ribosomal integrity numbers of 7 and higher are preferred.</li>
+  <li>We quantify the input RNA using a Qubit fluorometer.</li>
 </ul>
 
-<h2 id="seeding-the-stlvs">Seeding the STLVs</h2>
+<h2 id="step-1-quantify-dna">Step 1: Quantify DNA</h2>
+
+<p>Quantify DNA with a Qubit and then dilute each sample to 0.2 ng/uL using ultra-pure, molecular-grade water.</p>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> I usually make at least 10 uL of each DNA solution for use in the next step.</div>
+
+<h2 id="step-2-tagment-dna">Step 2: Tagment DNA:</h2>
+
 <ul>
-  <li>Remove STLV that was rotating with DPBS overnight.  Remove the syringes and the luer caps and drain the DPBS. Replace with new stopcocks and syringes (without the plungers; keep them sterile for later use).</li>
-  <li>Trypsinize one T75 flask and respend in 10 ml of DMEM. Each flask is used to seed a single reactor</li>
-  <li>Mix 10 ml bead suspension with cells to give 20 ml of volume.</li>
-  <li>Transfer the cell-bead suspension carefully to the STLV vessel through the center port.</li>
-  <li>Recover residual cell-bead mix from tube with D10 media and transfer to the STLV.</li>
-  <li>Close the center port and q.s. volume in STLV vessel to 50 ml with D10 media (until liquid starts overflow back into the syring).</li>
-  <li>Take out as many as bubbles as you can by carefully tilting the STLV and using the syringe. <em>Be careful to control pressure to not expel the center port</em>.</li>
-  <li>Incubate the STLV for 30 minutes at 37C, 5% CO2 without movement to allow the cells to attach to the beads.</li>
-  <li>Examine the STLV and remove any remaining air bubbles</li>
-  <li>Set STLV to rotate at 20 rpm at 37C, 5% CO2 for 21-28 days,</li>
+  <li>Add the following items in the order listed to each well of a new PCR plate. Pipette to mix:</li>
 </ul>
 
-<h2 id="feeding-the-stlv">Feeding the STLV</h2>
+<p>10 uL Tagment DNA Buffer (TD)
+5 uL Normalized gDNA</p>
+
 <ul>
-  <li>Exchanging the culture medium every other day.</li>
-  <li>Remove STLV from incubator, remove syringes, let the beads settle</li>
-  <li>Hold the STLV inclined, tapping the center port for the beads to stay in the bottom side of the reactor. Carefully remove ~80% of the spent culture medium through the stopcocks,</li>
-  <li>Replace the syringe and fill the vessel with fresh D10.  Return the STLV immediately for rotation.</li>
+  <li>
+    <p>Add 5 μl ATM to each well. Pipette to mix. Seal the plate.  The total volume should be 20 uL per well.</p>
+  </li>
+  <li>
+    <p>Centrifuge the plate at 280 × g at 20°C for 1 minute.</p>
+  </li>
+  <li>
+    <p>Place on the preprogrammed thermal cycler and run the tagmentation program.</p>
+  </li>
 </ul>
 
-<h2 id="harvesting-cells">Harvesting cells</h2>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> This program is in the NexteraXT folder on our thermocycler and is called 55_ATM and is 5 min at 55C followed by a hold at 10C.  Immediately after the 5 min, 55C step is complete, proceed immediately to the next step.</div>
+
 <ul>
-  <li>to monitor cell growth during the culture period, a small volume of bead suspension may be removed via syringe.</li>
+  <li>
+    <p>Add 5 μl NT to each well. Pipette to mix.</p>
+  </li>
+  <li>
+    <p>Centrifuge at 280 × g at 20°C for 1 minute.</p>
+  </li>
+  <li>
+    <p>Incubate at room temperature for 5 minutes.</p>
+  </li>
 </ul>
 
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> use a 1 ml cut pippete tip to prevent shear and protect the 3D structures.</div>
+<h2 id="step-3-pcr">Step 3: PCR</h2>
 
 <ul>
-  <li>After 3-4 weeks of continuous culture, transfer 3D culture beads to a 50 mL conical tube.</li>
-  <li>adjusted to 15 ml and use as needed for microscopic or RNA Seq experiments.</li>
+  <li>
+    <p>Set up the indexes you will be using and arrange them in the TruSeq Index Plate Fixture (see manual for images).</p>
+  </li>
+  <li>
+    <p>Using a multichannel pipette, add 5 μl of each Index 1 (i7) adapter down each column.</p>
+  </li>
 </ul>
 
-<h2 id="stlv-clean-up">STLV clean-up</h2>
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Throw away the cap once you have opened the index tube and replace with a new ORANGE cap.</div>
 
 <ul>
-  <li><strong>Day 1</strong>: fill empty vessel with 70% ethanol through the center port. Close all the openings. Be careful when closing it. It may spill. Wear goggle. Leave overnight on bench.</li>
-  <li><strong>Day 2</strong>: Drain the contents through the center port and refill the vessel with a new aliquot of 70% ethanol.</li>
-  <li>Unscrew and take apart all the components. Wash by hand carefully. To wash parts with beads adhered, it is OK to use a toothbrush</li>
+  <li>Using a multichannel pipette, add 5 μl of each Index 2 (i5) adapter across each row.</li>
 </ul>
 
-<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> the central membrane is very delicate and is easily damaged- it should <strong>only</strong> be washed with gentle rubbing…no brushes of any kind</div>
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Throw away the cap once you have opened the index tube and replace with a new WHITE cap.</div>
 
 <ul>
-  <li>Let STLV dry on an absorbent paper in clean area (bench is fine).</li>
-  <li>to reuse, repeat the ‘preparing the STLV’ above</li>
+  <li>
+    <p>Add 15 μl NPM to each well containing index adapters. Pipette to mix. The total volume is now 50 uL per well.</p>
+  </li>
+  <li>
+    <p>Centrifuge at 280 × g at 20°C for 1 minute.</p>
+  </li>
+  <li>
+    <p>Place on the preprogrammed thermal cycler and run the “NexteraPCR” program (bold denotes steps to be run for 12 cycles).</p>
+  </li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Temp (C)</th>
+      <th>Time (min:sec)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>72</td>
+      <td>3:00</td>
+    </tr>
+    <tr>
+      <td>95</td>
+      <td>0:30</td>
+    </tr>
+    <tr>
+      <td><strong>95</strong></td>
+      <td><strong>0:10</strong></td>
+    </tr>
+    <tr>
+      <td><strong>55</strong></td>
+      <td><strong>0:30</strong></td>
+    </tr>
+    <tr>
+      <td><strong>72</strong></td>
+      <td><strong>0:30</strong></td>
+    </tr>
+    <tr>
+      <td>72</td>
+      <td>5:00</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>hold</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> This is a safe stopping point.  If you choose to stop here, seal the plate and store at 2°C to 8°C for up to 2 days. Alternatively, leave in the thermal cycler overnight</div>
+
+<h2 id="step-4--cleanup">Step 4:  Cleanup</h2>
+
+<ul>
+  <li>
+    <p>Vortex AMPure XP beads before each use.  Vortex AMPure XP beads frequently to make sure that beads are evenly distributed.</p>
+  </li>
+  <li>
+    <p>Add 30 μl AMPure XP beads to each well.</p>
+  </li>
+</ul>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> If your starting material is anything other than gDNA, consult the manual. Smaller input DNA lengths may require a different quantity of AMPureXP beads.</div>
+
+<ul>
+  <li>
+    <p>Shake at 1800 rpm for 2 minutes.</p>
+  </li>
+  <li>
+    <p>Incubate at room temperature for 5 minutes.</p>
+  </li>
+  <li>
+    <p>Place on a magnetic stand and wait until the liquid is clear (~2 minutes).</p>
+  </li>
+  <li>
+    <p>Remove and discard all supernatant from each well.</p>
+  </li>
+  <li>Wash 2 times as follows:</li>
+  <li>Add 190 μl fresh 80% EtOH to each well.</li>
+  <li>Incubate on the magnetic stand for 30 seconds.</li>
+  <li>
+    <p>Remove and discard all supernatant from each well.</p>
+  </li>
+  <li>
+    <p>Using a 20 μl pipette, remove residual 80% EtOH from each well.</p>
+  </li>
+  <li>
+    <p>Air-dry on the magnetic stand for 15 minutes.</p>
+  </li>
+  <li>
+    <p>Remove from the magnetic stand.</p>
+  </li>
+  <li>
+    <p>Add 52.5 μl RSB to each well.</p>
+  </li>
+  <li>
+    <p>Shake at 1800 rpm for 2 minutes.</p>
+  </li>
+  <li>
+    <p>Incubate at room temperature for 2 minutes.</p>
+  </li>
+  <li>
+    <p>Place on a magnetic stand and wait until the liquid is clear (~2 minutes).</p>
+  </li>
+  <li>Transfer 50 μl supernatant to a new plate.</li>
+</ul>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The standard Illumina protocol calls for a bead-based normalization step at this point. We typically skip this step and perform the Tapestation and Qubit for normalization calculations. You may decide to use either method.</div>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> This is a safe stopping point.  If you choose to stop here, seal the plate and store at -20°C for up to 7 days. Alternatively, leave in the thermal cycler overnight</div>
+
+<h2 id="step-5-quality-check">Step 5: Quality Check</h2>
+
+<ul>
+  <li>
+    <p>Use the HS DNA5000 or HS DNA1000 tape and appropriate reagent buffer.  A successful library preparation will have a broad peak with an average size between 400-1000 bp.</p>
+  </li>
+  <li>
+    <p>Quantify the sample with the HS DNA Qubit kit.</p>
+  </li>
 </ul>
 
 
@@ -580,6 +699,20 @@ $('#toc').on('click', 'a', function() {
         <b>Tags: </b>
         
         
+        
+        <a href="tag_library_prep.html" class="btn btn-default navbar-btn cursorNorm" role="button">library_prep</a>
+        
+        
+        
+        <a href="tag_transcriptomics.html" class="btn btn-default navbar-btn cursorNorm" role="button">transcriptomics</a>
+        
+        
+        
+        <a href="tag_microbiome.html" class="btn btn-default navbar-btn cursorNorm" role="button">microbiome</a>
+        
+        
+        
+        <a href="tag_metagenomics.html" class="btn btn-default navbar-btn cursorNorm" role="button">metagenomics</a>
         
         
         
