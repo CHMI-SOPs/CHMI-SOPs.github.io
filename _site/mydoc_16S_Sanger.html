@@ -4,9 +4,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="You can automatically link together topics belonging to the same series. This helps users know the context within a particular process.">
-<meta name="keywords" content="content_types,  series, connected articles, tutorials, hello world">
-<title>Series | CHMI services</title>
+<meta name="description" content="Identification of unknown bacterial isolates using Sanger sequencing of the 16S rRNA gene">
+<meta name="keywords" content="microbiome,  ">
+<title>Identification of unknown bacterial isolates using Sanger sequencing of the 16S rRNA gene | CHMI services</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -120,7 +120,7 @@
 
 
 
-  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:beiting@upenn.edu?subject=CHMI services feedback&body=I have some feedback about the Series page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:beiting@upenn.edu?subject=CHMI services feedback&body=I have some feedback about the Identification of unknown bacterial isolates using Sanger sequencing of the 16S rRNA gene page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
 
 </li>
 
@@ -138,7 +138,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Series">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Identification of unknown bacterial isolates using Sanger sequencing of the 16S rRNA gene">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -288,7 +288,7 @@
             
             
             
-            <li><a href="mydoc_16S_Sanger.html">Sanger sequencing of 16S</a></li>
+            <li class="active"><a href="mydoc_16S_Sanger.html">Sanger sequencing of 16S</a></li>
             
             
             
@@ -408,7 +408,7 @@
         <!-- Content Column -->
         <div class="col-md-9" id="tg-sb-content">
             <div class="post-header">
-   <h1 class="post-title-main">Series</h1>
+   <h1 class="post-title-main">Identification of unknown bacterial isolates using Sanger sequencing of the 16S rRNA gene</h1>
 </div>
 
 
@@ -416,7 +416,7 @@
 <div class="post-content">
 
    
-    <div class="summary">You can automatically link together topics belonging to the same series. This helps users know the context within a particular process.</div>
+    <div class="summary">Identification of unknown bacterial isolates using Sanger sequencing of the 16S rRNA gene</div>
    
 
     
@@ -447,101 +447,174 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    <a target="_blank" href="https://github.com/CHMI-SOPs/CHMI-SOPs.github.io/tree/master/pages/mydoc/mydoc_series.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+    <a target="_blank" href="https://github.com/CHMI-SOPs/CHMI-SOPs.github.io/tree/master/pages/mydoc/mydoc_16S_Sanger.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
 
     
 
-  <h2 id="using-series-for-pages">Using series for pages</h2>
+  <h2 id="before-starting">Before starting</h2>
+<ul>
+  <li><a href="https://www.promega.com/-/media/files/resources/protocols/product-information-sheets/g/gotaq-green-master-mix-protocol.pdf">GoTaq Master Mix documentation</a></li>
+</ul>
 
-<p>You create a series by looking for all pages within a tag namespace that contain certain frontmatter. Here’s a <a href="mydoc_seriesdemo1.html">demo</a>.</p>
+<h2 id="materials">Materials</h2>
+<ul>
+  <li>Promega GoTaq Green Master Mix (-20C)</li>
+  <li>Molecular biology grade, nuclease-free water (-20C or room temperature)</li>
+  <li>27F Primer</li>
+  <li>1492R primer</li>
+  <li>515F primer (optional)</li>
+  <li>QIAGEN QIAquick PCR purification kit</li>
+  <li>100% Ethanol</li>
+</ul>
 
-<h2 id="create-the-series-button">1. Create the series button</h2>
+<h2 id="step-1-obtain-genomic-dna">Step 1: Obtain genomic DNA</h2>
 
-<p>First create an include that contains your series button:</p>
+<ul>
+  <li>Extract DNA using QIAGEN DNeasy kit (bacterial protocol) or other method of bacterial DNA extraction.</li>
+  <li>Quantify DNA using the Qubit.</li>
+</ul>
 
-<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"seriesContext"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"btn-group"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">data-toggle=</span><span class="s">"dropdown"</span> <span class="na">class=</span><span class="s">"btn btn-primary dropdown-toggle"</span><span class="nt">&gt;</span>Series Demo <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"caret"</span><span class="nt">&gt;&lt;/span&gt;&lt;/button&gt;</span>
-        <span class="nt">&lt;ol</span> <span class="na">class=</span><span class="s">"dropdown-menu"</span><span class="nt">&gt;</span>
-            {% assign pages = site.pages | sort:"weight"  %}
-            {% for p in pages %}
-            {% if p.series == "ACME series" %}
-            {% if p.url == page.url %}
-            <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"active"</span><span class="nt">&gt;</span> → {{p.weight}}. {{p.title}}<span class="nt">&lt;/li&gt;</span>
-            {% else %}
-            <span class="nt">&lt;li&gt;</span>
-                <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"{{p.url | remove: "</span><span class="err">/"}}"</span><span class="nt">&gt;</span>{{p.weight}}. {{p.title}}<span class="nt">&lt;/a&gt;</span>
-            <span class="nt">&lt;/li&gt;</span>
-            {% endif %}
-            {% endif %}
-            {% endfor %}
-        <span class="nt">&lt;/ol&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</code></pre>
-</div>
+<h2 id="step-2-pcr-amplify-the-full-length-16s-rrna-gene">Step 2: PCR Amplify the full-length 16S rRNA gene</h2>
 
-<p>Change “ACME series” to the name of your series.</p>
+<ul>
+  <li>
+    <p>Prepare the following reaction mixture in each PCR well/tube</p>
+  </li>
+  <li>
+    <p>Place in thermocycler and run the following program under CHMI -&gt; PCR -&gt; 16SFULL (bold indicates 30 cycles)</p>
+  </li>
+</ul>
 
-<p>Save this in your _includes/custom folder as something like series_acme.html.</p>
+<table>
+  <thead>
+    <tr>
+      <th>Component</th>
+      <th>Volume</th>
+      <th>Final Concentration</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>GoTaq Green Master Mix, 2X</td>
+      <td>25 uL</td>
+      <td>1X</td>
+    </tr>
+    <tr>
+      <td>27F primer, 10 uM</td>
+      <td>1 uL</td>
+      <td>0.2 uM</td>
+    </tr>
+    <tr>
+      <td>1492R primer, 10 uM</td>
+      <td>1 uL</td>
+      <td>0.2 uM</td>
+    </tr>
+    <tr>
+      <td>DNA template</td>
+      <td>1-5 uL</td>
+      <td>~150 ng template (&lt; 250 ng)</td>
+    </tr>
+    <tr>
+      <td>Nuclease-free water to</td>
+      <td>50 uL</td>
+      <td>NA</td>
+    </tr>
+  </tbody>
+</table>
 
-<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> With pages, there isn’t a universal namespace created from tags or categories like there is with Jekyll posts. As a result, you have to loop through all pages. If you have a lot of pages in your site (e.g., 1,000+), then this looping will create a slow build time. If this is the case, you will need to rethink the approach to looping here.</div>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> If I have many reactions to perform, I make a master mix including all of the components except for the DNA.</div>
 
-<h2 id="create-the-next-include">2. Create the “next” include</h2>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The original IDT stock solutions of the primers are at a concentration of 100 uM.</div>
 
-<p>Now create another include for the Next button at the bottom of the page. Copy the following code, changing the series name to your series’name:</p>
+<table>
+  <thead>
+    <tr>
+      <th>Temp (C)</th>
+      <th>Time (min:sec)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>95</td>
+      <td>2:00</td>
+    </tr>
+    <tr>
+      <td><strong>95</strong></td>
+      <td><strong>0:30</strong></td>
+    </tr>
+    <tr>
+      <td><strong>55</strong></td>
+      <td><strong>0:30</strong></td>
+    </tr>
+    <tr>
+      <td><strong>72</strong></td>
+      <td><strong>1:40</strong></td>
+    </tr>
+    <tr>
+      <td>72</td>
+      <td>5:00</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>hold</td>
+    </tr>
+  </tbody>
+</table>
 
-<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;p&gt;</span>{% assign series_pages = site.tags.series_acme %}
-    {% for p in pages %}
-    {% if p.series == "ACME series" %}
-    {% assign nextTopic = page.weight | plus: "1"  %}
-    {% if p.weight == nextTopic  %}
-    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"{{p.url}}"</span><span class="nt">&gt;&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span><span class="nt">&gt;</span>Next: {{p.weight}}  {{p.title}}<span class="nt">&lt;/button&gt;&lt;/a&gt;</span>
-    {% endif %}
-    {% endif %}
-    {% endfor %}
-<span class="nt">&lt;/p&gt;</span>
-</code></pre>
-</div>
+<h2 id="step-3-clean-up-the-pcr-products">Step 3. Clean up the PCR products</h2>
 
-<p>Change “acme” to the name of your series.</p>
+<ul>
+  <li>Follow the QIAGEN QIAquick PCR purification protocol.</li>
+</ul>
 
-<p>Save this in your _includes/custom/mydoc folder as series_acme_next.html.</p>
+<h2 id="step-4-qc-on-purified-pcr-products">Step 4: QC on purified PCR products</h2>
 
-<h2 id="add-the-correct-frontmatter-to-each-of-your-series-pages">3. Add the correct frontmatter to each of your series pages</h2>
+<ul>
+  <li>
+    <p>Perform Qubit quantification on all samples</p>
+  </li>
+  <li>
+    <p>Optional: Select a few samples and run an agarose gel or tapestation (DNA 5000 tape) to ensure there is a major product at approximately 1400 bp.</p>
+  </li>
+</ul>
 
-<p>Now add the following frontmatter to each page in the series:</p>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> There may be other amplification products, but as long as the 1400 bp product is the most dominant, the PCR products do not need to be gel purified.</div>
 
-<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="err">series:</span><span class="w"> </span><span class="s2">"ACME series"</span><span class="w">
-</span><span class="err">weight:</span><span class="w"> </span><span class="mf">1.0</span><span class="w">
-</span></code></pre>
-</div>
+<h2 id="step-5-submit-pcr-products-for-sequencing">Step 5: Submit PCR products for sequencing</h2>
 
-<p>With weights, Jekyll will treat 10 as coming after 1. If you have more than 10 items, consider changing <code class="highlighter-rouge">plus: "1.0"</code> to <code class="highlighter-rouge">plus: "0.1"</code>.</p>
+<ul>
+  <li>
+    <p>Follow the <a href="https://www.med.upenn.edu/genetics/dnaseq/submission.shtml">submission guide instructions</a> carefully for submitting to the UPenn DNA sequencing facility</p>
+  </li>
+  <li>
+    <p>Each tube should contain the following:</p>
+    <ul>
+      <li>6 uL of PCR product at 25 ng/uL</li>
+      <li>3 uL of the desired primer at 1.1 uM</li>
+      <li>If your DNA is not sufficiently concentrated, just submit the sample anyway, your results may be fine.</li>
+      <li>The sequencing facility suggests 10 ng of DNA per 100 bp.</li>
+    </ul>
+  </li>
+</ul>
 
-<p>Additionally, if your page names are prefaced with numbers, such as “1. Download the code,” then the <code class="highlighter-rouge"><span class="p">{</span><span class="err">{p.weight</span><span class="p">}</span><span class="err">}</span></code> will create a duplicate number. In that case, just remove the <code class="highlighter-rouge"><span class="p">{</span><span class="err">{p.weight</span><span class="p">}</span><span class="err">}</span></code> from both code samples here.</p>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> We typically submit 3 tubes per sample: a 27F, 515F, and 1492R. These three sequencing results help me assemble the 16S gene without gaps.</div>
 
-<h2 id="add-links-to-the-series-button-and-next-button-on-each-page">4. Add links to the series button and next button on each page.</h2>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Use strip tubes with the strip caps for easy removal if you have &lt;52 samples. If you have more than 52 samples, submit your samples in a plate with the HT option.</div>
 
-<p>On each series page, add a link to the series button at the top and a link to the next button at the bottom.</p>
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> The first tube of each 8-tube set should have ‘Beiting’ on it and the second tube should have your last name. Label your samples sequentially 1, 2, 3, etc….</div>
 
-<div class="language-liquid highlighter-rouge"><pre class="highlight"><code>&lt;!-- your frontmatter goes here --&gt;
+<h2 id="step-6-interpret-results">Step 6: Interpret results</h2>
 
-<span class="p">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span><span class="na">custom/series_acme</span><span class="p">.</span><span class="na">html</span><span class="w"> </span><span class="p">%}</span>
+<ul>
+  <li>
+    <p>Assemble the sequencing reads using your favorite assembly software (Geneious has an easy-to-use interface).</p>
+  </li>
+  <li>
+    <p>Obtain the full length, consensus sequence seach for the best match using either <a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastSearch&amp;BLAST_SPEC=MicrobialGenomes">BLAST</a> or a recent tool called Bitsliced Genomic Signature Index (BIGSI) which is available <a href="http://www.bigsi.io/">here</a> and you can read more about on the <a href="https://github.com/Phelimb/BIGSI">Github page for BIGSI</a></p>
+  </li>
+</ul>
 
-&lt;!-- your page content goes here ... --&gt;
-
-<span class="p">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span><span class="na">custom/series_acme_next</span><span class="p">.</span><span class="na">html</span><span class="w"> </span><span class="p">%}</span>
-</code></pre>
-</div>
-
-<h2 id="changing-the-series-drop-down-color">Changing the series drop-down color</h2>
-
-<p>The Bootstrap menu uses the <code class="highlighter-rouge">primary</code> class for styling. If you change this class in your theme, the Bootstrap menu should automatically change color as well. You can also just use another Bootstrap class in your button code. Instead of <code class="highlighter-rouge">btn-primary</code>, use <code class="highlighter-rouge">btn-info</code> or <code class="highlighter-rouge">btn-warning</code>. See [Labels][mydoc_labels] for more Bootstrap button classes.</p>
-
-<h2 id="using-a-collection-with-your-series">Using a collection with your series</h2>
-
-<p>Instead of copying and pasting the button includes on each of your series, you could also create a collection and define a layout for the collection that has the include code. For more information on creating collections, see [Collections][mydoc_collections] for more details.</p>
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> No database is comprehensive and there’s always bias in what is represented in a database. In addition, since you’re only considering one gene (16S rRNA), this also affects your specificity and resolution for identifying species.</div>
 
 
 
@@ -550,6 +623,8 @@ $('#toc').on('click', 'a', function() {
         <b>Tags: </b>
         
         
+        
+        <a href="tag_microbiome.html" class="btn btn-default navbar-btn cursorNorm" role="button">microbiome</a>
         
         
         
@@ -580,7 +655,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2018 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
-<span>Page last updated:</span> July 3, 2016<br/> Site last generated: Jan 2, 2018 <br />
+ Site last generated: Jan 2, 2018 <br />
 <p><img src="images/CHMI_logo.png" alt="Company logo"/></p>
                 </div>
             </div>

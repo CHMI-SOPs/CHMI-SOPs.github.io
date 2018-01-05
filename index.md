@@ -10,6 +10,12 @@ summary: This is home to all the standard protocols, procedures and services of 
 ## Site overview
 This website provides convenient access to all the standard protocols and procedures used by my group at the [PennVet CHMI](http://www.hostmicrobe.org).  If you're a member of my lab, then clicking on the "Edit me" button above (and on each page) will take you to GitHub where you can collaboratively edit any protocol page.  This wiki-style approach gives us a central place to develop our lab protocols.  If you're not part of CHMI, no worries, you can still peruse the site to see our protocols.  Comments and feedback are welcome!
 
+## Printing protocols
+We made the site as visually clean as possible, so that your laptop or iPad could be used for following protocols at the bench.  However, each page is also formated for printing or saving as a PDF.  Simply hide the navigation sidebar by clicking 'Nav' button at the top of the page and print
+
+## Protocol tags
+Notice that each protocol is tagged at the bottom of the page.  Clicking on a tag allows you to easily find all protocols related to a certain topic (e.g. library prep, transcriptomics, etc)
+
 ## Technology available at CHMI
 * Illumina NextSeq 500 
 * Oxford Nanopore MinION

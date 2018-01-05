@@ -47,10 +47,6 @@ entries:
     - title: Low input protocol
       url: /mydoc_install_jekyll_on_windows.html
       output: web, pdf
-
-    - title: ATAC-seq protocol
-      url: /mydoc_install_jekyll_on_windows.html
-      output: web, pdf
       
       subfolders:
       - title: informatics pipelines
@@ -64,14 +60,6 @@ entries:
 
         - title: Kallisto and Sleuth
           url: /mydoc_kallisto.html
-          output: web
-
-        - title: RSEM
-          url: /tag_formatting.html
-          output: web
-
-        - title: RSubread
-          url: /tag_formatting.html
           output: web
 
         - title: data deposition
@@ -92,6 +80,10 @@ entries:
 
     - title: shotgun metagenomics
       url: /mydoc_NexteraXT.html
+      output: web, pdf
+
+    - title: Sanger sequencing of 16S
+      url: /mydoc_16S_Sanger.html
       output: web, pdf
 
     - title: culture collection
@@ -138,10 +130,6 @@ entries:
     folderitems:
     - title: Biomeme portable QPCR
       url: /mydoc_biomeme.html
-      output: web, pdf
-
-    - title: Oxford Nanopore MinION
-      url: /mydoc_alerts.html
       output: web, pdf
 
     - title: Microbial Design Studio

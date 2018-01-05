@@ -40,6 +40,12 @@
   
   
   <url>
+    <loc>http://localhost:4000/mydoc_16S_Sanger.html</loc>
+  </url>
+  
+  
+  
+  <url>
     <loc>http://localhost:4000/mydoc_3Dculture.html</loc>
   </url>
   
