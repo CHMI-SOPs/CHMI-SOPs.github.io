@@ -14,8 +14,8 @@ The protocols below detail how we've been using [Biomeme Inc's](http://biomeme.c
 ### Mastermix
 Resuspend bulk lyophilized **LyoDNA** or **LyoRNA** Biomeme master mix with 132 ul of PCR grade water + 18 ul of glycerol.  This is a 10x stock.  Addition of glyceral allows leftover mastermix to be frozen for reuse later.  LyoRNA master mix contains a reverse transcriptase for QPCR assays where the target is a RNA molecule.  Each resuspended vial contains enough mastermix for 60 reactions of 20ul/rxn.
 
-### Reaction mix
-A typical reaction mix on the biomeme platform contains the following elements
+### Reaction
+A typical QPCR reaction on the biomeme platform contains the following elements
 
 {% include important.html content="prepare 20x primer/probe stock by adding" %}
 
@@ -26,7 +26,6 @@ A typical reaction mix on the biomeme platform contains the following elements
 | 10x LyoDNA or LyoRNA mastermix | 2 |
 | isolated DNA or RNA | 5-17 |
 | water | qs to 20 |
-
 
 
 ### Thermocycling conditions
@@ -44,7 +43,7 @@ A typical reaction mix on the biomeme platform contains the following elements
 ## Avian assays
 
 ### Tracheal swabs
-All avian assays begin with tracheal swabs collected in brain-heart infusion (BHI) media.  We typically have 11 swabs all stored in a single vial containing 5.5 ml of BHI media.  These swabs could be from multiple birds or from a single bird sampled multiple times, and are assayed fresh or after storage at -80C.  Here's our procotol for rapid, 1 minute DNA extraction using Biomeme reagents:
+All avian assays begin with tracheal swabs collected in brain-heart infusion (BHI) media.  We typically have 11 swabs all stored in a single vial containing 5.5 ml of BHI media.  These swabs could be from multiple birds or from a single bird sampled multiple times, and this vial can be assayed fresh or after storage at -80C.  Here's our procotol for rapid, 1 minute DNA extraction using Biomeme reagents:
 
 1. thaw vial containing BHI media and swabs
 2. take 100 ul aliquot of sample for DNA or RNA extraction (might be quite viscous due to mucous)

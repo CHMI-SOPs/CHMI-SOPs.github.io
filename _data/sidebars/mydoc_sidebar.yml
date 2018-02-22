@@ -105,7 +105,7 @@ entries:
           output: web
 
         - title: QIIME
-          url: /mydoc_qiime.html
+          url: /mydoc_qiime2.html
           output: web
 
         - title: data deposition
