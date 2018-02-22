@@ -8,7 +8,7 @@ permalink: mydoc_qiime2.html
 folder: mydoc
 ---
 
-## Connect to a CHMI linux cluster:
+## Step 1: Connect to a CHMI linux cluster
 
 {% include important.html content="if you do not have an account on our cluster and would like to get one, please contact Dan Beiting" %}
 
@@ -16,7 +16,7 @@ folder: mydoc
 ssh username@130.91.255.137
 ```
 
-## prepare your metadata
+## Step 2: prepare your metadata
 
 Metadata is information about your samples (e.g. date collected, patient age, sex, pH, etc).  This information should be contained within a single spreadsheet that has samples as rows and variables as columns.
 
@@ -37,7 +37,7 @@ qiime metadata tabulate --m-input-file sample-metadata.tsv --o-visualization tab
 navigate to [QIIME2 viewer](https://view.qiime2.org/) in browser to view this visualization
 
 
-## prepare your raw data
+## Step 3: prepare your raw data
 
 There are a number of ways you may have your raw data structured, depending on sequencing platform (e.g., Illumina vs Ion Torrent) and sequencing approach (e.g., single-end vs paired-end), and any pre-processing steps that have been performed by sequenencing facilities (e.g., joined paired ends, barcodes in fastq header, etc).  Check out the [QIIME info page](https://docs.qiime2.org/2018.2/tutorials/importing/)
 
@@ -59,7 +59,7 @@ qiime tools peek emp-single-end-sequences.qza
 
 {% include important.html content="the .qza and .qzv files can be unpacked using the unix command  ```unzip``` or the qiime commands ```qiime tools extract``` or ```qiime tools export```.  These unpacked files can then be used in other settings (R, perl, etc).  In other words, the QIIME concept of an 'artifact' does not permanently alter the structure of your data." %}
 
-## demultiplexing
+## Step 4: demultiplexing
 
 {% include note.html content="If you data is already demultiplexed, you can skip this step. For paired data you would use qiime demux emp-paired in the code snipet below to produce a demux.qza file" %}
 
@@ -82,7 +82,7 @@ qiime demux summarize \
   --o-visualization demux.qzv
 ```
 
-## denoising 
+## Step 5: denoising 
 
 BLURB ABOUT OTU AND denoising....link to data
 
