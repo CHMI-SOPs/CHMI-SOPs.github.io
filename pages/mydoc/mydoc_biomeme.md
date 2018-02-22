@@ -116,12 +116,12 @@ The primers and probes below are used for detection of *Staphylococcus aureus (S
 
 | name | Sequence (5' -> 3') |
 |-------|--------|
-| *Sa* fwd | TTG GGT TTA GGG ATT GGGA TT |
-| *Sa* rev | CCA AGGG ATT CAA CCA TCT T |
-| *Sa* probe | *5TexRd-XN*-TGA TGA TCC AAG AAC GTG AAG AAC ACC *BHQ-2* |
+| *Sa* fwd | |
+| *Sa* rev | |
+| *Sa* probe | |
 | *Sp* fwd | GCA CTC GCT ACT ATT TCT TAC CTC AA |
 | *Sp* rev | ATT ACT GGT TTC CAA GAC ATT GTG AC |
-| *Sp* probe | */560FAM/*CCG CAA CTC */ZEN/* ATC AAG GAT TTC TGT TAC CA*/3IABkFQ/* |
+| *Sp* probe | */56-FAM/*CCG CAA CTC */ZEN/* ATC AAG GAT TTC TGT TAC CA*/3IABkFQ/* |
 | *Lb* fwd | TGC TAT AAA ATC GTA CCA CCC GAC A |
 | *Lb* rev | AAA TGG CAT ACA GAA ACC CCG TTC |
 | *Lb* probe | */56-FAM/*GCC TCT GGG */ZEN/* TAG GGG CGT TCT GCA A*/3IABkFQ/* |
