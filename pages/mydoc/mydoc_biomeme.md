@@ -35,7 +35,7 @@ A typical reaction mix on the biomeme platform contains the following elements
 | 95 | 10:00 |
 | **95** | **0:15** |
 | **60** | **1:00** |
-**Bold** steps are repeated for 40 cycles total
+**Bold** steps are repeated for 40 cycles total |
 
 
 ## Avian assays
@@ -86,7 +86,7 @@ The primer and probe sequences below are from [Raviv and Kleven, 2009](http://ww
 ## Cutaneous Leishmaniasis assay
 
 ### Lesion swab
-For each patient, two swabs (provided by Biomeme) are held together and used to swab the inner border of lesion (encircled 20x).  This will be used for DNA targets (bacteria).  Repeat with two new swabs (20x), and use this second set of swabs for RNA targets (host genes).  
+For each patient, two sterile swabs (provided by Biomeme) are held together and used to swab the inner border of lesion (encircled 20x).  This will be used for DNA targets (bacteria).  Repeat with two new swabs (20x), and use this second set of swabs for RNA targets (host genes).  
 
 1. Immerse swabs in 1ml of a 1:1 mix of BLB (0.5ml) and water (BEB; 0.5ml), twirl in media for 1 min, discard swabs.
 2. Attach standard lab 1cc syringe to Biomeme filter tip. Pump lysate up/down 10x, expel volume
@@ -110,15 +110,15 @@ The primers and probes below are used for detection of *Staphylococcus aureus (S
 
 | name | Sequence (5' -> 3') |
 |-------|--------|
-| Sa fwd | TTG GGT TTA GGG ATT GGGA TT |
-| Sa rev | CCA AGGG ATT CAA CCA TCT T |
-| Sa probe | *5TexRd-XN*-TGA TGA TCC AAG AAC GTG AAG AAC ACC *BHQ-2* |
-| Sp fwd | GCA CTC GCT ACT ATT TCT TAC CTC AA |
-| Sp rev | ATT ACT GGT TTC CAA GAC ATT GTG AC |
-| Sp probe | */560FAM/*CCG CAA CTC */ZEN/* ATC AAG GAT TTC TGT TAC CA*/3IABkFQ/* |
-| Lb fwd | TGC TAT AAA ATC GTA CCA CCC GAC A |
-| Lb rev | AAA TGG CAT ACA GAA ACC CCG TTC |
-| Lb probe | */56-FAM/*GCC TCT GGG */ZEN/* TAG GGG CGT TCT GCA A*/3IABkFQ/* |
+| *Sa* fwd | TTG GGT TTA GGG ATT GGGA TT |
+| *Sa* rev | CCA AGGG ATT CAA CCA TCT T |
+| *Sa* probe | *5TexRd-XN*-TGA TGA TCC AAG AAC GTG AAG AAC ACC *BHQ-2* |
+| *Sp* fwd | GCA CTC GCT ACT ATT TCT TAC CTC AA |
+| *Sp* rev | ATT ACT GGT TTC CAA GAC ATT GTG AC |
+| *Sp* probe | */560FAM/*CCG CAA CTC */ZEN/* ATC AAG GAT TTC TGT TAC CA*/3IABkFQ/* |
+| *Lb* fwd | TGC TAT AAA ATC GTA CCA CCC GAC A |
+| *Lb* rev | AAA TGG CAT ACA GAA ACC CCG TTC |
+| *Lb* probe | */56-FAM/*GCC TCT GGG */ZEN/* TAG GGG CGT TCT GCA A*/3IABkFQ/* |
 
 
 #### Human transcripts
