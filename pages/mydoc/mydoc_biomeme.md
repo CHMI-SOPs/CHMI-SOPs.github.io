@@ -8,24 +8,14 @@ permalink: mydoc_biomeme.html
 folder: mydoc
 ---
 
-## Avian assays
+## Before starting
+The protocols below detail how we've been using [Biomeme Inc's](http://biomeme.com/) bulk reagents for QPCRs.  Once you've optimized the assays using bulk reagents, assays can then be manufactured as field-ready, room-temp stable QPCR assays for use in the field.  For the most part, we keep our mastermix and PCR conditions the same across all assays.  The variations come with the primer/probe design and optimizing extaction of DNA or RNA from different sample types.  So far, we've had good success with the primers/probes listed below and with extraction of nucleic acid from nasal and skin swabs.
 
-### DNA extraction
-All avian assays begin with tracheal swabs collected in brain-heart infusion (BHI) media.  We typically have 11 swabs all stored in a single vial containing 5.5 ml of BHI media.  These swabs could be from multiple birds or from a single bird sampled multiple times, and are assayed fresh or after storage at -80C.  Here's our procotol for rapid, 1 minute DNA extraction using Biomeme reagents:
+### Mastermix
+Resuspend bulk lyophilized **LyoDNA** or **LyoRNA** Biomeme master mix with 132 ul of PCR grade water + 18 ul of glycerol.  Addition of glyceral allows leftover mastermix to be frozen for reuse later.  LyoRNA master mix contains a reverse transcriptase for QPCR assays where the target is a RNA molecule.  Each resuspended vial contains enough mastermix for 60 reactions of 20ul/rxn.
 
-1. thaw vial containing BHI media and swabs
-2. take 100 ul aliquot of sample for DNA extraction
-3. add 100 ul sample to 1 ml of Biomeme Lysis Buffer (BLB)
-4. with a 1cc syringe affixed to a Biomeme extraction column, push the extraction sample mix up and down 10 times
-5. after expelling the volume the 10th time, wash the column by drawing up 500 ul of Biomeme Protein Wash (BPW) 1 time, then expel again.
-6. draw up 1 ml of Biomeme Wash Buffer (BWB) and expel volume
-7. draw up 1 ml of Biomeme Drying Wash (BDW) and expel volume
-8. remove and discard the 1cc syringe, and attach a new 50cc syringe to the same column.  Pump up and down with air vigorously to dry the column.
-9. remove and discard the 50cc syringe.  Connect new 1 cc syringe to the column and draw up 125 ul of Biomeme Elution Buffer (BEB).
-10. Expel the elution buffer into a final collection tube.  Typical elution volume is 50-70 ul.  We use 5ul of this DNA for any of the assays listed below, which means a single eluate is enough for at least 9-10 QPCR assays.
-
-### Bulk master mix prep
-Resuspend bulk lyophilized LyoDNA or LyoRNA Biomeme master mix with 135 ul of PCR grade water.  LyoRNA master mix contains a reverse transcriptase, which makes it ideal for assays targeting RNA viruses, such as IBV (see below).  For Mycoplasma, we use LyoDNA.  For each reaction you intend to run, mix the following in a single tube, distribute 20ul aliquots to each reaction tube, then add DNA template to each tube
+### Reaction mix
+A typical reaction mix on the biomeme platform contains the following elements
 
 | Reagent | vol (ul) |
 |-------|--------|
@@ -37,7 +27,38 @@ Resuspend bulk lyophilized LyoDNA or LyoRNA Biomeme master mix with 135 ul of PC
 | DNA | 5 |
 
 
-### Infectious Bronchitis Virus (IBV)
+### Thermocycling conditions
+
+| Temp (C) | Time (min:sec) |
+|-------|--------|
+| 45 | 10:00 |
+| 95 | 10:00 |
+| **95** | **0:15** |
+| **60** | **1:00** |
+**Bold** steps are repeated for 40 cycles total
+
+
+## Avian assays
+
+### Tracheal swabs
+All avian assays begin with tracheal swabs collected in brain-heart infusion (BHI) media.  We typically have 11 swabs all stored in a single vial containing 5.5 ml of BHI media.  These swabs could be from multiple birds or from a single bird sampled multiple times, and are assayed fresh or after storage at -80C.  Here's our procotol for rapid, 1 minute DNA extraction using Biomeme reagents:
+
+1. thaw vial containing BHI media and swabs
+2. take 100 ul aliquot of sample for DNA or RNA extraction (might be quite viscous due to mucous)
+3. add 100 ul sample to 1 ml of Biomeme Lysis Buffer (BLB) (if you plan to assay for IBV, use BLB from RNA kit)
+4. with a 1cc syringe affixed to a Biomeme extraction column, push the extraction sample mix up and down 10 times
+5. after expelling the volume the 10th time, wash the column by drawing up 500 ul of Biomeme Protein Wash (BPW) 1 time, then expel again.
+6. draw up 1 ml of Biomeme Wash Buffer (BWB) and expel volume
+7. draw up 1 ml of Biomeme Drying Wash (BDW) and expel volume
+8. remove and discard the 1cc syringe, and attach a new 50cc syringe to the same column.  Pump up and down with air vigorously to dry the column.
+9. remove and discard the 50cc syringe.  Connect new 1 cc syringe to the column and draw up 125 ul of Biomeme Elution Buffer (BEB).
+10. Expel the elution buffer into a final collection tube.  Typical elution volume is 50-70 ul.  We use 5ul of this DNA for any of the assays listed below, which means a single eluate is enough for at least 9-10 QPCR assays.
+
+
+### Primers and probes
+
+#### Infectious Bronchitis Virus (IBV)
+**note**-IBV is an RNA virus, so be sure to use the appropriate lysis buffer (BLB from RNA bulk extraction kit) and mastermix (LyoRNA).
 
 | name | Sequence (5' -> 3') |
 |-------|--------|
@@ -46,15 +67,9 @@ Resuspend bulk lyophilized LyoDNA or LyoRNA Biomeme master mix with 135 ul of PC
 | probe | *FAM*-CAC CAC CAG AAC CTG TCA CCT C-*BHQ-1* |
 
 
-| Temp (C) | Time (min:sec) |
-|-------|--------|
-| 45 | 10:00 |
-| 95 | 10:00 |
-| **95** | **0:15** |
-| **60** | **1:00** |
 
-
-### *Mycoplasma gallisepticum* and *Mycoplasma synoviae* (Mg/Ms)
+#### *Mycoplasma gallisepticum* and *Mycoplasma synoviae* (Mg/Ms)
+**note**-Mg and Ms targets are DNA, so be sure to use appropirate lysis buffer (BLB from DNA bulk extraction kit) and mastermix (LyoDNA).
 
 The primer and probe sequences below are from [Raviv and Kleven, 2009](http://www.bioone.org/doi/10.1637/8469-091508-Reg.1?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%3dpubmed)
 
@@ -67,11 +82,62 @@ The primer and probe sequences below are from [Raviv and Kleven, 2009](http://ww
 | Ms rev | CCT CCT TTC TTA CGG AGT ACA |
 | Ms probe | *FAM*-AGC GAT ACA CAA CCG CTT TTA GAA T-*BHQ-1* |
 
-| Temp (C) | Time (min:sec) |
+
+## Cutaneous Leishmaniasis assay
+
+### Lesion swab
+For each patient, two swabs (provided by Biomeme) are held together and used to swab the inner border of lesion (encircled 20x).  This will be used for DNA targets (bacteria).  Repeat with two new swabs (20x), and use this second set of swabs for RNA targets (host genes).  
+
+1. Immerse swabs in 1ml of a 1:1 mix of BLB (0.5ml) and water (BEB; 0.5ml), twirl in media for 1 min, discard swabs.
+2. Attach standard lab 1cc syringe to Biomeme filter tip. Pump lysate up/down 10x, expel volume
+3. Immediately move to **BPW** wash, pump up/down 1x, expel volume
+4. Immediately move to **BWB** wash, pump up/down 1x, expel volume
+5. Immediately move to **BDW** wash, pump up/down 1x, expel volume
+6. Pump air up/down repeatedly 10x, discard syringe but **keep filter tip**
+7. attach 25cc or 50cc syringe to the same filter tip.  Pump up and down with air vigorously to dry the column.
+8. remove and discard the syringe.  Connect new Biomeme 'slip-tip' 1 cc syringe to the column and draw up 150 ul of Biomeme Elution Buffer (BEB).  Pump up/down 3x with BEB.
+9. Expel the elution buffer into a final collection tube.  Typical elution volume is ~120ul.  We use 17ul of this DNA for any of the assays listed below, which means a single eluate is enough for at least 6 QPCR assays.
+
+### Primers and probes
+
+#### Skin resident microbes 
+The primers and probes below are used for detection of *Staphylococcus aureus (Sa)*, *Streptococcus pyogenes (Sp)* and *Leishmania braziliensis (Lb)*
+**note**-all of these targets are DNA, so be sure to use appropirate lysis buffer (BLB from DNA bulk extraction kit) and mastermix (LyoDNA).
+
+*Leishmania braziliensis* primer/probes are from [Weirather et al., 2011](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3209110/)
+*Streptococcus pyogenes* primer/probes were adapted from CDC [here](https://www.cdc.gov/streplab/protocols.html)
+*Staphylococcus aureus* primers and probes were provided by Biomeme Inc.
+
+| name | Sequence (5' -> 3') |
 |-------|--------|
-| 45 | 10:00 |
-| 95 | 10:00 |
-| **95** | **0:15** |
-| **60** | **1:00** |
+| Sa fwd | TTG GGT TTA GGG ATT GGGA TT |
+| Sa rev | CCA AGGG ATT CAA CCA TCT T |
+| Sa probe | *5TexRd-XN*-TGA TGA TCC AAG AAC GTG AAG AAC ACC *BHQ-2* |
+| Sp fwd | GCA CTC GCT ACT ATT TCT TAC CTC AA |
+| Sp rev | ATT ACT GGT TTC CAA GAC ATT GTG AC |
+| Sp probe | */560FAM/*CCG CAA CTC */ZEN/* ATC AAG GAT TTC TGT TAC CA*/3IABkFQ/* |
+| Lb fwd | TGC TAT AAA ATC GTA CCA CCC GAC A |
+| Lb rev | AAA TGG CAT ACA GAA ACC CCG TTC |
+| Lb probe | */56-FAM/*GCC TCT GGG */ZEN/* TAG GGG CGT TCT GCA A*/3IABkFQ/* |
+
+
+#### Human transcripts
+The primers and probes below are for the detection of host transcripts present in cellular material on the swab
+**note**-all of these targets are mRNA, so be sure to use appropirate lysis buffer (BLB from RNA bulk extraction kit) and mastermix (LyoRNA).
+
+
+| name | Sequence (5' -> 3') |
+|-------|--------|
+| hIL1B fwd | CAA AGG CGG CCA GGA TAT AA |
+| hIL1B rev | CTA GGG ATT GAG TCC ACA TTC AG |
+| hIL1B probe | */56-FAM/*AGA GCT GTA */ZEN/* CCC AGA GAG TCC TGT*/3IABkFQ/* |
+| hGZMB fwd | GTA CCA TTG AGT TGT GCG TG |
+| hGZMB rev | CAT GCC ATT GTT TCG TCC ATA G |
+| hGZMB probe | */56-FAM/*CCT CCA GAG */ZEN/* TCC CCC TTA AAG GAA GT*/3IABkFQ/* 
+| hCTRL fwd | TGC TAT AAA ATC GTA CCA CCC GAC A |
+| hCTRL rev | AAA TGG CAT ACA GAA ACC CCG TTC |
+| hCTRL probe | */56-FAM/*CCT CCA GAG */ZEN/* TCC CCC TTA AAG GAA GT*/3IABkFQ/* |
+
+
 
 {% include links.html %}
