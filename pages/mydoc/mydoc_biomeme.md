@@ -9,22 +9,24 @@ folder: mydoc
 ---
 
 ## Before starting
-The protocols below detail how we've been using [Biomeme Inc's](http://biomeme.com/) bulk reagents for QPCRs.  Once you've optimized the assays using bulk reagents, assays can then be manufactured as field-ready, room-temp stable QPCR assays for use in the field.  For the most part, we keep our mastermix and PCR conditions the same across all assays.  The variations come with the primer/probe design and optimizing extaction of DNA or RNA from different sample types.  So far, we've had good success with the primers/probes listed below and with extraction of nucleic acid from nasal and skin swabs.
+The protocols below detail how we've been using [Biomeme Inc's](http://biomeme.com/) bulk reagents for QPCRs.  Once you've optimized the assays using bulk reagents, assays can then be manufactured as room-temp stable QPCR assays for use in the field.  For the most part, we keep our mastermix and PCR conditions the same across all assays.  The variations come with the primer/probe design and optimizing extaction of DNA or RNA from different sample types.  So far, we've had good success with the primers/probes listed below and with extraction of nucleic acid from nasal and skin swabs.
 
 ### Mastermix
-Resuspend bulk lyophilized **LyoDNA** or **LyoRNA** Biomeme master mix with 132 ul of PCR grade water + 18 ul of glycerol.  Addition of glyceral allows leftover mastermix to be frozen for reuse later.  LyoRNA master mix contains a reverse transcriptase for QPCR assays where the target is a RNA molecule.  Each resuspended vial contains enough mastermix for 60 reactions of 20ul/rxn.
+Resuspend bulk lyophilized **LyoDNA** or **LyoRNA** Biomeme master mix with 132 ul of PCR grade water + 18 ul of glycerol.  This is a 10x stock.  Addition of glyceral allows leftover mastermix to be frozen for reuse later.  LyoRNA master mix contains a reverse transcriptase for QPCR assays where the target is a RNA molecule.  Each resuspended vial contains enough mastermix for 60 reactions of 20ul/rxn.
 
 ### Reaction mix
 A typical reaction mix on the biomeme platform contains the following elements
 
+{% include important.html content="prepare 20x primer/probe stock by adding" %}
+
+
 | Reagent | vol (ul) |
 |-------|--------|
-| fwd primer | 1 |
-| rev primer | 1 |
-| probe | 1 |
-| master mix | 2.5 |
+| 20x primer/probe | 1 |
+| 10x LyoDNA or LyoRNA mastermix | 2 |
+| isolated DNA or RNA | 5-17 |
 | water | qs to 20 |
-| DNA | 5 |
+
 
 
 ### Thermocycling conditions
@@ -35,7 +37,8 @@ A typical reaction mix on the biomeme platform contains the following elements
 | 95 | 10:00 |
 | **95** | **0:15** |
 | **60** | **1:00** |
-**Bold** steps are repeated for 40 cycles total |
+
+**Bold** steps are repeated for 40 cycles total
 
 
 ## Avian assays
@@ -58,7 +61,8 @@ All avian assays begin with tracheal swabs collected in brain-heart infusion (BH
 ### Primers and probes
 
 #### Infectious Bronchitis Virus (IBV)
-**note**-IBV is an RNA virus, so be sure to use the appropriate lysis buffer (BLB from RNA bulk extraction kit) and mastermix (LyoRNA).
+
+{% include note.html content="IBV is an RNA virus, so be sure to use the appropriate lysis buffer (BLB from RNA bulk extraction kit) and mastermix (LyoRNA)." %}
 
 | name | Sequence (5' -> 3') |
 |-------|--------|
@@ -69,7 +73,8 @@ All avian assays begin with tracheal swabs collected in brain-heart infusion (BH
 
 
 #### *Mycoplasma gallisepticum* and *Mycoplasma synoviae* (Mg/Ms)
-**note**-Mg and Ms targets are DNA, so be sure to use appropirate lysis buffer (BLB from DNA bulk extraction kit) and mastermix (LyoDNA).
+
+{% include note.html content="Mg and Ms targets are DNA, so be sure to use appropirate lysis buffer (BLB from DNA bulk extraction kit) and mastermix (LyoDNA)." %}
 
 The primer and probe sequences below are from [Raviv and Kleven, 2009](http://www.bioone.org/doi/10.1637/8469-091508-Reg.1?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%3dpubmed)
 
@@ -100,13 +105,15 @@ For each patient, two sterile swabs (provided by Biomeme) are held together and 
 
 ### Primers and probes
 
-#### Skin resident microbes 
+#### Skin-resident microbes 
 The primers and probes below are used for detection of *Staphylococcus aureus (Sa)*, *Streptococcus pyogenes (Sp)* and *Leishmania braziliensis (Lb)*
+
+
 **note**-all of these targets are DNA, so be sure to use appropirate lysis buffer (BLB from DNA bulk extraction kit) and mastermix (LyoDNA).
 
-*Leishmania braziliensis* primer/probes are from [Weirather et al., 2011](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3209110/)
-*Streptococcus pyogenes* primer/probes were adapted from CDC [here](https://www.cdc.gov/streplab/protocols.html)
-*Staphylococcus aureus* primers and probes were provided by Biomeme Inc.
+** *Leishmania braziliensis* primer/probes are from [Weirather et al., 2011](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3209110/)
+** *Streptococcus pyogenes* primer/probes were adapted from CDC [here](https://www.cdc.gov/streplab/protocols.html)
+** *Staphylococcus aureus* primers and probes were provided by Biomeme Inc.
 
 | name | Sequence (5' -> 3') |
 |-------|--------|
@@ -123,8 +130,8 @@ The primers and probes below are used for detection of *Staphylococcus aureus (S
 
 #### Human transcripts
 The primers and probes below are for the detection of host transcripts present in cellular material on the swab
-**note**-all of these targets are mRNA, so be sure to use appropirate lysis buffer (BLB from RNA bulk extraction kit) and mastermix (LyoRNA).
 
+{% include note.html content="All of these targets are mRNAs, so be sure to use appropirate lysis buffer (BLB from RNA bulk extraction kit) and mastermix (LyoRNA)." %}
 
 | name | Sequence (5' -> 3') |
 |-------|--------|
