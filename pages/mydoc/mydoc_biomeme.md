@@ -108,12 +108,11 @@ For each patient, two sterile swabs (provided by Biomeme) are held together and 
 #### Skin-resident microbes 
 The primers and probes below are used for detection of *Staphylococcus aureus (Sa)*, *Streptococcus pyogenes (Sp)* and *Leishmania braziliensis (Lb)*
 
+{% include note.html content="All of these targets are DNA, so be sure to use appropirate lysis buffer (BLB from DNA bulk extraction kit) and mastermix (LyoDNA)." %}
 
-**note**-all of these targets are DNA, so be sure to use appropirate lysis buffer (BLB from DNA bulk extraction kit) and mastermix (LyoDNA).
-
-** *Leishmania braziliensis* primer/probes are from [Weirather et al., 2011](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3209110/)
-** *Streptococcus pyogenes* primer/probes were adapted from CDC [here](https://www.cdc.gov/streplab/protocols.html)
-** *Staphylococcus aureus* primers and probes were provided by Biomeme Inc.
+* *Leishmania braziliensis* primer/probes are from [Weirather et al., 2011](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3209110/)
+* *Streptococcus pyogenes* primer/probes were adapted from CDC [here](https://www.cdc.gov/streplab/protocols.html)
+* *Staphylococcus aureus* primers and probes were provided by Biomeme Inc.
 
 | name | Sequence (5' -> 3') |
 |-------|--------|
