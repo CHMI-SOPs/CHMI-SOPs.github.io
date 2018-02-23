@@ -269,7 +269,7 @@ qiime metadata tabulate \
   --o-visualization taxonomy.qzv
 ```
 
-[ ] Now create a visualization of the classified sequences.  Again, the resulting .qzv file produced below can be explored in the [QIIME2 viewer](https://view.qiime2.org/)
+Now create a visualization of the classified sequences.  Again, the resulting .qzv file produced below can be explored in the [QIIME2 viewer](https://view.qiime2.org/)
 
 ```
 qiime taxa barplot \
@@ -278,6 +278,36 @@ qiime taxa barplot \
   --m-metadata-file sample-metadata.tsv \
   --o-visualization taxa-bar-plots.qzv
 ```
+
+## Step 9: differential abundance
+
+The tools and theory for calling differentially abundant taxa between samples is very much an area of active research.  Basically, it's a challenging statistical problem since measurements of abundance are relative, not absolute, and therefore features are not independent (i.e. if one taxa increases in abundance, then the others will go down).  This is also a common, and perhaps better studied, problem in RNAseq.  QIIME2 uses [ANCOM](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4450248/) to identify differentially abundant taxa. As is the case with all statistical tests, ANCOM makes certain assumptions about your data and if these are violated, then the results of the ANCOM analysis cannot be trust.  A key assumption made by ANCOM is that few taxa will be differentially abundant between groups.  To ensure that we don't violate this assumption, we first need to filter our data to focus on a single body site, for example, and then compare treatments, conditions, etc, *within* that body site
+
+```
+#filter based on body site
+qiime feature-table filter-samples \
+  --i-table table.qza \
+  --m-metadata-file sample-metadata.tsv \
+  --p-where "BodySite='gut'" \
+  --o-filtered-table gut-table.qza
+
+
+qiime composition add-pseudocount \
+  --i-table gut-table.qza \
+  --o-composition-table comp-gut-table.qza
+
+#now run ANCOM
+qiime composition ancom \
+  --i-table comp-gut-table.qza \
+  --m-metadata-file sample-metadata.tsv \
+  --m-metadata-column Subject \
+  --o-visualization ancom-Subject.qzv
+```
+
+## Step 10: supervised machine learning
+
+Beyond differential gene expression analysis, often times you will want to know which taxa (or sets of taxa) do the best job classifying particularly phenotypes, and therefore could serve as biomarkers.  There are two general types of supervised learning approaches that can be used to this: 'Classifiers' are used to find taxa that are associated with categorical metadata (Sex, disease status, etc), while 'regressors' are used with continuous metadata (age, weight, etc).  Typically, your data is split into a training set (2/3) and a test set (remaining 1/3 of data that was left out from the training).
+
 
 
 
