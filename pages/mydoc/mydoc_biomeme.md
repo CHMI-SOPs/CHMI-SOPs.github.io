@@ -2,7 +2,7 @@
 title: Portable QPCR
 tags: [QPCR, mobile, diagnostics]
 keywords:
-summary: "Using the Biomeme platform for end-to-end QPCR-based detection of pathogens in the field"
+summary: "May of the projects we work on, whether profiling host gene expression or micobial communities, we often arrive at a candidate list of genes or organisms that we believe have some link to health or disease.  Increasingly, we are interested in methods and technology that let us *quantitiatively* measure these features, particularly in a way that is portable and could be used deployed 'stall-side' in a barn just as easily as at a lab bench.  For this, we've been using the Biomeme platform for end-to-end QPCR-based detection in the field"
 sidebar: mydoc_sidebar
 permalink: mydoc_biomeme.html
 folder: mydoc
@@ -17,7 +17,7 @@ Resuspend bulk lyophilized **LyoDNA** or **LyoRNA** Biomeme master mix with 132 
 ### Reaction
 A typical QPCR reaction on the biomeme platform contains the following elements
 
-{% include important.html content="prepare 20x primer/probe stock by adding" %}
+{% include important.html content="20x primer/probe stock contains 4uM of the forward primer and probe, and 8uM of the reverse primer in TE pH 8.0.  Final concentrations in the PCR reaction will be 200nM of forward and probe, 400nM of reverse" %}
 
 
 | Reagent | vol (ul) |
@@ -115,9 +115,9 @@ The primers and probes below are used for detection of *Staphylococcus aureus (S
 
 | name | Sequence (5' -> 3') |
 |-------|--------|
-| *Sa* fwd | |
-| *Sa* rev | |
-| *Sa* probe | |
+| *Sa* fwd | provided by Biomeme |
+| *Sa* rev | provided by Biomeme |
+| *Sa* probe | provided by Biomeme |
 | *Sp* fwd | GCA CTC GCT ACT ATT TCT TAC CTC AA |
 | *Sp* rev | ATT ACT GGT TTC CAA GAC ATT GTG AC |
 | *Sp* probe | */56-FAM/*CCG CAA CTC */ZEN/* ATC AAG GAT TTC TGT TAC CA*/3IABkFQ/* |
@@ -139,9 +139,9 @@ The primers and probes below are for the detection of host transcripts present i
 | hGZMB fwd | GTA CCA TTG AGT TGT GCG TG |
 | hGZMB rev | CAT GCC ATT GTT TCG TCC ATA G |
 | hGZMB probe | */56-FAM/*CCT CCA GAG */ZEN/* TCC CCC TTA AAG GAA GT*/3IABkFQ/* 
-| hCTRL fwd | TGC TAT AAA ATC GTA CCA CCC GAC A |
-| hCTRL rev | AAA TGG CAT ACA GAA ACC CCG TTC |
-| hCTRL probe | */56-FAM/*CCT CCA GAG */ZEN/* TCC CCC TTA AAG GAA GT*/3IABkFQ/* |
+| h18S (+ control) fwd | provided by Biomeme |
+| h18S (+ control) rev | provided by Biomeme |
+| h18S (+ control) probe | provided by Biomeme |
 
 
 
