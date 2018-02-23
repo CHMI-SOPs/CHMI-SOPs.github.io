@@ -247,7 +247,7 @@ qiime emperor plot \
 
 ## Step 8: assign taxonomy
 
-In this step, you will take the denoised sequences from step 5 (rep-seqs.qza) and assign taxonomy to each sequence (phylum -> class -> ...genus -> ).  This step requires that you either [train your own classifier](https://docs.qiime2.org/2018.2/tutorials/feature-classifier/) using the [q2-feature-classifier](https://peerj.com/preprints/3208/)  
+In this step, you will take the denoised sequences from step 5 (rep-seqs.qza) and assign taxonomy to each sequence (phylum -> class -> ...genus -> ).  This step requires a trained classifer.  You have the choice of either [training your own classifier](https://docs.qiime2.org/2018.2/tutorials/feature-classifier/) using the [q2-feature-classifier](https://peerj.com/preprints/3208/) or downloading a pretrained classifier.
 
 We'll use a classifier that has been pretrained on [GreenGenes](http://greengenes.secondgenome.com/) database with 99% OTUs.  Download this classifier from the qiime site and place in your working directory.
 
@@ -269,7 +269,7 @@ qiime metadata tabulate \
   --o-visualization taxonomy.qzv
 ```
 
-Now create a visualization of the classified sequences.  Again, the resulting .qzv file produced below can be explored in the [QIIME2 viewer](https://view.qiime2.org/)
+- [ ] Now create a visualization of the classified sequences.  Again, the resulting .qzv file produced below can be explored in the [QIIME2 viewer](https://view.qiime2.org/)
 
 ```
 qiime taxa barplot \
