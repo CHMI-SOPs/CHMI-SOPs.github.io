@@ -1,5 +1,5 @@
 ---
-title: analysis of marker gene sequencing data using QIIME
+title: QIIME2 workflow
 tags: [bioinformatics, microbiome]
 keywords:
 summary: "Using the Quantitative Insights Into Microbial Ecology (QIIME2) software pipeline for analysis of marker gene-based microbiome sequencing data"
@@ -242,6 +242,41 @@ qiime emperor plot \
   --m-metadata-file sample-metadata.tsv \
   --p-custom-axes DaysSinceExperimentStart \
   --o-visualization core-metrics-results/bray-curtis-emperor-DaysSinceExperimentStart.qzv
+```
+
+
+## Step 8: assign taxonomy
+
+In this step, you will take the denoised sequences from step 5 (rep-seqs.qza) and assign taxonomy to each sequence (phylum -> class -> ...genus -> ).  This step requires that you either [train your own classifier](https://docs.qiime2.org/2018.2/tutorials/feature-classifier/) using the [q2-feature-classifier](https://peerj.com/preprints/3208/)  
+
+We'll use a classifier that has been pretrained on [GreenGenes](http://greengenes.secondgenome.com/) database with 99% OTUs.  Download this classifier from the qiime site and place in your working directory.
+
+```
+wget -O "gg-13-8-99-515-806-nb-classifier.qza" "https://data.qiime2.org/2018.2/common/gg-13-8-99-515-806-nb-classifier.qza"
+```
+
+
+Now you're ready to assign taxonomy to your sequences
+
+```
+qiime feature-classifier classify-sklearn \
+  --i-classifier gg-13-8-99-515-806-nb-classifier.qza \
+  --i-reads rep-seqs.qza \
+  --o-classification taxonomy.qza
+
+qiime metadata tabulate \
+  --m-input-file taxonomy.qza \
+  --o-visualization taxonomy.qzv
+```
+
+Now create a visualization of the classified sequences.  Again, the resulting .qzv file produced below can be explored in the [QIIME2 viewer](https://view.qiime2.org/)
+
+```
+qiime taxa barplot \
+  --i-table table.qza \
+  --i-taxonomy taxonomy.qza \
+  --m-metadata-file sample-metadata.tsv \
+  --o-visualization taxa-bar-plots.qzv
 ```
 
 
