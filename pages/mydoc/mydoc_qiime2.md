@@ -74,7 +74,7 @@ qiime tools peek emp-single-end-sequences.qza
 
 ## Step 4: demultiplexing
 
-{% include note.html content="If you data is already demultiplexed, you can skip this step. For paired data you would use qiime demux emp-paired in the code snipet below to produce a demux.qza file" %}
+{% include note.html content="If your data is already demultiplexed, you can skip this step. For paired data you would use qiime demux emp-paired in the code snipet below to produce a demux.qza file" %}
 
 ```
 qiime demux emp-single \
@@ -269,7 +269,7 @@ qiime metadata tabulate \
   --o-visualization taxonomy.qzv
 ```
 
-- [ ] Now create a visualization of the classified sequences.  Again, the resulting .qzv file produced below can be explored in the [QIIME2 viewer](https://view.qiime2.org/)
+[ ] Now create a visualization of the classified sequences.  Again, the resulting .qzv file produced below can be explored in the [QIIME2 viewer](https://view.qiime2.org/)
 
 ```
 qiime taxa barplot \
