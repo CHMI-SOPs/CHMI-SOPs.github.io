@@ -18,6 +18,18 @@ ssh username@130.91.255.137
 
 ## Step 2: prepare your metadata
 
+Before you get started, there are a few basic QIIME commands that you will want to get familiar with
+
+```
+#take a look at all the plugins you have available to you through QIIME
+qiime tools
+
+#documentation for any QIIME function ca be accessed by appending --help at the end of any command
+
+
+
+```
+
 Metadata is information about your samples (e.g. date collected, patient age, sex, pH, etc).  This information should be contained within a single spreadsheet that has samples as rows and variables as columns.
 
 In order to use QIIME, you **must** have your mapping spreadsheet correctly formatted.  Set this file up as a google sheet, using [this example]().  In order to check whether your file is correctly formatted, use the [Keemei plugin](keemei.qiime2.org) for google sheets.  Once Keemei says your spreadsheet is correctly formatted for QIIME2, you're ready to proceed. 
@@ -84,7 +96,21 @@ qiime demux summarize \
 
 ## Step 5: denoising 
 
-BLURB ABOUT OTU AND denoising....link to data
+### DADA2
+BLURB ABOUT OTU AND denoising.  One method for denoising is to use DADA2.  You can learn more about this method by checking out the Nature Methods paper, and the online methods section for more indepth (but still very readable) description of the statistical methods [here]()
+
+{% include important.html content="DADA2 denoising will join paired reads for you.  Do not join your reads prior to running DADA2, since the program has a model for the basewise error of illumina reads, and joining reads would violate the expectations of that model.  If you're working with single-end data, you would use 'denoise-single' in the code below." %}
+
+{% include important.html content="If you have multiple runs, it is recommended that you run DADA2 separately on data from each run individually, then combine data from the runs after denoising.  See the [QIIME2 fecal transplant tutorial](https://docs.qiime2.org/2018.2/tutorials/fmt/) for an example of how this works" %}
+
+```
+qiime dada2 denoise-paired \
+  --i-demultiplexed-seqs demux.qza \
+  --p-trim-left 0 \
+  --p-trunc-len 120 \
+  --o-representative-sequences rep-seqs-dada2.qza \
+  --o-table table-dada2.qza
+```
 
 Once you're confortable with the individual steps of this workflow, you could use [this shell script](), to run the entire workflow 
 

@@ -2,7 +2,7 @@
 title: Portable QPCR
 tags: [QPCR, mobile, diagnostics]
 keywords:
-summary: "Most of the projects we work on, whether profiling host gene expression or micobial communities, we often arrive at a candidate list of genes or organisms that we believe have some link to health or disease.  Increasingly, we are interested in methods and technology that let us *quantitiatively* measure these features, particularly in a way that is portable and could be used deployed 'stall-side' in a barn just as easily as at a lab bench.  For this, we've been using the Biomeme platform for end-to-end QPCR-based detection in the field"
+summary: "Most of the projects we work on, whether profiling host gene expression or micobial communities, often yield at a candidate list of genes or organisms that we believe are linked to some phenotype.  Increasingly, we are interested in methods and technology that let us *quantitiatively* measure these features, particularly in a way that is portable and could be used deployed 'stall-side' in a barn just as easily as at a lab bench.  For this, we've been using the Biomeme platform for end-to-end QPCR-based detection in the field"
 sidebar: mydoc_sidebar
 permalink: mydoc_biomeme.html
 folder: mydoc
