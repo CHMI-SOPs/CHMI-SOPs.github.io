@@ -49,7 +49,7 @@ ssh username@130.91.255.137
 | software                                                                    | category                             | how to run                                                                                |
 |-----------------------------------------------------------------------------|--------------------------------------|-------------------------------------------------------------------------------------------|
 | [mothur](https://www.mothur.org/)                                           | 16S marker gene                      | ```mothur```                                                                              |
-| [QIIME2](https://qiime2.org/)                                               | 16S marker gene                      | ```source activate /home/beiting/anaconda3/envs/qiime2-2017.10```                         |
+| [QIIME2](https://qiime2.org/)                                               | 16S marker gene                      | ```source activate /home/beiting/anaconda3/envs/qiime2-2018.2```                         |
 | [Sunbeam](https://github.com/eclarke/sunbeam/blob/master/Readme.md)         | metagenomics                         | ```source activate sunbeam```                                                             |
 | [MetaPhlAn](https://bitbucket.org/biobakery/metaphlan2)                     | metagenomics                         | ```metaphlan2.py```                                                                       |
 | [GraPhlAn](https://bitbucket.org/nsegata/graphlan/wiki/Home)                | metagenomics, visualization          | ```graphlan.py```                                                                         |
