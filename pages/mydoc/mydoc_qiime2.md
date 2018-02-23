@@ -20,9 +20,9 @@ ssh username@130.91.255.137
 
 Metadata is information about your samples (e.g. date collected, patient age, sex, pH, etc).  This information should be contained within a single spreadsheet that has samples as rows and variables as columns.
 
-In order to use QIIME, you **must** have your mapping file correctly formatted.  Set this file up as a google sheet, using [this example]().  In order to check whether your file is correctly formatted, use the [Keemei plugin](keemei.qiime2.org) for google sheets.  Once Keemei says your metadata file is correctly formatted, you're ready to proceed. 
+In order to use QIIME, you **must** have your mapping spreadsheet correctly formatted.  Set this file up as a google sheet, using [this example]().  In order to check whether your file is correctly formatted, use the [Keemei plugin](keemei.qiime2.org) for google sheets.  Once Keemei says your spreadsheet is correctly formatted for QIIME2, you're ready to proceed. 
 
-move your metadata file into your working directory on a computer with QIIME2 installed, and inspect further if you want using:
+Create a .txt version of your metadata spreadsheet and save in your working directory on a computer with QIIME2 installed.  You can then inspect further if you want using:
 
 ```
 qiime tools inspect-metadata [filename]

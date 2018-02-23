@@ -49,7 +49,7 @@ entries:
       output: web, pdf
       
       subfolders:
-      - title: informatics pipelines
+      - title: data analysis
         url: /mydoc_install_jekyll_on_windows.html
         output: web, pdf
         
@@ -91,7 +91,7 @@ entries:
       output: web, pdf
 
       subfolders:
-      - title: informatics pipelines
+      - title: data analysis
         url: /mydoc_install_jekyll_on_windows.html
         output: web, pdf
         
