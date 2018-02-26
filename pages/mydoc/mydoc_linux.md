@@ -49,11 +49,11 @@ ssh username@130.91.255.137
 | software                                                                    | category                             | how to run                                                                                |
 |-----------------------------------------------------------------------------|--------------------------------------|-------------------------------------------------------------------------------------------|
 | [mothur](https://www.mothur.org/)                                           | 16S marker gene                      | ```mothur```                                                                              |
-| [QIIME2](https://qiime2.org/)                                               | 16S marker gene                      | ```source activate /home/beiting/anaconda3/envs/qiime2-2018.2```                         |
+| [QIIME2](https://qiime2.org/)                                               | 16S marker gene                      | ```source activate qiime2```                         |
 | [Sunbeam](https://github.com/eclarke/sunbeam/blob/master/Readme.md)         | metagenomics                         | ```source activate sunbeam```                                                             |
 | [MetaPhlAn](https://bitbucket.org/biobakery/metaphlan2)                     | metagenomics                         | ```metaphlan2.py```                                                                       |
 | [GraPhlAn](https://bitbucket.org/nsegata/graphlan/wiki/Home)                | metagenomics, visualization          | ```graphlan.py```                                                                         |
-| [anvi'o](https://github.com/merenlab/anvio)                                 | metagenomics, visualization          | ```source activate /home/beiting/anaconda3/envs/anvio3```                                 |
+| [anvi'o](https://github.com/merenlab/anvio)                                 | metagenomics, visualization          | ```source activate anvio3```                                 |
 | [Circos](http://circos.ca/)                                                 | general visualization                | ```circos```                                                                              |
 | [Cytoscape](http://www.cytoscape.org/)                                      | network analysis                     | navigate to /home/shared/softwares/Cytoscape_v3.5.1 folder.  Double click to open program |
 | [bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml)            | sequence alignment                   | ```bowtie2```                                                                             |

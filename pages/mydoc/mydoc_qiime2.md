@@ -50,7 +50,8 @@ qiime tools inspect-metadata [filename]
 ```
 
 
-Create a visualiation of your metadata on the QIIME2 viewer (.qzv is a qiime zipped visualization)
+Create a visualiation of your metadata on the [QIIME2 viewer](https://view.qiime2.org/) (.qzv is a qiime zipped visualization).
+
 ```
 qiime metadata tabulate --m-input-file sample-metadata.tsv --o-visualization tabulated-metadata.qzv
 ```
@@ -137,7 +138,7 @@ qiime feature-table tabulate-seqs \
 ```
 
 
-The code above produced two .qzv files that can be explored on the qiime2 viewer.  The "interactive Sample Detail" tab of the viewer gives you a great way to explore how rarefaction depths (subsampling) will impact your data (i.e. which samples will be dropped).
+The code above produced two .qzv files that can be explored on the [QIIME2 viewer](https://view.qiime2.org/).  The "interactive Sample Detail" tab of the viewer gives you a great way to explore how rarefaction depths (subsampling) will impact your data (i.e. which samples will be dropped).
 
 
 ## Step 6: build a phylogenetic tree
@@ -198,7 +199,8 @@ qiime diversity core-metrics-phylogenetic \
   --output-dir core-metrics-results
 ```
 
-Now test for relationships between **alpha diversity** and study metadata and create .qzv files to view these relationships on QIIME2 viewer
+Now test for relationships between **alpha diversity** and study metadata and create .qzv files to view these relationships on [QIIME2 viewer](https://view.qiime2.org/).
+
 ```
 qiime diversity alpha-group-significance \
   --i-alpha-diversity core-metrics-results/faith_pd_vector.qza \
@@ -211,7 +213,7 @@ qiime diversity alpha-group-significance \
   --o-visualization core-metrics-results/evenness-group-significance.qzv
 ```
 
-Now test for relationships between **beta diversity** and study metadata and create .qzv files to view these relationships on QIIME2 viewer
+Now test for relationships between **beta diversity** and study metadata and create .qzv files to view these relationships on [QIIME2 viewer](https://view.qiime2.org/).
 
 {% include note.html content="Like alpha diversity discussed above, beta diversity metrics can also be either qualitative or quantitative.  Qualitative measure only consider whether a given taxon is present (yes/no) in both samples from any given airwise comparison (e.g. Jaccard distance).  Quantitative measures are *weighted* by taxon abundance (e.g. Bray-Curtis).  Phylogenetic beta diversity metrics can also be qualitiative (unweighted) or quantitative (weighted).  Weighted Unifrac and unweighted Unifrac are examples of quantitative and qualitiative phylogenetic-based metrics, respectively." %}
 
