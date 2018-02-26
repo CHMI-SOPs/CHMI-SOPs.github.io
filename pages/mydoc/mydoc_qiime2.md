@@ -9,7 +9,7 @@ folder: mydoc
 ---
 
 ## before starting
-This protocol is shorthand 
+The following protocol is intended to help our collaborators (and ourselves!) navigate through the steps involved in analysis of 16S rRNA sequencing data via QIIME2.  We wrote this during and immediately following one of the QIIME2 workshops, incorporating much of the content we learned there.  This page is no way meant to be a replacement for the extensive and excellent [QIIME2 documentation](https://docs.qiime2.org/2018.2/).  Check back often, as we plan to update this protocol as we refine how we use QIIME2 in the lab.
 
 
 ## Step 1: Connect to a CHMI linux cluster
@@ -20,6 +20,13 @@ This protocol is shorthand
 ssh username@130.91.255.137
 ```
 
+After you're connected to our server, activate the QIIME enivronment as follows:
+
+```
+source activate qiime
+```
+
+
 ## Step 2: prepare your metadata
 
 Before you get started, there are a few basic QIIME commands that you will want to get familiar with
@@ -28,14 +35,15 @@ Before you get started, there are a few basic QIIME commands that you will want 
 #take a look at all the plugins you have available to you through QIIME
 qiime tools
 
-#documentation for any QIIME function ca be accessed by appending --help at the end of any command
+#documentation for any QIIME function ca be accessed by appending --help at the end of any command. For example:
+qiime tools --help
 ```
 
 Metadata is information about your samples (e.g. date collected, patient age, sex, pH, etc).  This information should be contained within a single spreadsheet that has samples as rows and variables as columns.
 
-In order to use QIIME, you **must** have your mapping spreadsheet correctly formatted.  Set this file up as a google sheet, using [this example]().  In order to check whether your file is correctly formatted, use the [Keemei plugin](keemei.qiime2.org) for google sheets.  Once Keemei says your spreadsheet is correctly formatted for QIIME2, you're ready to proceed. 
+In order to use QIIME, you **must** have your mapping spreadsheet correctly formatted.  Set this file up as a google sheet, using [this example](https://docs.google.com/spreadsheets/d/1u4HIS2NO6kyWYCPH4d66RWS3lQo35nxHaY5uEUdGRz8/edit?usp=sharing).  In order to check whether your file is correctly formatted, use the [Keemei plugin](keemei.qiime2.org) for google sheets.  Once Keemei says your spreadsheet is correctly formatted for QIIME2, you're ready to proceed! 
 
-Create a .txt version of your metadata spreadsheet and save in your working directory on a computer with QIIME2 installed.  You can then inspect further if you want using:
+Create a .txt version of your metadata spreadsheet and trasfer it to the server so that it resides in your working directory.  You can then inspect further if you want using:
 
 ```
 qiime tools inspect-metadata [filename]
@@ -52,11 +60,12 @@ navigate to [QIIME2 viewer](https://view.qiime2.org/) in browser to view this vi
 
 ## Step 3: prepare your raw data
 
-There are a number of ways you may have your raw data structured, depending on sequencing platform (e.g., Illumina vs Ion Torrent) and sequencing approach (e.g., single-end vs paired-end), and any pre-processing steps that have been performed by sequenencing facilities (e.g., joined paired ends, barcodes in fastq header, etc).  Check out the [QIIME info page](https://docs.qiime2.org/2018.2/tutorials/importing/)
+There are a number of ways you may have your raw data structured, depending on sequencing platform (e.g., Illumina vs Ion Torrent) and sequencing approach (e.g., single-end vs paired-end), and any pre-processing steps that have been performed by sequenencing facilities (e.g., joined paired ends, barcodes in fastq header, etc).  Check out the [QIIME info page](https://docs.qiime2.org/2018.2/tutorials/importing/), or consult with someone in our lab for help in preparing your data.
 
-Move your fastq files and your barcode file (if data is not already demultiplexed) to your working directory
+Move your fastq files and your barcode file (if data is not already demultiplexed) to your working directory on the server.
 
-create an artifact of your data
+create an artifact of your data:
+
 ```
 qiime tools import \
   --type EMPSingleEndSequences \
@@ -74,10 +83,10 @@ qiime tools peek emp-single-end-sequences.qza
 
 ## Step 4: demultiplexing
 
-{% include note.html content="If your data is already demultiplexed, you can skip this step. For paired data you would use qiime demux emp-paired in the code snipet below to produce a demux.qza file" %}
+{% include note.html content="If your data is already demultiplexed, you can skip this step. For single end data you would use qiime demux emp-single in the code snipet below to produce a demux.qza file" %}
 
 ```
-qiime demux emp-single \
+qiime demux emp-paired \
   --i-seqs emp-single-end-sequences.qza \
   --m-barcodes-file sample-metadata.tsv \
   --m-barcodes-column BarcodeSequence \
@@ -97,7 +106,7 @@ qiime demux summarize \
 
 ## Step 5: Denoising and QC filtering
 
-BLURB ABOUT OTU AND denoising.  One method for denoising is to use DADA2.  You can learn more about this method by checking out the Nature Methods paper, and the online methods section for more indepth (but still very readable) description of the statistical methods [here]()
+The methods for processing and analysis of 16S marker gene sequencing data continue to improve.  One recent and major improvement was the introduction of two methods, Dada2](https://www.nature.com/articles/nmeth.3869) and [Deblur](http://msystems.asm.org/content/2/2/e00191-16), both of which significantly advance quality control measures by 'denosing' your sequences in order to better discriminate between true sequence diversity and sequencing errors.  Be sure to check out the [Dada2 online methods section](http://CHMI-sops.github.io/papers/dada2_methods.pdf) for a more indepth (but still very readable) description of the underlying statistical method.  These methods have pushed the field from 97% OTU to 100% OTU, frequently called sub-OTUs or amplicon sequence variants (ASVs).
 
 {% include important.html content="DADA2 denoising will join paired reads for you.  Do not join your reads prior to running DADA2, since the program has a model for the basewise error of illumina reads, and joining reads would violate the expectations of that model.  If you're working with single-end data, you would use 'denoise-single' in the code below." %}
 
@@ -129,8 +138,6 @@ qiime feature-table tabulate-seqs \
 
 
 The code above produced two .qzv files that can be explored on the qiime2 viewer.  The "interactive Sample Detail" tab of the viewer gives you a great way to explore how rarefaction depths (subsampling) will impact your data (i.e. which samples will be dropped).
-
-Once you're confortable with the individual steps of this workflow, you could use [this shell script](), to run the entire workflow 
 
 
 ## Step 6: build a phylogenetic tree
@@ -279,6 +286,28 @@ qiime taxa barplot \
   --o-visualization taxa-bar-plots.qzv
 ```
 
+
+## OPTIONAL: export .biom file
+
+
+```
+#first, export your data as a .biom
+qiime tools export \
+  feature-table.qza \
+  --output-dir exported-feature-table
+
+#then export taxonomy info
+qiime tools export \
+  taxonomy.qza \
+  --output-dir exported-feature-table
+
+#then combine the two using the biome package (dependence loaded as part of QIIME2 install)
+
+
+```
+
+{% include important.html content="Once you have a .biome file, you can use apps on [MicrobiomeDB](http://www.microbiomedb.org) to analyze and visualize your data." %}
+
 ## Step 9: differential abundance
 
 The tools and theory for calling differentially abundant taxa between samples is very much an area of active research.  Basically, it's a challenging statistical problem since measurements of abundance are relative, not absolute, and therefore features are not independent (i.e. if one taxa increases in abundance, then the others will go down).  This is also a common, and perhaps better studied, problem in RNAseq.  QIIME2 uses [ANCOM](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4450248/) to identify differentially abundant taxa. As is the case with all statistical tests, ANCOM makes certain assumptions about your data and if these are violated, then the results of the ANCOM analysis cannot be trust.  A key assumption made by ANCOM is that few taxa will be differentially abundant between groups.  To ensure that we don't violate this assumption, we first need to filter our data to focus on a single body site, for example, and then compare treatments, conditions, etc, *within* that body site
@@ -304,13 +333,54 @@ qiime composition ancom \
   --o-visualization ancom-Subject.qzv
 ```
 
+Once you're confortable with the individual steps of this workflow, you could use [this shell script](), to run the entire workflow 
+
+
+
 ## Step 10: supervised machine learning
 
-Beyond differential gene expression analysis, often times you will want to know which taxa (or sets of taxa) do the best job classifying particularly phenotypes, and therefore could serve as biomarkers.  There are two general types of supervised learning approaches that can be used to this: 'Classifiers' are used to find taxa that are associated with categorical metadata (Sex, disease status, etc), while 'regressors' are used with continuous metadata (age, weight, etc).  Typically, your data is split into a training set (2/3) and a test set (remaining 1/3 of data that was left out from the training).
+Beyond differential gene expression analysis, often times you will want to know which taxa (or sets of taxa) do the best job classifying particularly phenotypes, and therefore could serve as biomarkers.  There are two general types of supervised learning approaches that can be used to this: 'Classifiers' are used to find taxa that are associated with categorical metadata (Sex, disease status, etc), while 'regressors' are used with continuous metadata (age, weight, etc).  Typically, your data is split into a training set (2/3) and a test set (remaining 1/3 of data that was left out from the training).  
+
+### classifiers
+We can use a random forest classifier directly within QIIME via the ```qiime sample-classifier``` tool.  
+
+```
+qiime sample-classifier classify-samples \
+  --i-table moving-pictures-table.qza \
+  --m-metadata-file moving-pictures-sample-metadata.tsv \
+  --m-metadata-column BodySite \
+  --p-optimize-feature-selection \
+  --p-parameter-tuning \
+  --p-estimator RandomForestClassifier \
+  --p-n-estimators 100 \
+  --o-visualization moving-pictures-BodySite.qzv
+  ```
 
 
+### regressors
+For continuous data, you can use a random forest regressor.
+
+ {% include important.html content="continuous data could be age, weight, etc, for each of your samples, but it could also be quantitative levels of some metabolite, host gene expression, etc." %}
+
+```
+qiime sample-classifier regress-samples \
+  --i-table ecam-table.qza \
+  --m-metadata-file ecam-metadata.tsv \
+  --m-metadata-column month \
+  --p-optimize-feature-selection \
+  --p-parameter-tuning \
+  --p-estimator RandomForestRegressor \
+  --p-n-estimators 100 \
+  --o-visualization ecam-month.qzv
+```
 
 
+## OPTIONAL: other stuff
+qiime taxa collapse
+takes taxa table and taxonomy artifact and you specify the level to which you collapse
+
+
+check about q2-longitudinal plugin for regression models using longitudinal
 {% include links.html %}
 
 
