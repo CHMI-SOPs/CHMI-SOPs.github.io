@@ -84,7 +84,7 @@ qiime tools peek emp-single-end-sequences.qza
 
 ## Step 4: demultiplexing
 
-{% include note.html content="If your data is already demultiplexed, you can skip this step. For single end data you would use qiime demux emp-single in the code snipet below to produce a demux.qza file" %}
+{% include note.html content="If your data is already demultiplexed, you can skip this step. For single end data you would use ```qiime demux emp-single``` in the code snipet below to produce a demux.qza file" %}
 
 ```
 qiime demux emp-paired \
@@ -107,9 +107,9 @@ qiime demux summarize \
 
 ## Step 5: Denoising and QC filtering
 
-The methods for processing and analysis of 16S marker gene sequencing data continue to improve.  One recent and major improvement was the introduction of two methods, Dada2](https://www.nature.com/articles/nmeth.3869) and [Deblur](http://msystems.asm.org/content/2/2/e00191-16), both of which significantly advance quality control measures by 'denosing' your sequences in order to better discriminate between true sequence diversity and sequencing errors.  Be sure to check out the [Dada2 online methods section](http://CHMI-sops.github.io/papers/dada2_methods.pdf) for a more indepth (but still very readable) description of the underlying statistical method.  These methods have pushed the field from 97% OTU to 100% OTU, frequently called sub-OTUs or amplicon sequence variants (ASVs).
+The methods for processing and analysis of 16S marker gene sequencing data continue to improve.  One recent and major improvement was the introduction of two methods, [Dada2](https://www.nature.com/articles/nmeth.3869) and [Deblur](http://msystems.asm.org/content/2/2/e00191-16), both of which significantly advance quality control measures by 'denosing' your sequences in order to better discriminate between true sequence diversity and sequencing errors.  Be sure to check out the [Dada2 online methods section](http://CHMI-sops.github.io/papers/dada2_methods.pdf) for a more indepth (but still very readable) description of the underlying statistical method.  These methods have pushed the field from the practice of binning sequences into 97% OTUs, to effectively using the sequences themselves as the unique idenfier for a taxon (also referred to 100% OTU, sub-OTUs or amplicon sequence variants).
 
-{% include important.html content="DADA2 denoising will join paired reads for you.  Do not join your reads prior to running DADA2, since the program has a model for the basewise error of illumina reads, and joining reads would violate the expectations of that model.  If you're working with single-end data, you would use 'denoise-single' in the code below." %}
+{% include important.html content="DADA2 denoising will join paired reads for you.  Do not join your reads prior to running DADA2, since the program has a model for the basewise error of illumina reads, and joining reads would violate the expectations of that model.  If you're working with single-end data, you would use ```denoise-single``` in the code below." %}
 
 {% include important.html content="If you have multiple runs, it is recommended that you run DADA2 separately on data from each run individually, then combine data from the runs after denoising.  See the [QIIME2 fecal transplant tutorial](https://docs.qiime2.org/2018.2/tutorials/fmt/) for an example of how this works" %}
 
@@ -143,7 +143,7 @@ The code above produced two .qzv files that can be explored on the [QIIME2 viewe
 
 ## Step 6: build a phylogenetic tree
 
-{% include important.html content="tree construction is optional, and is useful downstream if you want to compute alpha diversity metrics that are phylogenetically based.  The resulting tree is unrooted and is created using Fasttree.  Some downstream actions will require a rooted tree, in which longest branch is used to root the tree ('midrooting')" %}
+Tree construction is optional, but is useful if you want to compute alpha diversity metrics that are phylogenetically based.  The resulting tree is unrooted and is created using Fasttree.  Since some downstream steps will require a rooted tree, we'll also use the longest branch to root the tree (called 'midrooting')" %}
 
 {% include warning.html content="You are cautioned against drawing strong conclusions about relationships between taxa from this tree alone, since it was only constructed using a single marker gene." %}
 
@@ -183,7 +183,7 @@ qiime diversity alpha-rarefaction \
   --o-visualization alpha-rarefaction.qzv
 ```
 
-{% include note.html content="A few comments on interpreting alpha diversity metrics: it is important to understand that certain metrics are stricly qualitative (presence/absence), that is they only take diversity into account, often referred to as *richness* of the community (e.g. observed otus).  In contrast, other methods are quantitative in that they consider both *richness* and abundance across samples, commonly referred to as *evenness* (e.g. Shannon).  Yet other methods take phylogenetic distance into account by asking how diverse the phylogenetic tree is for each sample.  These phylogenetic tree-based methods include the popular Faith's PD, which calculates the sum of the branch length covered by a sample" %}
+{% include note.html content="**Interpreting alpha diversity metrics:** it is important to understand that certain metrics are stricly qualitative (presence/absence), that is they only take diversity into account, often referred to as *richness* of the community (e.g. observed otus).  In contrast, other methods are quantitative in that they consider both *richness* and abundance across samples, commonly referred to as *evenness* (e.g. Shannon).  Yet other methods take phylogenetic distance into account by asking how diverse the phylogenetic tree is for each sample.  These phylogenetic tree-based methods include the popular Faith's PD, which calculates the sum of the branch length covered by a sample" %}
 
 
 ## Step 7: calculate and explore diversity metrics
@@ -215,7 +215,7 @@ qiime diversity alpha-group-significance \
 
 Now test for relationships between **beta diversity** and study metadata and create .qzv files to view these relationships on [QIIME2 viewer](https://view.qiime2.org/).
 
-{% include note.html content="Like alpha diversity discussed above, beta diversity metrics can also be either qualitative or quantitative.  Qualitative measure only consider whether a given taxon is present (yes/no) in both samples from any given airwise comparison (e.g. Jaccard distance).  Quantitative measures are *weighted* by taxon abundance (e.g. Bray-Curtis).  Phylogenetic beta diversity metrics can also be qualitiative (unweighted) or quantitative (weighted).  Weighted Unifrac and unweighted Unifrac are examples of quantitative and qualitiative phylogenetic-based metrics, respectively." %}
+{% include note.html content="**Interpreting beta diversity metrics:** Like alpha diversity discussed above, beta diversity metrics can also be either qualitative or quantitative.  Qualitative measure only consider whether a given taxon is present (yes/no) in both samples from any given airwise comparison (e.g. Jaccard distance).  Quantitative measures are *weighted* by taxon abundance (e.g. Bray-Curtis).  Phylogenetic beta diversity metrics can also be qualitiative (unweighted) or quantitative (weighted).  Weighted Unifrac and unweighted Unifrac are examples of quantitative and qualitiative phylogenetic-based metrics, respectively." %}
 
 ```
 qiime diversity beta-group-significance \
@@ -335,9 +335,9 @@ qiime composition ancom \
   --o-visualization ancom-Subject.qzv
 ```
 
-Once you're confortable with the individual steps of this workflow, you could use [this shell script](), to run the entire workflow 
+Once you're confortable with the individual steps of this workflow, you could use [this shell script](), to run the entire workflow.
 
-
+{% include warning.html content="the additional steps outlined below are still a work in progress, and we want to spend more time exploring these steps before we can make solid recommendations....so proceed at your own risk!" %}
 
 ## Step 10: supervised machine learning
 
@@ -378,11 +378,10 @@ qiime sample-classifier regress-samples \
 
 
 ## OPTIONAL: other stuff
-qiime taxa collapse
-takes taxa table and taxonomy artifact and you specify the level to which you collapse
+* qiime taxa collapse - takes taxa table and taxonomy artifact and allows you to specify the level to which you collapse (e.g. phylum)
+* check about q2-longitudinal plugin for regression models using longitudinal data
 
 
-check about q2-longitudinal plugin for regression models using longitudinal
 {% include links.html %}
 
 
