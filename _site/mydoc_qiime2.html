@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Using the Quantitative Insights Into Microbial Ecology (QIIME2) software pipeline for analysis of marker gene-based microbiome sequencing data">
+<meta name="keywords" content="bioinformaticsmicrobiome,  ">
+<title>QIIME2 workflow | CHMI services</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<link rel="stylesheet" href="css/lavish-bootstrap.css">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Center for Host-Microbial Interactions</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:beiting@upenn.edu?subject=CHMI services feedback&body=I have some feedback about the QIIME2 workflow page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="QIIME2 workflow">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+    <div class="col-lg-12">&nbsp;</div>
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+
+
+
+
+
+
+
+
+
+
+
+<ul id="mysidebar" class="nav">
+    <li class="sidebarTitle">CHMI services </li>
+    
+    
+    
+        
+    
+    <li>
+        <a href="#">Overview</a>
+        <ul>
+            
+            
+            
+            <li><a href="index.html">Welcome</a></li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">RNAseq</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_RNAseq_FAQs.html">RNAseq FAQs</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_TruSeq.html">mRNA library prep</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_total_TruSeq.html">total transcriptome library prep</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_install_jekyll_on_windows.html">Low input protocol</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">data analysis</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="mydoc_linux.html">Compute resources</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_kallisto.html">Kallisto and Sleuth</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="tag_formatting.html">data deposition</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Microbiology</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_micro_FAQs.html">Microbiology FAQs</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_16S.html">16S rRNA gene sequencing</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_NexteraXT.html">shotgun metagenomics</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_16S_Sanger.html">Sanger sequencing of 16S</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_mock.html">culture collection</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">data analysis</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="mydoc_linux.html">Compute resources</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="tag_formatting.html">microbiomeDB</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li class="active"><a href="mydoc_qiime2.html">QIIME2</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="tag_formatting.html">data deposition</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Cell culture</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_3Dculture.html">3D intestinal cultures</a></li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">In the field</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_biomeme.html">Biomeme portable QPCR</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_icons.html">Microbial Design Studio</a></li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+        
+        <!-- if you aren't using the accordion, uncomment this block:
+           <p class="external">
+               <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+           </p>
+           -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">QIIME2 workflow</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+    <div class="summary">Using the Quantitative Insights Into Microbial Ecology (QIIME2) software pipeline for analysis of marker gene-based microbiome sequencing data</div>
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+    <a target="_blank" href="https://github.com/CHMI-SOPs/CHMI-SOPs.github.io/tree/master/pages/mydoc/mydoc_qiime2.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+    
+
+  <h2 id="before-starting">before starting</h2>
+<p>The following protocol is intended to help our collaborators (and ourselves!) navigate through the steps involved in analysis of 16S rRNA sequencing data via QIIME2.  We wrote this during and immediately following one of the QIIME2 workshops, incorporating much of the content we learned there.  This page is no way meant to be a replacement for the extensive and excellent <a href="https://docs.qiime2.org/2018.2/">QIIME2 documentation</a>.  Check back often, as we plan to update this protocol as we refine how we use QIIME2 in the lab.</p>
+
+<h2 id="step-1-connect-to-a-chmi-linux-cluster">Step 1: Connect to a CHMI linux cluster</h2>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> if you do not have an account on our cluster and would like to get one, please contact Dan Beiting</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ssh username@130.91.255.137
+</code></pre>
+</div>
+
+<p>After you’re connected to our server, activate the QIIME enivronment as follows:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>source activate qiime
+</code></pre>
+</div>
+
+<h2 id="step-2-prepare-your-metadata">Step 2: prepare your metadata</h2>
+
+<p>Before you get started, there are a few basic QIIME commands that you will want to get familiar with</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>#take a look at all the plugins you have available to you through QIIME
+qiime tools
+
+#documentation for any QIIME function ca be accessed by appending --help at the end of any command. For example:
+qiime tools --help
+</code></pre>
+</div>
+
+<p>Metadata is information about your samples (e.g. date collected, patient age, sex, pH, etc).  This information should be contained within a single spreadsheet that has samples as rows and variables as columns.</p>
+
+<p>In order to use QIIME, you <strong>must</strong> have your mapping spreadsheet correctly formatted.  Set this file up as a google sheet, using <a href="https://docs.google.com/spreadsheets/d/1u4HIS2NO6kyWYCPH4d66RWS3lQo35nxHaY5uEUdGRz8/edit?usp=sharing">this example</a>.  In order to check whether your file is correctly formatted, use the <a href="keemei.qiime2.org">Keemei plugin</a> for google sheets.  Once Keemei says your spreadsheet is correctly formatted for QIIME2, you’re ready to proceed!</p>
+
+<p>Create a .txt version of your metadata spreadsheet and trasfer it to the server so that it resides in your working directory.  You can then inspect further if you want using:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>qiime tools inspect-metadata [filename]
+</code></pre>
+</div>
+
+<p>Create a visualiation of your metadata on the <a href="https://view.qiime2.org/">QIIME2 viewer</a> (.qzv is a qiime zipped visualization).</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>qiime metadata tabulate --m-input-file sample-metadata.tsv --o-visualization tabulated-metadata.qzv
+</code></pre>
+</div>
+
+<p>navigate to <a href="https://view.qiime2.org/">QIIME2 viewer</a> in browser to view this visualization</p>
+
+<h2 id="step-3-prepare-your-raw-data">Step 3: prepare your raw data</h2>
+
+<p>There are a number of ways you may have your raw data structured, depending on sequencing platform (e.g., Illumina vs Ion Torrent) and sequencing approach (e.g., single-end vs paired-end), and any pre-processing steps that have been performed by sequenencing facilities (e.g., joined paired ends, barcodes in fastq header, etc).  Check out the <a href="https://docs.qiime2.org/2018.2/tutorials/importing/">QIIME info page</a>, or consult with someone in our lab for help in preparing your data.</p>
+
+<p>Move your fastq files and your barcode file (if data is not already demultiplexed) to your working directory on the server.</p>
+
+<p>create an artifact of your data:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>qiime tools import \
+  --type EMPSingleEndSequences \
+  --input-path emp-single-end-sequences \
+  --output-path emp-single-end-sequences.qza
+</code></pre>
+</div>
+
+<p>Check this artifact to make sure that QIIME now recognizes your data (.qza is a qiime zipped artifact)</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>qiime tools peek emp-single-end-sequences.qza
+</code></pre>
+</div>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> the .qza and .qzv files can be unpacked using the unix command  <code class="highlighter-rouge">unzip</code> or the qiime commands <code class="highlighter-rouge">qiime tools extract</code> or <code class="highlighter-rouge">qiime tools export</code>.  These unpacked files can then be used in other settings (R, perl, etc).  In other words, the QIIME concept of an ‘artifact’ does not permanently alter the structure of your data.</div>
+
+<h2 id="step-4-demultiplexing">Step 4: demultiplexing</h2>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> If your data is already demultiplexed, you can skip this step. For single end data you would use qiime demux emp-single in the code snipet below to produce a demux.qza file</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>qiime demux emp-paired \
+  --i-seqs emp-single-end-sequences.qza \
+  --m-barcodes-file sample-metadata.tsv \
+  --m-barcodes-column BarcodeSequence \
+  --o-per-sample-sequences demux.qza
+</code></pre>
+</div>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> If you ran qiime tools extract on the demux.qza, you would have all your demultiplexed per-sample fastq files, if you wanted these for other fun stuff</div>
+
+<p>Now produce a visualization of the demux’ing.  This will produce a file called <em>demux.qza</em>, which can be viewed on the <a href="https://view.qiime2.org/">QIIME2 viewer</a> as you did earlier for your metadata.qzv file</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>qiime demux summarize \
+  --i-data demux.qza \
+  --o-visualization demux.qzv
+</code></pre>
+</div>
+
+<h2 id="step-5-denoising-and-qc-filtering">Step 5: Denoising and QC filtering</h2>
+
+<p>The methods for processing and analysis of 16S marker gene sequencing data continue to improve.  One recent and major improvement was the introduction of two methods, Dada2](https://www.nature.com/articles/nmeth.3869) and <a href="http://msystems.asm.org/content/2/2/e00191-16">Deblur</a>, both of which significantly advance quality control measures by ‘denosing’ your sequences in order to better discriminate between true sequence diversity and sequencing errors.  Be sure to check out the <a href="http://CHMI-sops.github.io/papers/dada2_methods.pdf">Dada2 online methods section</a> for a more indepth (but still very readable) description of the underlying statistical method.  These methods have pushed the field from 97% OTU to 100% OTU, frequently called sub-OTUs or amplicon sequence variants (ASVs).</p>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> DADA2 denoising will join paired reads for you.  Do not join your reads prior to running DADA2, since the program has a model for the basewise error of illumina reads, and joining reads would violate the expectations of that model.  If you’re working with single-end data, you would use ‘denoise-single’ in the code below.</div>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> If you have multiple runs, it is recommended that you run DADA2 separately on data from each run individually, then combine data from the runs after denoising.  See the <a href="https://docs.qiime2.org/2018.2/tutorials/fmt/">QIIME2 fecal transplant tutorial</a> for an example of how this works</div>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> we will trim our sequences to 120bp.  This number is a bit arbritrary but should be guided on quality scores that you observed in demux.qzv in step 4 above.  If you want to avoid trimming for any reason (for example, if you are profiling fungi by ITS sequencing), simply set this value to 0.</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>qiime dada2 denoise-paired \
+  --i-demultiplexed-seqs demux.qza \
+  --p-trim-left 0 \
+  --p-trunc-len 120 \
+  --o-representative-sequences rep-seqs-dada2.qza \
+  --o-table table-dada2.qza
+</code></pre>
+</div>
+
+<p>Now you’ll summarize your filtered/denoised data using the <code class="highlighter-rouge">qiime feature table</code> function.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>qiime feature-table summarize \
+  --i-table table.qza \
+  --o-visualization table.qzv \
+  --m-sample-metadata-file sample-metadata.tsv
+qiime feature-table tabulate-seqs \
+  --i-data rep-seqs.qza \
+  --o-visualization rep-seqs.qzv
+</code></pre>
+</div>
+
+<p>The code above produced two .qzv files that can be explored on the <a href="https://view.qiime2.org/">QIIME2 viewer</a>.  The “interactive Sample Detail” tab of the viewer gives you a great way to explore how rarefaction depths (subsampling) will impact your data (i.e. which samples will be dropped).</p>
+
+<h2 id="step-6-build-a-phylogenetic-tree">Step 6: build a phylogenetic tree</h2>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> tree construction is optional, and is useful downstream if you want to compute alpha diversity metrics that are phylogenetically based.  The resulting tree is unrooted and is created using Fasttree.  Some downstream actions will require a rooted tree, in which longest branch is used to root the tree (‘midrooting’)</div>
+
+<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> You are cautioned against drawing strong conclusions about relationships between taxa from this tree alone, since it was only constructed using a single marker gene.</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>#carry out a multiple seqeunce alignment using Mafft
+ qiime alignment mafft \
+  --i-sequences rep-seqs.qza \
+  --o-alignment aligned-rep-seqs.qza
+
+#mask (or filter) the alignment to remove positions that are highly variable. These positions are generally considered to add noise to a resulting phylogenetic tree.
+qiime alignment mask \
+  --i-alignment aligned-rep-seqs.qza \
+  --o-masked-alignment masked-aligned-rep-seqs.qza
+
+#create the tree using the Fasttree program
+qiime phylogeny fasttree \
+  --i-alignment masked-aligned-rep-seqs.qza \
+  --o-tree unrooted-tree.qza
+
+#root the tree using the longest root
+qiime phylogeny midpoint-root \
+  --i-tree unrooted-tree.qza \
+  --o-rooted-tree rooted-tree.qza
+
+</code></pre>
+</div>
+
+<h2 id="step-6-alpha-rarefaction">Step 6: alpha rarefaction</h2>
+
+<p>Produce a graphic that shows the impact of rarefaction (sampling at different depths) on alpha diversity of each sample.  These are also called ‘collectors curves’.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>qiime diversity alpha-rarefaction \
+  --i-table table.qza \
+  --i-phylogeny rooted-tree.qza \
+  --p-max-depth 4000 \
+  --m-metadata-file sample-metadata.tsv \
+  --o-visualization alpha-rarefaction.qzv
+</code></pre>
+</div>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> A few comments on interpreting alpha diversity metrics: it is important to understand that certain metrics are stricly qualitative (presence/absence), that is they only take diversity into account, often referred to as <em>richness</em> of the community (e.g. observed otus).  In contrast, other methods are quantitative in that they consider both <em>richness</em> and abundance across samples, commonly referred to as <em>evenness</em> (e.g. Shannon).  Yet other methods take phylogenetic distance into account by asking how diverse the phylogenetic tree is for each sample.  These phylogenetic tree-based methods include the popular Faith’s PD, which calculates the sum of the branch length covered by a sample</div>
+
+<h2 id="step-7-calculate-and-explore-diversity-metrics">Step 7: calculate and explore diversity metrics</h2>
+
+<p>Use QIIME2’s <code class="highlighter-rouge">diversity core-metrics-phylogenetic</code> function to calculate a whole bunch of diversity metrics all at once.  Note that you should input a sample-depth value (set at 1109 reads in the example below) based on the alpha-rarefaction analysis that you ran in step 6.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>qiime diversity core-metrics-phylogenetic \
+  --i-phylogeny rooted-tree.qza \
+  --i-table table.qza \
+  --p-sampling-depth 1109 \
+  --m-metadata-file sample-metadata.tsv \
+  --output-dir core-metrics-results
+</code></pre>
+</div>
+
+<p>Now test for relationships between <strong>alpha diversity</strong> and study metadata and create .qzv files to view these relationships on <a href="https://view.qiime2.org/">QIIME2 viewer</a>.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>qiime diversity alpha-group-significance \
+  --i-alpha-diversity core-metrics-results/faith_pd_vector.qza \
+  --m-metadata-file sample-metadata.tsv \
+  --o-visualization core-metrics-results/faith-pd-group-significance.qzv
+
+qiime diversity alpha-group-significance \
+  --i-alpha-diversity core-metrics-results/evenness_vector.qza \
+  --m-metadata-file sample-metadata.tsv \
+  --o-visualization core-metrics-results/evenness-group-significance.qzv
+</code></pre>
+</div>
+
+<p>Now test for relationships between <strong>beta diversity</strong> and study metadata and create .qzv files to view these relationships on <a href="https://view.qiime2.org/">QIIME2 viewer</a>.</p>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Like alpha diversity discussed above, beta diversity metrics can also be either qualitative or quantitative.  Qualitative measure only consider whether a given taxon is present (yes/no) in both samples from any given airwise comparison (e.g. Jaccard distance).  Quantitative measures are <em>weighted</em> by taxon abundance (e.g. Bray-Curtis).  Phylogenetic beta diversity metrics can also be qualitiative (unweighted) or quantitative (weighted).  Weighted Unifrac and unweighted Unifrac are examples of quantitative and qualitiative phylogenetic-based metrics, respectively.</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>qiime diversity beta-group-significance \
+  --i-distance-matrix core-metrics-results/unweighted_unifrac_distance_matrix.qza \
+  --m-metadata-file sample-metadata.tsv \
+  --m-metadata-column BodySite \
+  --o-visualization core-metrics-results/unweighted-unifrac-body-site-significance.qzv \
+  --p-pairwise
+
+qiime diversity beta-group-significance \
+  --i-distance-matrix core-metrics-results/unweighted_unifrac_distance_matrix.qza \
+  --m-metadata-file sample-metadata.tsv \
+  --m-metadata-column Subject \
+  --o-visualization core-metrics-results/unweighted-unifrac-subject-group-significance.qzv \
+  --p-pairwise
+</code></pre>
+</div>
+
+<p>Create a PCoA plot to explore beta diversity metric.  To do this you can use <a href="https://biocore.github.io/emperor/build/html/index.html">Emperor</a>, a powerful tool for interactively exploring scatter plots.  You do not need to install Emperor.</p>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> notice that the custom-axes parameter in the code below can be used to specific any column from your metadata file that you’d like to stratify you PCoA plot by.</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>#first, use the unweighted unifrac data as input
+qiime emperor plot \
+  --i-pcoa core-metrics-results/unweighted_unifrac_pcoa_results.qza \
+  --m-metadata-file sample-metadata.tsv \
+  --p-custom-axes DaysSinceExperimentStart \
+  --o-visualization core-metrics-results/unweighted-unifrac-emperor-DaysSinceExperimentStart.qzv
+
+#now repeat with bray curtis
+qiime emperor plot \
+  --i-pcoa core-metrics-results/bray_curtis_pcoa_results.qza \
+  --m-metadata-file sample-metadata.tsv \
+  --p-custom-axes DaysSinceExperimentStart \
+  --o-visualization core-metrics-results/bray-curtis-emperor-DaysSinceExperimentStart.qzv
+</code></pre>
+</div>
+
+<h2 id="step-8-assign-taxonomy">Step 8: assign taxonomy</h2>
+
+<p>In this step, you will take the denoised sequences from step 5 (rep-seqs.qza) and assign taxonomy to each sequence (phylum -&gt; class -&gt; …genus -&gt; ).  This step requires a trained classifer.  You have the choice of either <a href="https://docs.qiime2.org/2018.2/tutorials/feature-classifier/">training your own classifier</a> using the <a href="https://peerj.com/preprints/3208/">q2-feature-classifier</a> or downloading a pretrained classifier.</p>
+
+<p>We’ll use a classifier that has been pretrained on <a href="http://greengenes.secondgenome.com/">GreenGenes</a> database with 99% OTUs.  Download this classifier from the qiime site and place in your working directory.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>wget -O "gg-13-8-99-515-806-nb-classifier.qza" "https://data.qiime2.org/2018.2/common/gg-13-8-99-515-806-nb-classifier.qza"
+</code></pre>
+</div>
+
+<p>Now you’re ready to assign taxonomy to your sequences</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>qiime feature-classifier classify-sklearn \
+  --i-classifier gg-13-8-99-515-806-nb-classifier.qza \
+  --i-reads rep-seqs.qza \
+  --o-classification taxonomy.qza
+
+qiime metadata tabulate \
+  --m-input-file taxonomy.qza \
+  --o-visualization taxonomy.qzv
+</code></pre>
+</div>
+
+<p>Now create a visualization of the classified sequences.  Again, the resulting .qzv file produced below can be explored in the <a href="https://view.qiime2.org/">QIIME2 viewer</a></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>qiime taxa barplot \
+  --i-table table.qza \
+  --i-taxonomy taxonomy.qza \
+  --m-metadata-file sample-metadata.tsv \
+  --o-visualization taxa-bar-plots.qzv
+</code></pre>
+</div>
+
+<h2 id="optional-export-biom-file">OPTIONAL: export .biom file</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>#first, export your data as a .biom
+qiime tools export \
+  feature-table.qza \
+  --output-dir exported-feature-table
+
+#then export taxonomy info
+qiime tools export \
+  taxonomy.qza \
+  --output-dir exported-feature-table
+
+#then combine the two using the biome package (dependence loaded as part of QIIME2 install)
+
+
+</code></pre>
+</div>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Once you have a .biome file, you can use apps on <a href="http://www.microbiomedb.org">MicrobiomeDB</a> to analyze and visualize your data.</div>
+
+<h2 id="step-9-differential-abundance">Step 9: differential abundance</h2>
+
+<p>The tools and theory for calling differentially abundant taxa between samples is very much an area of active research.  Basically, it’s a challenging statistical problem since measurements of abundance are relative, not absolute, and therefore features are not independent (i.e. if one taxa increases in abundance, then the others will go down).  This is also a common, and perhaps better studied, problem in RNAseq.  QIIME2 uses <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4450248/">ANCOM</a> to identify differentially abundant taxa. As is the case with all statistical tests, ANCOM makes certain assumptions about your data and if these are violated, then the results of the ANCOM analysis cannot be trust.  A key assumption made by ANCOM is that few taxa will be differentially abundant between groups.  To ensure that we don’t violate this assumption, we first need to filter our data to focus on a single body site, for example, and then compare treatments, conditions, etc, <em>within</em> that body site</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>#filter based on body site
+qiime feature-table filter-samples \
+  --i-table table.qza \
+  --m-metadata-file sample-metadata.tsv \
+  --p-where "BodySite='gut'" \
+  --o-filtered-table gut-table.qza
+
+
+qiime composition add-pseudocount \
+  --i-table gut-table.qza \
+  --o-composition-table comp-gut-table.qza
+
+#now run ANCOM
+qiime composition ancom \
+  --i-table comp-gut-table.qza \
+  --m-metadata-file sample-metadata.tsv \
+  --m-metadata-column Subject \
+  --o-visualization ancom-Subject.qzv
+</code></pre>
+</div>
+
+<p>Once you’re confortable with the individual steps of this workflow, you could use <a href="">this shell script</a>, to run the entire workflow</p>
+
+<h2 id="step-10-supervised-machine-learning">Step 10: supervised machine learning</h2>
+
+<p>Beyond differential gene expression analysis, often times you will want to know which taxa (or sets of taxa) do the best job classifying particularly phenotypes, and therefore could serve as biomarkers.  There are two general types of supervised learning approaches that can be used to this: ‘Classifiers’ are used to find taxa that are associated with categorical metadata (Sex, disease status, etc), while ‘regressors’ are used with continuous metadata (age, weight, etc).  Typically, your data is split into a training set (2/3) and a test set (remaining 1/3 of data that was left out from the training).</p>
+
+<h3 id="classifiers">classifiers</h3>
+<p>We can use a random forest classifier directly within QIIME via the <code class="highlighter-rouge">qiime sample-classifier</code> tool.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>qiime sample-classifier classify-samples \
+  --i-table moving-pictures-table.qza \
+  --m-metadata-file moving-pictures-sample-metadata.tsv \
+  --m-metadata-column BodySite \
+  --p-optimize-feature-selection \
+  --p-parameter-tuning \
+  --p-estimator RandomForestClassifier \
+  --p-n-estimators 100 \
+  --o-visualization moving-pictures-BodySite.qzv
+  ```
+
+
+### regressors
+For continuous data, you can use a random forest regressor.
+
+ &lt;div markdown="span" class="alert alert-warning" role="alert"&gt;&lt;i class="fa fa-warning"&gt;&lt;/i&gt; &lt;b&gt;Important:&lt;/b&gt; continuous data could be age, weight, etc, for each of your samples, but it could also be quantitative levels of some metabolite, host gene expression, etc.&lt;/div&gt;
+
+</code></pre>
+</div>
+<p>qiime sample-classifier regress-samples \
+  –i-table ecam-table.qza \
+  –m-metadata-file ecam-metadata.tsv \
+  –m-metadata-column month \
+  –p-optimize-feature-selection \
+  –p-parameter-tuning \
+  –p-estimator RandomForestRegressor \
+  –p-n-estimators 100 \
+  –o-visualization ecam-month.qzv
+```</p>
+
+<h2 id="optional-other-stuff">OPTIONAL: other stuff</h2>
+<p>qiime taxa collapse
+takes taxa table and taxonomy artifact and you specify the level to which you collapse</p>
+
+<p>check about q2-longitudinal plugin for regression models using longitudinal</p>
+
+
+
+    <div class="tags">
+        
+        <b>Tags: </b>
+        
+        
+        
+        <a href="tag_bioinformatics.html" class="btn btn-default navbar-btn cursorNorm" role="button">bioinformatics</a>
+        
+        
+        
+        <a href="tag_microbiome.html" class="btn btn-default navbar-btn cursorNorm" role="button">microbiome</a>
+        
+        
+        
+    </div>
+
+
+
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'http-hostmicrobe-org'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2018 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
+ Site last generated: Feb 26, 2018 <br />
+<p><img src="images/CHMI_logo.png" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+    </div>
+
+</body>
+
+</html>

@@ -31,9 +31,9 @@ A typical QPCR reaction on the biomeme platform contains the following elements
 
 ## Run set-up
 
-1. To begin, launch the Biomeme app on the iPhone connected to your device.
-2. To run any assays, you'll need to set up a data folder by selecting the 'data management' button on the main screen.  Name your folder, create any subfolders if necessary and save.
-3. Back on the main screen, choose 'protocol management' to set up a protocol that will contain your thermocycling conditions and a standard curve (optional).  We've always used the standard thermocycling conditions that come pre-set on the device as follows:
+* To begin, launch the Biomeme app on the iPhone connected to your device.
+* To run any assays, you'll need to set up a data folder by selecting the 'data management' button on the main screen.  Name your folder, create any subfolders if necessary and save.
+* Back on the main screen, choose 'protocol management' to set up a protocol that will contain your thermocycling conditions and a standard curve (optional).  We've always used the standard thermocycling conditions that come pre-set on the device as follows:
 
 | Temp (C) | Time (min:sec) |
 |-------|--------|
@@ -44,14 +44,14 @@ A typical QPCR reaction on the biomeme platform contains the following elements
 
 **Bold** steps are repeated for 40 cycles total
 
-4. Give your protocol and name and select 'save' in the upper right corner of the app
-5. If you want to set-up a standard curve, select your protocol, scroll to the bottom, and select standard curve.
+* Give your protocol and name and select 'save' in the upper right corner of the app
+* If you want to set-up a standard curve, select your protocol, scroll to the bottom, and select standard curve.
 
 {% include note.html content="standard curves are specific to each device.  If you plan to run the same assay across multiple devices, you'll have to run the standard curve on each device." %}
 
-6. Currently, standards can only have three points.  Enter the values for your 3 point standard curve.  Since the Two3 device sees a red and green channel, you have to enter 3 standard values for each channel.  Enter zero or one for each point in the channel you're not using. 
+* Currently, standards can only have three points.  Enter the values for your 3 point standard curve.  Since the Two3 device sees a red and green channel, you have to enter 3 standard values for each channel.  Enter zero or one for each point in the channel you're not using. 
 
-7. To begin a run, go back to the main screen of the app and choose 'start run'.  Choose your data folder, then your protocol, then select the run type (standard curve, qualitative, etc). Hit run and follow the on screen instructions to begin the run
+* To begin a run, go back to the main screen of the app and choose 'start run'.  Choose your data folder, then your protocol, then select the run type (standard curve, qualitative, etc). Hit run and follow the on screen instructions to begin the run
 
 
 {% include warning.html content="once you begin a run on the Biomeme Two3, be sure not to hit the home button on the iphone.  Doing so will immediately close the app and result in terminating the run.  We place tape over the home button with a 'do not touch' label." %}
@@ -126,7 +126,7 @@ The primers and probes below are used for detection of *Staphylococcus aureus (S
 
 {% include note.html content="All of these targets are DNA, so be sure to use appropirate lysis buffer (BLB from DNA bulk extraction kit) and mastermix (LyoDNA)." %}
 
-{% include note.html content="**Standard curve:** We prepare a standard curve for the *S. aureus* assay using genomic DNA provided by Biomeme.  Stock is ~100,000 *S. aureus* genomes per ul, and curve is 100000, 10000 and 1000 copies."  We prepare a similar standard curve from *L. braziliensis* promastigotes, with a stock that is also ~100,000 genome copies per ul.  When running a standard curve on the Two3 device, always put the tube containing the lowest amount of target in the center well.  This position is closest to the sensor, and therefore provides a bit more sensitivity.%}
+{% include note.html content="We prepare a standard curve for the *S. aureus* assay using genomic DNA provided by Biomeme.  Stock is ~100,000 *S. aureus* genomes per ul, and curve is 100000, 10000 and 1000 copies.  We prepare a similar standard curve from *L. braziliensis* promastigotes, with a stock that is also ~100,000 genome copies per ul.  When running a standard curve on the Two3 device, always put the tube containing the lowest amount of target in the center well.  This position is closest to the sensor, and therefore provides a bit more sensitivity."%}
 
 * *Leishmania braziliensis* primer/probes are from [Weirather et al., 2011](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3209110/)
 * *Streptococcus pyogenes* primer/probes were adapted from CDC [here](https://www.cdc.gov/streplab/protocols.html)
@@ -151,7 +151,7 @@ The primers and probes below are for the detection of host transcripts present i
 
 {% include note.html content="All of these targets are mRNAs, so be sure to use appropirate lysis buffer (BLB from RNA bulk extraction kit) and mastermix (LyoRNA)." %}
 
-{% include note.html content="The 18S assay is included as a positive extraction control.  The primers recognize an exon in the 18S gene, so there will be some signal from DNA in the reaction (the Biomeme RNA extraction isolates both RNA and DNA), however, given the large copy number for 18S transcripts, there should be much stronger signal for RNA.%}
+{% include note.html content="The 18S assay is included as a positive extraction control.  The primers recognize an exon in the 18S gene, so there will be some signal from DNA in the reaction (the Biomeme RNA extraction isolates both RNA and DNA), however, given the large copy number for 18S transcripts, there should be much stronger signal for RNA."%}
 
 | name | Sequence (5' -> 3') |
 |-------|--------|

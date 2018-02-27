@@ -304,6 +304,12 @@
   
   
   <url>
+    <loc>http://localhost:4000/mydoc_qiime2.html</loc>
+  </url>
+  
+  
+  
+  <url>
     <loc>http://localhost:4000/mydoc_release_notes_50.html</loc>
   </url>
   

@@ -131,7 +131,7 @@
 "tags": "QPCRmobilediagnostics",
 "keywords": "",
 "url": "mydoc_biomeme.html",
-"summary": "Using the Biomeme platform for end-to-end QPCR-based detection of pathogens in the field"
+"summary": "Most of the projects we work on, whether profiling host gene expression or micobial communities, often yield at a candidate list of genes or organisms that we believe are linked to some phenotype.  Increasingly, we are interested in methods and technology that let us quantitiatively measure these features, particularly in a way that is portable and could be deployed 'stall-side' in a barn just as easily as at a lab bench.  For this, we've been using the Biomeme platform for end-to-end QPCR-based detection in the field"
 }
 ,
 
@@ -424,11 +424,11 @@
 
 
 {
-"title": "Mock Communities",
+"title": "Microbial Culture Collection",
 "tags": "resourcesmicrobiome",
 "keywords": "",
 "url": "mydoc_mock.html",
-"summary": "Synthetic communities of known identity for use as controls in your microbiome profiling experiments"
+"summary": "This page contains a reasonably up-to-date listing of our -80C freezer stocks of microbes.  Most of these cultures were identified from"
 }
 ,
 
@@ -506,6 +506,17 @@
 "keywords": "",
 "url": "mydoc_qiime.html",
 "summary": "Preparation of V4 region, 16S dual-indexed libraries for sequencing on an Illumina platform"
+}
+,
+
+
+
+{
+"title": "QIIME2 workflow",
+"tags": "bioinformaticsmicrobiome",
+"keywords": "",
+"url": "mydoc_qiime2.html",
+"summary": "Using the Quantitative Insights Into Microbial Ecology (QIIME2) software pipeline for analysis of marker gene-based microbiome sequencing data"
 }
 ,
 

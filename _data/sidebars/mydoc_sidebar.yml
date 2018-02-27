@@ -120,10 +120,6 @@ entries:
       url: /mydoc_3Dculture.html
       output: web, pdf
 
-    - title: veterinary microbial collections
-      url: /mydoc_sidebar_navigation.html
-      output: web, pdf
-
   - title: In the field
     output: web, pdf
 
