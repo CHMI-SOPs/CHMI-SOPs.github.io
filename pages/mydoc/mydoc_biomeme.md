@@ -2,7 +2,7 @@
 title: Portable QPCR
 tags: [QPCR, mobile, diagnostics]
 keywords:
-summary: "Most of the projects we work on, whether profiling host gene expression or micobial communities, often yield at a candidate list of genes or organisms that we believe are linked to some phenotype.  Increasingly, we are interested in methods and technology that let us *quantitiatively* measure these features, particularly in a way that is portable and could be used deployed 'stall-side' in a barn just as easily as at a lab bench.  For this, we've been using the Biomeme platform for end-to-end QPCR-based detection in the field"
+summary: "Most of the projects we work on, whether profiling host gene expression or micobial communities, often yield at a candidate list of genes or organisms that we believe are linked to some phenotype.  Increasingly, we are interested in methods and technology that let us quantitiatively measure these features, particularly in a way that is portable and could be deployed 'stall-side' in a barn just as easily as at a lab bench.  For this, we've been using the Biomeme platform for end-to-end QPCR-based detection in the field"
 sidebar: mydoc_sidebar
 permalink: mydoc_biomeme.html
 folder: mydoc
@@ -13,14 +13,11 @@ The protocols below detail how we've been using [Biomeme Inc's](http://biomeme.c
 
 {% include note.html content="The only difference between DNA and RNA protocols are the BLB buffer in the extraction kit, and the type of master mix you will use (LyoDNA versus LyoRNA)." %}
 
-### Mastermix
+### Preparing mastermix
 Resuspend bulk lyophilized **LyoDNA** or **LyoRNA** Biomeme master mix with 132 ul of PCR grade water + 18 ul of glycerol.  This is a 10x stock.  Addition of glyceral allows leftover mastermix to be frozen for reuse later.  LyoRNA master mix contains a reverse transcriptase for QPCR assays where the target is a RNA molecule.  Each resuspended vial contains enough mastermix for 60 reactions of 20ul/rxn.
 
-### Reaction
+### Reaction set-up
 A typical QPCR reaction on the biomeme platform contains the following elements
-
-{% include important.html content="20x primer/probe stock contains 4uM of the forward primer and probe, and 8uM of the reverse primer in TE pH 8.0.  Final concentrations in the PCR reaction will be 200nM of forward and probe, 400nM of reverse" %}
-
 
 | Reagent | vol (ul) |
 |-------|--------|
@@ -29,8 +26,14 @@ A typical QPCR reaction on the biomeme platform contains the following elements
 | isolated DNA or RNA | 5-17 |
 | water | qs to 20 |
 
+{% include important.html content="20x primer/probe stock contains 4uM of the forward primer and probe, and 8uM of the reverse primer in TE pH 8.0.  Final concentrations in the PCR reaction will be 200nM of forward and probe, 400nM of reverse" %}
 
-### Thermocycling conditions
+
+### Run set-up
+
+1. To begin, launch the Biomeme app on the iPhone connected to your device.
+2. To run any assays, you'll need to set up a data folder by selecting the 'data management' button on the main screen.  Name your folder, create any subfolders if necessary and save.
+3. Back on the main screen, choose 'protocol management' to set up a protocol that will contain your thermocycling conditions and a standard curve (optional).  We've always used the standard thermocycling conditions that come pre-set on the device as follows:
 
 | Temp (C) | Time (min:sec) |
 |-------|--------|
@@ -40,6 +43,18 @@ A typical QPCR reaction on the biomeme platform contains the following elements
 | **60** | **1:00** |
 
 **Bold** steps are repeated for 40 cycles total
+
+4. Give your protocol and name and select 'save' in the upper right corner of the app
+5. If you want to set-up a standard curve, select your protocol, scroll to the bottom, and select standard curve.
+
+{% include note.html content="standard curves are specific to each device.  If you plan to run the same assay across multiple devices, you'll have to run the standard curve on each device." %}
+
+6. Currently, standards can only have three points.  Enter the values for your 3 point standard curve.  Since the Two3 device sees a red and green channel, you have to enter 3 standard values for each channel.  Enter zero or one for each point in the channel you're not using. 
+
+7. To begin a run, go back to the main screen of the app and choose 'start run'.  Choose your data folder, then your protocol, then select the run type (standard curve, qualitative, etc). Hit run and follow the on screen instructions to begin the run
+
+
+{% include warning.html content="once you begin a run on the Biomeme Two3, be sure not to hit the home button on the iphone.  Doing so will immediately close the app and result in terminating the run.  We place tape over the home button with a 'do not touch' label." %}
 
 
 ## Avian assays
@@ -70,7 +85,6 @@ All avian assays begin with tracheal swabs collected in brain-heart infusion (BH
 | fwd | GCT TTT GAG CCT AGC GTT |
 | rev | GCC ATG TTG TCA CTG TCT ATT G |
 | probe | *FAM*-CAC CAC CAG AAC CTG TCA CCT C-*BHQ-1* |
-
 
 
 #### *Mycoplasma gallisepticum* and *Mycoplasma synoviae* (Mg/Ms)
@@ -112,9 +126,12 @@ The primers and probes below are used for detection of *Staphylococcus aureus (S
 
 {% include note.html content="All of these targets are DNA, so be sure to use appropirate lysis buffer (BLB from DNA bulk extraction kit) and mastermix (LyoDNA)." %}
 
+{% include note.html content="**Standard curve:** We prepare a standard curve for the *S. aureus* assay using genomic DNA provided by Biomeme.  Stock is ~100,000 *S. aureus* genomes per ul, and curve is 100000, 10000 and 1000 copies."  We prepare a similar standard curve from *L. braziliensis* promastigotes, with a stock that is also ~100,000 genome copies per ul.  When running a standard curve on the Two3 device, always put the tube containing the lowest amount of target in the center well.  This position is closest to the sensor, and therefore provides a bit more sensitivity.%}
+
 * *Leishmania braziliensis* primer/probes are from [Weirather et al., 2011](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3209110/)
 * *Streptococcus pyogenes* primer/probes were adapted from CDC [here](https://www.cdc.gov/streplab/protocols.html)
 * *Staphylococcus aureus* primers and probes were provided by Biomeme Inc.
+
 
 | name | Sequence (5' -> 3') |
 |-------|--------|
@@ -130,9 +147,11 @@ The primers and probes below are used for detection of *Staphylococcus aureus (S
 
 
 #### Human transcripts
-The primers and probes below are for the detection of host transcripts present in cellular material on the swab
+The primers and probes below are for the detection of host transcripts present in cellular material on recovered from the swab
 
 {% include note.html content="All of these targets are mRNAs, so be sure to use appropirate lysis buffer (BLB from RNA bulk extraction kit) and mastermix (LyoRNA)." %}
+
+{% include note.html content="The 18S assay is included as a positive extraction control.  The primers recognize an exon in the 18S gene, so there will be some signal from DNA in the reaction (the Biomeme RNA extraction isolates both RNA and DNA), however, given the large copy number for 18S transcripts, there should be much stronger signal for RNA.%}
 
 | name | Sequence (5' -> 3') |
 |-------|--------|
