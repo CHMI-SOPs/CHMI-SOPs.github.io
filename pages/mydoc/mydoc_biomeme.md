@@ -13,10 +13,10 @@ The protocols below detail how we've been using [Biomeme Inc's](http://biomeme.c
 
 {% include note.html content="The only difference between DNA and RNA protocols are the BLB buffer in the extraction kit, and the type of master mix you will use (LyoDNA versus LyoRNA)." %}
 
-### Preparing mastermix
+## Preparing mastermix
 Resuspend bulk lyophilized **LyoDNA** or **LyoRNA** Biomeme master mix with 132 ul of PCR grade water + 18 ul of glycerol.  This is a 10x stock.  Addition of glyceral allows leftover mastermix to be frozen for reuse later.  LyoRNA master mix contains a reverse transcriptase for QPCR assays where the target is a RNA molecule.  Each resuspended vial contains enough mastermix for 60 reactions of 20ul/rxn.
 
-### Reaction set-up
+## Reaction set-up
 A typical QPCR reaction on the biomeme platform contains the following elements
 
 | Reagent | vol (ul) |
@@ -29,7 +29,7 @@ A typical QPCR reaction on the biomeme platform contains the following elements
 {% include important.html content="20x primer/probe stock contains 4uM of the forward primer and probe, and 8uM of the reverse primer in TE pH 8.0.  Final concentrations in the PCR reaction will be 200nM of forward and probe, 400nM of reverse" %}
 
 
-### Run set-up
+## Run set-up
 
 1. To begin, launch the Biomeme app on the iPhone connected to your device.
 2. To run any assays, you'll need to set up a data folder by selecting the 'data management' button on the main screen.  Name your folder, create any subfolders if necessary and save.
