@@ -170,7 +170,7 @@ qiime phylogeny midpoint-root \
 
 ```
 
-## Step 6: alpha rarefaction
+## Step 7: alpha rarefaction
 
 Produce a graphic that shows the impact of rarefaction (sampling at different depths) on alpha diversity of each sample.  These are also called 'collectors curves'.
 
@@ -186,7 +186,7 @@ qiime diversity alpha-rarefaction \
 {% include note.html content="**Interpreting alpha diversity metrics:** it is important to understand that certain metrics are stricly qualitative (presence/absence), that is they only take diversity into account, often referred to as *richness* of the community (e.g. observed otus).  In contrast, other methods are quantitative in that they consider both *richness* and abundance across samples, commonly referred to as *evenness* (e.g. Shannon).  Yet other methods take phylogenetic distance into account by asking how diverse the phylogenetic tree is for each sample.  These phylogenetic tree-based methods include the popular Faith's PD, which calculates the sum of the branch length covered by a sample" %}
 
 
-## Step 7: calculate and explore diversity metrics
+## Step 8: calculate and explore diversity metrics
 
 Use QIIME2's ```diversity core-metrics-phylogenetic``` function to calculate a whole bunch of diversity metrics all at once.  Note that you should input a sample-depth value (set at 1109 reads in the example below) based on the alpha-rarefaction analysis that you ran in step 6.
 
@@ -254,7 +254,7 @@ qiime emperor plot \
 ```
 
 
-## Step 8: assign taxonomy
+## Step 9: assign taxonomy
 
 In this step, you will take the denoised sequences from step 5 (rep-seqs.qza) and assign taxonomy to each sequence (phylum -> class -> ...genus -> ).  This step requires a trained classifer.  You have the choice of either [training your own classifier](https://docs.qiime2.org/2018.2/tutorials/feature-classifier/) using the [q2-feature-classifier](https://peerj.com/preprints/3208/) or downloading a pretrained classifier.
 
@@ -310,7 +310,7 @@ qiime tools export \
 
 {% include important.html content="Once you have a .biome file, you can use apps on [MicrobiomeDB](http://www.microbiomedb.org) to analyze and visualize your data." %}
 
-## Step 9: differential abundance
+## Step 10: differential abundance
 
 The tools and theory for calling differentially abundant taxa between samples is very much an area of active research.  Basically, it's a challenging statistical problem since measurements of abundance are relative, not absolute, and therefore features are not independent (i.e. if one taxa increases in abundance, then the others will go down).  This is also a common, and perhaps better studied, problem in RNAseq.  QIIME2 uses [ANCOM](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4450248/) to identify differentially abundant taxa. As is the case with all statistical tests, ANCOM makes certain assumptions about your data and if these are violated, then the results of the ANCOM analysis cannot be trust.  A key assumption made by ANCOM is that few taxa will be differentially abundant between groups.  To ensure that we don't violate this assumption, we first need to filter our data to focus on a single body site, for example, and then compare treatments, conditions, etc, *within* that body site
 
@@ -339,7 +339,7 @@ Once you're confortable with the individual steps of this workflow, you could us
 
 {% include warning.html content="the additional steps outlined below are still a work in progress, and we want to spend more time exploring these steps before we can make solid recommendations....so proceed at your own risk!" %}
 
-## Step 10: supervised machine learning
+## Step 11: supervised machine learning
 
 Beyond differential gene expression analysis, often times you will want to know which taxa (or sets of taxa) do the best job classifying particularly phenotypes, and therefore could serve as biomarkers.  There are two general types of supervised learning approaches that can be used to this: 'Classifiers' are used to find taxa that are associated with categorical metadata (Sex, disease status, etc), while 'regressors' are used with continuous metadata (age, weight, etc).  Typically, your data is split into a training set (2/3) and a test set (remaining 1/3 of data that was left out from the training).  
 
