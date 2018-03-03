@@ -9,14 +9,14 @@ folder: mydoc
 ---
 
 ## Before starting
-* [GoTaq Master Mix documentation](https://www.promega.com/-/media/files/resources/protocols/product-information-sheets/g/gotaq-green-master-mix-protocol.pdf)
+* The protocol uses three primers (two forward and one reverse) to generate amplicons for Sanger sequencing.  Combining the seqeunce data for the three amplicons generates a contiguous sequence that spans that majority of the full 16S rRNA gene, therby giving you a decent idea of bacterial identity.  PCR reactions use the [GoTaq Master Mix](https://www.promega.com/-/media/files/resources/protocols/product-information-sheets/g/gotaq-green-master-mix-protocol.pdf)
 
 ## Materials
 * Promega GoTaq Green Master Mix (-20C)
 * Molecular biology grade, nuclease-free water (-20C or room temperature)
 * 27F Primer
 * 1492R primer
-* 515F primer (optional)
+* 515F primer
 * QIAGEN QIAquick PCR purification kit
 * 100% Ethanol
 
@@ -27,10 +27,15 @@ folder: mydoc
 
 ## Step 2: PCR Amplify the full-length 16S rRNA gene
 
+* PCR Primers are as follows:
+
+| name | Sequence (5' -> 3') |
+|-------|--------|
+| 27fwd | AGA GTT TGA TCM TGG CTC AG |
+| 515fwd | GTG CCA GCM GCC GCG GTA A |
+| 1492rev | CGG TTA CCT TGT TAC GAC TT |
+
 * Prepare the following reaction mixture in each PCR well/tube
-
-* Place in thermocycler and run the following program under CHMI -> PCR -> 16SFULL (bold indicates 30 cycles)
-
 
 | Component | Volume | Final Concentration |
 |-------|--------|--------|
@@ -44,6 +49,7 @@ folder: mydoc
 
 {% include note.html content="The original IDT stock solutions of the primers are at a concentration of 100 uM." %}
 
+* Place in thermocycler and run the following program under CHMI -> PCR -> 16SFULL (bold indicates 30 cycles)
 
 | Temp (C) | Time (min:sec) |
 |-------|--------|
@@ -84,9 +90,9 @@ folder: mydoc
 
 ## Step 6: Interpret results
 
-* Assemble the sequencing reads using your favorite assembly software (Geneious has an easy-to-use interface).
+* Assemble the sequencing reads using your favorite assembly software.  We use Geneious (commercial software) because it has an easy-to-use interface.  .Ab1 files for all three amplicons can be dragged onto the Geneious interface and the *de novo assembly* tool is used to produce a consensus contig. 
 
-* Obtain the full length, consensus sequence seach for the best match using either [BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastSearch&BLAST_SPEC=MicrobialGenomes) or a recent tool called Bitsliced Genomic Signature Index (BIGSI) which is available [here](http://www.bigsi.io/) and you can read more about on the [Github page for BIGSI](https://github.com/Phelimb/BIGSI)
+* Take the highest quality portion of the full length consensus sequence and seach for the best match using either [BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastSearch&BLAST_SPEC=MicrobialGenomes) or a recent tool called Bitsliced Genomic Signature Index (BIGSI) which is available [here](http://www.bigsi.io/) and you can read more about on the [Github page for BIGSI](https://github.com/Phelimb/BIGSI)
 
 {% include important.html content="No database is comprehensive and there's always bias in what is represented in a database. In addition, since you're only considering one gene (16S rRNA), this also affects your specificity and resolution for identifying species." %}
 

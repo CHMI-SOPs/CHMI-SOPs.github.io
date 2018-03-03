@@ -40,7 +40,7 @@ entries:
       url: /mydoc_TruSeq.html
       output: web, pdf
 
-    - title: total transcriptome library prep
+    - title: Total transcriptome library prep
       url: /mydoc_total_TruSeq.html
       output: web, pdf
 
@@ -49,7 +49,7 @@ entries:
       output: web, pdf
       
       subfolders:
-      - title: data analysis
+      - title: Data analysis
         url: /mydoc_install_jekyll_on_windows.html
         output: web, pdf
         
@@ -62,7 +62,7 @@ entries:
           url: /mydoc_kallisto.html
           output: web
 
-        - title: data deposition
+        - title: Data deposition
           url: /tag_formatting.html
           output: web
 
@@ -78,7 +78,7 @@ entries:
       url: /mydoc_16S.html
       output: web
 
-    - title: shotgun metagenomics
+    - title: Shotgun metagenomics
       url: /mydoc_NexteraXT.html
       output: web, pdf
 
@@ -86,12 +86,12 @@ entries:
       url: /mydoc_16S_Sanger.html
       output: web, pdf
 
-    - title: culture collection
+    - title: Culture collection
       url: /mydoc_mock.html
       output: web, pdf
 
       subfolders:
-      - title: data analysis
+      - title: Data analysis
         url: /mydoc_install_jekyll_on_windows.html
         output: web, pdf
         
@@ -100,7 +100,7 @@ entries:
           url: /mydoc_linux.html
           output: web
 
-        - title: microbiomeDB
+        - title: MicrobiomeDB
           url: /tag_formatting.html
           output: web
 
@@ -108,7 +108,7 @@ entries:
           url: /mydoc_qiime2.html
           output: web
 
-        - title: data deposition
+        - title: Data deposition
           url: /tag_formatting.html
           output: web
 
@@ -128,8 +128,5 @@ entries:
       url: /mydoc_biomeme.html
       output: web, pdf
 
-    - title: Microbial Design Studio
-      url: /mydoc_icons.html
-      output: web, pdf
 
 

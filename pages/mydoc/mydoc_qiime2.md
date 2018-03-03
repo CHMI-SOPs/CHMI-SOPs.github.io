@@ -23,7 +23,7 @@ ssh username@130.91.255.137
 After you're connected to our server, activate the QIIME enivronment as follows:
 
 ```
-source activate qiime
+source activate qiime2
 ```
 
 
