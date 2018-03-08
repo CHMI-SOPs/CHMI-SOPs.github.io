@@ -217,19 +217,19 @@
             
             
             
-            <li><a href="mydoc_total_TruSeq.html">total transcriptome library prep</a></li>
+            <li><a href="mydoc_total_TruSeq.html">Total transcriptome library prep</a></li>
             
             
             
             
             
             
-            <li><a href="mydoc_install_jekyll_on_windows.html">Low input protocol</a></li>
+            <li><a href="mydoc_lowInput_RNAseq.html">Low input protocol</a></li>
             
             
             
             <li class="subfolders">
-                <a href="#">data analysis</a>
+                <a href="#">Data analysis</a>
                 <ul>
                     
                     
@@ -246,7 +246,7 @@
                     
                     
                     
-                    <li><a href="tag_formatting.html">data deposition</a></li>
+                    <li><a href="tag_formatting.html">Data deposition</a></li>
                     
                     
                     
@@ -281,7 +281,7 @@
             
             
             
-            <li><a href="mydoc_NexteraXT.html">shotgun metagenomics</a></li>
+            <li><a href="mydoc_NexteraXT.html">Shotgun metagenomics</a></li>
             
             
             
@@ -295,12 +295,12 @@
             
             
             
-            <li><a href="mydoc_mock.html">culture collection</a></li>
+            <li><a href="mydoc_mock.html">Culture collection</a></li>
             
             
             
             <li class="subfolders">
-                <a href="#">data analysis</a>
+                <a href="#">Data analysis</a>
                 <ul>
                     
                     
@@ -311,7 +311,7 @@
                     
                     
                     
-                    <li><a href="tag_formatting.html">microbiomeDB</a></li>
+                    <li><a href="tag_formatting.html">MicrobiomeDB</a></li>
                     
                     
                     
@@ -323,7 +323,7 @@
                     
                     
                     
-                    <li><a href="tag_formatting.html">data deposition</a></li>
+                    <li><a href="tag_formatting.html">Data deposition</a></li>
                     
                     
                     
@@ -361,13 +361,6 @@
             
             
             <li><a href="mydoc_biomeme.html">Biomeme portable QPCR</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="mydoc_icons.html">Microbial Design Studio</a></li>
             
             
             
@@ -450,7 +443,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>After you’re connected to our server, activate the QIIME enivronment as follows:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>source activate qiime
+<div class="highlighter-rouge"><pre class="highlight"><code>source activate qiime2
 </code></pre>
 </div>
 
@@ -509,7 +502,7 @@ qiime tools --help
 
 <h2 id="step-4-demultiplexing">Step 4: demultiplexing</h2>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> If your data is already demultiplexed, you can skip this step. For single end data you would use qiime demux emp-single in the code snipet below to produce a demux.qza file</div>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> If your data is already demultiplexed, you can skip this step. For single end data you would use <code class="highlighter-rouge">qiime demux emp-single</code> in the code snipet below to produce a demux.qza file</div>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>qiime demux emp-paired \
   --i-seqs emp-single-end-sequences.qza \
@@ -531,9 +524,9 @@ qiime tools --help
 
 <h2 id="step-5-denoising-and-qc-filtering">Step 5: Denoising and QC filtering</h2>
 
-<p>The methods for processing and analysis of 16S marker gene sequencing data continue to improve.  One recent and major improvement was the introduction of two methods, Dada2](https://www.nature.com/articles/nmeth.3869) and <a href="http://msystems.asm.org/content/2/2/e00191-16">Deblur</a>, both of which significantly advance quality control measures by ‘denosing’ your sequences in order to better discriminate between true sequence diversity and sequencing errors.  Be sure to check out the <a href="http://CHMI-sops.github.io/papers/dada2_methods.pdf">Dada2 online methods section</a> for a more indepth (but still very readable) description of the underlying statistical method.  These methods have pushed the field from 97% OTU to 100% OTU, frequently called sub-OTUs or amplicon sequence variants (ASVs).</p>
+<p>The methods for processing and analysis of 16S marker gene sequencing data continue to improve.  One recent and major improvement was the introduction of two methods, <a href="https://www.nature.com/articles/nmeth.3869">Dada2</a> and <a href="http://msystems.asm.org/content/2/2/e00191-16">Deblur</a>, both of which significantly advance quality control measures by ‘denosing’ your sequences in order to better discriminate between true sequence diversity and sequencing errors.  Be sure to check out the <a href="http://CHMI-sops.github.io/papers/dada2_methods.pdf">Dada2 online methods section</a> for a more indepth (but still very readable) description of the underlying statistical method.  These methods have pushed the field from the practice of binning sequences into 97% OTUs, to effectively using the sequences themselves as the unique idenfier for a taxon (also referred to 100% OTU, sub-OTUs or amplicon sequence variants).</p>
 
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> DADA2 denoising will join paired reads for you.  Do not join your reads prior to running DADA2, since the program has a model for the basewise error of illumina reads, and joining reads would violate the expectations of that model.  If you’re working with single-end data, you would use ‘denoise-single’ in the code below.</div>
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> DADA2 denoising will join paired reads for you.  Do not join your reads prior to running DADA2, since the program has a model for the basewise error of illumina reads, and joining reads would violate the expectations of that model.  If you’re working with single-end data, you would use <code class="highlighter-rouge">denoise-single</code> in the code below.</div>
 
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> If you have multiple runs, it is recommended that you run DADA2 separately on data from each run individually, then combine data from the runs after denoising.  See the <a href="https://docs.qiime2.org/2018.2/tutorials/fmt/">QIIME2 fecal transplant tutorial</a> for an example of how this works</div>
 
@@ -564,7 +557,7 @@ qiime feature-table tabulate-seqs \
 
 <h2 id="step-6-build-a-phylogenetic-tree">Step 6: build a phylogenetic tree</h2>
 
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> tree construction is optional, and is useful downstream if you want to compute alpha diversity metrics that are phylogenetically based.  The resulting tree is unrooted and is created using Fasttree.  Some downstream actions will require a rooted tree, in which longest branch is used to root the tree (‘midrooting’)</div>
+<p>Tree construction is optional, but is useful if you want to compute alpha diversity metrics that are phylogenetically based.  The resulting tree is unrooted and is created using Fasttree.  Since some downstream steps will require a rooted tree, we’ll also use the longest branch to root the tree (called ‘midrooting’)” %}</p>
 
 <div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> You are cautioned against drawing strong conclusions about relationships between taxa from this tree alone, since it was only constructed using a single marker gene.</div>
 
@@ -591,7 +584,7 @@ qiime phylogeny midpoint-root \
 </code></pre>
 </div>
 
-<h2 id="step-6-alpha-rarefaction">Step 6: alpha rarefaction</h2>
+<h2 id="step-7-alpha-rarefaction">Step 7: alpha rarefaction</h2>
 
 <p>Produce a graphic that shows the impact of rarefaction (sampling at different depths) on alpha diversity of each sample.  These are also called ‘collectors curves’.</p>
 
@@ -604,9 +597,9 @@ qiime phylogeny midpoint-root \
 </code></pre>
 </div>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> A few comments on interpreting alpha diversity metrics: it is important to understand that certain metrics are stricly qualitative (presence/absence), that is they only take diversity into account, often referred to as <em>richness</em> of the community (e.g. observed otus).  In contrast, other methods are quantitative in that they consider both <em>richness</em> and abundance across samples, commonly referred to as <em>evenness</em> (e.g. Shannon).  Yet other methods take phylogenetic distance into account by asking how diverse the phylogenetic tree is for each sample.  These phylogenetic tree-based methods include the popular Faith’s PD, which calculates the sum of the branch length covered by a sample</div>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> <strong>Interpreting alpha diversity metrics:</strong> it is important to understand that certain metrics are stricly qualitative (presence/absence), that is they only take diversity into account, often referred to as <em>richness</em> of the community (e.g. observed otus).  In contrast, other methods are quantitative in that they consider both <em>richness</em> and abundance across samples, commonly referred to as <em>evenness</em> (e.g. Shannon).  Yet other methods take phylogenetic distance into account by asking how diverse the phylogenetic tree is for each sample.  These phylogenetic tree-based methods include the popular Faith’s PD, which calculates the sum of the branch length covered by a sample</div>
 
-<h2 id="step-7-calculate-and-explore-diversity-metrics">Step 7: calculate and explore diversity metrics</h2>
+<h2 id="step-8-calculate-and-explore-diversity-metrics">Step 8: calculate and explore diversity metrics</h2>
 
 <p>Use QIIME2’s <code class="highlighter-rouge">diversity core-metrics-phylogenetic</code> function to calculate a whole bunch of diversity metrics all at once.  Note that you should input a sample-depth value (set at 1109 reads in the example below) based on the alpha-rarefaction analysis that you ran in step 6.</p>
 
@@ -635,7 +628,7 @@ qiime diversity alpha-group-significance \
 
 <p>Now test for relationships between <strong>beta diversity</strong> and study metadata and create .qzv files to view these relationships on <a href="https://view.qiime2.org/">QIIME2 viewer</a>.</p>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Like alpha diversity discussed above, beta diversity metrics can also be either qualitative or quantitative.  Qualitative measure only consider whether a given taxon is present (yes/no) in both samples from any given airwise comparison (e.g. Jaccard distance).  Quantitative measures are <em>weighted</em> by taxon abundance (e.g. Bray-Curtis).  Phylogenetic beta diversity metrics can also be qualitiative (unweighted) or quantitative (weighted).  Weighted Unifrac and unweighted Unifrac are examples of quantitative and qualitiative phylogenetic-based metrics, respectively.</div>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> <strong>Interpreting beta diversity metrics:</strong> Like alpha diversity discussed above, beta diversity metrics can also be either qualitative or quantitative.  Qualitative measure only consider whether a given taxon is present (yes/no) in both samples from any given airwise comparison (e.g. Jaccard distance).  Quantitative measures are <em>weighted</em> by taxon abundance (e.g. Bray-Curtis).  Phylogenetic beta diversity metrics can also be qualitiative (unweighted) or quantitative (weighted).  Weighted Unifrac and unweighted Unifrac are examples of quantitative and qualitiative phylogenetic-based metrics, respectively.</div>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>qiime diversity beta-group-significance \
   --i-distance-matrix core-metrics-results/unweighted_unifrac_distance_matrix.qza \
@@ -673,7 +666,7 @@ qiime emperor plot \
 </code></pre>
 </div>
 
-<h2 id="step-8-assign-taxonomy">Step 8: assign taxonomy</h2>
+<h2 id="step-9-assign-taxonomy">Step 9: assign taxonomy</h2>
 
 <p>In this step, you will take the denoised sequences from step 5 (rep-seqs.qza) and assign taxonomy to each sequence (phylum -&gt; class -&gt; …genus -&gt; ).  This step requires a trained classifer.  You have the choice of either <a href="https://docs.qiime2.org/2018.2/tutorials/feature-classifier/">training your own classifier</a> using the <a href="https://peerj.com/preprints/3208/">q2-feature-classifier</a> or downloading a pretrained classifier.</p>
 
@@ -726,7 +719,7 @@ qiime tools export \
 
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Once you have a .biome file, you can use apps on <a href="http://www.microbiomedb.org">MicrobiomeDB</a> to analyze and visualize your data.</div>
 
-<h2 id="step-9-differential-abundance">Step 9: differential abundance</h2>
+<h2 id="step-10-differential-abundance">Step 10: differential abundance</h2>
 
 <p>The tools and theory for calling differentially abundant taxa between samples is very much an area of active research.  Basically, it’s a challenging statistical problem since measurements of abundance are relative, not absolute, and therefore features are not independent (i.e. if one taxa increases in abundance, then the others will go down).  This is also a common, and perhaps better studied, problem in RNAseq.  QIIME2 uses <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4450248/">ANCOM</a> to identify differentially abundant taxa. As is the case with all statistical tests, ANCOM makes certain assumptions about your data and if these are violated, then the results of the ANCOM analysis cannot be trust.  A key assumption made by ANCOM is that few taxa will be differentially abundant between groups.  To ensure that we don’t violate this assumption, we first need to filter our data to focus on a single body site, for example, and then compare treatments, conditions, etc, <em>within</em> that body site</p>
 
@@ -751,9 +744,11 @@ qiime composition ancom \
 </code></pre>
 </div>
 
-<p>Once you’re confortable with the individual steps of this workflow, you could use <a href="">this shell script</a>, to run the entire workflow</p>
+<p>Once you’re confortable with the individual steps of this workflow, you could use <a href="">this shell script</a>, to run the entire workflow.</p>
 
-<h2 id="step-10-supervised-machine-learning">Step 10: supervised machine learning</h2>
+<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> the additional steps outlined below are still a work in progress, and we want to spend more time exploring these steps before we can make solid recommendations….so proceed at your own risk!</div>
+
+<h2 id="step-11-supervised-machine-learning">Step 11: supervised machine learning</h2>
 
 <p>Beyond differential gene expression analysis, often times you will want to know which taxa (or sets of taxa) do the best job classifying particularly phenotypes, and therefore could serve as biomarkers.  There are two general types of supervised learning approaches that can be used to this: ‘Classifiers’ are used to find taxa that are associated with categorical metadata (Sex, disease status, etc), while ‘regressors’ are used with continuous metadata (age, weight, etc).  Typically, your data is split into a training set (2/3) and a test set (remaining 1/3 of data that was left out from the training).</p>
 
@@ -791,10 +786,10 @@ For continuous data, you can use a random forest regressor.
 ```</p>
 
 <h2 id="optional-other-stuff">OPTIONAL: other stuff</h2>
-<p>qiime taxa collapse
-takes taxa table and taxonomy artifact and you specify the level to which you collapse</p>
-
-<p>check about q2-longitudinal plugin for regression models using longitudinal</p>
+<ul>
+  <li>qiime taxa collapse - takes taxa table and taxonomy artifact and allows you to specify the level to which you collapse (e.g. phylum)</li>
+  <li>check about q2-longitudinal plugin for regression models using longitudinal data</li>
+</ul>
 
 
 
@@ -839,7 +834,7 @@ takes taxa table and taxonomy artifact and you specify the level to which you co
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2018 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
- Site last generated: Feb 26, 2018 <br />
+ Site last generated: Mar 7, 2018 <br />
 <p><img src="images/CHMI_logo.png" alt="Company logo"/></p>
                 </div>
             </div>

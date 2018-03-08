@@ -51,7 +51,7 @@ folder: mydoc
 
 * Prepare 10x reaction buffer by mixing 19 uL of 10x Lysis Buffer with 1 uL of RNase inhibitor.  This is enough for ~20 samples. Scale up as needed, but be sure to maintain 19:1 ratio of lysis buffer to RNase inhibitor
 
-{% include note.html content="The 10x lysis buffer contains detergent, so avoid creating bubbles when pipetting.%}
+{% include note.html content="The 10x lysis buffer contains detergent, so avoid creating bubbles when pipetting."%}
 
 * Prepare 1x reaction buffer by mixing 9.5 uL nuclease-free water with 1 uL of 10x reaction buffer.  This enough to sort one sample, so be sure to scale up as needed.
 
@@ -67,7 +67,7 @@ folder: mydoc
 
 ## Day 2: cDNA preparation
 
-{% include warning.html content="The SMART-v4 is an extremely sensitive cDNA synthesis (that's the whole point!), which means that it is imperative that you avoid even small amounts of contamination from environmental RNA.  **Today's works should be carried out in a PCR clean hood.**" %}
+{% include warning.html content="The SMART-v4 is an extremely sensitive cDNA synthesis (that's the whole point!), which means that it is imperative that you avoid even small amounts of contamination from environmental RNA.  Today's works should be carried out in a PCR clean hood." %}
 
 * Thaw the following items from the SMART-v4 kit
 	* 10x Lysis Buffer

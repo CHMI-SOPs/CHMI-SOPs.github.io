@@ -45,7 +45,7 @@ entries:
       output: web, pdf
 
     - title: Low input protocol
-      url: /mydoc_install_jekyll_on_windows.html
+      url: /mydoc_lowInput_RNAseq.html
       output: web, pdf
       
       subfolders:

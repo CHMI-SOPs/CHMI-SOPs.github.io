@@ -217,19 +217,19 @@
             
             
             
-            <li><a href="mydoc_total_TruSeq.html">total transcriptome library prep</a></li>
+            <li><a href="mydoc_total_TruSeq.html">Total transcriptome library prep</a></li>
             
             
             
             
             
             
-            <li><a href="mydoc_install_jekyll_on_windows.html">Low input protocol</a></li>
+            <li><a href="mydoc_lowInput_RNAseq.html">Low input protocol</a></li>
             
             
             
             <li class="subfolders">
-                <a href="#">data analysis</a>
+                <a href="#">Data analysis</a>
                 <ul>
                     
                     
@@ -246,7 +246,7 @@
                     
                     
                     
-                    <li><a href="tag_formatting.html">data deposition</a></li>
+                    <li><a href="tag_formatting.html">Data deposition</a></li>
                     
                     
                     
@@ -281,7 +281,7 @@
             
             
             
-            <li><a href="mydoc_NexteraXT.html">shotgun metagenomics</a></li>
+            <li><a href="mydoc_NexteraXT.html">Shotgun metagenomics</a></li>
             
             
             
@@ -295,12 +295,12 @@
             
             
             
-            <li><a href="mydoc_mock.html">culture collection</a></li>
+            <li><a href="mydoc_mock.html">Culture collection</a></li>
             
             
             
             <li class="subfolders">
-                <a href="#">data analysis</a>
+                <a href="#">Data analysis</a>
                 <ul>
                     
                     
@@ -311,7 +311,7 @@
                     
                     
                     
-                    <li><a href="tag_formatting.html">microbiomeDB</a></li>
+                    <li><a href="tag_formatting.html">MicrobiomeDB</a></li>
                     
                     
                     
@@ -323,7 +323,7 @@
                     
                     
                     
-                    <li><a href="tag_formatting.html">data deposition</a></li>
+                    <li><a href="tag_formatting.html">Data deposition</a></li>
                     
                     
                     
@@ -361,13 +361,6 @@
             
             
             <li><a href="mydoc_biomeme.html">Biomeme portable QPCR</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="mydoc_icons.html">Microbial Design Studio</a></li>
             
             
             
@@ -439,7 +432,7 @@ $('#toc').on('click', 'a', function() {
 
   <h2 id="before-starting">Before starting</h2>
 <ul>
-  <li><a href="https://www.promega.com/-/media/files/resources/protocols/product-information-sheets/g/gotaq-green-master-mix-protocol.pdf">GoTaq Master Mix documentation</a></li>
+  <li>The protocol uses three primers (two forward and one reverse) to generate amplicons for Sanger sequencing.  Combining the seqeunce data for the three amplicons generates a contiguous sequence that spans that majority of the full 16S rRNA gene, therby giving you a decent idea of bacterial identity.  PCR reactions use the <a href="https://www.promega.com/-/media/files/resources/protocols/product-information-sheets/g/gotaq-green-master-mix-protocol.pdf">GoTaq Master Mix</a></li>
 </ul>
 
 <h2 id="materials">Materials</h2>
@@ -448,7 +441,7 @@ $('#toc').on('click', 'a', function() {
   <li>Molecular biology grade, nuclease-free water (-20C or room temperature)</li>
   <li>27F Primer</li>
   <li>1492R primer</li>
-  <li>515F primer (optional)</li>
+  <li>515F primer</li>
   <li>QIAGEN QIAquick PCR purification kit</li>
   <li>100% Ethanol</li>
 </ul>
@@ -463,12 +456,34 @@ $('#toc').on('click', 'a', function() {
 <h2 id="step-2-pcr-amplify-the-full-length-16s-rrna-gene">Step 2: PCR Amplify the full-length 16S rRNA gene</h2>
 
 <ul>
-  <li>
-    <p>Prepare the following reaction mixture in each PCR well/tube</p>
-  </li>
-  <li>
-    <p>Place in thermocycler and run the following program under CHMI -&gt; PCR -&gt; 16SFULL (bold indicates 30 cycles)</p>
-  </li>
+  <li>PCR Primers are as follows:</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>Sequence (5’ -&gt; 3’)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>27fwd</td>
+      <td>AGA GTT TGA TCM TGG CTC AG</td>
+    </tr>
+    <tr>
+      <td>515fwd</td>
+      <td>GTG CCA GCM GCC GCG GTA A</td>
+    </tr>
+    <tr>
+      <td>1492rev</td>
+      <td>CGG TTA CCT TGT TAC GAC TT</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>Prepare the following reaction mixture in each PCR well/tube</li>
 </ul>
 
 <table>
@@ -511,6 +526,10 @@ $('#toc').on('click', 'a', function() {
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> If I have many reactions to perform, I make a master mix including all of the components except for the DNA.</div>
 
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The original IDT stock solutions of the primers are at a concentration of 100 uM.</div>
+
+<ul>
+  <li>Place in thermocycler and run the following program under CHMI -&gt; PCR -&gt; 16SFULL (bold indicates 30 cycles)</li>
+</ul>
 
 <table>
   <thead>
@@ -593,10 +612,10 @@ $('#toc').on('click', 'a', function() {
 
 <ul>
   <li>
-    <p>Assemble the sequencing reads using your favorite assembly software (Geneious has an easy-to-use interface).</p>
+    <p>Assemble the sequencing reads using your favorite assembly software.  We use Geneious (commercial software) because it has an easy-to-use interface.  .Ab1 files for all three amplicons can be dragged onto the Geneious interface and the <em>de novo assembly</em> tool is used to produce a consensus contig.</p>
   </li>
   <li>
-    <p>Obtain the full length, consensus sequence seach for the best match using either <a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastSearch&amp;BLAST_SPEC=MicrobialGenomes">BLAST</a> or a recent tool called Bitsliced Genomic Signature Index (BIGSI) which is available <a href="http://www.bigsi.io/">here</a> and you can read more about on the <a href="https://github.com/Phelimb/BIGSI">Github page for BIGSI</a></p>
+    <p>Take the highest quality portion of the full length consensus sequence and seach for the best match using either <a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastSearch&amp;BLAST_SPEC=MicrobialGenomes">BLAST</a> or a recent tool called Bitsliced Genomic Signature Index (BIGSI) which is available <a href="http://www.bigsi.io/">here</a> and you can read more about on the <a href="https://github.com/Phelimb/BIGSI">Github page for BIGSI</a></p>
   </li>
 </ul>
 
@@ -641,7 +660,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2018 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
- Site last generated: Feb 26, 2018 <br />
+ Site last generated: Mar 7, 2018 <br />
 <p><img src="images/CHMI_logo.png" alt="Company logo"/></p>
                 </div>
             </div>

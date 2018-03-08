@@ -217,19 +217,19 @@
             
             
             
-            <li><a href="mydoc_total_TruSeq.html">total transcriptome library prep</a></li>
+            <li><a href="mydoc_total_TruSeq.html">Total transcriptome library prep</a></li>
             
             
             
             
             
             
-            <li><a href="mydoc_install_jekyll_on_windows.html">Low input protocol</a></li>
+            <li><a href="mydoc_lowInput_RNAseq.html">Low input protocol</a></li>
             
             
             
             <li class="subfolders">
-                <a href="#">data analysis</a>
+                <a href="#">Data analysis</a>
                 <ul>
                     
                     
@@ -246,7 +246,7 @@
                     
                     
                     
-                    <li><a href="tag_formatting.html">data deposition</a></li>
+                    <li><a href="tag_formatting.html">Data deposition</a></li>
                     
                     
                     
@@ -281,7 +281,7 @@
             
             
             
-            <li><a href="mydoc_NexteraXT.html">shotgun metagenomics</a></li>
+            <li><a href="mydoc_NexteraXT.html">Shotgun metagenomics</a></li>
             
             
             
@@ -295,12 +295,12 @@
             
             
             
-            <li><a href="mydoc_mock.html">culture collection</a></li>
+            <li><a href="mydoc_mock.html">Culture collection</a></li>
             
             
             
             <li class="subfolders">
-                <a href="#">data analysis</a>
+                <a href="#">Data analysis</a>
                 <ul>
                     
                     
@@ -311,7 +311,7 @@
                     
                     
                     
-                    <li><a href="tag_formatting.html">microbiomeDB</a></li>
+                    <li><a href="tag_formatting.html">MicrobiomeDB</a></li>
                     
                     
                     
@@ -323,7 +323,7 @@
                     
                     
                     
-                    <li><a href="tag_formatting.html">data deposition</a></li>
+                    <li><a href="tag_formatting.html">Data deposition</a></li>
                     
                     
                     
@@ -361,13 +361,6 @@
             
             
             <li class="active"><a href="mydoc_biomeme.html">Biomeme portable QPCR</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="mydoc_icons.html">Microbial Design Studio</a></li>
             
             
             
@@ -443,7 +436,10 @@ $('#toc').on('click', 'a', function() {
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The only difference between DNA and RNA protocols are the BLB buffer in the extraction kit, and the type of master mix you will use (LyoDNA versus LyoRNA).</div>
 
 <h2 id="preparing-mastermix">Preparing mastermix</h2>
-<p>Resuspend bulk lyophilized <strong>LyoDNA</strong> or <strong>LyoRNA</strong> Biomeme master mix with 132 ul of PCR grade water + 18 ul of glycerol.  This is a 10x stock.  Addition of glyceral allows leftover mastermix to be frozen for reuse later.  LyoRNA master mix contains a reverse transcriptase for QPCR assays where the target is a RNA molecule.  Each resuspended vial contains enough mastermix for 60 reactions of 20ul/rxn.</p>
+<p>Resuspend bulk lyophilized <a href="http://CHMI-sops.github.io/papers/LyoDNA.pdf">LyoDNA</a> or <a href="http://CHMI-sops.github.io/papers/LyoRNA.pdf">LyoRNA</a> Biomeme master mix with 132 ul of PCR grade water + 18 ul of glycerol.  This is a 10x stock.  Addition of glyceral allows leftover mastermix to be frozen for reuse later.  LyoRNA master mix contains a reverse transcriptase for QPCR assays where the target is a RNA molecule.  Each resuspended vial contains enough mastermix for 60 reactions of 20ul/rxn.</p>
+
+<h2 id="optional-preparing-lyogreen-dye">Optional: preparing LyoGreen dye</h2>
+<p>Biomeme’s <a href="http://CHMI-sops.github.io/papers/LyoGreen.pdf">LyoGreen</a> reagent is a lyophilized SybrGreen, allowing you to run QPCR assays without the need for probes specific for your target.</p>
 
 <h2 id="reaction-set-up">Reaction set-up</h2>
 <p>A typical QPCR reaction on the biomeme platform contains the following elements</p>
@@ -475,7 +471,7 @@ $('#toc').on('click', 'a', function() {
   </tbody>
 </table>
 
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> 20x primer/probe stock contains 4uM of the forward primer and probe, and 8uM of the reverse primer in TE pH 8.0.  Final concentrations in the PCR reaction will be 200nM of forward and probe, 400nM of reverse</div>
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> 20x primer/probe stock contains 4uM of the forward primer and probe, and 8uM of the reverse primer in TE pH 8.0.  Final concentrations in the PCR reaction will be 200nM of forward and probe, 400nM of reverse.  If starting with 100 uM stocks, then add 84 uL TE, 4 uL of forward, 4 uL of probe and 8 uL of reverse, to get a 100 ul stock of 20x</div>
 
 <h2 id="run-set-up">Run set-up</h2>
 
@@ -515,7 +511,7 @@ $('#toc').on('click', 'a', function() {
 <p><strong>Bold</strong> steps are repeated for 40 cycles total</p>
 
 <ul>
-  <li>Give your protocol and name and select ‘save’ in the upper right corner of the app</li>
+  <li>Give your protocol a name and select ‘save’ in the upper right corner of the app</li>
   <li>If you want to set-up a standard curve, select your protocol, scroll to the bottom, and select standard curve.</li>
 </ul>
 
@@ -797,7 +793,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2018 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
- Site last generated: Feb 26, 2018 <br />
+ Site last generated: Mar 7, 2018 <br />
 <p><img src="images/CHMI_logo.png" alt="Company logo"/></p>
                 </div>
             </div>

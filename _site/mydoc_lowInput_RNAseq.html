@@ -4,9 +4,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="You can add a button to your pages that allows people to add comments.">
-<meta name="keywords" content="navigation,  annotations, comments, feedback">
-<title>Commenting on files | CHMI services</title>
+<meta name="description" content="This protocol walks you through preparing a library for RNAseq when your starting amount of RNA is less than ~75ng.  This is a useful protocol if you are wor...">
+<meta name="keywords" content="library_preptranscriptomics,  transcriptomics, library preparation">
+<title>RNAseq library prep for low input samples | CHMI services</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -120,7 +120,7 @@
 
 
 
-  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:beiting@upenn.edu?subject=CHMI services feedback&body=I have some feedback about the Commenting on files page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:beiting@upenn.edu?subject=CHMI services feedback&body=I have some feedback about the RNAseq library prep for low input samples page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
 
 </li>
 
@@ -138,7 +138,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Commenting on files">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="RNAseq library prep for low input samples">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -224,7 +224,7 @@
             
             
             
-            <li><a href="mydoc_lowInput_RNAseq.html">Low input protocol</a></li>
+            <li class="active"><a href="mydoc_lowInput_RNAseq.html">Low input protocol</a></li>
             
             
             
@@ -387,7 +387,7 @@
         <!-- Content Column -->
         <div class="col-md-9" id="tg-sb-content">
             <div class="post-header">
-   <h1 class="post-title-main">Commenting on files</h1>
+   <h1 class="post-title-main">RNAseq library prep for low input samples</h1>
 </div>
 
 
@@ -395,7 +395,7 @@
 <div class="post-content">
 
    
-    <div class="summary">You can add a button to your pages that allows people to add comments.</div>
+    <div class="summary">This protocol walks you through preparing a library for RNAseq when your starting amount of RNA is less than ~75ng.  This is a useful protocol if you are working with sorted cells</div>
    
 
     
@@ -426,51 +426,113 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    <a target="_blank" href="https://github.com/CHMI-SOPs/CHMI-SOPs.github.io/tree/master/pages/mydoc/mydoc_commenting_on_files.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+    <a target="_blank" href="https://github.com/CHMI-SOPs/CHMI-SOPs.github.io/tree/master/pages/mydoc/mydoc_lowInput_RNAseq.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
 
     
 
-  <h2 id="about-the-review-process">About the review process</h2>
+  <h1 id="day-1">Day 1</h1>
 
-<p>If you’re using the doc as code approach, you might also consider using the same techniques for reviewing the doc as people use in reviewing code. This approach will involve using Github to edit the files.</p>
+<h2 id="documentation">Documentation</h2>
 
-<p>There’s an Edit me button on each page on this theme. This button allows collaborators to edit the content on Github.</p>
+<p><a href="http://www.clontech.com/US/Products/cDNA_Synthesis_and_Library_Construction/Next_Gen_Sequencing_Kits/Single_cell_RNA_Seq_Kits_for_mRNA_seq/ibcGetAttachment.jsp?cItemId=104008&amp;fileId=7349924&amp;sitex=10020:22372:US">Clontech SMART-Seq v4 Ultra Low Input RNA Kit</a>. This is an excellent kit for preparing cDNA very low amounts of RNA.  We have used this kit to prepare cDNA from &lt; 100 cells.</p>
 
-<p>Here’s the code for that button on the page.html layout:</p>
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> the success of this kit is dependent on the ability of Illumina’s rRNA depletion beads to bind rRNAs in your target species.  Check <a href="https://www.illumina.com/products/selection-tools/ribo-zero-kit-species-compatibility.html#hmr">this list</a> for compatability of the mouse/rat/human rRNA ‘riboGold’ depletion reagent with other species.</div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">site.github_editme_path</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+<h2 id="what-youll-need">What you’ll need</h2>
 
-</span><span class="err">&lt;a</span><span class="w"> </span><span class="err">target=</span><span class="s2">"_blank"</span><span class="w"> </span><span class="err">href=</span><span class="s2">"https://github.com/{{site.github_editme_path}}/{{page.folder}}{{page.url | append: "</span><span class="err">.md</span><span class="s2">"}}{% endif %}"</span><span class="w"> </span><span class="err">class=</span><span class="s2">"btn btn-default githubEditButton"</span><span class="w"> </span><span class="err">role=</span><span class="s2">"button"</span><span class="err">&gt;&lt;i</span><span class="w"> </span><span class="err">class=</span><span class="s2">"fa fa-github fa-lg"</span><span class="err">&gt;&lt;/i&gt;</span><span class="w"> </span><span class="err">Edit</span><span class="w"> </span><span class="err">me&lt;/a&gt;</span><span class="w">
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> The following items are included in the Clontech SMART-v4 kit and are stored at -20C</div>
 
-</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endif</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+<ul>
+  <li>10x Lysis buffer</li>
+  <li>RNase inhibitor (40U/ul)</li>
+  <li>SeqAmp DNA Polymerase</li>
+  <li>SeqAmp PCR Buffer</li>
+  <li>SMART-Seq v4 Oligonucleotide (48 µM)</li>
+  <li>3’ SMART-Seq CDS Primer II A (12 µM)</li>
+  <li>PCR Primer II A (12 µM)</li>
+  <li>5X Ultra Low First-Strand Buffer</li>
+  <li>SMARTScribe™ Reverse Transcriptase (100 U/µl)</li>
+  <li>Nuclease-Free Water</li>
+  <li>Elution Buffer (10 mM Tris-Cl, pH 8.5)</li>
+  <li>10X AfaI Buffer</li>
+  <li>0.1% BSA</li>
+  <li>AfaI (10 U/µl)</li>
+</ul>
 
-<p>In your configuration file, edit the value for <code class="highlighter-rouge">github_editme_path</code>. For example, you might create a branch called “reviews” on your Github repo. Then you would add something like this in your configuration file for the ‘github_editme_path’: tomjohnson1492/documentation-theme-jekyll/edit/reviews. Here “tomjohnson1492” is my github account name. The repo name is “documentation-theme-jekyll”. The “reviews” name is the branch.</p>
+<h2 id="a-few-important-comments-before-you-start">A few important comments before you start</h2>
 
-<p>To suppress this button, comment out the <code class="highlighter-rouge">github_editme_path</code> in the _config.yml file.</p>
+<ul>
+  <li>You’ll split this protocol into three days: day 1 will be your sort and cell lysis, day 2 will be RNA isolation and cDNA generation, day 3 will be Illumina NexteraXT library prep.</li>
+  <li>Use only filter pipette tips and clean your area so it is free of RNases.</li>
+  <li>Certain steps, such as 1st-strand cDNA synthesis must be carried out in a PCR clean hood</li>
+  <li>Be sure to include the negative and positive controls that come with the kit.</li>
+  <li>this protocol uses 0.2ml PCR tubes, but if you’re working with many samples you may find it easier to use a 96-well plate</li>
+</ul>
 
-<h2 id="add-reviewers-as-collaborators">Add reviewers as collaborators</h2>
+<h2 id="day-1-rna-extraction">Day 1: RNA extraction</h2>
 
-<p>If you want people to collaborate on your project so that their edits get committed to a branch on your project, you need to add them as collaborators. For your Github repo, click <strong>Settings</strong> and add the collaborators on the Collaborators tab using their Github usernames.</p>
+<h3 id="option-a-sorting-cells">OPTION A: sorting cells</h3>
 
-<p>If you don’t want to allow anyone to commit to your Github branch, don’t add the reviewers as collaborators. When someone makes an edit, Github will fork the theme. The person’s edit then will appear as a pull request to your repo. You can then choose to merge the change indicated in the pull or not.</p>
+<ul>
+  <li>Prepare 10x reaction buffer by mixing 19 uL of 10x Lysis Buffer with 1 uL of RNase inhibitor.  This is enough for ~20 samples. Scale up as needed, but be sure to maintain 19:1 ratio of lysis buffer to RNase inhibitor</li>
+</ul>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> When you process pull requests, you have to accept everything or nothing. You can’t pick and choose which changes you’ll merge. Therefore you’ll probably want to edit the branch you’re planning to merge or ask the contributor to make some changes to the fork before processing the pull request.</div>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The 10x lysis buffer contains detergent, so avoid creating bubbles when pipetting.</div>
 
-<h2 id="workflow">Workflow</h2>
+<ul>
+  <li>
+    <p>Prepare 1x reaction buffer by mixing 9.5 uL nuclease-free water with 1 uL of 10x reaction buffer.  This enough to sort one sample, so be sure to scale up as needed.</p>
+  </li>
+  <li>
+    <p>Add 5ul of 1x reaction buffer to collection eppendorf tube and sort directly into this tube.</p>
+  </li>
+  <li>
+    <p>Immediately after sample is sorted, add an additional 5.5 uL of 1x reaction buffer to tube.</p>
+  </li>
+  <li>
+    <p>Store at -80C until ready to begin cDNA synthesis.  You will go directly from cell lysate to cDNA with no intermediate RNA isolation step.</p>
+  </li>
+</ul>
 
-<p>Users will make edits in your “reviews” branch (or whatever you want to call it). You can then commit those edits as you make updates.</p>
+<h3 id="option-b-purified-rna">OPTION B: purified RNA</h3>
 
-<p>When you’re finished making all updates in the branch, you can merge the branch into the master.</p>
+<ul>
+  <li>If you have 10’s or 100’s of thousands of cells, it probably makes sense to isolate RNA first and then use the same amount of total RNA for the cDNA reaction.  We recommend using a kit specifically designed for efficient recovery of RNA from low numbers of cells, and have had success with the <a href="https://www.thermofisher.com/order/catalog/product/KIT0204">ARCTURUS PicoPure RNA isolation kit</a>.</li>
+</ul>
 
-<p>Note that if you’re making updates online, those updates will be out of sync with any local edits.</p>
+<h2 id="day-2-cdna-preparation">Day 2: cDNA preparation</h2>
 
-<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> Don’t make edits both online using Github’s browser-based interface AND offline on your local machine using your local tools. When you try to push from your local, you’ll likely get a merge conflict error. Instead, make sure you do a pull and update on your local after making any edits online.</div>
+<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> The SMART-v4 is an extremely sensitive cDNA synthesis (that’s the whole point!), which means that it is imperative that you avoid even small amounts of contamination from environmental RNA.  Today’s works should be carried out in a PCR clean hood.</div>
 
-<h2 id="proseio">Prose.io</h2>
-
-<p>Prose.io is an overlay on Github that would allow people to make comments in an easier interface. If you simply go to <a href="http://prose.io">prose.io</a>, it asks to authorize your Github account, and so it will read files directly from Github but in the Prose.io interface.</p>
+<ul>
+  <li>Thaw the following items from the SMART-v4 kit
+    <ul>
+      <li>10x Lysis Buffer</li>
+      <li>RNase inhibitor</li>
+      <li>5X Ultra Low First Strand Buffer</li>
+      <li>SMARTSeq4 Oligonucleotide</li>
+      <li>3’ SMART-Seq CDS Primer (both primers labeled IIA) on ice.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Thaw your sorted samples or RNA on ice (depending on whether you did Option A or B above).</p>
+  </li>
+  <li>
+    <p>If working with RNA, take 1-9.5 uL of your purified RNA (the kit recommends 10 ng or less), bring to 9.5 uL with water and add 1 uL of 10x reaction buffer.  If working with cells, transfer 10.5 ul of thawed lysate to new 0.2ml tube</p>
+  </li>
+  <li>
+    <p>To each tube of RNA or cell lysate, add 2 uL of 3’ SMART-Seq CDS Primer II A</p>
+  </li>
+  <li>
+    <p>Complete the 1st strand reaction by incubating the tubes at 72°C in a preheated, hot-lid thermal cycler for 3 minutes.</p>
+  </li>
+  <li>Prepare 1x sorting buffer as you did on Day 1
+    <ul>
+      <li>0.5 uL sort buffer per well x 96 wells = ~ 50 uL</li>
+      <li>45.24 uL water + 4.75 uL 10x sorting buffer (90.5% water, 9.5% 10x sort buffer)</li>
+    </ul>
+  </li>
+</ul>
 
 
 
@@ -479,6 +541,12 @@ $('#toc').on('click', 'a', function() {
         <b>Tags: </b>
         
         
+        
+        <a href="tag_library_prep.html" class="btn btn-default navbar-btn cursorNorm" role="button">library_prep</a>
+        
+        
+        
+        <a href="tag_transcriptomics.html" class="btn btn-default navbar-btn cursorNorm" role="button">transcriptomics</a>
         
         
         
@@ -509,7 +577,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2018 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
-<span>Page last updated:</span> November 30, 2016<br/> Site last generated: Mar 7, 2018 <br />
+ Site last generated: Mar 7, 2018 <br />
 <p><img src="images/CHMI_logo.png" alt="Company logo"/></p>
                 </div>
             </div>

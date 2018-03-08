@@ -14,7 +14,10 @@ The protocols below detail how we've been using [Biomeme Inc's](http://biomeme.c
 {% include note.html content="The only difference between DNA and RNA protocols are the BLB buffer in the extraction kit, and the type of master mix you will use (LyoDNA versus LyoRNA)." %}
 
 ## Preparing mastermix
-Resuspend bulk lyophilized **LyoDNA** or **LyoRNA** Biomeme master mix with 132 ul of PCR grade water + 18 ul of glycerol.  This is a 10x stock.  Addition of glyceral allows leftover mastermix to be frozen for reuse later.  LyoRNA master mix contains a reverse transcriptase for QPCR assays where the target is a RNA molecule.  Each resuspended vial contains enough mastermix for 60 reactions of 20ul/rxn.
+Resuspend bulk lyophilized [LyoDNA](http://CHMI-sops.github.io/papers/LyoDNA.pdf) or [LyoRNA](http://CHMI-sops.github.io/papers/LyoRNA.pdf) Biomeme master mix with 132 ul of PCR grade water + 18 ul of glycerol.  This is a 10x stock.  Addition of glyceral allows leftover mastermix to be frozen for reuse later.  LyoRNA master mix contains a reverse transcriptase for QPCR assays where the target is a RNA molecule.  Each resuspended vial contains enough mastermix for 60 reactions of 20ul/rxn.
+
+## Optional: preparing LyoGreen dye
+Biomeme's [LyoGreen](http://CHMI-sops.github.io/papers/LyoGreen.pdf) reagent is a lyophilized SybrGreen, allowing you to run QPCR assays without the need for probes specific for your target.  
 
 ## Reaction set-up
 A typical QPCR reaction on the biomeme platform contains the following elements
@@ -26,7 +29,7 @@ A typical QPCR reaction on the biomeme platform contains the following elements
 | isolated DNA or RNA | 5-17 |
 | water | qs to 20 |
 
-{% include important.html content="20x primer/probe stock contains 4uM of the forward primer and probe, and 8uM of the reverse primer in TE pH 8.0.  Final concentrations in the PCR reaction will be 200nM of forward and probe, 400nM of reverse" %}
+{% include important.html content="20x primer/probe stock contains 4uM of the forward primer and probe, and 8uM of the reverse primer in TE pH 8.0.  Final concentrations in the PCR reaction will be 200nM of forward and probe, 400nM of reverse.  If starting with 100 uM stocks, then add 84 uL TE, 4 uL of forward, 4 uL of probe and 8 uL of reverse, to get a 100 ul stock of 20x" %}
 
 
 ## Run set-up
@@ -44,7 +47,7 @@ A typical QPCR reaction on the biomeme platform contains the following elements
 
 **Bold** steps are repeated for 40 cycles total
 
-* Give your protocol and name and select 'save' in the upper right corner of the app
+* Give your protocol a name and select 'save' in the upper right corner of the app
 * If you want to set-up a standard curve, select your protocol, scroll to the bottom, and select standard curve.
 
 {% include note.html content="standard curves are specific to each device.  If you plan to run the same assay across multiple devices, you'll have to run the standard curve on each device." %}
