@@ -14,8 +14,6 @@ folder: mydoc
 
 [Clontech SMART-Seq v4 Ultra Low Input RNA Kit](http://www.clontech.com/US/Products/cDNA_Synthesis_and_Library_Construction/Next_Gen_Sequencing_Kits/Single_cell_RNA_Seq_Kits_for_mRNA_seq/ibcGetAttachment.jsp?cItemId=104008&fileId=7349924&sitex=10020:22372:US). This is an excellent kit for preparing cDNA very low amounts of RNA.  We have used this kit to prepare cDNA from < 100 cells.
 
-{% include important.html content="the success of this kit is dependent on the ability of Illumina's rRNA depletion beads to bind rRNAs in your target species.  Check [this list](https://www.illumina.com/products/selection-tools/ribo-zero-kit-species-compatibility.html#hmr) for compatability of the mouse/rat/human rRNA 'riboGold' depletion reagent with other species." %}
-
 
 ## What you'll need
 
@@ -45,6 +43,18 @@ folder: mydoc
 * Be sure to include the negative and positive controls that come with the kit.
 * this protocol uses 0.2ml PCR tubes, but if you're working with many samples you may find it easier to use a 96-well plate
 
+## comments on cDNA amplification 
+
+The key part of this protocol is based on the use of template switching to boost to amplify you cDNA.  
+
+
+| Input of total RNA | Input of cells | typical # of PCR cycles
+|-------|--------|--------|
+| 10 ng | 1,000 | 7-8 |
+| 1 ng | 100 | 10-11 |
+| 100 pg | 10 | 14-15 |
+| 10 pg | 1 | 17-18 |
+
 ## Day 1: RNA extraction
 
 ### OPTION A: sorting cells
@@ -63,11 +73,11 @@ folder: mydoc
 
 ### OPTION B: purified RNA
 
-* If you have 10's or 100's of thousands of cells, it probably makes sense to isolate RNA first and then use the same amount of total RNA for the cDNA reaction.  We recommend using a kit specifically designed for efficient recovery of RNA from low numbers of cells, and have had success with the [ARCTURUS PicoPure RNA isolation kit](https://www.thermofisher.com/order/catalog/product/KIT0204).
+* If you have 10's of thousands of cells, it probably makes sense to isolate RNA first and then use the same amount of total RNA for the cDNA reaction.  We recommend using a kit specifically designed for efficient recovery of RNA from low numbers of cells, and have had success with the [ARCTURUS PicoPure RNA isolation kit](https://www.thermofisher.com/order/catalog/product/KIT0204).
 
 ## Day 2: cDNA preparation
 
-{% include warning.html content="The SMART-v4 is an extremely sensitive cDNA synthesis (that's the whole point!), which means that it is imperative that you avoid even small amounts of contamination from environmental RNA.  Today's works should be carried out in a PCR clean hood." %}
+{% include warning.html content="The SMART-v4 is an extremely sensitive cDNA synthesis (that's the whole point!), which means that it is imperative that you avoid even small amounts of contamination from environmental RNA.  Today's work should be carried out in a PCR clean hood." %}
 
 * Thaw the following items from the SMART-v4 kit
 	* 10x Lysis Buffer
@@ -84,8 +94,8 @@ folder: mydoc
 
 * Complete the 1st strand reaction by incubating the tubes at 72°C in a preheated, hot-lid thermal cycler for 3 minutes.
 
-* Prepare 1x sorting buffer as you did on Day 1
-	* 0.5 uL sort buffer per well x 96 wells = ~ 50 uL
+* Prepare 1x reaction buffer as you did on Day 1
+	* 0.5 uL reaction buffer per well x 96 wells = ~ 50 uL
 	* 45.24 uL water + 4.75 uL 10x sorting buffer (90.5% water, 9.5% 10x sort buffer)
 
 

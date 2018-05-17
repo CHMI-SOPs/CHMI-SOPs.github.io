@@ -42,6 +42,7 @@ folder: mydoc
 
 ## A few important comments before you start
 
+* IMPORTANT: When putting plate into the PCR machine, use the plastic film to seal; if not the samples can overflow into other wells
 * We use the Low Sample ‘LS’ protocol as we are typically working with fewer than 48 samples at a time  
 * The recommended starting amount of total RNA is 100 ng - 1 ug, but we usually try to stay away from the extreme ends of this spectrum.  
 * Split this protocol into two days, stopping on the first day after you have double stranded cDNA. On second day, do the A-tailing, adapter ligation, PCR, cleanup, and quality control steps.  
@@ -92,12 +93,16 @@ folder: mydoc
 * Remove the plate from the magnet, gently add 11 ul of Elution Buffer to each well. Mix thoroughly by pipetting up and down 10 times. You will have to work to get the dried beads off the side of the well and resuspended in the buffer.
 * Incubate the plate at RT for 2 minutes.
 * Place the sample on the magnet for 2 minutes.
+* Transfer 8.5 uL of the supernatant from each well to a new PCR plate to continue with Step 2 below.
+* There are ~2.5 uL of supernatant still in old plate with the beads, use this to do RNA High Sensitivity TapeStation to check if the rRNA is depleted.
+
+{% include note.html content="If the rRNA is not depleted, go back to Step 1 with RNA samples." %}
 
 ## Step 2: fragment RNA
 
 This is a non-enzymatic and uses heat and divalent metal cations (magnesium or zinc) to fragment your RNA.  If your starting RNA was degraded, you can shorten the the length of time used in the Elu2Frag Program, or skip the fragmentation step altogether. 
 
-* Transfer 8.5 uL of the supernatant from each well to a new PCR plate.
+* Work with 8.5 uL of the supernatant in the new PCR plate.
 * Add 8.5 uL Elute, Prime, Fragment High mix to each well. Mix by pipetting up and down 10 times. 
 * Place the wells in the thermocyler and run the Elu2Frag program.
 
@@ -108,7 +113,7 @@ This is a non-enzymatic and uses heat and divalent metal cations (magnesium or z
 ## Step 3: 1<sup>st</sup> strand cDNA synthesis
 
 * Remove First Strand Synthesis Act D Mix from -20C and thaw at RT. Centrifuge this reagent at 600 x g for 5 sec.
-* Add 50 ul SuperScript II to the First Strand Synthesis Act D Mix well. If you’re not going to use the entire well of mix, then add SuperScript at a ratio of 1 ul SuperScript for every 9 ul of First Strand reagent.  For example, for 12 reactions, mix 90 ul with 10 ul of SS II.  Excess mix can be stored in the -20C freezer.
+* Add 50 ul SuperScript II to the First Strand Synthesis Act D Mix well. If you’re not going to use the entire well of mix, then add SuperScript at a ratio of 1 ul SuperScript for every 9 ul of First Strand reagent.  For example, for 10 reactions, mix 90 ul with 10 ul of SS II.  Excess mix can be stored in the -20C freezer.
 * Add 8 ul of First Strand SuperScript mix to each well containing the mRNA.
 * Place the plate in thermocycler and run the “Synthesize 1st Strand” program (25C for 10 min, 42C for 15 min, 70C for 15 min, hold at 4C).
 
@@ -119,6 +124,7 @@ This is a non-enzymatic and uses heat and divalent metal cations (magnesium or z
 {% include important.html content="When the first strand synthesis is completed, immediately proceed to the second strand synthesis" %}
 
 * Add 20 uL second strand marking mix and 5 uL resuspension buffer to each well. Pipette up and down 6 times.
+* When not using the in-line control, use 5uL of resuspension buffer to bring the final volume to 50uL. 
 * Centrifuge the plate at 600 x g for 30 sec.
 * Place plate in thermocycler and run the ‘2nd strand’ reaction - 16C for 1hr, with the lid set to 30C.
 

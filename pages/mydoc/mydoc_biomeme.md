@@ -13,19 +13,20 @@ The protocols below detail how we've been using [Biomeme Inc's](http://biomeme.c
 
 {% include note.html content="The only difference between DNA and RNA protocols are the BLB buffer in the extraction kit, and the type of master mix you will use (LyoDNA versus LyoRNA)." %}
 
+## Devices
+The hand-held QPCR device made by Biomeme, called the 'Two3', can accomodate three PCR tubes and can detect two colors in each tube: FAM and Cy5 (or ATTO647N, which is brighter than Cy5, but more costly to order).  Biomeme will soon be releasing the 'three9' which, as the name suggests, accomodates 9 tubes and three colors/tube: FAM, Cy5/ATTO647N and TexasRed.  ATTO647N is the brightest channel on the three9, so consider good designing the target you anticipate being present in the lowest concentration and/or least sensitive PCR to that channel. FAM is the next brightest, followed by TexasRedX. If you are designing a triplex assay for use with the three9 that includes a positive control, use TexasRedX for the positive control.
+
 ## Preparing mastermix
-Resuspend bulk lyophilized [LyoDNA](http://CHMI-sops.github.io/papers/LyoDNA.pdf) or [LyoRNA](http://CHMI-sops.github.io/papers/LyoRNA.pdf) Biomeme master mix with 132 ul of PCR grade water + 18 ul of glycerol.  This is a 10x stock.  Addition of glyceral allows leftover mastermix to be frozen for reuse later.  LyoRNA master mix contains a reverse transcriptase for QPCR assays where the target is a RNA molecule.  Each resuspended vial contains enough mastermix for 60 reactions of 20ul/rxn.
+Resuspend bulk lyophilized [LyoDNA](http://CHMI-sops.github.io/papers/LyoDNA.pdf), [LyoRNA](http://CHMI-sops.github.io/papers/LyoRNA.pdf) or [LyoGreen](http://CHMI-sops.github.io/papers/LyoGreen.pdf) master mix with 135 ul of PCR grade water + 18 ul of glycerol.  This is a 10x stock.  Addition of glyceral allows leftover mastermix to be frozen for reuse later.  LyoRNA master mix contains a reverse transcriptase for QPCR assays where the target is a RNA molecule.  Each resuspended vial contains enough mastermix for 60 reactions of 20ul/rxn.
 
-## Optional: preparing LyoGreen dye
-Biomeme's [LyoGreen](http://CHMI-sops.github.io/papers/LyoGreen.pdf) reagent is a lyophilized SybrGreen, allowing you to run QPCR assays without the need for probes specific for your target.  
 
-## Reaction set-up
-A typical QPCR reaction on the biomeme platform contains the following elements
+## Reaction set-up with LyoDNA or LyoRNA
+A typical QPCR reaction on the biomeme platform contains the following components
 
 | Reagent | vol (ul) |
 |-------|--------|
 | 20x primer/probe | 1 |
-| 10x LyoDNA or LyoRNA mastermix | 2 |
+| 10x LyoDNA, LyoRNA or LyoGreen mastermix | 2 |
 | isolated DNA or RNA | 5-17 |
 | water | qs to 20 |
 
@@ -114,9 +115,9 @@ For each patient, two sterile swabs (provided by Biomeme) are held together and 
 1. Immerse swabs intended for DNA in 1ml of a 1:1 mix of BLB from DNA kit (0.5ml) and water (BEB; 0.5ml), twirl in media for 1 min, discard swabs.
 2. Immerse swabs intended for RNA in 1ml of BLB from the RNA kit, twirl in media for 1min, discard swabs
 2. Attach standard lab 1cc syringe to Biomeme filter tip. Pump lysate up/down 10x, expel volume
-3. Immediately move to **BPW** wash, pump up/down 1x, expel volume
-4. Immediately move to **BWB** wash, pump up/down 1x, expel volume
-5. Immediately move to **BDW** wash, pump up/down 1x, expel volume
+3. Immediately move to **BPW** wash (1ml), pump up/down 1x, expel volume
+4. Immediately move to **BWB** wash (1ml), pump up/down 1x, expel volume
+5. Immediately move to **BDW** wash (1ml), pump up/down 1x, expel volume
 6. Pump air up/down repeatedly 10x, discard syringe but **keep filter tip**
 7. attach 25cc or 50cc syringe to the same filter tip.  Pump up and down with air vigorously to dry the column.
 8. remove and discard the syringe.  Connect new Biomeme 'slip-tip' 1 cc syringe to the column and draw up 150 ul of Biomeme Elution Buffer (BEB).  Pump up/down 3x with BEB.
@@ -125,7 +126,7 @@ For each patient, two sterile swabs (provided by Biomeme) are held together and 
 ### Primers and probes
 
 #### Skin-resident microbes 
-The primers and probes below are used for detection of *Staphylococcus aureus (Sa)*, *Streptococcus pyogenes (Sp)* and *Leishmania braziliensis (Lb)*
+The primers and probes below are used for detection of *Staphylococcus aureus (Saur)*, *Streptococcus pyogenes (Spyo)* and *Leishmania braziliensis (Lbra)*
 
 {% include note.html content="All of these targets are DNA, so be sure to use appropirate lysis buffer (BLB from DNA bulk extraction kit) and mastermix (LyoDNA)." %}
 
@@ -138,15 +139,15 @@ The primers and probes below are used for detection of *Staphylococcus aureus (S
 
 | name | Sequence (5' -> 3') |
 |-------|--------|
-| *Sa* fwd | provided by Biomeme |
-| *Sa* rev | provided by Biomeme |
-| *Sa* probe | provided by Biomeme |
-| *Sp* fwd | GCA CTC GCT ACT ATT TCT TAC CTC AA |
-| *Sp* rev | ATT ACT GGT TTC CAA GAC ATT GTG AC |
-| *Sp* probe | */56-FAM/*CCG CAA CTC */ZEN/* ATC AAG GAT TTC TGT TAC CA*/3IABkFQ/* |
-| *Lb* fwd | TGC TAT AAA ATC GTA CCA CCC GAC A |
-| *Lb* rev | AAA TGG CAT ACA GAA ACC CCG TTC |
-| *Lb* probe | */56-FAM/*GCC TCT GGG */ZEN/* TAG GGG CGT TCT GCA A*/3IABkFQ/* |
+| *Saur* fwd | provided by Biomeme |
+| *Saur* rev | provided by Biomeme |
+| *Saur* probe | provided by Biomeme |
+| *Spyo* fwd | GCA CTC GCT ACT ATT TCT TAC CTC AA |
+| *Spyo* rev | ATT ACT GGT TTC CAA GAC ATT GTG AC |
+| *Spyo* probe | */56-FAM/*CCG CAA CTC */ZEN/* ATC AAG GAT TTC TGT TAC CA*/3IABkFQ/* |
+| *Lbra* fwd | TGC TAT AAA ATC GTA CCA CCC GAC A |
+| *Lbra* rev | AAA TGG CAT ACA GAA ACC CCG TTC |
+| *Lbra* probe | */56-FAM/*GCC TCT GGG */ZEN/* TAG GGG CGT TCT GCA A*/3IABkFQ/* |
 
 
 #### Human transcripts

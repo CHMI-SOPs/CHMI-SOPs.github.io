@@ -5,8 +5,8 @@
         <description>A wiki-style site for collecting and communicating our standard services and protocols at PennVet CHMI.</description>
         <link>http://localhost:4000/</link>
         <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Wed, 07 Mar 2018 21:59:36 -0300</pubDate>
-        <lastBuildDate>Wed, 07 Mar 2018 21:59:36 -0300</lastBuildDate>
+        <pubDate>Wed, 16 May 2018 18:37:43 -0400</pubDate>
+        <lastBuildDate>Wed, 16 May 2018 18:37:43 -0400</lastBuildDate>
         <generator>Jekyll v3.3.1</generator>
         
         <item>
@@ -20,7 +20,7 @@
 &lt;p&gt;Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries&lt;/p&gt;
 
 </description>
-            <pubDate>Fri, 26 Feb 2016 00:00:00 -0300</pubDate>
+            <pubDate>Fri, 26 Feb 2016 00:00:00 -0500</pubDate>
             <link>http://localhost:4000/samplepost.html</link>
             <guid isPermaLink="true">http://localhost:4000/samplepost.html</guid>
             
@@ -46,7 +46,7 @@
 &lt;/ul&gt;
 
 </description>
-            <pubDate>Wed, 24 Feb 2016 00:00:00 -0300</pubDate>
+            <pubDate>Wed, 24 Feb 2016 00:00:00 -0500</pubDate>
             <link>http://localhost:4000/myupdate.html</link>
             <guid isPermaLink="true">http://localhost:4000/myupdate.html</guid>
             
@@ -60,7 +60,7 @@
             <description>&lt;p&gt;This is just a test post from the previous year.&lt;/p&gt;
 
 </description>
-            <pubDate>Sun, 12 Apr 2015 00:00:00 -0300</pubDate>
+            <pubDate>Sun, 12 Apr 2015 00:00:00 -0400</pubDate>
             <link>http://localhost:4000/test-post-from-last-year.html</link>
             <guid isPermaLink="true">http://localhost:4000/test-post-from-last-year.html</guid>
             

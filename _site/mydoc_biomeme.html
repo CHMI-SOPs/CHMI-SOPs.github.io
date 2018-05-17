@@ -435,14 +435,14 @@ $('#toc').on('click', 'a', function() {
 
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The only difference between DNA and RNA protocols are the BLB buffer in the extraction kit, and the type of master mix you will use (LyoDNA versus LyoRNA).</div>
 
+<h2 id="devices">Devices</h2>
+<p>The hand-held QPCR device made by Biomeme, called the ‘Two3’, can accomodate three PCR tubes and can detect two colors in each tube: FAM and Cy5 (or ATTO647N, which is brighter than Cy5, but more costly to order).  Biomeme will soon be releasing the ‘three9’ which, as the name suggests, accomodates 9 tubes and three colors/tube: FAM, Cy5/ATTO647N and TexasRed.  ATTO647N is the brightest channel on the three9, so consider good designing the target you anticipate being present in the lowest concentration and/or least sensitive PCR to that channel. FAM is the next brightest, followed by TexasRedX. If you are designing a triplex assay for use with the three9 that includes a positive control, use TexasRedX for the positive control.</p>
+
 <h2 id="preparing-mastermix">Preparing mastermix</h2>
-<p>Resuspend bulk lyophilized <a href="http://CHMI-sops.github.io/papers/LyoDNA.pdf">LyoDNA</a> or <a href="http://CHMI-sops.github.io/papers/LyoRNA.pdf">LyoRNA</a> Biomeme master mix with 132 ul of PCR grade water + 18 ul of glycerol.  This is a 10x stock.  Addition of glyceral allows leftover mastermix to be frozen for reuse later.  LyoRNA master mix contains a reverse transcriptase for QPCR assays where the target is a RNA molecule.  Each resuspended vial contains enough mastermix for 60 reactions of 20ul/rxn.</p>
+<p>Resuspend bulk lyophilized <a href="http://CHMI-sops.github.io/papers/LyoDNA.pdf">LyoDNA</a>, <a href="http://CHMI-sops.github.io/papers/LyoRNA.pdf">LyoRNA</a> or <a href="http://CHMI-sops.github.io/papers/LyoGreen.pdf">LyoGreen</a> master mix with 135 ul of PCR grade water + 18 ul of glycerol.  This is a 10x stock.  Addition of glyceral allows leftover mastermix to be frozen for reuse later.  LyoRNA master mix contains a reverse transcriptase for QPCR assays where the target is a RNA molecule.  Each resuspended vial contains enough mastermix for 60 reactions of 20ul/rxn.</p>
 
-<h2 id="optional-preparing-lyogreen-dye">Optional: preparing LyoGreen dye</h2>
-<p>Biomeme’s <a href="http://CHMI-sops.github.io/papers/LyoGreen.pdf">LyoGreen</a> reagent is a lyophilized SybrGreen, allowing you to run QPCR assays without the need for probes specific for your target.</p>
-
-<h2 id="reaction-set-up">Reaction set-up</h2>
-<p>A typical QPCR reaction on the biomeme platform contains the following elements</p>
+<h2 id="reaction-set-up-with-lyodna-or-lyorna">Reaction set-up with LyoDNA or LyoRNA</h2>
+<p>A typical QPCR reaction on the biomeme platform contains the following components</p>
 
 <table>
   <thead>
@@ -457,7 +457,7 @@ $('#toc').on('click', 'a', function() {
       <td>1</td>
     </tr>
     <tr>
-      <td>10x LyoDNA or LyoRNA mastermix</td>
+      <td>10x LyoDNA, LyoRNA or LyoGreen mastermix</td>
       <td>2</td>
     </tr>
     <tr>
@@ -625,9 +625,9 @@ $('#toc').on('click', 'a', function() {
   <li>Immerse swabs intended for DNA in 1ml of a 1:1 mix of BLB from DNA kit (0.5ml) and water (BEB; 0.5ml), twirl in media for 1 min, discard swabs.</li>
   <li>Immerse swabs intended for RNA in 1ml of BLB from the RNA kit, twirl in media for 1min, discard swabs</li>
   <li>Attach standard lab 1cc syringe to Biomeme filter tip. Pump lysate up/down 10x, expel volume</li>
-  <li>Immediately move to <strong>BPW</strong> wash, pump up/down 1x, expel volume</li>
-  <li>Immediately move to <strong>BWB</strong> wash, pump up/down 1x, expel volume</li>
-  <li>Immediately move to <strong>BDW</strong> wash, pump up/down 1x, expel volume</li>
+  <li>Immediately move to <strong>BPW</strong> wash (1ml), pump up/down 1x, expel volume</li>
+  <li>Immediately move to <strong>BWB</strong> wash (1ml), pump up/down 1x, expel volume</li>
+  <li>Immediately move to <strong>BDW</strong> wash (1ml), pump up/down 1x, expel volume</li>
   <li>Pump air up/down repeatedly 10x, discard syringe but <strong>keep filter tip</strong></li>
   <li>attach 25cc or 50cc syringe to the same filter tip.  Pump up and down with air vigorously to dry the column.</li>
   <li>remove and discard the syringe.  Connect new Biomeme ‘slip-tip’ 1 cc syringe to the column and draw up 150 ul of Biomeme Elution Buffer (BEB).  Pump up/down 3x with BEB.</li>
@@ -637,7 +637,7 @@ $('#toc').on('click', 'a', function() {
 <h3 id="primers-and-probes-1">Primers and probes</h3>
 
 <h4 id="skin-resident-microbes">Skin-resident microbes</h4>
-<p>The primers and probes below are used for detection of <em>Staphylococcus aureus (Sa)</em>, <em>Streptococcus pyogenes (Sp)</em> and <em>Leishmania braziliensis (Lb)</em></p>
+<p>The primers and probes below are used for detection of <em>Staphylococcus aureus (Saur)</em>, <em>Streptococcus pyogenes (Spyo)</em> and <em>Leishmania braziliensis (Lbra)</em></p>
 
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> All of these targets are DNA, so be sure to use appropirate lysis buffer (BLB from DNA bulk extraction kit) and mastermix (LyoDNA).</div>
 
@@ -658,39 +658,39 @@ $('#toc').on('click', 'a', function() {
   </thead>
   <tbody>
     <tr>
-      <td><em>Sa</em> fwd</td>
+      <td><em>Saur</em> fwd</td>
       <td>provided by Biomeme</td>
     </tr>
     <tr>
-      <td><em>Sa</em> rev</td>
+      <td><em>Saur</em> rev</td>
       <td>provided by Biomeme</td>
     </tr>
     <tr>
-      <td><em>Sa</em> probe</td>
+      <td><em>Saur</em> probe</td>
       <td>provided by Biomeme</td>
     </tr>
     <tr>
-      <td><em>Sp</em> fwd</td>
+      <td><em>Spyo</em> fwd</td>
       <td>GCA CTC GCT ACT ATT TCT TAC CTC AA</td>
     </tr>
     <tr>
-      <td><em>Sp</em> rev</td>
+      <td><em>Spyo</em> rev</td>
       <td>ATT ACT GGT TTC CAA GAC ATT GTG AC</td>
     </tr>
     <tr>
-      <td><em>Sp</em> probe</td>
+      <td><em>Spyo</em> probe</td>
       <td><em>/56-FAM/</em>CCG CAA CTC <em>/ZEN/</em> ATC AAG GAT TTC TGT TAC CA<em>/3IABkFQ/</em></td>
     </tr>
     <tr>
-      <td><em>Lb</em> fwd</td>
+      <td><em>Lbra</em> fwd</td>
       <td>TGC TAT AAA ATC GTA CCA CCC GAC A</td>
     </tr>
     <tr>
-      <td><em>Lb</em> rev</td>
+      <td><em>Lbra</em> rev</td>
       <td>AAA TGG CAT ACA GAA ACC CCG TTC</td>
     </tr>
     <tr>
-      <td><em>Lb</em> probe</td>
+      <td><em>Lbra</em> probe</td>
       <td><em>/56-FAM/</em>GCC TCT GGG <em>/ZEN/</em> TAG GGG CGT TCT GCA A<em>/3IABkFQ/</em></td>
     </tr>
   </tbody>
@@ -793,7 +793,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2018 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
- Site last generated: Mar 7, 2018 <br />
+ Site last generated: May 16, 2018 <br />
 <p><img src="images/CHMI_logo.png" alt="Company logo"/></p>
                 </div>
             </div>
