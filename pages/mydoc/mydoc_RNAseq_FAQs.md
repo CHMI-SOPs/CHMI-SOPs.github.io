@@ -26,7 +26,7 @@ As many as you can reasonably afford.  Seriously.  When it comes to boosting you
 
 ## How much will it cost?
 
-Costs vary widely, but are primarily driven by three factors: 1) the number of samples you plan to sequence; 2) the kind of library you will prepare from these samples; and 3) the length and depth of sequencing carried out on these samples.  The costs of consumables direclty from Illumina can be viewed [here](http://CHMI-sops.github.io/papers/Illumina_Pricelist_April2017.pdf)(note the UPenn discount price).  These prices go up each year in April, so take that into account when ordering.  Here is a schematic I prepared that shows the cost of consumables to carry out a few types of RNAseq expeirments.  
+Costs vary widely, but are primarily driven by three factors: 1) the number of samples you plan to sequence; 2) the kind of library you will prepare from these samples; and 3) the length and depth of sequencing carried out on these samples.  The costs of consumables related to sequencing can be viewed on our [CHMI invoice template](https://docs.google.com/spreadsheets/d/1nbye8xRZTtBthhm7E-KuhEXBz2E3VvOG1lmTpNpGJMA/edit?usp=sharing).  These prices go up each year in April, so take that into account when ordering.  Here is a schematic I prepared that shows the cost of consumables to carry out a few types of RNAseq expeirments.  
 
 ## How long will it take?
 
