@@ -62,10 +62,6 @@ entries:
           url: /mydoc_kallisto.html
           output: web
 
-        - title: Data deposition
-          url: /tag_formatting.html
-          output: web
-
   - title: Microbiology
     output: web, pdf
     
@@ -100,16 +96,8 @@ entries:
           url: /mydoc_linux.html
           output: web
 
-        - title: MicrobiomeDB
-          url: /tag_formatting.html
-          output: web
-
         - title: QIIME2
           url: /mydoc_qiime2.html
-          output: web
-
-        - title: Data deposition
-          url: /tag_formatting.html
           output: web
 
   - title: Cell culture
