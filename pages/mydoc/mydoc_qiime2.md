@@ -113,7 +113,7 @@ The methods for processing and analysis of 16S marker gene sequencing data conti
 
 {% include important.html content="If you have multiple runs, it is recommended that you run DADA2 separately on data from each run individually, then combine data from the runs after denoising.  See the [QIIME2 fecal transplant tutorial](https://docs.qiime2.org/2018.2/tutorials/fmt/) for an example of how this works" %}
 
-{% include note.html content="we will trim our sequences to 120bp.  This number is a bit arbritrary but should be guided on quality scores that you observed in demux.qzv in step 4 above.  If you want to avoid trimming for any reason (for example, if you are profiling fungi by ITS sequencing), simply set this value to 0." %}
+{% include note.html content="we will trim our sequences to 120bp.  This number is a bit arbritrary but should be guided by quality scores that you observed in demux.qzv in step 4 above.  If you want to avoid trimming for any reason (for example, if you are profiling fungi by ITS sequencing), simply set this value to 0." %}
 
 ```
 qiime dada2 denoise-paired \
@@ -143,7 +143,7 @@ The code above produced two .qzv files that can be explored on the [QIIME2 viewe
 
 ## Step 6: build a phylogenetic tree
 
-Tree construction is optional, but is useful if you want to compute alpha diversity metrics that are phylogenetically based.  The resulting tree is unrooted and is created using Fasttree.  Since some downstream steps will require a rooted tree, we'll also use the longest branch to root the tree (called 'midrooting')" %}
+Tree construction is optional, but is useful if you want to compute alpha diversity metrics that are phylogenetically based.  The resulting tree is unrooted and is created using Fasttree.  Since some downstream steps will require a rooted tree, we'll also use the longest branch to root the tree (called 'midrooting').
 
 {% include warning.html content="You are cautioned against drawing strong conclusions about relationships between taxa from this tree alone, since it was only constructed using a single marker gene." %}
 
@@ -312,7 +312,7 @@ qiime tools export \
 
 ## Step 10: differential abundance
 
-The tools and theory for calling differentially abundant taxa between samples is very much an area of active research.  Basically, it's a challenging statistical problem since measurements of abundance are relative, not absolute, and therefore features are not independent (i.e. if one taxa increases in abundance, then the others will go down).  This is also a common, and perhaps better studied, problem in RNAseq.  QIIME2 uses [ANCOM](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4450248/) to identify differentially abundant taxa. As is the case with all statistical tests, ANCOM makes certain assumptions about your data and if these are violated, then the results of the ANCOM analysis cannot be trust.  A key assumption made by ANCOM is that few taxa will be differentially abundant between groups.  To ensure that we don't violate this assumption, we first need to filter our data to focus on a single body site, for example, and then compare treatments, conditions, etc, *within* that body site
+The tools and theory for calling differentially abundant taxa between samples is very much an area of active research.  Basically, it's a challenging statistical problem since measurements of abundance are relative, not absolute, and therefore features are not independent (i.e. if one taxa increases in abundance, then the others will go down).  This is also a common, and perhaps better studied, problem in RNAseq.  QIIME2 uses [ANCOM](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4450248/) to identify differentially abundant taxa. As is the case with all statistical tests, ANCOM makes certain assumptions about your data and if these assumptions are violated, then the results of the ANCOM analysis are invalid.  A key assumption made by ANCOM is that few taxa will be differentially abundant between groups.  To ensure that we don't violate this assumption, we first need to filter our data to focus on a single body site, for example, and then compare treatments, conditions, etc, *within* that body site
 
 ```
 #filter based on body site
