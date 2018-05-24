@@ -72,6 +72,17 @@
 
 
 {
+"title": "Depositing RNAseq data to GEO",
+"tags": "bioinformaticstranscriptomics",
+"keywords": "",
+"url": "mydoc_RNAseq_depositToGEO.html",
+"summary": "This page will walk you through the steps to make your data publicly available so you can meet the requirements for manuscript submission and publication"
+}
+,
+
+
+
+{
 "title": "Illumina TruSeq Stranded mRNA Sample Preparation Protocol",
 "tags": "library_preptranscriptomics",
 "keywords": "transcriptomics, library preparation",

@@ -4,9 +4,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="I have used this theme for projects that I've worked on as a professional technical writer.">
-<meta name="keywords" content="getting_started,  documentation theme, jekyll, technical writers, help authoring tools, hat replacements">
-<title>About the theme author | CHMI services</title>
+<meta name="description" content="This page will walk you through the steps to make your data publicly available so you can meet the requirements for manuscript submission and publication">
+<meta name="keywords" content="bioinformaticstranscriptomics,  ">
+<title>Depositing RNAseq data to GEO | CHMI services</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -120,7 +120,7 @@
 
 
 
-  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:beiting@upenn.edu?subject=CHMI services feedback&body=I have some feedback about the About the theme author page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:beiting@upenn.edu?subject=CHMI services feedback&body=I have some feedback about the Depositing RNAseq data to GEO page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
 
 </li>
 
@@ -138,7 +138,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="About the theme author">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Depositing RNAseq data to GEO">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -246,7 +246,7 @@
                     
                     
                     
-                    <li><a href="mydoc_RNAseq_depositToGEO.html">Submitting to GEO</a></li>
+                    <li class="active"><a href="mydoc_RNAseq_depositToGEO.html">Submitting to GEO</a></li>
                     
                     
                     
@@ -375,7 +375,7 @@
         <!-- Content Column -->
         <div class="col-md-9" id="tg-sb-content">
             <div class="post-header">
-   <h1 class="post-title-main">About the theme author</h1>
+   <h1 class="post-title-main">Depositing RNAseq data to GEO</h1>
 </div>
 
 
@@ -383,7 +383,7 @@
 <div class="post-content">
 
    
-    <div class="summary">I have used this theme for projects that I've worked on as a professional technical writer.</div>
+    <div class="summary">This page will walk you through the steps to make your data publicly available so you can meet the requirements for manuscript submission and publication</div>
    
 
     
@@ -414,19 +414,72 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    <a target="_blank" href="https://github.com/CHMI-SOPs/CHMI-SOPs.github.io/tree/master/pages/mydoc/mydoc_about.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+    <a target="_blank" href="https://github.com/CHMI-SOPs/CHMI-SOPs.github.io/tree/master/pages/mydoc/mydoc_RNAseq_depositToGEO.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
 
     
 
-  <p>My name is Tom Johnson, and I’m a technical writer, blogger, and podcaster based in San Jose, California. My blog is here: <a href="http://idratherbewriting.com">http://idratherbewriting.com</a>. I write several posts there a week. See <a href="http://idratherbewriting.com/aboutme/">my blog’s about page</a> for more details about me.</p>
+  <h2 id="intro">Intro</h2>
+<p>So you’re ready to submit a manuscript describing your hard work…congratulations!  If you’re reading this page, then chances are you have RNAseq data that you want to post to an approved data repository so that you can get an accession number to include in your manuscript submission.  This is the first step in ensuring that the broader research community can access your raw and processed data from any sequencing experiment(s) carried out in your publication.  The <a href="https://www.ncbi.nlm.nih.gov/sra">Sequence Read Archive</a> (SRA) is the defacto home for all sequencing related studies, but can be confusing to navigate.  Thankfully, the <a href="https://www.ncbi.nlm.nih.gov/geo/">Gene Expression Omnibus</a>, will accept deposits of gene expression profiling data from RNAseq experiments and will pass this data onto to GEO on your behalf.  This is definitely the way to go, since the process of submitting data to GEO is pretty straightforward.  The steps below will walk you through this process.  Be aware that GEO’s own instructions are available <a href="https://www.ncbi.nlm.nih.gov/geo/info/seq.html">here</a>, but our instructions are simple.</p>
 
-<p>I have used this theme and variations of it for various documentation projects. This theme has undergone several major iterations, and now it’s fairly stable and full of all the features that I need. You are welcome to use it for your documentation projects for free.</p>
+<h2 id="what-youll-need">What you’ll need</h2>
 
-<p>I think this theme does pretty much everything that you can do with something like OxygenXML, but without the constraints of structured authoring. Everything is completely open and changeable, so if you start tinkering around with the theme’s files, you can break things. But it’s completely empowering as well!</p>
+<ul>
+  <li>an account on myNCBI.  If you don’t already have one, signup <a href="https://www.ncbi.nlm.nih.gov/account/">here</a></li>
+  <li>the free FTP client, <a href="https://filezilla-project.org/">FileZilla</a></li>
+  <li>access to your raw .fastq files from your seqeuncing experiment (keep this in the compressed (.gzip) form at all times.</li>
+  <li>access to a table of ‘processed’ gene expression data.  This will need to be either raw counts, or normalized data produced by DESeq2 or EdgeR (or both files).</li>
+</ul>
 
-<p>With a completely open architecture and code base, you can modify the code to make it do exactly what you want, without having to jump through all kinds of confusing or proprietary code.</p>
+<h2 id="step-1-complete-metadata-spreadsheet">Step 1: Complete metadata spreadsheet</h2>
 
-<p>If there’s a feature you need but it isn’t available here, let me know and I might add it. Alternatively, if you fork the theme, I would love to see your modifications and enhancements.</p>
+<p>This is most time consuming part of whole process, but also the most important.  <a href="http://CHMI-sops.github.io/papers/GEOsubmission.xlsx">Download this example excel file</a> from one of our own RNAseq studies, and replace with the appropriate information from your own experiment.  This document should describe each sample, how it was handled, and how your samples relate to the raw fastq files.  The more ‘metadata’ you can include here, the more useful you make this data to outside investigators, so don’t skimp on the details.</p>
+
+<p>To complete this form you will need to generate a unique checksum for each file that you intend to transfer to GEO (both fastq files, as well as an process data files).  Checksums confirm that the file is not corrupt.  The are easy to generate, but do require that you open a command line program (e.g. Terminal on a Mac).  Once you have a terminal window open, navigate to the directory on your computer where you have all the files you plan to transfer.</p>
+
+<p>Use the <code class="highlighter-rouge">md5</code> command followed by the name of your file to generate the 32 character checksum.  You’ll want to copy and paste this into your excel submission form.
+Here’s an example of what this looks like:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>md5 GEOsubmission.xlsx 
+MD5 (GEOsubmission.xlsx) = 39eae0dbcc54367c588d2815876747f4
+</code></pre>
+</div>
+
+<h2 id="step-2-preparing-to-transfer">Step 2: Preparing to transfer</h2>
+
+<ol>
+  <li>Create a folder anywhere on your computer and give it the same name as your myNCBI username (for me this is ‘danielbeiting’).</li>
+  <li>Transfer all your raw and processed files, and your metadata spreadsheet completed in step 1, to this folder.</li>
+  <li>If the total size of this folder is &gt;1Tb, you will need to <a href="geo@ncbi.nlm.nih.gov">email GEO</a> with a list of your file names and their checksums, so that they can manage server space accordingly.</li>
+</ol>
+
+<h2 id="step-3-transfer-your-data">Step 3: Transfer your data</h2>
+
+<ol>
+  <li>Launch FileZilla and connect to the GEO storage server using the following credentials:</li>
+</ol>
+
+<p>** Host: ftp-private.ncbi.nlm.nih.gov
+* username: geo
+* password: (this will specific to your myNCBI account)</p>
+
+<ol>
+  <li>
+    <p>Once connected, simply drag your folder from your local computer to the GEO server</p>
+  </li>
+  <li>
+    <p>Now you must give the crew at GEO a heads-up that you’ve submitted data to their server.  <strong>Don’t skip this step or they will delete your submission.</strong>. <a href="geo@ncbi.nlm.nih.gov">Send an email to GEO</a>, and include the following information in the email:</p>
+  </li>
+</ol>
+
+<ul>
+  <li>Your GEO account username.  If depositing to my account, use ‘danielbeiting’</li>
+  <li>Names of the directory and files deposited</li>
+  <li>Choose a date for public release (this can be immediate, or you can choose up to a maximum of 3yrs.  You can always extend later)</li>
+</ul>
+
+<ol>
+  <li>Congratulations, you’re done!  You will get an email from GEO with your accession number.  Include this number in your manuscript.  If the data is kept private on GEO, but reviewers request a link to access the data (they are entitled to this), you can get a reviewer link through your account on GEO.  If there are any problems with your submission, GEO will contant you and you’ll get some instructions on how to resolve the issue before the submission is accepted.</li>
+</ol>
 
 
 
@@ -436,7 +489,11 @@ $('#toc').on('click', 'a', function() {
         
         
         
-        <a href="tag_getting_started.html" class="btn btn-default navbar-btn cursorNorm" role="button">getting_started</a>
+        <a href="tag_bioinformatics.html" class="btn btn-default navbar-btn cursorNorm" role="button">bioinformatics</a>
+        
+        
+        
+        <a href="tag_transcriptomics.html" class="btn btn-default navbar-btn cursorNorm" role="button">transcriptomics</a>
         
         
         
@@ -467,7 +524,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2018 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
-<span>Page last updated:</span> July 3, 2016<br/> Site last generated: May 24, 2018 <br />
+ Site last generated: May 24, 2018 <br />
 <p><img src="images/CHMI_logo.png" alt="Company logo"/></p>
                 </div>
             </div>

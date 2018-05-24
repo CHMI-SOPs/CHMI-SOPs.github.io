@@ -62,6 +62,10 @@ entries:
           url: /mydoc_kallisto.html
           output: web
 
+        - title: Submitting to GEO
+          url: /mydoc_RNAseq_depositToGEO.html
+          output: web
+
   - title: Microbiology
     output: web, pdf
     
