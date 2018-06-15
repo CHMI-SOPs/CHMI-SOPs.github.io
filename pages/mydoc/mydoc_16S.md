@@ -79,7 +79,7 @@ Use the PicoGreen dsDNA Assay Kit to normalize concentrations of PCR reactions p
 
 * Dilute PicoGreen reagent in 15 mL or 50 mL tube
 	- For 1.5 DNA plates: 
-		-15 mL 1 X TE Bugger
+		-15 mL 1 X TE Buffer
 		-75 uL PicoGreen reagent
 
 	-For 2 full DNA plates:
