@@ -16,11 +16,21 @@ Use of the cluster is free-of-charge to approved labs.  However, to protect the 
 * Data storage space is limited (10Tb goes quickly!), so we periodically montior storage space and may request that data not currently in use be moved off the cluster.
 * We require a strong password for each account.  We will set this password for you, and ask that you do not change it.
 
-## Configuring a new user (CHMI only)
+## Setting up and managing user accounts (CHMI only)
 
+### Add a new user
 ```
 sudo adduser [username] #adds a new user to the home directory
 usermod -aG sudo username #gives the new user sudo priveledges
+```
+### Delete a user
+```
+sudo deluser -r [username]
+```
+
+### Delete a directory and its contents
+```
+sudo rm -rf [directory]
 ```
 
 Give the user access to all software on the server
