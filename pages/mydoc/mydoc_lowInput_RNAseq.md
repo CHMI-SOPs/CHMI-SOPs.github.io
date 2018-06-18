@@ -166,7 +166,7 @@ SMARTScribe Reverse Transcriptase | 2
 
 * Run the samples through the Agilent TapeStation High Sensitivity D5000 to check that cDNA was made and amplified.  Your profile should resemble the one shown below
 
-<img src="images/Clontech_Nextera.png"
+<img src="images/Clontech_SMARTSeq_cDNA.png"
      alt="test"
      style="float: center;" />
 
@@ -260,6 +260,10 @@ Nextera library prep
 * Repeat wash steps by adding 8 uL of AMPure XP beads to this and carry through the same steps again. 
 
 * Check Nextera XT library by Agilent Tapestation using the High Sensitivity D1000 assay. 
+
+<img src="images/Clontech_Nextera.png"
+     alt="test"
+     style="float: center;" />
 
 * Check concentration by Qubit. 
 
