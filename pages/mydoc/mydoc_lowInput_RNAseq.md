@@ -59,7 +59,9 @@ folder: mydoc
 * If you have 1000's or 10's of thousands of cells, it probably makes sense to isolate RNA first and then use the same amount of total RNA for the cDNA reaction.  We recommend using a kit specifically designed for efficient recovery of RNA from low numbers of cells, and have had success with the [ARCTURUS PicoPure RNA isolation kit](https://www.thermofisher.com/order/catalog/product/KIT0204) and the [Qiagen RNeasy micro kit](https://www.qiagen.com/us/shop/sample-technologies/rna/total-rna/rneasy-micro-kit/#orderinginformation)
 * follow the protocol included with either of the kits above for RNA isolation 
 
-## Day 2
+## Day 2: cDNA and library prep
+
+{% include note.html content="If perferred, this day could be split into two days, with cDNA generation on Day 2 and modified Nextera library prep on Day 3." %}
  
 ### Clontech SMART-Seq cDNA Synthesis
 * Thaw One-step buffer at room temperature, thaw enzymes (SeqAmp DNA Polymerase and SMARTScribe Reverse Transcriptase) at room temperature then keep tubes on ice once thawed; thaw all other reagents from kit on ice. 
