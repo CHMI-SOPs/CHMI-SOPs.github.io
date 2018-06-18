@@ -164,7 +164,11 @@ SMARTScribe Reverse Transcriptase | 2
 
 * Transfer the supernatant into a new 96 well plate. 
 
-* Run the samples through the Agilent TapeStation High Sensitivity D5000 to check that cDNA was made and amplified.
+* Run the samples through the Agilent TapeStation High Sensitivity D5000 to check that cDNA was made and amplified.  Your profile should resemble the one shown below
+
+<img src="images/Clontech_Nextera.png"
+     alt="test"
+     style="float: left; margin-right: 10px;" />
 
 * Check the concentration of your samples using Qubit. 
 
