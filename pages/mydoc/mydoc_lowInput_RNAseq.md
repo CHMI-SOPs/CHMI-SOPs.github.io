@@ -168,7 +168,7 @@ SMARTScribe Reverse Transcriptase | 2
 
 <img src="images/Clontech_Nextera.png"
      alt="test"
-     style="float: left; margin-right: 10px;" />
+     style="float: center; margin-right: 10px;" />
 
 * Check the concentration of your samples using Qubit. 
 
