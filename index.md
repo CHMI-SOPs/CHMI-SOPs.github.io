@@ -18,6 +18,7 @@ Notice that each protocol is tagged at the bottom of the page.  Clicking on a ta
 
 ## Technology available at CHMI
 * Illumina NextSeq 500 
+* [1CellBio's InDrop system](https://1cell-bio.com/indrop/) for single cell genomics
 * Oxford Nanopore MinION
 * Qubit 3
 * Agilent Bioanalyzer 2100
