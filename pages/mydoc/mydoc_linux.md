@@ -17,9 +17,9 @@ Use of the cluster is free-of-charge to approved labs.  However, to protect the 
 * We require a strong password for each account.  We will set this password for you, and ask that you do not change it.
 
 ## RStudio server
-As much as possible, we prefer to use R for managing, analyzing and plotting data.  This preference is largely motivated by the excellent community support for R, the exceptional RStudio interface for interacting with R, and the growing number of bioinformatics tools within the [bioconductor]() suite of applications.
+As much as possible, we prefer to use R for managing, analyzing and plotting data.  This preference is largely motivated by the excellent community support for R, the exceptional RStudio interface for interacting with R, and the growing number of bioinformatics tools within the [bioconductor](https://www.bioconductor.org/) suite of applications.
 
-Although we frequently use RStudio on our personal computers, we also provide access to a server version of RStudio.  This can be useful when your work requires more computing power.  Click [**here**]() to access our RStudio server directly in your web browser.  Login with the same credentials you use to access the linux machine.  Feel free to customize your RStudio server by installing any packages you need for your work.
+Although we frequently use RStudio on our personal computers, we also provide access to a server version of RStudio.  This can be useful when your work requires more computing power.  Click [**here**](http://130.91.255.137:8787) to access our RStudio server directly in your web browser.  Login with the same credentials you use to access the linux machine.  Feel free to customize your RStudio server by installing any packages you need for your work.
 
 ## Creating and managing user accounts (CHMI only)
 
