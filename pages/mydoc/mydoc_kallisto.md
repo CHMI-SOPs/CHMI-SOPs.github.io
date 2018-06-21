@@ -76,6 +76,11 @@ Run the following command for pseudoalignment of single-end reads to index.
 ```
 kallisto quant -i myHumanIndex -o Sample1.mapped -b 60 —-single -l 275 -s 20 read1.fastq.gz
 ```
+Once read mapping is complete, you will see a short report printed to your screen that indicates the number of reads kallisto saw in the fastq file, and the number of these that mapped to the reference.  Often times it is useful to automatically store this information in a log file so that it can be parsed by other programs, such as the incredibly useful [multiQC](http://multiqc.info/).  To do this, simply append the code below at the end of your alignment bit above. The outcome will be the same, but you will also produce a log file.
+
+```
+&> yourSampleNameHere_kallisto.log
+```
 {% include warning.html content="avoid putting hyphens in the name of the kallisto output, as this could cause problems later" %}
 
 {% include important.html content="bootstrapping (-b command in the line above) adds significant time to the mapping, but is essential for accurate quantification. With a typical reference index for the mouse or human transcriptome, I find it takes about 15sec per bootstrap. So expect this to add ~30 min to the mapping time for each sample." %}

@@ -76,7 +76,10 @@ ssh username@130.91.255.137
 | [bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml)            | sequence alignment                   | ```bowtie2```                                                                             |
 | [bwa](http://bio-bwa.sourceforge.net/)                                      | sequence alignment                   | ```bwa```                                                                                 |
 | [Star](https://github.com/alexdobin/STAR)                                   | sequence alignment                   | ```STAR``` (all caps)                                                                     |
+| [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)                                   | generates quality control reports for fastq files.                   | ```fastqc```                                                                     |
+| [FastQ Screen](https://www.bioinformatics.babraham.ac.uk/projects/fastq_screen/)                                   | screening fastq files against multiple reference genomes.                   | ```fastq_screen```                                                                     |
 | [kallisto](https://pachterlab.github.io/kallisto/)                          | mapping reads to transcripts         | ```kallisto```                                                                            |
+| [MultiQC](http://multiqc.info)                                   | summarizes log files produced by other tools (*e.g.* STAR, kallisto, FastQC, etc).                   | ```multiqc```                                                                     |
 | [rsem](https://github.com/deweylab/RSEM)                                    | mapping reads to transcripts         | ```rsem-(function)```                                                                     |
 | [SPAdes](http://cab.spbu.ru/software/spades/)                                    | genome assembly from illumina short reads         | ```spades.py [options] -o <output_dir>```                                                                     |
 | [Mash](http://mash.readthedocs.io/en/latest/)                               | comparative genomics                 | ```mash```                                                                                |
@@ -92,5 +95,8 @@ ssh username@130.91.255.137
 | [diamond](https://github.com/bbuchfink/diamond)                           | Accelerated BLAST compatible local sequence aligner                     | ```diamond```                                |
 | [clust](https://github.com/BaselAbujamous/clust)                            | co-expression modules                | ```clust```                                                                               |
 | [MinPath](http://omics.informatics.indiana.edu/MinPath/)                            | biological pathway reconstructions using protein family predictions                | ```MinPath1.4.py```                                                                               |
+| [Sickle](https://github.com/najoshi/sickle)                            | quality trimming of raw sequences                | ```sickle se``` or ```sickle pe```                                                                               |
+| [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic)                            | quality trimming of raw sequences                | ```java -jar /usr/local/bin/trimmomatic-0.33.jar```                                                                               |
+| [HTSeq](https://htseq.readthedocs.io/en/release_0.10.0/)                            | great for summarizing alignments to get counts per gene/exons                | ```htseq-count``` or ```htseq-qa```                                                                               |
 {% include links.html %}
 
