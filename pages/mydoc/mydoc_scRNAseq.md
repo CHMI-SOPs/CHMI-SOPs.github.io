@@ -15,13 +15,23 @@ We use the [InDrop platform from 1CellBio](https://1cell-bio.com/indrop/) to iso
 
 ## What you'll need
 
-{% include important.html content="The following items are included in the InDrop kit and are stored at RT" %}
+{% include important.html content="The following items are included in the InDrop kit" %}
+
+* Barcoded Hydrogel Microspheres - 500,000 beads provided in 500ul (4C)
+* 1.3x RT Premix (-20C)
+* 2x Gel Concentration buffer (-20C)
+* Wash buffer (RT)
+* OptiPrep - density matching agent (RT)
+* Demulsifying agent - for breaking droplets (RT)
+* Separate assemblies for loading beads, oil, cells and RT mix
+
+{% include important.html content="The following items are __not included__ and may need to be purchased by the individual user" %}
 
 * SuperScript III enzyme
 * 1CellBio UV box (we provide this)
 * RNAase ZAP spray (recommended by the company...not essential)
 * 1.5ml LoBind EpTubes
-* Chilling blocks (stored at 4deg; used for keeping samples and beads chilled while on the InDrop machine).
+* Chilling block (stored at 4deg; used for keeping samples and beads chilled while on the InDrop machine).
 * Gel loading pipette tips
 
 ## A few important comments before you start
