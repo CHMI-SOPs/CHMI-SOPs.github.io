@@ -1,5 +1,5 @@
 ---
-title: CHMI linux cluster
+title: Bioinformatics Software
 tags: [bioinformatics]
 keywords:
 summary: "A summary of the bioinformatics software currently installed on our Linux cluster."
