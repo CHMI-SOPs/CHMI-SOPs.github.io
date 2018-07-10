@@ -114,6 +114,8 @@ We use the [InDrop platform from 1CellBio](https://1cell-bio.com/indrop/) to iso
 
 * Store microfluidic chip at RT, with the unused devices covered with the protective tape.  Be sure to use a pen to mark which device(s) has been used. 
 
+# Day 2
+
 ## Library prep
 
 
