@@ -19,7 +19,7 @@ Use of the cluster is free-of-charge to approved labs.  However, to protect the 
 ## RStudio server
 As much as possible, we prefer to use R for managing, analyzing and plotting data.  This preference is largely motivated by the excellent community support for R, the exceptional RStudio interface for interacting with R, and the growing number of bioinformatics tools within the [bioconductor](https://www.bioconductor.org/) suite of applications.
 
-Although we frequently use RStudio on our personal computers, it is also useful to have access to a server version of RStudio, particularly when your work requires more computing power.  Click [**here**](http://130.91.255.137:8787) to access our RStudio server directly in your web browser.  Login with the same credentials you use to access the linux machine.  Feel free to customize your RStudio server by installing any packages needed for your work.
+Although we frequently use RStudio on our personal computers, it is useful to have access to a server version of RStudio, particularly when your work requires more computing power.  Click [**here**](http://130.91.255.137:8787) to access our RStudio server directly in your web browser.  Login with the same credentials you use to access the linux machine.  Feel free to customize your RStudio server by installing any packages needed for your work.
 
 ## Creating and managing user accounts (CHMI only)
 
@@ -113,6 +113,7 @@ We have a lot of software already installed on the server that covers applicatio
 | [seqtk](https://github.com/lh3/seqtk)                                       | handling HTS file formats            | ```seqtk```                                                                               |
 | [Sickle](https://github.com/najoshi/sickle)                            | quality trimming of raw sequences                | ```sickle se``` or ```sickle pe```                                                                               |
 | [SPAdes](http://cab.spbu.ru/software/spades/)                                    | genome assembly from illumina short reads         | ```spades.py [options] -o <output_dir>```                                                                     |
+| [SQUID](https://github.com/Kingsford-Group/squid)                                    | find trascriptomic structural variants from RNAseq data         | ```squid```                                                                     |
 | [SRA toolkit](https://github.com/ncbi/sra-tools/wiki/Downloads)                                    | tools for accessing sequence data stored on SRA         | e.g. ```fasterq_dump```, and many more                                                                     |
 | [Star](https://github.com/alexdobin/STAR)                                   | sequence alignment                   | ```STAR``` (all caps)                                                                     |
 | [Sunbeam](https://github.com/eclarke/sunbeam/blob/master/Readme.md)         | metagenomics                         | ```source activate sunbeam```                                                             |

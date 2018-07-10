@@ -48,23 +48,18 @@ entries:
       url: /mydoc_lowInput_RNAseq.html
       output: web, pdf
       
-      subfolders:
-      - title: Data analysis
-        url: /mydoc_install_jekyll_on_windows.html
-        output: web, pdf
+    - title: Data analysis
+      url: /mydoc_install_jekyll_on_windows.html
+      output: web, pdf
         
-        subfolderitems:
-        - title: Compute resources
-          url: /mydoc_linux.html
-          output: web
+      subfolders:
+      - title: Kallisto and Sleuth
+        url: /mydoc_kallisto.html
+        output: web
 
-        - title: Kallisto and Sleuth
-          url: /mydoc_kallisto.html
-          output: web
-
-        - title: Submitting to GEO
-          url: /mydoc_RNAseq_depositToGEO.html
-          output: web
+      - title: Submitting to GEO
+        url: /mydoc_RNAseq_depositToGEO.html
+        output: web
 
   - title: Microbiology
     output: web, pdf
@@ -90,19 +85,18 @@ entries:
       url: /mydoc_mock.html
       output: web, pdf
 
-      subfolders:
-      - title: Data analysis
-        url: /mydoc_install_jekyll_on_windows.html
-        output: web, pdf
+    - title: Data analysis
+      url: /mydoc_install_jekyll_on_windows.html
+      output: web, pdf
         
-        subfolderitems:
-        - title: Compute resources
-          url: /mydoc_linux.html
-          output: web
+      subfoldes:
+      - title: QIIME2
+        url: /mydoc_qiime2.html
+        output: web
 
-        - title: QIIME2
-          url: /mydoc_qiime2.html
-          output: web
+  - title: Compute resources
+    url: /mydoc_linux.html
+    output: web
 
   - title: Cell culture
     output: web, pdf
