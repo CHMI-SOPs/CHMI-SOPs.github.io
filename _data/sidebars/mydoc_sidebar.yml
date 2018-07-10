@@ -47,6 +47,10 @@ entries:
     - title: Low input protocol
       url: /mydoc_lowInput_RNAseq.html
       output: web, pdf
+
+    - title: Single cell sequencing
+      url: /mydoc_scRNAseq.html
+      output: web, pdf
       
     - title: Data analysis
       url: /mydoc_install_jekyll_on_windows.html
@@ -95,8 +99,20 @@ entries:
         output: web
 
   - title: Compute resources
-    url: /mydoc_linux.html
     output: web
+
+    folderitems:
+    - title: Linux cluster
+      url: /mydoc_linux.html
+      output: web, pdf
+
+    - title: Available software
+      url: /mydoc_software.html
+      output: web, pdf
+
+    - title: R Studio Server
+      url: /mydoc_RStudio.html
+      output: web, pdf
 
   - title: Cell culture
     output: web, pdf
