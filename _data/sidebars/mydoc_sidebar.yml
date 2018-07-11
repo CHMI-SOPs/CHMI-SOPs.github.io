@@ -53,6 +53,7 @@ entries:
       output: web, pdf
       
     - title: Data analysis
+      url: /mydoc_install_jekyll_on_windows.html
       output: web, pdf
         
       subfolders:
@@ -89,6 +90,7 @@ entries:
       output: web, pdf
 
     - title: Data analysis
+      url: /mydoc_install_jekyll_on_windows.html
       output: web, pdf
         
       subfolders:

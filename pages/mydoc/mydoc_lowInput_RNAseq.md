@@ -57,7 +57,10 @@ folder: mydoc
 ### OPTION B: staring with purified RNA
 
 * If you have 1000's or 10's of thousands of cells, it probably makes sense to isolate RNA first and then use the same amount of total RNA for the cDNA reaction.  We recommend using a kit specifically designed for efficient recovery of RNA from low numbers of cells, and have had success with the [ARCTURUS PicoPure RNA isolation kit](https://www.thermofisher.com/order/catalog/product/KIT0204) and the [Qiagen RNeasy micro kit](https://www.qiagen.com/us/shop/sample-technologies/rna/total-rna/rneasy-micro-kit/#orderinginformation)
-* follow the protocol included with either of the kits above for RNA isolation 
+
+* If using the Qiagen kit, sort directly into Buffer RLT and follow the protocol included with the kit.  
+
+* Store RNA at -80C until ready for library prep.
 
 ## Day 2: cDNA and library prep
 
