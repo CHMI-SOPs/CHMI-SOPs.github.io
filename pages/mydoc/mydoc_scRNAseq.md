@@ -11,7 +11,7 @@ folder: mydoc
 
 ## Documentation
 
-We use the [InDrop platform from 1CellBio](https://1cell-bio.com/indrop/) to isolate and barcode single cells.  This technology was initialy described in [this Cell paper]().  The steps on this page are derived from 1CellBio's [protocol for encapsulating single cells](https://1cell-bio.com/wp-content/uploads/2018/05/inDrop-Single-Cell-Encapsulation-and-Rever-se-Transcription-Protocol-Version-2.2-.pdf)
+We use the [InDrop platform from 1CellBio](https://1cell-bio.com/indrop/) to isolate and barcode single cells.  This technology was initialy described in [this 2015 Cell paper](https://www.cell.com/cell/abstract/S0092-8674(15)00500-0).  The steps on this page are derived from 1CellBio's [protocol for encapsulating single cells](https://1cell-bio.com/wp-content/uploads/2018/05/inDrop-Single-Cell-Encapsulation-and-Rever-se-Transcription-Protocol-Version-2.2-.pdf)
 
 ## What you'll need
 
@@ -25,16 +25,25 @@ We use the [InDrop platform from 1CellBio](https://1cell-bio.com/indrop/) to iso
 * Demulsifying agent - for breaking droplets (RT)
 * Separate assemblies for loading beads, oil, cells and RT mix
 
-{% include important.html content="The following items are __not included__ and may need to be purchased by the individual user" %}
+{% include important.html content="The following items are __not included__ and may need to be purchased by the individual user."%}
 
-* SuperScript III enzyme
+* SuperScript III enzyme (10000U)
 * 1CellBio UV box (we provide this)
 * RNAase ZAP spray (recommended by the company...not essential)
 * 1.5ml LoBind EpTubes
-* Chilling block (stored at 4deg; used for keeping samples and beads chilled while on the InDrop machine).
-* Gel loading pipette tips
+* Chilling block (stored at 4; used for keeping samples and beads chilled while on the InDrop machine).
+* Gel loading pipette tips (useful for carefully drawing off maximum amount of supernatant on bead pellet or bead/oil emulsion)
 
 ## A few important comments before you start
+
+1. The bead mix for the InDrop system has about 150,000 unique barcodes for tagging _individual cells_.  If you collect 3000 cells or less, you have minimal risk of 'barcode collision' - that is, having two different cells that were tagged with the same barcode, thus making them indistinguishable. 
+
+2. You can encapsulate as many cells as you like, but you must split up your final bead emulsion into pools of ~3000 cells.  This is ideally done at the time of encapulation, simply by collecting into a new tube for each set of 3000 cells from the same sample.  However, it can also be done during 1st strand cDNA reaction.  Either way, these _separate pools_ will be tagged with a unique illumina index.  In the analysis step, you can merge pools from the same sample.
+
+3. Each _molecule_ is tagged with a Unique Molecular Identifier (UMI), which is used to count individual mRNAs in you experiment.  You can read more about UMIs in this [Nature Methods paper](https://www.nature.com/articles/nmeth.1778).
+
+4. The InDrop protocol uses a lot of Superscript III.  We typically order about 10,000U of the enzyme, and find that this is only enough to process about 6 samples.
+
 
 ## Instrument set-up
 
@@ -88,23 +97,31 @@ We use the [InDrop platform from 1CellBio](https://1cell-bio.com/indrop/) to iso
 
 * With beads loaded onto the InDrop, you are now ready to prepare your cells.
 
-* Resuspend cells at 80-100K/ml in cold PBS supplemented with 18% OptiPrep (this is a density matching gradient; included in the kit from 1CellBio).  You will only need < 1ml final volume of cells at this concentration.
+* Resuspend cells at 100K/ml in cold PBS. You will only need < 1ml final volume of cells at this concentration.
 
 * Prepare the calculated amount of RT/Lysis mixture. Click on the “?” in the Thor software to see the breakdown of the RT/Lysis mixture will be given.  Prepare 10% extra volume for RT mix, and add excess cell volume as well.  This will prevent air from being drawn up into the lines during loading.
 
+* Immediately before you begin the collection add OptiPrep, a density matching gradient included in the kit from 1CellBio, to your cell suspension to get a final concentration of 18% OptiPrep.  
+
+{% include note.html content="Addition of OptiPrep is critical to prevent your cells from settling while in the device. However, the effects of OptiPrep on various cell types has not been well tested.  You should only add this reagent immediately prior to loading your cells in order minimize effects on cell viability or transcription." %}
+
 * Collect droplets into a 1.5ml LoBind tube containing 200ul mineral oil.
+
+* If you plan to collect more than 3000 cells from a sample, switch tubes during the collection.  
+
+* It's a good idea to collect two 10sec high-speed videos: 1) of your cells coming onto the device...this provides useful information about cell size, clumping, etc.  And 2) your encapsulation...so you can appreciate droplets with only beads, beads and cells, multiple beads, etc.  All movies are saved in folders labeled by date, under Documents -> Thor videos, on the laptop attached to the Indrop system.  Movies can be viewed and edited in [ImageJ](https://imagej.nih.gov/ij/).
 
 ## In-droplet 1st strand cDNA reaction
 
-* Immediately following droplet collection, place the 1.5ml LoBind tube containing droplets into a the 1CellBio UV box for 10 sec.  This cleaves the oligos off the bead, allowing you to carry out a cDNA reaction in solution.
+* Immediately following droplet collection, place the 1.5ml LoBind tube(s) containing droplets into a the 1CellBio UV box for 10 sec.  This cleaves the oligos off the bead, allowing you to carry out a cDNA reaction in solution.
 
-* Immediately incubate tube in a heatblock at 50degC for 2hr.  This is your 1st strand cDNA reaction.
+* Immediately incubate tube in a heatblock at 50C for 2hr.  This is your 1st strand cDNA reaction.
 
-* Incubate at 70degC for 15min to heat kill the reaction
+* Incubate at 70C for 15min to heat kill the reaction
 
 * Use a gel loading pipette tip to remove as much of the mineral oil (clear) on  top of the bead emulsion layer (white).  Avoid removing any of the bead emulsion, since each droplet contains a cell.  Under the bead emulsion is residual droplet oil, which you can ignore.  
 
-{% include important.html content="At this point, if you had collected > 3000 cells, you can divide your emulsion into equal parts for downstream steps.  For example, if you collected 9000 cells, divide into 3 equal parts.  35ul of emulsion typically contains about 1000 barcoded cells." %}
+{% include important.html content="At this point, if you had collected > 3000 cells in the same tube, you can divide your emulsion into equal parts for downstream steps.  For example, if you collected 9000 cells, divide into 3 equal parts.  35ul of emulsion typically contains about 1000 barcoded cells." %}
 
 * Break up droplets by adding an equal volume of demulsifier (1CellBio kit) to your tubes (just eyeball the volume of bead emulsion in the tube and add equal vol of demulsifier).
 
