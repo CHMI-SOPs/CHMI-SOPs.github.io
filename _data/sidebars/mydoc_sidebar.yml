@@ -51,19 +51,19 @@ entries:
     - title: Single cell sequencing
       url: /mydoc_scRNAseq.html
       output: web, pdf
-      
-    - title: Data analysis
-      url: /mydoc_install_jekyll_on_windows.html
-      output: web, pdf
         
       subfolders:
-      - title: Kallisto and Sleuth
-        url: /mydoc_kallisto.html
+      - title: Data analysis
         output: web
 
-      - title: Submitting to GEO
-        url: /mydoc_RNAseq_depositToGEO.html
-        output: web
+        subfolderitems:
+        - title: Kallisto and Sleuth
+          url: /mydoc_kallisto.html
+          output: web, pdf
+
+        - title: Submitting to GEO
+          url: /mydoc_RNAseq_depositToGEO.html
+          output: web, pdf
 
   - title: Microbiology
     output: web, pdf
@@ -89,14 +89,14 @@ entries:
       url: /mydoc_mock.html
       output: web, pdf
 
-    - title: Data analysis
-      url: /mydoc_install_jekyll_on_windows.html
-      output: web, pdf
-        
       subfolders:
-      - title: QIIME2
-        url: /mydoc_qiime2.html
-        output: web
+      - title: Data analysis
+        output: web, pdf
+        
+        subfolderitems:
+        - title: QIIME2
+          url: /mydoc_qiime2.html
+          output: web, pdf
 
   - title: Compute resources
     output: web
