@@ -27,18 +27,18 @@ We use the [InDrop platform from 1CellBio](https://1cell-bio.com/indrop/) to iso
 
 {% include important.html content="The following items are __not included__ and may need to be purchased by the individual user."%}
 
-* SuperScript III enzyme (10000U)
+* [SuperScript III enzyme](https://www.thermofisher.com/order/catalog/product/18080093) (10000U)
 * 1CellBio UV box (we provide this)
-* RNAase ZAP spray (recommended by the company...not essential)
+* [RNAaseZAP spray](https://www.thermofisher.com/order/catalog/product/AM9780) (recommended by the company...not essential)
 * 1.5ml LoBind EpTubes
-* Chilling block (stored at 4; used for keeping samples and beads chilled while on the InDrop machine).
+* [Corning CoolRack M6](https://us.vwr.com/store/product/18665238/coolrack-modules-corning).  Store at 4C and use for keeping samples and beads chilled while on the InDrop machine.  The small footprint of this cooling rack lets you set directly on the stage of the InDrop microscope.
 * Gel loading pipette tips (useful for carefully drawing off maximum amount of supernatant on bead pellet or bead/oil emulsion)
 
 ## A few important comments before you start
 
 1. The bead mix for the InDrop system has about 150,000 unique barcodes for tagging _individual cells_.  If you collect 3000 cells or less, you have minimal risk of 'barcode collision' - that is, having two different cells that were tagged with the same barcode, thus making them indistinguishable. 
 
-2. You can encapsulate as many cells as you like, but you must split up your final bead emulsion into pools of ~3000 cells.  This is ideally done at the time of encapulation, simply by collecting into a new tube for each set of 3000 cells from the same sample.  However, it can also be done during 1st strand cDNA reaction.  Either way, these _separate pools_ will be tagged with a unique illumina index.  In the analysis step, you can merge pools from the same sample.
+2. You can encapsulate as many cells as you like, but you must split up your final bead emulsion into pools of ~3000 cells to prevent barcode collision.  This is ideally done at the time of encapulation, simply by collecting into a new tube for each set of 3000 cells collected from the same sample.  However, it can also be done during 1st strand cDNA reaction.  Either way, these _separate pools_ will be tagged with a unique illumina index.  In the analysis step, you can merge pools from the same sample.
 
 3. Each _molecule_ is tagged with a Unique Molecular Identifier (UMI), which is used to count individual mRNAs in you experiment.  You can read more about UMIs in this [Nature Methods paper](https://www.nature.com/articles/nmeth.1778).
 
@@ -47,15 +47,15 @@ We use the [InDrop platform from 1CellBio](https://1cell-bio.com/indrop/) to iso
 
 ## Instrument set-up
 
-* Log into the laptop provided by 1CellBio – the login password is “inDrop” – and Click desktop icon labeled “Thor”. This opens the software that controls the instrument and implements the inDrop process. 
+* Log into the laptop provided by 1CellBio – the login password is “inDrop” – and Click desktop icon labeled “Thor”. This opens the software that controls the instrument and implements the InDrop process. 
 
 * Remove the syringe and loading assembly from the 'beads' package. This syringe is shipped pre-filled with hydraulic fluid specific to the loading the hydrogel beads.  Remove cap on syringe, attach tubing and manually expel syringe volume until it is near the end of the tubing.  Secure assembly into the appropriately labeleld automatic pump on the InDrop.
 
-* Repeat the above step for each syringe assembly
+* Repeat the above step for eachof the four syringe assemblies.
 
 * Syringes can remain on the machine for 2 weeks and can be used for multiple experiments
 
-* On the first tab of Thor software, click “Set Up”.  Input the total number of cells you want encapsulate, the concentration of the cell solution, and the desired Bead-to-cell ratio.  Pressing "calculate" will populate the boxes below with the amount, in microliters, of reagents needed to be prepped. Clicking on the “?” gives the recipe of the RT/Lysis Mixture to be made.
+* On the first tab of Thor software, click “Set Up”.  Input the total number of cells you want encapsulate, the concentration of your cell solution, and the desired Bead-to-cell ratio.  Clicking on the "calculate" button will populate the boxes below with the volume, in microliters, of each reagent that needs to be prepared. Clicking on the “?” gives the recipe of the RT/Lysis Mixture to be made.
 
 * Prepare microchip devices by following the [Chip Silanizing protocol](https://1cell-bio.com/wp-content/uploads/2017/10/Silanization-Protocol-v4.pdf).  Silanization is only good for a few hours, so if you use 1 device on the chip, you will need to repeat the silanization protocol when you use the other devices on the chip.
 
