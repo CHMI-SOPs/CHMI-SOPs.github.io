@@ -112,6 +112,12 @@ Silanization is only good for a few hours.
 
 * It's a good idea to collect two 10sec high-speed videos: 1) of your cells coming onto the device...this provides useful information about cell size, clumping, etc.  And 2) your encapsulation...so you can appreciate droplets with only beads, beads and cells, multiple beads, etc.  All movies are saved in folders labeled by date, under Documents -> Thor videos, on the laptop attached to the Indrop system.  Movies can be viewed and edited in [ImageJ](https://imagej.nih.gov/ij/).
 
+* your pre-RT bead emulsion should rememble the one in the picture below
+
+<img src="images/PreRT_emulsion.png"
+     alt="test"
+     style="float: center;" />
+
 ## In-droplet 1st strand cDNA reaction
 
 * Immediately following droplet collection, place the 1.5ml LoBind tube(s) containing droplets into a the 1CellBio UV box for 10 sec.  This cleaves the oligos off the bead, allowing you to carry out a cDNA reaction in solution.
@@ -120,13 +126,23 @@ Silanization is only good for a few hours.
 
 * Incubate at 70C for 15min to heat kill the reaction
 
+* Your post-RT bead emulsion should resemble the one in the picture below
+
+<img src="images/PostRT_emulsion.png"
+     alt="test"
+     style="float: center;" />
+
 * Use a gel loading pipette tip to remove as much of the mineral oil (clear) on  top of the bead emulsion layer (white).  Avoid removing any of the bead emulsion, since each droplet contains a cell.  Under the bead emulsion is residual droplet oil, which you can ignore.  
 
 {% include important.html content="At this point, if you had collected > 3000 cells in the same tube, you can divide your emulsion into equal parts for downstream steps.  For example, if you collected 9000 cells, divide into 3 equal parts.  35ul of emulsion typically contains about 1000 barcoded cells." %}
 
 * Break up droplets by adding an equal volume of demulsifier (1CellBio kit) to your tubes (just eyeball the volume of bead emulsion in the tube and add equal vol of demulsifier).
 
-* Vortex for 5 seconds and spin at 1000xg for 1min.  Your sample should now appear clear.  If not, repeat the demulsifer step.
+* Vortex for 5 seconds and spin at 1000xg for 1min.  Your sample should now appear clear as shown in the image below.  If not, repeat the demulsifer step.
+
+<img src="images/broken_emulsion.png"
+     alt="test"
+     style="float: center;" />
 
 * Your sample can now be stored at -80C for up to 3 months.  
 
