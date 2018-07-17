@@ -126,13 +126,13 @@ Silanization is only good for a few hours.
 
 * Incubate at 70C for 15min to heat kill the reaction
 
-* Your post-RT bead emulsion should resemble the one in the picture below
+* Use a gel loading pipette tip to remove as much of the mineral oil (clear) on  top of the bead emulsion layer (white).  Avoid removing any of the bead emulsion, since each droplet contains a cell.  Under the bead emulsion is residual droplet oil, which you can ignore.  
+
+* After removing the mineral oil, your post-RT bead emulsion should resemble the one in the picture below
 
 <img src="images/PostRT_emulsion.png"
      alt="test"
      style="float: center;" />
-
-* Use a gel loading pipette tip to remove as much of the mineral oil (clear) on  top of the bead emulsion layer (white).  Avoid removing any of the bead emulsion, since each droplet contains a cell.  Under the bead emulsion is residual droplet oil, which you can ignore.  
 
 {% include important.html content="At this point, if you had collected > 3000 cells in the same tube, you can divide your emulsion into equal parts for downstream steps.  For example, if you collected 9000 cells, divide into 3 equal parts.  35ul of emulsion typically contains about 1000 barcoded cells." %}
 
