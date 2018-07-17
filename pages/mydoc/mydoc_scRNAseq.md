@@ -57,7 +57,8 @@ We use the [InDrop platform from 1CellBio](https://1cell-bio.com/indrop/) to iso
 
 * On the first tab of Thor software, click “Set Up”.  Input the total number of cells you want encapsulate, the concentration of your cell solution, and the desired Bead-to-cell ratio.  Clicking on the "calculate" button will populate the boxes below with the volume, in microliters, of each reagent that needs to be prepared. Clicking on the “?” gives the recipe of the RT/Lysis Mixture to be made.
 
-* Prepare microchip devices by following the [Chip Silanizing protocol](https://1cell-bio.com/wp-content/uploads/2017/10/Silanization-Protocol-v4.pdf).  Silanization is only good for a few hours, so if you use 1 device on the chip, you will need to repeat the silanization protocol when you use the other devices on the chip.
+* Prepare microchip devices by following the [Chip Silanizing protocol](https://1cell-bio.com/wp-content/uploads/2017/10/Silanization-Protocol-v4.pdf).  Carry out the silanization as close as possible to the encapsulation.  If something does go wrong with one device, you do not have to repeat the whole process. Just pick up the microfluidic connectors and move to the next silanized device.
+Silanization is only good for a few hours.
 
 * Click "next" on the Thor software to move forward to bead preparation
 
@@ -67,7 +68,7 @@ We use the [InDrop platform from 1CellBio](https://1cell-bio.com/indrop/) to iso
 
 {% include important.html content="The beads are very porous, particularly when they are resuspended in wash buffer, which makes them hard to see even when pelleted.  If you're worried about losing beads during washing, be sure to save your supernatants." %}
 
-* Concentrate beads in the stock, 1.5 mL tube by spinning at 5000 g for 2 min in a 1.5ml LoBind Ependorf tube.
+* Concentrate beads in the stock, 1.5 mL tube by spinning at 5000xg for 2 min in a 1.5ml LoBind Ependorf tube.
 
 * If you want to prep all the beads in the kit (enough for encapsulating about 30,000 cells).  Reach down into the pelleted beads with your pipet tip and draw up 250 ul of the pellet (should be almost all of it), leaving behind the supe (storage buffer).  
 
