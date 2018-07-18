@@ -126,9 +126,23 @@ entries:
     output: web, pdf
 
     folderitems:
-    - title: Biomeme portable QPCR
-      url: /mydoc_biomeme.html
-      output: web, pdf
+      subfolders:
+      - title: Biomeme portable QPCR
+        url: /mydoc_biomeme.html
+        output: web, pdf
+ 
+        subfolderitems:
+        - title: Avian
+          url: /mydoc_biomeme_avian.html
+          output: web, pdf
+
+        - title: Human
+          url: /mydoc_biomeme_human.html
+          output: web, pdf
+
+
+      
+  
 
 
 
