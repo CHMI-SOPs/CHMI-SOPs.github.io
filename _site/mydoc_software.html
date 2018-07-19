@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A summary of the bioinformatics software currently installed on our Linux cluster.">
+<meta name="keywords" content="bioinformatics,  ">
+<title>Bioinformatics Software | CHMI services</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<link rel="stylesheet" href="css/lavish-bootstrap.css">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Center for Host-Microbial Interactions</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:beiting@upenn.edu?subject=CHMI services feedback&body=I have some feedback about the Bioinformatics Software page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Bioinformatics Software">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+    <div class="col-lg-12">&nbsp;</div>
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+
+
+
+
+
+
+
+
+
+
+
+<ul id="mysidebar" class="nav">
+    <li class="sidebarTitle">CHMI services </li>
+    
+    
+    
+        
+    
+    <li>
+        <a href="#">Overview</a>
+        <ul>
+            
+            
+            
+            <li><a href="index.html">Welcome</a></li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">RNAseq</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_RNAseq_FAQs.html">RNAseq FAQs</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_TruSeq.html">mRNA library prep</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_total_TruSeq.html">Total transcriptome library prep</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_lowInput_RNAseq.html">Low input protocol</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_scRNAseq.html">Single cell sequencing</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Data analysis</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="mydoc_kallisto.html">Kallisto and Sleuth</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_RNAseq_depositToGEO.html">Submitting to GEO</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Microbiology</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_micro_FAQs.html">Microbiology FAQs</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_16S.html">16S rRNA gene sequencing</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_NexteraXT.html">Shotgun metagenomics</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_16S_Sanger.html">Sanger sequencing of 16S</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_mock.html">Culture collection</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Data analysis</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="mydoc_qiime2.html">QIIME2</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Compute resources</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_linux.html">Linux cluster</a></li>
+            
+            
+            
+            
+            
+            
+            <li class="active"><a href="mydoc_software.html">Available software</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_RStudio.html">R Studio Server</a></li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Cell culture</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_3Dculture.html">3D intestinal cultures</a></li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">In the field</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_nanopore.html">Oxford Nanopore</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Biomeme portable QPCR</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="mydoc_biomeme_avian.html">Avian</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_biomeme_human.html">Human</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+        
+        <!-- if you aren't using the accordion, uncomment this block:
+           <p class="external">
+               <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+           </p>
+           -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">Bioinformatics Software</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+    <div class="summary">A summary of the bioinformatics software currently installed on our Linux cluster.</div>
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+    <a target="_blank" href="https://github.com/CHMI-SOPs/CHMI-SOPs.github.io/tree/master/pages/mydoc/mydoc_software.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+    
+
+  <h2 id="available-software">Available software</h2>
+<p>We have a lot of software already installed on the server that covers applications ranging from QC analysis and preprocessing of raw sequence data, transcriptome analysis from RNAseq data, 16S and shotgun metagenomics pipelines, WGS tools, and more.  If you have an account on our cluster, then you already have access to all of the software below, so get started!</p>
+
+<p>If you’re looking for a piece of software and don’t find it below, just reach out to Dan Beiting to inquire about getting it installed.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>software</th>
+      <th>category</th>
+      <th>how to run</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/merenlab/anvio">anvi’o</a></td>
+      <td>metagenomics, visualization</td>
+      <td><code class="highlighter-rouge">source activate anvio4</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://samtools.github.io/bcftools/bcftools.html">bcftools</a></td>
+      <td>SNP/variant discovery and genotyping</td>
+      <td><code class="highlighter-rouge">bcftools</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://support.illumina.com/downloads/bcl2fastq-conversion-software-v2-20.html">bcl2fastq2</a></td>
+      <td>convert bcf files produced by illumina sequencers to fastq</td>
+      <td><code class="highlighter-rouge">bcf2fastq</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi">blast</a></td>
+      <td>sequence search</td>
+      <td>option include <code class="highlighter-rouge">blastn</code>, <code class="highlighter-rouge">blastp</code>, or <code class="highlighter-rouge">blastx</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://bowtie-bio.sourceforge.net/bowtie2/index.shtml">bowtie2</a></td>
+      <td>sequence alignment</td>
+      <td><code class="highlighter-rouge">bowtie2</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://bio-bwa.sourceforge.net/">bwa</a></td>
+      <td>sequence alignment</td>
+      <td><code class="highlighter-rouge">bwa</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://circos.ca/">Circos</a></td>
+      <td>general visualization</td>
+      <td><code class="highlighter-rouge">circos</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/BaselAbujamous/clust">clust</a></td>
+      <td>co-expression modules</td>
+      <td><code class="highlighter-rouge">clust</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://www.cytoscape.org/">Cytoscape</a></td>
+      <td>network analysis</td>
+      <td>navigate to /home/shared/softwares/Cytoscape_v3.5.1 folder.  Double click to open program</td>
+    </tr>
+    <tr>
+      <td><a href="https://deeptools.readthedocs.io/en/latest/">deeptools</a></td>
+      <td>analysis of HTS data</td>
+      <td><code class="highlighter-rouge">deeptools</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/bbuchfink/diamond">diamond</a></td>
+      <td>Accelerated BLAST compatible local sequence aligner</td>
+      <td><code class="highlighter-rouge">diamond</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/">FastQC</a></td>
+      <td>generates quality control reports for fastq files.</td>
+      <td><code class="highlighter-rouge">fastqc</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://www.bioinformatics.babraham.ac.uk/projects/fastq_screen/">FastQ Screen</a></td>
+      <td>screening fastq files against multiple reference genomes.</td>
+      <td><code class="highlighter-rouge">fastq_screen</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://software.broadinstitute.org/gatk/">genome analysis toolkit (gatk)</a></td>
+      <td>SNP/variant discovery and genotyping</td>
+      <td><code class="highlighter-rouge">gatk</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://bitbucket.org/nsegata/graphlan/wiki/Home">GraPhlAn</a></td>
+      <td>metagenomics, visualization</td>
+      <td><code class="highlighter-rouge">graphlan.py</code> or <code class="highlighter-rouge">graphlan_annotate.py</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://huttenhower.sph.harvard.edu/humann2">Humann2</a></td>
+      <td>metagenomics</td>
+      <td><code class="highlighter-rouge">humann2</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://htseq.readthedocs.io/en/release_0.10.0/">HTSeq</a></td>
+      <td>great for summarizing alignments to get counts per gene/exons</td>
+      <td><code class="highlighter-rouge">htseq-count</code> or <code class="highlighter-rouge">htseq-qa</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/christophertbrown/iRep">iRep</a></td>
+      <td>determines replication rates for bacteria from metagenomics</td>
+      <td><code class="highlighter-rouge">iRep</code> or <code class="highlighter-rouge">bPTR</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://pachterlab.github.io/kallisto/">Kallisto</a></td>
+      <td>mapping reads to transcripts</td>
+      <td><code class="highlighter-rouge">kallisto</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://bitbucket.org/biobakery/kneaddata/wiki/Home">KneadData</a></td>
+      <td>removes host or ‘contaminating’ reads from dataset</td>
+      <td><code class="highlighter-rouge">kneaddata</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://ccb.jhu.edu/software/kraken/">Kraken2</a></td>
+      <td>taxonomic classification system</td>
+      <td><code class="highlighter-rouge">kraken2</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://mash.readthedocs.io/en/latest/">Mash</a></td>
+      <td>comparative genomics</td>
+      <td><code class="highlighter-rouge">mash</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://bitbucket.org/biobakery/metaphlan2">MetaPhlAn</a></td>
+      <td>metagenomics</td>
+      <td><code class="highlighter-rouge">metaphlan2.py</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://omics.informatics.indiana.edu/MinPath/">MinPath</a></td>
+      <td>biological pathway reconstructions using protein family predictions</td>
+      <td><code class="highlighter-rouge">MinPath1.4.py</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://www.mothur.org/">Mothur</a></td>
+      <td>16S marker gene</td>
+      <td><code class="highlighter-rouge">mothur</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://multiqc.info">MultiQC</a></td>
+      <td>summarizes log files produced by other tools (<em>e.g.</em> STAR, kallisto, FastQC, etc).</td>
+      <td><code class="highlighter-rouge">multiqc</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://www.nextflow.io">Nextflow</a></td>
+      <td>workflow management</td>
+      <td><code class="highlighter-rouge">nextflow</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://broadinstitute.github.io/picard/">Picard tools</a></td>
+      <td>handling HTS file formats</td>
+      <td><code class="highlighter-rouge">java -jar /usr/local/bin/picard/build/libs/picard.jar</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/tseemann/prokka">Prokka</a></td>
+      <td>genome annotation for prokaryotes</td>
+      <td><code class="highlighter-rouge">prokka</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://qiime2.org/">QIIME2</a></td>
+      <td>16S marker gene</td>
+      <td><code class="highlighter-rouge">source activate qiime2</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/deweylab/RSEM">rsem</a></td>
+      <td>mapping reads to transcripts</td>
+      <td><code class="highlighter-rouge">rsem-(function)</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://samtools.sourceforge.net/">samtools</a></td>
+      <td>handling HTS file formats</td>
+      <td><code class="highlighter-rouge">samtools</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/lh3/seqtk">seqtk</a></td>
+      <td>handling HTS file formats</td>
+      <td><code class="highlighter-rouge">seqtk</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/najoshi/sickle">Sickle</a></td>
+      <td>quality trimming of raw sequences</td>
+      <td><code class="highlighter-rouge">sickle se</code> or <code class="highlighter-rouge">sickle pe</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://cab.spbu.ru/software/spades/">SPAdes</a></td>
+      <td>genome assembly from illumina short reads</td>
+      <td><code class="highlighter-rouge">spades.py [options] -o &lt;output_dir&gt;</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/Kingsford-Group/squid">SQUID</a></td>
+      <td>find trascriptomic structural variants from RNAseq data</td>
+      <td><code class="highlighter-rouge">squid</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/ncbi/sra-tools/wiki/Downloads">SRA toolkit</a></td>
+      <td>tools for accessing sequence data stored on SRA</td>
+      <td>e.g. <code class="highlighter-rouge">fasterq_dump</code>, and many more</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/alexdobin/STAR">Star</a></td>
+      <td>sequence alignment</td>
+      <td><code class="highlighter-rouge">STAR</code> (all caps)</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/eclarke/sunbeam/blob/master/Readme.md">Sunbeam</a></td>
+      <td>metagenomics</td>
+      <td><code class="highlighter-rouge">source activate sunbeam</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://www.usadellab.org/cms/?page=trimmomatic">Trimmomatic</a></td>
+      <td>quality trimming of raw sequences</td>
+      <td><code class="highlighter-rouge">java -jar /usr/local/bin/trimmomatic-0.33.jar</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/trinityrnaseq/trinityrnaseq/wiki">Trinity</a></td>
+      <td>de novo transcriptome assembly</td>
+      <td><code class="highlighter-rouge">Chrysalis</code> (uppercase ‘C’), <code class="highlighter-rouge">inchworm</code></td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+    <div class="tags">
+        
+        <b>Tags: </b>
+        
+        
+        
+        <a href="tag_bioinformatics.html" class="btn btn-default navbar-btn cursorNorm" role="button">bioinformatics</a>
+        
+        
+        
+    </div>
+
+
+
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'http-hostmicrobe-org'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2018 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
+ Site last generated: Jul 18, 2018 <br />
+<p><img src="images/CHMI_logo.png" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+    </div>
+
+</body>
+
+</html>

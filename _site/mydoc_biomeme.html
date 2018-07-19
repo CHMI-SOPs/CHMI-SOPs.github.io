@@ -228,15 +228,16 @@
             
             
             
+            
+            
+            
+            <li><a href="mydoc_scRNAseq.html">Single cell sequencing</a></li>
+            
+            
+            
             <li class="subfolders">
                 <a href="#">Data analysis</a>
                 <ul>
-                    
-                    
-                    
-                    <li><a href="mydoc_linux.html">Compute resources</a></li>
-                    
-                    
                     
                     
                     
@@ -305,18 +306,42 @@
                     
                     
                     
-                    <li><a href="mydoc_linux.html">Compute resources</a></li>
-                    
-                    
-                    
-                    
-                    
                     <li><a href="mydoc_qiime2.html">QIIME2</a></li>
                     
                     
                     
                 </ul>
             </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Compute resources</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_linux.html">Linux cluster</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_software.html">Available software</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_RStudio.html">R Studio Server</a></li>
             
             
             
@@ -348,7 +373,28 @@
             
             
             
-            <li class="active"><a href="mydoc_biomeme.html">Biomeme portable QPCR</a></li>
+            <li><a href="mydoc_nanopore.html">Oxford Nanopore</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Biomeme portable QPCR</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="mydoc_biomeme_avian.html">Avian</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_biomeme_human.html">Human</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
             
             
             
@@ -424,7 +470,7 @@ $('#toc').on('click', 'a', function() {
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The only difference between DNA and RNA protocols are the BLB buffer in the extraction kit, and the type of master mix you will use (LyoDNA versus LyoRNA).</div>
 
 <h2 id="devices">Devices</h2>
-<p>The hand-held QPCR device made by Biomeme, called the ‘Two3’, can accomodate three PCR tubes and can detect two colors in each tube: FAM and Cy5 (or ATTO647N, which is brighter than Cy5, but more costly to order).  Biomeme will soon be releasing the ‘three9’ which, as the name suggests, accomodates 9 tubes and three colors/tube: FAM, Cy5/ATTO647N and TexasRed.  ATTO647N is the brightest channel on the three9, so consider good designing the target you anticipate being present in the lowest concentration and/or least sensitive PCR to that channel. FAM is the next brightest, followed by TexasRedX. If you are designing a triplex assay for use with the three9 that includes a positive control, use TexasRedX for the positive control.</p>
+<p>The hand-held QPCR device made by Biomeme, called the ‘three9’, accomodates 9 tubes and three colors/tube: FAM, Cy5/ATTO647N and TexasRed.  ATTO647N is the brightest channel on the three9, so consider designing the target you anticipate being present in the lowest concentration and/or least sensitive PCR on that channel. FAM is the next brightest, followed by TexasRedX. If you are designing a triplex assay for use with the three9 that includes a positive control, use TexasRedX for the positive control.</p>
 
 <h2 id="preparing-mastermix">Preparing mastermix</h2>
 <p>Resuspend bulk lyophilized <a href="http://CHMI-sops.github.io/papers/LyoDNA.pdf">LyoDNA</a>, <a href="http://CHMI-sops.github.io/papers/LyoRNA.pdf">LyoRNA</a> or <a href="http://CHMI-sops.github.io/papers/LyoGreen.pdf">LyoGreen</a> master mix with 135 ul of PCR grade water + 18 ul of glycerol.  This is a 10x stock.  Addition of glyceral allows leftover mastermix to be frozen for reuse later.  LyoRNA master mix contains a reverse transcriptase for QPCR assays where the target is a RNA molecule.  Each resuspended vial contains enough mastermix for 60 reactions of 20ul/rxn.</p>
@@ -499,244 +545,19 @@ $('#toc').on('click', 'a', function() {
 <p><strong>Bold</strong> steps are repeated for 40 cycles total</p>
 
 <ul>
-  <li>Give your protocol a name and select ‘save’ in the upper right corner of the app</li>
-  <li>If you want to set-up a standard curve, select your protocol, scroll to the bottom, and select standard curve.</li>
+  <li>
+    <p>Give your protocol a name and select ‘save’ in the upper right corner of the app</p>
+  </li>
+  <li>
+    <p>If you want to set-up a standard curve, select your protocol, scroll to the bottom, and select standard curve.</p>
+  </li>
 </ul>
 
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> standard curves are specific to each device.  If you plan to run the same assay across multiple devices, you’ll have to run the standard curve on each device.</div>
 
 <ul>
-  <li>
-    <p>Currently, standards can only have three points.  Enter the values for your 3 point standard curve.  Since the Two3 device sees a red and green channel, you have to enter 3 standard values for each channel.  Enter zero or one for each point in the channel you’re not using.</p>
-  </li>
-  <li>
-    <p>To begin a run, go back to the main screen of the app and choose ‘start run’.  Choose your data folder, then your protocol, then select the run type (standard curve, qualitative, etc). Hit run and follow the on screen instructions to begin the run</p>
-  </li>
+  <li>To begin a run, go back to the main screen of the app and choose ‘start run’.  Choose your data folder, then your protocol, then select the run type (standard curve, qualitative, etc). Hit run and follow the on screen instructions to begin the run</li>
 </ul>
-
-<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> once you begin a run on the Biomeme Two3, be sure not to hit the home button on the iphone.  Doing so will immediately close the app and result in terminating the run.  We place tape over the home button with a ‘do not touch’ label.</div>
-
-<h2 id="avian-assays">Avian assays</h2>
-
-<h3 id="tracheal-swabs">Tracheal swabs</h3>
-<p>All avian assays begin with tracheal swabs collected in brain-heart infusion (BHI) media.  We typically have 11 swabs all stored in a single vial containing 5.5 ml of BHI media.  These swabs could be from multiple birds or from a single bird sampled multiple times, and this vial can be assayed fresh or after storage at -80C.  Here’s our procotol for rapid, 1 minute DNA extraction using Biomeme reagents:</p>
-
-<ol>
-  <li>thaw vial containing BHI media and swabs</li>
-  <li>take 100 ul aliquot of sample for DNA or RNA extraction (might be quite viscous due to mucous)</li>
-  <li>add 100 ul sample to 1 ml of Biomeme Lysis Buffer (BLB) (if you plan to assay for IBV, use BLB from RNA kit)</li>
-  <li>with a 1cc syringe affixed to a Biomeme extraction column, push the extraction sample mix up and down 10 times</li>
-  <li>after expelling the volume the 10th time, wash the column by drawing up 500 ul of Biomeme Protein Wash (BPW) 1 time, then expel again.</li>
-  <li>draw up 1 ml of Biomeme Wash Buffer (BWB) and expel volume</li>
-  <li>draw up 1 ml of Biomeme Drying Wash (BDW) and expel volume</li>
-  <li>remove and discard the 1cc syringe, and attach a new 50cc syringe to the same column.  Pump up and down with air vigorously to dry the column.</li>
-  <li>remove and discard the 50cc syringe.  Connect new 1 cc syringe to the column and draw up 125 ul of Biomeme Elution Buffer (BEB).</li>
-  <li>Expel the elution buffer into a final collection tube.  Typical elution volume is 50-70 ul.  We use 5ul of this DNA for any of the assays listed below, which means a single eluate is enough for at least 9-10 QPCR assays.</li>
-</ol>
-
-<h3 id="primers-and-probes">Primers and probes</h3>
-
-<h4 id="infectious-bronchitis-virus-ibv">Infectious Bronchitis Virus (IBV)</h4>
-
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> IBV is an RNA virus, so be sure to use the appropriate lysis buffer (BLB from RNA bulk extraction kit) and mastermix (LyoRNA).</div>
-
-<table>
-  <thead>
-    <tr>
-      <th>name</th>
-      <th>Sequence (5’ -&gt; 3’)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>fwd</td>
-      <td>GCT TTT GAG CCT AGC GTT</td>
-    </tr>
-    <tr>
-      <td>rev</td>
-      <td>GCC ATG TTG TCA CTG TCT ATT G</td>
-    </tr>
-    <tr>
-      <td>probe</td>
-      <td><em>FAM</em>-CAC CAC CAG AAC CTG TCA CCT C-<em>BHQ-1</em></td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="mycoplasma-gallisepticum-and-mycoplasma-synoviae-mgms"><em>Mycoplasma gallisepticum</em> and <em>Mycoplasma synoviae</em> (Mg/Ms)</h4>
-
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Mg and Ms targets are DNA, so be sure to use appropirate lysis buffer (BLB from DNA bulk extraction kit) and mastermix (LyoDNA).</div>
-
-<p>The primer and probe sequences below are from <a href="http://www.bioone.org/doi/10.1637/8469-091508-Reg.1?url_ver=Z39.88-2003&amp;rfr_id=ori:rid:crossref.org&amp;rfr_dat=cr_pub%3dpubmed">Raviv and Kleven, 2009</a></p>
-
-<table>
-  <thead>
-    <tr>
-      <th>name</th>
-      <th>Sequence (5’ -&gt; 3’)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Mg fwd</td>
-      <td>TTG GGT TTA GGG ATT GGGA TT</td>
-    </tr>
-    <tr>
-      <td>Mg rev</td>
-      <td>CCA AGGG ATT CAA CCA TCT T</td>
-    </tr>
-    <tr>
-      <td>Mg probe</td>
-      <td><em>5TexRd-XN</em>-TGA TGA TCC AAG AAC GTG AAG AAC ACC <em>BHQ-2</em></td>
-    </tr>
-    <tr>
-      <td>Ms fwd</td>
-      <td>CTA AAT ACA ATA GCC CAA GGC AA</td>
-    </tr>
-    <tr>
-      <td>Ms rev</td>
-      <td>CCT CCT TTC TTA CGG AGT ACA</td>
-    </tr>
-    <tr>
-      <td>Ms probe</td>
-      <td><em>FAM</em>-AGC GAT ACA CAA CCG CTT TTA GAA T-<em>BHQ-1</em></td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="cutaneous-leishmaniasis-assay">Cutaneous Leishmaniasis assay</h2>
-
-<h3 id="lesion-swab">Lesion swab</h3>
-<p>For each patient, two sterile swabs (provided by Biomeme) are held together and used to swab the inner border of lesion (encircled 20x).  This will be used for DNA targets (bacteria).  Repeat with two new swabs (20x), and use this second set of swabs for RNA targets (host genes).</p>
-
-<ol>
-  <li>Immerse swabs intended for DNA in 1ml of a 1:1 mix of BLB from DNA kit (0.5ml) and water (BEB; 0.5ml), twirl in media for 1 min, discard swabs.</li>
-  <li>Immerse swabs intended for RNA in 1ml of BLB from the RNA kit, twirl in media for 1min, discard swabs</li>
-  <li>Attach standard lab 1cc syringe to Biomeme filter tip. Pump lysate up/down 10x, expel volume</li>
-  <li>Immediately move to <strong>BPW</strong> wash (1ml), pump up/down 1x, expel volume</li>
-  <li>Immediately move to <strong>BWB</strong> wash (1ml), pump up/down 1x, expel volume</li>
-  <li>Immediately move to <strong>BDW</strong> wash (1ml), pump up/down 1x, expel volume</li>
-  <li>Pump air up/down repeatedly 10x, discard syringe but <strong>keep filter tip</strong></li>
-  <li>attach 25cc or 50cc syringe to the same filter tip.  Pump up and down with air vigorously to dry the column.</li>
-  <li>remove and discard the syringe.  Connect new Biomeme ‘slip-tip’ 1 cc syringe to the column and draw up 150 ul of Biomeme Elution Buffer (BEB).  Pump up/down 3x with BEB.</li>
-  <li>Expel the elution buffer into a final collection tube.  Typical elution volume is ~120ul.  We use 17ul of this DNA for any of the assays listed below, which means a single eluate is enough for at least 6 QPCR assays.</li>
-</ol>
-
-<h3 id="primers-and-probes-1">Primers and probes</h3>
-
-<h4 id="skin-resident-microbes">Skin-resident microbes</h4>
-<p>The primers and probes below are used for detection of <em>Staphylococcus aureus (Saur)</em>, <em>Streptococcus pyogenes (Spyo)</em> and <em>Leishmania braziliensis (Lbra)</em></p>
-
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> All of these targets are DNA, so be sure to use appropirate lysis buffer (BLB from DNA bulk extraction kit) and mastermix (LyoDNA).</div>
-
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> We prepare a standard curve for the <em>S. aureus</em> assay using genomic DNA provided by Biomeme.  Stock is ~100,000 <em>S. aureus</em> genomes per ul, and curve is 100000, 10000 and 1000 copies.  We prepare a similar standard curve from <em>L. braziliensis</em> promastigotes, with a stock that is also ~100,000 genome copies per ul.  When running a standard curve on the Two3 device, always put the tube containing the lowest amount of target in the center well.  This position is closest to the sensor, and therefore provides a bit more sensitivity.</div>
-
-<ul>
-  <li><em>Leishmania braziliensis</em> primer/probes are from <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3209110/">Weirather et al., 2011</a></li>
-  <li><em>Streptococcus pyogenes</em> primer/probes were adapted from CDC <a href="https://www.cdc.gov/streplab/protocols.html">here</a></li>
-  <li><em>Staphylococcus aureus</em> primers and probes were provided by Biomeme Inc.</li>
-</ul>
-
-<table>
-  <thead>
-    <tr>
-      <th>name</th>
-      <th>Sequence (5’ -&gt; 3’)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><em>Saur</em> fwd</td>
-      <td>provided by Biomeme</td>
-    </tr>
-    <tr>
-      <td><em>Saur</em> rev</td>
-      <td>provided by Biomeme</td>
-    </tr>
-    <tr>
-      <td><em>Saur</em> probe</td>
-      <td>provided by Biomeme</td>
-    </tr>
-    <tr>
-      <td><em>Spyo</em> fwd</td>
-      <td>GCA CTC GCT ACT ATT TCT TAC CTC AA</td>
-    </tr>
-    <tr>
-      <td><em>Spyo</em> rev</td>
-      <td>ATT ACT GGT TTC CAA GAC ATT GTG AC</td>
-    </tr>
-    <tr>
-      <td><em>Spyo</em> probe</td>
-      <td><em>/56-FAM/</em>CCG CAA CTC <em>/ZEN/</em> ATC AAG GAT TTC TGT TAC CA<em>/3IABkFQ/</em></td>
-    </tr>
-    <tr>
-      <td><em>Lbra</em> fwd</td>
-      <td>TGC TAT AAA ATC GTA CCA CCC GAC A</td>
-    </tr>
-    <tr>
-      <td><em>Lbra</em> rev</td>
-      <td>AAA TGG CAT ACA GAA ACC CCG TTC</td>
-    </tr>
-    <tr>
-      <td><em>Lbra</em> probe</td>
-      <td><em>/56-FAM/</em>GCC TCT GGG <em>/ZEN/</em> TAG GGG CGT TCT GCA A<em>/3IABkFQ/</em></td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="human-transcripts">Human transcripts</h4>
-<p>The primers and probes below are for the detection of host transcripts present in cellular material on recovered from the swab</p>
-
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> All of these targets are mRNAs, so be sure to use appropirate lysis buffer (BLB from RNA bulk extraction kit) and mastermix (LyoRNA).</div>
-
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The 18S assay is included as a positive extraction control.  The primers recognize an exon in the 18S gene, so there will be some signal from DNA in the reaction (the Biomeme RNA extraction isolates both RNA and DNA), however, given the large copy number for 18S transcripts, there should be much stronger signal for RNA.</div>
-
-<table>
-  <thead>
-    <tr>
-      <th>name</th>
-      <th>Sequence (5’ -&gt; 3’)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>hIL1B fwd</td>
-      <td>CAA AGG CGG CCA GGA TAT AA</td>
-    </tr>
-    <tr>
-      <td>hIL1B rev</td>
-      <td>CTA GGG ATT GAG TCC ACA TTC AG</td>
-    </tr>
-    <tr>
-      <td>hIL1B probe</td>
-      <td><em>/56-FAM/</em>AGA GCT GTA <em>/ZEN/</em> CCC AGA GAG TCC TGT<em>/3IABkFQ/</em></td>
-    </tr>
-    <tr>
-      <td>hGZMB fwd</td>
-      <td>GTA CCA TTG AGT TGT GCG TG</td>
-    </tr>
-    <tr>
-      <td>hGZMB rev</td>
-      <td>CAT GCC ATT GTT TCG TCC ATA G</td>
-    </tr>
-    <tr>
-      <td>hGZMB probe</td>
-      <td><em>/56-FAM/</em>CCT CCA GAG <em>/ZEN/</em> TCC CCC TTA AAG GAA GT<em>/3IABkFQ/</em></td>
-    </tr>
-    <tr>
-      <td>h18S (+ control) fwd</td>
-      <td>provided by Biomeme</td>
-    </tr>
-    <tr>
-      <td>h18S (+ control) rev</td>
-      <td>provided by Biomeme</td>
-    </tr>
-    <tr>
-      <td>h18S (+ control) probe</td>
-      <td>provided by Biomeme</td>
-    </tr>
-  </tbody>
-</table>
 
 
 
@@ -781,7 +602,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2018 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
- Site last generated: May 24, 2018 <br />
+ Site last generated: Jul 18, 2018 <br />
 <p><img src="images/CHMI_logo.png" alt="Company logo"/></p>
                 </div>
             </div>

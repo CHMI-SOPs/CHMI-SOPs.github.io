@@ -4,9 +4,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="This protocol walks you through preparing a library for RNAseq when your starting amount of RNA is less than ~75ng.  This is a useful protocol if you are wor...">
+<meta name="description" content="This protocol walks you through preparing a mRNA library for RNAseq when your starting amount of RNA is less than ~75ng.  This is a useful protocol if you ar...">
 <meta name="keywords" content="library_preptranscriptomics,  transcriptomics, library preparation">
-<title>RNAseq library prep for low input samples | CHMI services</title>
+<title>mRNA-seq library prep for low input samples | CHMI services</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -120,7 +120,7 @@
 
 
 
-  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:beiting@upenn.edu?subject=CHMI services feedback&body=I have some feedback about the RNAseq library prep for low input samples page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:beiting@upenn.edu?subject=CHMI services feedback&body=I have some feedback about the mRNA-seq library prep for low input samples page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
 
 </li>
 
@@ -138,7 +138,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="RNAseq library prep for low input samples">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="mRNA-seq library prep for low input samples">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -228,15 +228,16 @@
             
             
             
+            
+            
+            
+            <li><a href="mydoc_scRNAseq.html">Single cell sequencing</a></li>
+            
+            
+            
             <li class="subfolders">
                 <a href="#">Data analysis</a>
                 <ul>
-                    
-                    
-                    
-                    <li><a href="mydoc_linux.html">Compute resources</a></li>
-                    
-                    
                     
                     
                     
@@ -305,18 +306,42 @@
                     
                     
                     
-                    <li><a href="mydoc_linux.html">Compute resources</a></li>
-                    
-                    
-                    
-                    
-                    
                     <li><a href="mydoc_qiime2.html">QIIME2</a></li>
                     
                     
                     
                 </ul>
             </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Compute resources</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_linux.html">Linux cluster</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_software.html">Available software</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_RStudio.html">R Studio Server</a></li>
             
             
             
@@ -348,7 +373,28 @@
             
             
             
-            <li><a href="mydoc_biomeme.html">Biomeme portable QPCR</a></li>
+            <li><a href="mydoc_nanopore.html">Oxford Nanopore</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Biomeme portable QPCR</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="mydoc_biomeme_avian.html">Avian</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_biomeme_human.html">Human</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
             
             
             
@@ -375,7 +421,7 @@
         <!-- Content Column -->
         <div class="col-md-9" id="tg-sb-content">
             <div class="post-header">
-   <h1 class="post-title-main">RNAseq library prep for low input samples</h1>
+   <h1 class="post-title-main">mRNA-seq library prep for low input samples</h1>
 </div>
 
 
@@ -383,7 +429,7 @@
 <div class="post-content">
 
    
-    <div class="summary">This protocol walks you through preparing a library for RNAseq when your starting amount of RNA is less than ~75ng.  This is a useful protocol if you are working with sorted cells</div>
+    <div class="summary">This protocol walks you through preparing a mRNA library for RNAseq when your starting amount of RNA is less than ~75ng.  This is a useful protocol if you are working with sorted cells</div>
    
 
     
@@ -422,88 +468,51 @@ $('#toc').on('click', 'a', function() {
 
 <h2 id="documentation">Documentation</h2>
 
-<p><a href="http://www.clontech.com/US/Products/cDNA_Synthesis_and_Library_Construction/Next_Gen_Sequencing_Kits/Single_cell_RNA_Seq_Kits_for_mRNA_seq/ibcGetAttachment.jsp?cItemId=104008&amp;fileId=7349924&amp;sitex=10020:22372:US">Clontech SMART-Seq v4 Ultra Low Input RNA Kit</a>. This is an excellent kit for preparing cDNA very low amounts of RNA.  We have used this kit to prepare cDNA from &lt; 100 cells.</p>
+<p><a href="http://www.clontech.com/US/Products/cDNA_Synthesis_and_Library_Construction/Next_Gen_Sequencing_Kits/Single_cell_RNA_Seq_Kits_for_mRNA_seq/High-throughput_single-cell_mRNA-seq?sitex=10020:22372:US">Clontech ‘SMART Seq HT’ for High-throughput single-cell mRNA-seq</a>. This is an excellent kit for preparing cDNA very low amounts of RNA (as little as 1-100 cells).  This kit is analgous to the well-known Clontech SMART-v4 kit, but is a faster/abbreviated workflow which combines RT/PCR steps and is roughly 30% lower cost compared to SMART-V4.</p>
+
+<p>The protocol below uses the SMART Seq HT kit, however another option for cDNA generation when starting with low-input is the <a href="https://www.takarabio.com/products/next-generation-sequencing/rna-sequencing/pico-input-strand-specific-total-rna-seq-for-illumina?utm_source=marketo&amp;utm_medium=email&amp;utm_campaign=SG_SMARTer_Pico_Tech_Note&amp;utm_content=prodpg&amp;mkt_tok=3RkMMJWWfF9wsRogv6rOZKXonjHpfsX%2b4u8uT%2frn28M3109ad%2brmPBy%2b2YUGT9Q%2fcOedCQkZHblFnVoLTq2sVbYNr6wM">Clontech Pico v2 kit</a>.  This has a few important difference from the SMART Seq HT kit above.  First, it uses random hexamer priming, rather than polyT, to make cDNA.  This means that it works very well when your starting material is highly degraded (e.g. fixed cells or tissues).  The random priming also means that this kit amplifies cDNA from <em>all</em> transcripts, including highly abundant RNA molecules such as rRNAs.  We tend to use this kit if 1) investigators are working with highly degraded starting material, particularly FFPE tissues, or 2) if they really prefer to study total transcriptomes, rather than mRNAs.</p>
 
 <h2 id="what-youll-need">What you’ll need</h2>
 
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> The following items are included in the Clontech SMART-v4 kit and are stored at -20C</div>
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> The following items are included in the Clontech SMART-Seq HT kit and are stored at -20C</div>
 
 <ul>
   <li>10x Lysis buffer</li>
   <li>RNase inhibitor (40U/ul)</li>
   <li>SeqAmp DNA Polymerase</li>
-  <li>SeqAmp PCR Buffer</li>
-  <li>SMART-Seq v4 Oligonucleotide (48 µM)</li>
-  <li>3’ SMART-Seq CDS Primer II A (12 µM)</li>
-  <li>PCR Primer II A (12 µM)</li>
-  <li>5X Ultra Low First-Strand Buffer</li>
-  <li>SMARTScribe™ Reverse Transcriptase (100 U/µl)</li>
+  <li>One-step Buffer</li>
+  <li>SMART-Seq HT Oligonucleotide</li>
+  <li>3’ SMART-Seq CDS Primer II A</li>
+  <li>SMARTScribe Reverse Transcriptase (100 U/µl)</li>
   <li>Nuclease-Free Water</li>
   <li>Elution Buffer (10 mM Tris-Cl, pH 8.5)</li>
-  <li>10X AfaI Buffer</li>
-  <li>0.1% BSA</li>
-  <li>AfaI (10 U/µl)</li>
 </ul>
 
 <h2 id="a-few-important-comments-before-you-start">A few important comments before you start</h2>
 
 <ul>
-  <li>You’ll split this protocol into three days: day 1 will be your sort and cell lysis, day 2 will be RNA isolation and cDNA generation, day 3 will be Illumina NexteraXT library prep.</li>
+  <li>You’ll split this protocol into two days: day 1 will be your sort and cell lysis, day 2 will be RNA isolation and/or cDNA generation, and a modified NexteraXT library prep.</li>
   <li>Use only filter pipette tips and clean your area so it is free of RNases.</li>
-  <li>Certain steps, such as 1st-strand cDNA synthesis must be carried out in a PCR clean hood</li>
-  <li>Be sure to include the negative and positive controls that come with the kit.</li>
-  <li>this protocol uses 0.2ml PCR tubes, but if you’re working with many samples you may find it easier to use a 96-well plate</li>
+  <li>Certain steps, such as 1st-strand cDNA synthesis <em>must</em> be carried out in a PCR clean hood</li>
+  <li>Be sure to include the kit positive control and a water-only negative control with each experiment.</li>
+  <li>the SMART-Seq HT kit uses a 96-well plate for mixing reactions.  Do not use tubes.</li>
+  <li>Similar to other Clontech low-input kits, SMART-Seq HT uses a template switching method to produce abundant cDNA directly from as few as 1-100 cells or from 10pg-1ng of total RNA.</li>
+  <li>This protocol is <em>very</em> sensitive to variations in volume and other factors. Please make sure the pipettes are calibrated and avoid contamination.</li>
 </ul>
 
-<h2 id="comments-on-cdna-amplification">comments on cDNA amplification</h2>
+<h2 id="day-1-sample-preparation">Day 1: Sample preparation</h2>
 
-<p>The key part of this protocol is based on the use of template switching to boost to amplify you cDNA.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Input of total RNA</th>
-      <th>Input of cells</th>
-      <th>typical # of PCR cycles</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>10 ng</td>
-      <td>1,000</td>
-      <td>7-8</td>
-    </tr>
-    <tr>
-      <td>1 ng</td>
-      <td>100</td>
-      <td>10-11</td>
-    </tr>
-    <tr>
-      <td>100 pg</td>
-      <td>10</td>
-      <td>14-15</td>
-    </tr>
-    <tr>
-      <td>10 pg</td>
-      <td>1</td>
-      <td>17-18</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="day-1-rna-extraction">Day 1: RNA extraction</h2>
-
-<h3 id="option-a-sorting-cells">OPTION A: sorting cells</h3>
+<h3 id="option-a-starting-with-cells">OPTION A: starting with cells</h3>
 
 <ul>
-  <li>Prepare 10x reaction buffer by mixing 19 uL of 10x Lysis Buffer with 1 uL of RNase inhibitor.  This is enough for ~20 samples. Scale up as needed, but be sure to maintain 19:1 ratio of lysis buffer to RNase inhibitor</li>
+  <li>Prepare 10x reaction buffer from the SMART-Seq HT kit by mixing 19 uL of 10x Lysis Buffer with 1 uL of RNase inhibitor.  This is enough for ~20 samples. Scale up as needed, but be sure to maintain 19:1 ratio of lysis buffer to RNase inhibitor</li>
 </ul>
 
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The 10x lysis buffer contains detergent, so avoid creating bubbles when pipetting.</div>
 
 <ul>
   <li>
-    <p>Prepare 1x reaction buffer by mixing 9.5 uL nuclease-free water with 1 uL of 10x reaction buffer.  This enough to sort one sample, so be sure to scale up as needed.</p>
+    <p>Prepare 1x reaction buffer by mixing 9.5 uL nuclease-free water with 1 uL of 10x reaction buffer.  <em>This is enough to sort one sample</em>, so be sure to scale up as needed.</p>
   </li>
   <li>
     <p>Add 5ul of 1x reaction buffer to collection eppendorf tube and sort directly into this tube.</p>
@@ -512,49 +521,447 @@ $('#toc').on('click', 'a', function() {
     <p>Immediately after sample is sorted, add an additional 5.5 uL of 1x reaction buffer to tube.</p>
   </li>
   <li>
-    <p>Store at -80C until ready to begin cDNA synthesis.  You will go directly from cell lysate to cDNA with no intermediate RNA isolation step.</p>
+    <p>Store at -80C until ready to begin cDNA synthesis.  You can proceed directly from this cell lysate to cDNA preparation with no intermediate RNA isolation step.</p>
   </li>
 </ul>
 
-<h3 id="option-b-purified-rna">OPTION B: purified RNA</h3>
+<h3 id="option-b-staring-with-purified-rna">OPTION B: staring with purified RNA</h3>
 
 <ul>
-  <li>If you have 10’s of thousands of cells, it probably makes sense to isolate RNA first and then use the same amount of total RNA for the cDNA reaction.  We recommend using a kit specifically designed for efficient recovery of RNA from low numbers of cells, and have had success with the <a href="https://www.thermofisher.com/order/catalog/product/KIT0204">ARCTURUS PicoPure RNA isolation kit</a>.</li>
+  <li>
+    <p>If you have 1000’s or 10’s of thousands of cells, it probably makes sense to isolate RNA first and then use the same amount of total RNA for the cDNA reaction.  We recommend using a kit specifically designed for efficient recovery of RNA from low numbers of cells, and have had success with the <a href="https://www.thermofisher.com/order/catalog/product/KIT0204">ARCTURUS PicoPure RNA isolation kit</a> and the <a href="https://www.qiagen.com/us/shop/sample-technologies/rna/total-rna/rneasy-micro-kit/#orderinginformation">Qiagen RNeasy micro kit</a></p>
+  </li>
+  <li>
+    <p>If using the Qiagen kit, sort directly into Buffer RLT and follow the protocol included with the kit.</p>
+  </li>
+  <li>
+    <p>Store RNA at -80C until ready for library prep.</p>
+  </li>
 </ul>
 
-<h2 id="day-2-cdna-preparation">Day 2: cDNA preparation</h2>
+<h2 id="day-2-cdna-and-library-prep">Day 2: cDNA and library prep</h2>
 
-<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> The SMART-v4 is an extremely sensitive cDNA synthesis (that’s the whole point!), which means that it is imperative that you avoid even small amounts of contamination from environmental RNA.  Today’s work should be carried out in a PCR clean hood.</div>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> If perferred, this day could be split into two days, with cDNA generation on Day 2 and modified Nextera library prep on Day 3.</div>
+
+<h3 id="clontech-smart-seq-cdna-synthesis">Clontech SMART-Seq cDNA Synthesis</h3>
+<ul>
+  <li>
+    <p>Thaw One-step buffer at room temperature, thaw enzymes (SeqAmp DNA Polymerase and SMARTScribe Reverse Transcriptase) at room temperature then keep tubes on ice once thawed; thaw all other reagents from kit on ice.</p>
+  </li>
+  <li>
+    <p>Make sure you have measured the concentation of each of your samples using the Qubit device.  If you are starting with cells, you should have accurate cell counts.</p>
+  </li>
+  <li>
+    <p>If you did option A above, then you are good to go…no need to dilute your sample further.</p>
+  </li>
+  <li>
+    <p>If you did option B above, dilute your total RNA to 0.09 ng/uL.  This will allow you to add 10.5ul of RNA to the cDNA reaction, and not exceed 1ng.  If you don’t have enough starting material, you can adjust this number following the chart below</p>
+  </li>
+  <li>In your pre-PCR work station, add 10.5 uL of diluted RNA or cell lysate to each well to bring your input to just under 1ng. If using less than 10.5 uL of RNA, add nuclease-free water to qs to 10.5 uL. Keep plate on ice while working with samples.</li>
+  <li>Make stock of 10x Lysis Buffer (can be scaled up as needed, we make a stock of this and keep it in our -20C):</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Kit reagent</th>
+      <th>Volume per rxn (uL)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>10x Lysis Buffer</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <td>RNase Inhibitor</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
 
 <ul>
-  <li>Thaw the following items from the SMART-v4 kit
-    <ul>
-      <li>10x Lysis Buffer</li>
-      <li>RNase inhibitor</li>
-      <li>5X Ultra Low First Strand Buffer</li>
-      <li>SMARTSeq4 Oligonucleotide</li>
-      <li>3’ SMART-Seq CDS Primer (both primers labeled IIA) on ice.</li>
-    </ul>
+  <li>
+    <p>To each well containing 10.5uL of diluted RNA, add 1uL of 10x lysis buffer.  Pipette to mix.</p>
   </li>
   <li>
-    <p>Thaw your sorted samples or RNA on ice (depending on whether you did Option A or B above).</p>
+    <p>To each well, add 1 uL of 3’ SMART-Seq CDS Primer II A.  Mix gently by pipetting and centrifuge the plate.</p>
   </li>
   <li>
-    <p>If working with RNA, take 1-9.5 uL of your purified RNA (the kit recommends 10 ng or less), bring to 9.5 uL with water and add 1 uL of 10x reaction buffer.  If working with cells, transfer 10.5 ul of thawed lysate to new 0.2ml tube</p>
-  </li>
-  <li>
-    <p>To each tube of RNA or cell lysate, add 2 uL of 3’ SMART-Seq CDS Primer II A</p>
-  </li>
-  <li>
-    <p>Complete the 1st strand reaction by incubating the tubes at 72°C in a preheated, hot-lid thermal cycler for 3 minutes.</p>
-  </li>
-  <li>Prepare 1x reaction buffer as you did on Day 1
-    <ul>
-      <li>0.5 uL reaction buffer per well x 96 wells = ~ 50 uL</li>
-      <li>45.24 uL water + 4.75 uL 10x sorting buffer (90.5% water, 9.5% 10x sort buffer)</li>
-    </ul>
+    <p>Before denaturing your samples, prepare a master mix for the cDNA synthesis. Keep this on ice until ready to use.</p>
   </li>
 </ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Kit reagent</th>
+      <th>Volume per rxn (uL)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Nuclease-free water</td>
+      <td>0.7</td>
+    </tr>
+    <tr>
+      <td>One-Step buffer</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <td>SMART-Seq HT Oligonucleotide</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <td>RNase Inhibitor</td>
+      <td>0.5</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>
+    <p>Denature your samples by incubating the plate at 72°C in a preheated, hot-lid thermal cycler for 3 minutes.</p>
+  </li>
+  <li>
+    <p>Immediately after the 3 minutes, place the samples on ice for 2 minutes</p>
+  </li>
+  <li>
+    <p>While these samples are on ice, add the enzymes to your master mix from above at the following volumes:</p>
+  </li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Kit reagent</th>
+      <th>Volume per rxn (uL)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SeqAmp DNA Polymerase</td>
+      <td>0.3</td>
+    </tr>
+    <tr>
+      <td>SMARTScribe Reverse Transcriptase</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>
+    <p>Immediately after the samples are on ice for 2 minutes, pipette 12.5 uL of the master mix with enzymers into each sample and mix the contents by pipetting gently up and down 15 times. Seal plate and centrifuge.</p>
+  </li>
+  <li>
+    <p>Determine the number of PCR cycles needed based on your original input amount of cells or RNA</p>
+  </li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Input of total RNA (or amount of cells)</th>
+      <th>Typical number of PCR cycles</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1 ng (or about 100 cells)</td>
+      <td>10-11</td>
+    </tr>
+    <tr>
+      <td>100 pg (or about 10 cells)</td>
+      <td>14-15</td>
+    </tr>
+    <tr>
+      <td>10 pg (or about 1 cells)</td>
+      <td>17-18</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>Place samples in a heated-lid thermal cycler, preheated to 42°C and run the following program (<strong>bold</strong> denotes steps to be run for 10 to 18 cycles, depending on your input size, see the second table for the number of cycles.)</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Temp (C)</th>
+      <th>Time (min:sec)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>42</td>
+      <td>90:00</td>
+    </tr>
+    <tr>
+      <td>95</td>
+      <td>1:00</td>
+    </tr>
+    <tr>
+      <td><strong>98</strong></td>
+      <td><strong>0:10</strong></td>
+    </tr>
+    <tr>
+      <td><strong>65</strong></td>
+      <td><strong>0:30</strong></td>
+    </tr>
+    <tr>
+      <td><strong>68</strong></td>
+      <td><strong>3:00</strong></td>
+    </tr>
+    <tr>
+      <td>72</td>
+      <td>10:00</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>hold</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>While the CDNA reaction is running, take the AMPure beads, elution buffer (Clontech kit), and the reagents for the Tapestation, High sensitivity D5000 reagents, ladder, and screentape, out of cold storage to ensure these have equilibrated to room temperature before use.</li>
+</ul>
+
+<h3 id="cdna-clean-up">CDNA clean-up</h3>
+
+<ul>
+  <li>
+    <p>After the plate comes out of the thermal cycler, you have cDNA! Now we will go through a bead based clean-up.</p>
+  </li>
+  <li>
+    <p>Vortex AMPure beads for 2 mins to ensure the beads are mixed well just before use.</p>
+  </li>
+  <li>
+    <p>Add 25 uL of AMPure XP beads directly to PCR products. Mix well by pipetting up and down 20 times.</p>
+  </li>
+  <li>
+    <p>Incubate the bead-cDNA mixture at room temperature for 8 minutes to allow the cDNA to bind to the beads.</p>
+  </li>
+  <li>
+    <p>During the 8 minute incubation, prepare a master mix of 80% ethanol by mixing 100% ethanol with sterile water, you will need 400 uL per sample.</p>
+  </li>
+  <li>
+    <p>Place the samples on the magnetic speration device for ~ 5 minutes or longer, until the liquid appears completely clear and there are no beads left in the supernatant.</p>
+  </li>
+  <li>
+    <p>With the plate still on the magnetic stand, remove the supernatant from your samples without disrupting the beads; you should expect around 45 uL of supernatant. If you accidently pull up some beads with your supernatant, put it back into the well with the bead and mix thoroughly to resuspend the bead, then wait until the liquid is clear again to remove the supernatant.</p>
+  </li>
+</ul>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> The beads contain your cDNA so any beads expelled will cause you to lose part of your samples</div>
+
+<ul>
+  <li>
+    <p>Keep the plate on the magnetic stand and add 180 uL of your 80% ethanol mix to each well. Incubate for 30 seconds, then remove ethanol from well without disrupting the bead and expel.</p>
+  </li>
+  <li>
+    <p>Repeat the step above another time.</p>
+  </li>
+  <li>
+    <p>Let your samples sit for ~ 1 minute then go back into the wells with a P20 to remove any excess ethanol.</p>
+  </li>
+  <li>
+    <p>Incubate samples at room temperature for approximately 2 minutes until pellet is matte. The pellet should not be shiny or that is an indication there is ethanol still in your sample and this will reduce your recovery rate of cDNA. Try to avoid overdrying; if the pellet is cracked it will take a significantly longer time to rehydrate these beads.</p>
+  </li>
+  <li>
+    <p>Once the beads are dry, remove them from the magnetic stand and add 17 uL of Elution Buffer to your samples and pipette up and down until the beads are completely rehydrated. You will have to pipette up and down many times until the samples has no visible bead clumps in them.</p>
+  </li>
+  <li>
+    <p>Incubate at room temperature for 2 minutes.</p>
+  </li>
+  <li>
+    <p>Place stand back on the magnetic stand for around 1 minute or longer until the solution is completely clear.</p>
+  </li>
+</ul>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Your cDNA is in now eluted from the beads, so <strong>do not</strong> discard supernatant</div>
+
+<ul>
+  <li>
+    <p>Transfer the supernatant into a new 96 well plate.</p>
+  </li>
+  <li>
+    <p>Run the samples through the Agilent TapeStation High Sensitivity D5000 to check that cDNA was made and amplified.  Your profile should resemble the one shown below</p>
+  </li>
+</ul>
+
+<p><img src="images/Clontech_SMARTSeq_cDNA.png" alt="test" style="float: center;" /></p>
+
+<ul>
+  <li>
+    <p>Check the concentration of your samples using Qubit.</p>
+  </li>
+  <li>
+    <p>Store plate at -20C overnight or until proceeding to Day 2 protocol.</p>
+  </li>
+</ul>
+
+<h3 id="modified-nextera-xt-library-prep">Modified Nextera XT Library Prep</h3>
+
+<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> this is a modified Nextera XT prep. Do not follow the original Nextera XT protocol.</div>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> The optimal input for this protocol is 100-300 pg/uL.  The concentration needs to be under 1 ng/uL but we try to keep our samples in the range of 100-300 pg/uL.</div>
+
+<p>What you will need: 
+* Tagment DNA Buffer (hereinafter referred to as TD Buffer), -20C
+* Amplification Tagment Mix (hereinafter referred to as ATM), -20C
+* NT Buffer, Room temperature under hood
+* NPM, -20C
+* Appropriate Indexes (each sample needs a unique combination of Index 1 N7xx and Index 2 S5xx, -20C</p>
+
+<p>Nextera library prep</p>
+
+<ul>
+  <li>
+    <p>Dilute samples in a new plate labeled as “Diluted for sequencing” with Nuclease free water to be within the range indicated above.</p>
+  </li>
+  <li>
+    <p>Start a new plate labeled as “Library Prep”.</p>
+  </li>
+  <li>
+    <p>Add 2.5 uL of TD Buffer to each well.</p>
+  </li>
+  <li>
+    <p>Add 1.25 uL of ATM to each well.</p>
+  </li>
+  <li>
+    <p>Add 1.25 uL of diluted sample to appropriate well. Pipette to mix. Seal plate. Spin down plate.</p>
+  </li>
+  <li>
+    <p>Place plate on thermal cycler with the following cycle: 
+  55C for 10 min
+  10C hold</p>
+  </li>
+  <li>
+    <p>Once the samples reach 10C, immediately add 1.25 uL of NT Buffer to each well. Pipette to mix well to stop reaction.</p>
+  </li>
+  <li>
+    <p>Seal plate. Centrifuge at 2000g for 5 mins.</p>
+  </li>
+  <li>
+    <p>Add 3.75 uL NPM to each well.</p>
+  </li>
+  <li>
+    <p>Add 1.25 uL of Index 1 Primers (N7xx) into corresponding wells of each column of the Library Prep plate. These indexes will have an orange cap and will be added to samples in the same column. Each of the wells in column 2 will contain the same Index 1 Primer. Each of the wells in row B will contain different Index 1 Primer. Pipette to mix.</p>
+  </li>
+  <li>
+    <p>Add 1.25 uL of Index 2 Primers (N5xx) into corresponding wells of each of the Library Prep plate. These indexes will have a white cap and will be added to samples in the same column. Each of the wells in row B will contain the same Index 2 Primer. Each of the wells in column 2 will contain different Index 2 Primer. Pipette to mix.</p>
+  </li>
+  <li>
+    <p>Seal plate. Centrifuge at 2000g for 2 min.</p>
+  </li>
+  <li>
+    <p>Place the plate into the thermal cycler with the following cycle to perform PCR amplification. Steps indicated in bold should be carried out for 12 cycles.</p>
+  </li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Temp (C)</th>
+      <th>Time (min:sec)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>72</td>
+      <td>03:00</td>
+    </tr>
+    <tr>
+      <td>95</td>
+      <td>00:30</td>
+    </tr>
+    <tr>
+      <td><strong>95</strong></td>
+      <td><strong>0:10</strong></td>
+    </tr>
+    <tr>
+      <td><strong>55</strong></td>
+      <td><strong>0:30</strong></td>
+    </tr>
+    <tr>
+      <td><strong>72</strong></td>
+      <td><strong>1:00</strong></td>
+    </tr>
+    <tr>
+      <td>72</td>
+      <td>05:00</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>hold</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>
+    <p>Amplified products can be stored at -20C long term. You have 12.5 uL of amplified, dual-indexed cDNA.</p>
+  </li>
+  <li>
+    <p>We will go through another AMPure XP bead based clean up for these samples and carry this out twice. Make sure your beads are at room temperature for at least 30 mins prior to beginning the following steps. Also take out reagents for Aglient Tapestation High Sensitivity D1000 so it can equilibrate to room temperature.</p>
+  </li>
+  <li>
+    <p>You will need 800 uL of 80% ethanol for these two washes and you can make this prior to starting the clean-up.</p>
+  </li>
+  <li>
+    <p>Add 8 uL of AMPure Beads directly to your PCR products.</p>
+  </li>
+  <li>
+    <p>Incubate at room temperature for 5 minutes to let the cDNA bind to the beads.</p>
+  </li>
+  <li>
+    <p>Place samples on magnetic stand for 2 minutes until the bead collects on the side and the supernatant is clear.</p>
+  </li>
+  <li>
+    <p>Remove and expel supernatant from each well. You should expect around 14 uL of supernatant. The bead contains cDNA, do not disrupt this bead.</p>
+  </li>
+  <li>
+    <p>Keep the plate on the magnetic stand and add 180 uL of your 80% ethanol mix to each well. Incubate for 30 seconds, then remove ethanol from well without disrupting the bead and expel.</p>
+  </li>
+  <li>
+    <p>Repeat the step above another time.</p>
+  </li>
+  <li>
+    <p>Let your samples sit for ~ 1 minute then go back into the wells with a P20 to remove any excess ethanol.</p>
+  </li>
+  <li>
+    <p>Incubate samples at room temperature for approximately 2 minutes until pellet is matte. The pellet should not be shiny or that is an indication there is ethanol still in your sample and this will reduce your recovery rate of cDNA. Try to avoid overdrying; if the pellet is cracked it will take a significantly longer time to rehydrate these beads.</p>
+  </li>
+  <li>
+    <p>Once the beads are dry, remove them from the magnetic stand and add 14 uL of resuspension buffer to your samples and pipette up and down until the beads are completely rehydrated. You will have to pipette up and down many times until the samples has no visible bead clumps in them.</p>
+  </li>
+  <li>
+    <p>Incubate at room temperature for 2 minutes.</p>
+  </li>
+  <li>
+    <p>Place stand back on the magnetic stand for around 1 minute or longer until the solution is completely clear.</p>
+  </li>
+  <li>
+    <p>Transfer the supernatant into a new well.</p>
+  </li>
+  <li>
+    <p>Repeat wash steps by adding 8 uL of AMPure XP beads to this and carry through the same steps again.</p>
+  </li>
+  <li>
+    <p>Check Nextera XT library by Agilent Tapestation using the High Sensitivity D1000 assay.</p>
+  </li>
+</ul>
+
+<p><img src="images/Clontech_Nextera.png" alt="test" style="float: center;" /></p>
+
+<ul>
+  <li>Check concentration by Qubit.</li>
+</ul>
+
+<p>Add this information into our <a href="https://docs.google.com/spreadsheets/d/1OfMuBNeNYJg1Umr3Xo58TgpqBmkn6zHcadwph_hyOIc/edit?usp=sharing">nM conversion calculator</a> and pool accordingly to either 4nM, 2nM, 1nM, or 0.5nM. Do another QC check after pooling. Then proceed to denaturing, diluting and loading library to sequencer.</p>
 
 
 
@@ -599,7 +1006,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2018 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
- Site last generated: May 24, 2018 <br />
+ Site last generated: Jul 18, 2018 <br />
 <p><img src="images/CHMI_logo.png" alt="Company logo"/></p>
                 </div>
             </div>

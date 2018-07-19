@@ -228,15 +228,16 @@
             
             
             
+            
+            
+            
+            <li><a href="mydoc_scRNAseq.html">Single cell sequencing</a></li>
+            
+            
+            
             <li class="subfolders">
                 <a href="#">Data analysis</a>
                 <ul>
-                    
-                    
-                    
-                    <li class="active"><a href="mydoc_linux.html">Compute resources</a></li>
-                    
-                    
                     
                     
                     
@@ -305,18 +306,42 @@
                     
                     
                     
-                    <li class="active"><a href="mydoc_linux.html">Compute resources</a></li>
-                    
-                    
-                    
-                    
-                    
                     <li><a href="mydoc_qiime2.html">QIIME2</a></li>
                     
                     
                     
                 </ul>
             </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Compute resources</a>
+        <ul>
+            
+            
+            
+            <li class="active"><a href="mydoc_linux.html">Linux cluster</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_software.html">Available software</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_RStudio.html">R Studio Server</a></li>
             
             
             
@@ -348,7 +373,28 @@
             
             
             
-            <li><a href="mydoc_biomeme.html">Biomeme portable QPCR</a></li>
+            <li><a href="mydoc_nanopore.html">Oxford Nanopore</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Biomeme portable QPCR</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="mydoc_biomeme_avian.html">Avian</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_biomeme_human.html">Human</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
             
             
             
@@ -383,7 +429,7 @@
 <div class="post-content">
 
    
-    <div class="summary">CHMI maintains a custom configured compute server that runs Linux Ubuntu 16.04 LTS.  This machine has two 6-core Intel Xeon E5-2643v4 CPUs (12 cores total), 512 Gb of RAM and 10Tb of RAID1 storage.  If you are a PennVet lab and wish to use this machine, please contact Dan Beiting (beiting@upenn.edu) for more information.</div>
+    <div class="summary">CHMI maintains a custom configured compute server that runs Linux Ubuntu 16.04 LTS.  This machine has two 6-core Intel Xeon E5-2643v4 CPUs (12 cores total), 512 Gb of RAM and 18Tb of RAID1 storage.  If you are a PennVet lab and wish to use this machine, please contact Dan Beiting (beiting@upenn.edu) for more information.</div>
    
 
     
@@ -423,31 +469,39 @@ $('#toc').on('click', 'a', function() {
 
 <ul>
   <li>We will set-up your account and install any software you may need.  Please do not install software yourself.</li>
-  <li>In addition to your home account with is present at <code class="highlighter-rouge">/home/username</code> on the server, you will also be given a data folder that is located on <code class="highlighter-rouge">/data/username</code>.  All data must be stored in this directory <strong>not</strong> your <code class="highlighter-rouge">home/username</code> folder.</li>
-  <li>Data storage space is limited (10Tb goes quickly!), so we periodically montior storage space and may request that data not currently in use be moved off the cluster.</li>
+  <li>In addition to your home account which is located at <code class="highlighter-rouge">/home/username</code> on the server, you will also be given a data folder that is located on <code class="highlighter-rouge">/data/username</code>.  All data must be stored in this directory <strong>not</strong> your <code class="highlighter-rouge">/home/username</code> folder.</li>
+  <li>Data storage space is limited (18Tb goes quickly!), so we periodically montior storage space and may request that data not currently in use be moved off the cluster.</li>
   <li>We require a strong password for each account.  We will set this password for you, and ask that you do not change it.</li>
 </ul>
 
-<h2 id="configuring-a-new-user-chmi-only">Configuring a new user (CHMI only)</h2>
+<h2 id="creating-and-managing-user-accounts-chmi-only">Creating and managing user accounts (CHMI only)</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>sudo adduser [username] #adds a new user to the home directory
-usermod -aG sudo username #gives the new user sudo priveledges
-</code></pre>
-</div>
+<h3 id="add-a-new-user">Add a new user</h3>
+<p>First, add a new user to the home directory
+<code class="highlighter-rouge">
+sudo adduser [username] 
+</code>
+Then give the new user sudo priveleges
+<code class="highlighter-rouge">
+usermod -aG sudo username 
+</code>
+### Delete a user
+<code class="highlighter-rouge">
+sudo deluser --remove-home [username]
+</code></p>
 
-<p>Give the user access to all software on the server
-* navigate to <code class="highlighter-rouge">/home/shared/softwares/</code> and open the text file called <code class="highlighter-rouge">shared_software_list</code>.  This contains paths to all software.  We routinely update this, so be sure to check back for new software paths:</p>
-
+<h2 id="installing-software-chmi-only">Installing software (CHMI only)</h2>
 <ul>
-  <li>copy the contents of this file (highlight all, right-click, choose copy)</li>
-  <li>open the terminal, and type <code class="highlighter-rouge">nano .profile</code>.</li>
-  <li>scroll to the bottom of this file in the terminal and paste the paths under the last line</li>
-  <li>hit ‘control x’ to exit nano.  You’ll be asked if you want to save changes – select ‘y’ to save, then hit enter to finalize changes and close nano.</li>
-  <li>for these changes to take effect, close the terminal, log out and then back in.</li>
-  <li>you should now have access to all the software listed below</li>
+  <li>All software <em>must</em> be installed only in <code class="highlighter-rouge">/usr/local/bin/</code></li>
+  <li>Once installed, you’ll need to add the path to the executable to your PATH variable. To do this, open the system profile (a text document, so it can be opened with either the nano or vim text editors, both of which are built into the linux system)
+<code class="highlighter-rouge">
+sudo nano /etc/profile
+</code></li>
+  <li>scroll to the bottom of the <code class="highlighter-rouge">/etc/profile</code> file and add the path to the new software.  For example, if you had downloaded the program kallisto, you would add <code class="highlighter-rouge">export PATH=$PATH:/usr/local/bin/kallisto</code> to the bottom of the <code class="highlighter-rouge">/etc/profile</code> document.</li>
+  <li>now your program will be available to any user, regardless of the directory in which they are working.  Changes to <code class="highlighter-rouge">/etc/profile</code> may not take effect until you start a new session.</li>
 </ul>
 
-<h2 id="connecting-to-the-server">Connecting to the server</h2>
+<h2 id="connecting-to-the-linux-server">Connecting to the Linux server</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>ssh username@130.91.255.137
 #you'll be prompted to enter your password and then you'll be connected
@@ -455,7 +509,74 @@ usermod -aG sudo username #gives the new user sudo priveledges
 </code></pre>
 </div>
 
+<h2 id="command-line-tips">command line tips</h2>
+<p>If you’re new to the command-line in Linux, there are lots of online resoures for learning, but here are a few of the commands that will help you move around and carry out basic tasks.  Note that many of these may only work if run as <code class="highlighter-rouge">sudo</code>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>typing this at the prompt</th>
+      <th>does this</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">tar -xvzf &lt;fileName.tar.gz&gt;</code></td>
+      <td>unzip a .tar file</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">ls -l</code></td>
+      <td>list all files and folders in your working diretory with info on permissions</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">du -a -h --max-depth=1 | sort -hr</code></td>
+      <td>lists all files and folders in your working directory sorted by size</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">tree -d</code></td>
+      <td>lists all files and folders in your working directory as a tree structure</td>
+    </tr>
+    <tr>
+      <td>pressing up arrow</td>
+      <td>recalls previous command</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">cd \</code></td>
+      <td>takes you to the root directory</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">cd ~</code></td>
+      <td>takes you to your home directory</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">cd ..</code></td>
+      <td>takes you up one level in your file directory</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">chmod u+x &lt;fileName&gt;</code></td>
+      <td>edits permissions on file</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">chown &lt;yourUserName&gt; &lt;fileName&gt;</code></td>
+      <td>makes you the owner of a file</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">chgrp &lt;yourUserName&gt; &lt;fileName&gt;</code></td>
+      <td>assigns you as the group for the file</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">rm -rf &lt;directoryName&gt;</code></td>
+      <td>removes a folder and all of its contents</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">wget &lt;URLtoFile&gt;</code></td>
+      <td>downloads a file from a website</td>
+    </tr>
+  </tbody>
+</table>
+
 <h2 id="available-software">Available software</h2>
+<p>We have a lot of software already installed on the server that covers applications ranging from QC analysis and preprocessing of raw sequence data, transcriptome analysis from RNAseq data, 16S and shotgun metagenomics pipelines, WGS tools, and more.  If you have an account on our cluster, then you already have access to all of the software below, so get started!</p>
 
 <table>
   <thead>
@@ -467,44 +588,24 @@ usermod -aG sudo username #gives the new user sudo priveledges
   </thead>
   <tbody>
     <tr>
-      <td><a href="https://www.mothur.org/">mothur</a></td>
-      <td>16S marker gene</td>
-      <td><code class="highlighter-rouge">mothur</code></td>
-    </tr>
-    <tr>
-      <td><a href="https://qiime2.org/">QIIME2</a></td>
-      <td>16S marker gene</td>
-      <td><code class="highlighter-rouge">source activate qiime2</code></td>
-    </tr>
-    <tr>
-      <td><a href="https://github.com/eclarke/sunbeam/blob/master/Readme.md">Sunbeam</a></td>
-      <td>metagenomics</td>
-      <td><code class="highlighter-rouge">source activate sunbeam</code></td>
-    </tr>
-    <tr>
-      <td><a href="https://bitbucket.org/biobakery/metaphlan2">MetaPhlAn</a></td>
-      <td>metagenomics</td>
-      <td><code class="highlighter-rouge">metaphlan2.py</code></td>
-    </tr>
-    <tr>
-      <td><a href="https://bitbucket.org/nsegata/graphlan/wiki/Home">GraPhlAn</a></td>
-      <td>metagenomics, visualization</td>
-      <td><code class="highlighter-rouge">graphlan.py</code></td>
-    </tr>
-    <tr>
       <td><a href="https://github.com/merenlab/anvio">anvi’o</a></td>
       <td>metagenomics, visualization</td>
-      <td><code class="highlighter-rouge">source activate anvio3</code></td>
+      <td><code class="highlighter-rouge">source activate anvio4</code></td>
     </tr>
     <tr>
-      <td><a href="http://circos.ca/">Circos</a></td>
-      <td>general visualization</td>
-      <td><code class="highlighter-rouge">circos</code></td>
+      <td><a href="https://samtools.github.io/bcftools/bcftools.html">bcftools</a></td>
+      <td>SNP/variant discovery and genotyping</td>
+      <td><code class="highlighter-rouge">bcftools</code></td>
     </tr>
     <tr>
-      <td><a href="http://www.cytoscape.org/">Cytoscape</a></td>
-      <td>network analysis</td>
-      <td>navigate to /home/shared/softwares/Cytoscape_v3.5.1 folder.  Double click to open program</td>
+      <td><a href="https://support.illumina.com/downloads/bcl2fastq-conversion-software-v2-20.html">bcl2fastq2</a></td>
+      <td>convert bcf files produced by illumina sequencers to fastq</td>
+      <td><code class="highlighter-rouge">bcf2fastq</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi">blast</a></td>
+      <td>sequence search</td>
+      <td>option include <code class="highlighter-rouge">blastn</code>, <code class="highlighter-rouge">blastp</code>, or <code class="highlighter-rouge">blastx</code></td>
     </tr>
     <tr>
       <td><a href="http://bowtie-bio.sourceforge.net/bowtie2/index.shtml">bowtie2</a></td>
@@ -517,19 +618,74 @@ usermod -aG sudo username #gives the new user sudo priveledges
       <td><code class="highlighter-rouge">bwa</code></td>
     </tr>
     <tr>
-      <td><a href="https://github.com/alexdobin/STAR">Star</a></td>
-      <td>sequence alignment</td>
-      <td><code class="highlighter-rouge">STAR</code> (all caps)</td>
+      <td><a href="http://circos.ca/">Circos</a></td>
+      <td>general visualization</td>
+      <td><code class="highlighter-rouge">circos</code></td>
     </tr>
     <tr>
-      <td><a href="https://pachterlab.github.io/kallisto/">kallisto</a></td>
+      <td><a href="https://github.com/BaselAbujamous/clust">clust</a></td>
+      <td>co-expression modules</td>
+      <td><code class="highlighter-rouge">clust</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://www.cytoscape.org/">Cytoscape</a></td>
+      <td>network analysis</td>
+      <td>navigate to /home/shared/softwares/Cytoscape_v3.5.1 folder.  Double click to open program</td>
+    </tr>
+    <tr>
+      <td><a href="https://deeptools.readthedocs.io/en/latest/">deeptools</a></td>
+      <td>analysis of HTS data</td>
+      <td><code class="highlighter-rouge">deeptools</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/bbuchfink/diamond">diamond</a></td>
+      <td>Accelerated BLAST compatible local sequence aligner</td>
+      <td><code class="highlighter-rouge">diamond</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/">FastQC</a></td>
+      <td>generates quality control reports for fastq files.</td>
+      <td><code class="highlighter-rouge">fastqc</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://www.bioinformatics.babraham.ac.uk/projects/fastq_screen/">FastQ Screen</a></td>
+      <td>screening fastq files against multiple reference genomes.</td>
+      <td><code class="highlighter-rouge">fastq_screen</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://software.broadinstitute.org/gatk/">genome analysis toolkit (gatk)</a></td>
+      <td>SNP/variant discovery and genotyping</td>
+      <td><code class="highlighter-rouge">gatk</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://bitbucket.org/nsegata/graphlan/wiki/Home">GraPhlAn</a></td>
+      <td>metagenomics, visualization</td>
+      <td><code class="highlighter-rouge">graphlan.py</code> or <code class="highlighter-rouge">graphlan_annotate.py</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://huttenhower.sph.harvard.edu/humann2">Humann2</a></td>
+      <td>metagenomics</td>
+      <td><code class="highlighter-rouge">humann2</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://htseq.readthedocs.io/en/release_0.10.0/">HTSeq</a></td>
+      <td>great for summarizing alignments to get counts per gene/exons</td>
+      <td><code class="highlighter-rouge">htseq-count</code> or <code class="highlighter-rouge">htseq-qa</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://pachterlab.github.io/kallisto/">Kallisto</a></td>
       <td>mapping reads to transcripts</td>
       <td><code class="highlighter-rouge">kallisto</code></td>
     </tr>
     <tr>
-      <td><a href="https://github.com/deweylab/RSEM">rsem</a></td>
-      <td>mapping reads to transcripts</td>
-      <td><code class="highlighter-rouge">rsem-(function)</code></td>
+      <td><a href="https://bitbucket.org/biobakery/kneaddata/wiki/Home">KneadData</a></td>
+      <td>removes host or ‘contaminating’ reads from dataset</td>
+      <td><code class="highlighter-rouge">kneaddata</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://ccb.jhu.edu/software/kraken/">Kraken2</a></td>
+      <td>taxonomic classification system</td>
+      <td><code class="highlighter-rouge">kraken2</code></td>
     </tr>
     <tr>
       <td><a href="http://mash.readthedocs.io/en/latest/">Mash</a></td>
@@ -537,19 +693,49 @@ usermod -aG sudo username #gives the new user sudo priveledges
       <td><code class="highlighter-rouge">mash</code></td>
     </tr>
     <tr>
+      <td><a href="https://bitbucket.org/biobakery/metaphlan2">MetaPhlAn</a></td>
+      <td>metagenomics</td>
+      <td><code class="highlighter-rouge">metaphlan2.py</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://omics.informatics.indiana.edu/MinPath/">MinPath</a></td>
+      <td>biological pathway reconstructions using protein family predictions</td>
+      <td><code class="highlighter-rouge">MinPath1.4.py</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://www.mothur.org/">Mothur</a></td>
+      <td>16S marker gene</td>
+      <td><code class="highlighter-rouge">mothur</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://multiqc.info">MultiQC</a></td>
+      <td>summarizes log files produced by other tools (<em>e.g.</em> STAR, kallisto, FastQC, etc).</td>
+      <td><code class="highlighter-rouge">multiqc</code></td>
+    </tr>
+    <tr>
       <td><a href="https://www.nextflow.io">Nextflow</a></td>
       <td>workflow management</td>
       <td><code class="highlighter-rouge">nextflow</code></td>
     </tr>
     <tr>
-      <td><a href="https://github.com/trinityrnaseq/trinityrnaseq/wiki">Trinity</a></td>
-      <td>de novo transcriptome assembly</td>
-      <td><code class="highlighter-rouge">Chrysalis</code> (uppercase ‘C’), <code class="highlighter-rouge">inchworm</code></td>
-    </tr>
-    <tr>
       <td><a href="http://broadinstitute.github.io/picard/">Picard tools</a></td>
       <td>handling HTS file formats</td>
-      <td><code class="highlighter-rouge">picard</code></td>
+      <td><code class="highlighter-rouge">java -jar /usr/local/bin/picard/build/libs/picard.jar</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/tseemann/prokka">Prokka</a></td>
+      <td>genome annotation for prokaryotes</td>
+      <td><code class="highlighter-rouge">prokka</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://qiime2.org/">QIIME2</a></td>
+      <td>16S marker gene</td>
+      <td><code class="highlighter-rouge">source activate qiime2</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/deweylab/RSEM">rsem</a></td>
+      <td>mapping reads to transcripts</td>
+      <td><code class="highlighter-rouge">rsem-(function)</code></td>
     </tr>
     <tr>
       <td><a href="http://samtools.sourceforge.net/">samtools</a></td>
@@ -562,29 +748,44 @@ usermod -aG sudo username #gives the new user sudo priveledges
       <td><code class="highlighter-rouge">seqtk</code></td>
     </tr>
     <tr>
-      <td><a href="https://deeptools.readthedocs.io/en/latest/">deeptools</a></td>
-      <td>analysis of HTS data</td>
-      <td><code class="highlighter-rouge">deeptools</code></td>
+      <td><a href="https://github.com/najoshi/sickle">Sickle</a></td>
+      <td>quality trimming of raw sequences</td>
+      <td><code class="highlighter-rouge">sickle se</code> or <code class="highlighter-rouge">sickle pe</code></td>
     </tr>
     <tr>
-      <td><a href="https://samtools.github.io/bcftools/bcftools.html">bcftools</a></td>
-      <td>SNP/variant discovery and genotyping</td>
-      <td><code class="highlighter-rouge">bcftools</code></td>
+      <td><a href="http://cab.spbu.ru/software/spades/">SPAdes</a></td>
+      <td>genome assembly from illumina short reads</td>
+      <td><code class="highlighter-rouge">spades.py [options] -o &lt;output_dir&gt;</code></td>
     </tr>
     <tr>
-      <td><a href="https://software.broadinstitute.org/gatk/">genome analysis toolkit (gatk)</a></td>
-      <td>SNP/variant discovery and genotyping</td>
-      <td><code class="highlighter-rouge">java -jar /home/shared/softwares/gatk-3.8-0/GenomeAnalysisTK.jar</code></td>
+      <td><a href="https://github.com/Kingsford-Group/squid">SQUID</a></td>
+      <td>find trascriptomic structural variants from RNAseq data</td>
+      <td><code class="highlighter-rouge">squid</code></td>
     </tr>
     <tr>
-      <td><a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi">blast</a></td>
-      <td>sequence search</td>
-      <td>option include <code class="highlighter-rouge">blastn</code>, <code class="highlighter-rouge">blastp</code>, pr <code class="highlighter-rouge">blastx</code></td>
+      <td><a href="https://github.com/ncbi/sra-tools/wiki/Downloads">SRA toolkit</a></td>
+      <td>tools for accessing sequence data stored on SRA</td>
+      <td>e.g. <code class="highlighter-rouge">fasterq_dump</code>, and many more</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/BaselAbujamous/clust">clust</a></td>
-      <td>co-expression modules</td>
-      <td><code class="highlighter-rouge">clust</code></td>
+      <td><a href="https://github.com/alexdobin/STAR">Star</a></td>
+      <td>sequence alignment</td>
+      <td><code class="highlighter-rouge">STAR</code> (all caps)</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/eclarke/sunbeam/blob/master/Readme.md">Sunbeam</a></td>
+      <td>metagenomics</td>
+      <td><code class="highlighter-rouge">source activate sunbeam</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://www.usadellab.org/cms/?page=trimmomatic">Trimmomatic</a></td>
+      <td>quality trimming of raw sequences</td>
+      <td><code class="highlighter-rouge">java -jar /usr/local/bin/trimmomatic-0.33.jar</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/trinityrnaseq/trinityrnaseq/wiki">Trinity</a></td>
+      <td>de novo transcriptome assembly</td>
+      <td><code class="highlighter-rouge">Chrysalis</code> (uppercase ‘C’), <code class="highlighter-rouge">inchworm</code></td>
     </tr>
   </tbody>
 </table>
@@ -628,7 +829,7 @@ usermod -aG sudo username #gives the new user sudo priveledges
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2018 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
- Site last generated: May 24, 2018 <br />
+ Site last generated: Jul 18, 2018 <br />
 <p><img src="images/CHMI_logo.png" alt="Company logo"/></p>
                 </div>
             </div>

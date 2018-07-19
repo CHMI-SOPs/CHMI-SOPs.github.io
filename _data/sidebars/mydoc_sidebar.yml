@@ -126,9 +126,14 @@ entries:
     output: web, pdf
 
     folderitems:
-    - title: Biomeme portable QPCR
-      url: /mydoc_biomeme.html
+    - title: Oxford Nanopore
+      url: /mydoc_nanopore.html
       output: web, pdf
+
+      subfolders:
+      - title: Biomeme portable QPCR
+        url: /mydoc_biomeme.html
+        output: web, pdf
  
         subfolderitems:
         - title: Avian

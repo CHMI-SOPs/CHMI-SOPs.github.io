@@ -70,6 +70,12 @@
   
   
   <url>
+    <loc>http://localhost:4000/mydoc_RStudio.html</loc>
+  </url>
+  
+  
+  
+  <url>
     <loc>http://localhost:4000/mydoc_TruSeq.html</loc>
   </url>
   
@@ -101,6 +107,18 @@
   
   <url>
     <loc>http://localhost:4000/mydoc_biomeme.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/mydoc_biomeme_avian.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/mydoc_biomeme_human.html</loc>
   </url>
   
   
@@ -334,6 +352,12 @@
   
   
   <url>
+    <loc>http://localhost:4000/mydoc_scRNAseq.html</loc>
+  </url>
+  
+  
+  
+  <url>
     <loc>http://localhost:4000/js/mydoc_scroll.html</loc>
   </url>
   
@@ -389,6 +413,12 @@
   
   <url>
     <loc>http://localhost:4000/mydoc_sidebar_navigation.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/mydoc_software.html</loc>
   </url>
   
   

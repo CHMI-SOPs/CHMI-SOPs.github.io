@@ -228,15 +228,16 @@
             
             
             
+            
+            
+            
+            <li><a href="mydoc_scRNAseq.html">Single cell sequencing</a></li>
+            
+            
+            
             <li class="subfolders">
                 <a href="#">Data analysis</a>
                 <ul>
-                    
-                    
-                    
-                    <li><a href="mydoc_linux.html">Compute resources</a></li>
-                    
-                    
                     
                     
                     
@@ -305,18 +306,42 @@
                     
                     
                     
-                    <li><a href="mydoc_linux.html">Compute resources</a></li>
-                    
-                    
-                    
-                    
-                    
                     <li><a href="mydoc_qiime2.html">QIIME2</a></li>
                     
                     
                     
                 </ul>
             </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Compute resources</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_linux.html">Linux cluster</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_software.html">Available software</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_RStudio.html">R Studio Server</a></li>
             
             
             
@@ -348,7 +373,28 @@
             
             
             
-            <li><a href="mydoc_biomeme.html">Biomeme portable QPCR</a></li>
+            <li><a href="mydoc_nanopore.html">Oxford Nanopore</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Biomeme portable QPCR</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="mydoc_biomeme_avian.html">Avian</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_biomeme_human.html">Human</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
             
             
             
@@ -419,11 +465,11 @@ $('#toc').on('click', 'a', function() {
     
 
   <h2 id="before-starting">Before starting</h2>
-<p>This protocol is derived from Pat Schloss’ Laboratory at the University of Michigan. Please cite their work.  If you use the protocol below, please cite <a href="http://aem.asm.org/content/early/2013/06/17/AEM.01043-13">their manuscript on the dual-index sequencing strategy</a>.  Also, see the <a href="http://aem.asm.org/content/early/2013/06/17/AEM.01043-13/suppl/DCSupplemental">Supplemental materials</a> for a detailed look at the primer design for this strategy.</p>
+<p>This protocol is derived from Pat Schloss’ Laboratory at the University of Michigan. If you use the protocol below, please cite <a href="http://aem.asm.org/content/early/2013/06/17/AEM.01043-13">their manuscript on the dual-index sequencing strategy</a>.  Also, see the <a href="http://aem.asm.org/content/early/2013/06/17/AEM.01043-13/suppl/DCSupplemental">Supplemental materials</a> for a detailed look at the primer design for this strategy.</p>
 
 <h2 id="materials">Materials</h2>
 <ul>
-  <li>Order primers from IDT/</li>
+  <li>16S V4 region PCR primers from IDT.  <a href="http://CHMI-sops.github.io/papers/Barcoded_primers_Schloss_V4.txt">Here’s a list of exactly what we ordered</a></li>
   <li><a href="https://www.thermofisher.com/order/catalog/product/P7589">PicoGreen dsDNA Assay Kit, ThermoFisher, P7589</a></li>
   <li><a href="https://www.usascientific.com/96-well-fluotrac-200-clear-bottom-black-plate.aspx">Fluotrac 200 plates- clear bottom, black, medium bind, USA Scientific, 5665-5096</a></li>
   <li>RT-PCR Grade Water, Ambion, AM9935</li>
@@ -535,7 +581,7 @@ $('#toc').on('click', 'a', function() {
     <p>Dilute PicoGreen reagent in 15 mL or 50 mL tube</p>
     <ul>
       <li>For 1.5 DNA plates: 
-  -15 mL 1 X TE Bugger
+  -15 mL 1 X TE Buffer
   -75 uL PicoGreen reagent</li>
     </ul>
 
@@ -892,7 +938,7 @@ on the NAS drive.</p>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2018 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
- Site last generated: May 24, 2018 <br />
+ Site last generated: Jul 18, 2018 <br />
 <p><img src="images/CHMI_logo.png" alt="Company logo"/></p>
                 </div>
             </div>

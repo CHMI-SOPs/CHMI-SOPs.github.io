@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Using droplet-based technology to barcode individual cells for RNAseq">
+<meta name="keywords" content="library_preptranscriptomics,  transcriptomics, library preparation">
+<title>Single Cell RNAseq library prep | CHMI services</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<link rel="stylesheet" href="css/lavish-bootstrap.css">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Center for Host-Microbial Interactions</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:beiting@upenn.edu?subject=CHMI services feedback&body=I have some feedback about the Single Cell RNAseq library prep page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Single Cell RNAseq library prep">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+    <div class="col-lg-12">&nbsp;</div>
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+
+
+
+
+
+
+
+
+
+
+
+<ul id="mysidebar" class="nav">
+    <li class="sidebarTitle">CHMI services </li>
+    
+    
+    
+        
+    
+    <li>
+        <a href="#">Overview</a>
+        <ul>
+            
+            
+            
+            <li><a href="index.html">Welcome</a></li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">RNAseq</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_RNAseq_FAQs.html">RNAseq FAQs</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_TruSeq.html">mRNA library prep</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_total_TruSeq.html">Total transcriptome library prep</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_lowInput_RNAseq.html">Low input protocol</a></li>
+            
+            
+            
+            
+            
+            
+            <li class="active"><a href="mydoc_scRNAseq.html">Single cell sequencing</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Data analysis</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="mydoc_kallisto.html">Kallisto and Sleuth</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_RNAseq_depositToGEO.html">Submitting to GEO</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Microbiology</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_micro_FAQs.html">Microbiology FAQs</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_16S.html">16S rRNA gene sequencing</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_NexteraXT.html">Shotgun metagenomics</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_16S_Sanger.html">Sanger sequencing of 16S</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_mock.html">Culture collection</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Data analysis</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="mydoc_qiime2.html">QIIME2</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Compute resources</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_linux.html">Linux cluster</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_software.html">Available software</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_RStudio.html">R Studio Server</a></li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Cell culture</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_3Dculture.html">3D intestinal cultures</a></li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">In the field</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_nanopore.html">Oxford Nanopore</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Biomeme portable QPCR</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="mydoc_biomeme_avian.html">Avian</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_biomeme_human.html">Human</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+        
+        <!-- if you aren't using the accordion, uncomment this block:
+           <p class="external">
+               <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+           </p>
+           -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">Single Cell RNAseq library prep</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+    <div class="summary">Using droplet-based technology to barcode individual cells for RNAseq</div>
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+    <a target="_blank" href="https://github.com/CHMI-SOPs/CHMI-SOPs.github.io/tree/master/pages/mydoc/mydoc_scRNAseq.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+    
+
+  <h1 id="day-1">Day 1</h1>
+
+<h2 id="documentation">Documentation</h2>
+
+<p>We use the <a href="https://1cell-bio.com/indrop/">InDrop platform from 1CellBio</a> to isolate and barcode single cells.  This technology was initialy described in <a href="https://www.cell.com/cell/abstract/S0092-8674(15)00500-0">this 2015 Cell paper</a>.  The steps on this page are derived from 1CellBio’s <a href="https://1cell-bio.com/wp-content/uploads/2018/05/inDrop-Single-Cell-Encapsulation-and-Rever-se-Transcription-Protocol-Version-2.2-.pdf">protocol for encapsulating single cells</a></p>
+
+<h2 id="what-youll-need">What you’ll need</h2>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> The following items are included in the InDrop kit</div>
+
+<ul>
+  <li>Barcoded Hydrogel Microspheres - 500,000 beads provided in 500ul (4C)</li>
+  <li>1.3x RT Premix (-20C)</li>
+  <li>2x Gel Concentration buffer (-20C)</li>
+  <li>Wash buffer (RT)</li>
+  <li>OptiPrep - density matching agent (RT)</li>
+  <li>Demulsifying agent - for breaking droplets (RT)</li>
+  <li>Separate assemblies for loading beads, oil, cells and RT mix</li>
+</ul>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> The following items are <strong>not included</strong> and may need to be purchased by the individual user.</div>
+
+<ul>
+  <li><a href="https://www.thermofisher.com/order/catalog/product/18080093">SuperScript III enzyme</a> (10000U)</li>
+  <li>1CellBio UV box (we provide this)</li>
+  <li><a href="https://www.thermofisher.com/order/catalog/product/AM9780">RNAaseZAP spray</a> (recommended by the company…not essential)</li>
+  <li>1.5ml LoBind EpTubes</li>
+  <li><a href="https://us.vwr.com/store/product/18665238/coolrack-modules-corning">Corning CoolRack M6</a>.  Store at 4C and use for keeping samples and beads chilled while on the InDrop machine.  The small footprint of this cooling rack lets you set directly on the stage of the InDrop microscope.</li>
+  <li>Gel loading pipette tips (useful for carefully drawing off maximum amount of supernatant on bead pellet or bead/oil emulsion)</li>
+</ul>
+
+<h2 id="a-few-important-comments-before-you-start">A few important comments before you start</h2>
+
+<ol>
+  <li>
+    <p>The bead mix for the InDrop system has about 150,000 unique barcodes for tagging <em>individual cells</em>.  If you collect 3000 cells or less, you have minimal risk of ‘barcode collision’ - that is, having two different cells that were tagged with the same barcode, thus making them indistinguishable.</p>
+  </li>
+  <li>
+    <p>You can encapsulate as many cells as you like, but you must split up your final bead emulsion into pools of ~3000 cells to prevent barcode collision.  This is ideally done at the time of encapulation, simply by collecting into a new tube for each set of 3000 cells collected from the same sample.  However, it can also be done during 1st strand cDNA reaction.  Either way, these <em>separate pools</em> will be tagged with a unique illumina index.  In the analysis step, you can merge pools from the same sample.</p>
+  </li>
+  <li>
+    <p>Each <em>molecule</em> is tagged with a Unique Molecular Identifier (UMI), which is used to count individual mRNAs in you experiment.  You can read more about UMIs in this <a href="https://www.nature.com/articles/nmeth.1778">Nature Methods paper</a>.</p>
+  </li>
+  <li>
+    <p>The InDrop protocol uses a lot of Superscript III.  We typically order about 10,000U of the enzyme, and find that this is only enough to process about 6 samples.</p>
+  </li>
+</ol>
+
+<h2 id="instrument-set-up">Instrument set-up</h2>
+
+<ul>
+  <li>
+    <p>Log into the laptop provided by 1CellBio – the login password is “inDrop” – and Click desktop icon labeled “Thor”. This opens the software that controls the instrument and implements the InDrop process.</p>
+  </li>
+  <li>
+    <p>Remove the syringe and loading assembly from the ‘beads’ package. This syringe is shipped pre-filled with hydraulic fluid specific to the loading the hydrogel beads.  Remove cap on syringe, attach tubing and manually expel syringe volume until it is near the end of the tubing.  Secure assembly into the appropriately labeleld automatic pump on the InDrop.</p>
+  </li>
+  <li>
+    <p>Repeat the above step for eachof the four syringe assemblies.</p>
+  </li>
+  <li>
+    <p>Syringes can remain on the machine for 2 weeks and can be used for multiple experiments</p>
+  </li>
+  <li>
+    <p>On the first tab of Thor software, click “Set Up”.  Input the total number of cells you want encapsulate, the concentration of your cell solution, and the desired Bead-to-cell ratio.  Clicking on the “calculate” button will populate the boxes below with the volume, in microliters, of each reagent that needs to be prepared. Clicking on the “?” gives the recipe of the RT/Lysis Mixture to be made.</p>
+  </li>
+  <li>
+    <p>Prepare microchip devices by following the <a href="https://1cell-bio.com/wp-content/uploads/2017/10/Silanization-Protocol-v4.pdf">Chip Silanizing protocol</a>.  Carry out the silanization as close as possible to the encapsulation.  If something does go wrong with one device, you do not have to repeat the whole process. Just pick up the microfluidic connectors and move to the next silanized device.
+Silanization is only good for a few hours.</p>
+  </li>
+  <li>
+    <p>Click “next” on the Thor software to move forward to bead preparation</p>
+  </li>
+</ul>
+
+<h2 id="prepare-beads">Prepare beads</h2>
+
+<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> The polyT oligos on each bead have a UV-cleavable linker.  Avoid direct exposure of beads to UV light by wrapping in foil.</div>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> The beads are very porous, particularly when they are resuspended in wash buffer, which makes them hard to see even when pelleted.  If you’re worried about losing beads during washing, be sure to save your supernatants.</div>
+
+<ul>
+  <li>
+    <p>Concentrate beads in the stock, 1.5 mL tube by spinning at 5000xg for 2 min in a 1.5ml LoBind Ependorf tube.</p>
+  </li>
+  <li>
+    <p>If you want to prep all the beads in the kit (enough for encapsulating about 30,000 cells).  Reach down into the pelleted beads with your pipet tip and draw up 250 ul of the pellet (should be almost all of it), leaving behind the supe (storage buffer).</p>
+  </li>
+  <li>
+    <p>Transfer this bead volume to a 1.5ml LoBind Tube, and add 1ml Wash Buffer.  This buffer will cause the beads to swell, making them more porous and even harder to see.  Spin at 1000g for 1min, remove supe.</p>
+  </li>
+  <li>
+    <p>Repeat this washing, at least 2-3 more times.</p>
+  </li>
+  <li>
+    <p>After the last wash, draw off a volume of Wash Buffer to leave about 500ul of beads/buffer left in the tube.  To this volume, add 500ul of the 2x Concentration Buffer.</p>
+  </li>
+  <li>
+    <p>Spin at 5000xg for 1min.  The concentraiton buffer added in the previous step will cause the beads to shrink back down a bit, resulting in a smaller pellet.</p>
+  </li>
+  <li>
+    <p>Draw off as much supe as possible (using a gel loading tip is helpful here), spin again at 5000xg if necessary to draw off more supe.</p>
+  </li>
+</ul>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> It’s essential that you remove all the supe at this step.  Residual supe will make the packed bead suspension more soupy and prevent the beads from forming a dense pack on the device.</div>
+
+<ul>
+  <li>
+    <p>Prime the bead pump to make sure the line is cleared of air.  You should see small droplets of fluid coming out of the tubing (just dab on a kimwipe).  If the line contains lots of air, you can use the Thor software to crank up the priming flow rate to speed the process.</p>
+  </li>
+  <li>
+    <p>After priming, immerse the end of the tubing into your packed bead pellet and parafilm the top to hold the tubing in place.</p>
+  </li>
+  <li>
+    <p>Use Thor to begin loading your desired bead volume.</p>
+  </li>
+</ul>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> It’s important that you not introduce air into the line during the bead loading.  To prevent this, check at about 1/2 way through the loading to be sure the tip is still immersed in the packed beads.  Then continue to check every minute for the remainder of the bead loading process.</div>
+
+<ul>
+  <li>Once loading is complete, resuspend residual beads in new storage buffer and return to storage.  These can be used for future experiments.  In addition, supe saved from the bead prep process can be spun down at 5000xg to pellet residual beads for resuspension and storage.</li>
+</ul>
+
+<h2 id="cell-encapsulation">Cell encapsulation</h2>
+
+<ul>
+  <li>
+    <p>With beads loaded onto the InDrop, you are now ready to prepare your cells.</p>
+  </li>
+  <li>
+    <p>Resuspend cells at 100K/ml in cold PBS. You will only need &lt; 1ml final volume of cells at this concentration.</p>
+  </li>
+  <li>
+    <p>Prepare the calculated amount of RT/Lysis mixture. Click on the “?” in the Thor software to see the breakdown of the RT/Lysis mixture will be given.  Prepare 10% extra volume for RT mix, and add excess cell volume as well.  This will prevent air from being drawn up into the lines during loading.</p>
+  </li>
+  <li>
+    <p>Immediately before you begin the collection add OptiPrep, a density matching gradient included in the kit from 1CellBio, to your cell suspension to get a final concentration of 18% OptiPrep.</p>
+  </li>
+</ul>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Addition of OptiPrep is critical to prevent your cells from settling while in the device. However, the effects of OptiPrep on various cell types has not been well tested.  You should only add this reagent immediately prior to loading your cells in order minimize effects on cell viability or transcription.</div>
+
+<ul>
+  <li>
+    <p>Collect droplets into a 1.5ml LoBind tube containing 200ul mineral oil.</p>
+  </li>
+  <li>
+    <p>If you plan to collect more than 3000 cells from a sample, switch tubes during the collection.</p>
+  </li>
+  <li>
+    <p>It’s a good idea to collect two 10sec high-speed videos: 1) of your cells coming onto the device…this provides useful information about cell size, clumping, etc.  And 2) your encapsulation…so you can appreciate droplets with only beads, beads and cells, multiple beads, etc.  All movies are saved in folders labeled by date, under Documents -&gt; Thor videos, on the laptop attached to the Indrop system.  Movies can be viewed and edited in <a href="https://imagej.nih.gov/ij/">ImageJ</a>.</p>
+  </li>
+  <li>
+    <p>your pre-RT bead emulsion should rememble the one in the picture below</p>
+  </li>
+</ul>
+
+<p><img src="images/PreRT_emulsion.png" alt="test" style="float: center;" /></p>
+
+<h2 id="in-droplet-1st-strand-cdna-reaction">In-droplet 1st strand cDNA reaction</h2>
+
+<ul>
+  <li>
+    <p>Immediately following droplet collection, place the 1.5ml LoBind tube(s) containing droplets into a the 1CellBio UV box for 10 sec.  This cleaves the oligos off the bead, allowing you to carry out a cDNA reaction in solution.</p>
+  </li>
+  <li>
+    <p>Immediately incubate tube in a heatblock at 50C for 2hr.  This is your 1st strand cDNA reaction.</p>
+  </li>
+  <li>
+    <p>Incubate at 70C for 15min to heat kill the reaction</p>
+  </li>
+  <li>
+    <p>Use a gel loading pipette tip to remove as much of the mineral oil (clear) on  top of the bead emulsion layer (white).  Avoid removing any of the bead emulsion, since each droplet contains a cell.  Under the bead emulsion is residual droplet oil, which you can ignore.</p>
+  </li>
+  <li>
+    <p>After removing the mineral oil, your post-RT bead emulsion should resemble the one in the picture below</p>
+  </li>
+</ul>
+
+<p><img src="images/PostRT_emulsion.png" alt="test" style="float: center;" /></p>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> At this point, if you had collected &gt; 3000 cells in the same tube, you can divide your emulsion into equal parts for downstream steps.  For example, if you collected 9000 cells, divide into 3 equal parts.  35ul of emulsion typically contains about 1000 barcoded cells.</div>
+
+<ul>
+  <li>
+    <p>Break up droplets by adding an equal volume of demulsifier (1CellBio kit) to your tubes (just eyeball the volume of bead emulsion in the tube and add equal vol of demulsifier).</p>
+  </li>
+  <li>
+    <p>Vortex for 5 seconds and spin at 1000xg for 1min.  Your sample should now appear clear as shown in the image below.  If not, repeat the demulsifer step.</p>
+  </li>
+</ul>
+
+<p><img src="images/broken_emulsion.png" alt="test" style="float: center;" /></p>
+
+<ul>
+  <li>Your sample can now be stored at -80C for up to 3 months.</li>
+</ul>
+
+<h2 id="instrument-clean-up">Instrument clean-up</h2>
+
+<ul>
+  <li>
+    <p>For the cells and RT mix pumps, dispense until remaining fluid is ejected and red hydrolic fluid is at the end of the tip again.</p>
+  </li>
+  <li>
+    <p>Once cells and RT are cleared from the tips, use the ‘withdraw colored oil’ function in the Thor software to pull the hydrolic fluid back into tubing and clear the tips.  Remove tips and discard.</p>
+  </li>
+  <li>
+    <p>Dispense beads into a LoBind tube.  Resuspend 1:1 with storage buffer and store protected from light at 4C.</p>
+  </li>
+  <li>
+    <p>Close software and turn off microscope.</p>
+  </li>
+  <li>
+    <p>Store microfluidic chip at RT, with the unused devices covered with the protective tape.  Be sure to use a pen to mark which device(s) has been used.</p>
+  </li>
+</ul>
+
+<h1 id="day-2">Day 2</h1>
+
+<h2 id="library-prep">Library prep</h2>
+
+
+
+    <div class="tags">
+        
+        <b>Tags: </b>
+        
+        
+        
+        <a href="tag_library_prep.html" class="btn btn-default navbar-btn cursorNorm" role="button">library_prep</a>
+        
+        
+        
+        <a href="tag_transcriptomics.html" class="btn btn-default navbar-btn cursorNorm" role="button">transcriptomics</a>
+        
+        
+        
+    </div>
+
+
+
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'http-hostmicrobe-org'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2018 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
+ Site last generated: Jul 18, 2018 <br />
+<p><img src="images/CHMI_logo.png" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+    </div>
+
+</body>
+
+</html>

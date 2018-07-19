@@ -228,15 +228,16 @@
             
             
             
+            
+            
+            
+            <li><a href="mydoc_scRNAseq.html">Single cell sequencing</a></li>
+            
+            
+            
             <li class="subfolders">
                 <a href="#">Data analysis</a>
                 <ul>
-                    
-                    
-                    
-                    <li><a href="mydoc_linux.html">Compute resources</a></li>
-                    
-                    
                     
                     
                     
@@ -305,18 +306,42 @@
                     
                     
                     
-                    <li><a href="mydoc_linux.html">Compute resources</a></li>
-                    
-                    
-                    
-                    
-                    
                     <li><a href="mydoc_qiime2.html">QIIME2</a></li>
                     
                     
                     
                 </ul>
             </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Compute resources</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_linux.html">Linux cluster</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_software.html">Available software</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_RStudio.html">R Studio Server</a></li>
             
             
             
@@ -348,7 +373,28 @@
             
             
             
-            <li><a href="mydoc_biomeme.html">Biomeme portable QPCR</a></li>
+            <li><a href="mydoc_nanopore.html">Oxford Nanopore</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Biomeme portable QPCR</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="mydoc_biomeme_avian.html">Avian</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_biomeme_human.html">Human</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
             
             
             
@@ -490,7 +536,12 @@ kallisto index -i myNewIndex InputFasta.fasta
 <p>Run the following command for pseudoalignment of single-end reads to index. 
 <code class="highlighter-rouge">
 kallisto quant -i myHumanIndex -o Sample1.mapped -b 60 —-single -l 275 -s 20 read1.fastq.gz
-</code></p>
+</code>
+Once read mapping is complete, you will see a short report printed to your screen that indicates the number of reads kallisto saw in the fastq file, and the number of these that mapped to the reference.  Often times it is useful to automatically store this information in a log file so that it can be parsed by other programs, such as the incredibly useful <a href="http://multiqc.info/">multiQC</a>.  To do this, simply append the code below at the end of your alignment bit above. The outcome will be the same, but you will also produce a log file.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&amp;&gt; yourSampleNameHere_kallisto.log
+</code></pre>
+</div>
 <div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> avoid putting hyphens in the name of the kallisto output, as this could cause problems later</div>
 
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> bootstrapping (-b command in the line above) adds significant time to the mapping, but is essential for accurate quantification. With a typical reference index for the mouse or human transcriptome, I find it takes about 15sec per bootstrap. So expect this to add ~30 min to the mapping time for each sample.</div>
@@ -590,7 +641,7 @@ devtools::install_github("pachterlab/sleuth")
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2018 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
- Site last generated: May 24, 2018 <br />
+ Site last generated: Jul 18, 2018 <br />
 <p><img src="images/CHMI_logo.png" alt="Company logo"/></p>
                 </div>
             </div>

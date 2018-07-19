@@ -83,6 +83,17 @@
 
 
 {
+"title": "RStudio Server",
+"tags": "bioinformatics",
+"keywords": "",
+"url": "mydoc_RStudio.html",
+"summary": "How to access RStudio through your web browser"
+}
+,
+
+
+
+{
 "title": "Illumina TruSeq Stranded mRNA Sample Preparation Protocol",
 "tags": "library_preptranscriptomics",
 "keywords": "transcriptomics, library preparation",
@@ -143,6 +154,28 @@
 "keywords": "",
 "url": "mydoc_biomeme.html",
 "summary": "Most of the projects we work on, whether profiling host gene expression or micobial communities, often yield at a candidate list of genes or organisms that we believe are linked to some phenotype.  Increasingly, we are interested in methods and technology that let us quantitiatively measure these features, particularly in a way that is portable and could be deployed 'stall-side' in a barn just as easily as at a lab bench.  For this, we've been using the Biomeme platform for end-to-end QPCR-based detection in the field"
+}
+,
+
+
+
+{
+"title": "Portable QPCR",
+"tags": "QPCRmobilediagnostics",
+"keywords": "",
+"url": "mydoc_biomeme_avian.html",
+"summary": "Biomeme protocol for detection of Infectious Bronchitis Virus (IBV), Mycoplasma gallisepticum (MG) and Mycoplasma synoviae (MS) from tracheal swabs"
+}
+,
+
+
+
+{
+"title": "Assays for human disease on the Biomeme platform",
+"tags": "QPCRmobilediagnostics",
+"keywords": "",
+"url": "mydoc_biomeme_human.html",
+"summary": "Biomeme protocol for detection of Leishmania braziliensis, skin commensals and host pro-inflammatory gene expression from lesion swabs in human cases of cutaneous leishmaniasis"
 }
 ,
 
@@ -406,7 +439,7 @@
 "tags": "bioinformatics",
 "keywords": "",
 "url": "mydoc_linux.html",
-"summary": "CHMI maintains a custom configured compute server that runs Linux Ubuntu 16.04 LTS.  This machine has two 6-core Intel Xeon E5-2643v4 CPUs (12 cores total), 512 Gb of RAM and 10Tb of RAID1 storage.  If you are a PennVet lab and wish to use this machine, please contact Dan Beiting (beiting@upenn.edu) for more information."
+"summary": "CHMI maintains a custom configured compute server that runs Linux Ubuntu 16.04 LTS.  This machine has two 6-core Intel Xeon E5-2643v4 CPUs (12 cores total), 512 Gb of RAM and 18Tb of RAID1 storage.  If you are a PennVet lab and wish to use this machine, please contact Dan Beiting (beiting@upenn.edu) for more information."
 }
 ,
 
@@ -424,11 +457,11 @@
 
 
 {
-"title": "RNAseq library prep for low input samples",
+"title": "mRNA-seq library prep for low input samples",
 "tags": "library_preptranscriptomics",
 "keywords": "transcriptomics, library preparation",
 "url": "mydoc_lowInput_RNAseq.html",
-"summary": "This protocol walks you through preparing a library for RNAseq when your starting amount of RNA is less than ~75ng.  This is a useful protocol if you are working with sorted cells"
+"summary": "This protocol walks you through preparing a mRNA library for RNAseq when your starting amount of RNA is less than ~75ng.  This is a useful protocol if you are working with sorted cells"
 }
 ,
 
@@ -567,6 +600,17 @@
 
 
 {
+"title": "Single Cell RNAseq library prep",
+"tags": "library_preptranscriptomics",
+"keywords": "transcriptomics, library preparation",
+"url": "mydoc_scRNAseq.html",
+"summary": "Using droplet-based technology to barcode individual cells for RNAseq"
+}
+,
+
+
+
+{
 "title": "Scroll layout",
 "tags": "special_layouts",
 "keywords": "json, scrolling, scrollto, jquery plugin",
@@ -671,6 +715,17 @@
 "keywords": "sidebar, accordion, yaml, iteration, for loop, navigation, attributes, conditional filtering",
 "url": "mydoc_sidebar_navigation.html",
 "summary": "The sidebar navigation uses a jQuery component called Navgoco. The sidebar is a somewhat complex part of the theme that remembers your current page, highlights the active item, stays in a fixed position on the page, and more. This page explains a bit about how the sidebar was put together."
+}
+,
+
+
+
+{
+"title": "Bioinformatics Software",
+"tags": "bioinformatics",
+"keywords": "",
+"url": "mydoc_software.html",
+"summary": "A summary of the bioinformatics software currently installed on our Linux cluster."
 }
 ,
 

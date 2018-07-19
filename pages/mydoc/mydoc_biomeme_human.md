@@ -1,10 +1,10 @@
 ---
-title: Portable QPCR
+title: Assays for human disease on the Biomeme platform
 tags: [QPCR, mobile, diagnostics]
 keywords:
 summary: "Biomeme protocol for detection of Leishmania braziliensis, skin commensals and host pro-inflammatory gene expression from lesion swabs in human cases of cutaneous leishmaniasis "
 sidebar: mydoc_sidebar
-permalink: mydoc_biomeme.html
+permalink: mydoc_biomeme_human.html
 folder: mydoc
 ---
 
