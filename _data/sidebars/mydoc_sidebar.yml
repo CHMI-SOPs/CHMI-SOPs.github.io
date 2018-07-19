@@ -136,6 +136,10 @@ entries:
         output: web, pdf
  
         subfolderitems:
+        - title: Set-up
+          url: /mydoc_biomeme.html
+          output: web, pdf
+
         - title: Avian
           url: /mydoc_biomeme_avian.html
           output: web, pdf
