@@ -1,5 +1,5 @@
 ---
-title: Portable QPCR
+title: QPCR assays for avian pathogens on the Biomeme platform
 tags: [QPCR, mobile, diagnostics]
 keywords:
 summary: "Biomeme protocol for detection of Infectious Bronchitis Virus (IBV), Mycoplasma gallisepticum (MG) and Mycoplasma synoviae (MS) from tracheal swabs"

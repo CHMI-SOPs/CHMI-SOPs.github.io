@@ -1,5 +1,5 @@
 ---
-title: Assays for human disease on the Biomeme platform
+title: QPCR assays for human pathogens on the Biomeme platform
 tags: [QPCR, mobile, diagnostics]
 keywords:
 summary: "Biomeme protocol for detection of Leishmania braziliensis, skin commensals and host pro-inflammatory gene expression from lesion swabs in human cases of cutaneous leishmaniasis "
@@ -21,8 +21,6 @@ For each patient, two sterile swabs (provided by Biomeme) are held together and 
 7. attach 25cc or 50cc syringe to the same filter tip.  Pump up and down with air vigorously to dry the column.
 8. remove and discard the syringe.  Connect new Biomeme 'slip-tip' 1 cc syringe to the column and draw up 150 ul of Biomeme Elution Buffer (BEB).  Pump up/down 3x with BEB.
 9. Expel the elution buffer into a final collection tube.  Typical elution volume is ~120ul.  We use 17ul of this DNA for any of the assays listed below, which means a single eluate is enough for at least 6 QPCR assays.
-
-## Primers and probes
 
 ### Skin-resident microbes 
 The primers and probes below are used for detection of *Staphylococcus aureus (Saur)*, *Streptococcus pyogenes (Spyo)* and *Leishmania braziliensis (Lbra)*
@@ -49,7 +47,7 @@ The primers and probes below are used for detection of *Staphylococcus aureus (S
 | *Lbra* probe | */56-FAM/*GCC TCT GGG */ZEN/* TAG GGG CGT TCT GCA A*/3IABkFQ/* |
 
 
-### Human transcripts
+## Human transcripts
 The primers and probes below are for the detection of host transcripts present in cellular material on recovered from the swab
 
 {% include note.html content="All of these targets are mRNAs, so be sure to use appropirate lysis buffer (BLB from RNA bulk extraction kit) and mastermix (LyoRNA)." %}
