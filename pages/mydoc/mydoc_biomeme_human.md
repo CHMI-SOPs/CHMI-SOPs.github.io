@@ -22,7 +22,7 @@ For each patient, two sterile swabs (provided by Biomeme) are held together and 
 8. remove and discard the syringe.  Connect new Biomeme 'slip-tip' 1 cc syringe to the column and draw up 150 ul of Biomeme Elution Buffer (BEB).  Pump up/down 3x with BEB.
 9. Expel the elution buffer into a final collection tube.  Typical elution volume is ~120ul.  We use 17ul of this DNA for any of the assays listed below, which means a single eluate is enough for at least 6 QPCR assays.
 
-### Skin-resident microbes 
+## Skin-resident microbes 
 The primers and probes below are used for detection of *Staphylococcus aureus (Saur)*, *Streptococcus pyogenes (Spyo)* and *Leishmania braziliensis (Lbra)*
 
 {% include note.html content="All of these targets are DNA, so be sure to use appropirate lysis buffer (BLB from DNA bulk extraction kit) and mastermix (LyoDNA)." %}
