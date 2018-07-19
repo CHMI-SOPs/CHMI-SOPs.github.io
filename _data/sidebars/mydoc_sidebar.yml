@@ -125,7 +125,6 @@ entries:
   - title: In the field
     output: web, pdf
 
-    folderitems:
       subfolders:
       - title: Biomeme portable QPCR
         url: /mydoc_biomeme.html
