@@ -21,23 +21,24 @@ If you're running a Mac OS, then begin by downloading and installing [Homebrew](
 
 Now, installing Kallisto is simple:
 ```
-brew tap homebrew/science
+brew tap homebrew/core
 brew install kallisto
 ```
 
 Test whether Kallisto is properly installed by typing ```kallisto```, and you should see this output
 
 ```
-kallisto 0.43.1
+kallisto 0.44.0
 
 Usage: kallisto <CMD> [arguments] ..
 
 Where <CMD> can be one of:
 
-    index         Builds a kallisto index 
-    quant         Runs the quantification algorithm 
-    pseudo        Runs the pseudoalignment step 
+    index         Builds a kallisto index
+    quant         Runs the quantification algorithm
+    pseudo        Runs the pseudoalignment step
     h5dump        Converts HDF5-formatted results to plaintext
+    inspect       Inspects and gives information about an index
     version       Prints version information
     cite          Prints citation information
 
@@ -48,7 +49,7 @@ Running kallisto <CMD> without arguments prints usage information for <CMD>
 
 1. Obtain administrative access for your computer
 2. Go to https://pachterlab.github.io/kallisto/download
-3. Download the latest Windows release (v0.43.1 for Fall 2017)
+3. Download the latest Windows release (v0.44 for Fall 2018)
 4. Extract to Program Files or Applications.  Kallisto is now installed on your computer but it cannot be accessed from any location in the command prompt/terminal until you add it to your computer’s path system variable 
 5. Add the kallisto directory to your PATH to allow for access from any directory
 * Start the System Control Panel applet (Start -> Settings -> Control Panel -> System)
@@ -79,7 +80,7 @@ kallisto quant -i myHumanIndex -o Sample1.mapped -b 60 —-single -l 275 -s 20 r
 Once read mapping is complete, you will see a short report printed to your screen that indicates the number of reads kallisto saw in the fastq file, and the number of these that mapped to the reference.  Often times it is useful to automatically store this information in a log file so that it can be parsed by other programs, such as the incredibly useful [multiQC](http://multiqc.info/).  To do this, simply append the code below at the end of your alignment bit above. The outcome will be the same, but you will also produce a log file.
 
 ```
-&> yourSampleNameHere_kallisto.log
+&> yourSampleNameHere.log
 ```
 {% include warning.html content="avoid putting hyphens in the name of the kallisto output, as this could cause problems later" %}
 
