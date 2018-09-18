@@ -63,7 +63,7 @@ navigate to [QIIME2 viewer](https://view.qiime2.org/) in browser to view this vi
 
 There are a number of ways you may have your raw data structured, depending on sequencing platform (e.g., Illumina vs Ion Torrent) and sequencing approach (e.g., single-end vs paired-end), and any pre-processing steps that have been performed by sequenencing facilities (e.g., joined paired ends, barcodes in fastq header, etc).  Check out the [QIIME info page](https://docs.qiime2.org/2018.2/tutorials/importing/), or consult with someone in our lab for help in preparing your data.
 
-Move your fastq files and your barcode file (if data is not already demultiplexed) to your working directory on the server.
+Move your fastq files and your barcode file (if data is not already demultiplexed) to your working directory on the server.  The directory should contain your forward.fastq.gz, reverse.fastq.gz, and barcodes.fastq.gz
 
 create an artifact of your data:
 
@@ -113,7 +113,7 @@ The methods for processing and analysis of 16S marker gene sequencing data conti
 
 {% include important.html content="If you have multiple runs, it is recommended that you run DADA2 separately on data from each run individually, then combine data from the runs after denoising.  See the [QIIME2 fecal transplant tutorial](https://docs.qiime2.org/2018.2/tutorials/fmt/) for an example of how this works" %}
 
-{% include note.html content="we will trim our sequences to 120bp.  This number is a bit arbritrary but should be guided by quality scores that you observed in demux.qzv in step 4 above.  If you want to avoid trimming for any reason (for example, if you are profiling fungi by ITS sequencing), simply set this value to 0." %}
+{% include note.html content="we will trim our sequences to 120bp.  This number is a bit arbritrary but should be guided by quality scores that you observed in demux.qzv in step 4 above.  If you want to avoid trimming for any reason (for example, if you are profiling fungi by ITS sequencing), simply set this value to 0.  Avoid trimming too much so that the reads have enough overlap to be aligned" %}
 
 ```
 qiime dada2 denoise-paired \
