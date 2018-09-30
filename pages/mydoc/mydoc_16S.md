@@ -9,10 +9,10 @@ folder: mydoc
 ---
 
 ## Before starting 
-This protocol is derived from Pat Schloss' Laboratory at the University of Michigan. If you use the protocol below, please cite [their manuscript on the dual-index sequencing strategy](http://aem.asm.org/content/early/2013/06/17/AEM.01043-13).  Also, see the [Supplemental materials](http://aem.asm.org/content/early/2013/06/17/AEM.01043-13/suppl/DCSupplemental) for a detailed look at the primer design for this strategy.
+This protocol is derived from Pat Schloss' Laboratory at the University of Michigan. Please cite their work.  If you use the protocol below, please cite [their manuscript on the dual-index sequencing strategy](http://aem.asm.org/content/early/2013/06/17/AEM.01043-13).  Also, see the [Supplemental materials](http://aem.asm.org/content/early/2013/06/17/AEM.01043-13/suppl/DCSupplemental) for a detailed look at the primer design for this strategy.
 
 ## Materials
-* 16S V4 region PCR primers from IDT.  [Here's a list of exactly what we ordered](http://CHMI-sops.github.io/papers/Barcoded_primers_Schloss_V4.txt)
+* Order primers from IDT/
 * [PicoGreen dsDNA Assay Kit, ThermoFisher, P7589](https://www.thermofisher.com/order/catalog/product/P7589)
 * [Fluotrac 200 plates- clear bottom, black, medium bind, USA Scientific, 5665-5096](https://www.usascientific.com/96-well-fluotrac-200-clear-bottom-black-plate.aspx)
 * RT-PCR Grade Water, Ambion, AM9935
@@ -79,7 +79,7 @@ Use the PicoGreen dsDNA Assay Kit to normalize concentrations of PCR reactions p
 
 * Dilute PicoGreen reagent in 15 mL or 50 mL tube
 	- For 1.5 DNA plates: 
-		-15 mL 1 X TE Buffer
+		-15 mL 1 X TE Bugger
 		-75 uL PicoGreen reagent
 
 	-For 2 full DNA plates:
@@ -173,7 +173,7 @@ Use the PicoGreen dsDNA Assay Kit to normalize concentrations of PCR reactions p
 ## Step 4: Library QC and normalization
 
 ### Agilent Tapestation
-Use Agilent HS DNA 1000 Tapes.  If significant primer peaks are seen (~120 bp), these can be removed by cleaning up with 1 round of purification using AMPureXP beads at a volume ratio of 0.6: 1 (beads:volume DNA). 
+Use Agilent DNA 1000 Screentape and reagent.  If significant primer peaks are seen (~120 bp), these can be removed by cleaning up with 1 round of purification using AMPureXP beads at a volume ratio of 0.6: 1 (beads:volume DNA). 
 
 ### Qubit
 use the high sensitivity DNA assay.  Create normalized pools from each plate by diluting all samples down to match the least concentrated plate. 

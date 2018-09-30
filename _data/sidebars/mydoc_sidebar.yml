@@ -51,6 +51,20 @@ entries:
     - title: Single cell sequencing
       url: /mydoc_scRNAseq.html
       output: web, pdf
+      
+      subfolders:
+      - title: Single cell sequencing
+        output: web
+
+        subfolderitems:
+        - title: Encapsulation of single cells
+          url: /mydoc_scRNAseq_encapsulation.html
+          output: web, pdf
+
+        - title: Library prep
+          url: /mydoc_scRNAseq_libraryPrep.html
+          output: web, pdf
+
         
       subfolders:
       - title: Data analysis
