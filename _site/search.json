@@ -160,7 +160,7 @@
 
 
 {
-"title": "Portable QPCR",
+"title": "QPCR assays for avian pathogens on the Biomeme platform",
 "tags": "QPCRmobilediagnostics",
 "keywords": "",
 "url": "mydoc_biomeme_avian.html",
@@ -171,7 +171,7 @@
 
 
 {
-"title": "Assays for human disease on the Biomeme platform",
+"title": "QPCR assays for human pathogens on the Biomeme platform",
 "tags": "QPCRmobilediagnostics",
 "keywords": "",
 "url": "mydoc_biomeme_human.html",
@@ -600,10 +600,10 @@
 
 
 {
-"title": "Single Cell RNAseq library prep",
-"tags": "library_preptranscriptomics",
-"keywords": "transcriptomics, library preparation",
-"url": "mydoc_scRNAseq.html",
+"title": "Single Cell RNAseq – encapsulation",
+"tags": "transcriptomics",
+"keywords": "transcriptomics",
+"url": "mydoc_scRNAseq_ecapsulation.html",
 "summary": "Using droplet-based technology to barcode individual cells for RNAseq"
 }
 ,
@@ -611,11 +611,22 @@
 
 
 {
-"title": "Scroll layout",
-"tags": "special_layouts",
-"keywords": "json, scrolling, scrollto, jquery plugin",
-"url": "jsmydoc_scroll.html",
-"summary": "This page demonstrates how you the integration of a script called ScrollTo, which is used here to link definitions of a JSON code sample to a list of definitions for that particular term. The scenario here is that the JSON blocks are really long, with extensive nesting and subnesting, which makes it difficult for tables below the JSON to adequately explain the term in a usable way."
+"title": "Single Cell RNAseq – encapsulation",
+"tags": "transcriptomics",
+"keywords": "transcriptomics",
+"url": "mydoc_scRNAseq_ecapsulation.html",
+"summary": "Using droplet-based technology to isolate and barcode individual cells"
+}
+,
+
+
+
+{
+"title": "Single Cell RNAseq – library prep",
+"tags": "Library preptranscriptomics",
+"keywords": "transcriptomics, library prep",
+"url": "mydoc_scRNAseq_libraryPrep.html",
+"summary": "post-encapsulation steps for preparing sequence-ready libraries for scRNAseq"
 }
 ,
 
@@ -626,6 +637,17 @@
 "tags": "special_layouts",
 "keywords": "json, scrolling, scrollto, jquery plugin",
 "url": "mydoc_scroll.html",
+"summary": "This page demonstrates how you the integration of a script called ScrollTo, which is used here to link definitions of a JSON code sample to a list of definitions for that particular term. The scenario here is that the JSON blocks are really long, with extensive nesting and subnesting, which makes it difficult for tables below the JSON to adequately explain the term in a usable way."
+}
+,
+
+
+
+{
+"title": "Scroll layout",
+"tags": "special_layouts",
+"keywords": "json, scrolling, scrollto, jquery plugin",
+"url": "jsmydoc_scroll.html",
 "summary": "This page demonstrates how you the integration of a script called ScrollTo, which is used here to link definitions of a JSON code sample to a list of definitions for that particular term. The scenario here is that the JSON blocks are really long, with extensive nesting and subnesting, which makes it difficult for tables below the JSON to adequately explain the term in a usable way."
 }
 ,

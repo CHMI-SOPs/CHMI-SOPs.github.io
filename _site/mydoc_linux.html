@@ -383,6 +383,12 @@
                     
                     
                     
+                    <li><a href="mydoc_biomeme.html">Set-up</a></li>
+                    
+                    
+                    
+                    
+                    
                     <li><a href="mydoc_biomeme_avian.html">Avian</a></li>
                     
                     
@@ -575,221 +581,6 @@ sudo nano /etc/profile
   </tbody>
 </table>
 
-<h2 id="available-software">Available software</h2>
-<p>We have a lot of software already installed on the server that covers applications ranging from QC analysis and preprocessing of raw sequence data, transcriptome analysis from RNAseq data, 16S and shotgun metagenomics pipelines, WGS tools, and more.  If you have an account on our cluster, then you already have access to all of the software below, so get started!</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>software</th>
-      <th>category</th>
-      <th>how to run</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="https://github.com/merenlab/anvio">anvi’o</a></td>
-      <td>metagenomics, visualization</td>
-      <td><code class="highlighter-rouge">source activate anvio4</code></td>
-    </tr>
-    <tr>
-      <td><a href="https://samtools.github.io/bcftools/bcftools.html">bcftools</a></td>
-      <td>SNP/variant discovery and genotyping</td>
-      <td><code class="highlighter-rouge">bcftools</code></td>
-    </tr>
-    <tr>
-      <td><a href="https://support.illumina.com/downloads/bcl2fastq-conversion-software-v2-20.html">bcl2fastq2</a></td>
-      <td>convert bcf files produced by illumina sequencers to fastq</td>
-      <td><code class="highlighter-rouge">bcf2fastq</code></td>
-    </tr>
-    <tr>
-      <td><a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi">blast</a></td>
-      <td>sequence search</td>
-      <td>option include <code class="highlighter-rouge">blastn</code>, <code class="highlighter-rouge">blastp</code>, or <code class="highlighter-rouge">blastx</code></td>
-    </tr>
-    <tr>
-      <td><a href="http://bowtie-bio.sourceforge.net/bowtie2/index.shtml">bowtie2</a></td>
-      <td>sequence alignment</td>
-      <td><code class="highlighter-rouge">bowtie2</code></td>
-    </tr>
-    <tr>
-      <td><a href="http://bio-bwa.sourceforge.net/">bwa</a></td>
-      <td>sequence alignment</td>
-      <td><code class="highlighter-rouge">bwa</code></td>
-    </tr>
-    <tr>
-      <td><a href="http://circos.ca/">Circos</a></td>
-      <td>general visualization</td>
-      <td><code class="highlighter-rouge">circos</code></td>
-    </tr>
-    <tr>
-      <td><a href="https://github.com/BaselAbujamous/clust">clust</a></td>
-      <td>co-expression modules</td>
-      <td><code class="highlighter-rouge">clust</code></td>
-    </tr>
-    <tr>
-      <td><a href="http://www.cytoscape.org/">Cytoscape</a></td>
-      <td>network analysis</td>
-      <td>navigate to /home/shared/softwares/Cytoscape_v3.5.1 folder.  Double click to open program</td>
-    </tr>
-    <tr>
-      <td><a href="https://deeptools.readthedocs.io/en/latest/">deeptools</a></td>
-      <td>analysis of HTS data</td>
-      <td><code class="highlighter-rouge">deeptools</code></td>
-    </tr>
-    <tr>
-      <td><a href="https://github.com/bbuchfink/diamond">diamond</a></td>
-      <td>Accelerated BLAST compatible local sequence aligner</td>
-      <td><code class="highlighter-rouge">diamond</code></td>
-    </tr>
-    <tr>
-      <td><a href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/">FastQC</a></td>
-      <td>generates quality control reports for fastq files.</td>
-      <td><code class="highlighter-rouge">fastqc</code></td>
-    </tr>
-    <tr>
-      <td><a href="https://www.bioinformatics.babraham.ac.uk/projects/fastq_screen/">FastQ Screen</a></td>
-      <td>screening fastq files against multiple reference genomes.</td>
-      <td><code class="highlighter-rouge">fastq_screen</code></td>
-    </tr>
-    <tr>
-      <td><a href="https://software.broadinstitute.org/gatk/">genome analysis toolkit (gatk)</a></td>
-      <td>SNP/variant discovery and genotyping</td>
-      <td><code class="highlighter-rouge">gatk</code></td>
-    </tr>
-    <tr>
-      <td><a href="https://bitbucket.org/nsegata/graphlan/wiki/Home">GraPhlAn</a></td>
-      <td>metagenomics, visualization</td>
-      <td><code class="highlighter-rouge">graphlan.py</code> or <code class="highlighter-rouge">graphlan_annotate.py</code></td>
-    </tr>
-    <tr>
-      <td><a href="https://huttenhower.sph.harvard.edu/humann2">Humann2</a></td>
-      <td>metagenomics</td>
-      <td><code class="highlighter-rouge">humann2</code></td>
-    </tr>
-    <tr>
-      <td><a href="https://htseq.readthedocs.io/en/release_0.10.0/">HTSeq</a></td>
-      <td>great for summarizing alignments to get counts per gene/exons</td>
-      <td><code class="highlighter-rouge">htseq-count</code> or <code class="highlighter-rouge">htseq-qa</code></td>
-    </tr>
-    <tr>
-      <td><a href="https://pachterlab.github.io/kallisto/">Kallisto</a></td>
-      <td>mapping reads to transcripts</td>
-      <td><code class="highlighter-rouge">kallisto</code></td>
-    </tr>
-    <tr>
-      <td><a href="https://bitbucket.org/biobakery/kneaddata/wiki/Home">KneadData</a></td>
-      <td>removes host or ‘contaminating’ reads from dataset</td>
-      <td><code class="highlighter-rouge">kneaddata</code></td>
-    </tr>
-    <tr>
-      <td><a href="https://ccb.jhu.edu/software/kraken/">Kraken2</a></td>
-      <td>taxonomic classification system</td>
-      <td><code class="highlighter-rouge">kraken2</code></td>
-    </tr>
-    <tr>
-      <td><a href="http://mash.readthedocs.io/en/latest/">Mash</a></td>
-      <td>comparative genomics</td>
-      <td><code class="highlighter-rouge">mash</code></td>
-    </tr>
-    <tr>
-      <td><a href="https://bitbucket.org/biobakery/metaphlan2">MetaPhlAn</a></td>
-      <td>metagenomics</td>
-      <td><code class="highlighter-rouge">metaphlan2.py</code></td>
-    </tr>
-    <tr>
-      <td><a href="http://omics.informatics.indiana.edu/MinPath/">MinPath</a></td>
-      <td>biological pathway reconstructions using protein family predictions</td>
-      <td><code class="highlighter-rouge">MinPath1.4.py</code></td>
-    </tr>
-    <tr>
-      <td><a href="https://www.mothur.org/">Mothur</a></td>
-      <td>16S marker gene</td>
-      <td><code class="highlighter-rouge">mothur</code></td>
-    </tr>
-    <tr>
-      <td><a href="http://multiqc.info">MultiQC</a></td>
-      <td>summarizes log files produced by other tools (<em>e.g.</em> STAR, kallisto, FastQC, etc).</td>
-      <td><code class="highlighter-rouge">multiqc</code></td>
-    </tr>
-    <tr>
-      <td><a href="https://www.nextflow.io">Nextflow</a></td>
-      <td>workflow management</td>
-      <td><code class="highlighter-rouge">nextflow</code></td>
-    </tr>
-    <tr>
-      <td><a href="http://broadinstitute.github.io/picard/">Picard tools</a></td>
-      <td>handling HTS file formats</td>
-      <td><code class="highlighter-rouge">java -jar /usr/local/bin/picard/build/libs/picard.jar</code></td>
-    </tr>
-    <tr>
-      <td><a href="https://github.com/tseemann/prokka">Prokka</a></td>
-      <td>genome annotation for prokaryotes</td>
-      <td><code class="highlighter-rouge">prokka</code></td>
-    </tr>
-    <tr>
-      <td><a href="https://qiime2.org/">QIIME2</a></td>
-      <td>16S marker gene</td>
-      <td><code class="highlighter-rouge">source activate qiime2</code></td>
-    </tr>
-    <tr>
-      <td><a href="https://github.com/deweylab/RSEM">rsem</a></td>
-      <td>mapping reads to transcripts</td>
-      <td><code class="highlighter-rouge">rsem-(function)</code></td>
-    </tr>
-    <tr>
-      <td><a href="http://samtools.sourceforge.net/">samtools</a></td>
-      <td>handling HTS file formats</td>
-      <td><code class="highlighter-rouge">samtools</code></td>
-    </tr>
-    <tr>
-      <td><a href="https://github.com/lh3/seqtk">seqtk</a></td>
-      <td>handling HTS file formats</td>
-      <td><code class="highlighter-rouge">seqtk</code></td>
-    </tr>
-    <tr>
-      <td><a href="https://github.com/najoshi/sickle">Sickle</a></td>
-      <td>quality trimming of raw sequences</td>
-      <td><code class="highlighter-rouge">sickle se</code> or <code class="highlighter-rouge">sickle pe</code></td>
-    </tr>
-    <tr>
-      <td><a href="http://cab.spbu.ru/software/spades/">SPAdes</a></td>
-      <td>genome assembly from illumina short reads</td>
-      <td><code class="highlighter-rouge">spades.py [options] -o &lt;output_dir&gt;</code></td>
-    </tr>
-    <tr>
-      <td><a href="https://github.com/Kingsford-Group/squid">SQUID</a></td>
-      <td>find trascriptomic structural variants from RNAseq data</td>
-      <td><code class="highlighter-rouge">squid</code></td>
-    </tr>
-    <tr>
-      <td><a href="https://github.com/ncbi/sra-tools/wiki/Downloads">SRA toolkit</a></td>
-      <td>tools for accessing sequence data stored on SRA</td>
-      <td>e.g. <code class="highlighter-rouge">fasterq_dump</code>, and many more</td>
-    </tr>
-    <tr>
-      <td><a href="https://github.com/alexdobin/STAR">Star</a></td>
-      <td>sequence alignment</td>
-      <td><code class="highlighter-rouge">STAR</code> (all caps)</td>
-    </tr>
-    <tr>
-      <td><a href="https://github.com/eclarke/sunbeam/blob/master/Readme.md">Sunbeam</a></td>
-      <td>metagenomics</td>
-      <td><code class="highlighter-rouge">source activate sunbeam</code></td>
-    </tr>
-    <tr>
-      <td><a href="http://www.usadellab.org/cms/?page=trimmomatic">Trimmomatic</a></td>
-      <td>quality trimming of raw sequences</td>
-      <td><code class="highlighter-rouge">java -jar /usr/local/bin/trimmomatic-0.33.jar</code></td>
-    </tr>
-    <tr>
-      <td><a href="https://github.com/trinityrnaseq/trinityrnaseq/wiki">Trinity</a></td>
-      <td>de novo transcriptome assembly</td>
-      <td><code class="highlighter-rouge">Chrysalis</code> (uppercase ‘C’), <code class="highlighter-rouge">inchworm</code></td>
-    </tr>
-  </tbody>
-</table>
-
 
 
     <div class="tags">
@@ -829,7 +620,7 @@ sudo nano /etc/profile
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2018 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
- Site last generated: Jul 18, 2018 <br />
+ Site last generated: Sep 29, 2018 <br />
 <p><img src="images/CHMI_logo.png" alt="Company logo"/></p>
                 </div>
             </div>

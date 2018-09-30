@@ -383,6 +383,12 @@
                     
                     
                     
+                    <li><a href="mydoc_biomeme.html">Set-up</a></li>
+                    
+                    
+                    
+                    
+                    
                     <li><a href="mydoc_biomeme_avian.html">Avian</a></li>
                     
                     
@@ -515,7 +521,7 @@ qiime tools --help
 
 <p>There are a number of ways you may have your raw data structured, depending on sequencing platform (e.g., Illumina vs Ion Torrent) and sequencing approach (e.g., single-end vs paired-end), and any pre-processing steps that have been performed by sequenencing facilities (e.g., joined paired ends, barcodes in fastq header, etc).  Check out the <a href="https://docs.qiime2.org/2018.2/tutorials/importing/">QIIME info page</a>, or consult with someone in our lab for help in preparing your data.</p>
 
-<p>Move your fastq files and your barcode file (if data is not already demultiplexed) to your working directory on the server.</p>
+<p>Move your fastq files and your barcode file (if data is not already demultiplexed) to your working directory on the server.  The directory should contain your forward.fastq.gz, reverse.fastq.gz, and barcodes.fastq.gz</p>
 
 <p>create an artifact of your data:</p>
 
@@ -564,7 +570,7 @@ qiime tools --help
 
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> If you have multiple runs, it is recommended that you run DADA2 separately on data from each run individually, then combine data from the runs after denoising.  See the <a href="https://docs.qiime2.org/2018.2/tutorials/fmt/">QIIME2 fecal transplant tutorial</a> for an example of how this works</div>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> we will trim our sequences to 120bp.  This number is a bit arbritrary but should be guided by quality scores that you observed in demux.qzv in step 4 above.  If you want to avoid trimming for any reason (for example, if you are profiling fungi by ITS sequencing), simply set this value to 0.</div>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> we will trim our sequences to 120bp.  This number is a bit arbritrary but should be guided by quality scores that you observed in demux.qzv in step 4 above.  If you want to avoid trimming for any reason (for example, if you are profiling fungi by ITS sequencing), simply set this value to 0.  Avoid trimming too much so that the reads have enough overlap to be aligned</div>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>qiime dada2 denoise-paired \
   --i-demultiplexed-seqs demux.qza \
@@ -868,7 +874,7 @@ For continuous data, you can use a random forest regressor.
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2018 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
- Site last generated: Jul 18, 2018 <br />
+ Site last generated: Sep 29, 2018 <br />
 <p><img src="images/CHMI_logo.png" alt="Company logo"/></p>
                 </div>
             </div>

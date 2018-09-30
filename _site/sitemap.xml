@@ -352,19 +352,31 @@
   
   
   <url>
-    <loc>http://localhost:4000/mydoc_scRNAseq.html</loc>
+    <loc>http://localhost:4000/mydoc_scRNAseq_ecapsulation.html</loc>
   </url>
   
   
   
   <url>
-    <loc>http://localhost:4000/js/mydoc_scroll.html</loc>
+    <loc>http://localhost:4000/mydoc_scRNAseq_ecapsulation.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/mydoc_scRNAseq_libraryPrep.html</loc>
   </url>
   
   
   
   <url>
     <loc>http://localhost:4000/mydoc_scroll.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/js/mydoc_scroll.html</loc>
   </url>
   
   

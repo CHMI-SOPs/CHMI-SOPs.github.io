@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Biomeme protocol for detection of Infectious Bronchitis Virus (IBV), Mycoplasma gallisepticum (MG) and Mycoplasma synoviae (MS) from tracheal swabs">
 <meta name="keywords" content="QPCRmobilediagnostics,  ">
-<title>Portable QPCR | CHMI services</title>
+<title>QPCR assays for avian pathogens on the Biomeme platform | CHMI services</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -120,7 +120,7 @@
 
 
 
-  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:beiting@upenn.edu?subject=CHMI services feedback&body=I have some feedback about the Portable QPCR page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:beiting@upenn.edu?subject=CHMI services feedback&body=I have some feedback about the QPCR assays for avian pathogens on the Biomeme platform page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
 
 </li>
 
@@ -138,7 +138,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Portable QPCR">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="QPCR assays for avian pathogens on the Biomeme platform">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -383,6 +383,12 @@
                     
                     
                     
+                    <li><a href="mydoc_biomeme.html">Set-up</a></li>
+                    
+                    
+                    
+                    
+                    
                     <li class="active"><a href="mydoc_biomeme_avian.html">Avian</a></li>
                     
                     
@@ -421,7 +427,7 @@
         <!-- Content Column -->
         <div class="col-md-9" id="tg-sb-content">
             <div class="post-header">
-   <h1 class="post-title-main">Portable QPCR</h1>
+   <h1 class="post-title-main">QPCR assays for avian pathogens on the Biomeme platform</h1>
 </div>
 
 
@@ -464,7 +470,23 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <h2 id="infectious-bronchitis-virus-ibv">Infectious Bronchitis Virus (IBV)</h2>
+  <h2 id="field-extraction-of-tracheal-swabs">Field extraction of tracheal swabs</h2>
+<p>All avian assays begin with tracheal swabs collected in brain-heart infusion (BHI) media.  We typically have 11 swabs all stored in a single vial containing 5.5 ml of BHI media.  These swabs could be from multiple birds or from a single bird sampled multiple times, and this vial can be assayed fresh or after storage at -80C.  Here’s our procotol for rapid, 1 minute DNA extraction using Biomeme reagents:</p>
+
+<ol>
+  <li>thaw vial containing BHI media and swabs</li>
+  <li>take 100 ul aliquot of sample for DNA or RNA extraction (might be quite viscous due to mucous)</li>
+  <li>add 100 ul sample to 1 ml of Biomeme Lysis Buffer (BLB) (if you plan to assay for IBV, use BLB from RNA kit)</li>
+  <li>with a 1cc syringe affixed to a Biomeme extraction column, push the extraction sample mix up and down 10 times</li>
+  <li>after expelling the volume the 10th time, wash the column by drawing up 500 ul of Biomeme Protein Wash (BPW) 1 time, then expel again.</li>
+  <li>draw up 1 ml of Biomeme Wash Buffer (BWB) and expel volume</li>
+  <li>draw up 1 ml of Biomeme Drying Wash (BDW) and expel volume</li>
+  <li>remove and discard the 1cc syringe, and attach a new 50cc syringe to the same column.  Pump up and down with air vigorously to dry the column.</li>
+  <li>remove and discard the 50cc syringe.  Connect new 1 cc syringe to the column and draw up 125 ul of Biomeme Elution Buffer (BEB).</li>
+  <li>Expel the elution buffer into a final collection tube.  Typical elution volume is 50-70 ul.  We use 5ul of this DNA for any of the assays listed below, which means a single eluate is enough for at least 9-10 QPCR assays.</li>
+</ol>
+
+<h2 id="infectious-bronchitis-virus-ibv">Infectious Bronchitis Virus (IBV)</h2>
 
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> IBV is an RNA virus, so be sure to use the appropriate lysis buffer (BLB from RNA bulk extraction kit) and mastermix (LyoRNA).</div>
 
@@ -575,7 +597,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2018 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
- Site last generated: Jul 18, 2018 <br />
+ Site last generated: Sep 29, 2018 <br />
 <p><img src="images/CHMI_logo.png" alt="Company logo"/></p>
                 </div>
             </div>
