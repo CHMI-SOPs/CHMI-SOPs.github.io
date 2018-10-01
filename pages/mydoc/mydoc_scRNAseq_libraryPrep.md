@@ -1,7 +1,7 @@
 ---
 title: Single Cell RNAseq – library prep
-tags: [Library prep, transcriptomics]
-keywords: transcriptomics, library prep
+tags: [transcriptomics]
+keywords: transcriptomics
 summary: "post-encapsulation steps for preparing sequence-ready libraries for scRNAseq"
 sidebar: mydoc_sidebar
 permalink: mydoc_scRNAseq_libraryPrep.html
@@ -92,31 +92,31 @@ Time: 2 hours
 3. Prepare the Digestion Mix. For every 70uL of post-RT material, prepare 100uL of Digestion Mix (1000 cells is approximately equal to 35uL of post-RT material so if you sorted 3000 cells, make 150uL of Digestion Mix)
 
 **Volumes for 50uL of Digestion Mix (1000 cells):**
-| Component | Volume/ rxn |
-|-------|--------|
-| ddH2O | 39.5 uL |
-| 10X Fast Digest Buffer | 4.5 uL |
-| Exonuclease I | 2.5 uL |
-| HinFI | 3.5 uL |
-|  | Total 50 uL |
+| Component              | Volume per rxn |
+|------------------------|----------------|
+| ddH2O                  | 39.5 uL        |
+| 10X Fast Digest Buffer | 4.5 uL         |
+| Exonuclease I          | 2.5 uL         |
+| HinFI                  | 3.5 uL         |
+|                        | Total 50 uL    |
 
 **Volumes for 100uL of Digestion Mix (2000 cells):**
-| Component | Volume/ rxn |
-|-------|--------|
-| ddH2O | 79 uL |
-| 10X Fast Digest Buffer | 9 uL |
-| Exonuclease I | 5 uL |
-| HinFI | 7 uL |
-|  | Total 100 uL |
+| Component              | Volume per rxn |
+|------------------------|----------------|
+| ddH2O                  | 79 uL          |
+| 10X Fast Digest Buffer | 9 uL           |
+| Exonuclease I          | 5 uL           |
+| HinFI                  | 7 uL           |
+|                        | Total 100 uL   |
 
 **Volumes for 150uL of Digestion Mix (3000 cells):**
-| Component | Volume/ rxn |
-|-------|--------|
-| ddH2O | 118.5 uL |
-| 10X Fast Digest Buffer | 13.5 uL |
-| Exonuclease I | 7.5 uL |
-| HinFI | 10.5 uL |
-|  | Total 150 uL |
+| Component              | Volume per rxn |
+|------------------------|----------------|
+| ddH2O                  | 118.5 uL       |
+| 10X Fast Digest Buffer | 13.5 uL        |
+| Exonuclease I          | 7.5 uL         |
+| HinFI                  | 10.5 uL        |
+|                        | Total 150 uL   |
 
 {% include important.html content="All steps before linear amplification before in vitro transcription should be performed with a blocked tip. This miminizes the material loss due to adsorption. Immerse pipet tip into block buffer, pipet up and down once and the tip is ready for use.." %}
 
@@ -156,13 +156,13 @@ Time: 16-18 hours
 
 10. Make a master mix of the following components by multiplying the volume by the amount of samples you have; add 60 uL to each sample: 
 
-| Component | Volume/ rxn |
-|-------|--------|
-| Nuclease-free water | 12 uL |
-| NEB T7 High Yield 10X Buffer | 8 uL |
-| NTP [4 different NTP buffers, ATP, UTP, CTP, GTP] (100mM) |  8 uL each |
-| NEB T7 High Yield Enzyme Mix | 8 uL |
-|  | Total 60 uL |
+| Component                                                 | Volume per rxn |
+|-----------------------------------------------------------|----------------|
+| Nuclease-free water                                       | 12 uL          |
+| NEB T7 High Yield 10X Buffer                              | 8 uL           |
+| NTP [4 different NTP buffers, ATP, UTP, CTP, GTP] (100mM) | 8 uL each      |
+| NEB T7 High Yield Enzyme Mix                              | 8 uL           |
+|                                                           | Total 60 uL    |
 
 11. Pipette to mix, spin plate down, and incubate at 37C for 13-15 hours with the lid heated to 50C.
 
@@ -193,12 +193,12 @@ Time: 20 mins
 
 14. Prepare Fragmentation Stop Mix for each sample: 
 
-| Component | Volume/ rxn |
-|-------|--------|
-| RNA Elution Buffer | 9.8 uL |
-| AMPure Beads | 26.4 uL |
-| Stop Solution from the RNA fragementation kit |  1.2uL |
-|  | Total  37.4 uL |
+| Component                                     | Volume per rxn |
+|-----------------------------------------------|----------------|
+| RNA Elution Buffer                            | 9.8 uL         |
+| AMPure Beads                                  | 26.4 uL        |
+| Stop Solution from the RNA fragementation kit | 1.2uL          |
+|                                               | Total  37.4 uL |
 
 15. Vortex the solution from above and place on ice. 
 
@@ -234,24 +234,24 @@ Time: 2.5 hours
 
 22. On ice, combine the following: 
 
-| Component | Volume/ rxn |
-|-------|--------|
-| Purified Fragmented amplified RNA from previous step| 8 uL |
-| dNTP (10mM) | 1 uL |
-| PE2-N6 primer (100uM) |  2uL |
-|  | Total  11 uL | 
+| Component                                            | Volume per rxn |
+|------------------------------------------------------|----------------|
+| Purified Fragmented amplified RNA from previous step | 8 uL           |
+| dNTP (10mM)                                          | 1 uL           |
+| PE2-N6 primer (100uM)                                | 2uL            |
+|                                                      | Total  11 uL   |
 
 23. Pipette to mix, spin down. Incubate at 70C (lid at 105C) for exactly 3 minutes and cool immediately on ice. 
 
 24. On ice, add the following components to the mix to bring the total volume to 20uL: 
 
-| Component | Volume/ rxn |
-|-------|--------|
-| Nuclease-free water| 3.5 uL |
-| 5x Prime Script Buffer | 4 uL |
-| RNase OUT (40 U/uL) |  1 uL |
-| Prime Script Reverse Transcriptase (200 U/uL) | 0.5 uL |
-|  | Total  9 uL | 
+| Component                                     | Volume per rxn |
+|-----------------------------------------------|----------------|
+| Nuclease-free water                           | 3.5 uL         |
+| 5x Prime Script Buffer                        | 4 uL           |
+| RNase OUT (40 U/uL)                           | 1 uL           |
+| Prime Script Reverse Transcriptase (200 U/uL) | 0.5 uL         |
+|                                               | Total  9 uL    |
 
 25. Mix gently by pipetting and incubate the reaction at 30C for 10 minutes followed by 42C for 1 hour then 70C for 15 minutes to heat inactivate the enzyme. 
 
@@ -280,14 +280,14 @@ Time: 1.5-2 hours
 
 28. Perform a quantitative PCR (qPCR) to determine the correct number of PCR amplification cycles in the next step. Combine the following components on ice: 
 
-| Component | Volume/ rxn |
-|-------|--------|
-| Nuclease-free water| 6.5 uL |
-| Eluate from step 27 | 0.5 uL |
-| 2x Kapa HiFi Hot Start PCR Mix |  10 uL |
-| 20x Eva Green Dye | 1 uL |
-| PE1/PE2 primer mix (5uM) | 2 uL |
-|  | Total  20 uL | 
+| Component                      | Volume/ rxn  |
+|--------------------------------|--------------|
+| Nuclease-free water            | 6.5 uL       |
+| Eluate from step 27            | 0.5 uL       |
+| 2x Kapa HiFi Hot Start PCR Mix | 10 uL        |
+| 20x Eva Green Dye              | 1 uL         |
+| PE1/PE2 primer mix (5uM)       | 2 uL         |
+|                                | Total  20 uL |
 
 {% include important.html content="Use primers 6 and 12 first. If only running one sample, use primer 6, located in A6 on the well of the primer plate supplied by 1cellBio. If running two samples, use primer 6 and primer 12 (A6 and A12). If running more than two samples, once primers 6 and primer 12 are used, it does not matter which primer is used." %}
 
@@ -299,15 +299,15 @@ Italics denote steps to be run for 2 cycles.
 
 Bold denotes steps to be run for 24 cycles. 
 
-| Temp (C) | Time (min:sec) |
-|-------|--------|
-| 98 | 2:00 |
-| *98* | *0:20* |
-| *55* | *0:30* |
-| *72* | *0:40* |
-| **98** | **0:20** |
-| **65** | **0:30** |
-| **72** | **0:40** with fluorescent read |
+| Temp (C) | Time (min:sec)                 |
+|----------|--------------------------------|
+| 98       | 2:00                           |
+| *98*     | *0:20*                         |
+| *55*     | *0:30*                         |
+| *72*     | *0:40*                         |
+| **98**   | **0:20**                       |
+| **65**   | **0:30**                       |
+| **72**   | **0:40** with fluorescent read |
 
 30. Set the qPCR threshold within the exponential phase of amplification, but closer to where the signal starts to emerge from the noise to avoid the possibilty of over-amplification. 
 - To account for the differences of input material between the qPCR and the PCR amplification of our samples, we will calculate the amount of PCR cycles to amplify our sample with now.
@@ -319,13 +319,13 @@ Time: 2 hours
 
 31. Combine the following components on ice: 
 
-| Component | Volume/ rxn |
-|-------|--------|
-| Nuclease-free water| 0.5 uL |
-| Eluate from step 27 | 9.5 uL |
-| 2x Kapa HiFi Hot Start PCR Mix |  12.5 uL |
-| PE1/PE2 primer mix (5uM) | 2.5 uL |
-|  | Total  25 uL | 
+| Component                      | Volume/ rxn  |
+|--------------------------------|--------------|
+| Nuclease-free water            | 0.5 uL       |
+| Eluate from step 27            | 9.5 uL       |
+| 2x Kapa HiFi Hot Start PCR Mix | 12.5 uL      |
+| PE1/PE2 primer mix (5uM)       | 2.5 uL       |
+|                                | Total  25 uL |
 
 {% include important.html content="Use the same primer numbers that were used in the qPCR step. Again, use A6 and A12 first before using any other primer sets on the plate supplied by 1cellbio." %}
 
@@ -338,15 +338,15 @@ Italics denote steps to be run for 2 cycles.
 Bold denotes steps to be run for amount of cycles determined by qPCR. 
 
 | Temp (C) | Time (min:sec) |
-|-------|--------|
-| 98 | 2:00 |
-| *98* | *0:20* |
-| *55* | *0:30* |
-| *72* | *0:40* |
-| **98** | **0:20** |
-| **65** | **0:30** |
-| **72** | **0:40** |
-| 72 | 5:00 |
+|----------|----------------|
+| 98       | 2:00           |
+| *98*     | *0:20*         |
+| *55*     | *0:30*         |
+| *72*     | *0:40*         |
+| **98**   | **0:20**       |
+| **65**   | **0:30**       |
+| **72**   | **0:40**       |
+| 72       | 5:00           |
 
 - If working with multiple libraries that require different cycle numbers, set the thermal cycler to the maximum number of cycles needed, then manually remove each individual sample when they have reached the desired cycle number. 
 - Move the individual libraries to an ice bucket while the rest of the libraries are amplifying. 
@@ -379,3 +379,5 @@ This eluate is the final sequencing-ready library.
 36. Perform Qubit on samples using the HS DNA assay to get the concentration for pooling and sequencing.
 
 **Pause Point**: store the libraries at -80C or -20C. They should be stable for at least 1 year.
+
+{% include links.html %}

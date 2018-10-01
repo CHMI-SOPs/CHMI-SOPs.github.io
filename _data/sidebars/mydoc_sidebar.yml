@@ -61,11 +61,10 @@ entries:
           url: /mydoc_scRNAseq_encapsulation.html
           output: web, pdf
 
-        - title: Library prep
-          url: /mydoc_scRNAseq_libraryPrep.html
+        - title: scRNAseq library prep
+          url: /mydoc_scRNAseq_encapsulation.html
           output: web, pdf
 
-        
       subfolders:
       - title: Data analysis
         output: web
