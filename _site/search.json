@@ -623,8 +623,8 @@
 
 {
 "title": "Single Cell RNAseq – library prep",
-"tags": "Library preptranscriptomics",
-"keywords": "transcriptomics, library prep",
+"tags": "transcriptomics",
+"keywords": "transcriptomics",
 "url": "mydoc_scRNAseq_libraryPrep.html",
 "summary": "post-encapsulation steps for preparing sequence-ready libraries for scRNAseq"
 }

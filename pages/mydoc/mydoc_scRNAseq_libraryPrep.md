@@ -8,19 +8,21 @@ permalink: mydoc_scRNAseq_libraryPrep.html
 folder: mydoc
 ---
 
-# Overview:
+## Before you start
 
-Day 1 - thaw samples, enzymatic digestion to remove the unwanted nucleic acids and primer dimers, then second strand synthesis. Linear amplification of the dsDNA made during second stand synthesis that takes place over night (between 13-15 hour incubation). 
+### Overview
 
-Day 2 - Check library on tapestation/bioanalyzer, amplified RNA is fragmented and used for second reverse transcription reaction to convert sample back to DNA and to add a read primer binding site to each molecule. Clean up with Ampure XP beads, amplified by PCR. qPCR is performed to determine optimal amount of cycles for the final PCR; once final PCR is finished, library can be QCed by tapestation and Qubit. 
+**Day 1** - thaw samples, enzymatic digestion to remove the unwanted nucleic acids and primer dimers, then second strand synthesis. Linear amplification of the dsDNA made during second stand synthesis that takes place over night (between 13-15 hour incubation). 
+
+**Day 2** - Check library on tapestation/bioanalyzer, amplified RNA is fragmented and used for second reverse transcription reaction to convert sample back to DNA and to add a read primer binding site to each molecule. Clean up with Ampure XP beads, amplified by PCR. qPCR is performed to determine optimal amount of cycles for the final PCR; once final PCR is finished, library can be QCed by tapestation and Qubit. 
 
 Bead clean ups are performed after every enzymatic step
 
 {% include warning.html content="AMpure XP beads need to be brought to room temperature for at least 30 minutes prior to use. Vortex beads well for at least 2 minutes before use." %}
 
-Full protocol can be found here: https://1cell-bio.com/wp-content/uploads/2017/03/InDrop_LibraryPrep_Protocol_v1.2.pdf 
+Full protocol can be found [here](https://1cell-bio.com/wp-content/uploads/2017/03/InDrop_LibraryPrep_Protocol_v1.2.pdf) 
 
-## Reagents needed:
+### Reagents
 * [Nuclease-free water, Life Technologies, cat. no. 10977-023](https://www.thermofisher.com/order/catalog/product/10977023)
 * [Agencourt AMPure XP magnetic beads, Beckman Coulter, cat. no. A63881](https://www.fishersci.com/shop/products/ampure-xp-60ml/nc9933872)
 * [Exonuclease I, ExoI; 20,000 U/mL; NEB, cat. no. M0293L](https://www.neb.com/products/m0293-exonuclease-i-e-coli#Product%20Information)
@@ -37,12 +39,10 @@ Full protocol can be found here: https://1cell-bio.com/wp-content/uploads/2017/0
 * 100 μM PE2-N6 primer (1Cell)
 * 5 μM PE1/PE2 primer mixture with indices (1Cell)
 * 100 μM Custom read 1, read2, and index primers (1Cell)
-
-## Consumables needed:
 * [Corning Costar Spin-X tube filters, Sigma-Aldrich, cat. no. CLS8162](https://www.sigmaaldrich.com/catalog/product/sigma/cls8162?lang=en&region=US)
 * Bioanalyzer RNA and HSDNA chips and reagents *or* Agilent TapeStation HSRNA and HSD1000screen tapes and reagents (Aglient)
 
-## Equipment needed: 
+### Equipment
 * Magnetic racks for PCR and/or 1.5 ml tubes
 * Centrifuge (e.g., Eppendorf AG, Cat. No. 5424R)
 * Thermo-conductive tube rack (VWR Scientific Cat. No. 95045-464) 
@@ -50,77 +50,55 @@ Full protocol can be found here: https://1cell-bio.com/wp-content/uploads/2017/0
 * qPCR machine
 * Thermomixer or dry bath for 1.5 ml tubes
 * BioAnalyzer (Agilent) or Tapestation (Agilent)
-
-## Make these before you start:
-
-**RNA Elution Buffer (RE)**:
-Combine the follow in a 15 mL Falcon Tube:
-- 150 uL of 1 M Tris-HCl pH 7.5
-- 3 uL of 0.5 M EDTA
-- Add nuclease-free water to bring the final volume to 15 mL
+ 
+### RNA Elution Buffer (RE)
+* **150 uL** of 1 M Tris-HCl pH 7.5
+* **3 uL** of 0.5 M EDTA
+* Add nuclease-free water to bring the final volume to 15 mL
 * This can be aliquoted into nuclease-free tubes and aliquots can be stored at 4C short term or -20C long term. 
 
-**DNA Suspension Buffer (DS)**:
--  150 uL of 1 M Tris-HCl pH 8.0
-- 3 uL of 0.5 M EDTA
-- Add nuclease-free water to bring the final volume to 15 mL
+### DNA Suspension Buffer (DS)
+* **150 uL** of 1 M Tris-HCl pH 8.0
+* **3 uL** of 0.5 M EDTA
+* Add nuclease-free water to bring the final volume to 15 mL
 * This can be aliquoted into nuclease-free tubes and aliquots can be stored at 4C short term or -20C long term. 
 
-**Blocking Buffer** (used to block the pipet tips so your solution will not stick to the outside or the inside of your tip, block tip for all steps that you are pipetting just your sample):
+### Blocking Buffer (BB) 
+used to block the pipet tips so your solution will not stick to the outside or the inside of your tip, block tip for all steps that you are pipetting just your sample):
 
-Combine the follow in a 15 mL Falcon Tube:
-- 100 uL of 1 M Tris-HCl pH 8.0
-- 2 uL of 0.5 M EDTA
-- 500 uL of 10% Tween 20 (vol/vol) 
-- 500 uL of 2% BSA (wt/vol)
-- 8898 uL of Sterile Water
+* **100 uL** of 1 M Tris-HCl pH 8.0
+* **2 uL** of 0.5 M EDTA
+* **500 uL** of 10% Tween 20 (vol/vol) 
+* **500 uL** of 2% BSA (wt/vol)
+* **8898 uL** of Sterile Water
 Total volume is 10 mL, aliquot into 1.5 mL tubes with approximately 0.5 mL per tube, store at -20C and thaw before library prep
 
 {% include note.html content="Do not reuse an aliquot of blocking buffer once it was thawed for the day. Take out an aliquot a day and discard after use.." %}
 
 **80% Ethanol**
-- Make fresh each day for Ampure XP bead clean ups 
+* Make fresh each day for Ampure XP bead clean ups 
 
-# Library Prep Procedure
 ## Day 1
 
-**Enzymatic Digestion**
+### Enzymatic Digestion (2hrs)
 
-Time: 2 hours 
 1. Thaw post-RT libaries on ice
 2. Centrifuge at 4C for 5 mins at 19,000 rcf to pellet any cell debris in the tube, this will bring down any material more dense than your samples.
 3. Prepare the Digestion Mix. For every 70uL of post-RT material, prepare 100uL of Digestion Mix (1000 cells is approximately equal to 35uL of post-RT material so if you sorted 3000 cells, make 150uL of Digestion Mix)
 
-**Volumes for 50uL of Digestion Mix (1000 cells):**
-| Component              | Volume per rxn |
-|------------------------|----------------|
-| ddH2O                  | 39.5 uL        |
-| 10X Fast Digest Buffer | 4.5 uL         |
-| Exonuclease I          | 2.5 uL         |
-| HinFI                  | 3.5 uL         |
-|                        | Total 50 uL    |
+**Volumes for Digestion Mix:**
 
-**Volumes for 100uL of Digestion Mix (2000 cells):**
-| Component              | Volume per rxn |
-|------------------------|----------------|
-| ddH2O                  | 79 uL          |
-| 10X Fast Digest Buffer | 9 uL           |
-| Exonuclease I          | 5 uL           |
-| HinFI                  | 7 uL           |
-|                        | Total 100 uL   |
-
-**Volumes for 150uL of Digestion Mix (3000 cells):**
-| Component              | Volume per rxn |
-|------------------------|----------------|
-| ddH2O                  | 118.5 uL       |
-| 10X Fast Digest Buffer | 13.5 uL        |
-| Exonuclease I          | 7.5 uL         |
-| HinFI                  | 10.5 uL        |
-|                        | Total 150 uL   |
+|                        | 1000 cells | 2000 cells | 3000 cells |
+|------------------------|------------|------------|------------|
+| ddH2O                  | 39.5 uL    | 79 uL      | 118.5 uL   |
+| 10X Fast Digest Buffer | 4.5 uL     | 9 uL       | 13.5 uL    |
+| Exonuclease I          | 2.5 uL     | 5 uL       | 7.5 uL     |
+| HinFI                  | 3.5 uL     | 7 uL       | 10.5 uL    |
+|                        | **50 uL**  | **100 uL** | **150 uL** |
 
 {% include important.html content="All steps before linear amplification before in vitro transcription should be performed with a blocked tip. This miminizes the material loss due to adsorption. Immerse pipet tip into block buffer, pipet up and down once and the tip is ready for use.." %}
 
-4. Without aspirating HFE-7500 oil from the bottom of the tube, carefully transfer the post-RT material from each saple to its own Costar Spin-X tube filter with a blocked gel loading tip.
+4. Without aspirating HFE-7500 oil from the bottom of the tube, carefully transfer the post-RT material from each sample to its own Costar Spin-X tube filter.
 
 5. Add Digestion mix made in previous step to the top of your old tube with the HFE-7500 oil to wash off any residual sample that may still be on the top of the oil. Then transfer the digestion buffer mix to the Costar-x spin tube. 
 
@@ -145,7 +123,9 @@ Time: 2 hours
 * Return the tubes to the magnetic stand and incubate for 1 minute until supernatant is clear. supernatant now contains your sample. 
 * Transfer the supernatant to a fresh tube, a PCR tube. 
 
-**Second Strand Synthesis and In Vitro-Translation (IVT)**
+## Day 2
+
+### Second Strand Synthesis and In Vitro-Transciption (IVT)
 
 Time: 16-18 hours
 
@@ -162,7 +142,7 @@ Time: 16-18 hours
 | NEB T7 High Yield 10X Buffer                              | 8 uL           |
 | NTP [4 different NTP buffers, ATP, UTP, CTP, GTP] (100mM) | 8 uL each      |
 | NEB T7 High Yield Enzyme Mix                              | 8 uL           |
-|                                                           | Total 60 uL    |
+|                                                           | **60 uL**    |
 
 11. Pipette to mix, spin plate down, and incubate at 37C for 13-15 hours with the lid heated to 50C.
 

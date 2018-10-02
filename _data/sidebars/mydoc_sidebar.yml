@@ -28,7 +28,7 @@ entries:
       output: web, pdf
       type: homepage
 
-  - title: RNAseq
+  - title: Transcriptomics
     output: web, pdf
     
     folderitems:
@@ -48,33 +48,24 @@ entries:
       url: /mydoc_lowInput_RNAseq.html
       output: web, pdf
 
-    - title: Single cell sequencing
-      url: /mydoc_scRNAseq.html
+    - title: Single cell encapsulation (InDrop)
+      url: /mydoc_scRNAseq_encapsulation.html
       output: web, pdf
-      
+    
+    - title: Single cell library prep
+      url: /mydoc_scRNAseq_libraryPrep.html
+      output: web, pdf
+    
       subfolders:
-      - title: Single cell sequencing
-        output: web
-
+      - title: RNAseq data analysis
+        output: web, pdf
+        
         subfolderitems:
-        - title: Encapsulation of single cells
-          url: /mydoc_scRNAseq_encapsulation.html
-          output: web, pdf
-
-        - title: scRNAseq library prep
-          url: /mydoc_scRNAseq_encapsulation.html
-          output: web, pdf
-
-      subfolders:
-      - title: Data analysis
-        output: web
-
-        subfolderitems:
-        - title: Kallisto and Sleuth
+        - title: Read mapping using Kallisto
           url: /mydoc_kallisto.html
           output: web, pdf
 
-        - title: Submitting to GEO
+        - title: Submitting RNAseq data to GEO
           url: /mydoc_RNAseq_depositToGEO.html
           output: web, pdf
 

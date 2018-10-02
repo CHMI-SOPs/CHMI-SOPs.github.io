@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="post-encapsulation steps for preparing sequence-ready libraries for scRNAseq">
-<meta name="keywords" content="Library preptranscriptomics,  transcriptomics, library prep">
+<meta name="keywords" content="transcriptomics,  transcriptomics">
 <title>Single Cell RNAseq – library prep | CHMI services</title>
 <link rel="stylesheet" href="css/syntax.css">
 
@@ -198,7 +198,7 @@
         
     
     <li>
-        <a href="#">RNAseq</a>
+        <a href="#">Transcriptomics</a>
         <ul>
             
             
@@ -231,23 +231,30 @@
             
             
             
-            <li><a href="mydoc_scRNAseq.html">Single cell sequencing</a></li>
+            <li><a href="mydoc_scRNAseq_encapsulation.html">Single cell encapsulation (InDrop)</a></li>
+            
+            
+            
+            
+            
+            
+            <li class="active"><a href="mydoc_scRNAseq_libraryPrep.html">Single cell library prep</a></li>
             
             
             
             <li class="subfolders">
-                <a href="#">Data analysis</a>
+                <a href="#">RNAseq data analysis</a>
                 <ul>
                     
                     
                     
-                    <li><a href="mydoc_kallisto.html">Kallisto and Sleuth</a></li>
+                    <li><a href="mydoc_kallisto.html">Read mapping using Kallisto</a></li>
                     
                     
                     
                     
                     
-                    <li><a href="mydoc_RNAseq_depositToGEO.html">Submitting to GEO</a></li>
+                    <li><a href="mydoc_RNAseq_depositToGEO.html">Submitting RNAseq data to GEO</a></li>
                     
                     
                     
@@ -470,19 +477,21 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <h1 id="overview">Overview:</h1>
+  <h2 id="before-you-start">Before you start</h2>
 
-<p>Day 1 - thaw samples, enzymatic digestion to remove the unwanted nucleic acids and primer dimers, then second strand synthesis. Linear amplification of the dsDNA made during second stand synthesis that takes place over night (between 13-15 hour incubation).</p>
+<h3 id="overview">Overview</h3>
 
-<p>Day 2 - Check library on tapestation/bioanalyzer, amplified RNA is fragmented and used for second reverse transcription reaction to convert sample back to DNA and to add a read primer binding site to each molecule. Clean up with Ampure XP beads, amplified by PCR. qPCR is performed to determine optimal amount of cycles for the final PCR; once final PCR is finished, library can be QCed by tapestation and Qubit.</p>
+<p><strong>Day 1</strong> - thaw samples, enzymatic digestion to remove the unwanted nucleic acids and primer dimers, then second strand synthesis. Linear amplification of the dsDNA made during second stand synthesis that takes place over night (between 13-15 hour incubation).</p>
+
+<p><strong>Day 2</strong> - Check library on tapestation/bioanalyzer, amplified RNA is fragmented and used for second reverse transcription reaction to convert sample back to DNA and to add a read primer binding site to each molecule. Clean up with Ampure XP beads, amplified by PCR. qPCR is performed to determine optimal amount of cycles for the final PCR; once final PCR is finished, library can be QCed by tapestation and Qubit.</p>
 
 <p>Bead clean ups are performed after every enzymatic step</p>
 
 <div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> AMpure XP beads need to be brought to room temperature for at least 30 minutes prior to use. Vortex beads well for at least 2 minutes before use.</div>
 
-<p>Full protocol can be found here: https://1cell-bio.com/wp-content/uploads/2017/03/InDrop_LibraryPrep_Protocol_v1.2.pdf</p>
+<p>Full protocol can be found <a href="https://1cell-bio.com/wp-content/uploads/2017/03/InDrop_LibraryPrep_Protocol_v1.2.pdf">here</a></p>
 
-<h2 id="reagents-needed">Reagents needed:</h2>
+<h3 id="reagents">Reagents</h3>
 <ul>
   <li><a href="https://www.thermofisher.com/order/catalog/product/10977023">Nuclease-free water, Life Technologies, cat. no. 10977-023</a></li>
   <li><a href="https://www.fishersci.com/shop/products/ampure-xp-60ml/nc9933872">Agencourt AMPure XP magnetic beads, Beckman Coulter, cat. no. A63881</a></li>
@@ -500,15 +509,11 @@ $('#toc').on('click', 'a', function() {
   <li>100 μM PE2-N6 primer (1Cell)</li>
   <li>5 μM PE1/PE2 primer mixture with indices (1Cell)</li>
   <li>100 μM Custom read 1, read2, and index primers (1Cell)</li>
-</ul>
-
-<h2 id="consumables-needed">Consumables needed:</h2>
-<ul>
   <li><a href="https://www.sigmaaldrich.com/catalog/product/sigma/cls8162?lang=en&amp;region=US">Corning Costar Spin-X tube filters, Sigma-Aldrich, cat. no. CLS8162</a></li>
   <li>Bioanalyzer RNA and HSDNA chips and reagents <em>or</em> Agilent TapeStation HSRNA and HSD1000screen tapes and reagents (Aglient)</li>
 </ul>
 
-<h2 id="equipment-needed">Equipment needed:</h2>
+<h3 id="equipment">Equipment</h3>
 <ul>
   <li>Magnetic racks for PCR and/or 1.5 ml tubes</li>
   <li>Centrifuge (e.g., Eppendorf AG, Cat. No. 5424R)</li>
@@ -519,78 +524,99 @@ $('#toc').on('click', 'a', function() {
   <li>BioAnalyzer (Agilent) or Tapestation (Agilent)</li>
 </ul>
 
-<h2 id="make-these-before-you-start">Make these before you start:</h2>
+<h3 id="rna-elution-buffer-re">RNA Elution Buffer (RE)</h3>
+<ul>
+  <li><strong>150 uL</strong> of 1 M Tris-HCl pH 7.5</li>
+  <li><strong>3 uL</strong> of 0.5 M EDTA</li>
+  <li>Add nuclease-free water to bring the final volume to 15 mL</li>
+  <li>This can be aliquoted into nuclease-free tubes and aliquots can be stored at 4C short term or -20C long term.</li>
+</ul>
 
-<p><strong>RNA Elution Buffer (RE)</strong>:
-Combine the follow in a 15 mL Falcon Tube:
-- 150 uL of 1 M Tris-HCl pH 7.5
-- 3 uL of 0.5 M EDTA
-- Add nuclease-free water to bring the final volume to 15 mL
-* This can be aliquoted into nuclease-free tubes and aliquots can be stored at 4C short term or -20C long term.</p>
+<h3 id="dna-suspension-buffer-ds">DNA Suspension Buffer (DS)</h3>
+<ul>
+  <li><strong>150 uL</strong> of 1 M Tris-HCl pH 8.0</li>
+  <li><strong>3 uL</strong> of 0.5 M EDTA</li>
+  <li>Add nuclease-free water to bring the final volume to 15 mL</li>
+  <li>This can be aliquoted into nuclease-free tubes and aliquots can be stored at 4C short term or -20C long term.</li>
+</ul>
 
-<p><strong>DNA Suspension Buffer (DS)</strong>:
--  150 uL of 1 M Tris-HCl pH 8.0
-- 3 uL of 0.5 M EDTA
-- Add nuclease-free water to bring the final volume to 15 mL
-* This can be aliquoted into nuclease-free tubes and aliquots can be stored at 4C short term or -20C long term.</p>
+<h3 id="blocking-buffer-bb">Blocking Buffer (BB)</h3>
+<p>used to block the pipet tips so your solution will not stick to the outside or the inside of your tip, block tip for all steps that you are pipetting just your sample):</p>
 
-<p><strong>Blocking Buffer</strong> (used to block the pipet tips so your solution will not stick to the outside or the inside of your tip, block tip for all steps that you are pipetting just your sample):</p>
-
-<p>Combine the follow in a 15 mL Falcon Tube:
-- 100 uL of 1 M Tris-HCl pH 8.0
-- 2 uL of 0.5 M EDTA
-- 500 uL of 10% Tween 20 (vol/vol) 
-- 500 uL of 2% BSA (wt/vol)
-- 8898 uL of Sterile Water
-Total volume is 10 mL, aliquot into 1.5 mL tubes with approximately 0.5 mL per tube, store at -20C and thaw before library prep</p>
+<ul>
+  <li><strong>100 uL</strong> of 1 M Tris-HCl pH 8.0</li>
+  <li><strong>2 uL</strong> of 0.5 M EDTA</li>
+  <li><strong>500 uL</strong> of 10% Tween 20 (vol/vol)</li>
+  <li><strong>500 uL</strong> of 2% BSA (wt/vol)</li>
+  <li><strong>8898 uL</strong> of Sterile Water
+Total volume is 10 mL, aliquot into 1.5 mL tubes with approximately 0.5 mL per tube, store at -20C and thaw before library prep</li>
+</ul>
 
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Do not reuse an aliquot of blocking buffer once it was thawed for the day. Take out an aliquot a day and discard after use..</div>
 
 <p><strong>80% Ethanol</strong>
-- Make fresh each day for Ampure XP bead clean ups</p>
+* Make fresh each day for Ampure XP bead clean ups</p>
 
-<h1 id="library-prep-procedure">Library Prep Procedure</h1>
-<p>## Day 1</p>
+<h2 id="day-1">Day 1</h2>
 
-<p><strong>Enzymatic Digestion</strong></p>
+<h3 id="enzymatic-digestion-2hrs">Enzymatic Digestion (2hrs)</h3>
 
-<p>Time: 2 hours 
-1. Thaw post-RT libaries on ice
-2. Centrifuge at 4C for 5 mins at 19,000 rcf to pellet any cell debris in the tube, this will bring down any material more dense than your samples.
-3. Prepare the Digestion Mix. For every 70uL of post-RT material, prepare 100uL of Digestion Mix (1000 cells is approximately equal to 35uL of post-RT material so if you sorted 3000 cells, make 150uL of Digestion Mix)</p>
+<ol>
+  <li>Thaw post-RT libaries on ice</li>
+  <li>Centrifuge at 4C for 5 mins at 19,000 rcf to pellet any cell debris in the tube, this will bring down any material more dense than your samples.</li>
+  <li>Prepare the Digestion Mix. For every 70uL of post-RT material, prepare 100uL of Digestion Mix (1000 cells is approximately equal to 35uL of post-RT material so if you sorted 3000 cells, make 150uL of Digestion Mix)</li>
+</ol>
 
-<p><strong>Volumes for 50uL of Digestion Mix (1000 cells):</strong>
-| Component | Volume/ rxn |
-|——-|——–|
-| ddH2O | 39.5 uL |
-| 10X Fast Digest Buffer | 4.5 uL |
-| Exonuclease I | 2.5 uL |
-| HinFI | 3.5 uL |
-|  | Total 50 uL |</p>
+<p><strong>Volumes for Digestion Mix:</strong></p>
 
-<p><strong>Volumes for 100uL of Digestion Mix (2000 cells):</strong>
-| Component | Volume/ rxn |
-|——-|——–|
-| ddH2O | 79 uL |
-| 10X Fast Digest Buffer | 9 uL |
-| Exonuclease I | 5 uL |
-| HinFI | 7 uL |
-|  | Total 100 uL |</p>
-
-<p><strong>Volumes for 150uL of Digestion Mix (3000 cells):</strong>
-| Component | Volume/ rxn |
-|——-|——–|
-| ddH2O | 118.5 uL |
-| 10X Fast Digest Buffer | 13.5 uL |
-| Exonuclease I | 7.5 uL |
-| HinFI | 10.5 uL |
-|  | Total 150 uL |</p>
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>1000 cells</th>
+      <th>2000 cells</th>
+      <th>3000 cells</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ddH2O</td>
+      <td>39.5 uL</td>
+      <td>79 uL</td>
+      <td>118.5 uL</td>
+    </tr>
+    <tr>
+      <td>10X Fast Digest Buffer</td>
+      <td>4.5 uL</td>
+      <td>9 uL</td>
+      <td>13.5 uL</td>
+    </tr>
+    <tr>
+      <td>Exonuclease I</td>
+      <td>2.5 uL</td>
+      <td>5 uL</td>
+      <td>7.5 uL</td>
+    </tr>
+    <tr>
+      <td>HinFI</td>
+      <td>3.5 uL</td>
+      <td>7 uL</td>
+      <td>10.5 uL</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td><strong>50 uL</strong></td>
+      <td><strong>100 uL</strong></td>
+      <td><strong>150 uL</strong></td>
+    </tr>
+  </tbody>
+</table>
 
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> All steps before linear amplification before in vitro transcription should be performed with a blocked tip. This miminizes the material loss due to adsorption. Immerse pipet tip into block buffer, pipet up and down once and the tip is ready for use..</div>
 
 <ol>
   <li>
-    <p>Without aspirating HFE-7500 oil from the bottom of the tube, carefully transfer the post-RT material from each saple to its own Costar Spin-X tube filter with a blocked gel loading tip.</p>
+    <p>Without aspirating HFE-7500 oil from the bottom of the tube, carefully transfer the post-RT material from each sample to its own Costar Spin-X tube filter.</p>
   </li>
   <li>
     <p>Add Digestion mix made in previous step to the top of your old tube with the HFE-7500 oil to wash off any residual sample that may still be on the top of the oil. Then transfer the digestion buffer mix to the Costar-x spin tube.</p>
@@ -624,7 +650,9 @@ Total volume is 10 mL, aliquot into 1.5 mL tubes with approximately 0.5 mL per t
   <li>Transfer the supernatant to a fresh tube, a PCR tube.</li>
 </ul>
 
-<p><strong>Second Strand Synthesis and In Vitro-Translation (IVT)</strong></p>
+<h2 id="day-2">Day 2</h2>
+
+<h3 id="second-strand-synthesis-and-in-vitro-transciption-ivt">Second Strand Synthesis and In Vitro-Transciption (IVT)</h3>
 
 <p>Time: 16-18 hours</p>
 
@@ -643,7 +671,7 @@ Total volume is 10 mL, aliquot into 1.5 mL tubes with approximately 0.5 mL per t
   <thead>
     <tr>
       <th>Component</th>
-      <th>Volume/ rxn</th>
+      <th>Volume per rxn</th>
     </tr>
   </thead>
   <tbody>
@@ -665,7 +693,7 @@ Total volume is 10 mL, aliquot into 1.5 mL tubes with approximately 0.5 mL per t
     </tr>
     <tr>
       <td> </td>
-      <td>Total 60 uL</td>
+      <td><strong>60 uL</strong></td>
     </tr>
   </tbody>
 </table>
@@ -716,7 +744,7 @@ Total volume is 10 mL, aliquot into 1.5 mL tubes with approximately 0.5 mL per t
   <thead>
     <tr>
       <th>Component</th>
-      <th>Volume/ rxn</th>
+      <th>Volume per rxn</th>
     </tr>
   </thead>
   <tbody>
@@ -796,7 +824,7 @@ Total volume is 10 mL, aliquot into 1.5 mL tubes with approximately 0.5 mL per t
   <thead>
     <tr>
       <th>Component</th>
-      <th>Volume/ rxn</th>
+      <th>Volume per rxn</th>
     </tr>
   </thead>
   <tbody>
@@ -832,7 +860,7 @@ Total volume is 10 mL, aliquot into 1.5 mL tubes with approximately 0.5 mL per t
   <thead>
     <tr>
       <th>Component</th>
-      <th>Volume/ rxn</th>
+      <th>Volume per rxn</th>
     </tr>
   </thead>
   <tbody>
@@ -1135,11 +1163,10 @@ Total volume is 10 mL, aliquot into 1.5 mL tubes with approximately 0.5 mL per t
 <p><strong>Pause Point</strong>: store the libraries at -80C or -20C. They should be stable for at least 1 year.</p>
 
 
+
     <div class="tags">
         
         <b>Tags: </b>
-        
-        
         
         
         
@@ -1174,7 +1201,7 @@ Total volume is 10 mL, aliquot into 1.5 mL tubes with approximately 0.5 mL per t
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2018 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
- Site last generated: Sep 29, 2018 <br />
+ Site last generated: Oct 2, 2018 <br />
 <p><img src="images/CHMI_logo.png" alt="Company logo"/></p>
                 </div>
             </div>
