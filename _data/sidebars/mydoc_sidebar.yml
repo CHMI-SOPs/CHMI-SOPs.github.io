@@ -48,11 +48,11 @@ entries:
       url: /mydoc_lowInput_RNAseq.html
       output: web, pdf
 
-    - title: Single cell encapsulation (InDrop)
+    - title: scRNAseq encapsulation
       url: /mydoc_scRNAseq_encapsulation.html
       output: web, pdf
     
-    - title: Single cell library prep
+    - title: scRNAseq library prep
       url: /mydoc_scRNAseq_libraryPrep.html
       output: web, pdf
     
@@ -61,11 +61,11 @@ entries:
         output: web, pdf
         
         subfolderitems:
-        - title: Read mapping using Kallisto
+        - title: Read mapping with Kallisto
           url: /mydoc_kallisto.html
           output: web, pdf
 
-        - title: Submitting RNAseq data to GEO
+        - title: Submitting data to GEO
           url: /mydoc_RNAseq_depositToGEO.html
           output: web, pdf
 
