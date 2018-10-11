@@ -8,12 +8,19 @@ permalink: mydoc_microbiomeDB_deposit.html
 folder: mydoc
 ---
 
-## Documentation
+## Overview
 
 Our lab developed and maintains [MicrobiomeDB](http://www.microbiomedb.org), a web-based platform for sharing, integrating and carrying out sophisticated queries of 16S microbiome experiments.  We can load your published data into our database.  To facilitate this process, it helps our data loading team if you can prepare your raw data and mapping file.  Currently, we can accept legacy data from 454 'pyrosequencing', as well as newer 16S rRNA gene sequencing data from the Illumina miSeq platform.  The protocol below outlines steps for preparing miSeq data.  
 
+## Before starting
 
-## preparing fastq files
+* You'll need access to your raw 16S rRNA gene sequence data, in the form of one forward.fastq.gz and one reverse.fastq.gz
+* Sign-up for a Google account (alternatively, Microsoft Excel is fine)
+* Get access to a compute cluster (or local workstation) with [QIIME](http://qiime.org/) installed
+* Sign up for an account on microbiomeDB.org (it's free and always be!)
+
+
+## prepare your fastq files
 
 Activate qiime1 and unzip your fastq files
 
