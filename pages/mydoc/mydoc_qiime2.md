@@ -69,9 +69,9 @@ create an artifact of your data:
 
 ```
 qiime tools import \
-  --type EMPSingleEndSequences \
-  --input-path emp-single-end-sequences \
-  --output-path emp-single-end-sequences.qza
+  --type EMPPairedEndSequences \
+  --input-path /path/to/your/fastq/files \
+  --output-path emp-paired-end-sequences.qza
 ```
  
 Check this artifact to make sure that QIIME now recognizes your data (.qza is a qiime zipped artifact)
@@ -107,7 +107,7 @@ qiime demux summarize \
 
 ## Step 5: Denoising and QC filtering
 
-The methods for processing and analysis of 16S marker gene sequencing data continue to improve.  One recent and major improvement was the introduction of two methods, [Dada2](https://www.nature.com/articles/nmeth.3869) and [Deblur](http://msystems.asm.org/content/2/2/e00191-16), both of which significantly advance quality control measures by 'denosing' your sequences in order to better discriminate between true sequence diversity and sequencing errors.  Be sure to check out the [Dada2 online methods section](http://CHMI-sops.github.io/papers/dada2_methods.pdf) for a more indepth (but still very readable) description of the underlying statistical method.  These methods have pushed the field from the practice of binning sequences into 97% OTUs, to effectively using the sequences themselves as the unique idenfier for a taxon (also referred to 100% OTU, sub-OTUs or amplicon sequence variants).
+The methods for processing and analysis of 16S marker gene sequencing data continue to improve.  One recent and major improvement was the introduction of two methods, [Dada2](https://www.nature.com/articles/nmeth.3869) and [Deblur](http://msystems.asm.org/content/2/2/e00191-16), both of which significantly advance quality control measures by 'denoising' your sequences in order to better discriminate between true sequence diversity and sequencing errors.  Be sure to check out the [Dada2 online methods section](http://CHMI-sops.github.io/papers/dada2_methods.pdf) for a more indepth (but still very readable) description of the underlying statistical method.  These methods have pushed the field from the practice of binning sequences into 97% OTUs, to effectively using the sequences themselves as the unique idenfier for a taxon (also referred to 100% OTU, sub-OTUs or amplicon sequence variants).
 
 {% include important.html content="DADA2 denoising will join paired reads for you.  Do not join your reads prior to running DADA2, since the program has a model for the basewise error of illumina reads, and joining reads would violate the expectations of that model.  If you're working with single-end data, you would use ```denoise-single``` in the code below." %}
 
@@ -117,11 +117,14 @@ The methods for processing and analysis of 16S marker gene sequencing data conti
 
 ```
 qiime dada2 denoise-paired \
-  --i-demultiplexed-seqs demux.qza \
-  --p-trim-left 0 \
-  --p-trunc-len 120 \
-  --o-representative-sequences rep-seqs-dada2.qza \
-  --o-table table-dada2.qza
+	--i-demultiplexed-seqs demux.qza \
+	--p-trim-left-f 0 \
+	--p-trim-left-r 0 \
+	--p-trunc-len-f 220 \
+	--p-trunc-len-r 200 \
+	--o-representative-sequences rep-seqs-dada2.qza \
+	--o-table pet-table.qza \
+	--p-n-threads 24
 ```
 
 
@@ -183,12 +186,14 @@ qiime diversity alpha-rarefaction \
   --o-visualization alpha-rarefaction.qzv
 ```
 
+{% include note.html content="max-depth should be chosen based on table.qzv" %}
+
 {% include note.html content="**Interpreting alpha diversity metrics:** it is important to understand that certain metrics are stricly qualitative (presence/absence), that is they only take diversity into account, often referred to as *richness* of the community (e.g. observed otus).  In contrast, other methods are quantitative in that they consider both *richness* and abundance across samples, commonly referred to as *evenness* (e.g. Shannon).  Yet other methods take phylogenetic distance into account by asking how diverse the phylogenetic tree is for each sample.  These phylogenetic tree-based methods include the popular Faith's PD, which calculates the sum of the branch length covered by a sample" %}
 
 
 ## Step 8: calculate and explore diversity metrics
 
-Use QIIME2's ```diversity core-metrics-phylogenetic``` function to calculate a whole bunch of diversity metrics all at once.  Note that you should input a sample-depth value (set at 1109 reads in the example below) based on the alpha-rarefaction analysis that you ran in step 6.
+Use QIIME2's ```diversity core-metrics-phylogenetic``` function to calculate a whole bunch of diversity metrics all at once.  Note that you should input a sample-depth value (set at 1109 reads in the example below) based on the alpha-rarefaction analysis that you ran in step 7.
 
 ```
 qiime diversity core-metrics-phylogenetic \
@@ -211,6 +216,11 @@ qiime diversity alpha-group-significance \
   --i-alpha-diversity core-metrics-results/evenness_vector.qza \
   --m-metadata-file sample-metadata.tsv \
   --o-visualization core-metrics-results/evenness-group-significance.qzv
+
+qiime diversity alpha-group-significance \
+  --i-alpha-diversity core-metrics-results/shannon_vector.qza \
+  --m-metadata-file sample-metadata.tsv \
+  --o-visualization core-metrics-results/shannon_group-significance.qzv
 ```
 
 Now test for relationships between **beta diversity** and study metadata and create .qzv files to view these relationships on [QIIME2 viewer](https://view.qiime2.org/).
@@ -334,8 +344,6 @@ qiime composition ancom \
   --m-metadata-column Subject \
   --o-visualization ancom-Subject.qzv
 ```
-
-Once you're confortable with the individual steps of this workflow, you could use [this shell script](), to run the entire workflow.
 
 {% include warning.html content="the additional steps outlined below are still a work in progress, and we want to spend more time exploring these steps before we can make solid recommendations....so proceed at your own risk!" %}
 
