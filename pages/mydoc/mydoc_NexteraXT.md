@@ -10,7 +10,7 @@ folder: mydoc
 
 ## Documentation
 
-The full protocol can be found [here](https://support.illumina.com/content/dam/illumina-support/documents/documentation/chemistry_documentation/samplepreps_nextera/nextera-xt/nextera-xt-library-prep-reference-guide-15031942-02.pdf)
+The full protocol can be found [here](https://support.illumina.com/content/dam/illumina-support/documents/documentation/chemistry_documentation/samplepreps_nextera/nextera-xt/nextera-xt-library-prep-reference-guide-15031942-03.pdf)
 
 
 ## What you'll need
@@ -21,6 +21,7 @@ The full protocol can be found [here](https://support.illumina.com/content/dam/i
 * Amplicon Tagmentation Mix (ATM) (-20C)
 * Neutralization buffer (NT) (Room Temperature)
 * Nextera PCR Mix (NPM) (-20C) 
+* Nextera Indexes (i5 and i7) (-20C)
 * Resuspension Buffer (RSB) (-20C)
 * TruSeq Index Plate Fixture (Room Temperature)
 
@@ -29,40 +30,28 @@ The full protocol can be found [here](https://support.illumina.com/content/dam/i
 * 80% Ethanol, made fresh the same day
 * Magnetic stand
 * AMPureXP beads (Beckman-Coulter)
+* Illumina Index Replacement Caps 
 
 ## A few important comments before you start
-
-* We use the Low Sample ‘LS’ protocol as we are typically working with fewer than 48 samples at a time  
-* The recommended starting amount of total RNA is 100 ng - 1 ug, but we usually try to stay away from the extreme ends of this spectrum.  
-* Split this protocol into two days, stopping on the first day after you have double stranded cDNA. On second day, do the A-tailing, adapter ligation, PCR, cleanup, and quality control steps.  
-* For 12 samples, you will need approximately 6-7 hours on the first day, and 6-7 hours the second day.  
-* Keep all reagents on ice unless otherwise stated.  
-* We typically remove the reagents from storage during an incubation period in the previous step.  
-* Have the beads at room temperature at least 30 minutes prior to use.  
-* Aliquot the reagents that arrive in large quantities (such as the resuspension buffer and the bead washing buffer) into 2 mL Eppendorf tubes.  
-* We do not perform any of the in-line controls.  
-* We do not use the plate barcode stickers that come with the kit.  
-* Use only filter pipette tips and clean your area so it is free of RNases.  
-* Ensure that the AMPureXP beads are mixed well immediately prior to use.  
-* There are many mixing steps in this protocol - I frequently use a multi-channel pipette to help speed up this process, particularly if many libraries are being prepared.  
-* We use a Tapestation or a BioAnalyzer to assay the input RNA quality. Ribosomal integrity numbers of 7 and higher are preferred.  
-* We quantify the input RNA using a Qubit fluorometer.
+* All work before the PCR step should be performed in the pre-PCR designated hood. 
+* The i5 and i7 indexes come as Set A, B, C, or D. On the lid of the Nextera reagents in our -20C freezer, there are images of which primers belong to which set. Using indexes from one kit makes programming the run on Basespace before sequencing a lot easier. 
 
 ## Step 1: Quantify DNA
 
 Quantify DNA with a Qubit and then dilute each sample to 0.2 ng/uL using ultra-pure, molecular-grade water.
 
-{% include note.html content="I usually make at least 10 uL of each DNA solution for use in the next step." %}
+{% include note.html content="I usually make at least 10 uL of each diluted DNA solution for use in the next step." %}
 
 
 ## Step 2: Tagment DNA:
 
 * Add the following items in the order listed to each well of a new PCR plate. Pipette to mix:
 
-10 uL Tagment DNA Buffer (TD)
-5 uL Normalized gDNA 
+* 10 uL Tagment DNA Buffer (TD)
+* 5 uL Normalized gDNA 
 
-* Add 5 μl ATM to each well. Pipette to mix. Seal the plate.  The total volume should be 20 uL per well.
+* 5 μl Amplicon Tagment Mix (ATM)
+* Pipette to mix. Seal the plate.  The total volume should be 20 uL per well.
 
 * Centrifuge the plate at 280 × g at 20°C for 1 minute.
 
@@ -117,7 +106,7 @@ Quantify DNA with a Qubit and then dilute each sample to 0.2 ng/uL using ultra-p
 
 {% include important.html content="If your starting material is anything other than gDNA, consult the manual. Smaller input DNA lengths may require a different quantity of AMPureXP beads." %}
 
-* Shake at 1800 rpm for 2 minutes.
+* Pipette to mix around 20 times to ensure the beads are mixed well with PCR products.
 
 * Incubate at room temperature for 5 minutes.
 
@@ -126,7 +115,7 @@ Quantify DNA with a Qubit and then dilute each sample to 0.2 ng/uL using ultra-p
 * Remove and discard all supernatant from each well.
 
 * Wash 2 times as follows:
-- Add 190 μl fresh 80% EtOH to each well.
+- Add 180 μl fresh 80% EtOH to each well.
 - Incubate on the magnetic stand for 30 seconds.
 - Remove and discard all supernatant from each well.
 
