@@ -156,8 +156,14 @@ entries:
           url: /mydoc_biomeme_human.html
           output: web, pdf
 
-
-      
+- title: Tutorials
+    output: web, pdf
+    
+    folderitems:
+    - title: Metagenomics in the cloud
+      url: /mydoc_cloudMeta.html
+      output: web, pdf
+    
   
 
 
