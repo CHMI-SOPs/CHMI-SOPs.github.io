@@ -12,17 +12,16 @@ folder: mydoc
 
 | Start time | Description                  | Type                |
 |------------|------------------------------|---------------------|
-| 1pm        | Welcome                      | talk - Kyle and Dan |
+| **1pm**    | Welcome                      | talk - Kyle and Dan |
 |            | Launch Instance              | activity - Dan      |
 |            | intro to command line        | talk - Dan          |
 |            | Install Sunbeam, get data    | activity - Kyle     |
-| 2pm        | Shotgun sequencing intro     | talk - Dan          |
+| **2pm**    | Shotgun sequencing intro     | talk - Dan          |
 |            | Initialize, configure, run   | activity - Kyle     |
-|            | Coffee break                 |                     |
-| 3pm        | Explore results, make report | activity - Kyle     |
+|            | *Coffee break*               |                     |
+| **3pm**    | Explore results, make report | activity - Kyle     |
 |            | Download report              | activity - Dan      |
 |            | Discuss results              | talk - Kyle and Dan |
-
 ## Before starting
 In this workshop we'll use the Google Cloud to analyze raw metagenomic sequence data to identify the microbial composition of stool from heathly humans compared to Crohn's disease patients.  In addition to generating this microbial census, you'll also assemble sequences into contigs, which can then be used to infer functional potential.  To accomplish these tasks we'll use [Sunbeam](https://www.biorxiv.org/content/early/2018/05/18/326363), a snake-make based metagenomics pipeline developed by [Kyle Bittinger](https://microbiome.research.chop.edu/our-team/kyle-bittinger.html) and his group at the PennCHOP Microbiome Center.  
 
