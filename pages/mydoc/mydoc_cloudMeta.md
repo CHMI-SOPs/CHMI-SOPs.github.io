@@ -208,13 +208,13 @@ sunbeam run --configfile workshop-project/sunbeam_config.yml final_report
 
 ## Explore results
 
-* The summary report  you just prepared is conveniently available as a single .html file that can be opened in any browser.  The problem is that this file resides on a google-owned harddrive and there is no simple way to open and view .html files directly in the terminal.  So, we need to transfer it to your laptop harddrive.
+* The summary report you just prepared is conveniently available as a single .html file that can be opened in any browser.  The problem is that this file resides on a google-owned harddrive and there is no simple way to open and view .html files directly in the terminal.  So, we need to transfer it to your laptop harddrive.
 
 * Notice that your SSH terminal window has a small gear icon in the upper right-hand corner of the screen.  Click on this and choose *Download file* from the dropdown menu.
 
 * In the pop-up box, enter the path to summary report  `/home/USERNAME/workshop-project/sunbeam_output/reports/final_report.html`, with your own username.
 
-* we'll expore and discuss the report together to conclude the workshop!
+* we'll expore and discuss the report together to conclude the workshop!  Just in case you had an issues retrieving this file, you can also view a copy of the report [here](http://CHMI-sops.github.io/papers/LyoGreen.pdf)
 
 {% include important.html content="Be sure to delete your instance at the conclusion of the workshop to avoid charges to your credit card.  You google cloud account will remain active and you should still have >99% of your initial $300 credit remaining to use for analyzing your own data.)." %}
 
