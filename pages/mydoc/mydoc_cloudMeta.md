@@ -214,7 +214,7 @@ sunbeam run --configfile workshop-project/sunbeam_config.yml final_report
 
 * In the pop-up box, enter the path to summary report  `/home/USERNAME/workshop-project/sunbeam_output/reports/final_report.html`, with your own username.
 
-* To wrap-up the workshop, we'll expore and discuss the report together.  Just in case you had any issues retrieving this file from the cloud instance, you can also view a copy of the report [here](http://CHMI-sops.github.io/papers/LyoGreen.pdf).
+* To wrap-up the workshop, we'll expore and discuss the report together.  Just in case you had any issues retrieving this file from the cloud instance, you can also view a copy of the report [here](http://CHMI-sops.github.io/papers/final_report.html).
 
 {% include important.html content="Be sure to delete your instance at the conclusion of the workshop to avoid charges to your credit card.  You google cloud account will remain active and you should still have >99% of your initial $300 credit remaining to use for analyzing your own data.)." %}
 
