@@ -210,9 +210,9 @@ sunbeam run --configfile workshop-project/sunbeam_config.yml final_report
 
 * The summary report  you just prepared is conveniently available as a single .html file that can be opened in any browser.  The problem is that this file resides on a google-owned harddrive and there is no simple way to open and view .html files directly in the terminal.  So, we need to transfer it to your laptop harddrive.
 
-* Notice that your SSH terminal window has a small gear icon in the upper right-hand corner of the screen.  Click on this and choose *download file* from the dropdown menu.
+* Notice that your SSH terminal window has a small gear icon in the upper right-hand corner of the screen.  Click on this and choose *Download file* from the dropdown menu.
 
-* In the pop-up box, enter the path to 
+* In the pop-up box, enter the path to summary report  `/home/USERNAME/workshop-project/sunbeam_output/reports/final_report.html`, with your own username.
 
 * we'll expore and discuss the report together to conclude the workshop!
 
@@ -220,23 +220,30 @@ sunbeam run --configfile workshop-project/sunbeam_config.yml final_report
 
 ## Practice after workshop
 
-Practice makes perfect (or at least better!).  After you have destroyed your instance, try running through this entire process again start to finish, exactly as we've outlined above.  If you can do this without any issues, we've prepared a separate set of samples and analysis for you to practice on.
+Practice makes perfect (or at least better!).  After destroying your instance, try firing up a fresh instance and run through this entire tutorial again from start to finish, exactly as we've outlined above.  If you can do this without any issues, try the exercise below that uses a completely different dataset.
 
-For this new analysis, you'll be using Sunbeam to analyze mouse metgenomic data from a recently published 
+For this new exercise, you'll be using Sunbeam to analyze mouse metgenomic data from a [recently published paper](https://doi.org/10.30802/AALAS-CM-17-000084) from Dan's lab.
 
-A few things to note about this dataset:
+**A bit of background on this paper and data:**  In the summer of 2015, the University Lab Animal Resources (ULAR) group at UPenn, which oversees all veterinary care and support for research animals on campus, began to notice diarrhea in a few cages of immuno-compromised mice. If you’re not familiar with mouse models for research, there a many genetically engineered mice that lack various immune system components. The particular mice that fell ill are what we would call NSG and NSGS mice, strains that are effectively devoid of nearly all aspects of the immune system. As such, these mice are ideal recipients for xenografts (i.e. human tumor grafts) and critical for understanding cancer biology and therpeutics, but they also pose a real challenge in terms of infection control. You can probably guess where this is going. Despite the strictest precautions, what started out as a few cages of sick mice quickly became an outbreak of diarrheal disease, eventually decimating the entire suite.
 
-* we have not filtered out contaminating host reads, so each fastq file is large.
-* the entire dataset, consisting of 12 
+After extenisve molecular and culture-based diagnostics turned up negative, shotgun metagenomics on stool samples from affected and control mice was carried out.  **Your goal is to identify putative organisms associated with the outbreak.**
 
-| SRA ID | description | # reads |
-|----------|----------------|----------------|
-| SRR6051702       | control mouse #3           | 12,000,000 |
-| SRR6051703   | infected mouse #1       | 
-| **55**   | **0:15**       |
-| **72**   | **5:00**       |
-| 72       | 10:00          |
-| 4        | hold           |
+A few things to note about this exercise:
+
+* The data you'll use is summarized in the table below
+* Unlike the example used in the workshop, this data was not  prefiltered to remove host before uploading to SRA, so you'll need to do this yourself. This is mouse data, so you'll need to use a the [mouse reference genome](ftp://ftp.ensembl.org/pub/release-94/fasta/mus_musculus/dna/) to filter out contaminating host reads.
+
+
+| SRA ID     | description       | reads (millions) |
+|------------|-------------------|------------------|
+| SRR6051702 | control mouse #3  | 12,000,000       |
+| SRR6051704 | control mouse #4  | 12,000,000       |
+| SRR6051710 | control mouse #5  | 12,000,000       |
+| SRR6051709 | control mouse #6  | 12,000,000       |
+| SRR6051703 | infected mouse #1 | 12,000,000       |
+| SRR6051708 | infected mouse #2 | 12,000,000       |
+| SRR6051705 | infected mouse #6 | 12,000,000       |
+| SRR6051706 | infected mouse #8 | 12,000,000       |
 
 {% include links.html %}
 
