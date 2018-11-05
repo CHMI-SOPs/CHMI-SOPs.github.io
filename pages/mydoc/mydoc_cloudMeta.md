@@ -2,7 +2,7 @@
 title: Metagenomics in the cloud
 tags: [bioinformatics, microbiome, tutorials, metagenomics]
 keywords:
-summary: "This tutorial uses cloud compute resources and a Snakemake-based pipeline called Sunbeam for analysis of shotgun metagenomic data"
+summary: "This 4 hour workshop takes users through setting up their own cloud computer, intalling a Snakemake-based pipeline called Sunbeam for analysis of shotgun metagenomic data, and analyzing/discussing data from Crohn's disease patients"
 sidebar: mydoc_sidebar
 permalink: mydoc_cloudMeta.html
 folder: mydoc

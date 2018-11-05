@@ -156,7 +156,7 @@ entries:
           url: /mydoc_biomeme_human.html
           output: web, pdf
 
-  - title: Tutorials
+  - title: Workshops
     output: web, pdf
     
     folderitems:
