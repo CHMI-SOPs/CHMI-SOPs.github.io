@@ -10,7 +10,7 @@ folder: mydoc
 
 ## Workshop outline
 
-| start time | description                  | Type                |
+| Start time | Description                  | Type                |
 |------------|------------------------------|---------------------|
 | 1pm        | Welcome                      | talk - Kyle and Dan |
 |            | Launch Instance              | activity - Dan      |
