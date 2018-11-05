@@ -28,9 +28,11 @@ We'll begin the workshop with a demonstration of how to launch your first Google
 * 8 cores
 * 50Gb of RAM
 * 100Gb solid state harddrive
-* Running Linux 18.04 LTS operating system
+* Running Linux Ubuntu 18.04 LTS operating system
 
 Once you have finalized this instance, you have effectively rented a computer from Google, and we are all using exactly the same type of computer with the same operating system and compute resources.  In the case of the computer we set-up above, you will be charged 36 cents per hour, or about $260/month.  The more powerful the computer, the more you will be charged in rent, regardless of whether or not you actually use these resources.
+
+{% include note.html content="This entire workshop should only take about $1 of your credit to complete." %}
 
 {% include warning.html content="If you fail to delete your instance after the workshop, your credit card will be charged after ~1 month (when your $300 credit will have been spent)." %}
 
@@ -188,6 +190,8 @@ which will take a bit of time.  When the installation is complete,
 cd ~
 sunbeam run --configfile workshop-project/sunbeam_config.yml final_report
 ```
+
+{% include important.html content="Be sure to delete your instance at the conclusion of the workshop to avoid charges to your credit card.  You google cloud account will remain active and you should still have >99% of your initial $300 credit remaining to use for analyzing your own data.)." %}
 
 {% include links.html %}
 
