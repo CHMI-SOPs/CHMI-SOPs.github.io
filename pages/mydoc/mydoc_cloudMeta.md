@@ -45,10 +45,8 @@ Once you have finalized this instance, you have effectively rented a computer fr
 ```{bash}
 # first, update all current packages
 sudo apt-get update
-# now install a few new packages 
-sudo apt-get install r-base r-base-dev
-sudo apt-get install libcurl4-openssl-dev libssl-dev libxml2-dev
-sudo apt-get install pandoc
+# now install the R programming language 
+sudo apt-get install r-base
 ```
 
 * [Download Sunbeam](https://github.com/eclarke/sunbeam) from github using the code below
@@ -64,6 +62,17 @@ ls
 cd sunbeam-stable
 bash install.sh
 ```
+* notice that we got a few warnings at the end of the Sunbeam installation.  Although Conda is now installed on our cloud computer, it has not been added to our PATH. We can do this using the following code:
+
+```{bash}
+# first, take a look at what is in you PATH
+echo $PATH
+# now add the location of Conda to your PATH
+echo "export PATH=$PATH:/home/dbeiting/miniconda3/bin" >> ~/.bashrc
+# check that it was added
+echo $PATH
+```
+
 * In order to start using Sunbeam, we need to close our ssh terminal and reopen it. 
 
 * Since Sunbeam was installed as a Conda environment, we have to enter this environment to start using the software
