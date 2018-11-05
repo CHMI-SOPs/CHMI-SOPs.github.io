@@ -42,11 +42,11 @@ Once you have finalized this instance, you have effectively rented a computer fr
 
 ```{bash}
 # first, update all current packages
-apt-get update
+sudo apt-get update
 # now install a few new packages 
-apt-get install r-base r-base-dev
-apt-get install libcurl4-openssl-dev libssl-dev libxml2-dev
-apt-get install pandoc
+sudo apt-get install r-base r-base-dev
+sudo apt-get install libcurl4-openssl-dev libssl-dev libxml2-dev
+sudo apt-get install pandoc
 ```
 
 * [Download Sunbeam](https://github.com/eclarke/sunbeam) from github using the code below
