@@ -8,7 +8,7 @@ permalink: mydoc_cloudMeta.html
 folder: mydoc
 ---
 
-## before starting
+## Before starting
 In this workshop we'll use the Google Cloud to analyze raw metagenomic sequence data to identify the microbial composition of stool from heathly humans compared to Crohn's disease patients.  In addition to generating this microbial census, you'll also assemble sequences into contigs, which can then be used to infer functional potential.  To accomplish these tasks we'll use [Sunbeam](https://www.biorxiv.org/content/early/2018/05/18/326363), a snake-make based metagenomics pipeline developed by [Kyle Bittinger](https://microbiome.research.chop.edu/our-team/kyle-bittinger.html) and his group at the PennCHOP Microbiome Center.  
 
 The code below is copied from the [Sunbeam documentation](http://sunbeam.readthedocs.io/en/latest/quickstart.html).  Please see this documentation for more detailed info about using Sunbeam for your own work. 
@@ -65,15 +65,14 @@ bash install.sh
 * notice that we got a few warnings at the end of the Sunbeam installation.  Although Conda is now installed on our cloud computer, it has not been added to our PATH. We can do this using the following code:
 
 ```{bash}
-# first, take a look at what is in you PATH
+# first, take a look at what is in your PATH
 echo $PATH
 # now add the location of Conda to your PATH
 echo "export PATH=$PATH:/home/dbeiting/miniconda3/bin" >> ~/.bashrc
-# check that it was added
-echo $PATH
 ```
+{% include note.html content="the changes you made to your path will not take effect until you close and reoopen your SSH terminal.  You can do this now." %}
 
-* In order to start using Sunbeam, we need to close our ssh terminal and reopen it. 
+* After opening the new SSH terminal window, check your PATH again with `echo $PATH`.  Notice that it has been updated with the location of the conda environments.
 
 * Since Sunbeam was installed as a Conda environment, we have to enter this environment to start using the software
 
@@ -148,6 +147,7 @@ cd ~
 wget https://ccb.jhu.edu/software/kraken/dl/minikraken_20171101_4GB_dustmasked.tgz
 tar xvzf minikraken_20171101_4GB_dustmasked.tgz
 ```
+## Configure Sunbeam
 
 * Now that we have reference databases, we need to add them to our configuration
 file.  We'll use `nano` to open and modify this file directly in our termial
@@ -157,9 +157,7 @@ cd ~
 nano workshop-project/sunbeam_config.yml
 ```
 
-* The configuration values are below.  You'll need to navigate to the right spot
-in your configuration file, and substitute the directory name "kylebittinger"
-with your google username.
+* The configuration values are below.  You'll need to navigate to the right spot in your configuration file, and substitute the directory name "kylebittinger" with your google username.
 
 ```
 host_fp: "/home/kylebittinger/human"
@@ -167,6 +165,12 @@ host_fp: "/home/kylebittinger/human"
 
 ```
 kraken_db_fp: "/home/kylebittinger/minikraken_20171101_4GB_dustmasked"
+```
+
+* The default configuration for Sunbeam uses 4 threads, but we have 16 threads available, since our cloud machine has 8 cores. Let's use all threads we have.
+
+```
+threads: 16
 ```
 
 ## Run the pipeline
@@ -178,12 +182,15 @@ cores we'd like to use (`--jobs` argument).
 
 ```{bash}
 cd ~
-sunbeam run --configfile workshop-project/sunbeam_config.yml --jobs 7
+sunbeam run --configfile workshop-project/sunbeam_config.yml --jobs 8
 ```
+
+{% include note.html content="expect the full pipeline to take about 20 minutes to complete the analysis of these samples" %}
+
 
 ## Generate a report
 
-To look at some of our results, we'll install a Sunbeam extension and generate
+* To look at some of our results, we'll install a Sunbeam extension and generate
 a report.
 
 ```{bash}
@@ -192,15 +199,44 @@ git clone https://github.com/sunbeam-labs/sbx_report
 conda install --file sbx_report/requirements.txt
 ```
 
-This is going to install the R programming language on our remote computer,
-which will take a bit of time.  When the installation is complete, 
+* Now run the extension you just installed
 
 ```{bash}
 cd ~
 sunbeam run --configfile workshop-project/sunbeam_config.yml final_report
 ```
 
+## Explore results
+
+* The summary report  you just prepared is conveniently available as a single .html file that can be opened in any browser.  The problem is that this file resides on a google-owned harddrive and there is no simple way to open and view .html files directly in the terminal.  So, we need to transfer it to your laptop harddrive.
+
+* Notice that your SSH terminal window has a small gear icon in the upper right-hand corner of the screen.  Click on this and choose *download file* from the dropdown menu.
+
+* In the pop-up box, enter the path to 
+
+* we'll expore and discuss the report together to conclude the workshop!
+
 {% include important.html content="Be sure to delete your instance at the conclusion of the workshop to avoid charges to your credit card.  You google cloud account will remain active and you should still have >99% of your initial $300 credit remaining to use for analyzing your own data.)." %}
+
+## Practice after workshop
+
+Practice makes perfect (or at least better!).  After you have destroyed your instance, try running through this entire process again start to finish, exactly as we've outlined above.  If you can do this without any issues, we've prepared a separate set of samples and analysis for you to practice on.
+
+For this new analysis, you'll be using Sunbeam to analyze mouse metgenomic data from a recently published 
+
+A few things to note about this dataset:
+
+* we have not filtered out contaminating host reads, so each fastq file is large.
+* the entire dataset, consisting of 12 
+
+| SRA ID | description | # reads |
+|----------|----------------|----------------|
+| SRR6051702       | control mouse #3           | 12,000,000 |
+| SRR6051703   | infected mouse #1       | 
+| **55**   | **0:15**       |
+| **72**   | **5:00**       |
+| 72       | 10:00          |
+| 4        | hold           |
 
 {% include links.html %}
 
