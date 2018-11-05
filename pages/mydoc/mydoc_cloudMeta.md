@@ -1,6 +1,6 @@
 ---
 title: Metagenomics in the cloud
-tags: [bioinformatics, microbiome, tutorial, metagenomics]
+tags: [bioinformatics, microbiome, tutorials, metagenomics]
 keywords:
 summary: "This tutorial uses cloud compute resources and a Snakemake-based pipeline called Sunbeam for analysis of shotgun metagenomic data"
 sidebar: mydoc_sidebar
@@ -11,7 +11,9 @@ folder: mydoc
 ## before starting
 In this workshop we'll use the Google Cloud to analyze raw metagenomic sequence data to identify the microbial composition of stool from heathly humans compared to Crohn's disease patients.  In addition to generating this microbial census, you'll also assemble sequences into contigs, which can then be used to infer functional potential.  To accomplish these tasks we'll use [Sunbeam](https://www.biorxiv.org/content/early/2018/05/18/326363), a snake-make based metagenomics pipeline developed by [Kyle Bittinger](https://microbiome.research.chop.edu/our-team/kyle-bittinger.html) and his group at the PennCHOP Microbiome Center.  
 
-The material below is intended to walk you through this workshop, and provide a general web-based lesson plan for how one might conduct such a workshop.  
+The code below is copied from the [Sunbeam documentation](http://sunbeam.readthedocs.io/en/latest/quickstart.html).  Please see this documentation for more detailed info about using Sunbeam for your own work. 
+
+This tutorial provides a guide to walk you through this workshop, and provide a resource you can use to practice the material, as well as adapt for your own work.
 
 To participate in this workshop, you'll only need a few things:
 * a laptop computer
@@ -30,11 +32,22 @@ We'll begin the workshop with a demonstration of how to launch your first Google
 
 Once you have finalized this instance, you have effectively rented a computer from Google, and we are all using exactly the same type of computer with the same operating system and compute resources.  In the case of the computer we set-up above, you will be charged 36 cents per hour, or about $260/month.  The more powerful the computer, the more you will be charged in rent, regardless of whether or not you actually use these resources.
 
-{% include important.html content="If you fail to delete your instance after the workshop, your credit card will be charged after ~1 month (when your $300 credit will have been spent)." %}
+{% include warning.html content="If you fail to delete your instance after the workshop, your credit card will be charged after ~1 month (when your $300 credit will have been spent)." %}
 
 ## Install Sunbeam
 
 * Connect to your cloud computer using the 'ssh' button next to the instance.  
+
+* Install some software using the Advanced Package Tool (apt), a free program that works with core libraries to handle the installation and removal of software on Debian, Ubuntu and other Linux distributions
+
+```{bash}
+# first, update all current packages
+apt-get update
+# now install a few new packages 
+apt-get install r-base r-base-dev
+apt-get install libcurl4-openssl-dev libssl-dev libxml2-dev
+apt-get install pandoc
+```
 
 * [Download Sunbeam](https://github.com/eclarke/sunbeam) from github using the code below
 
@@ -57,6 +70,9 @@ bash install.sh
 source activate sunbeam
 ```
 This is a command you'll want to remember for future sessions.  Each time you log into your cloud instance, you'll need to activate the pipeline with `source activate sunbeam`.  Upon activation, you should see that your command prompt begins with "(sunbeam)".  Anytime you want to exit out of sunbeam, simply type `source deactivate sunbeam` and hit return.
+
+{% include note.html content="There are an increasing number of tools available that will install easily and quickly on cloud instances.  For example, you may want to check out [Chiron](https://github.com/IGS/Chiron), a suite of 'dockerized' tools for analysis of metagenomics data" %}
+
 
 ## Get data
 
