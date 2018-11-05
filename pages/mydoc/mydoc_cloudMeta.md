@@ -71,7 +71,7 @@ source activate sunbeam
 ```
 This is a command you'll want to remember for future sessions.  Each time you log into your cloud instance, you'll need to activate the pipeline with `source activate sunbeam`.  Upon activation, you should see that your command prompt begins with "(sunbeam)".  Anytime you want to exit out of sunbeam, simply type `source deactivate sunbeam` and hit return.
 
-{% include note.html content="There are an increasing number of tools available that will install easily and quickly on cloud instances.  For example, you may want to check out [Chiron](https://github.com/IGS/Chiron), a suite of 'dockerized' tools for analysis of metagenomics data" %}
+{% include note.html content="In addition to Sunbeam, there are an growing number of tools available that will install easily and quickly on cloud instances.  For example, you may want to check out [Chiron](https://github.com/IGS/Chiron), a suite of 'dockerized' tools for analysis of metagenomics data" %}
 
 
 ## Get data
