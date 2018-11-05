@@ -29,7 +29,7 @@ In this workshop we'll use the Google Cloud to analyze raw metagenomic sequence 
 
 The code below is copied from the [Sunbeam documentation](http://sunbeam.readthedocs.io/en/latest/quickstart.html).  Please see this documentation for more detailed info about using Sunbeam for your own work. 
 
-This tutorial provides a guide to walk you through this workshop, and provide a resource you can use to practice the material, as well as adapt for your own work.
+This page is meant to serve as a guide to walk you through the workshop material, while providing a resource you can revisit after the workshop to practice and begin to adapt this workflow for your own studies.
 
 To participate in this workshop, you'll only need a few things:
 * a laptop computer
