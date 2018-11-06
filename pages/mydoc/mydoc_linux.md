@@ -60,7 +60,7 @@ If you're new to the command-line in Linux, there are lots of online resoures fo
 | ```du -sh *``` | simpler version of the command above. lists all files in a folder and shows their file size         |
 | ```tree -d```                           | lists all files and folders in your working directory as a tree structure    |
 | pressing up arrow                       | recalls previous command                                                     |
-| ```cd \```                              | takes you to the root directory                                              |
+| ```cd /```                              | takes you to the root directory                                              |
 | ```cd ~```                              | takes you to your home directory                                             |
 | ```cd ..```                             | takes you up one level in your file directory                                |
 | ```chmod u+x <fileName>```              | edits permissions on file                                                    |

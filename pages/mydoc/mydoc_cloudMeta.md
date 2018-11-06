@@ -247,7 +247,7 @@ After extenisve molecular and culture-based diagnostics turned up negative, shot
 A few things to note about this exercise:
 
 * The data you'll use is summarized in the table below
-* Unlike the example used in the workshop, this data was not  prefiltered to remove host before uploading to SRA, so each file is much larger and the entire dataset is ~40Gb.  
+* Unlike the example used in the workshop, this data was not prefiltered to remove host reads before uploading to SRA, so each file is much larger and the entire dataset is ~40Gb.  
 * You'll need to filter out host data using the [mouse reference genome](ftp://ftp.ensembl.org/pub/release-94/fasta/mus_musculus/dna/).
 
 
@@ -257,10 +257,10 @@ A few things to note about this exercise:
 | SRR6051704 | control mouse #4  | 22,912,630       |
 | SRR6051710 | control mouse #5  | 21,849,256       |
 | SRR6051709 | control mouse #6  | 20,022,074       |
-| SRR6051703 | infected mouse #1 | 42,252,996      |
-| SRR6051708 | infected mouse #2 | 37,409,304       |
-| SRR6051705 | infected mouse #6 | 23,445,964       |
-| SRR6051706 | infected mouse #8 | 25,549,966       |
+| SRR6051703 | affected mouse #1 | 42,252,996      |
+| SRR6051708 | affected mouse #2 | 37,409,304       |
+| SRR6051705 | affected mouse #6 | 23,445,964       |
+| SRR6051706 | affected mouse #8 | 25,549,966       |
 
 {% include links.html %}
 
