@@ -27,7 +27,7 @@ folder: mydoc
 ## Before starting
 In this workshop we'll use the Google Cloud to analyze raw metagenomic sequence data to identify the microbial composition of stool from heathly humans compared to Crohn's disease patients.  In addition to generating this microbial census, you'll also assemble sequences into contigs, which can then be used to infer functional potential.  To accomplish these tasks we'll use [Sunbeam](https://www.biorxiv.org/content/early/2018/05/18/326363), a snake-make based metagenomics pipeline developed by [Kyle Bittinger](https://microbiome.research.chop.edu/our-team/kyle-bittinger.html) and his group at the PennCHOP Microbiome Center.  
 
-The code below is copied from the [Sunbeam documentation](http://sunbeam.readthedocs.io/en/latest/quickstart.html).  Please see this documentation for more detailed info about using Sunbeam for your own work. 
+The code below is copied from the [Sunbeam Quickstart documentation](http://sunbeam.readthedocs.io/en/latest/quickstart.html).  Please see the [full documentation](https://sunbeam.readthedocs.io/en/latest/usage.html#usage) for more detailed info about using Sunbeam for your own work. 
 
 This page is meant to serve as a guide to walk you through the workshop material, while providing a resource you can revisit after the workshop to practice and begin to adapt this workflow for your own studies.
 
@@ -247,19 +247,20 @@ After extenisve molecular and culture-based diagnostics turned up negative, shot
 A few things to note about this exercise:
 
 * The data you'll use is summarized in the table below
-* Unlike the example used in the workshop, this data was not  prefiltered to remove host before uploading to SRA, so you'll need to do this yourself. This is mouse data, so you'll need to use a the [mouse reference genome](ftp://ftp.ensembl.org/pub/release-94/fasta/mus_musculus/dna/) to filter out contaminating host reads.
+* Unlike the example used in the workshop, this data was not  prefiltered to remove host before uploading to SRA, so each file is much larger and the entire dataset is ~40Gb.  
+* You'll need to filter out host data using the [mouse reference genome](ftp://ftp.ensembl.org/pub/release-94/fasta/mus_musculus/dna/).
 
 
-| SRA ID     | description       | reads (millions) |
+| SRA ID     | Description       | Number read pairs |
 |------------|-------------------|------------------|
-| SRR6051702 | control mouse #3  | 12,000,000       |
-| SRR6051704 | control mouse #4  | 12,000,000       |
-| SRR6051710 | control mouse #5  | 12,000,000       |
-| SRR6051709 | control mouse #6  | 12,000,000       |
-| SRR6051703 | infected mouse #1 | 12,000,000       |
-| SRR6051708 | infected mouse #2 | 12,000,000       |
-| SRR6051705 | infected mouse #6 | 12,000,000       |
-| SRR6051706 | infected mouse #8 | 12,000,000       |
+| SRR6051702 | control mouse #3  | 25,083,654      |
+| SRR6051704 | control mouse #4  | 22,912,630       |
+| SRR6051710 | control mouse #5  | 21,849,256       |
+| SRR6051709 | control mouse #6  | 20,022,074       |
+| SRR6051703 | infected mouse #1 | 42,252,996      |
+| SRR6051708 | infected mouse #2 | 37,409,304       |
+| SRR6051705 | infected mouse #6 | 23,445,964       |
+| SRR6051706 | infected mouse #8 | 25,549,966       |
 
 {% include links.html %}
 
