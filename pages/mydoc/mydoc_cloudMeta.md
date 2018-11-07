@@ -173,14 +173,14 @@ cd ~
 nano workshop-project/sunbeam_config.yml
 ```
 
-* The configuration values are below.  You'll need to navigate to the right spot in your configuration file, and substitute the directory name "kylebittinger" with your google username.
+* The configuration values are below.  You'll need to navigate to the right spot in your configuration file, and substitute "USERNAME" with your google username.
 
 ```
-host_fp: "/home/kylebittinger/human"
+host_fp: "/home/USERNAME/human"
 ```
 
 ```
-kraken_db_fp: "/home/kylebittinger/minikraken_20171101_4GB_dustmasked"
+kraken_db_fp: "/home/USERNAME/human/minikraken_20171101_4GB_dustmasked"
 ```
 
 * The default configuration for Sunbeam uses 4 threads, but we have 16 threads available, since our cloud machine has 8 cores. Let's use all threads we have.
@@ -202,6 +202,24 @@ sunbeam run --configfile workshop-project/sunbeam_config.yml --jobs 8
 ```
 
 {% include note.html content="expect the full pipeline to take about 20 minutes to complete the analysis of these samples" %}
+
+## Explore your results
+
+{% include note.html content="Although beyond the scope of this workshop, it is useful to check the quality of your assembled genomes.  A useful tool for this is [CheckM](http://ecogenomics.github.io/CheckM/), which could easily be installed on your cloud instance" %}
+
+* Open your QC results and take notice of the number of fwd and rev reads that passed quality filter, as well number of host reads filtered out from each sample.
+
+```{bash}
+cd ~/workshop-project/sunbeam_output/qc/reports/
+nano preprocess_summary.tsv
+```
+
+* Take a look at taxanomic breakdown for one of the samples
+
+```{bash}
+cd ~/workshop-project/sunbeam_output/classify/kraken
+nano SRR2145310-taxa.tsv
+```
 
 
 ## Generate a report
