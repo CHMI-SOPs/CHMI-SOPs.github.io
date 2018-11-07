@@ -102,7 +102,7 @@ This is a command you'll want to remember for future sessions.  Each time you lo
 
 ## Get data
 
-* let's install some additional software in our environment. SRA tools will allow us to easily retrieve raw data from NCBI's [Sequence Read Archive](https://www.ncbi.nlm.nih.gov/sra) 
+* let's install some additional software in our environment. SRA tools will allow us to easily retrieve raw data from NCBI's [Sequence Read Archive](https://www.ncbi.nlm.nih.gov/sra).  The data is also available on github [here](https://github.com/chvlyl/PLEASE).
 
 ```{bash}
 conda install -c bioconda sra-tools
