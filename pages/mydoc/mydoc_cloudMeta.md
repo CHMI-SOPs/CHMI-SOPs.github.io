@@ -25,7 +25,7 @@ folder: mydoc
 
 
 ## Before starting
-In this workshop we'll use the Google Cloud to analyze raw metagenomic sequence data to identify the microbial composition of stool from heathly humans compared to Crohn's disease patients.  In addition to generating this microbial census, you'll also assemble sequences into contigs, which can then be used to infer functional potential.  To accomplish these tasks we'll use [Sunbeam](https://www.biorxiv.org/content/early/2018/05/18/326363), a snake-make based metagenomics pipeline developed by [Kyle Bittinger](https://microbiome.research.chop.edu/our-team/kyle-bittinger.html) and his group at the PennCHOP Microbiome Center.  
+In this workshop we'll use the Google Cloud to analyze raw 'shotgun' metagenomic sequence data to identify the microbial composition of stool from Crohn's disease patients.  In addition to generating this microbial census, you'll also assemble sequences into contigs, which can then be used to infer functional potential of the microbiome.  To accomplish these tasks we'll use [Sunbeam](https://www.biorxiv.org/content/early/2018/05/18/326363), a snake-make based metagenomics pipeline developed by [Kyle Bittinger](https://microbiome.research.chop.edu/our-team/kyle-bittinger.html) and his group at the PennCHOP Microbiome Center.  
 
 The code below is copied from the [Sunbeam Quickstart documentation](http://sunbeam.readthedocs.io/en/latest/quickstart.html).  Please see the [full documentation](https://sunbeam.readthedocs.io/en/latest/usage.html#usage) for more detailed info about using Sunbeam for your own work. 
 
@@ -113,13 +113,13 @@ conda install -c bioconda sra-tools
 cd ~
 mkdir workshop-data
 cd workshop-data
-fasterq-dump SRR2145310
-fasterq-dump SRR2145329
-fasterq-dump SRR2145381
-fasterq-dump SRR2145353
-fasterq-dump SRR2145354
-fasterq-dump SRR2145492
-fasterq-dump SRR2145498
+fasterq-dump SRR2145310 -e 8
+fasterq-dump SRR2145329 -e 8
+fasterq-dump SRR2145381 -e 8
+fasterq-dump SRR2145353 -e 8
+fasterq-dump SRR2145354 -e 8
+fasterq-dump SRR2145492 -e 8
+fasterq-dump SRR2145498 -e 8
 ```
 
 ## Initialize project
@@ -232,35 +232,17 @@ sunbeam run --configfile workshop-project/sunbeam_config.yml final_report
 
 * To wrap-up the workshop, we'll expore and discuss the report together.  Just in case you had any issues retrieving this file from the cloud instance, you can also view a copy of the report [here](http://CHMI-sops.github.io/papers/final_report.html).
 
-{% include important.html content="Be sure to delete your instance at the conclusion of the workshop to avoid charges to your credit card.  You google cloud account will remain active and you should still have >99% of your initial $300 credit remaining to use for analyzing your own data.)." %}
+
+## Wrap up
+
+Time to take a [live survey](http://etc.ch/DGRt)!
+
+{% include important.html content="Be sure to delete your instance right now to avoid charges to your credit card.  Your google cloud account will remain active and you will still have >99% of your initial $300 credit remaining to use for analyzing your own data.)." %}
+
 
 ## Practice after workshop
 
-Practice makes perfect (or at least better!).  After destroying your instance, try firing up a fresh instance and run through this entire tutorial again from start to finish, exactly as we've outlined above.  If you can do this without any issues, try the exercise below that uses a completely different dataset.
-
-For this new exercise, you'll be using Sunbeam to analyze mouse metgenomic data from a [recently published paper](https://doi.org/10.30802/AALAS-CM-17-000084) from Dan's lab.
-
-**A bit of background on this paper and data:**  In the summer of 2015, the University Lab Animal Resources (ULAR) group at UPenn, which oversees all veterinary care and support for research animals on campus, began to notice diarrhea in a few cages of immuno-compromised mice. If you’re not familiar with mouse models for research, there a many genetically engineered mice that lack various immune system components. The particular mice that fell ill are what we would call NSG and NSGS mice, strains that are effectively devoid of nearly all aspects of the immune system. As such, these mice are ideal recipients for xenografts (i.e. human tumor grafts) and critical for understanding cancer biology and therpeutics, but they also pose a real challenge in terms of infection control. You can probably guess where this is going. Despite the strictest precautions, what started out as a few cages of sick mice quickly became an outbreak of diarrheal disease, eventually decimating the entire suite.
-
-After extenisve molecular and culture-based diagnostics turned up negative, shotgun metagenomics on stool samples from affected and control mice was carried out.  **Your goal is to identify putative organisms associated with the outbreak.**
-
-A few things to note about this exercise:
-
-* The data you'll use is summarized in the table below
-* Unlike the example used in the workshop, this data was not prefiltered to remove host reads before uploading to SRA, so each file is much larger and the entire dataset is ~40Gb.  
-* You'll need to filter out host data using the [mouse reference genome](ftp://ftp.ensembl.org/pub/release-94/fasta/mus_musculus/dna/).
-
-
-| SRA ID     | Description       | Number read pairs |
-|------------|-------------------|------------------|
-| SRR6051702 | control mouse #3  | 25,083,654      |
-| SRR6051704 | control mouse #4  | 22,912,630       |
-| SRR6051710 | control mouse #5  | 21,849,256       |
-| SRR6051709 | control mouse #6  | 20,022,074       |
-| SRR6051703 | affected mouse #1 | 42,252,996      |
-| SRR6051708 | affected mouse #2 | 37,409,304       |
-| SRR6051705 | affected mouse #6 | 23,445,964       |
-| SRR6051706 | affected mouse #8 | 25,549,966       |
+Practice makes perfect (or at least better!).  After destroying your instance, try firing up a fresh instance and run through this entire tutorial again from start to finish, exactly as we've outlined above. 
 
 {% include links.html %}
 
