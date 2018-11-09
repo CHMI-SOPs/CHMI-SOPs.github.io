@@ -37,6 +37,11 @@ To participate in this workshop, you'll only need a few things:
 * a google account (free)
 * [a google cloud account](https://cloud.google.com) (free sign-up comes with a $300 credit!)
 
+## Lecture slides
+
+* Dan's slides covering the basics of working in the terminal and a quick intro to metagenomic sequencing are [here](https://www.icloud.com/keynote/0rXSZQMTx8xTdiw2HiToUQZeQ#Metagenomics%5Fworkshop%5FUPenn%5FNov7.2018)
+* Kyle's slides on analysis of metagenomic data are [here](https://docs.google.com/presentation/d/1pOK1v6CZMly23KlL1A6TPg1gMHJKNkAarYSudKUCB0U/edit?usp=sharing)
+
 ## Set-up cloud computer 
 
 We'll begin the workshop with a demonstration of how to launch your first Google Cloud instance to build your cloud computer to have the following specs: 
@@ -260,7 +265,7 @@ Time to take a [live survey](http://etc.ch/DGRt)!
 
 ## Practice after workshop
 
-Practice makes perfect (or at least better!).  After destroying your instance, try firing up a fresh instance and run through this entire tutorial again from start to finish, exactly as we've outlined above. 
+Practice makes perfect (or at least better!).  After destroying your instance, try firing up a fresh instance and run through this entire tutorial again from start to finish, exactly as we've outlined above.  As you do this, take some time to really think about each line of code and what is being accomplished.  If you don't understand a command, start investigating via google. 
 
 {% include links.html %}
 
