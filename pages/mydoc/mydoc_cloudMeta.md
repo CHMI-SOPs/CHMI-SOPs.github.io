@@ -245,8 +245,6 @@ cd ~
 sunbeam run --configfile workshop-project/sunbeam_config.yml final_report
 ```
 
-## Explore results
-
 * The summary report you just prepared is conveniently available as a single .html file that can be opened in any browser.  The problem is that this file resides on a google-owned harddrive and there is no simple way to open and view .html files directly in the terminal.  So, we need to transfer it to your laptop harddrive.
 
 * Notice that your SSH terminal window has a small gear icon in the upper right-hand corner of the screen.  Click on this and choose *Download file* from the dropdown menu.
