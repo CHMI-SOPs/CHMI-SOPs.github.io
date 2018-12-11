@@ -106,6 +106,10 @@ entries:
           url: /mydoc_microbiomeDB_deposit.html
           output: web, pdf
 
+        - title: Sourmash
+          url: /mydoc_sourmash.html
+          output: web, pdf
+
   - title: Compute resources
     output: web
 
