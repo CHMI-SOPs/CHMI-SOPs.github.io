@@ -24,7 +24,7 @@ ssh username@130.91.255.137
 
 ## Step 2: Check data quality
 
-Begin by using fastqc to check the quality of each of your fastq files.  Throughout this protocol, 'path/to/your/data' indicats the path to your folder on our linux server which contains raw sequence data from your WGS experiment.
+Begin by using [fastqc](https://www.bioinformatics.babraham.ac.uk/projects/download.html) to check the quality of each of your fastq files.  Throughout this protocol, 'path/to/your/data' indicats the path to your folder on our linux server which contains raw sequence data from your WGS or metagenomics experiment.
 
 ```
 cd path/to/your/data
@@ -92,15 +92,48 @@ sourmash gather -k 31 *.sig /data/reference_db/genbank-d2-k31.sbt.json #using ge
 
 ```
 
-If you suspect contamination of a particular kind (e.g. host, or common bacterium used in lab), you can run [fastq_screen](https://www.bioinformatics.babraham.ac.uk/projects/fastq_screen/) to check a subsample of reads from your raw fastq file against a set of reference genomes.  Although this has nothing to do with Sourmash or minHask sketches *per se*, it can be a useful way to confirm findings from Sourmash, or to check for organisms not well represented in the SBT reference databases provided above.
+If you suspect contamination of a particular kind (e.g. host, plasmid, or common bacterium used in lab), you can run [fastq_screen](https://www.bioinformatics.babraham.ac.uk/projects/fastq_screen/_build/html/index.html) to check a subsample of reads from your raw fastq file against a set of reference genomes.  Although this has nothing to do with Sourmash or minHask sketches *per se*, it can be a useful way to confirm findings from Sourmash, or to check for organisms not well represented in the SBT reference databases provided above.
 
 fastq_screen uses bowtie2 for aligning reads to the references, so we've provided a set of reference genomes on our cluster to which you can easily compare.
 
+We've taken care of configurating fastq_screen so that it knows where to find bowtie2 and where to look for the reference genomes.  This information is pretty clearly outlined in the fastq_screen configuration file found at /usr/local/bin/fastq_screen_v0.12.0/fastq_screen.conf
 
-## Optional: removing contaminating reads
+The reference genomes listed below have already been added to the configuration file.  If you don't want a particular reference, you can comment it out (please **do not* delete the configuration file or remove any of the lines in the file...just comment out).  If you want to include a reference that is now listed below, please contact us for help.
 
-Depending on the results you get with Sourmash gather and/or Fastq_screen above, you may want to remove reads mapping to a particular reference genome.  This is particularly useful for removing host reads contaminating a metagenomic sample, for example.  To do this, use 
+- Human
+- Mouse (*Mus musculus*)
+- Dog (*Canis familiaris*)
+- Cow (*Bos taurus*)
+- Horse (*Equus caballus*)
+- Pig (*Sus scrofa*)
+- Chicken (*Gallus gallus*)
+- Fruitfly (*Drosophila melanogaster*)
+- Yeast (*Saccharomyces cerevisiae*)
+- *E. coli* (strain K12)
+- Staph (*Staphyloccous aureus* strain NCTC 8325)
+- Lambda phage (Enterobacteriophage lambda)
+- PhiX 
+- [Contaminants](www.bioinformatics.babraham.ac.uk/projects/fastqc)
+- [plasmids/vectors](http://www.ncbi.nlm.nih.gov/VecScreen/UniVec.html)
 
+{% include note.html content="Just as you summarized the fastqc results in Step 1 using multiQC, the same can be done with the results of fastq_screen.  Rerunning multiqc and you will get a report that incorporates both fastqc and fastq_screen outputs." %}
+
+
+## Optional: filtering reads
+
+Depending on the results you get with Sourmash gather or Fastq_screen above, you may want to filter reads based on alignment to a particular reference genome of interest.  This is particularly useful for removing host reads contaminating a metagenomic sample, for example.  To do this, you can use the ```--tag``` and ```--filter``` options for fastq_screen.
+
+First, tag each read in each fastq with the genome to which it aligns (from the available references)
+
+```
+fastq_screen --tag sampleX.fastq.gz
+```
+
+Next, filter based on tags that were assigned above
+
+```
+fastq_screen --filter 1000 sampleX.fastq.gz
+``` 
 
 
 {% include links.html %}
