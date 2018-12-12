@@ -102,7 +102,7 @@ entries:
           url: /mydoc_qiime2.html
           output: web, pdf
 
-        - title: Submitting data to microbiomeDB.org
+        - title: microbiomeDB.org
           url: /mydoc_microbiomeDB_deposit.html
           output: web, pdf
 
