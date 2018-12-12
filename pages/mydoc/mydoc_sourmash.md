@@ -39,7 +39,7 @@ fastqc *.gz -t 24 #uses all 24 threads available on our machine
 multiqc path/to/your/data
 ```
 
-## Step 4: Prepare a 'sketch' of your raw data
+## Step 4: Prepare sample 'sketches'
 
 Here, we'll use sourmash's ```compute``` function to prepare a sketch of each fastq file in our directory.  the ```--scaled``` option to apply a 1000:1 compression ratio, which retains the ability to detect regions of similarity in the 10kb range.
 
