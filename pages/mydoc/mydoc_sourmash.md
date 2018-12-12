@@ -1,5 +1,5 @@
 ---
-title: sourmash workflow
+title: Exploring WGS and Metagenomic data using minHash sketches
 tags: [bioinformatics, microbiome]
 keywords:
 summary: "QC and analysis of microbial WGS and metagenomic data using Sourmash"
@@ -8,7 +8,7 @@ permalink: mydoc_sourmash.html
 folder: mydoc
 ---
 
-## before starting
+## Before starting
 The following protocol outlines the use of [Sourmash](https://sourmash.readthedocs.io/en/latest/) for interpreting microbial whole genome sequence (WGS) or metagenomic data.  Sourmash computes a fingerprint or 'sketch' from your WGS data using minHash, and enables comparison of sketches from isolates (to understand strain relatedness, for example).  Similarly, a sketch can be compared against a large databases of sketches, stored as a Sequence Bloom Tree (SBT) for rapid searching, from RefSeq or Genbank in order to help assign identity to a sample.  SBT databases of microbial genomes from all of Genbank and RefSeq are available directly on our server for convenience.
 
 If you want to learn more about how Sourmash works, you could start with C. Titus Brown's blog posts on the topic [here](http://ivory.idyll.org/blog/2016-sourmash-sbt.html) and [here](http://ivory.idyll.org/blog/2016-sourmash-sbt-more.html).  Also take a look at Adam Phillippy's [original Mash paper](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-0997-x)
@@ -100,7 +100,7 @@ fastq_screen uses bowtie2 for aligning reads to the references, so we've provide
 
 We've taken care of configurating fastq_screen so that it knows where to find bowtie2 and where to look for the reference genomes.  This information is pretty clearly outlined in the fastq_screen configuration file found at /usr/local/bin/fastq_screen_v0.12.0/fastq_screen.conf
 
-{% include important.html content="The reference genomes listed below have already been added to the configuration file.  If you don't want a particular reference, you can comment it out.  Please **do not** delete the configuration file or remove any of the lines in the file...just comment out.  If you want to include a reference that is now listed below, please contact us for help." %}
+{% include important.html content="The reference genomes listed below have already been added to the configuration file.  If you don't want a particular reference, and you are comfortable editing configuration files using the commnad line, feel free to comment out any of the references.  However, please **do not** delete the configuration file itself or *remove* any of the lines in the file!  If you want to use fastq_screen against a bowtie2 reference genome that is not listed below, please contact us for help." %}
 
 - Human
 - Mouse (*Mus musculus*)
