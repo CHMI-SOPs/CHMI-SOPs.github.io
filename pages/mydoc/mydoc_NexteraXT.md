@@ -127,7 +127,7 @@ Quantify DNA with a Qubit and then dilute each sample to 0.2 ng/uL using ultra-p
 
 * Add 52.5 μl RSB to each well.
 
-* Shake at 1800 rpm for 2 minutes.
+* Pipette to mix well.
 
 * Incubate at room temperature for 2 minutes.
 
