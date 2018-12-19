@@ -106,7 +106,9 @@ Total volume is 10 mL, aliquot into 1.5 mL tubes with approximately 0.5 mL per t
 
 7. Discard the filter membrane (this contains the beads and all the particles we wanted to filter out, your sample is in the supernatant in the flow through).
 
-8. Purify the reaction by using AmpPure XP beads. At this stage, your products are RNA-cDNA hybrids. This is the general protocol for all AmpPure XP bead clean ups. Pay attention to the ratio in each step of beads: sample, the elution buffer used and the amount of elution buffer in each clean up. These will be different in the subsequent steps. 
+8. 
+
+9. Purify the reaction by using AmpPure XP beads. At this stage, your products are RNA-cDNA hybrids. This is the general protocol for all AmpPure XP bead clean ups. Pay attention to the ratio in each step of beads: sample, the elution buffer used and the amount of elution buffer in each clean up. These will be different in the subsequent steps. 
 
 * Ratio of AMpure XP beads to sample is 1.2X ; The elution buffer used here is **nuclease free water** at a volume of 17 uL
 
@@ -129,12 +131,12 @@ Total volume is 10 mL, aliquot into 1.5 mL tubes with approximately 0.5 mL per t
 
 Time: 16-18 hours
 
-9. Set up Second Strand Synthesis (SSS) on ice:
+10. Set up Second Strand Synthesis (SSS) on ice:
 * Add 2 uL of 10x SSS buffer to the 17 uL eluate from above in the PCR tube. 
 * Mix by vortexing, spin down. Add 1 uL of SSS enzyme and mix gently by pipetting up and down. 
 * Incubate the reaction at 16C for 2.5 hours, then 65C for 20 minutes. 
 
-10. Make a master mix of the following components by multiplying the volume by the amount of samples you have; add 60 uL to each sample: 
+11. Make a master mix of the following components by multiplying the volume by the amount of samples you have; add 60 uL to each sample: 
 
 | Component                                                 | Volume per rxn |
 |-----------------------------------------------------------|----------------|
@@ -144,11 +146,11 @@ Time: 16-18 hours
 | NEB T7 High Yield Enzyme Mix                              | 8 uL           |
 |                                                           | **60 uL**    |
 
-11. Pipette to mix, spin plate down, and incubate at 37C for 13-15 hours with the lid heated to 50C.
+12. Pipette to mix, spin plate down, and incubate at 37C for 13-15 hours with the lid heated to 50C.
 
 * **Pause point** After 15h the IVT reaction can be kept at 4C for two hours, this is programmed into our PCR protocol on the machine. 
 
-12. Purify the reaction by using AmpPure XP beads. This is the general protocol for all AmpPure XP bead clean ups. Pay attention to the ratio in each step of beads: sample, the elution buffer used and the amount of elution buffer in each clean up. These will be different in the subsequent steps. 
+13. Purify the reaction by using AmpPure XP beads. This is the general protocol for all AmpPure XP bead clean ups. Pay attention to the ratio in each step of beads: sample, the elution buffer used and the amount of elution buffer in each clean up. These will be different in the subsequent steps. 
 
 * Ratio of AMpure XP beads to sample is 1.3X (104uL of beads) ; The elution buffer used here is **RNA Elution Buffer** at a volume of 21 uL
 
@@ -165,13 +167,13 @@ Time: 16-18 hours
 * Return the tubes to the magnetic stand and incubate for 1 minute until supernatant is clear. supernatant now contains your sample. 
 * Transfer 9uL of supernatant to a new PCR tube. Transfer 10uL to a LoBind tube. This can be stored in the -80C for up to 6 months, labeled as post-IVT back up.
 
-13. Run a HS RNA Tapestation on the post-IVT back up before transferring to the -80C freezer. 
+14. Run a HS RNA Tapestation on the post-IVT back up before transferring to the -80C freezer. 
 
 **Fragmentation of Amplified RNA**
 
 Time: 20 mins
 
-14. Prepare Fragmentation Stop Mix for each sample: 
+15. Prepare Fragmentation Stop Mix for each sample: 
 
 | Component                                     | Volume per rxn |
 |-----------------------------------------------|----------------|
@@ -180,21 +182,21 @@ Time: 20 mins
 | Stop Solution from the RNA fragementation kit | 1.2uL          |
 |                                               | Total  37.4 uL |
 
-15. Vortex the solution from above and place on ice. 
+16. Vortex the solution from above and place on ice. 
 
-16. Allow the thermalcycler to reach 70C (lid at 100-110C)
+17. Allow the thermalcycler to reach 70C (lid at 100-110C)
 
-17. On ice, add 1 uL of 10X RNA Fragmentation reagent to 9 uL of purified of IVT product in plate from step 12.
+18. On ice, add 1 uL of 10X RNA Fragmentation reagent to 9 uL of purified of IVT product in plate from step 12.
 
-18. Spin down plate and fragment on thermalcycler at 70C for about 1-3 minutes, depending on what your post IVT tapestation looked like. Here is how to determine the fragmentation time:
+19. Spin down plate and fragment on thermalcycler at 70C for about 1-3 minutes, depending on what your post IVT tapestation looked like. Here is how to determine the fragmentation time:
 
 * 1cellbio's general rule is fragment for around 1 min if the bulk of the sample is below 1000nt, 2 mins if the bulk of the sample is between 1000-2000nt, and 3 mins if the majority of your sample is above 2000nt.
 
-19. Cool the fragmentation reaction on ice and immediately add 34uL of Fragmentation Stop Mix (prepared in step 14) to each sample and pipette up and down to mix well. Spin plate very briefly. 
+20. Cool the fragmentation reaction on ice and immediately add 34uL of Fragmentation Stop Mix (prepared in step 14) to each sample and pipette up and down to mix well. Spin plate very briefly. 
 
-20. Incubate samples on ice for 5 minutes. 
+21. Incubate samples on ice for 5 minutes. 
 
-21. Plate samples on magnetic rack and continue through the AMPure XP bead clean up steps below: 
+22. Plate samples on magnetic rack and continue through the AMPure XP bead clean up steps below: 
 
  Ratio of AMpure XP beads to sample is 1.3X (104uL of beads) ; The elution buffer used here is **RNA Elution Buffer** at a volume of 21 uL
 
@@ -212,7 +214,7 @@ Time: 20 mins
 
 Time: 2.5 hours
 
-22. On ice, combine the following: 
+23. On ice, combine the following: 
 
 | Component                                            | Volume per rxn |
 |------------------------------------------------------|----------------|
@@ -221,9 +223,9 @@ Time: 2.5 hours
 | PE2-N6 primer (100uM)                                | 2uL            |
 |                                                      | Total  11 uL   |
 
-23. Pipette to mix, spin down. Incubate at 70C (lid at 105C) for exactly 3 minutes and cool immediately on ice. 
+24. Pipette to mix, spin down. Incubate at 70C (lid at 105C) for exactly 3 minutes and cool immediately on ice. 
 
-24. On ice, add the following components to the mix to bring the total volume to 20uL: 
+25. On ice, add the following components to the mix to bring the total volume to 20uL: 
 
 | Component                                     | Volume per rxn |
 |-----------------------------------------------|----------------|
@@ -233,11 +235,11 @@ Time: 2.5 hours
 | Prime Script Reverse Transcriptase (200 U/uL) | 0.5 uL         |
 |                                               | Total  9 uL    |
 
-25. Mix gently by pipetting and incubate the reaction at 30C for 10 minutes followed by 42C for 1 hour then 70C for 15 minutes to heat inactivate the enzyme. 
+26. Mix gently by pipetting and incubate the reaction at 30C for 10 minutes followed by 42C for 1 hour then 70C for 15 minutes to heat inactivate the enzyme. 
 
-26. Add 20uL of nuclease-free water, mix by pipetting, and save 20 uL as "pre-PCR back-up" in a LoBind tube. This back up can be stored at -80C for up to 6 months.
+27. Add 20uL of nuclease-free water, mix by pipetting, and save 20 uL as "pre-PCR back-up" in a LoBind tube. This back up can be stored at -80C for up to 6 months.
 
-27. Purify the reaction with AMPure XP Beads
+28. Purify the reaction with AMPure XP Beads
 
 * Ratio of AMpure XP beads to sample is 1.2X (24 uL) ; The elution buffer used here is **DNA elution buffer** at a volume of 12 uL
 
@@ -258,7 +260,7 @@ Time: 2.5 hours
 
 Time: 1.5-2 hours
 
-28. Perform a quantitative PCR (qPCR) to determine the correct number of PCR amplification cycles in the next step. Combine the following components on ice: 
+29. Perform a quantitative PCR (qPCR) to determine the correct number of PCR amplification cycles in the next step. Combine the following components on ice: 
 
 | Component                      | Volume/ rxn  |
 |--------------------------------|--------------|
@@ -271,7 +273,7 @@ Time: 1.5-2 hours
 
 {% include important.html content="Use primers 6 and 12 first. If only running one sample, use primer 6, located in A6 on the well of the primer plate supplied by 1cellBio. If running two samples, use primer 6 and primer 12 (A6 and A12). If running more than two samples, once primers 6 and primer 12 are used, it does not matter which primer is used." %}
 
-29. Perform the following qPCR thermalcycling program: 
+30. Perform the following qPCR thermalcycling program: 
 
 Eva green uses the same excitation and emission settings as SYBR Green.
 
@@ -289,7 +291,7 @@ Bold denotes steps to be run for 24 cycles.
 | **65**   | **0:30**                       |
 | **72**   | **0:40** with fluorescent read |
 
-30. Set the qPCR threshold within the exponential phase of amplification, but closer to where the signal starts to emerge from the noise to avoid the possibilty of over-amplification. 
+31. Set the qPCR threshold within the exponential phase of amplification, but closer to where the signal starts to emerge from the noise to avoid the possibilty of over-amplification. 
 - To account for the differences of input material between the qPCR and the PCR amplification of our samples, we will calculate the amount of PCR cycles to amplify our sample with now.
 - The library input is 19 times higher than the qPCR input, therefore the difference corresponds to log2^19 = 4.25 cycles. For example, if the number of cycles determines by the qPCR is 2 + 12.67, the required number of PCR cycles for library amplification is 2 + (12.67 -4.25) = 2 + 8.
 
@@ -297,7 +299,7 @@ Bold denotes steps to be run for 24 cycles.
 
 Time: 2 hours
 
-31. Combine the following components on ice: 
+32. Combine the following components on ice: 
 
 | Component                      | Volume/ rxn  |
 |--------------------------------|--------------|
@@ -311,7 +313,7 @@ Time: 2 hours
 
 {% include important.html content="Every sample needs to have a unique primer set from this plate because this is how the samples will be determined from one another after sequencing is finished." %}
 
-32. Perform thermal cycling protocol shown in step 29, also shown again below: 
+33. Perform thermal cycling protocol shown in step 29, also shown again below: 
 
 Italics denote steps to be run for 2 cycles.
 
@@ -333,9 +335,9 @@ Bold denotes steps to be run for amount of cycles determined by qPCR.
 
 - Once every library has been amplified for the correct amount of cycles, transfer all libraries back to the PCR machine for the final step, 72C for 5 minutes. 
 
-33. Add 25 uL of DNA Elution Buffer to the PCR product. 
+34. Add 25 uL of DNA Elution Buffer to the PCR product. 
 
-34. Purify using AMPure XP beads. 
+35. Purify using AMPure XP beads. 
 
 * Ratio of AMpure XP beads to sample is 0.7X (35 uL) ; The elution buffer used here is **DNA elution buffer** at a volume of 22 uL
 
@@ -354,9 +356,9 @@ Bold denotes steps to be run for amount of cycles determined by qPCR.
 
 This eluate is the final sequencing-ready library. 
 
-35. Test library by running on the HS D1000. The library should look like a smooth hump starting at 200bp and ending at 1.5kb with an average size between 400 and 600bp. 
+36. Test library by running on the HS D1000. The library should look like a smooth hump starting at 200bp and ending at 1.5kb with an average size between 400 and 600bp. 
 
-36. Perform Qubit on samples using the HS DNA assay to get the concentration for pooling and sequencing.
+37. Perform Qubit on samples using the HS DNA assay to get the concentration for pooling and sequencing.
 
 **Pause Point**: store the libraries at -80C or -20C. They should be stable for at least 1 year.
 
