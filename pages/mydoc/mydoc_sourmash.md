@@ -39,9 +39,19 @@ fastqc *.gz -t 24 #uses all 24 threads available on our machine
 multiqc path/to/your/data
 ```
 
+You should now see an .html file in your directory.  Move it from our server to your local computer using an FTP client (e.g. FileZilla), double click, and explore!
+
 ## Step 4: Prepare sample 'sketches'
 
-Here, we'll use sourmash's ```compute``` function to prepare a sketch of each fastq file in our directory.  the ```--scaled``` option to apply a 1000:1 compression ratio, which retains the ability to detect regions of similarity in the 10kb range.
+Here, we'll use sourmash's ```compute``` function to prepare a sketch of each fastq file in our directory.  The ```--scaled``` option applies a 1000:1 compression ratio, which retains the ability to detect regions of similarity in the 10kb range.
+
+First, start up the Sourmash conda environment
+
+```
+source activate sourmash
+```
+
+Now use the ```compute``` function to prepare a sketch for each fastq file
 
 ```
 sourmash compute --scaled 1000 *.gz
@@ -118,7 +128,7 @@ We've taken care of configurating fastq_screen so that it knows where to find bo
 - [Contaminants](www.bioinformatics.babraham.ac.uk/projects/fastqc)
 - [plasmids/vectors](http://www.ncbi.nlm.nih.gov/VecScreen/UniVec.html)
 
-{% include note.html content="Just as you summarized the fastqc results in Step 3 using multiQC, the same can be done with the results from fastq_screen.  Rerunning multiqc and you will get a report that incorporates both fastqc and fastq_screen outputs, as long as these outputs are in the same directory." %}
+{% include note.html content="Just as you summarized the fastqc results in Step 3 using multiQC, the same can be done with the results from fastq_screen.  Rerunning multiqc will generate a new report that incorporates both fastqc and fastq_screen outputs, as long as these outputs are in the same directory." %}
 
 
 ## Optional: filtering reads
