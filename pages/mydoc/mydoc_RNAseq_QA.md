@@ -10,24 +10,24 @@ folder: mydoc
 
 ## Setting up your project directory
 
-Quality assurance can mean many things, to us QA means not only that the raw data files are examined for any issues that could compromise downstream analyses, but also that the data is organized in a way that others can understand what was done for a given project.  This greatly improves transparency and reproducibility.  To ensure that the different file types and analyses for your RNAseq project remain clear and organized, we recommend an approach we call [MinimAl Directory for Rnaseq AnalysiS (MADRAS)](http://github.com/dpbisme/MADRAS).  This is just a simple directory structure as follows:
+Quality assurance (QA) can mean many things, to us QA means not only that the raw data files are examined for any issues that could compromise downstream analyses, but also that the data is organized in a way that others can understand what was done for a given project.  This greatly improves transparency and reproducibility.  To ensure that the different file types and analyses for your RNAseq project remain clear and organized, we recommend an approach we call [MinimAl Directory for Rnaseq AnalysiS (MADRAS)](http://github.com/dpbisme/MADRAS).  MADRAS is just a simple directory structure as follows:
 
 ```
-|-- **data**
+|-- DATA
     |-- raw
     |-- processed
         |-- preprocessing.sh
         |-- sample1.fastq.gz
         |-- sample2.fastq.gz
         |-- ...
-|-- **analysis**
+|-- ANALYSIS
     |-- code
         |-- myProject.Rproj
         |-- step1.R
         |-- step2.R
         |-- ...
     |-- readmapping.sh
-|-- **qa**
+|-- QA
     |-- fastqc
         |-- sample1.fastqc.html
         |-- sample1.fastqc.zip
@@ -42,6 +42,8 @@ Quality assurance can mean many things, to us QA means not only that the raw dat
 
 ## Step 1: Connect to a CHMI linux cluster
 
+Once you have your directory structure set-up, you're ready to begin using some software tools for investigating the quality of the reads in your fastq files.  These software run best on a machine with a fair amount of RAM and disk storage.  We use our [linux machine](https://chmi-sops.github.io/mydoc_linux.html).
+
 {% include important.html content="if you do not have an account on our cluster and would like to get one, please contact Dan Beiting" %}
 
 ```
@@ -50,10 +52,10 @@ ssh username@130.91.255.137
 
 ## Step 2: Check data quality
 
-Begin by using [fastqc](https://www.bioinformatics.babraham.ac.uk/projects/download.html) to check the quality of each of your fastq files.  Throughout this protocol, 'path/to/your/data' indicates the path to your folder on our linux server which contains raw sequence data from your WGS or metagenomics experiment.
+Begin by using [fastqc](https://www.bioinformatics.babraham.ac.uk/projects/download.html) to check the quality of each of your fastq files.  Throughout this protocol, we'll assume you use a directory structure like the one outlined above.  The file paths below reference this directory structure.
 
 ```
-# navigate to the folder with your preprocessed fastq files (assumes the directory structure shown above)
+# navigate to the folder with your preprocessed fastq files
 cd data/processed
 # run fastqc on all files, putting the outputs into the qa/fastqc folder
 fastqc *.gz -t 24 -o ../qa/fastqc 
@@ -68,7 +70,7 @@ fastqc *.gz -t 24 -o ../qa/fastqc
 multiqc -d .
 ```
 
-If you navigate to the qa folder, you should now see a multiqc.html file in your project directory.  Move it from our server to your local computer using an FTP client (e.g. FileZilla), double click, and explore!
+If you navigate to the qa folder, you should now see a multiqc_report.html file in your project directory.  Move it from our server to your local computer using an FTP client (e.g. FileZilla), double click, and explore!
 
 
 ## Optional: 'Are my .fastq files contaminated?'
