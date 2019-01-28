@@ -12,6 +12,7 @@ folder: mydoc
 
 Quality assurance can mean many things, to us QA means not only that the raw data files are examined for any issues that could compromise downstream analyses, but also that the data is organized in a way that others can understand what was done for a given project.  This greatly improves transparency and reproducibility.  To ensure that the different file types and analyses for your RNAseq project remain clear and organized, we recommend an approach we call [MinimAl Directory for Rnaseq AnalysiS (MADRAS)](http://github.com/dpbisme/MADRAS).  This is just a simple directory structure as follows:
 
+```
 |-- **data**
     |-- raw
     |-- processed
@@ -37,6 +38,7 @@ Quality assurance can mean many things, to us QA means not only that the raw dat
     |-- multiqc_report.html
 |-- studyDesign.txt
 |-- readme.txt
+```
 
 ## Step 1: Connect to a CHMI linux cluster
 
