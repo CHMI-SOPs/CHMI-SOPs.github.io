@@ -24,7 +24,7 @@ ssh username@130.91.255.137
 
 ## Step 2: Check data quality
 
-Begin by using [fastqc](https://www.bioinformatics.babraham.ac.uk/projects/download.html) to check the quality of each of your fastq files.  Throughout this protocol, 'path/to/your/data' indicats the path to your folder on our linux server which contains raw sequence data from your WGS or metagenomics experiment.
+Begin by using [fastqc](https://www.bioinformatics.babraham.ac.uk/projects/download.html) to check the quality of each of your fastq files.  Throughout this protocol, 'path/to/your/data' indicates the path to your folder on our linux server which contains raw sequence data from your WGS or metagenomics experiment.
 
 ```
 cd path/to/your/data

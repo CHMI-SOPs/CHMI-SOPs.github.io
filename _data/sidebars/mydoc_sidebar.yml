@@ -61,6 +61,10 @@ entries:
         output: web, pdf
         
         subfolderitems:
+        - title: RNAseq quality assurance
+          url: /mydoc_RNAseq_QA.html
+          output: web, pdf
+
         - title: Read mapping with Kallisto
           url: /mydoc_kallisto.html
           output: web, pdf
