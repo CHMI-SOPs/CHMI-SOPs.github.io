@@ -2,7 +2,7 @@
 title: Kallisto
 tags: [bioinformatics, transcriptomics]
 keywords:
-summary: "Kallisto is our first choice for aligning reads because it combines speed, accuracy, and ability to leverage bootstraps for modeling technical variance"
+summary: "Kallisto is our first choice for aligning reads because it combines speed, accuracy, and the ability to leverage bootstraps for modeling technical variance"
 sidebar: mydoc_sidebar
 permalink: mydoc_kallisto.html
 folder: mydoc
@@ -28,15 +28,17 @@ brew install kallisto
 Test whether Kallisto is properly installed by typing ```kallisto```, and you should see this output
 
 ```
-kallisto 0.44.0
+kallisto 0.45.0
 
 Usage: kallisto <CMD> [arguments] ..
 
 Where <CMD> can be one of:
 
-    index         Builds a kallisto index
-    quant         Runs the quantification algorithm
-    pseudo        Runs the pseudoalignment step
+    index         Builds a kallisto index 
+    quant         Runs the quantification algorithm 
+    bus           Generate BUS files for single cell data 
+    pseudo        Runs the pseudoalignment step 
+    merge         Merges several batch runs 
     h5dump        Converts HDF5-formatted results to plaintext
     inspect       Inspects and gives information about an index
     version       Prints version information
@@ -49,7 +51,7 @@ Running kallisto <CMD> without arguments prints usage information for <CMD>
 
 1. Obtain administrative access for your computer
 2. Go to https://pachterlab.github.io/kallisto/download
-3. Download the latest Windows release (v0.44 for Fall 2018)
+3. Download the latest Windows release (v0.45 for Spring 2019)
 4. Extract to Program Files or Applications.  Kallisto is now installed on your computer but it cannot be accessed from any location in the command prompt (Windows equivalent of Terminal) until you add it to your computer’s path system variable 
 5. Add the kallisto directory to your PATH to allow for access from any directory
 * Start the System Control Panel applet (Start -> Settings -> Control Panel -> System)
@@ -63,19 +65,23 @@ Note: You'll see a list of folders, as this example for my system shows: C:\Prog
 
 ## Build an index from reference transcriptome .fasta file
 
+{% include note.html content="If you are working on the PennVet CHMI linux cluster, we have prebuilt kallisto indicies from mouse, human and several other species located in /data/reference_db/kallisto" %}
+
 Get reference transcriptome files from [here](http://useast.ensembl.org/info/data/ftp/index.html)
 Choose your the cDNA file for your organism, then download the file that ends in “cDNA.all.fa.gz”
 
 Build the index
 ```
-kallisto index -i myNewIndex InputFasta.fasta
+kallisto index -i inputFastaName.index inputFastaName.fasta
 ```
+
+{% include note.html content="It's a good idea to name you index exactly the same as your input fasta file, just replacing .fasta or .fa, with .index.  This naming convention makes it clear to others (and your future self) exactly which reference transcriptome was used for mapping." %}
 
 ## align single-end reads
 
 Run the following command for pseudoalignment of single-end reads to index. 
 ```
-kallisto quant -i myHumanIndex -o Sample1.mapped -b 60 —-single -l 275 -s 20 read1.fastq.gz
+kallisto quant -i inputFastaName.index -o sample1.mapped -b 60 —-single -l 275 -s 30 sample1_read1.fastq.gz
 ```
 Once read mapping is complete, you will see a short report printed to your screen that indicates the number of reads kallisto saw in the fastq file, and the number of these that mapped to the reference.  Often times it is useful to automatically store this information in a log file so that it can be parsed by other programs, such as the incredibly useful [multiQC](http://multiqc.info/).  To do this, simply append the code below at the end of your alignment bit above. The outcome will be the same, but you will also produce a log file.
 
@@ -93,11 +99,11 @@ Once read mapping is complete, you will see a short report printed to your scree
 
 ## align paired-end reads
 ```
-kallisto quant -i myMouseIndex -o Sample1.mapped -b 100 read1.fastq.gz read2.fastq.gz
+kallisto quant -i inputFastaName.index -o sample1.mapped -b 100 sample1_read1.fastq.gz sample1_read2.fastq.gz
 ```
 
 ## stranded alignments and bigwigs
-In some cases, you may want to carry out a stranded alignment with the end goal of viewing read 'pile-ups' on a genome browser track.  This can also be done using Kallisto, but requires a few other programs and steps to get from the Kallisto alignment to bigwig. 
+In some cases, you may want to carry out a stranded alignment with the end goal of viewing read 'pileups' on a genome browser track.  This can also be done using Kallisto, but requires a few other programs and steps to get from the Kallisto alignment to bigwig. 
 
 {% include warning.html content="If you've been using your laptop thus far, now would be a good time to consider finding some more compute resources. Working with .bam files may be too much for your laptop to handle." %}
 

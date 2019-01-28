@@ -18,6 +18,7 @@ Notice that each protocol is tagged at the bottom of the page.  Clicking on a ta
 
 ## Technology available at CHMI
 * Illumina NextSeq 500 
+* Illumina MiniSeq
 * [1CellBio's InDrop system](https://1cell-bio.com/indrop/) for single cell genomics
 * Oxford Nanopore MinION
 * Qubit 3
@@ -29,6 +30,6 @@ Notice that each protocol is tagged at the bottom of the page.  Clicking on a ta
 * [Biomeme 'two3' hand-held QPCR system](http://biomeme.com/)
 
 ## Costs
-CHMI does not charge for labor (I know, I know, we're awesome).  We do, however, charge for consumables and apply a $300 run fee to each use of our sequencer, which helps offset the cost of our annual service contract on the machine.  To avoid unnecessary administrative overhead, **we ask that you purchase your own consumables for any work done with CHMI**.  Of course, we can guide you on what exactly to purchase.  See our [CHMI invoice template](https://docs.google.com/spreadsheets/d/1nbye8xRZTtBthhm7E-KuhEXBz2E3VvOG1lmTpNpGJMA/edit?usp=sharing) for a detailed list of charges.
+CHMI does not charge for labor (I know, I know, we're awesome).  We do, however, charge for consumables and apply a run fee to each use of our sequencer, which helps offset the cost of our annual service contract on the machine.  To avoid unnecessary administrative overhead, **we ask that you purchase your own consumables for any work done with CHMI**.  Of course, we can guide you on what exactly to purchase.  See our [CHMI invoice template](https://docs.google.com/spreadsheets/d/1nbye8xRZTtBthhm7E-KuhEXBz2E3VvOG1lmTpNpGJMA/edit?usp=sharing) for a detailed list of charges.
 
 {% include links.html %}

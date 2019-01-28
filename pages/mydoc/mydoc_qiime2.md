@@ -63,11 +63,30 @@ navigate to [QIIME2 viewer](https://view.qiime2.org/) in browser to view this vi
 
 There are a number of ways you may have your raw data structured, depending on sequencing platform (e.g., Illumina vs Ion Torrent) and sequencing approach (e.g., single-end vs paired-end), and any pre-processing steps that have been performed by sequenencing facilities (e.g., joined paired ends, barcodes in fastq header, etc).  Check out the [QIIME info page](https://docs.qiime2.org/2018.2/tutorials/importing/), or consult with someone in our lab for help in preparing your data.
 
-Move your fastq files and your barcode file (if data is not already demultiplexed) to your working directory on the server.  The directory should contain your forward.fastq.gz, reverse.fastq.gz, and barcodes.fastq.gz
 
-create an artifact of your data:
+Our workflow includes paired-end Illumina reads, so first we reformat the barcodes of the paired-end reads, renaming the original with a ".bak" extension
 
 ```
+perl -i.bak -pe 'if (m/^\@.*?\s+.*?\+.*?$/){s/\+//;}' Undetermined_S0_L001_R1_001.fastq Undetermined_S0_L001_R2_001.fastq
+```
+
+Now we will extract the barcodes from the paired-end reads. This is done using a QIIME1 script, so we will need to activate QIIME1.
+
+```
+source activate qiime1
+
+extract_barcodes.py -f forward.fastq -r reverse.fastq -l 16 -o barcodes.fastq -c barcode_in_label
+```
+
+At this point you should have three fastq files for your sequencing run representing your forward reads, reverse reads, and barcodes.
+
+Move your fastq files and your barcode file (if data is not already demultiplexed) to your working directory on the server.  The directory should contain your forward.fastq.gz, reverse.fastq.gz, and barcodes.fastq.gz
+
+create an artifact of your data using QIIME2:
+
+```
+source activate qiime2
+
 qiime tools import \
   --type EMPPairedEndSequences \
   --input-path /path/to/your/fastq/files \
@@ -77,7 +96,7 @@ qiime tools import \
 Check this artifact to make sure that QIIME now recognizes your data (.qza is a qiime zipped artifact)
 
 ```
-qiime tools peek emp-single-end-sequences.qza
+qiime tools peek emp-paired-end-sequences.qza
 ```
 
 {% include important.html content="the .qza and .qzv files can be unpacked using the unix command  ```unzip``` or the qiime commands ```qiime tools extract``` or ```qiime tools export```.  These unpacked files can then be used in other settings (R, perl, etc).  In other words, the QIIME concept of an 'artifact' does not permanently alter the structure of your data." %}
@@ -88,7 +107,7 @@ qiime tools peek emp-single-end-sequences.qza
 
 ```
 qiime demux emp-paired \
-  --i-seqs emp-single-end-sequences.qza \
+  --i-seqs emp-paired-end-sequences.qza \
   --m-barcodes-file sample-metadata.tsv \
   --m-barcodes-column BarcodeSequence \
   --o-per-sample-sequences demux.qza
@@ -170,7 +189,6 @@ qiime phylogeny fasttree \
 qiime phylogeny midpoint-root \
   --i-tree unrooted-tree.qza \
   --o-rooted-tree rooted-tree.qza
-
 ```
 
 ## Step 7: alpha rarefaction
@@ -314,8 +332,6 @@ qiime tools export \
   --output-dir exported-feature-table
 
 #then combine the two using the biome package (dependence loaded as part of QIIME2 install)
-
-
 ```
 
 {% include important.html content="Once you have a .biome file, you can use apps on [MicrobiomeDB](http://www.microbiomedb.org) to analyze and visualize your data." %}
@@ -364,7 +380,7 @@ qiime sample-classifier classify-samples \
   --p-estimator RandomForestClassifier \
   --p-n-estimators 100 \
   --o-visualization moving-pictures-BodySite.qzv
-  ```
+```
 
 
 ### regressors
