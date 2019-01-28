@@ -26,6 +26,8 @@ Quality assurance (QA) can mean many things, to us QA means not only that the ra
         |-- step1.R
         |-- step2.R
         |-- ...
+        |-- projectSummary.rmd
+        |-- projectDashboard.rmd
     |-- readmapping.sh
 |-- QA
     |-- fastqc
@@ -38,6 +40,7 @@ Quality assurance (QA) can mean many things, to us QA means not only that the ra
     |-- multiqc_report.html
 |-- studyDesign.txt
 |-- readme.txt
+
 ```
 
 ## Step 1: Connect to a CHMI linux cluster

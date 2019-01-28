@@ -9,7 +9,7 @@ folder: mydoc
 ---
 
 ## Intro
-[Kallisto](https://pachterlab.github.io/kallisto/about) is a relatively new tool from Lior Pachter's lab at UC Berkeley and is described in [this 2016 Nature Biotechnology paper](http://CHMI-sops.github.io/papers/Kallisto.pdf).  
+[Kallisto](https://pachterlab.github.io/kallisto/about) is a relatively new tool from Lior Pachter's lab at UC Berkeley and is described in [this 2016 Nature Biotechnology paper](http://CHMI-sops.github.io/papers/Kallisto.pdf). Kallisto and other tools like it (e.g. [Salmon](https://combine-lab.github.io/salmon/)) have revolutionized the analysis of RNAseq data by using extremely lightweight 'pseudomapping' that effectively allows analyses to be carried out on a standard laptop.  If you are reluctant to try pseudomapping out of concern that it won't produce accurate quantifications of transcripts, [rest assured it will](https://www.nature.com/articles/s41467-017-00050-4). 
 
 ## Installing Kallisto on a Mac OS
 
@@ -51,7 +51,7 @@ Running kallisto <CMD> without arguments prints usage information for <CMD>
 
 1. Obtain administrative access for your computer
 2. Go to https://pachterlab.github.io/kallisto/download
-3. Download the latest Windows release (v0.45 for Spring 2019)
+3. Download the latest Windows release (v0.45, for Spring 2019)
 4. Extract to Program Files or Applications.  Kallisto is now installed on your computer but it cannot be accessed from any location in the command prompt (Windows equivalent of Terminal) until you add it to your computer’s path system variable 
 5. Add the kallisto directory to your PATH to allow for access from any directory
 * Start the System Control Panel applet (Start -> Settings -> Control Panel -> System)
@@ -68,7 +68,7 @@ Note: You'll see a list of folders, as this example for my system shows: C:\Prog
 {% include note.html content="If you are working on the PennVet CHMI linux cluster, we have prebuilt kallisto indicies from mouse, human and several other species located in /data/reference_db/kallisto" %}
 
 Get reference transcriptome files from [here](http://useast.ensembl.org/info/data/ftp/index.html)
-Choose your the cDNA file for your organism, then download the file that ends in “cDNA.all.fa.gz”
+Search for your organism, select cDNA, then download the file that ends in “cDNA.all.fa.gz”
 
 Build the index
 ```
@@ -81,13 +81,14 @@ kallisto index -i inputFastaName.index inputFastaName.fasta
 
 Run the following command for pseudoalignment of single-end reads to index. 
 ```
-kallisto quant -i inputFastaName.index -o sample1.mapped -b 60 —-single -l 275 -s 30 sample1_read1.fastq.gz
+kallisto quant -i inputFastaName.index -o sample1_kallisto -b 60 —-single -l 275 -s 30 sample1_read1.fastq.gz
 ```
-Once read mapping is complete, you will see a short report printed to your screen that indicates the number of reads kallisto saw in the fastq file, and the number of these that mapped to the reference.  Often times it is useful to automatically store this information in a log file so that it can be parsed by other programs, such as the incredibly useful [multiQC](http://multiqc.info/).  To do this, simply append the code below at the end of your alignment bit above. The outcome will be the same, but you will also produce a log file.
+Once read mapping is complete, you will see a short report printed to your screen that indicates the number of reads kallisto saw in the fastq file, and the number of these that mapped to the reference.  Often times it is useful to automatically store this information in a log file so that it can be parsed by other programs, such as the incredibly useful [multiQC](http://multiqc.info/).  To do this, simply append the code below at the end of your alignment bit above. The outcome will be the same, but instead of displaying on the screen it will be piped to a log file.
 
 ```
-&> yourSampleNameHere.log
+&> sample1_kallisto.log
 ```
+
 {% include warning.html content="avoid putting hyphens in the name of the kallisto output, as this could cause problems later" %}
 
 {% include important.html content="bootstrapping (-b command in the line above) adds significant time to the mapping, but is essential for accurate quantification. With a typical reference index for the mouse or human transcriptome, I find it takes about 15sec per bootstrap. So expect this to add ~30 min to the mapping time for each sample." %}
@@ -99,7 +100,7 @@ Once read mapping is complete, you will see a short report printed to your scree
 
 ## align paired-end reads
 ```
-kallisto quant -i inputFastaName.index -o sample1.mapped -b 100 sample1_read1.fastq.gz sample1_read2.fastq.gz
+kallisto quant -i inputFastaName.index -o sample1_kallisto -b 100 sample1_read1.fastq.gz sample1_read2.fastq.gz
 ```
 
 ## stranded alignments and bigwigs
