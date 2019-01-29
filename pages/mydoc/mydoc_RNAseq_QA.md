@@ -10,7 +10,7 @@ folder: mydoc
 
 ## Setting up your project directory
 
-Quality assurance (QA) can mean many things, to us QA means not only that the raw data files are examined for any issues that could compromise downstream analyses, but also that the data is organized in a way that others can understand what was done for a given project.  This greatly improves transparency and reproducibility.  To ensure that the different file types and analyses for your RNAseq project remain clear and organized, we recommend an approach we call [MinimAl Directory for Rnaseq AnalysiS (MADRAS)](http://github.com/dpbisme/MADRAS).  MADRAS is just a simple directory structure as follows:
+Quality assurance (QA) can mean many things – to us QA means not only that the raw data files are examined for any issues that could compromise downstream analyses, but also that the data is organized in a way that others can understand what was done for a given project.  This greatly improves transparency and reproducibility.  To ensure that the different file types and analyses for your RNAseq project remain clear and organized, we recommend an approach we call [MinimAl Directory for Rnaseq AnalysiS (MADRAS)](http://github.com/dpbisme/MADRAS).  MADRAS is just a directory structure that provides a simple framework for organizing your experiment.  You can download a skeletal version of this directory **[here](http://CHMI-sops.github.io/images/MADRAS.zip)** 
 
 ```
 |-- DATA
@@ -60,8 +60,8 @@ Begin by using [fastqc](https://www.bioinformatics.babraham.ac.uk/projects/downl
 ```
 # navigate to the folder with your preprocessed fastq files
 cd data/processed
-# run fastqc on all files, putting the outputs into the qa/fastqc folder
-fastqc *.gz -t 24 -o ../qa/fastqc 
+# run fastqc on all files, putting the outputs into the QA/fastqc folder
+fastqc *.gz -t 24 -o ../QA/fastqc 
 ```
 
 ## Step 3: Summarize QA results
@@ -83,6 +83,10 @@ Often times there are questions about whether there may be reads, other than tho
 fastq_screen uses bowtie2 for aligning reads to the references, so we've provided a set of reference genomes on our cluster to which you can easily compare.
 
 We've taken care of configurating fastq_screen so that it knows where to find bowtie2 and where to look for the reference genomes.  This information is pretty clearly outlined in the fastq_screen configuration file found at /usr/local/bin/fastq_screen_v0.12.0/fastq_screen.conf
+
+```
+fastq_screen
+```
 
 {% include important.html content="The reference genomes listed below have already been added to the configuration file.  If you don't want a particular reference, and you are comfortable editing configuration files using the commnad line, feel free to comment out any of the references.  However, please **do not** delete the configuration file itself or *remove* any of the lines in the file!  If you want to use fastq_screen against a bowtie2 reference genome that is not listed below, please contact us for help." %}
 
