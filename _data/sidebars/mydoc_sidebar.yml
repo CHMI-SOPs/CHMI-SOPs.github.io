@@ -61,7 +61,7 @@ entries:
         output: web, pdf
         
         subfolderitems:
-        - title: RNAseq quality assurance
+        - title: Project management and QA
           url: /mydoc_RNAseq_QA.html
           output: web, pdf
 
