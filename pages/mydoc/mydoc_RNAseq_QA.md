@@ -8,7 +8,7 @@ permalink: mydoc_RNAseq_QA.html
 folder: mydoc
 ---
 
-## Setting up your project directory
+## Step 1: project set-up
 
 Quality assurance (QA) can mean many things – to us QA means not only that the raw data files are examined for any issues that could compromise downstream analyses, but also that the data is organized in a way that others can understand what was done for a given project.  This greatly improves transparency and reproducibility.  To ensure that the different file types and analyses for your RNAseq project remain clear and organized, we recommend an approach we call [MinimAl Directory for Rnaseq AnalysiS (MADRAS)](http://github.com/dpbisme/MADRAS).  MADRAS is just a directory structure that provides a simple framework for organizing your experiment.  You can download a skeletal version of this directory **[here](http://CHMI-sops.github.io/images/MADRAS.zip)** 
 
@@ -52,7 +52,7 @@ Quality assurance (QA) can mean many things – to us QA means not only that the
 
 ```
 
-## Step 1: Connect to a CHMI linux cluster
+## Step 2: Connect to a CHMI linux cluster
 
 Once you have your directory structure set-up, you're ready to begin using some software tools for investigating the quality of the reads in your fastq files.  These software run best on a machine with a fair amount of RAM and disk storage.  We use our [linux machine](https://chmi-sops.github.io/mydoc_linux.html).
 
@@ -62,7 +62,7 @@ Once you have your directory structure set-up, you're ready to begin using some 
 ssh username@130.91.255.137
 ```
 
-## Step 2: Check data quality
+## Step 3: Check data quality
 
 Begin by using [fastqc](https://www.bioinformatics.babraham.ac.uk/projects/download.html) to check the quality of each of your fastq files.  Throughout this protocol, we'll assume you use a directory structure like the one outlined above.  The file paths below reference this directory structure.
 
@@ -73,7 +73,7 @@ cd data/raw
 fastqc *.gz -t 24 -o ../QA/fastqc 
 ```
 
-## Step 3: Summarize QA results
+## Step 4: Summarize QA results
 
 [MultiQC](https://multiqc.info/) is a fantastic piece of software for aggregating and summarizing the outputs from many different kinds of bioinformatics programs in one convenient and interactive html file.  In this case, we'll use it to summarize the output from fastqc.
 
