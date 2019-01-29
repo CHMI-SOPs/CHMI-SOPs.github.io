@@ -1,8 +1,8 @@
 ---
-title: Quality assurance of raw data from RNAseq experiments
+title: Project management and quality assurance for RNAseq projects
 tags: [bioinformatics, transcriptomics]
 keywords:
-summary: "Checking the quality of your .fastq files is an essential first step in the analysis of any RNAseq experiment.  The protocol below outlines the steps and tools that we use for quality assurance."
+summary: "Managing your RNAseq project and checking the quality of raw data are essential first steps in the analysis of any RNAseq experiment.  The protocol below outlines our best practices to keep  projects and data transparent, reproducible and robust."
 sidebar: mydoc_sidebar
 permalink: mydoc_RNAseq_QA.html
 folder: mydoc
