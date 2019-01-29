@@ -15,10 +15,13 @@ Quality assurance (QA) can mean many things – to us QA means not only that the
 ```
 |-- DATA
     |-- raw
+        |-- sample1_mergedLanes.fastq.gz
+        |-- sample2_mergedLanes.fastq.gz
+        |-- ...
     |-- processed
         |-- preprocessing.sh
-        |-- sample1.fastq.gz
-        |-- sample2.fastq.gz
+        |-- sample1_mergedLanes_trim.fastq.gz
+        |-- sample2_mergedLanes_trim.fastq.gz
         |-- ...
 |-- ANALYSIS
     |-- code
@@ -28,8 +31,14 @@ Quality assurance (QA) can mean many things – to us QA means not only that the
         |-- ...
         |-- projectSummary.rmd
         |-- projectDashboard.rmd
-    |-- readmapping.sh
+    |-- readmapping
+        |-- readmapping.sh
+        |-- reference.fasta
+        |-- reference.index
 |-- QA
+    |-- library_prep
+        |-- RNAquality_tapestation.pdf
+        |-- Library_tapestation.pdf
     |-- fastqc
         |-- sample1.fastqc.html
         |-- sample1.fastqc.zip
@@ -58,8 +67,8 @@ ssh username@130.91.255.137
 Begin by using [fastqc](https://www.bioinformatics.babraham.ac.uk/projects/download.html) to check the quality of each of your fastq files.  Throughout this protocol, we'll assume you use a directory structure like the one outlined above.  The file paths below reference this directory structure.
 
 ```
-# navigate to the folder with your preprocessed fastq files
-cd data/processed
+# navigate to the folder with your raw fastq files
+cd data/raw
 # run fastqc on all files, putting the outputs into the QA/fastqc folder
 fastqc *.gz -t 24 -o ../QA/fastqc 
 ```
@@ -69,23 +78,25 @@ fastqc *.gz -t 24 -o ../QA/fastqc
 [MultiQC](https://multiqc.info/) is a fantastic piece of software for aggregating and summarizing the outputs from many different kinds of bioinformatics programs in one convenient and interactive html file.  In this case, we'll use it to summarize the output from fastqc.
 
 ```
-# use the -d command to tell fastqc to look in all folders (data, analysis and qa) to find log files
+# use the -d command to tell multiqc to look in all folders (data, analysis and qa) to find log files
+cd MADRAS/
 multiqc -d .
 ```
 
-If you navigate to the qa folder, you should now see a multiqc_report.html file in your project directory.  Move it from our server to your local computer using an FTP client (e.g. FileZilla), double click, and explore!
+You should now see a multiqc_report.html file in your project directory.  Move this to your data/qa folder.  You can also copy it from our server to your local computer using an FTP client (e.g. FileZilla), then double click and explore!
 
 
 ## Optional: 'Are my .fastq files contaminated?'
 
-Often times there are questions about whether there may be reads, other than those from the intended sample source, present in a data file.  If you suspect contamination of a particular kind (e.g. other host, plasmid, or common bacterium used in lab), you can run [fastq_screen](https://www.bioinformatics.babraham.ac.uk/projects/fastq_screen/_build/html/index.html) to check a subsample of reads from your raw fastq file against a set of reference genomes.  
+Often times there are questions about whether there may be reads, other than those from the intended sample source, present in a data file.  If you suspect contamination of a particular kind (e.g. other host, plasmid, rRNA, or some common bacterium used in lab), you can run [fastq_screen](https://www.bioinformatics.babraham.ac.uk/projects/fastq_screen/_build/html/index.html) to check a subsample of reads from your raw fastq file against a set of reference genomes.  
 
 fastq_screen uses bowtie2 for aligning reads to the references, so we've provided a set of reference genomes on our cluster to which you can easily compare.
 
 We've taken care of configurating fastq_screen so that it knows where to find bowtie2 and where to look for the reference genomes.  This information is pretty clearly outlined in the fastq_screen configuration file found at /usr/local/bin/fastq_screen_v0.12.0/fastq_screen.conf
 
 ```
-fastq_screen
+cd data/raw
+fastq_screen --threads 24 --outdir QA/fastq_screen *gz  
 ```
 
 {% include important.html content="The reference genomes listed below have already been added to the configuration file.  If you don't want a particular reference, and you are comfortable editing configuration files using the commnad line, feel free to comment out any of the references.  However, please **do not** delete the configuration file itself or *remove* any of the lines in the file!  If you want to use fastq_screen against a bowtie2 reference genome that is not listed below, please contact us for help." %}
@@ -106,7 +117,7 @@ fastq_screen
 - [Contaminants](www.bioinformatics.babraham.ac.uk/projects/fastqc)
 - [plasmids/vectors](http://www.ncbi.nlm.nih.gov/VecScreen/UniVec.html)
 
-{% include note.html content="Just as you summarized the fastqc results in Step 3 using multiQC, the same can be done with the results from fastq_screen.  Rerunning multiqc will generate a new report that incorporates both fastqc and fastq_screen outputs, as long as these outputs are in the same directory." %}
+{% include note.html content="Just as you summarized the fastqc results in Step 3 using multiQC, the same can be done with the results from fastq_screen.  Rerunning multiqc will generate a new report that incorporates both fastqc and fastq_screen outputs, as long as these outputs are in the same parent directory." %}
 
 
 {% include links.html %}
