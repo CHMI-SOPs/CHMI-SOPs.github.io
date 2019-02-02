@@ -50,18 +50,17 @@ Running kallisto <CMD> without arguments prints usage information for <CMD>
 ## Installing Kallisto on a Windows OS
 
 1. Obtain administrative access for your computer
-2. Go to https://pachterlab.github.io/kallisto/download
-3. Download the latest Windows release (v0.45, for Spring 2019)
-4. Extract to Program Files or Applications.  Kallisto is now installed on your computer but it cannot be accessed from any location in the command prompt (Windows equivalent of Terminal) until you add it to your computer’s path system variable 
-5. Add the kallisto directory to your PATH to allow for access from any directory
-* Start the System Control Panel applet (Start -> Settings -> Control Panel -> System)
-* Select the Advanced tab.
-* Click the Environment Variables button.
-* Under System Variables, select Path, then click Edit.
+2. You will need to be able to unzip files.  If you don't have software that can do this, you can download [WinRAR](https://www.win-rar.com/start.html?&L=0) and install it in Program Files.
+3. Download the latest windows release of [Kallisto](https://pachterlab.github.io/kallisto/download) (v0.45, for Spring 2019)
+5. Right click the downloaded zip file and choose "extract here" or "extract all". A new folder will appear called "kallisto". Move it to your "Program Files" directory.
+6. Kallisto is now installed on your computer but cannot be accessed from any location in the command prompt (Windows equivalent of Terminal) until you add it to your computer’s PATH system variable 
+7. Add the kallisto directory to your PATH to allow for access from any directory
+* Open the Control Panel and navigate to System and security -> System -> Advanced System Setting -> Environmental Variables
+* Under System Variables (**not** User Variables), click PATH -> Edit -> New
 Note: You'll see a list of folders, as this example for my system shows: C:\Program Files\Windows Resource Kits\Tools\; etc
-* Add the name of the path to your kallisto directory (e.g. including semicolon ;C:\Program Files\kallisto_windows-v0.43.1
-6. Relaunch command prompt and check for proper installation by typing kallisto 
-7. although not required for running kallisto, you should install [Cygwin](https://www.cygwin.com/) to give your PC some linux functionality (like running shell scripts)
+* Add the path to your kallisto folder to System Variables by copying the path from File Explorer (e.g. C:/Program Files\kallisto) and pasting it into the prompt.
+8. Relaunch command prompt and check for proper installation by typing 'kallisto' (without quotes).
+9. Although not required for running kallisto, you should install [Cygwin](https://www.cygwin.com/) to give your PC some linux functionality (like running shell scripts)
 
 ## Build an index from reference transcriptome .fasta file
 

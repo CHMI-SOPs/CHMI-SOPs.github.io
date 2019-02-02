@@ -43,7 +43,7 @@ MD5 (GEOsubmission.xlsx) = 39eae0dbcc54367c588d2815876747f4
 
 1. Launch FileZilla and connect to the GEO storage server using the following credentials:
 
-** Host: ftp-private.ncbi.nlm.nih.gov
+* Host: ftp-private.ncbi.nlm.nih.gov
 * username: geo
 * password: (this will specific to your myNCBI account)
 
