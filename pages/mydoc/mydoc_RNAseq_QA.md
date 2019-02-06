@@ -10,7 +10,7 @@ folder: mydoc
 
 ## Step 1: project set-up
 
-Quality assurance (QA) can mean many things – to us QA means not only that the raw data files are examined for any issues that could compromise downstream analyses, but also that the data is organized in a way that others can understand what was done for a given project.  This greatly improves transparency and reproducibility.  To ensure that the different file types and analyses for your RNAseq project remain clear and organized, we recommend an approach we call [MInimal Directory for Analysis of Sequencing data (MIDAS)](http://github.com/dpbisme/MIDAS).  MIDAS_transcriptome is just a directory structure that provides a simple framework for organizing your RNAseq experiment.  You can download a skeletal version of this directory **[here](http://CHMI-sops.github.io/images/MIDAS_transcriptome.zip)** 
+Quality assurance (QA) can mean many things – to us QA means not only that the raw data files are examined for any issues that could compromise downstream analyses, but also that the data is organized in a way that others can understand what was done for a given project.  This greatly improves transparency and reproducibility.  To ensure that the different file types and analyses for your RNAseq project remain clear and organized, we recommend an approach we call [MInimal Directory for Analysis of Sequencing data (MIDAS)](http://github.com/dpbisme/MIDAS).  MIDAS_RNAseq is just a directory structure that provides a simple framework for organizing your RNAseq experiment.  You can download a skeletal version of this directory **[here](http://CHMI-sops.github.io/images/MIDAS_transcriptome.zip)** 
 
 ```
 |-- DATA
