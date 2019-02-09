@@ -94,9 +94,9 @@ The protocol below uses the SMART Seq HT kit, however another option for cDNA ge
 
 ### RNA extraction
 
-* If you chose Option B above, skip RNA extract and proceed directly to cDNA synthesis
-
 * If you chose Option A above, extract RNA using the the [Qiagen RNeasy micro kit](https://www.qiagen.com/us/shop/sample-technologies/rna/total-rna/rneasy-micro-kit/#orderinginformation) and store at -80C.
+
+* If you chose Option B above, skip RNA extract and proceed directly to cDNA synthesis
 
 * Assess RNA integrity using an Agilent Tapestation 4200 and High-sensitivity RNA screentape.  Although tapestation is not ideal for estimating concentration of RNA, it can be used in this case as a rough estimate, since you won't have enough material to quantify using Qubit.
 
