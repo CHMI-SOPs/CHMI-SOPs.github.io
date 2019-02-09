@@ -75,9 +75,9 @@ The protocol below uses the SMART Seq HT kit, however another option for cDNA ge
 
 {% include note.html content="If you plan to sort < 3000 cells, option B is probably your best bet.  You will sort directly into lysis buffer and skip RNA extraction entirely, using the crude cell lysate for input directly into the cDNA reaction." %}
 
-* Prepare 10x reaction buffer from the SMART-Seq HT kit by mixing 19 uL of 10x Lysis Buffer with 1 uL of RNase inhibitor.  This is enough for ~20 samples. Scale up as needed, but be sure to maintain 19:1 ratio of lysis buffer to RNase inhibitor
+{% include note.html content="The 10x lysis buffer used in the next step contains detergent, so avoid creating bubbles when pipetting."%}
 
-{% include note.html content="The 10x lysis buffer contains detergent, so avoid creating bubbles when pipetting."%}
+* Prepare 10x reaction buffer from the SMART-Seq HT kit by mixing 19 uL of 10x Lysis Buffer with 1 uL of RNase inhibitor.  This is enough for ~20 samples. Scale up as needed, but be sure to maintain 19:1 ratio of lysis buffer to RNase inhibitor
 
 * Prepare 1x reaction buffer by mixing 9.5 uL nuclease-free water with 1 uL of 10x reaction buffer.  _This is enough to sort one sample_, so be sure to scale up as needed.
 
@@ -90,7 +90,7 @@ The protocol below uses the SMART Seq HT kit, however another option for cDNA ge
 
 ## Day 2: cDNA and library prep
 
-{% include note.html content="If perferred, this day could be split into two days, with cDNA generation on Day 2 and modified Nextera library prep on Day 3." %}
+{% include note.html content="If perferred, the remaining steps could be split into two days, with RNA extraction and cDNA generation in one day, and the modified Nextera library prep the following day." %}
 
 ### RNA extraction
 
