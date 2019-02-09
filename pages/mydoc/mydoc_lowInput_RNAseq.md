@@ -7,7 +7,6 @@ sidebar: mydoc_sidebar
 permalink: mydoc_lowInput_RNAseq.html
 folder: mydoc
 ---
-# Day 1
 
 ## Documentation
 
@@ -28,10 +27,12 @@ The protocol below uses the SMART Seq HT kit, however another option for cDNA ge
 * SMARTScribe Reverse Transcriptase (100 U/µl)
 * Nuclease-Free Water
 * Elution Buffer (10 mM Tris-Cl, pH 8.5)
+* [Eppendorf LoBind DNA tubes](https://online-shop.eppendorf.us/US-en/Laboratory-Consumables-44512/Tubes-44515/DNA-LoBind-Tubes-PF-56252.html)
 
 
 ## A few important comments before you start
 
+* Prior to sorting, stain cells in 10% complete media (RPMI with hepes, 10% FCS, Pen/Strep, NEAA, L-glut, Na-Pyruvate, 2ME, etc.)
 * You'll split this protocol into two days: day 1 will be your sort and cell lysis, day 2 will be RNA isolation and/or cDNA generation, and a modified NexteraXT library prep.
 * Use only filter pipette tips and clean your area so it is free of RNases.  
 * Certain steps, such as 1st-strand cDNA synthesis *must* be carried out in a PCR clean hood
@@ -40,9 +41,43 @@ The protocol below uses the SMART Seq HT kit, however another option for cDNA ge
 * Similar to other Clontech low-input kits, SMART-Seq HT uses a template switching method to produce abundant cDNA directly from as few as 1-100 cells or from 10pg-1ng of total RNA. 
 * This protocol is *very* sensitive to variations in volume and other factors. Please make sure the pipettes are calibrated and avoid contamination.
 
+
 ## Day 1: Sample preparation
 
-### OPTION A: starting with cells
+{% include important.html content="Sorting and handling of samples prior to RNA/cDNA/library prep, is the most important factor that will influence your ability to make high quality sequence-ready libraries." %}
+
+### OPTION A: sorting into media
+
+{% include note.html content="We recommend Option A if you plan to sort > 3000 cells. Followings sorting, RNA is extracted and used as input for cDNA generation." %}
+
+* Always use the 100 uM nozzle on the sorter (rather than 70 uM) and sort at low speed (~5-7K events/sec). This will be more gentle on the cells
+
+{% include note.html content="There is a lot of variability in terms of how sensitive cells are to the sorting process – naïve and effector T cells do great, others (like Treg cells) are *way* more fragile.  For these more challenging cell types, you should plan to sor 3-4 times more cells than you need." %}
+
+* Sort into DNA Lo-bind Eppendorf tubes to prevent cells from sticking to side of tube (gives tighter pellets after spin down)
+
+* Sort into complete media with 50% serum (RPMI with hepes, Pen/Strep, NEAA, L-glut, Na-Pyruvate, 2ME, etc.)
+
+{% include important.html content="Check the purity of your sort by taking 5-10 ul and running back throught the cytometer." %}
+
+* Keep **everything** cold: cells, sort chamber, collection block, collection tubes, etc.
+
+* Minimize time after sort to lysis. If sorting many samples, spin down in batches – don’t wait until the end if possible.
+
+* Spin down cells.  ~10,000 cells usually produce a visible pellet.  Use a pipette tip to carefully draw off supe.
+
+* lyse cells by adding 300 ul of buffer RLT (from Qiagen RNeasy kit) with 2-ME added fresh.  Vortex to lyse cells.
+
+* Flash freeze tube on dry ice and trasfer to a *prechilled* box at -80C.
+
+* Extract RNA using the the [Qiagen RNeasy micro kit](https://www.qiagen.com/us/shop/sample-technologies/rna/total-rna/rneasy-micro-kit/#orderinginformation) and store at -80C.
+
+* Assess RNA integrity using an Agilent Tapestation 4200 and High-sensitivity RNA screentape.  Although tapestation is not ideal for estimating concentration of RNA, it can be used in this case as a rough estimate, since you won't have enough material to quantify using Qubit.
+
+
+### OPTION B: sorting into lysis buffer
+
+{% include note.html content="If you plan to sort < 3000 cells, option B is probably your best bet.  You will sort directly into lysis buffer and skip RNA extraction entirely, using the crude cell lysate for input directly into the cDNA reaction." %}
 
 * Prepare 10x reaction buffer from the SMART-Seq HT kit by mixing 19 uL of 10x Lysis Buffer with 1 uL of RNase inhibitor.  This is enough for ~20 samples. Scale up as needed, but be sure to maintain 19:1 ratio of lysis buffer to RNase inhibitor
 
@@ -56,13 +91,6 @@ The protocol below uses the SMART Seq HT kit, however another option for cDNA ge
 
 * Store at -80C until ready to begin cDNA synthesis.  You can proceed directly from this cell lysate to cDNA preparation with no intermediate RNA isolation step.
 
-### OPTION B: staring with purified RNA
-
-* If you have 1000's or 10's of thousands of cells, it probably makes sense to isolate RNA first and then use the same amount of total RNA for the cDNA reaction.  We recommend using a kit specifically designed for efficient recovery of RNA from low numbers of cells, and have had success with the [ARCTURUS PicoPure RNA isolation kit](https://www.thermofisher.com/order/catalog/product/KIT0204) and the [Qiagen RNeasy micro kit](https://www.qiagen.com/us/shop/sample-technologies/rna/total-rna/rneasy-micro-kit/#orderinginformation)
-
-* If using the Qiagen kit, sort directly into Buffer RLT and follow the protocol included with the kit.  
-
-* Store RNA at -80C until ready for library prep.
 
 ## Day 2: cDNA and library prep
 
