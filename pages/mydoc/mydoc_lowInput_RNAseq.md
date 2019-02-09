@@ -50,7 +50,7 @@ The protocol below uses the SMART Seq HT kit, however another option for cDNA ge
 
 {% include note.html content="We recommend Option A if you plan to sort > 3000 cells. Following sorting, RNA is extracted and used as input for cDNA generation." %}
 
-{% include note.html content="There is a lot of variability in terms of how sensitive cells are to the sorting process – naïve and effector T cells do great, others (like Treg cells) are *way* more fragile.  For these more challenging cell types, you should plan to sor 3-4 times more cells than you need." %}
+{% include note.html content="There is a lot of variability in terms of how sensitive cells are to the sorting process – naïve and effector T cells do great, others (like Treg cells) are *way* more fragile.  For these more challenging cell types, you should plan to sort 3-4 times more cells than you need." %}
 
 * Always use the 100 uM nozzle on the sorter (rather than 70 uM) and sort at low speed (~5-7K events/sec). This will be more gentle on the cells
 
