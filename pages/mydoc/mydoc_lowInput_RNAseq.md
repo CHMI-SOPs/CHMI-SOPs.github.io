@@ -48,7 +48,7 @@ The protocol below uses the SMART Seq HT kit, however another option for cDNA ge
 
 ### OPTION A: sorting into media
 
-{% include note.html content="We recommend Option A if you plan to sort > 3000 cells. Followings sorting, RNA is extracted and used as input for cDNA generation." %}
+{% include note.html content="We recommend Option A if you plan to sort > 3000 cells. Following sorting, RNA is extracted and used as input for cDNA generation." %}
 
 * Always use the 100 uM nozzle on the sorter (rather than 70 uM) and sort at low speed (~5-7K events/sec). This will be more gentle on the cells
 
@@ -69,10 +69,6 @@ The protocol below uses the SMART Seq HT kit, however another option for cDNA ge
 * lyse cells by adding 300 ul of buffer RLT (from Qiagen RNeasy kit) with 2-ME added fresh.  Vortex to lyse cells.
 
 * Flash freeze tube on dry ice and trasfer to a *prechilled* box at -80C.
-
-* Extract RNA using the the [Qiagen RNeasy micro kit](https://www.qiagen.com/us/shop/sample-technologies/rna/total-rna/rneasy-micro-kit/#orderinginformation) and store at -80C.
-
-* Assess RNA integrity using an Agilent Tapestation 4200 and High-sensitivity RNA screentape.  Although tapestation is not ideal for estimating concentration of RNA, it can be used in this case as a rough estimate, since you won't have enough material to quantify using Qubit.
 
 
 ### OPTION B: sorting into lysis buffer
@@ -95,15 +91,24 @@ The protocol below uses the SMART Seq HT kit, however another option for cDNA ge
 ## Day 2: cDNA and library prep
 
 {% include note.html content="If perferred, this day could be split into two days, with cDNA generation on Day 2 and modified Nextera library prep on Day 3." %}
+
+### RNA extraction
+
+* If you chose Option B above, skip RNA extract and proceed directly to cDNA synthesis
+
+* If you chose Option A above, extract RNA using the the [Qiagen RNeasy micro kit](https://www.qiagen.com/us/shop/sample-technologies/rna/total-rna/rneasy-micro-kit/#orderinginformation) and store at -80C.
+
+* Assess RNA integrity using an Agilent Tapestation 4200 and High-sensitivity RNA screentape.  Although tapestation is not ideal for estimating concentration of RNA, it can be used in this case as a rough estimate, since you won't have enough material to quantify using Qubit.
+
  
 ### Clontech SMART-Seq cDNA Synthesis
 * Thaw One-step buffer at room temperature, thaw enzymes (SeqAmp DNA Polymerase and SMARTScribe Reverse Transcriptase) at room temperature then keep tubes on ice once thawed; thaw all other reagents from kit on ice. 
 
-* Make sure you have measured the concentation of each of your samples using the Qubit device.  If you are starting with cells, you should have accurate cell counts.
+* If you have sample to spare, you can try to measure RNA concentration using Qubit, but it is unlikely to be above the limit of sensitivity (~500 pg/ul).  A more practical approach is the use the concentrations provided by High-sensitivity RNA tapestation run.  These aren't ideal, but they'll have to do.  
 
-* If you did option A above, then you are good to go...no need to dilute your sample further.
+* If you have ample RNA, dilute to 0.09 ng/uL.  This will allow you to add 10.5ul of RNA to the cDNA reaction, and not exceed 1ng.  If you don't have enough starting material, you can adjust this number following the chart below
 
-* If you did option B above, dilute your total RNA to 0.09 ng/uL.  This will allow you to add 10.5ul of RNA to the cDNA reaction, and not exceed 1ng.  If you don't have enough starting material, you can adjust this number following the chart below
+* If you did option B above, then you will use all of your sample lysate as input.
 
 * In your pre-PCR work station, add 10.5 uL of diluted RNA or cell lysate to each well to bring your input to just under 1ng. If using less than 10.5 uL of RNA, add nuclease-free water to qs to 10.5 uL. Keep plate on ice while working with samples.  
 * Make stock of 10x Lysis Buffer (can be scaled up as needed, we make a stock of this and keep it in our -20C):
