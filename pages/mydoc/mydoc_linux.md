@@ -52,22 +52,25 @@ ssh username@130.91.255.137
 ## command line tips
 If you're new to the command-line in Linux, there are lots of online resoures for learning, but here are a few of the commands that will help you move around and carry out basic tasks.  Note that many of these may only work if run as ```sudo```.
 
-| typing this at the prompt               | does this                                                                    |
-|-----------------------------------------|------------------------------------------------------------------------------|
-| ```tar -xvzf <fileName.tar.gz>```       | unzip a .tar file                                                            |
-| ```ls -l```                             | list all files and folders in your working diretory with info on permissions |
-| ```du -a -h --max-depth=1 | sort -hr``` | lists all files and folders in your working directory sorted by size         |
-| ```du -sh *``` | simpler version of the command above. lists all files in a folder and shows their file size         |
-| ```tree -d```                           | lists all files and folders in your working directory as a tree structure    |
-| pressing up arrow                       | recalls previous command                                                     |
-| ```cd /```                              | takes you to the root directory                                              |
-| ```cd ~```                              | takes you to your home directory                                             |
-| ```cd ..```                             | takes you up one level in your file directory                                |
-| ```chmod u+x <fileName>```              | edits permissions on file                                                    |
-| ```chown <yourUserName> <fileName>```   | makes you the owner of a file                                                |
-| ```chgrp <yourUserName> <fileName>```   | assigns you as the group for the file                                        |
-| ```rm -rf <directoryName>```            | removes a folder and all of its contents                                     |
-| ```wget <URLtoFile>```                  | downloads a file from a website                                              |
+| typing this at the prompt                                   | does this                                                                                   |
+|-------------------------------------------------------------|---------------------------------------------------------------------------------------------|
+| ```tar -xvzf <fileName.tar.gz>```                           | unzip a .tar file                                                                           |
+| ```ls -l```                                                 | list all files and folders in your working diretory with info on permissions                |
+| ```du -a -h --max-depth=1 | sort -hr```                     | lists all files and folders in your working directory sorted by size                        |
+| ```du -sh *```                                              | simpler version of the command above. lists all files in a folder and shows their file size |
+| ```ls -l | wc -l```                                         | counts files in a directory                                                                 |
+| ```tree -d```                                               | lists all files and folders in your working directory as a tree structure                   |
+| pressing up arrow                                           | recalls previous command                                                                    |
+| ```cd /```                                                  | takes you to the root directory                                                             |
+| ```cd ~```                                                  | takes you to your home directory                                                            |
+| ```cd ..```                                                 | takes you up one level in your file directory                                               |
+| ```cd ../..```                                                 | takes you up two levels in your file directory                                               |
+| ```chmod u+x <fileName>```                                  | edits permissions on file                                                                   |
+| ```chown <yourUserName> <fileName>```                       | makes you the owner of a file                                                               |
+| ```chgrp <yourUserName> <fileName>```                       | assigns you as the group for the file                                                       |
+| ```rm -rf <directoryName>```                                | removes a folder and all of its contents                                                    |
+| ```wget <URLtoFile>```                                      | downloads a file from a website                                                             |
+| ```defaults write com.apple.finder AppleShowAllFiles YES``` | show all hidden files in the finder (Mac only)                                              |
 
 
 

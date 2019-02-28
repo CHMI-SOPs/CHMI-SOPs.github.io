@@ -51,6 +51,7 @@ If you're looking for a piece of software and don't find it below, just reach ou
 | [Prokka](https://github.com/tseemann/prokka)                     | genome annotation for prokaryotes            | ```prokka```                                                                              |
 | [QIIME2](https://qiime2.org/)                                               | Microbial ecology pipeline for 16S rRNA data                      | ```source activate qiime2```                                                              |
 | [QUAST](http://quast.sourceforge.net/index.html) | Quality Assessment Tool for Genome Assemblies | ```quast.py```                                                              |
+| [ROP](https://github.com/smangul1/rop) | Read Origin Protocol for finding identity of unmapped reads | ```/usr/local/bin/rop/rop.sh```                                                              |
 | [rsem](https://github.com/deweylab/RSEM)                                    | mapping reads to transcripts         | ```rsem-(function)```                                                                     |
 | [samtools](http://samtools.sourceforge.net/)                                | handling HTS file formats            | ```samtools```                                                                            |
 | [seqtk](https://github.com/lh3/seqtk)                                       | handling HTS file formats            | ```seqtk```                                                                               |
