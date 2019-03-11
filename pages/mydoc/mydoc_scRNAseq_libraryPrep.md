@@ -94,7 +94,7 @@ Total volume is 10 mL, aliquot into 1.5 mL tubes with approximately 0.5 mL per t
 | 10X Fast Digest Buffer | 4.5 uL     | 9 uL       | 13.5 uL    |
 | Exonuclease I          | 2.5 uL     | 5 uL       | 7.5 uL     |
 | HinFI                  | 3.5 uL     | 7 uL       | 10.5 uL    |
-|                        | **50 uL**  | **100 uL** | **150 uL** |
+| Total volume           | **50 uL**  | **100 uL** | **150 uL** |
 
 {% include important.html content="All steps before linear amplification before in vitro transcription should be performed with a blocked tip. This miminizes the material loss due to adsorption. Immerse pipet tip into block buffer, pipet up and down once and the tip is ready for use.." %}
 
@@ -106,11 +106,11 @@ Total volume is 10 mL, aliquot into 1.5 mL tubes with approximately 0.5 mL per t
 
 7. Discard the filter membrane (this contains the beads and all the particles we wanted to filter out, your sample is in the supernatant in the flow through).
 
-8. 
+8. Incubate the flow-through sample at 37C for 30 minutes.
 
 9. Purify the reaction by using AmpPure XP beads. At this stage, your products are RNA-cDNA hybrids. This is the general protocol for all AmpPure XP bead clean ups. Pay attention to the ratio in each step of beads: sample, the elution buffer used and the amount of elution buffer in each clean up. These will be different in the subsequent steps. 
 
-* Ratio of AMpure XP beads to sample is 1.2X ; The elution buffer used here is **nuclease free water** at a volume of 17 uL
+* Ratio of AMpure XP beads to sample is 1.2X ; The elution buffer used here is **nuclease free water** at a volume of 19 uL
 
 * Add volume of beads directly to the sample. Vortex to mix well.
 * Incubate the sample at room temperature for 5 minutes. Your sample will bind to the beads in this step. 
@@ -121,9 +121,9 @@ Total volume is 10 mL, aliquot into 1.5 mL tubes with approximately 0.5 mL per t
 * Repeat wash step once more.
 * After the second wash, spin tube down to get any excess etoh off the bead, aspirate out and discard. 
 * Dry tubes at 37C with caps off for about 3 minutes or until the beads are dry. They should appear matte and begin to crack when dry.
-* Add 17uL of elutent and vortex, spin down, and incubate at room temperature for 5 minutes.
+* Add 19uL of elutent and vortex, spin down, and incubate at room temperature for 5 minutes.
 * Return the tubes to the magnetic stand and incubate for 1 minute until supernatant is clear. supernatant now contains your sample. 
-* Transfer the supernatant to a fresh tube, a PCR tube. 
+* Transfer 17uL of the supernatant to a fresh PCR tube. 
 
 ## Day 2
 
@@ -146,11 +146,14 @@ Time: 16-18 hours
 | NEB T7 High Yield Enzyme Mix                              | 8 uL           |
 |                                                           | **60 uL**    |
 
-12. Pipette to mix, spin plate down, and incubate at 37C for 13-15 hours with the lid heated to 50C.
+12. Pipette to mix, spin plate down, and incubate at **37C for 13-15 hours with the lid heated to 50C**.
 
-* **Pause point** After 15h the IVT reaction can be kept at 4C for two hours, this is programmed into our PCR protocol on the machine. 
+* **Pause point** After 15h the IVT reaction can be kept at **4C for two hours**, this is programmed into our PCR protocol on our machine. 
 
-13. Purify the reaction by using AmpPure XP beads. This is the general protocol for all AmpPure XP bead clean ups. Pay attention to the ratio in each step of beads: sample, the elution buffer used and the amount of elution buffer in each clean up. These will be different in the subsequent steps. 
+
+## Day 2
+
+13. Immediately after incubation, purify the reaction by using AmpPure XP beads. This is the general protocol for all AmpPure XP bead clean ups. Pay attention to the ratio in each step of beads: sample, the elution buffer used and the amount of elution buffer in each clean up. These will be different in the subsequent steps. 
 
 * Ratio of AMpure XP beads to sample is 1.3X (104uL of beads) ; The elution buffer used here is **RNA Elution Buffer** at a volume of 21 uL
 
@@ -164,14 +167,15 @@ Time: 16-18 hours
 * After the second wash, spin tube down to get any excess etoh off the bead, aspirate out and discard. 
 * Dry tubes at 37C with caps off for about 3 minutes or until the beads are dry. They should appear matte and begin to crack when dry.
 * Add 21uL of elutent and pipette to mix, spin down, and incubate at room temperature for 5 minutes.
-* Return the tubes to the magnetic stand and incubate for 1 minute until supernatant is clear. supernatant now contains your sample. 
-* Transfer 9uL of supernatant to a new PCR tube. Transfer 10uL to a LoBind tube. This can be stored in the -80C for up to 6 months, labeled as post-IVT back up.
+* Return the tubes to the magnetic stand and incubate for 1 minute until supernatant is clear. The supernatant now contains your sample. 
+* Transfer 9uL of supernatant to a well in a new plate. Transfer 10uL to a LoBind tube and label as "post-IVT back up". 
 
-14. Run a HS RNA Tapestation on the post-IVT back up before transferring to the -80C freezer. 
+14. Run HS RNA Tapestation on the post-IVT back up. Then put "post-IVT back up" into the -80C freezer, where it can be stored for up to 6 months.  
 
 **Fragmentation of Amplified RNA**
 
 Time: 20 mins
+[SKIP THIS STEP AND PROCEED TO REVERSE TRANSCRIPTION USING RANDOM HEXAMERS IF MAJORITY OF SAMPLE IS <1000 NT]
 
 15. Prepare Fragmentation Stop Mix for each sample: 
 
@@ -186,11 +190,11 @@ Time: 20 mins
 
 17. Allow the thermalcycler to reach 70C (lid at 100-110C)
 
-18. On ice, add 1 uL of 10X RNA Fragmentation reagent to 9 uL of purified of IVT product in plate from step 12.
+18. On ice, add 1 uL of 10X RNA Fragmentation reagent to 9 uL of purified of IVT product from previous step.
 
 19. Spin down plate and fragment on thermalcycler at 70C for about 1-3 minutes, depending on what your post IVT tapestation looked like. Here is how to determine the fragmentation time:
 
-* 1cellbio's general rule is fragment for around 1 min if the bulk of the sample is below 1000nt, 2 mins if the bulk of the sample is between 1000-2000nt, and 3 mins if the majority of your sample is above 2000nt.
+* 1cellbio's general rule is no fragmentation if the bulk of the sample is below 1000nt, 1-2 mins if the bulk of the sample is between 1000-2000nt, and 3 mins if the majority of your sample is above 2000nt. 
 
 20. Cool the fragmentation reaction on ice and immediately add 34uL of Fragmentation Stop Mix (prepared in step 14) to each sample and pipette up and down to mix well. Spin plate very briefly. 
 
@@ -198,7 +202,7 @@ Time: 20 mins
 
 22. Plate samples on magnetic rack and continue through the AMPure XP bead clean up steps below: 
 
- Ratio of AMpure XP beads to sample is 1.3X (104uL of beads) ; The elution buffer used here is **RNA Elution Buffer** at a volume of 21 uL
+ Ratio of AMpure XP beads to sample is 1.3X (104uL of beads) ; The elution buffer used here is **RNA Elution Buffer** at a volume of 10 uL
 
 * Place the sample(s) on the magnetic stand for 3-5 minutes until the bead collects on the side of the well and the supernatant is clear. 
 * Aspirate and discard the supernatant without disturbing the beads. 
@@ -223,7 +227,7 @@ Time: 2.5 hours
 | PE2-N6 primer (100uM)                                | 2uL            |
 |                                                      | Total  11 uL   |
 
-24. Pipette to mix, spin down. Incubate at 70C (lid at 105C) for exactly 3 minutes and cool immediately on ice. 
+24. Pipette to mix, spin down. Incubate at **70C (lid at 105C) for exactly 3 minutes** and cool immediately on ice. 
 
 25. On ice, add the following components to the mix to bring the total volume to 20uL: 
 
@@ -235,7 +239,7 @@ Time: 2.5 hours
 | Prime Script Reverse Transcriptase (200 U/uL) | 0.5 uL         |
 |                                               | Total  9 uL    |
 
-26. Mix gently by pipetting and incubate the reaction at 30C for 10 minutes followed by 42C for 1 hour then 70C for 15 minutes to heat inactivate the enzyme. 
+26. Mix gently by pipetting and **incubate the reaction at 30C for 10 minutes then 42C for 1 hour then 70C for 15 minutes to heat inactivate the enzyme**. 
 
 27. Add 20uL of nuclease-free water, mix by pipetting, and save 20 uL as "pre-PCR back-up" in a LoBind tube. This back up can be stored at -80C for up to 6 months.
 
@@ -354,9 +358,9 @@ Bold denotes steps to be run for amount of cycles determined by qPCR.
 * Return the tubes to the magnetic stand and incubate for 1 minute until supernatant is clear. Supernatant now contains your sample. 
 * Transfer 20 uL of supernatant to a new well.  
 
-This eluate is the final sequencing-ready library. 
+This eluate is the *final sequencing-ready library*. 
 
-36. Test library by running on the HS D1000. The library should look like a smooth hump starting at 200bp and ending at 1.5kb with an average size between 400 and 600bp. 
+36. Test library by running on the HS D1000. The library should look like a smooth hump starting at 200bp and ending at 1.5kb with an average size between 400 and 600bp. This library distribution will vary from sample to sample. 
 
 37. Perform Qubit on samples using the HS DNA assay to get the concentration for pooling and sequencing.
 
