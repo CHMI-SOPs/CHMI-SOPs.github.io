@@ -125,8 +125,6 @@ Total volume is 10 mL, aliquot into 1.5 mL tubes with approximately 0.5 mL per t
 * Return the tubes to the magnetic stand and incubate for 1 minute until supernatant is clear. supernatant now contains your sample. 
 * Transfer 17uL of the supernatant to a fresh PCR tube. 
 
-## Day 2
-
 ### Second Strand Synthesis and In Vitro-Transciption (IVT)
 
 Time: 16-18 hours
