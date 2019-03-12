@@ -40,7 +40,7 @@ The primers and probes below are used for detection of *Staphylococcus aureus (S
 | *Saur* rev | provided by Biomeme |
 | *Saur* probe | provided by Biomeme |
 | *Spyo* fwd | GCA CTC GCT ACT ATT TCT TAC CTC AA |
-| *Spyo* rev | ATT ACT GGT TTC CAA GAC ATT GTG AC |
+| *Spyo* rev | GTC ACA ATG TCT TGG AAA CCA GTA AT |
 | *Spyo* probe | */56-FAM/*CCG CAA CTC */ZEN/* ATC AAG GAT TTC TGT TAC CA*/3IABkFQ/* |
 | *Lbra* fwd | TGC TAT AAA ATC GTA CCA CCC GAC A |
 | *Lbra* rev | AAA TGG CAT ACA GAA ACC CCG TTC |
