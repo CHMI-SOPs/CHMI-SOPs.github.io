@@ -192,7 +192,7 @@ SMARTScribe Reverse Transcriptase | 2
 
 * Incubate samples at room temperature for approximately 2 minutes until pellet is matte. The pellet should not be shiny or that is an indication there is ethanol still in your sample and this will reduce your recovery rate of cDNA. Try to avoid overdrying; if the pellet is cracked it will take a significantly longer time to rehydrate these beads. 
 
-* Once the beads are dry, remove them from the magnetic stand and add 17 uL of Elution Buffer to your samples and pipette up and down until the beads are completely rehydrated. You will have to pipette up and down many times until the samples has no visible bead clumps in them. 
+* Once the beads are dry, remove them from the magnetic stand and add 17 uL of Elution Buffer (from the Takara kit in the -20C) to your samples and pipette up and down until the beads are completely rehydrated. You will have to pipette up and down many times until the samples has no visible bead clumps in them. 
 
 * Incubate at room temperature for 2 minutes.
 
@@ -287,7 +287,7 @@ Nextera library prep
 
 * Incubate samples at room temperature for approximately 2 minutes until pellet is matte. The pellet should not be shiny or that is an indication there is ethanol still in your sample and this will reduce your recovery rate of cDNA. Try to avoid overdrying; if the pellet is cracked it will take a significantly longer time to rehydrate these beads. 
 
-* Once the beads are dry, remove them from the magnetic stand and add 14 uL of resuspension buffer to your samples and pipette up and down until the beads are completely rehydrated. You will have to pipette up and down many times until the samples has no visible bead clumps in them. 
+* Once the beads are dry, remove them from the magnetic stand and add 14 uL of resuspension buffer (from Illumina, I have this aliquoted into smaller eppendorf tubes labeled RSB) to your samples and pipette up and down until the beads are completely rehydrated. You will have to pipette up and down many times until the samples has no visible bead clumps in them. 
 
 * Incubate at room temperature for 2 minutes.
 
