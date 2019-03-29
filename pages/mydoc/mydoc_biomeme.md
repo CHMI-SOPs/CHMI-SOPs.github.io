@@ -17,7 +17,7 @@ The protocols below detail how we've been using [Biomeme Inc's](http://biomeme.c
 The hand-held QPCR device made by Biomeme, called the 'three9', accomodates 9 tubes and three colors/tube: FAM, Cy5/ATTO647N and TexasRed.  ATTO647N is the brightest channel on the three9, so consider designing the target you anticipate being present in the lowest concentration and/or least sensitive PCR on that channel. FAM is the next brightest, followed by TexasRedX. If you are designing a triplex assay for use with the three9 that includes a positive control, use TexasRedX for the positive control.
 
 ## Preparing mastermix
-Resuspend bulk lyophilized [LyoDNA](http://CHMI-sops.github.io/papers/LyoDNA.pdf), [LyoRNA](http://CHMI-sops.github.io/papers/LyoRNA.pdf) or [LyoGreen](http://CHMI-sops.github.io/papers/LyoGreen.pdf) master mix with 135 ul of PCR grade water + 18 ul of glycerol.  This is a 10x stock.  Addition of glyceral allows leftover mastermix to be frozen for reuse later.  LyoRNA master mix contains a reverse transcriptase for QPCR assays where the target is a RNA molecule.  Each resuspended vial contains enough mastermix for 60 reactions of 20ul/rxn.
+Resuspend bulk lyophilized [LyoDNA](http://CHMI-sops.github.io/papers/LyoDNA.pdf), [LyoRNA](http://CHMI-sops.github.io/papers/LyoRNA.pdf) or [LyoGreen](http://CHMI-sops.github.io/papers/LyoGreen.pdf) master mix with 135 ul of PCR grade water (BEB buffer from the DNA extraction kits is water). This is a 10x stock.  Add 18 ul of glycerol to allow leftover mastermix to be frozen for reuse later.  LyoRNA master mix contains a reverse transcriptase for QPCR assays where the target is a RNA molecule.  Each resuspended vial contains enough mastermix for 60, 20ul reactions.
 
 
 ## Reaction set-up with LyoDNA or LyoRNA
@@ -37,7 +37,11 @@ A typical QPCR reaction on the biomeme platform contains the following component
 
 * To begin, launch the Biomeme app on the iPhone connected to your device.
 * To run any assays, you'll need to set up a data folder by selecting the 'data management' button on the main screen.  Name your folder, create any subfolders if necessary and save.
-* Back on the main screen, choose 'protocol management' to set up a protocol that will contain your thermocycling conditions and a standard curve (optional).  We've always used the standard thermocycling conditions that come pre-set on the device as follows:
+* Back on the main screen, choose 'protocol management' to set up a protocol that will contain your thermocycling conditions.  
+
+{% include important.html content="Be sure to select a RT step at the start of a protcol if you are testing for RNA targets" %}
+
+We've always used the standard thermocycling conditions that come pre-set on the device as follows:
 
 | Temp (C) | Time (min:sec) |
 |-------|--------|
@@ -50,11 +54,7 @@ A typical QPCR reaction on the biomeme platform contains the following component
 
 * Give your protocol a name and select 'save' in the upper right corner of the app
 
-* If you want to set-up a standard curve, select your protocol, scroll to the bottom, and select standard curve.
-
-{% include note.html content="standard curves are specific to each device.  If you plan to run the same assay across multiple devices, you'll have to run the standard curve on each device." %}
-
-* To begin a run, go back to the main screen of the app and choose 'start run'.  Choose your data folder, then your protocol, then select the run type (standard curve, qualitative, etc). Hit run and follow the on screen instructions to begin the run
+* To begin a run, go back to the main screen of the app and choose 'start run'.  Choose your protocol and data folder, then follow the on screen instructions to begin the run.
 
 
 {% include links.html %}
