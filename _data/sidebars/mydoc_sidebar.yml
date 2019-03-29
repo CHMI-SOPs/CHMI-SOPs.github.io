@@ -160,7 +160,7 @@ entries:
           url: /mydoc_biomeme_avian.html
           output: web, pdf
 
-        - title: Human
+        - title: Cutaneous leishmaniasis
           url: /mydoc_biomeme_human.html
           output: web, pdf
 
