@@ -87,35 +87,33 @@ folder: mydoc
 
 14. Add 50 uL Bead Binding Buffer to each well. Gently pipette up and down 6 times. Incubate the plate at room temperature for 5 minutes.
 
-15. Place the plate on the magnetic stand at room. Incubate the plate at room temperature for 5 minutes.
+15. Place the plate on the magnetic stand at room. Incubate the plate at room temperature for 5 minutes. Remove and discard the supernatant from each well.
 
-16. Place the plate on the magnetic stand at room temp for 5 minutes. Remove and discard the supernatant from each well.
+16. Wash the beads by adding 190 uL bead washing buffer. Gently pipette up and down 6 times to mix.
 
-17. Wash the beads by adding 190 uL bead washing buffer. Gently pipette up and down 6 times to mix.
+17. Place the plate on the magnetic stand at room temp for 5 min. Remove and discard the supernatant from each well.
 
-18. Place the plate on the magnetic stand at room temp for 5 min. Remove and discard the supernatant from each well.
+18. Remove the plate from the magnetic stand and add 19.5 uL Fragment, Prime, Finish Mix to each well. Gently pipette up and down 6 times to mix.
 
-19. Remove the plate from the magnetic stand and add 19.5 uL Fragment, Prime, Finish Mix to each well. Gently pipette up and down 6 times to mix.
-
-20. Seal the plate with an adhesive film. Place the sealed plate on the thermal cycler. Select the Elute2Frag program (94C for 8 min, 4C hold).
+19. Seal the plate with an adhesive film. Place the sealed plate on the thermal cycler. Select the Elute2Frag program (94C for 8 min, 4C hold).
 
 {% include tip.html content="For degraded mRNA or mRNA isolated from FFPE samples, you may shorten the fragmentation time. See the Illumina TruSeq instruction manual for suggested times." %}
 
-21. Remove the plate once it reaches 4C, centrifuge briefly, and then proceed immediately through the next steps.
+20. Remove the plate once it reaches 4C, centrifuge briefly, and then proceed immediately through the next steps.
 
-22. Remove the adhesive seal and place the plate on a magnetic stand at room temperature for 5 min.
+21. Remove the adhesive seal and place the plate on a magnetic stand at room temperature for 5 min.
 
-23. Remove 17 uL supernatant from each well into corresponding wells in a new plate. This contains your purified mRNA.
+22. Remove 17 uL supernatant from each well into corresponding wells in a new plate. This contains your purified mRNA.
 
 ## Step 2: 1<sup>st</sup> strand cDNA synthesis
 
-24. Remove First Strand Synthesis Act D Mix from -20C and thaw at RT. Centrifuge this reagent at 600 x g for 5 sec.
+23. Remove First Strand Synthesis Act D Mix from -20C and thaw at RT. Centrifuge this reagent at 600 x g for 5 sec.
 
-25. Add 50 ul SuperScript II to the First Strand Synthesis Act D Mix well. If you’re not going to use the entire well of mix, then add SuperScript at a ratio of 1 ul SuperScript for every 9 ul of First Strand reagent.  For example, for 12 reactions, mix 90 ul with 10 ul of SS II.  Excess mix can be stored in the -20C freezer.
+24. Add 50 ul SuperScript II to the First Strand Synthesis Act D Mix well. If you’re not going to use the entire well of mix, then add SuperScript at a ratio of 1 ul SuperScript for every 9 ul of First Strand reagent.  For example, for 12 reactions, mix 90 ul with 10 ul of SS II.  Excess mix can be stored in the -20C freezer.
 
-26. Add 8 ul of First Strand SuperScript mix to each well containing the mRNA.
+25. Add 8 ul of First Strand SuperScript mix to each well containing the mRNA.
 
-27. Place the plate in thermocycler and run the “Synthesize 1st Strand” program (25C for 10 min, 42C for 15 min, 70C for 15 min, hold at 4C).
+26. Place the plate in thermocycler and run the “Synthesize 1st Strand” program (25C for 10 min, 42C for 15 min, 70C for 15 min, hold at 4C).
 
 {% include note.html content="This step takes 40 minutes and is your first large break." %}
 
