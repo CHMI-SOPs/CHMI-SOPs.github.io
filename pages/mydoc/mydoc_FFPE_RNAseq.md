@@ -54,26 +54,27 @@ Input RNA Quality and Quantity:
 
 ## Diluting Control RNA
 * To 50 ng/uL
-	38 uL nuclease-free water
+  + 38 uL nuclease-free water
   + 2 uL control RNA
 
 * To 5 ng/uL 
-	45 uL nuclease-free water
+  + 45 uL nuclease-free water
   + 5 uL diluted Control RNA at 50 ng/uL
 
  * To 0.25 ng/uL
- 	95 uL nuclease-free water
+  + 95 uL nuclease-free water
   + 5 uL diluted Control RNA at 5 ng/uL
 
 ## Option 1: With Fragmentation (RIN > 4)
 1. Mix the following on ice: 
+
 Reagent      | Volume per rxn (uL)
 -----------------|---------------------
 RNA [5-50 ng input]| 1-8 uL
 Nuclease-free water | 0-7 uL
 SMART Pico Oligos Mix v2 | 1 uL 
 5x First-Strand Buffer | 4 uL
-*Total Volume | 13 uL*
+**Total Volume | 13 uL**
 
 2. Incubate tubes at 94C in preheated, hot-lid thermal cycler for the amount of time recommended below:
 
@@ -101,7 +102,7 @@ SMARTScribe Reverse Transcriptase | 2.0
 | Temp (C) | Time (min:sec) |
 |----------|----------------|
 | 42       | 90:00          |
-| 70C      | 10:00          |
+| 70      | 10:00          |
 | 4        | hold           |
 
 
@@ -116,7 +117,7 @@ Reagent      | Volume per rxn (uL)
 RNA [5-50 ng input]| 1-8 uL
 Nuclease-free water | 0-7 uL
 SMART Pico Oligos Mix v2 | 1 uL 
-*Total Volume | 9 uL*
+**Total Volume | 9 uL**
 
 2 Incubate tubes at 72C preheated, hot-lid thermal cycler for exactly 3 minutes.
 
@@ -130,11 +131,12 @@ SMART TSO Mix v2 (very viscous, mix well) | 4.5
 RNase Inhibitor | 0.5
 SMARTScribe Reverse Transcriptase | 2.0
 5x First-Strand Buffer | 4.0
-*Total Volume per reaction | 11.0*
+**Total Volume per reaction | 11.0**
 
 5. Add 11 uL of the First Strand Master Mix to each PCR strip tube, vortex for about 2 seconds, spin down briefly.
 
-6. Incubate the tubes in a preheated hot-lid thermal cycler with the following program ():
+6. Incubate the tubes in a preheated hot-lid thermal cycler with the following program (OPT2_NOFRAG):
+
 | Temp (C) | Time (min:sec) |
 |----------|----------------|
 | 42       | 90:00          |
@@ -145,7 +147,7 @@ SMARTScribe Reverse Transcriptase | 2.0
 {% include important.html content="Safe stopping point. Leave the samples overnight in the thermal cycler at 4C or store the cDNA in the -20C freezer for up to 2 weeks." %}
 
 ## PCR1- Addition of Illumina Adapters and Indexes
-Important: If Purification of RNA-seq Library using AMPure Beads will be performed the same day, take aliquots of beads out of 4C to allow them to reach room temperature
+{% include important.html content="If Purification of RNA-seq Library using AMPure Beads will be performed the same day, take aliquots of beads out of 4C to allow them to reach room temperature" %}
 
 1. Prepare enough PCR1 Master Mix for all reactions plus 10% by combining the following reagents in the order shown below, vortex, then spin down:
 
@@ -154,7 +156,7 @@ Kit reagent | Volume per rxn (uL)
 Nuclease-free water | 2
 SeqAmp CB PCR Buffer 2X  | 25
 SeqAmp DNA Polymerase | 1
-*Total Volume per reaction | 28*
+**Total Volume per reaction | 28**
 					  
 2. Add 28 uL of PCR Master Mix to each sample 
 
@@ -178,7 +180,7 @@ SeqAmp DNA Polymerase | 1
 {% include important.html content="Safe stopping point. Leave the samples overnight in the thermal cycler at 4C or store the cDNA in the -20C freezer for up to 2 weeks." %}
 
 ## Purification of RNA-seq Library using AMPure Beads
-{% include important.html content="Do not start this section unless you have enough time to perform all steps up to PCR2: Final Library Amplification; there are no safe stopping points until then." %}
+{% include warning.html content="Do not start this section unless you have enough time to perform all steps up to PCR2: Final Library Amplification; there are no safe stopping points until then." %}
 
 {% include important.html content="Remove ZapR Buffer from -20C storage and thaw at room temperature in preparation for next section. " %}
 
@@ -226,6 +228,7 @@ In this section, the library fragments originating from rRNA (18S and 28S) and m
 4. During the 5 minute incubation, pipette 1.5 uL of R-Probes v2 +10% per reaction into a PCR Strip tube on ice and immediately return R-Probes v2 to -80C freezer. 
 
 5. Incubate the PCR strip tube of R-probes v2 at 72C in preheated hot-lid thermal cycler using the following program: 
+
 | Temp (C) | Time (min:sec) |
 |----------|----------------|
 | 72       | 2:00           |
@@ -251,7 +254,7 @@ Nuclease-free water | 16.8
 10X ZapR Buffer  | 2.2
 ZapR v2 | 1.5
 R-Probes v2, heated | 1.5
-*Total Volume per reaction | 28*
+**Total Volume per reaction | 28**
 
 13. Take plate off magnetic stand. To each well of dried AMPure XP beads, add 22 uL of ZapR Master Mix and pipette to mix thoroughly until the beads are resuspended. 
 
@@ -262,6 +265,7 @@ R-Probes v2, heated | 1.5
 16. Pipette out 20 uL of clear supernatant, without disturbing beads, to a new PCR strip tube. 
 
 17. Incubate PCR strip tubes containing supernatant in a preheated hot-lid thermal cycler using the following program: 
+
 | Temp (C) | Time (min:sec) |
 |----------|----------------|
 | 37       | 60:00          |
@@ -274,6 +278,7 @@ R-Probes v2, heated | 1.5
 In this section, the library fragments not cleaved by the ZapR reaction will be further enriched in a second round of PCR. Illumina barcodes have already been added to the libraries so this step includes a single pair of primers that are used for all libraries. 
 
 1. Prepare a PCR2 Master Mix for all reactions plus 10% by combining the ollowing reagents in the order shown below, vortex, then spin down:
+
 Kit reagent | Volume per rxn (uL)
 -----------------------|---------------------
 Nuclease-free water | 26
@@ -284,28 +289,34 @@ SeqAmp DNA Polymerase | 2.0
 
 2. Add 80 uL of PCR2 Master Mix to each tube. Mix by tapping gently and spin down.
 
-% Important: our thermal cycler only holds 50uL so after adding the master mix, vortexing and spinning down, split each sample into two separate PCR strip tubes with 50 uL in each one. 
+{% include important.html content="Our thermal cycler only holds 50uL so after adding the master mix, vortexing and spinning down, split each sample into two separate PCR strip tubes with 50 uL in each one." %}
 
-3. Place tubes in preheated hot-lid thermal cycler for the following program: PCR2:
-94C 1 min
-	9-16 cycles of:
-	98C 15 sec
-	55C 15 sec
-	68C 30 sec
-4C forever
+3. Place tubes in preheated hot-lid thermal cycler for the following program (PCR2):
 
-%note: The number of PCR cycles corresponds to the starting material. Do not perform more than 16 cycles as it can lead to amplification of background material. Use the following table below to choose appropriate cycles
-Amount of Input RNA (ng) Number PCR Cycles, Regular RNA Number PCR Cycles, FFPE RNA
-50	9-10	13
-10	12		15-16
-1	14-15	16
-0.5	16		-
+(**bold** denotes steps to be run for 9 to 16 cycles, depending on your input RNA, see the second table for the number of cycles.)
 
-%important Safe stopping point, samples can be left overnight at 4C. If not processed within the next day, freeze the PCR prodcuts at -20C for up to 2 weeks. 
+| Temp (C) | Time (min:sec) |
+|----------|----------------|
+| 94       | 1:00           |
+| **98**   | **0:15**       |
+| **55**   | **0:15**       |
+| **68**   | **0:30**       |
+| 4        | hold           |
 
-## Purificationo of Final RNA-Seq Library Using AMPure Beads 
+{% include note.html content="The number of PCR cycles corresponds to the starting material. Do not perform more than 16 cycles as it can lead to amplification of background material. Use the following table below to choose appropriate cycles." %}
 
-% Important: move samples to a 96 well plate before beginning this step. We do not have a magnetic stand that holds PCR strip tubes. 
+| Input of total RNA (ng) | Typical number of PCR cycles Regular RNA| Typical number of PCR cycles Regular FFPE|
+|-----------------------------------------|------------------------------|
+| 50              | 9-10 | 13 |
+| 10            | 12  | 15-16 |
+| 1               |14-15   | 16 |
+| 0.5               | 16     | - |
+
+
+{% include important.html content="Safe stopping point, samples can be left overnight at 4C. If not processed within the next day, freeze the PCR prodcuts at -20C for up to 2 weeks." %}
+
+## Purification of Final RNA-Seq Library Using AMPure Beads 
+{% include important.html content="Move samples to a 96 well plate before beginning this step. We do not have a magnetic stand that holds PCR strip tubes." %}
 
 1. Allow AMPure XP beads to come to room temperature for about 30 minutes before use. Vortex beads for 2 minutes to mix well. Make sure samples are in a 96 well plate that will fit on our magnetic stand. Prepare fresh 80% ethanol, you will about 400 uL per sample. 
 
