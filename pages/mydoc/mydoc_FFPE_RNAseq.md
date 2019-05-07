@@ -4,7 +4,7 @@ tags: [library_prep, transcriptomics]
 keywords: transcriptomics, library preparation
 summary: "This protocol walks you through preparing a total transcriptome RNA library for RNAseq when your starting amount of RNA is less than ~50ng or if you are working with degraded/FFPE RNA samples"
 sidebar: mydoc_sidebar
-permalink: FFPE-seq.html
+permalink: mydoc_FFPE_RNAseq.html
 folder: mydoc
 ---
 
