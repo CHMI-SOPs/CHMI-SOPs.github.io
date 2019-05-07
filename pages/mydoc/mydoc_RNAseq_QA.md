@@ -10,7 +10,7 @@ folder: mydoc
 
 ## Step 1: project set-up
 
-Quality assurance (QA) can mean many things – to us QA means not only that the raw data files are examined for any issues that could compromise downstream analyses, but also that the data is organized in a way that others can understand what was done for a given project.  This greatly improves transparency and reproducibility.  To ensure that the different file types and analyses for your RNAseq project remain clear and organized, we recommend an approach we call [MInimal Directory for Analysis of Sequencing data (MIDAS)](http://github.com/dpbisme/MIDAS).  MIDAS_RNAseq is just a directory structure that provides a simple framework for organizing your RNAseq experiment.  You can download a skeletal version of this directory **[here](http://CHMI-sops.github.io/images/MIDAS_transcriptome.zip)** 
+Quality assurance (QA) can mean many things – to us QA means not only that the raw data files are examined for any issues that could compromise downstream analyses, but also that the data is organized in a way that others can understand what was done for a given project.  This greatly improves transparency and reproducibility.  To ensure that the different file types and analyses for your RNAseq project remain clear and organized, we recommend an approach we call [MInimal Directory for Analysis of Sequencing data (MIDAS)](https://github.com/dpbisme/MIDAS_RNAseq).  MIDAS_RNAseq is just a directory structure that provides a simple framework for organizing your RNAseq experiment.
 
 ```
 |-- DATA
@@ -64,6 +64,8 @@ ssh username@130.91.255.137
 
 ## Step 3: Check data quality
 
+### fastqc
+
 Begin by using [fastqc](https://www.bioinformatics.babraham.ac.uk/projects/download.html) to check the quality of each of your fastq files.  Throughout this protocol, we'll assume you use a directory structure like the one outlined above.  The file paths below reference this directory structure.
 
 ```
@@ -73,20 +75,7 @@ cd data/raw
 fastqc *.gz -t 24 -o ../QA/fastqc 
 ```
 
-## Step 4: Summarize QA results
-
-[MultiQC](https://multiqc.info/) is a fantastic piece of software for aggregating and summarizing the outputs from many different kinds of bioinformatics programs in one convenient and interactive html file.  In this case, we'll use it to summarize the output from fastqc.
-
-```
-# use the -d command to tell multiqc to look in all folders (data, analysis and qa) to find log files
-cd MIDAS/
-multiqc -d .
-```
-
-You should now see a multiqc_report.html file in your project directory.  Move this to your data/qa folder.  You can also copy it from our server to your local computer using an FTP client (e.g. FileZilla), then double click and explore!
-
-
-## Optional: 'Are my .fastq files contaminated?'
+### Optional: check for contamination
 
 Often times there are questions about whether there may be reads, other than those from the intended sample source, present in a data file.  If you suspect contamination of a particular kind (e.g. other host, plasmid, rRNA, or some common bacterium used in lab), you can run [fastq_screen](https://www.bioinformatics.babraham.ac.uk/projects/fastq_screen/_build/html/index.html) to check a subsample of reads from your raw fastq file against a set of reference genomes.  
 
@@ -117,11 +106,22 @@ fastq_screen --threads 24 --outdir QA/fastq_screen *gz
 - [Contaminants](www.bioinformatics.babraham.ac.uk/projects/fastqc)
 - [plasmids/vectors](http://www.ncbi.nlm.nih.gov/VecScreen/UniVec.html)
 
-{% include note.html content="Just as you summarized the fastqc results in Step 3 using multiQC, the same can be done with the results from fastq_screen.  Rerunning multiqc will generate a new report that incorporates both fastqc and fastq_screen outputs, as long as these outputs are in the same parent directory." %}
 
+## Step 4: Summarize QA results
+
+[MultiQC](https://multiqc.info/) is a fantastic piece of software for aggregating and summarizing the outputs from many different kinds of bioinformatics programs in one convenient and interactive html file.  In this case, we'll use it to summarize the output from fastqc.
+
+```
+# use the -d command to tell multiqc to look in all folders (data, analysis and qa) to find log files
+cd MIDAS/
+multiqc -d .
+```
+
+You should now see a multiqc_report.html file in your project directory.  Move this to your data/qa folder.  You can also copy it from our server to your local computer using an FTP client (e.g. FileZilla), then double click and explore!
 
 {% include links.html %}
 
+## Reproducibility
 
-
+To document your analysis in a transparent and reproducible way, use the
 

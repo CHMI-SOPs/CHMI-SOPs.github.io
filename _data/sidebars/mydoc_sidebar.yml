@@ -48,6 +48,10 @@ entries:
       url: /mydoc_lowInput_RNAseq.html
       output: web, pdf
 
+    - title: FFPE-seq
+      url: /mydoc_FFPE_RNAseq.html
+      output: web, pdf      
+
     - title: scRNAseq encapsulation
       url: /mydoc_scRNAseq_encapsulation.html
       output: web, pdf
