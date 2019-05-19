@@ -14,27 +14,26 @@ The protocols below detail how we've been using [Biomeme Inc's](http://biomeme.c
 {% include note.html content="The only difference between DNA and RNA protocols are the BLB buffer in the extraction kit, and the type of master mix you will use (LyoDNA versus LyoRNA)." %}
 
 ## Devices
-The hand-held QPCR device made by Biomeme, called the 'three9', accomodates 9 tubes and three colors/tube: FAM, Cy5/ATTO647N and TexasRed.  ATTO647N is the brightest channel on the three9, so consider designing the target you anticipate being present in the lowest concentration and/or least sensitive PCR on that channel. FAM is the next brightest, followed by TexasRedX. If you are designing a triplex assay for use with the three9 that includes a positive control, use TexasRedX for the positive control.
+The hand-held QPCR device made by Biomeme, called [The Franklin Three9](http://CHMI-sops.github.io/papers/BiomemeFranklinThermocycler.pdf), accomodates 9 tubes and three colors/tube: FAM, Cy5/ATTO647N and TexasRed.  Cy5 is the brightest channel on the three9, so consider designing the target you anticipate being present in the lowest concentration and/or least sensitive PCR on that channel. FAM is the next brightest, followed by TexasRedX. If you are designing a triplex assay for use with the three9 that includes a positive control, use TexasRedX for the positive control.
 
 ## Preparing mastermix
-Resuspend bulk lyophilized [LyoDNA](http://CHMI-sops.github.io/papers/LyoDNA.pdf), [LyoRNA](http://CHMI-sops.github.io/papers/LyoRNA.pdf) or [LyoGreen](http://CHMI-sops.github.io/papers/LyoGreen.pdf) master mix with 135 ul of PCR grade water (BEB buffer from the DNA extraction kits is water). This is a 10x stock.  Add 18 ul of glycerol to allow leftover mastermix to be frozen for reuse later.  LyoRNA master mix contains a reverse transcriptase for QPCR assays where the target is a RNA molecule.  Each resuspended vial contains enough mastermix for 60, 20ul reactions.
+Resuspend bulk lyophilized [LyoDNA](http://CHMI-sops.github.io/papers/LyoDNA.pdf), [LyoRNA](http://CHMI-sops.github.io/papers/LyoRNA.pdf) or [LyoGreen](http://CHMI-sops.github.io/papers/LyoGreen.pdf) master mix with 135 ul of PCR grade water (BEB buffer from the DNA extraction kits is water). This makes a 10x stock.  Add 18 ul of glycerol to allow leftover mastermix to be frozen for reuse later.  LyoRNA master mix contains a reverse transcriptase for QPCR assays where the target is a RNA molecule.  Each resuspended vial contains enough mastermix for at least 60, 20ul reactions.
 
 
 ## Reaction set-up with LyoDNA or LyoRNA
 A typical QPCR reaction on the biomeme platform contains the following components
 
-| Reagent | vol (ul) |
-|-------|--------|
-| 20x primer/probe | 1 |
-| 10x LyoDNA, LyoRNA or LyoGreen mastermix | 2 |
-| isolated DNA or RNA | 5-17 |
-| water | qs to 20 |
+| Reagent                                  | vol (ul) |
+|------------------------------------------|----------|
+| 20x primer/probe                         | 1        |
+| 10x LyoDNA, LyoRNA or LyoGreen mastermix | 2        |
+| isolated DNA or RNA                      | 5-17     |
+| water                                    | qs to 20 |
 
 {% include important.html content="20x primer/probe stock contains 4uM of the forward primer and probe, and 8uM of the reverse primer in TE pH 8.0.  Final concentrations in the PCR reaction will be 200nM of forward and probe, 400nM of reverse.  If starting with 100 uM stocks, then add 84 uL TE, 4 uL of forward, 4 uL of probe and 8 uL of reverse, to get a 100 ul stock of 20x" %}
 
 
 ## Run set-up
-
 * To begin, launch the Biomeme app on the iPhone connected to your device.
 * To run any assays, you'll need to set up a data folder by selecting the 'data management' button on the main screen.  Name your folder, create any subfolders if necessary and save.
 * Back on the main screen, choose 'protocol management' to set up a protocol that will contain your thermocycling conditions.  
@@ -44,11 +43,11 @@ A typical QPCR reaction on the biomeme platform contains the following component
 We've always used the standard thermocycling conditions that come pre-set on the device as follows:
 
 | Temp (C) | Time (min:sec) |
-|-------|--------|
-| 45 | 10:00 |
-| 95 | 10:00 |
-| **95** | **0:15** |
-| **60** | **1:00** |
+|----------|----------------|
+| 45       | 10:00          |
+| 95       | 10:00          |
+| **95**   | **0:15**       |
+| **60**   | **1:00**       |
 
 **Bold** steps are repeated for 40 cycles total
 
