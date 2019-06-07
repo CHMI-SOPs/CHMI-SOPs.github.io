@@ -9,20 +9,20 @@ folder: mydoc
 ---
 
 ## Intro
-So you're ready to submit a manuscript describing your hard work...congratulations!  If you're reading this page, then chances are you have RNAseq data that you want to post to an approved data repository so that you can get an accession number to include in your manuscript submission.  This is the first step in ensuring that the broader research community can access your raw and processed data from any sequencing experiment(s) carried out in your publication.  The [Sequence Read Archive](https://www.ncbi.nlm.nih.gov/sra) (SRA) is the defacto home for all sequencing related studies, but can be confusing to navigate.  Thankfully, the [Gene Expression Omnibus](https://www.ncbi.nlm.nih.gov/geo/), will accept deposits of gene expression profiling data from RNAseq experiments and will pass this data onto to GEO on your behalf.  This is definitely the way to go, since the process of submitting data to GEO is pretty straightforward.  The steps below will walk you through this process.  Be aware that GEO's own instructions are available [here](https://www.ncbi.nlm.nih.gov/geo/info/seq.html), but our instructions are simple.
+So you're ready to submit a manuscript describing your hard work...congratulations!  If you're reading this page, then chances are you have RNAseq data that you want to post to an approved data repository so that you can get an accession number to include in your manuscript submission.  This is the first step in ensuring that the broader research community can access your raw and processed data from any sequencing experiment(s) carried out in your publication.  The [Sequence Read Archive](https://www.ncbi.nlm.nih.gov/sra) (SRA) is the defacto home for all sequencing related studies, but can be confusing to navigate.  Thankfully, the [Gene Expression Omnibus](https://www.ncbi.nlm.nih.gov/geo/), will accept deposits of gene expression profiling data from RNAseq experiments and will pass this data onto to the SRA on your behalf.  This is definitely the way to go, since the process of submitting data to GEO is pretty straightforward.  The steps below will walk you through this process.  Be aware that GEO's own instructions are available [here](https://www.ncbi.nlm.nih.gov/geo/info/seq.html), but our instructions are simple.
 
 ## What you'll need
 
 * an account on myNCBI.  If you don't already have one, signup [here](https://www.ncbi.nlm.nih.gov/account/)
 * the free FTP client, [FileZilla](https://filezilla-project.org/)
-* access to your raw .fastq files from your seqeuncing experiment (keep this in the compressed (.gzip) form at all times.
-* access to a table of 'processed' gene expression data.  This will need to be either raw counts, or normalized data produced by DESeq2 or EdgeR (or both files).
+* access to your raw .fastq files from your sequencing experiment. Keep each fastq file in the compressed (.gzip) form at all times.
+* access to a table of 'processed' gene expression data.  This will need to be either raw counts, or normalized data produced by DESeq2 or EdgeR (or both files).  
 
 ## Step 1: Complete metadata spreadsheet
 
 This is most time consuming part of whole process, but also the most important.  [Download this example excel file](http://CHMI-sops.github.io/papers/GEOsubmission.xlsx) from one of our own RNAseq studies, and replace with the appropriate information from your own experiment.  This document should describe each sample, how it was handled, and how your samples relate to the raw fastq files.  The more 'metadata' you can include here, the more useful you make this data to outside investigators, so don't skimp on the details.
 
-To complete this form you will need to generate a unique checksum for each file that you intend to transfer to GEO (both fastq files, as well as an process data files).  Checksums confirm that the file is not corrupt.  The are easy to generate, but do require that you open a command line program (e.g. Terminal on a Mac).  Once you have a terminal window open, navigate to the directory on your computer where you have all the files you plan to transfer.  
+To complete this form you will need to generate a unique checksum for each file that you intend to transfer to GEO (both fastq files, as well as an process data files).  Checksums confirm that the file is not corrupt.  They are easy to generate, but do require that you open a command line program (e.g. Terminal on a Mac).  Once you have a terminal window open, navigate to the directory on your computer where you have all the files you plan to transfer.  
 
 Use the ```md5``` command followed by the name of your file to generate the 32 character checksum.  You'll want to copy and paste this into your excel submission form.
 Here's an example of what this looks like: 
@@ -45,9 +45,9 @@ MD5 (GEOsubmission.xlsx) = 39eae0dbcc54367c588d2815876747f4
 
 * Host: ftp-private.ncbi.nlm.nih.gov
 * username: geo
-* password: (this will specific to your myNCBI account)
+* password: (this will specific to your myNCBI account). To get your user-specific password, make sure you're logged into your myNCBI account on the web, and then **[go to this webpage](https://www.ncbi.nlm.nih.gov/geo/info/submissionftp.html)**.  Scroll down and you see your login credentials.  You'll need to enter this info into FileZilla to connect.
 
-2. Once connected, simply drag your folder from your local computer to the GEO server
+2. Once connected via FileZilla, simply drag your folder from your local computer to the GEO server
 
 3. Now you must give the crew at GEO a heads-up that you've submitted data to their server.  **Don't skip this step or they will delete your submission.**. [Send an email to GEO](geo@ncbi.nlm.nih.gov), and include the following information in the email:
 
