@@ -15,19 +15,20 @@ folder: mydoc
 
 If you're running a Mac OS, then begin by downloading and installing [Homebrew](https://brew.sh/) with this single line of code: 
 
-```
+```shell
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
 Now, installing Kallisto is simple:
-```
+
+```shell
 brew tap homebrew/core
 brew install kallisto
 ```
 
 Test whether Kallisto is properly installed by typing ```kallisto```, and you should see this output
 
-```
+```shell
 kallisto 0.45.0
 
 Usage: kallisto <CMD> [arguments] ..
@@ -70,7 +71,8 @@ Get reference transcriptome files from [here](http://useast.ensembl.org/info/dat
 Search for your organism, select cDNA, then download the file that ends in “cDNA.all.fa.gz”
 
 Build the index
-```
+
+```shell
 kallisto index -i inputFastaName.index inputFastaName.fasta
 ```
 
@@ -79,12 +81,13 @@ kallisto index -i inputFastaName.index inputFastaName.fasta
 ## align single-end reads
 
 Run the following command for pseudoalignment of single-end reads to index. 
-```
+
+```shell
 kallisto quant -i inputFastaName.index -o sample1_kallisto -b 60 —-single -l 275 -s 30 sample1_read1.fastq.gz
 ```
 Once read mapping is complete, you will see a short report printed to your screen that indicates the number of reads kallisto saw in the fastq file, and the number of these that mapped to the reference.  Often times it is useful to automatically store this information in a log file so that it can be parsed by other programs, such as the incredibly useful [multiQC](http://multiqc.info/).  To do this, simply append the code below at the end of your alignment bit above. The outcome will be the same, but instead of displaying on the screen it will be piped to a log file.
 
-```
+```shell
 &> sample1_kallisto.log
 ```
 
@@ -98,7 +101,8 @@ Once read mapping is complete, you will see a short report printed to your scree
 
 
 ## align paired-end reads
-```
+
+```shell
 kallisto quant -i inputFastaName.index -o sample1_kallisto -b 100 sample1_read1.fastq.gz sample1_read2.fastq.gz
 ```
 
@@ -108,13 +112,15 @@ In some cases, you may want to carry out a stranded alignment with the end goal 
 {% include warning.html content="If you've been using your laptop thus far, now would be a good time to consider finding some more compute resources. Working with .bam files may be too much for your laptop to handle." %}
 
 Stranded alignment using pseudobam. SAM creation is also possible at this step.
-```
+
+```shell
 kallisto quant -i [yourindex] -o [outputname] --fr-stranded -b 60 --pseudobam [input1] [input2] | samtools view -Sb - > [kallisto.fr.bam]
 kallisto quant -i [yourindex] -o [outputname] --rf-stranded -b 60 --pseudobam [input1] [input2] | samtools view -Sb - > [kallisto.rf.bam]
 ```
 
 Sort and index using [samtools](http://samtools.sourceforge.net/)
-```
+
+```shell
 samtools sort -@ 24 [kallisto.fr.bam] [kallisto.fr.sorted]
 samtools sort -@ 24 [kallisto.rf.bam] [kallisto.rf.sorted]
 samtools index [kallisto.fr.sorted.bam]
@@ -122,7 +128,8 @@ samtools index [kallisto.fr.sorted.bam]
 ```
 
 BAM to BigWig conversion using [deeptools](https://deeptools.readthedocs.io/en/latest/)
-```
+
+```shell
 bamCoverage –b [kallisto.fr.sorted.bam] –o [kallisto.fr.sorted.bw] -p max
 bamCoverage –b [kallisto.rf.sorted.bam] –o [kallisto.rf.sorted.bw] -p max
 ```
@@ -133,7 +140,8 @@ Open RStudio and install the [rhdf5 package](http://bioconductor.org/packages/re
 install the [devtools package](https://cran.r-project.org/web/packages/devtools/README.html) (if you don’t already have it)
 
 install the [Sleuth package](https://github.com/pachterlab/sleuth) directly from Lior Pachter's github page using:
-```
+
+```shell
 devtools::install_github("pachterlab/sleuth")
 ```
 

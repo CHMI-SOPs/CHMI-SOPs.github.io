@@ -63,7 +63,7 @@ Once you have finalized this instance, you have effectively rented a computer fr
 
 * Install some software using the Advanced Package Tool (apt), a free program that works with core libraries to handle the installation and removal of software on Debian, Ubuntu and other Linux distributions
 
-```{bash}
+```shell
 # first, update all current packages
 sudo apt-get update
 # now install the R programming language 
@@ -72,20 +72,20 @@ sudo apt-get install r-base
 
 * [Download Sunbeam](https://github.com/eclarke/sunbeam) from github using the code below
 
-```{bash}
+```shell
 cd ~
 git clone -b stable https://github.com/sunbeam-labs/sunbeam sunbeam-stable
 ls
 ```
 * Install Sunbeam
 
-```{bash}
+```shell
 cd sunbeam-stable
 bash install.sh
 ```
 * notice that we got a few warnings at the end of the Sunbeam installation.  Although Conda is now installed on our cloud computer, it has not been added to our PATH. We can do this using the following code:
 
-```{bash}
+```shell
 # first, take a look at what is in your PATH
 echo $PATH
 # now add the location of Conda to your PATH
@@ -97,7 +97,7 @@ echo "export PATH=$PATH:/home/dbeiting/miniconda3/bin" >> ~/.bashrc
 
 * Since Sunbeam was installed as a Conda environment, we have to enter this environment to start using the software
 
-```{bash}
+```shell
 source activate sunbeam
 ```
 This is a command you'll want to remember for future sessions.  Each time you log into your cloud instance, you'll need to activate the pipeline with `source activate sunbeam`.  Upon activation, you should see that your command prompt begins with "(sunbeam)".  Anytime you want to exit out of sunbeam, simply type `source deactivate sunbeam` and hit return.
@@ -109,12 +109,12 @@ This is a command you'll want to remember for future sessions.  Each time you lo
 
 * let's install some additional software in our environment. SRA tools will allow us to easily retrieve raw data from NCBI's [Sequence Read Archive](https://www.ncbi.nlm.nih.gov/sra).  The data is also available on github [here](https://github.com/chvlyl/PLEASE).
 
-```{bash}
+```shell
 conda install -c bioconda sra-tools
 ```
 * For this workshop, we'll use data from a [recent metagenomics study](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4633303/) in Crohn's disease.  This was a large study, but for the purpose of the workshop we'll only fetch data from 7 patients.  Note: contaminating human reads have already been removed from these files.  Let's download these data to our cloud computer using the `fasterq-dump` function from the SRA tools software.
 
-```{bash}
+```shell
 cd ~
 mkdir workshop-data
 cd workshop-data
@@ -129,7 +129,7 @@ fasterq-dump SRR2145498 -e 8
 
 ## Initialize project
 
-```{bash}
+```shell
 cd ~
 mkdir workshop-project
 sunbeam init workshop-project --data_fp workshop-data
@@ -145,7 +145,7 @@ sequence to remove, and a database of bacterial DNA to match against.
 * We'll get the human genome data from UCSC.  Filtering against the entire human
 genome takes too long, so we'll only filter against chromosome 1.
 
-```{bash}
+```shell
 cd ~
 mkdir human
 cd human
@@ -156,14 +156,14 @@ gunzip chr1.fa.gz
 * Sunbeam requires that the host DNA sequence files end in ".fasta", so it can
 find them automatically.  Let's use the `mv` command to rename this file.
 
-```{bash}
+```shell
 mv chr1.fa chr1.fasta
 ```
 
 * The database of bacterial genomes comes pre-built from the homepage of our
 taxonomic assignment software, Kraken.  We'll download that using the `wget` program.
 
-```{bash}
+```shell
 cd ~
 wget https://ccb.jhu.edu/software/kraken/dl/minikraken_20171101_4GB_dustmasked.tgz
 tar xvzf minikraken_20171101_4GB_dustmasked.tgz
@@ -173,7 +173,7 @@ tar xvzf minikraken_20171101_4GB_dustmasked.tgz
 * Now that we have reference databases, we need to add them to our configuration
 file.  We'll use `nano` to open and modify this file directly in our termial
 
-```{bash}
+```shell
 cd ~
 nano workshop-project/sunbeam_config.yml
 ```
@@ -201,7 +201,7 @@ to run the pipeline is in our configuration file, so we'll provide that to
 Sunbeam (`--configfile` argument).  We'll also let Sunbeam know how many CPU
 cores we'd like to use (`--jobs` argument).
 
-```{bash}
+```shell
 cd ~
 sunbeam run --configfile workshop-project/sunbeam_config.yml --jobs 8
 ```
@@ -214,14 +214,14 @@ sunbeam run --configfile workshop-project/sunbeam_config.yml --jobs 8
 
 * Open your QC results and take notice of the number of fwd and rev reads that passed quality filter, as well number of host reads filtered out from each sample.
 
-```{bash}
+```shell
 cd ~/workshop-project/sunbeam_output/qc/reports/
 nano preprocess_summary.tsv
 ```
 
 * Take a look at taxanomic breakdown for one of the samples
 
-```{bash}
+```shell
 cd ~/workshop-project/sunbeam_output/classify/kraken
 nano SRR2145310-taxa.tsv
 ```
@@ -232,7 +232,7 @@ nano SRR2145310-taxa.tsv
 * To look at some of our results, we'll install a Sunbeam extension and generate
 a report.
 
-```{bash}
+```shell
 cd ~/sunbeam-stable/extensions
 git clone https://github.com/sunbeam-labs/sbx_report
 conda install --file sbx_report/requirements.txt
@@ -240,7 +240,7 @@ conda install --file sbx_report/requirements.txt
 
 * Now run the extension you just installed
 
-```{bash}
+```shell
 cd ~
 sunbeam run --configfile workshop-project/sunbeam_config.yml final_report
 ```
