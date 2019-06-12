@@ -58,7 +58,7 @@ Once you have your directory structure set-up, you're ready to begin using some 
 
 {% include important.html content="if you do not have an account on our cluster and would like to get one, please contact Dan Beiting" %}
 
-```
+```bash
 ssh username@130.91.255.137
 ```
 
@@ -68,7 +68,7 @@ ssh username@130.91.255.137
 
 Begin by using [fastqc](https://www.bioinformatics.babraham.ac.uk/projects/download.html) to check the quality of each of your fastq files.  Throughout this protocol, we'll assume you use a directory structure like the one outlined above.  The file paths below reference this directory structure.
 
-```
+```bash
 # navigate to the folder with your raw fastq files
 cd data/raw
 # run fastqc on all files, putting the outputs into the QA/fastqc folder
@@ -83,7 +83,7 @@ fastq_screen uses bowtie2 for aligning reads to the references, so we've provide
 
 We've taken care of configurating fastq_screen so that it knows where to find bowtie2 and where to look for the reference genomes.  This information is pretty clearly outlined in the fastq_screen configuration file found at /usr/local/bin/fastq_screen_v0.12.0/fastq_screen.conf
 
-```
+```bash
 cd data/raw
 fastq_screen --threads 24 --outdir QA/fastq_screen *gz  
 ```
@@ -111,7 +111,7 @@ fastq_screen --threads 24 --outdir QA/fastq_screen *gz
 
 [MultiQC](https://multiqc.info/) is a fantastic piece of software for aggregating and summarizing the outputs from many different kinds of bioinformatics programs in one convenient and interactive html file.  In this case, we'll use it to summarize the output from fastqc.
 
-```
+```bash
 # use the -d command to tell multiqc to look in all folders (data, analysis and qa) to find log files
 cd MIDAS/
 multiqc -d .
