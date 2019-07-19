@@ -365,3 +365,17 @@ This eluate is the *final sequencing-ready library*.
 **Pause Point**: store the libraries at -80C or -20C. They should be stable for at least 1 year.
 
 {% include links.html %}
+
+## Sequencing Guidelines 
+
+* We sequence on a 75 Cycle High Output NextSeq 500 kit. The run cycles are 36 x 50. 
+ 
+ * This library prep kit comes with custom primers for Read 1, Read 2, and Index reads. These are in the library preparation box in the -20C and they are to be spiked into the sequencing cartridge in wells 7, 8, and 9 respectively. 
+ 
+ * Add 6ul of each primer to 1.994mL HT1, each in its own 5mL tube. 
+ 
+ * When ready to spike into wells of sequencing cartridge, add the 2mL mixture to the appropriate well.  (7 = read 1, 8 = read 2 and 9 = index) 
+ 
+ * Ensure custom indexes Read 1, Read 2, and Index are checked off when programming run on Basespace and ensure these boxes are checked off when viewing run parameters on the sequencer. 
+ 
+ {% include note.html content="Spiking custom indexes into wells 7, 8, and 9 will not align any reads to PhiX. We do not spike in any PhiX during these runs. " %}
