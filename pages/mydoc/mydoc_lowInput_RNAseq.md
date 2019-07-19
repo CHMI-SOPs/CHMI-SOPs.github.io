@@ -212,99 +212,138 @@ SMARTScribe Reverse Transcriptase | 2
 
 * Store plate at -20C overnight or until proceeding to Day 2 protocol.
 
-### Modified Nextera XT Library Prep
-
-{% include warning.html content="this is a modified Nextera XT prep. Do not follow the original Nextera XT protocol." %}
+### Nextera XT Library Prep
 
 {% include important.html content="The optimal input for this protocol is 100-300 pg/uL.  The concentration needs to be under 1 ng/uL but we try to keep our samples in the range of 100-300 pg/uL." %}
 
-What you will need: 
-* Tagment DNA Buffer (hereinafter referred to as TD Buffer), -20C
-* Amplification Tagment Mix (hereinafter referred to as ATM), -20C
-* NT Buffer, Room temperature under hood
-* NPM, -20C
-* Appropriate Indexes (each sample needs a unique combination of Index 1 N7xx and Index 2 S5xx, -20C
+{% include important.html content="The following items are included in the Illumina kit" %}
 
-Nextera library prep
+* Tagment DNA buffer (TD) (Stored at -20C)
+* Amplicon Tagmentation Mix (ATM) (-20C)
+* Neutralization buffer (NT) (Room Temperature)
+* Nextera PCR Mix (NPM) (-20C) 
+* Nextera Indexes (i5 and i7) (-20C)
+* Resuspension Buffer (RSB) (-20C)
+* TruSeq Index Plate Fixture (Room Temperature)
 
-* Dilute samples in a new plate labeled as "Diluted for sequencing" with Nuclease free water to be within the range indicated above. 
+{% include important.html content="The following items are NOT included with the Illumina kit and must be purchased separately" %}
 
-* Start a new plate labeled as "Library Prep". 
+* 80% Ethanol, made fresh the same day
+* Magnetic stand
+* AMPureXP beads (Beckman-Coulter)
+* Illumina Index Replacement Caps 
 
-* Add 2.5 uL of TD Buffer to each well. 
+## A few important comments before you start
+* All work before the PCR step should be performed in the pre-PCR designated hood. 
+* The i5 and i7 indexes come as Set A, B, C, or D. On the lid of the Nextera reagents in our -20C freezer, there are images of which primers belong to which set. Using indexes from one kit makes programming the run on Basespace before sequencing a lot easier. 
 
-* Add 1.25 uL of ATM to each well. 
+## Step 1: Quantify DNA
 
-* Add 1.25 uL of diluted sample to appropriate well. Pipette to mix. Seal plate. Spin down plate. 
+Quantify DNA with a Qubit and then dilute each sample to appropriate concentration. Optimal input per Takara is 100-300 pg of input but no more than 1 ng of input should be used. We have successfully made a final library from up to 800 pg of input.
 
-* Place plate on thermal cycler with the following cycle: 
-	55C for 10 min
-	10C hold
 
-* Once the samples reach 10C, immediately add 1.25 uL of NT Buffer to each well. Pipette to mix well to stop reaction. 
+## Step 2: Tagment DNA:
 
-* Seal plate. Centrifuge at 2000g for 5 mins. 
+* Add the following items in the order listed to each well of a new PCR plate. Pipette to mix:
 
-* Add 3.75 uL NPM to each well. 
+* 10 uL Tagment DNA Buffer (TD)
+* 5 uL Normalized gDNA (no more than 1 ng of input)
+* 5 μl Amplicon Tagment Mix (ATM)
+* Pipette to mix. Seal the plate.  The total volume should be 20 uL per well.
 
-* Add 1.25 uL of Index 1 Primers (N7xx) into corresponding wells of each column of the Library Prep plate. These indexes will have an orange cap and will be added to samples in the same column. Each of the wells in column 2 will contain the same Index 1 Primer. Each of the wells in row B will contain different Index 1 Primer. Pipette to mix.
+* Centrifuge the plate at 280 × g at 20°C for 1 minute.
 
-* Add 1.25 uL of Index 2 Primers (N5xx) into corresponding wells of each of the Library Prep plate. These indexes will have a white cap and will be added to samples in the same column. Each of the wells in row B will contain the same Index 2 Primer. Each of the wells in column 2 will contain different Index 2 Primer. Pipette to mix.
+* Place on the preprogrammed thermal cycler and run the tagmentation program.
 
-* Seal plate. Centrifuge at 2000g for 2 min. 
+{% include note.html content="This program is in the NexteraXT folder on our thermocycler and is called 55_ATM and is 5 min at 55C followed by a hold at 10C.  Immediately after the 5 min, 55C step is complete, proceed immediately to the next step."%}
 
-* Place the plate into the thermal cycler with the following cycle to perform PCR amplification. Steps indicated in bold should be carried out for 12 cycles. 
+* Add 5 μl NT to each well. Pipette to mix. This will stop the reaction. 
+
+* Centrifuge at 280 × g at 20°C for 1 minute.
+
+* Incubate at room temperature for 5 minutes.
+
+
+## Step 3: PCR
+
+* Set up the indexes you will be using and arrange them in the TruSeq Index Plate Fixture (see manual for images).
+
+* Using a multichannel pipette, add 5 μl of each Index 1 (i7) adapter down each column.
+
+{% include important.html content="Throw away the cap once you have opened the index tube and replace with a new ORANGE cap." %}
+
+* Using a multichannel pipette, add 5 μl of each Index 2 (i5) adapter across each row.
+
+{% include important.html content="Throw away the cap once you have opened the index tube and replace with a new WHITE cap." %}
+
+* Add 15 μl NPM to each well containing index adapters. Pipette to mix. The total volume is now 50 uL per well.
+
+* Centrifuge at 280 × g at 20°C for 1 minute.
+
+* Place on the preprogrammed thermal cycler and run the "NexteraPCR" program (bold denotes steps to be run for 12 cycles).
 
 | Temp (C) | Time (min:sec) |
-|----------|----------------|
-| 72       | 03:00          |
-| 95       | 00:30          |
-| **95**   | **0:10**       |
-| **55**   | **0:30**       |
-| **72**   | **1:00**       |
-| 72       | 05:00          |
-| 10       | hold           |
+|-------|--------|
+| 72 | 3:00 |
+| 95 | 0:30 |
+| **95** | **0:10** |
+| **55** | **0:30** |
+| **72** | **0:30** |
+| 72 | 5:00 |
+| 10 | hold |
 
-* Amplified products can be stored at -20C long term. You have 12.5 uL of amplified, dual-indexed cDNA.
 
-* We will go through another AMPure XP bead based clean up for these samples and carry this out twice. Make sure your beads are at room temperature for at least 30 mins prior to beginning the following steps. Also take out reagents for Aglient Tapestation High Sensitivity D1000 so it can equilibrate to room temperature. 
+{% include note.html content="This is a safe stopping point.  If you choose to stop here, seal the plate and store at 2°C to 8°C for up to 2 days. Alternatively, leave in the thermal cycler overnight" %}
 
-* You will need 800 uL of 80% ethanol for these two washes and you can make this prior to starting the clean-up. 
 
-* Add 8 uL of AMPure Beads directly to your PCR products.
+## Step 4:  Cleanup
 
-* Incubate at room temperature for 5 minutes to let the cDNA bind to the beads. 
+* Vortex AMPure XP beads before each use.  Vortex AMPure XP beads frequently to make sure that beads are evenly distributed.
 
-* Place samples on magnetic stand for 2 minutes until the bead collects on the side and the supernatant is clear. 
+* Add 30 μl AMPure XP beads to each well.
 
-* Remove and expel supernatant from each well. You should expect around 14 uL of supernatant. The bead contains cDNA, do not disrupt this bead. 
+{% include important.html content="If your starting material is anything other than gDNA, consult the manual. Smaller input DNA lengths may require a different quantity of AMPureXP beads." %}
 
-* Keep the plate on the magnetic stand and add 180 uL of your 80% ethanol mix to each well. Incubate for 30 seconds, then remove ethanol from well without disrupting the bead and expel. 
+* Pipette to mix around 20 times to ensure the beads are mixed well with PCR products.
 
-* Repeat the step above another time. 
+* Incubate at room temperature for 5 minutes.
 
-* Let your samples sit for ~ 1 minute then go back into the wells with a P20 to remove any excess ethanol. 
+* Place on a magnetic stand and wait until the liquid is clear (~2 minutes).
 
-* Incubate samples at room temperature for approximately 2 minutes until pellet is matte. The pellet should not be shiny or that is an indication there is ethanol still in your sample and this will reduce your recovery rate of cDNA. Try to avoid overdrying; if the pellet is cracked it will take a significantly longer time to rehydrate these beads. 
+* Remove and discard all supernatant from each well.
 
-* Once the beads are dry, remove them from the magnetic stand and add 14 uL of resuspension buffer (from Illumina, I have this aliquoted into smaller eppendorf tubes labeled RSB) to your samples and pipette up and down until the beads are completely rehydrated. You will have to pipette up and down many times until the samples has no visible bead clumps in them. 
+* Wash 2 times as follows:
+- Add 180 μl fresh 80% EtOH to each well.
+- Incubate on the magnetic stand for 30 seconds.
+- Remove and discard all supernatant from each well.
+
+* Using a 20 μl pipette, remove residual 80% EtOH from each well.
+
+* Air-dry on the magnetic stand for 15 minutes.
+
+* Remove from the magnetic stand.
+
+* Add 52.5 μl RSB to each well.
+
+* Pipette to mix well.
 
 * Incubate at room temperature for 2 minutes.
 
-* Place stand back on the magnetic stand for around 1 minute or longer until the solution is completely clear.  
+* Place on a magnetic stand and wait until the liquid is clear (~2 minutes).
 
-* Transfer the supernatant into a new well. 
+* Transfer 50 μl supernatant to a new plate.
 
-* Repeat wash steps by adding 8 uL of AMPure XP beads to this and carry through the same steps again. 
+{% include note.html content="The standard Illumina protocol calls for a bead-based normalization step at this point. We typically skip this step and perform the Tapestation and Qubit for normalization calculations. You may decide to use either method." %}
 
-* Check Nextera XT library by Agilent Tapestation using the High Sensitivity D1000 assay. 
+{% include note.html content="This is a safe stopping point.  If you choose to stop here, seal the plate and store at -20°C for up to 7 days." %}
 
-<img src="images/Clontech_Nextera.png"
-     alt="test"
-     style="float: center;" />
 
-* Check concentration by Qubit. 
+## Step 5: Quality Check
 
-Add this information into our [nM conversion calculator](https://docs.google.com/spreadsheets/d/1OfMuBNeNYJg1Umr3Xo58TgpqBmkn6zHcadwph_hyOIc/edit?usp=sharing) and pool accordingly to either 4nM, 2nM, 1nM, or 0.5nM. Do another QC check after pooling. Then proceed to denaturing, diluting and loading library to sequencer. 
+* Use the HS DNA5000 or HS DNA1000 tape and appropriate reagent buffer.  A successful library preparation will have a broad peak with an average size between 400-1000 bp.
+
+* Quantify the sample with the HS DNA Qubit kit.
+
+
 
 {% include links.html %}
