@@ -40,16 +40,17 @@ folder: mydoc
 | Component | Volume | Final Concentration |
 |-------|--------|--------|
 | GoTaq Green Master Mix, 2X | 25 uL | 1X |
-| 27F primer, 10 uM  | 1 uL | 0.2 uM |
-| 1492R primer, 10 uM | 1 uL | 0.2 uM |
-| DNA template | 1-5 uL | ~150 ng template (< 250 ng) |
-| Nuclease-free water to | 50 uL | NA |
+| 27F primer, 100 uM  | 0.2 uL | 0.2 uM |
+| 1492R primer, 100 uM | 0.2 uL | 0.2 uM |
+| DNA template | 5 uL | ~150 ng template (< 250 ng) |
+| Nuclease-free water | 19.6 uL | NA |
+| Total Volume | 50 uL | 
 
-{% include note.html content="If I have many reactions to perform, I make a master mix including all of the components except for the DNA." %}
+{% include note.html content="Make a master mix including all of the components except for the DNA." %}
 
-{% include note.html content="The original IDT stock solutions of the primers are at a concentration of 100 uM." %}
+{% include note.html content="The original IDT stock solutions of the primers are at a concentration of 100 uM. Our primers are at this concentration in the freezer. If your primers are not this concentration, adjust the volume added." %}
 
-* Place in thermocycler and run the following program under CHMI -> PCR -> 16SFULL (bold indicates 30 cycles)
+* Place in thermocycler and run the following program under SANGER folder -> 16SFULL (bold indicates 30 cycles)
 
 | Temp (C) | Time (min:sec) |
 |-------|--------|
@@ -60,17 +61,48 @@ folder: mydoc
 | 72 | 5:00 |
 | 12 | hold |
 
-## Step 3. Clean up the PCR products 
+## Step 3:  Cleanup
 
-* Follow the QIAGEN QIAquick PCR purification protocol. 
+* Vortex AMPure XP beads before each use.  Vortex AMPure XP beads frequently to make sure that beads are evenly distributed.
+
+* Add 50 μl AMPure XP beads to each well.
+
+* Pipette to mix around 15 times to ensure the beads are mixed well with PCR products.
+
+* Incubate at room temperature for 5 minutes.
+
+* Place on a magnetic stand and wait until the liquid is clear (~2 minutes).
+
+* Remove and discard all supernatant from each well.
+
+* Wash 2 times as follows:
+- Add 180 μl fresh 80% EtOH to each well.
+- Incubate on the magnetic stand for 30 seconds.
+- Remove and discard all supernatant from each well.
+
+* Using a 20 μl pipette, remove residual 80% EtOH from each well.
+
+* Air-dry on the magnetic stand for 15 minutes.
+
+* Remove from the magnetic stand.
+
+* Add 52.5 μl RSB to each well.
+
+* Pipette to mix well.
+
+* Incubate at room temperature for 2 minutes.
+
+* Place on a magnetic stand and wait until the liquid is clear (~2 minutes).
+
+* Transfer 50 μl supernatant to a new plate.
+
+{% include note.html content="This is a safe stopping point.  If you choose to stop here, seal the plate and store at -20°C for up to 7 days. Alternatively, leave in the thermal cycler overnight" %}
 
 ## Step 4: QC on purified PCR products
 
 * Perform Qubit quantification on all samples
 
 * Optional: Select a few samples and run an agarose gel or tapestation (DNA 5000 tape) to ensure there is a major product at approximately 1400 bp.
-
-{% include note.html content="There may be other amplification products, but as long as the 1400 bp product is the most dominant, the PCR products do not need to be gel purified." %}
 
 ## Step 5: Submit PCR products for sequencing
 
