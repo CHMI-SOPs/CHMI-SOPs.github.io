@@ -376,6 +376,6 @@ This eluate is the *final sequencing-ready library*.
  
  * When ready to spike into wells of sequencing cartridge, add the 2mL mixture to the appropriate well.  (7 = read 1, 8 = read 2 and 9 = index) 
  
- * Ensure custom indexes Read 1, Read 2, and Index are checked off when programming run on Basespace and ensure these boxes are checked off when viewing run parameters on the sequencer. 
+ * Ensure custom indexes R1, R2, and Index are checked off when programming run on Basespace and ensure these boxes are checked off when viewing run parameters on the sequencer. 
  
  {% include note.html content="Spiking custom indexes into wells 7, 8, and 9 will not align any reads to PhiX. We do not spike in any PhiX during these runs. " %}
