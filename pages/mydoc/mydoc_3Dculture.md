@@ -16,6 +16,28 @@ The protocol below adapted from [this JOVE video](https://www.jove.com/video/336
 2. **Do not use bleach on the STLV machine or parts at any point** Use of bleach may damage the center membrane of the STLV and/or leave residues that affect cell viability.
 3. **Do not use general stock glassware**, even if it has been autoclaved. Use only sterile packaged plasticware.  We have had numerous situations where the general use glassware has residual detergents that affect cell viability.
 
+## Making D10 Media 
+Materials needed:
+* 1000 mL Steriocup
+* Vacuum nozzle 
+* 1 L DMEM
+* Sodium Pyruvate
+* 100 mL FBS or CCS 
+* Broad Spectrum Antibiotic, Pen-Strep 
+* Waste Container
+
+1. Thaw FBS/CCS and antibiotic in water bath, vortex FBS/CCS, spray outside with ethanol and put under hood. 
+2. In a sterile environment under a cell culture hood, open 1L container of DMEM and remove/ discard 100 mL of media.
+3. Add 100 mL of FBS/CCS directly to DMEM container. 
+4. If DMEM **does not** contain sodium pyruvate, add 10 mL of sodium pryvate to DMEM container. 
+5. Add 5 mL of Pen-Strep Antibiotic to DMEM container. 
+6. Open Steriocup packaging and attach the vacuum adapter to the container and to the vacuum nozzle in the wall but do not turn on vacuum yet. 
+7. Pour entire contents of DMEM container onto the filter portion of Steriocup and close with lid. 
+8. Turn on vacuum and wait until all contents have been filtered through to the bottom portion of the container. 
+9. Open the sterile blue lid and close steriocup. 
+10. Label with D10 media on the side of the container and on the lid with the date and your initials. Store in 4C.
+ 
+
 
 ## Materials and supplies
 
