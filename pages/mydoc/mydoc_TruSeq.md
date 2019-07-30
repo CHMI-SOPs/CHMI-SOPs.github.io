@@ -99,6 +99,8 @@ folder: mydoc
 
 {% include tip.html content="For degraded mRNA or mRNA isolated from FFPE samples, you may shorten the fragmentation time. See the Illumina TruSeq instruction manual for suggested times." %}
 
+* If RNA is degraded and you do not want to Fragment, place samples on thermal cycler at 65C for 5 mins, 4C hold. This will elute the mRNA from the beads without degrading the RNA. 
+
 20. Remove the plate once it reaches 4C, centrifuge briefly, and then proceed immediately through the next steps.
 
 21. Remove the adhesive seal and place the plate on a magnetic stand at room temperature for 5 min.
