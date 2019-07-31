@@ -16,6 +16,19 @@ The protocol below adapted from [this JOVE video](https://www.jove.com/video/336
 2. **Do not use bleach on the STLV machine or parts at any point** Use of bleach may damage the center membrane of the STLV and/or leave residues that affect cell viability.
 3. **Do not use general stock glassware**, even if it has been autoclaved. Use only sterile packaged plasticware.  We have had numerous situations where the general use glassware has residual detergents that affect cell viability.
 
+## Materials and supplies
+
+* RCCS4H 3D Cell Culture System from [Synthecon](http://synthecon.com/pages/home.asp).
+* four autoclavable 55 ml slow-turning lateral vessels (STLV)
+* CO2 incubator at 37C.
+* Inverted light microscope.
+* 70% ethanol
+* Sterile water
+* Dulbecco's Phosphate Buffered Saline (DPBS)
+* Heat inactivated Fetal Bovine Serum (HI-FBS)
+* D10 media: DMEM + 10% HI-FBS + 0.05% antibiotic (Pen/Strep)
+* Cytodex 3 microcarrier beads (Sigma, cat# C3275).  
+
 ## Making D10 Media 
 Materials needed:
 * 1000 mL Steriocup
@@ -37,20 +50,22 @@ Materials needed:
 9. Open the sterile blue lid and close steriocup. 
 10. Label with D10 media on the side of the container and on the lid with the date and your initials. Store in 4C.
  
+## Caco-2 cell culture
+* Pull cells from liquid nitrogen storage.  Thaw rapidly in 37C water bath. 
+* transfer thawed contents to a T25 flask with 8-10 ml of prewarmed D10 media.
+* Incubate at 37C and wait for confluent growth.
+* Expand cells to four T75 flasks (see below for how to pass cells in 2D flasks).
+* Keep working cultures of the cells by subculturing them once or twice a week, as needed.
 
-
-## Materials and supplies
-
-* RCCS4H 3D Cell Culture System from [Synthecon](http://synthecon.com/pages/home.asp).
-* four autoclavable 55 ml slow-turning lateral vessels (STLV)
-* CO2 incubator at 37C.
-* Inverted light microscope.
-* 70% ethanol
-* Sterile water
-* Dulbecco's Phosphate Buffered Saline (DPBS)
-* Heat inactivated Fetal Bovine Serum (HI-FBS)
-* D10 media: DMEM + 10% HI-FBS + 0.05% antibiotic (Pen/Strep)
-* Cytodex 3 microcarrier beads (Sigma, cat# C3275).  
+## Passing caco-2 cells
+* Warm 0.25% Trypsin-EDTA and D10 media in water bath. Once pre-warmed, place under hood.
+* Take out flask with confluent cell growth. Remove all d10 media in flask and discard. 
+* Wash flask with 2mL of Trypsin (twice or three times) then discard Trypsin.
+* Add 1.5 mL - 2 mL of Trypsin to each flask with confluent growth. Place flask on side and make sure Trypsin coats the bottom of the flask. 
+* Incubate flask with trypsin at 37C for 5 minutes. 
+* Check flask under microscope to see if cells are floating in suspension or still adhered to the flask. If still adhered, place flask back into the incubator for another 5 minutes then check again. 
+* Wash with 8.5 mL - 8 mL of D10 media. (This final volume should be 10 mL so if you added 2mL of trypsin, add 8mL of D10 media). 
+* Pass small volume of cells into new flask containing pre-warmed D10 media. 
 
 
 ## Preparing the STLVs
@@ -58,50 +73,56 @@ Materials needed:
 * **Day 1**: Get a clean STLV, tighten the central screw and fill the vessel with 70% ethanol. Be careful when closing it. Leave overnight on the bench.
 * **Day 2**: Discard ethanol of the vessel and replace it with sterilized water. Leave overnight on the benchtop.
 * **Day 3**: Discard the contents and replace with another aliquot of sterilized water. Leave it overnight.
-* **Day 4**: Loosen the screws halfway, take out the center port, remove the luer caps and autoclave the open vessel and the center port, inside an autoclave pouch (15 min, gravity cycle, 121C). Remove from autoclave immediately after the cycle is done. Let it cool and use it immediately or store it for later use, as needed in a clean, dry area. 
+* **Day 4**: Loosen the screws halfway, take out the center port, remove the luer caps and autoclave the open vessel and the center port, inside an autoclave pouch (15 min, gravity cycle, 121C). Remove from autoclave immediately after the cycle is done. Let it cool and use it immediately or store it for later use, as needed in a clean, dry area. (The STLV are stored after this step in the box on our bench- they are inside their sterile autoclave bags. If this bag is tampered with or ripped in any way, go back to day 1 and redo all of the above steps before use).
 * **Day before use**: tighten the screw, fill the STLV with sterile DPBS, close the center port. Screw one-way stopcocks to the other two openings and plug one luer-lock syringes (5 and 10ml) in each side. Let it rotate overnight in the STLV, 20 rpm and monitor for leaks. 
 
 ## Preparing culture beads
 
-* Add 250 μl of Cytodex bead solution to a 50 ml conical tube contain 15 ml of DPBS. 
-* Autoclave it in **liquid cycle**, 30 min at 121C.  Keep the cap loose, and keep tube in a beaker or heat resistant rack.
+* Add 250 mg of Cytodex bead solution (measured on scale in weigh boat) to a 50 ml conical tube contain 15 ml of DPBS. 
+* Autoclave it in **liquid cycle**, 30 min at 121C.  Keep the cap loose and fasten with tape, and keep tube in a beaker or heat resistant rack.
 * Allow the the beads to cool and settle. Remove the supernatant and discard.
 * Wash beads with 15 ml of  D10 media.  Agitate manually, let the beads settle and discard supernatant. Repeat 3x. 
 
 {% include note.html content="Sterile beads can be stored at 4C for weeks for later use. Do an extra wash with fresh D10 on the day of experiment and bring the final volume to ~15 ml" %}
 
-## Caco-2 cell culture
-* Pull cells from liquid nitrogen storage.  Thaw rapidly in 37C water bath. 
-* transfer thawed contents to a T25 flask with 8-10 ml of prewarmed D10 media.
-* Incubate at 37C and wait for confluent growth.
-* Expand cells to four T75 flasks. 
-* Keep working cultures of the cells by subculturing them once or twice a week, as needed.
 
 ## Seeding the STLVs
 * Remove STLV that was rotating with DPBS overnight.  Remove the syringes and the luer caps and drain the DPBS. Replace with new stopcocks and syringes (without the plungers; keep them sterile for later use).
-* Trypsinize one T75 flask and respend in 10 ml of DMEM. Each flask is used to seed a single reactor
+* Trypsinize one T75 flask and respend in 10 ml of DMEM. Each flask is used to seed a single reactor but count cells before adding to STLV using hemocytometer, we want ~10 million cells per reactor. 
 * Mix 10 ml bead suspension with cells to give 20 ml of volume. 
 * Transfer the cell-bead suspension carefully to the STLV vessel through the center port. 
 * Recover residual cell-bead mix from tube with D10 media and transfer to the STLV.
-* Close the center port and q.s. volume in STLV vessel to 50 ml with D10 media (until liquid starts overflow back into the syring). 
-* Take out as many as bubbles as you can by carefully tilting the STLV and using the syringe. *Be careful to control pressure to not expel the center port*. 
+* Close the center port and q.s. volume in STLV vessel to 50 ml with D10 media (until liquid starts overflow back into the syringes). 
+* Take out as many as bubbles as you can by adding the sterile plungers you kept in the first step to the open syringes. Carefully tilt the STLV and use the syringes to get any air bubbles that you can see around the edges of the STLV. *Be careful to control pressure to not expel the center port*. 
 * Incubate the STLV for 30 minutes at 37C, 5% CO2 without movement to allow the cells to attach to the beads. 
-* Examine the STLV and remove any remaining air bubbles
+* Examine the STLV and remove any remaining air bubbles.
 * Set STLV to rotate at 20 rpm at 37C, 5% CO2 for 21-28 days, 
 
 ## Feeding the STLV
-* Exchanging the culture medium every other day. 
-* Remove STLV from incubator, remove syringes, let the beads settle
-* Hold the STLV inclined, tapping the center port for the beads to stay in the bottom side of the reactor. Carefully remove ~80% of the spent culture medium through the stopcocks, 
-* Replace the syringe and fill the vessel with fresh D10.  Return the STLV immediately for rotation. 
+* Change the culture medium every other day. 
+* Remove STLV from incubator, remove syringes completely and discard. Let the beads settle at the bottom of the vessel. 
+* Hold the STLV inclined at about a 45 degree angle above a waste bucket and drain out 75% of the old media without allowing the beads to travel with the media. It is very important to keep the vessel still while draining the media because every time the beads are disturbed, you could potentially have them spill out into the waste. If you see beads starting to move toward the opening of the vessel, place the vessel back down on the hood and let them settle at the bottom again.
+* Replace the syringes and fill the vessel with fresh D10 media.  Return the STLV immediately for rotation. 
 
 ## Harvesting cells
-* to monitor cell growth during the culture period, a small volume of bead suspension may be removed via syringe.
+* To monitor cell growth during the culture period, a small volume of bead suspension may be removed via syringe and looked at under the microscope.
 
-{% include important.html content="use a 1 ml cut pippete tip to prevent shear and protect the 3D structures." %}
+{% include important.html content="use a 1 ml cut pippete tip (these are under the hood- already autoclaved) to prevent shearing of cells and protect the 3D structures." %}
 
 * After 3-4 weeks of continuous culture, transfer 3D culture beads to a 50 mL conical tube.
 * adjusted to 15 ml and use as needed for microscopic or RNA Seq experiments.
+
+OR follow the protocol below using Buffer C, B, and A to digest cells off beads 
+* Pour off 75% of old media and discard as done before when feeding vessel. 
+* Add 20 mL of Buffer C to the STLV with syringes on (Buffer C should include DTT at a ratio of 1:100 of DTT:Bufffer)
+* Spin at 20 rpm for 30 mins at 37C. 
+* Take out all of the mixture and transfer to a 50 mL conical tube. 
+* Wash mixture with 10mL of cold Buffer B.
+* Spin 50mL tube at 300xg for 5 minutes. Remove and discard supernatant. 
+* Wash again with 10mL of cold Buffer B. 
+* Spin tube at 300xg for 5 minutes. Remove and discard supernatant. 
+* Resuspend final pellet in Buffer A to have a final volume of ~10mL. If your pellet looks like it is ~2mL, add 8mL of Buffer A for resuspension. 
+* Strain cells over a 100uM filter, then a 70uM filter, followed by a 40uM filter. 
 
 ## STLV clean-up
 
