@@ -111,7 +111,7 @@ folder: mydoc
 
 23. Remove First Strand Synthesis Act D Mix from -20C and thaw at RT. Centrifuge this reagent at 600 x g for 5 sec.
 
-24. Add 50 ul SuperScript II to the First Strand Synthesis Act D Mix well. If you’re not going to use the entire well of mix, then add SuperScript at a ratio of 1 ul SuperScript for every 9 ul of First Strand reagent.  For example, for 12 reactions, mix 90 ul with 10 ul of SS II.  Excess mix can be stored in the -20C freezer.
+24. Add 50 ul SuperScript II to the First Strand Synthesis Act D Mix well. If you’re not going to use the entire well of mix, then add SuperScript at a ratio of 1 ul SuperScript for every 9 ul of First Strand reagent.  For example, for 10 reactions, mix 90 ul with 10 ul of SS II.  Excess mix can be stored in the -20C freezer.
 
 25. Add 8 ul of First Strand SuperScript mix to each well containing the mRNA.
 
