@@ -81,7 +81,7 @@ The protocol below uses the SMART Seq HT kit, however another option for cDNA ge
 
 * Prepare 1x reaction buffer by mixing 9.5 uL nuclease-free water with 1 uL of 10x reaction buffer.  _This is enough to sort one sample_, so be sure to scale up as needed.
 
-* Add 5ul of 1x reaction buffer to collection eppendorf tube and sort directly into this tube.  
+* Add 5ul of 1x reaction buffer to collection eppendorf tube (or one well of a 96-well plate) and sort directly into this tube or well.  
 
 * Immediately after sample is sorted, add an additional 5.5 uL of 1x reaction buffer to tube.
 
