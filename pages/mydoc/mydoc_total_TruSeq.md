@@ -35,7 +35,6 @@ folder: mydoc
 * Magnetic plate for a 96-well tray
 * 96-well trays
 * 80% ethanol (make this fresh the day of use)
-* 70% ethanol (make this fresh the day of use)
 * Superscript II (Invitrogen)
 * RNAClean XP beads (Beckman-Coulter) (bring these to room temperature before use)
 * AMPureXP beads (Beckman-Coulter)
@@ -84,7 +83,7 @@ folder: mydoc
 * incubate at RT for 15 min.
 * Place the plate on the magnetic stand at RT for 5 min.
 * Remove and discard the supernatant.
-* With the plate still on magnet, add 190 ul of fresh 70% EtOH to each well without disturbing the beads.
+* With the plate still on magnet, add 190 ul of fresh 80% EtOH to each well without disturbing the beads.
 
 {% include warning.html content="The TruSeq manual indicates that 200 uL should be used, however, the maximum volume of our 96-well plates is 200 uL, thus we use less so the wells do not overflow." %}
 
@@ -123,8 +122,7 @@ This is a non-enzymatic and uses heat and divalent metal cations (magnesium or z
 
 {% include important.html content="When the first strand synthesis is completed, immediately proceed to the second strand synthesis" %}
 
-* Add 20 uL second strand marking mix and 5 uL resuspension buffer to each well. Pipette up and down 6 times.
-* When not using the in-line control, use 5uL of resuspension buffer to bring the final volume to 50uL. 
+* Add 20 uL second strand marking mix and 5 uL resuspension buffer to each well. Pipette up and down 6 times. 
 * Centrifuge the plate at 600 x g for 30 sec.
 * Place plate in thermocycler and run the ‘2nd strand’ reaction - 16C for 1hr, with the lid set to 30C.
 
