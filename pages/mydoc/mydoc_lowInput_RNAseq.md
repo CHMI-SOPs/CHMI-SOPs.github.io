@@ -54,7 +54,7 @@ The protocol below uses the SMART Seq HT kit, however another option for cDNA ge
 
 * Always use the 100 uM nozzle on the sorter (rather than 70 uM) and sort at low speed (~5-7K events/sec). This will be more gentle on the cells
 
-* Sort into DNA Lo-bind Eppendorf tubes to prevent cells from sticking to side of tube (gives tighter pellets after spin down)
+* Sort into Lo-bind 96-well plates to prevent cells from sticking to sides (Lo-bind gives tighter pellets after spin down)
 
 * Sort into complete media with 50% serum (RPMI with hepes, Pen/Strep, NEAA, L-glut, Na-Pyruvate, 2ME, etc.)
 
@@ -111,14 +111,14 @@ The protocol below uses the SMART Seq HT kit, however another option for cDNA ge
 * If you did option B above, then you will use all of your sample lysate as input.
 
 * In your pre-PCR work station, add 10.5 uL of diluted RNA or cell lysate to each well to bring your input to just under 1ng. If using less than 10.5 uL of RNA, add nuclease-free water to qs to 10.5 uL. Keep plate on ice while working with samples.  
-* Make stock of 10x Lysis Buffer (can be scaled up as needed, we make a stock of this and keep it in our -20C):
+* Make stock of 10x Reaction Buffer (can be scaled up as needed, we make a stock of this and keep it in our -20C):
 
 Kit reagent      | Volume per rxn (uL)
 -----------------|---------------------
 10x Lysis Buffer | 19
 RNase Inhibitor  | 1
 
-* To each well containing 10.5uL of diluted RNA, add 1uL of 10x lysis buffer.  Pipette to mix.
+* To each well containing 10.5uL of diluted RNA, add 1uL of 10x Reaction buffer.  Pipette to mix.
 
 * To each well, add 1 uL of 3' SMART-Seq CDS Primer II A.  Mix gently by pipetting and centrifuge the plate. 
 
