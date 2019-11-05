@@ -11,7 +11,7 @@ folder: mydoc
 # Day 1
 
 ## Documentation
-[TruSeq Stranded mRNA Sample Prep Guide](https://support.illumina.com/content/dam/illumina-support/documents/documentation/chemistry_documentation/samplepreps_truseq/truseqstrandedmrna/truseq-stranded-mrna-sample-prep-guide-15031047-e.pdf). This method makes a cDNA library of the polyadenylated mRNA in your eukaryotic samples of interest.
+[TruSeq Stranded mRNA Sample Prep Guide](https://support.illumina.com/content/dam/illumina-support/documents/documentation/chemistry_documentation/samplepreps_truseq/truseq-stranded-mrna-workflow/truseq-stranded-mrna-workflow-reference-1000000040498-00.pdf). This method makes a cDNA library of the polyadenylated mRNA in your eukaryotic samples of interest.
 
 ## What you'll need for Day 1
 
@@ -141,7 +141,7 @@ folder: mydoc
 
 34. Wash beads on magnet by adding 190 ul of 80% EtOH to each well, without disturbing the beads incubate 30 sec at RT.
 
-35. Remove and discard the supernatant, repeat the wash step and remove the supernatant again. Let the plate stand on the magnet at RT for 15 min to dry.
+35. Remove and discard the supernatant, repeat the wash step and remove the supernatant again. Let the plate stand on the magnet at RT until dry, usually less than 5 minutes. When dry, the beads will appear matte and cracked. Remove plate from magnet when all samples are dry.
 
 {% include important.html content="Use a p10 pipette to remove any residual ethanol from the bottom of the well." %}
 
@@ -210,7 +210,7 @@ folder: mydoc
 
 48. Perform the wash step again.
 
-49. Use a p10 pipette to remove residual ethanol. Leave the plate on the stand to dry for 15 minutes.
+49. Use a p10 pipette to remove residual ethanol. Keep the plate on the magnet at RT until dry, usually less than 5 minutes. When dry, the beads will appear matte and cracked. Remove plate from magnet when all samples are dry.
 
 50. Remove the plate from the magnetic stand and add 52.5 ul of Resuspension Buffer to each well, and mix well by pipetting. Incubate at RT for 2 min
 
@@ -228,7 +228,7 @@ folder: mydoc
 
 57. With the plate on the magnetic stand, wash the beads again with 190 uL of 80% EtOH for 30 s, then remove the ethanol.
 
-58. With the plate on the magnetic stand, use a p10 pipette to remove residual EtOH, then let the plate air dry for 15 min.
+58. Use a p10 pipette to remove residual ethanol. Keep the plate on the magnet at RT until dry, usually less than 5 minutes. When dry, the beads will appear matte and cracked. Remove plate from magnet when all samples are dry.
 
 59. Resuspend beads in 22.5 ul of resuspension Buffer, mix well by pipetting, and incubate 2 min at RT.
 
@@ -252,7 +252,7 @@ folder: mydoc
 
 67. Repeat the ethanol wash step.
 
-68. Remove residual ethanol with a p10 pipette, let the beads air dry for 15 minutes on the magnetic plate.
+68. Use a p10 pipette to remove residual ethanol. Keep the plate on the magnet at RT until dry, usually less than 5 minutes. When dry, the beads will appear matte and cracked. Remove plate from magnet when all samples are dry.
 
 69. Remove the plate from the magnetic stand, add 32.5 ul of resuspension buffer and mix well, by pipetting, and incubate for 2 min at room temperature.
 
