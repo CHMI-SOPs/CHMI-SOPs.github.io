@@ -21,7 +21,7 @@ folder: mydoc
 
 {% include important.html content="The following items are included in the Illumina kit" %}
 
-* RNA purification beads (These are the beads for rRNA depletion) (bring these to room temperature before use)
+* rRNA removal beads (These are the beads for rRNA depletion) (bring these to room temperature before use)
 * rRNA removal mix
 * rRNA binding buffer
 * Elute, Prime, Fragment High mix
@@ -88,7 +88,7 @@ folder: mydoc
 {% include warning.html content="The TruSeq manual indicates that 200 uL should be used, however, the maximum volume of our 96-well plates is 200 uL, thus we use less so the wells do not overflow." %}
 
 * Incubate EtOH wash for 30 sec, then discard the supernatant.
-* let the samples sit on the magnet for 15min to dry. Remove excess EtOH with a p10 pipette.
+* Use a p10 pipette to remove residual ethanol. Keep the plate on the magnet at RT until dry, usually less than 5 minutes. When dry, the beads will appear matte and cracked. Remove plate from magnet when all samples are dry.
 * Remove the plate from the magnet, gently add 11 ul of Elution Buffer to each well. Mix thoroughly by pipetting up and down 10 times. You will have to work to get the dried beads off the side of the well and resuspended in the buffer.
 * Incubate the plate at RT for 2 minutes.
 * Place the sample on the magnet for 2 minutes.
@@ -134,7 +134,8 @@ This is a non-enzymatic and uses heat and divalent metal cations (magnesium or z
 * Place the plate on the magnet and let sit for 5 min.
 * Remove and discard 135 ul per well, being careful not to disturb the beads.
 * Wash beads on magnet by adding 190 ul of 80% EtOH to each well, without disturbing the beads incubate 30 sec at RT.
-* Remove and discard the supernatant, repeat the wash step and remove the supernatant again. Let the plate stand on the magnet at RT for 15 min to dry.
+* Remove and discard the supernatant, repeat the wash step and remove the supernatant again. 
+* Keep the plate on the magnet at RT until dry, usually less than 5 minutes. When dry, the beads will appear matte and cracked. Remove plate from magnet when all samples are dry.
 
 {% include important.html content="Use a p10 pipette to remove any residual ethanol from the bottom of the well." %}
 
@@ -193,7 +194,7 @@ This is a non-enzymatic and uses heat and divalent metal cations (magnesium or z
 * With the plate on the magnetic stand, remove 79.5 ul of supernatant from each sample, being careful not to disturb the beads.
 * With the plate on the magnetic stand, wash with 190 ul 80% EtOH for 30 sec, then remove the ethanol.
 * Perform the wash step again.
-* Use a p10 pipette to remove residual ethanol. Leave the plate on the stand to dry for 15 minutes.
+* Use a p10 pipette to remove residual ethanol. Keep the plate on the magnet at RT until dry, usually less than 5 minutes. When dry, the beads will appear matte and cracked. Remove plate from magnet when all samples are dry.
 * Remove the plate from the magnetic stand and add 52.5 ul of Resuspension Buffer to each well, and mix well by pipetting. Incubate at RT for 2 min
 * Place the plate on magnet for 5 min.
 * Recover 50 ul from each well and transfer to a new plate.
@@ -202,7 +203,7 @@ This is a non-enzymatic and uses heat and divalent metal cations (magnesium or z
 * With the plate on the magnetic stand, remove and discard 95 ul of supernatant from each sample.
 * With the plate on the magnetic stand, wash the beads with 190 ul of 80% EtOH for 30 s, then remove the ethanol.
 * With the plate on the magnetic stand, wash the beads again with 190 uL of 80% EtOH for 30 s, then remove the ethanol.
-* With the plate on the magnetic stand, use a p10 pipette to remove residual EtOH, then let the plate air dry for 15 min.
+* Use a p10 pipette to remove residual ethanol. Keep the plate on the magnet at RT until dry, usually less than 5 minutes. When dry, the beads will appear matte and cracked. Remove plate from magnet when all samples are dry.
 * Resuspend beads in 22.5 ul of resuspension Buffer, mix well by pipetting, and incubate 2 min at RT.
 * Transfer the plate to the magnetic stand and incubate for 5 min.
 * Recover 20 ul from each well and transfer to a new plate.
@@ -218,7 +219,7 @@ This is a non-enzymatic and uses heat and divalent metal cations (magnesium or z
 * Remove and discard 95 ul of supernatant from each well.
 * Wash the beads 190 ul/well of 80% EtOH, wait 30s, remove the supernatant.
 * Repeat the ethanol wash step.
-* Remove residual ethanol with a p10 pipette, let the beads air dry for 15 minutes on the magnetic plate.
+* Use a p10 pipette to remove residual ethanol. Keep the plate on the magnet at RT until dry, usually less than 5 minutes. When dry, the beads will appear matte and cracked. Remove plate from magnet when all samples are dry.
 * Remove the plate from the magnetic stand, add 32.5 ul of resuspension buffer and mix well, by pipetting, and incubate for 2 min at room temperature.
 * Place the plate back on the magnetic stand for 5 minutes.
 * Remove 30 uL of supernatant from each sample and move it into a new plate. This is the final cDNA product.
