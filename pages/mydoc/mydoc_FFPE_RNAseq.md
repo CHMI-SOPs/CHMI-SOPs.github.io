@@ -277,7 +277,7 @@ R-Probes v2, heated | 1.5
 ## PCR2- Final RNA-Seq Library Amplification 
 In this section, the library fragments not cleaved by the ZapR reaction will be further enriched in a second round of PCR. Illumina barcodes have already been added to the libraries so this step includes a single pair of primers that are used for all libraries. 
 
-1. Prepare a PCR2 Master Mix for all reactions plus 10% by combining the ollowing reagents in the order shown below, vortex, then spin down:
+1. Prepare a PCR2 Master Mix for all reactions plus 10% by combining the following reagents in the order shown below, vortex, then spin down:
 
 Kit reagent | Volume per rxn (uL)
 -----------------------|---------------------
@@ -316,7 +316,7 @@ SeqAmp DNA Polymerase | 2.0
 {% include important.html content="Safe stopping point, samples can be left overnight at 4C. If not processed within the next day, freeze the PCR prodcuts at -20C for up to 2 weeks." %}
 
 ## Purification of Final RNA-Seq Library Using AMPure Beads 
-{% include important.html content="Move samples to a 96 well plate before beginning this step. We do not have a magnetic stand that holds PCR strip tubes." %}
+{% include important.html content="Move samples to a 96 well plate before beginning this step. We do not have a magnetic stand that holds PCR strip tubes. You may recombine your split samples from the previous step here, or keep them split and do the bead cleanup separately on each." %}
 
 1. Allow AMPure XP beads to come to room temperature for about 30 minutes before use. Vortex beads for 2 minutes to mix well. Make sure samples are in a 96 well plate that will fit on our magnetic stand. Prepare fresh 80% ethanol, you will about 400 uL per sample. 
 
@@ -328,7 +328,7 @@ SeqAmp DNA Polymerase | 2.0
 
 5. While samples are on magnetic stand, remove and discard supernatant. Do not disrupt beads. 
 
-6. Keeping samples on magnetic stand, add 180 uL of freshly made 80% ethanol to each sample without disturbing beads. Wait 30 seconds and carefully pipette out and discard supernatant. cDNA will remain bound to beads during the washing process. 
+6. Keeping samples on magnetic stand, add 180 uL (use 180 uL per well regardless of whether samples were split) of freshly made 80% ethanol to each sample without disturbing beads. Wait 30 seconds and carefully pipette out and discard supernatant. cDNA will remain bound to beads during the washing process. 
 
 7. Repeat wash step above 1 more time. 
 
@@ -336,13 +336,13 @@ SeqAmp DNA Polymerase | 2.0
 
 9. Air dry samples on magnetic stand for 3-5 minutes at room temperature until pellets appear dry and matte. Once you start to see pellets crack, take off magnetic stand to ensure you do not overdry your samples. 
 
-10. Once beads are dry, remove from magentic stand and add 20 uL of **Tris Buffer** to cover beads, pipette to mix thoroughly until the beads are resuspended. 
+10. Once beads are dry, remove from magentic stand and add 20 uL (10uL per well if samples still split) of **Tris Buffer** to cover beads, pipette to mix thoroughly until the beads are resuspended. 
 
 11. Incubate at room temperature for 5 minutes. 
 
 12. Place plate back on magnetic stand for 1 minute or longer until the supernatant is clear. 
 
-13. Pipette 18 uL of supernatant to LoBind Tubes. This is the final product. 
+13. Pipette 18 uL (9 uL per well if samples still split) supernatant to LoBind Tubes. This is the final product. If samples were split, recombine supernatant from both halves into a single tube with 18uL total.
 
 ## Quality Check of Final Product
 
