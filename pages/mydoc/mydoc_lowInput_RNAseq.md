@@ -319,9 +319,9 @@ Quantify DNA with a Qubit and then dilute each sample to appropriate concentrati
 
 * Using a 20 μl pipette, remove residual 80% EtOH from each well.
 
-* Air-dry on the magnetic stand for 15 minutes.
+* Let sit on the magnetic stand until beads are dry, usually less than 5 minutes. When dry, beads will appear matte and cracked.
 
-* Remove from the magnetic stand.
+* Remove from the magnetic stand when all beads are dry.
 
 * Add 52.5 μl RSB to each well.
 
