@@ -35,6 +35,7 @@ The protocol below uses the SMARTer Stranded Total RNA-Seq Kit, however another 
 * Control Total RNA (1 ug/uL)
 
 Not included in kit:
+* [Eppendorf LoBind 96-well plates](https://www.fishersci.com/shop/products/eppendorf-twin-tec-96-lobind-pcr-plates-1/e0030129504#?keyword=lobind+96+well+plates)
 * [Eppendorf LoBind DNA tubes](https://online-shop.eppendorf.us/US-en/Laboratory-Consumables-44512/Tubes-44515/DNA-LoBind-Tubes-PF-56252.html)
 * AMPure XP Beads (4C)
 
