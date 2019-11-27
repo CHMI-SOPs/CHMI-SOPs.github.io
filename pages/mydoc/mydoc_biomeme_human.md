@@ -12,7 +12,7 @@ folder: mydoc
 * [Biomeme M1 bulk sample prep kit for RNA](http://CHMI-sops.github.io/papers/Biomeme_M1kit_RNA.pdf)
 * [Biomeme lyoRNA mastermix](http://CHMI-sops.github.io/papers/LyoRNA.pdf)
 * [Biomeme homogenization sample collection kit](http://CHMI-sops.github.io/papers/Biomeme_homogenizationKit.pdf)
-* Biomeme skin swabs (4 swabs per patient)
+* [Biomeme swab collection pack](https://shop.biomeme.com/products/swab-sample-collection-pack-100-qty?variant=653687062540)
 * well calibrated pipettors
 * pipette tips for low vol (2-3ul), and standard volumes (~10-20ul, ~100ul, ~1ml)
 * DNA loBind Eptubes
