@@ -20,13 +20,6 @@ folder: mydoc
 * QIAGEN QIAquick PCR purification kit
 * 100% Ethanol
 
-## Step 1: Obtain genomic DNA
-
-* Extract DNA using QIAGEN DNeasy kit (bacterial protocol) or other method of bacterial DNA extraction.
-* Quantify DNA using the Qubit.
-
-## Step 2: PCR Amplify the full-length 16S rRNA gene
-
 * PCR Primers are as follows:
 
 | name | Sequence (5' -> 3') |
@@ -35,20 +28,30 @@ folder: mydoc
 | 515fwd | GTG CCA GCM GCC GCG GTA A |
 | 1492rev | CGG TTA CCT TGT TAC GAC TT |
 
-* Prepare the following reaction mixture in each PCR well/tube
+## Step 1: Obtain genomic DNA
+
+* Extract DNA using QIAGEN DNeasy kit (bacterial protocol) or other method of bacterial DNA extraction.
+* Quantify DNA using the Qubit.
+
+## Step 2: PCR Amplify the full-length 16S rRNA gene
+
+* Prepare the following, per sample, as a master mix:
 
 | Component | Volume | Final Concentration |
 |-------|--------|--------|
 | GoTaq Green Master Mix, 2X | 25 uL | 1X |
 | 27F primer, 100 uM  | 0.2 uL | 0.2 uM |
 | 1492R primer, 100 uM | 0.2 uL | 0.2 uM |
-| DNA template | 5 uL | ~150 ng template (< 250 ng) |
 | Nuclease-free water | 19.6 uL | NA |
-| Total Volume | 50 uL | 
+| Total Volume | 45 uL | 
 
 {% include note.html content="Make a master mix including all of the components except for the DNA." %}
 
 {% include note.html content="The original IDT stock solutions of the primers are at a concentration of 100 uM. Our primers are at this concentration in the freezer. If your primers are not this concentration, adjust the volume added." %}
+
+* In a 96-well plate, pipette 45uL of prepared master mix per sample.
+
+* Add 5uL of extracted DNA template (~150 ng template (< 250 ng)) and pipette to mix. Each sample will have a total volume of 50uL.
 
 * Place in thermocycler and run the following program under SANGER folder -> 16SFULL (bold indicates 30 cycles)
 
@@ -65,7 +68,7 @@ folder: mydoc
 
 * Vortex AMPure XP beads before each use.  Vortex AMPure XP beads frequently to make sure that beads are evenly distributed.
 
-* Add 50 μl AMPure XP beads to each well.
+* Add 50 μl of AMPure XP beads to each well.
 
 * Pipette to mix around 15 times to ensure the beads are mixed well with PCR products.
 
@@ -75,20 +78,20 @@ folder: mydoc
 
 * Remove and discard all supernatant from each well.
 
-* Wash 2 times as follows:
+* Keeping the samples on the magnetic stand, wash 2 times as follows:
 - Add 180 μl fresh 80% EtOH to each well.
 - Incubate on the magnetic stand for 30 seconds.
 - Remove and discard all supernatant from each well.
 
 * Using a 20 μl pipette, remove residual 80% EtOH from each well.
 
-* Air-dry on the magnetic stand for 15 minutes.
+* Let the plate stand on the magnet at RT until dry, usually less than 5 minutes. When dry, the beads will appear matte and cracked. 
 
-* Remove from the magnetic stand.
+* Remove from the magnetic stand when samples are dry.
 
 * Add 52.5 μl RSB to each well.
 
-* Pipette to mix well.
+* Pipette to mix well and resuspend beads.
 
 * Incubate at room temperature for 2 minutes.
 
