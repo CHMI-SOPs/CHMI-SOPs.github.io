@@ -79,9 +79,9 @@ folder: mydoc
 * Remove and discard all supernatant from each well.
 
 * Keeping the samples on the magnetic stand, wash 2 times as follows:
-- Add 180 μl fresh 80% EtOH to each well.
-- Incubate on the magnetic stand for 30 seconds.
-- Remove and discard all supernatant from each well.
+	- Add 180 μl fresh 80% EtOH to each well.
+	- Incubate on the magnetic stand for 30 seconds.
+	- Remove and discard all supernatant from each well.
 
 * Using a 20 μl pipette, remove residual 80% EtOH from each well.
 
