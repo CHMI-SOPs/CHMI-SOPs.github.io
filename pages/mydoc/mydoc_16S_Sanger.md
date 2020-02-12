@@ -9,7 +9,7 @@ folder: mydoc
 ---
 
 ## Before starting
-* The protocol uses three primers (two forward and one reverse) to generate amplicons for Sanger sequencing.  Combining the seqeunce data for the three amplicons generates a contiguous sequence that spans that majority of the full 16S rRNA gene, therby giving you a decent idea of bacterial identity.  PCR reactions use the [GoTaq Master Mix](https://www.promega.com/-/media/files/resources/protocols/product-information-sheets/g/gotaq-green-master-mix-protocol.pdf)
+* The protocol uses three primers (two forward and one reverse) to generate amplicons for Sanger sequencing.  Combining the seqeunce data for the three amplicons generates a contiguous sequence that spans that majority of the full 16S rRNA gene, therby giving you a decent idea of bacterial identity. PCR reactions use the [GoTaq Master Mix](https://www.promega.com/-/media/files/resources/protocols/product-information-sheets/g/gotaq-green-master-mix-protocol.pdf)
 
 * PCR Primers are as follows:
 
@@ -25,7 +25,7 @@ folder: mydoc
 * 27F Primer
 * 1492R primer
 * 515F primer
-* QIAGEN QIAquick PCR purification kit
+* Ampure XP Beads (remove from fridge and acclimate at room temp for 30 min before use)
 * 100% Ethanol
 
 ## Step 1: Obtain genomic DNA
