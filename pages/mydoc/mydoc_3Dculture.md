@@ -87,22 +87,24 @@ Materials needed:
 
 
 ## Seeding the STLVs
-* Remove STLV that was rotating with DPBS overnight.  Remove the syringes and the luer caps and drain the DPBS. Replace with new stopcocks and syringes (without the plungers; keep them sterile for later use).
-* Trypsinize one T75 flask and respend in 10 ml of DMEM. Each flask is used to seed a single reactor but count cells before adding to STLV using hemocytometer, we want ~10 million cells per reactor. 
+* Remove STLV that was rotating with DPBS overnight. Remove the syringes and the stockcocks and drain the DPBS. Replace with new stopcocks and syringes (without the plungers; keep them sterile for later use).
+* Trypsinize one T75 flask and resuspend in 10 ml of DMEM. Each flask is used to seed a single reactor but count cells before adding to STLV using hemocytometer, we want ~10 million cells per reactor. 
 * Mix 10 ml bead suspension with cells to give 20 ml of volume. 
 * Transfer the cell-bead suspension carefully to the STLV vessel through the center port. 
 * Recover residual cell-bead mix from tube with D10 media and transfer to the STLV.
-* Close the center port and q.s. volume in STLV vessel to 50 ml with D10 media (until liquid starts overflow back into the syringes). 
-* Take out as many as bubbles as you can by adding the sterile plungers you kept in the first step to the open syringes. Carefully tilt the STLV and use the syringes to get any air bubbles that you can see around the edges of the STLV. *Be careful to control pressure to not expel the center port*. 
+* Close the center port and q.s. volume in STLV vessel to 50 ml with D10 media through the syringes (until liquid starts overflow back each syringe about halfway). 
+* Remove large bubbles by carefully tilting the vessel and gently tapping the side. If cells or beads are disturbed, rest the vessel upright to allow them to settle before continuing. 
+* Add the sterile plungers you kept in the first step to the open syringes. To remove the remaining bubbles, carefully tilt the STLV and use the syringes to get any air bubbles that you can see around the edges of the STLV. Position the bubble under one syringe and compress the other to expel the bubble. *Be careful to control pressure to not expel the center port*. Gently tap the side of the vessel to move stubborn bubbles. 
+* Close stopcocks.
 * Incubate the STLV for 30 minutes at 37C, 5% CO2 without movement to allow the cells to attach to the beads. 
 * Examine the STLV and remove any remaining air bubbles.
-* Set STLV to rotate at 20 rpm at 37C, 5% CO2 for 21-28 days, 
+* Set STLV to rotate at 20 rpm at 37C, 5% CO2 for 21-28 days.
 
 ## Feeding the STLV
 * Change the culture medium every other day. 
-* Remove STLV from incubator, remove syringes completely and discard. Let the beads settle at the bottom of the vessel. 
-* Hold the STLV inclined at about a 45 degree angle above a waste bucket and drain out 75% of the old media without allowing the beads to travel with the media. It is very important to keep the vessel still while draining the media because every time the beads are disturbed, you could potentially have them spill out into the waste. If you see beads starting to move toward the opening of the vessel, place the vessel back down on the hood and let them settle at the bottom again.
-* Replace the syringes and fill the vessel with fresh D10 media.  Return the STLV immediately for rotation. 
+* Remove the STLV from incubator. Let the beads settle at the bottom of the vessel. While holding the STLV at a 45 degree angle over a waste container, carefully remove both syringes and discard.
+* Keeping the STLV inclined at a 45 degree angle over a waste container, drain out 50-75% of the old media without allowing the beads to travel with the media. It is very important to keep the vessel still while draining the media because every time the beads are disturbed, you could potentially have them spill out into the waste. If you see beads starting to move toward the opening of the vessel, place the vessel back down on the hood and let them settle at the bottom again.
+* Replace the syringes and fill the vessel with fresh D10 media. Return the STLV immediately to the incubator for rotation. 
 
 ## Harvesting cells
 * To monitor cell growth during the culture period, a small volume of bead suspension may be removed via syringe and looked at under the microscope.
