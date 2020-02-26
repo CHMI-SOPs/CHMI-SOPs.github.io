@@ -53,7 +53,7 @@ Materials needed:
 ## Caco-2 cell culture
 * Prepare a T25 flask with 8mL prewarmed D10 media and place in 37C incubator to equilibrate.
 * Pull cells from liquid nitrogen storage. Thaw rapidly in 37C water bath. 
-* With a 2mL serological pipette, transfer thawed contents (~1mL) to the prepared T25. There is no need to spin down/aspirate.
+* With a 2mL serological pipette, transfer thawed contents (~1mL) to the prepared T25. Pipette up and down to ensure all contents are transferred. There is no need to spin down/aspirate.
 * Incubate flask at 37C and wait for confluent growth.
 * Expand cells to four T75 flasks (see below for how to pass cells in 2D flasks).
 * Keep working cultures of the cells by subculturing them once or twice a week, as needed.
@@ -62,7 +62,7 @@ Materials needed:
 * Warm 0.25% Trypsin-EDTA and D10 media in 37C water bath. Once pre-warmed, place under hood.
 * Take out flask with confluent cell growth. Remove all D10 media in flask and discard. 
 * Wash flask with Trypsin (2mL for T25 and 5mL for T75) 2-3 times then discard Trypsin.
-* Add Trypsin to each flask (0.5mL for T25 and 1.5mL for T75). Place flask on side and make sure Trypsin coats the bottom of the flask. 
+* Add Trypsin to flask (0.5mL for T25 and 1.5mL for T75). Place flask on side and make sure Trypsin coats the bottom of the flask. 
 * Incubate flask with trypsin at 37C for 5 minutes. 
 * Check flask under microscope to see if cells are floating in suspension or still adhered to the flask. If still adhered, place flask back into the incubator for another 5 minutes then check again. 
 * Resuspend with 8.5 mL of D10 media.
