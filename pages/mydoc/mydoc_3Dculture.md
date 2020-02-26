@@ -51,21 +51,22 @@ Materials needed:
 10. Label with D10 media on the side of the container and on the lid with the date and your initials. Store in 4C.
  
 ## Caco-2 cell culture
-* Pull cells from liquid nitrogen storage.  Thaw rapidly in 37C water bath. 
-* transfer thawed contents to a T25 flask with 8-10 ml of prewarmed D10 media.
-* Incubate at 37C and wait for confluent growth.
+* Prepare a T25 flask with 8mL prewarmed D10 media and place in 37C incubator to equilibrate.
+* Pull cells from liquid nitrogen storage. Thaw rapidly in 37C water bath. 
+* With a 2mL serological pipette, transfer thawed contents (~1mL) to the prepared T25. There is no need to spin down/aspirate.
+* Incubate flask at 37C and wait for confluent growth.
 * Expand cells to four T75 flasks (see below for how to pass cells in 2D flasks).
 * Keep working cultures of the cells by subculturing them once or twice a week, as needed.
 
 ## Passing caco-2 cells
-* Warm 0.25% Trypsin-EDTA and D10 media in water bath. Once pre-warmed, place under hood.
-* Take out flask with confluent cell growth. Remove all d10 media in flask and discard. 
-* Wash flask with 2mL of Trypsin (twice or three times) then discard Trypsin.
-* Add 1.5 mL - 2 mL of Trypsin to each flask with confluent growth. Place flask on side and make sure Trypsin coats the bottom of the flask. 
+* Warm 0.25% Trypsin-EDTA and D10 media in 37C water bath. Once pre-warmed, place under hood.
+* Take out flask with confluent cell growth. Remove all D10 media in flask and discard. 
+* Wash flask with Trypsin (2mL for T25 and 5mL for T75) 2-3 times then discard Trypsin.
+* Add Trypsin to each flask (0.5mL for T25 and 1.5mL for T75). Place flask on side and make sure Trypsin coats the bottom of the flask. 
 * Incubate flask with trypsin at 37C for 5 minutes. 
 * Check flask under microscope to see if cells are floating in suspension or still adhered to the flask. If still adhered, place flask back into the incubator for another 5 minutes then check again. 
-* Wash with 8.5 mL - 8 mL of D10 media. (This final volume should be 10 mL so if you added 2mL of trypsin, add 8mL of D10 media). 
-* Pass small volume of cells into new flask containing pre-warmed D10 media. 
+* Resuspend with 8.5 mL of D10 media.
+* Pass 2mL of resuspension into each of 5 T75 flasks with 23mL of prewarmed media.
 
 
 ## Preparing the STLVs
