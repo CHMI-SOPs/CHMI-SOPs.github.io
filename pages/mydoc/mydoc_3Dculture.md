@@ -26,7 +26,7 @@ The protocol below adapted from [this JOVE video](https://www.jove.com/video/336
 * Sterile water
 * Dulbecco's Phosphate Buffered Saline (DPBS)
 * Heat inactivated Fetal Bovine Serum (HI-FBS)
-* D10 media: DMEM + 10% HI-FBS + 0.05% antibiotic (Pen/Strep)
+* D10 media: DMEM + 15% HI-FBS + 0.05% antibiotic (Pen/Strep)
 * Cytodex 3 microcarrier beads (Sigma, cat# C3275).  
 
 ## Making D10 Media 
@@ -40,8 +40,8 @@ Materials needed:
 * Waste Container
 
 1. Thaw FBS/CCS and antibiotic in water bath, vortex FBS/CCS, spray outside with ethanol and put under hood. 
-2. In a sterile environment under a cell culture hood, open 1L container of DMEM and remove/ discard 100 mL of media.
-3. Add 100 mL of FBS/CCS directly to DMEM container. 
+2. In a sterile environment under a cell culture hood, open 1L container of DMEM and remove/ discard 150 mL of media.
+3. Add 150 mL of FBS/CCS directly to DMEM container. 
 4. If DMEM **does not** contain sodium pyruvate, add 10 mL of sodium pryvate to DMEM container. 
 5. Add 5 mL of Pen-Strep Antibiotic to DMEM container. 
 6. Open Steriocup packaging and attach the vacuum adapter to the container and to the vacuum nozzle in the wall but do not turn on vacuum yet. 
