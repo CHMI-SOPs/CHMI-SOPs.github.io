@@ -62,3 +62,7 @@ This protocol involves the use of the Leica SP5FLIM inverted microscope at PennV
 ## Preparing for confocal microscopy
 
 * Using a truncated pipette tip, carefully transfer 1-2 drops of the stained beads to a Cell Imaging Dish and add 1-2 drops of the Vectashield® antifade mounting medium and take it for microscopic observation.  Protect from light (cover with alumnium foil) and heat (keep it on ice).
+
+## 2D cultures
+
+* If fixing/staining of 2D cultures is also needed.  Cells should be grown on Cell Imaging Dishes, and fixed/stained in the same manner as 3D cultures above.
