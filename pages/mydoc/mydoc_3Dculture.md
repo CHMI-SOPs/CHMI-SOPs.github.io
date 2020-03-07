@@ -22,7 +22,7 @@ The protocol below adapted from [this JOVE video](https://www.jove.com/video/336
 * four autoclavable 55 ml slow-turning lateral vessels (STLV)
 * CO2 incubator at 37C.
 * Inverted light microscope.
-* 70% ethanol
+* 70% ethanol (in spray bottle) and 100% ethanol
 * Sterile water
 * Dulbecco's Phosphate Buffered Saline (DPBS)
 * Heat inactivated Fetal Bovine Serum (HI-FBS)
@@ -31,38 +31,42 @@ The protocol below adapted from [this JOVE video](https://www.jove.com/video/336
 
 ## Making D10 Media 
 Materials needed:
-* 1000 mL Steriocup
+* 1000 mL SterioCup
 * Vacuum nozzle 
 * 1 L DMEM
 * Sodium Pyruvate
-* 100 mL FBS or CCS 
+* 100 mL fetal bovine serum (FBS)
 * Broad Spectrum Antibiotic, Pen-Strep 
 * Waste Container
 
-1. Thaw FBS/CCS and antibiotic in water bath, vortex FBS/CCS, spray outside with ethanol and put under hood. 
-2. In a sterile environment under a cell culture hood, open 1L container of DMEM and remove/ discard 150 mL of media.
-3. Add 150 mL of FBS/CCS directly to DMEM container. 
+1. Thaw 150ml fetal bovine serum (FBS) and antibiotic in water bath, spray down outside outside of tubes thoroughly with 70% ethanol and put under hood. 
+2. In a sterile environment under a cell culture hood, open 1L container of DMEM and remove/discard 150 mL of media.
+3. Add 150 mL of FBS directly to DMEM container. 
 4. If DMEM **does not** contain sodium pyruvate, add 10 mL of sodium pryvate to DMEM container. 
-5. Add 5 mL of Pen-Strep Antibiotic to DMEM container. 
+5. Add 5 mL of Pen-Strep Antibiotic to DMEM. 
 6. Open Steriocup packaging and attach the vacuum adapter to the container and to the vacuum nozzle in the wall but do not turn on vacuum yet. 
 7. Pour entire contents of DMEM container onto the filter portion of Steriocup and close with lid. 
 8. Turn on vacuum and wait until all contents have been filtered through to the bottom portion of the container. 
 9. Open the sterile blue lid and close steriocup. 
 10. Label with D10 media on the side of the container and on the lid with the date and your initials. Store in 4C.
+
+{% include important.html content="Each person should have their own media.  Do not share media with others or you increase changes of contamination." %}
  
 ## Caco-2 cell culture
 * Prepare a T25 flask with 8mL prewarmed D10 media and place in 37C incubator to equilibrate.
 * Pull cells from liquid nitrogen storage. Thaw rapidly in 37C water bath. 
+* Spray thawed vial generously with 70% ethanol
 * With a 2mL serological pipette, transfer thawed contents (~1mL) to the prepared T25. Pipette up and down to ensure all contents are transferred. There is no need to spin down/aspirate.
-* Incubate flask at 37C and wait for confluent growth.
-* Expand cells to four T75 flasks (see below for how to pass cells in 2D flasks).
+* Incubate flask at 37C and wait for confluent growth (usually 3-5 days).
+* Expand confluent T25 to one T75 flasks (see below for how to pass cells in flasks).
 * Keep working cultures of the cells by subculturing them once or twice a week, as needed.
+* Flasks should be labeled with your name or initials, date of passage, cell line, and passage number.
 
 ## Passing caco-2 cells
 * Warm 0.25% Trypsin-EDTA and D10 media in 37C water bath. Once pre-warmed, place under hood.
 * Take out flask with confluent cell growth. Remove all D10 media in flask and discard. 
-* Wash flask with Trypsin (2mL for T25 and 5mL for T75) 2-3 times then discard Trypsin.
-* Add Trypsin to flask (0.5mL for T25 and 1.5mL for T75). Place flask on side and make sure Trypsin coats the bottom of the flask. 
+* Wash flask with Trypsin (2mL for T25 and 5mL for T75) then immediately remove the trypsin wash and discard.
+* Add fresh, warm 0.25% trypsin to washed flask (0.5mL for T25 and 1.5mL for T75). Tip flask side to side and make sure trypsin coats the bottom of the flask. 
 * Incubate flask with trypsin at 37C for 5 minutes. 
 * Check flask under microscope to see if cells are floating in suspension or still adhered to the flask. If still adhered, place flask back into the incubator for another 5 minutes then check again. 
 * Resuspend with 8.5 mL of D10 media.
@@ -71,10 +75,9 @@ Materials needed:
 
 ## Preparing the STLVs
 
-* **Day 1**: Get a clean STLV, tighten the central screw and fill the vessel with 70% ethanol. Be careful when closing it. Leave overnight on the bench.
-* **Day 2**: Discard ethanol of the vessel and replace it with sterilized water. Leave overnight on the benchtop.
-* **Day 3**: Discard the contents and replace with another aliquot of sterilized water. Leave it overnight.
-* **Day 4**: Loosen the screws halfway, take out the center port, remove the luer caps and autoclave the open vessel and the center port, inside an autoclave pouch (15 min, gravity cycle, 121C). Remove from autoclave immediately after the cycle is done. Let it cool and use it immediately or store it for later use, as needed in a clean, dry area. (The STLV are stored after this step in the box on our bench- they are inside their sterile autoclave bags. If this bag is tampered with or ripped in any way, go back to day 1 and redo all of the above steps before use).
+* **Day 1**: Get a clean STLV, tighten the central screw and fill the vessel with 100% ethanol. Be careful when closing it. Leave overnight on the bench.
+* **Day 2**: Discard ethanol of the vessel and wash 3x with sterile water. Fill with sterile water, recap and leave overnight
+* **Day 3**: Loosen the screws halfway, take out the center port, remove the luer caps and autoclave the open vessel and the center port, inside an autoclave pouch (15 min, gravity cycle, 121C). Remove from autoclave immediately after the cycle is done. Let it cool and use it immediately or store it for later use, as needed in a clean, dry area. (The STLV are stored after this step in the box on our bench- they are inside their sterile autoclave bags. If this bag is tampered with or ripped in any way, go back to day 1 and redo all of the above steps before use).
 * **Day before use**: tighten the screw, fill the STLV with sterile DPBS, close the center port. Screw one-way stopcocks to the other two openings and plug one luer-lock syringes (5 and 10ml) in each side. Let it rotate overnight in the STLV, 20 rpm and monitor for leaks. 
 
 ## Preparing culture beads
@@ -89,8 +92,9 @@ Materials needed:
 
 ## Seeding the STLVs
 * Remove STLV that was rotating with DPBS overnight. Remove the syringes and the stockcocks and drain the DPBS. Replace with new stopcocks and syringes (without the plungers; keep them sterile for later use).
-* Trypsinize one T75 flask and resuspend in 10 ml of DMEM. Each flask is used to seed a single reactor but count cells before adding to STLV using hemocytometer, we want ~10 million cells per reactor. 
-* Mix 10 ml bead suspension with cells to give 20 ml of volume. 
+* Trypsinize 1-2 T75 flasks for each reactor that you want to set-up.  We generally get 8-10 million Caco-2 cells from a single T75, and we need 10 million cells to set-up a single reactor. 
+* Recover trypsinized cells in ~10ml of DMEM, spin down at 300xg for 8min, and resuspend in 10ml of fresh media.  Count cells and adjust to 1 million cells per ml.
+* Mix 10 ml bead suspension with 10ml of cells (10 million cells) to give 20 ml of volume. 
 * Transfer the cell-bead suspension carefully to the STLV vessel through the center port. 
 * Recover residual cell-bead mix from tube with D10 media and transfer to the STLV.
 * Close the center port and q.s. volume in STLV vessel to 50 ml with D10 media through the syringes (until liquid starts overflow back each syringe about halfway). 
@@ -108,24 +112,17 @@ Materials needed:
 * Replace the syringes and fill the vessel with fresh D10 media. Return the STLV immediately to the incubator for rotation. 
 
 ## Harvesting cells
-* To monitor cell growth during the culture period, a small volume of bead suspension may be removed via syringe and looked at under the microscope.
+* To monitor cell growth during the culture period, during a regular media change use a sterile pipette tip to remove 100-200ul.  Dispense into a small plastic dish and examine under a dissecting scope.  Number of coated vs uncoated beads can be easily counted to determine number of coated beads per unit volume.
 
 {% include important.html content="use a 1 ml cut pippete tip (these are under the hood- already autoclaved) to prevent shearing of cells and protect the 3D structures." %}
 
 * After 3-4 weeks of continuous culture, transfer 3D culture beads to a 50 mL conical tube.
 * adjusted to 15 ml and use as needed for microscopic or RNA Seq experiments.
 
-OR follow the protocol below using Buffer C, B, and A to digest cells off beads 
-* Pour off 75% of old media and discard as done before when feeding vessel. 
-* Add 20 mL of Buffer C to the STLV with syringes on (Buffer C should include DTT at a ratio of 1:100 of DTT:Bufffer)
-* Spin at 20 rpm for 30 mins at 37C. 
-* Take out all of the mixture and transfer to a 50 mL conical tube. 
-* Wash mixture with 10mL of cold Buffer B.
-* Spin 50mL tube at 300xg for 5 minutes. Remove and discard supernatant. 
-* Wash again with 10mL of cold Buffer B. 
-* Spin tube at 300xg for 5 minutes. Remove and discard supernatant. 
-* Resuspend final pellet in Buffer A to have a final volume of ~10mL. If your pellet looks like it is ~2mL, add 8mL of Buffer A for resuspension. 
-* Strain cells over a 100uM filter, then a 70uM filter, followed by a 40uM filter. 
+## Recovering cells from beads
+* To recover a single cell suspension from a reactor, remove reactor from aparatus, allow beads to settle, and remove as much media as possible.  Fill remaining volume of reactor with pre-warmed 10x TrypLE reagent.  Return reactor to aparatus and allow rotation to proceed for 10min to remove cells from beads.
+* Transfer bead/cell mix to 50ml conical tube and allow beads to settle.  Transfer supe to a new tube.  
+* Spin cells at 300xg for 8 min to pellet.  Resuspend pellet in fresh DMEM media.  Count cells.  To remove cell clumps, pass suspension over a 75um cell filter
 
 ## STLV clean-up
 

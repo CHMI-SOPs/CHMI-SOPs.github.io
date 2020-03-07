@@ -35,7 +35,7 @@ For each patient, two sterile swabs (provided by Biomeme) are held together and 
 7. Attach 20cc to **air dry**, pump up and down with air **20x** to dry the column.
 8. Remove and **discard the syringe**.  
 9. Connect new Biomeme 'slip-tip' 1 cc syringe to the column
-10. Immediately move to LoBind tube containing **BEB** (150ul) and pump up/down **5x**, expel volume into final collection tube.  Typical elution volume is ~120ul, and contains both RNA and DNA.  We use appox. 15ul of this for any of the assays listed below, which means a single eluate is enough for at least 6 QPCR assays.
+10. Immediately move to LoBind tube containing **BEB** elution buffer (150ul) and pump up/down **5x**, expel volume into final collection tube.  Typical elution volume is ~120ul, and contains both RNA and DNA.  We use appox. 15ul of this for any of the assays listed below, which means a single eluate is enough for at least 6 QPCR assays.
 
 ### fine needle aspirate (FNA)
 

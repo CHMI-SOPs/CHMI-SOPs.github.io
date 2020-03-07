@@ -141,6 +141,10 @@ entries:
     - title: 3D intestinal cultures
       url: /mydoc_3Dculture.html
       output: web, pdf
+    
+    - title: Immunofluorescence for 3D cultures
+      url: /mydoc_3Dculture_microscopy.html
+      output: web, pdf
 
   - title: In the field
     output: web, pdf
