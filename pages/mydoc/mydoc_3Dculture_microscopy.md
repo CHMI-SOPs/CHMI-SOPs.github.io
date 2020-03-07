@@ -10,14 +10,14 @@ folder: mydoc
 
 ## Before starting
 
-You should receive training from Gordon Ruthel at the PennVet Microscopy Core.  This protocol involves the use of the Leica SP5FLIM inverted microscope.  Microscopic images will be acquired using the Leica Application Suite Advanced Fluorescence (LAS AF) software.
+This protocol involves the use of the Leica SP5FLIM inverted microscope at PennVet, so you should receive training from Gordon Ruthel at the PennVet Microscopy Core before using this instrument.  Microscopic images will be acquired using the Leica Application Suite Advanced Fluorescence (LAS AF) software.
 
 ## Materials and supplies
 
 ### antibodies and stains
 
 * Fluorescein labeled Ulex Europaeus Agglutinin I (UEA I) to detect mucin (Vector labs cat# FL-1061) 
-* Rabbit anti-human ZO-1 (mAb clone D6L1E) (Cell Signaling Technology cat# 13663S)
+* Rabbit anti-human zona occludens-1 (ZO-1; mAb clone D6L1E), a tight junction protein (Cell Signaling Technology cat# 13663S)
 * Goat anti-rabbit Alexa Fluor®568 to detect ZO-1 (Invitrogen cat# A-11031) 
 * Mouse anti-human Ezrin (clone 4A5); a brush border marker (Millipore/Sigma cat# MAB3822-C) 
 * Goat anti-mouse Alexa Fluor®700 to detect Ezrin (Invitrogen cat# A-21036) 
@@ -26,8 +26,8 @@ You should receive training from Gordon Ruthel at the PennVet Microscopy Core.  
 
 ### other consumables
 
-* Aqueous solution of paraformaldehyde at 4% (v/v) (Electron Microscopy Sciences, Hatfield, PA, USA)
-* Aqueous solution of Triton X-100 at 0.25% (v/v) (Sigma, USA) 
+* 4% Paraformaldehyde (formaldehyde) aqueous solution (Electron Microscopy Sciences cat# 157-4-100)
+* Aqueous solution of 10% Triton X-100 (Sigma, USA) 
 * Phosphate buffered saline – PBS (ice-cold for rinsing steps)
 * Cell Imaging Dish, 170 μm thich, 35x10 mm (Eppendorf cat# 0030740017) 
 
