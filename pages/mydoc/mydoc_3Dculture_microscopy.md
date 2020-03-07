@@ -65,4 +65,4 @@ This protocol involves the use of the Leica SP5FLIM inverted microscope at PennV
 
 ## 2D cultures
 
-* If fixing/staining of 2D cultures is also needed.  Cells should be grown on Cell Imaging Dishes, and fixed/stained in the same manner as 3D cultures above.
+* If fixing/staining of 2D cultures is also needed, cells should be grown on Cell Imaging Dishes d and fixed/stained in the same manner as 3D cultures above.
