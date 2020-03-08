@@ -20,14 +20,16 @@ The protocol below adapted from [this JOVE video](https://www.jove.com/video/336
 
 * RCCS4H 3D Cell Culture System from [Synthecon](http://synthecon.com/pages/home.asp).
 * four autoclavable 55 ml slow-turning lateral vessels (STLV)
-* CO2 incubator at 37C.
+* CO2 incubator at 37C, 5% CO2
 * Inverted light microscope.
 * 70% ethanol (in spray bottle) and 100% ethanol
 * Sterile water
 * Dulbecco's Phosphate Buffered Saline (DPBS)
 * Heat inactivated Fetal Bovine Serum (HI-FBS)
-* D10 media: DMEM + 15% HI-FBS + 0.05% antibiotic (Pen/Strep)
-* Cytodex 3 microcarrier beads (Sigma, cat# C3275).  
+* D10 media: DMEM + 15% HI-FBS + 0.5% antibiotic (Pen/Strep)
+* Porcine collagen-coated Cytodex 3 microcarrier beads (Sigma, cat# C3275).  
+* 1000 ul sterile, large orifice pipette tips (USA Scientific, cat# 1011-9410)
+* 200 ul sterile, large orifice pipette tips (USA Scientific, cat# 1011-8810)
 
 ## Making D10 Media 
 Materials needed:
@@ -106,10 +108,13 @@ Materials needed:
 * Set STLV to rotate at 20 rpm at 37C, 5% CO2 for 21-28 days.
 
 ## Feeding the STLV
-* Change the culture medium every other day. 
+* Change the culture medium every other day. If media begins looking exhausted, you can switch to every day.
 * Remove the STLV from incubator. Let the beads settle at the bottom of the vessel. While holding the STLV at a 45 degree angle over a waste container, carefully remove both syringes and discard.
-* Keeping the STLV inclined at a 45 degree angle over a waste container, drain out 50-75% of the old media without allowing the beads to travel with the media. It is very important to keep the vessel still while draining the media because every time the beads are disturbed, you could potentially have them spill out into the waste. If you see beads starting to move toward the opening of the vessel, place the vessel back down on the hood and let them settle at the bottom again.
-* Replace the syringes and fill the vessel with fresh D10 media. Return the STLV immediately to the incubator for rotation. 
+* Turn stopcocks to open position.  Keeping the STLV inclined at a 45 degree angle over a waste container, drain out 50-75% of the old media without allowing the beads to travel with the media. It is very important to keep the vessel still while draining the media because every time the beads are disturbed, you could potentially have them spill out into the waste. If you see beads starting to move toward the opening of the vessel, place the vessel back down on the hood and let them settle at the bottom again.
+* To add fresh media, remove and discard stopcocks.  Replace with new sterile stopcocks and new sterile 10cc syringes (with plungers removed and set on sterile packaging).  
+* With the new stopcocks turned to the open position, pipette media into one of the syringes to fill reactor.  Media should back flow into both syringes.  Tap vessel on hood surface to move trapped air bubbles.  
+* Once vessel is full and free of large bubbles, with stopcocks still in the open position, place plungers into both syringes.   
+* Turn both stopcocks to closed position and return vessels to the incubator for rotation. 
 
 ## Harvesting cells
 * To monitor cell growth during the culture period, during a regular media change use a sterile pipette tip to remove 100-200ul.  Dispense into a small plastic dish and examine under a dissecting scope.  Number of coated vs uncoated beads can be easily counted to determine number of coated beads per unit volume.

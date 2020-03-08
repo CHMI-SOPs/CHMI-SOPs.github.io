@@ -15,7 +15,7 @@ folder: mydoc
 
 ## What you'll need for Day 1
 
-{% include important.html content="The following items are included in the Illumina kit" %}
+{% include important.html content="The following items are included in the Illumina kit.  We recommend kits be stored as received in the original manufacterer's boxes and not unpacked to organize in a reagent box.  When kits go bad, it is much easier to contain the damage if reagents were stored as received." %}
 
 * RNA purification beads (These are the oligo dT beads) (bring these to room temperature before use)
 * Bead washing buffer
@@ -37,7 +37,7 @@ folder: mydoc
 ## A few important comments before you start
 
 {% include callout.html content="
-- We use the Low Sample ‘LS’ protocol as we are typically working with fewer than 48 samples at a time  
+* We use the Low Sample ‘LS’ protocol as we are typically working with fewer than 48 samples at a time  
 - The recommended starting amount of total RNA is 100 ng - 4 ug, but we usually try to stay away from the extreme ends of this spectrum.  
 - The lowest input of RNA we have successfully used in this protocol is 70 ng.  
 - Split this protocol into two days, stopping on the first day after you have double stranded cDNA. On second day, do the A-tailing, adapter ligation, PCR, cleanup, and quality control steps.  
@@ -60,6 +60,8 @@ folder: mydoc
 1. Dilute total RNA in RNase-free water to final volume of 50 ul. Do this in a 96-well PCR plate (even if you have a few samples).
 
 2. Add 50 uL RNA purification beads to each well. Gently pipette up and down 6 times. Seal the plate with an adhesive seal.
+
+{% include warning.html content="Do not store mRNA purification beads on ice!  We have observed that the beads are very sensitive to cold temperatures.  Beads stored at < 2degC may deteriorate, resulting in poor binding of mRNA, and therefore poor library prep that is heavily contaminated with excess adapter." %}
 
 3. Place the sealed plate in the thermal cycler. Select the mRNA denaturation program (65C for 5 min, 4C hold).
 

@@ -17,10 +17,15 @@ The protocols below detail how we've been using [Biomeme Inc's](http://biomeme.c
 The hand-held QPCR device made by Biomeme, called [The Franklin Three9](http://CHMI-sops.github.io/papers/BiomemeFranklinThermocycler.pdf), accomodates 9 tubes and three colors/tube: FAM, Cy5/ATTO647N and TexasRed.  Cy5 is the brightest channel on the three9, so consider designing the target you anticipate being present in the lowest concentration and/or least sensitive PCR on that channel. FAM is the next brightest, followed by TexasRedX. If you are designing a triplex assay for use with the three9 that includes a positive control, use TexasRedX for the positive control.
 
 ## Preparing mastermix
+
+### Bulk mastermix
 Resuspend bulk lyophilized [LyoDNA](http://CHMI-sops.github.io/papers/LyoDNA.pdf), [LyoRNA](http://CHMI-sops.github.io/papers/LyoRNA.pdf) or [LyoGreen](http://CHMI-sops.github.io/papers/LyoGreen.pdf) master mix with 135 ul of PCR grade water (BEB buffer from the DNA extraction kits is water). This makes a 10x stock.  Add 18 ul of glycerol to allow leftover mastermix to be frozen for reuse later.  LyoRNA master mix contains a reverse transcriptase for QPCR assays where the target is a RNA molecule.  Each resuspended vial contains enough mastermix for at least 60, 20ul reactions.
 
+### LyoStrips
+LyoStrips contain Lyo MasterMix reagent lyophilized in the bottom of each tube.  No preparation is needed.  Simply add DNA or RNA sample, and primers/probes, and start the reaction.
 
-## Reaction set-up with LyoDNA or LyoRNA
+
+## Reaction set-up with Bulk LyoDNA or LyoRNA
 A typical QPCR reaction on the biomeme platform contains the following components
 
 | Reagent                                  | vol (ul) |
