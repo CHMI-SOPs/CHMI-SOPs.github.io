@@ -125,9 +125,12 @@ Materials needed:
 * adjusted to 15 ml and use as needed for microscopic or RNA Seq experiments.
 
 ## Recovering cells from beads
-* To recover a single cell suspension from a reactor, remove reactor from aparatus, allow beads to settle, and remove as much media as possible.  Fill remaining volume of reactor with pre-warmed 10x TrypLE reagent.  Return reactor to aparatus and allow rotation to proceed for 10min to remove cells from beads.
-* Transfer bead/cell mix to 50ml conical tube and allow beads to settle.  Transfer supe to a new tube.  
-* Spin cells at 300xg for 8 min to pellet.  Resuspend pellet in fresh DMEM media.  Count cells.  To remove cell clumps, pass suspension over a 75um cell filter
+* To recover a single cell suspension from a reactor, remove reactor from aparatus, allow beads to settle, and remove as much media as possible (e.g. leaving approx. 15ml of media/beads remaining in the reactor).  Fill remaining volume of reactor with **pre-warmed** [10x TrypLE Select reagent](https://www.thermofisher.com/order/catalog/product/A1217701#/A1217701).  Return reactor to aparatus and allow rotation to proceed for 10min to remove cells from beads.
+* After incubation, recover the entire volume through the main port using a 10ml pipette and transfer to a 50ml tube by passing over a 100um cell filter to remove beads. Beads and large cell clumps will accumulate on the filter. Change to a new filter if clogging occurs as beads accumulate 
+* Pass over a 40um cell filter to ensure that no beads have gotten through.  
+* Spin 300xg for 8 min to pellet cells.  
+* Resuspend in 10ml of media or PBS and pass over a new 40um filter to leave you with a single cell suspension.  
+* Count cells on hemocytometer and check viability with trypan blue staining.  Viability should be nearly 100%, and typical cell recovery is about 6 million cells per reactor.  
 
 ## STLV clean-up
 

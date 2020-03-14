@@ -12,6 +12,12 @@ folder: mydoc
 
 We operate an [Illumina NextSeq 500 machine](https://www.illumina.com/systems/sequencing-platforms/nextseq.html), which is capable of producing reads ranging in length 75-150 bp.  These reads can be produced as single- or paired-end reads (dictated by the reagents, not the hardware).  The machine has two basic operating modes.  In 'mid-output' mode, approximately 130 million reads are produced (or read pairs, if paired-end reagents are used).  In high-output mode, approximately 400 million reads or read pairs are produced.  The total data output depends on library quality and clustering density (more on that below). 
 
+## Which library prep kit should I use?
+
+The decision of which libray prep kit to use can be overwhelming.  We created this decision tree you find the kit that matches your needs.  While there are many other options for library prep technology and companies, these are the ones we use in our lab.
+
+
+
 We also have access to an [Illumina MiniSeq machine](https://www.illumina.com/systems/sequencing-platforms/miniseq.html), which is also capable of producing reads 75-150bp in length, single- or paired-end.  Like the NextSeq, the MiniSeq also has a mid and high output mode, which generate 8 or 25 million reads (or read pairs), respectively.  This machine is ideal for sequencing PCR amplicon libraries (or other low-diversity libraries), as well as for sequencing relatively small genomes (bacterial, viral, etc).
 
 ## How 'deep' should I sequence each sample?

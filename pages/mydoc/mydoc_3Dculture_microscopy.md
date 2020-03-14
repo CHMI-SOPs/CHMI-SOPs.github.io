@@ -52,7 +52,7 @@ This protocol involves the use of the Leica SP5FLIM inverted microscope at PennV
 * Add enough antibody mix to cover beads
 * Incubate for 1h at room temperature with occasional gentle mixing by inverting.
 * Remove antibody and wash 3x with PBS (5 min each wash)
-* Prepare UEA-FITC (1/400), Alexa Alexa Fluor®568 (1/500), and Alexa Fluor®700 (1/500) by adding 2.5ul, 2ul, and 2ul, respectively, in 1ml of PBS.
+* Prepare UEA-FITC (1/400), Alexa Fluor®568 (1/500), and Alexa Fluor®700 (1/500) by adding 2.5ul, 2ul, and 2ul, respectively, in 1ml of PBS.
 * Note If using phalloidin, dilute 1/50 for staining.
 * Add enough antibody mix to cover cells.
 * Incubate for 1h at room temperature with occasional gentle mixing by inverting.

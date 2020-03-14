@@ -2,7 +2,7 @@
 title: Portable QPCR
 tags: [QPCR, mobile, diagnostics]
 keywords:
-summary: "Most of the projects we work on, whether profiling host gene expression or micobial communities, often yield at a candidate list of genes or organisms that we believe are linked to some phenotype.  Increasingly, we are interested in methods and technology that let us quantitiatively measure these features, particularly in a way that is portable and could be deployed 'stall-side' in a barn just as easily as at a lab bench.  For this, we've been using the Biomeme platform for end-to-end QPCR-based detection in the field"
+summary: "Most of the projects we work on, whether profiling host gene expression or micobial communities, often yield at a candidate list of genes or organisms that we believe are linked to some phenotype.  Increasingly, we are interested in methods and technology that let us quantitiatively measure these features, particularly in a way that is portable and could be deployed in the field just as easily as at a lab bench.  For this, we've been using the Biomeme platform for end-to-end QPCR-based detection in the field"
 sidebar: mydoc_sidebar
 permalink: mydoc_biomeme.html
 folder: mydoc
@@ -22,7 +22,7 @@ The hand-held QPCR device made by Biomeme, called [The Franklin Three9](http://C
 Resuspend bulk lyophilized [LyoDNA](http://CHMI-sops.github.io/papers/LyoDNA.pdf), [LyoRNA](http://CHMI-sops.github.io/papers/LyoRNA.pdf) or [LyoGreen](http://CHMI-sops.github.io/papers/LyoGreen.pdf) master mix with 135 ul of PCR grade water (BEB buffer from the DNA extraction kits is water). This makes a 10x stock.  Add 18 ul of glycerol to allow leftover mastermix to be frozen for reuse later.  LyoRNA master mix contains a reverse transcriptase for QPCR assays where the target is a RNA molecule.  Each resuspended vial contains enough mastermix for at least 60, 20ul reactions.
 
 ### LyoStrips
-LyoStrips contain Lyo MasterMix reagent lyophilized in the bottom of each tube.  No preparation is needed.  Simply add DNA or RNA sample, and primers/probes, and start the reaction.
+LyoStrips contain Lyo MasterMix reagent lyophilized in the bottom of PCR strip tube.  No preparation is needed.  Simply add DNA or RNA extract, add primers/probes, and start the reaction.
 
 
 ## Reaction set-up with Bulk LyoDNA or LyoRNA
