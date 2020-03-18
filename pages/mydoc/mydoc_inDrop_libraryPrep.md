@@ -4,7 +4,7 @@ tags: [transcriptomics]
 keywords: transcriptomics
 summary: "post-encapsulation steps for preparing sequence-ready libraries for scRNAseq"
 sidebar: mydoc_sidebar
-permalink: mydoc_scRNAseq_libraryPrep.html
+permalink: mydoc_inDrop_libraryPrep.html
 folder: mydoc
 ---
 

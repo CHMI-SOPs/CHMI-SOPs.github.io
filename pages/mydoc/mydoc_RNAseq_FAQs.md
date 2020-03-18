@@ -26,7 +26,7 @@ This depends on the size of the transcriptome (mammalian vs bacterial), as well 
 
 ## Single-end or paired-end?
 
-My default answer to this question is almost always to go with single-end.  The reason for recommending this is that it is MUCH cheaper, and numerous studies, like [this one](http://CHMI-sops.github.io/papers/readlength.pdf), have shown that in terms of measuring gene expression, once you go beyond about 50 bp of sequence, very little is gained.  I recommend paired-end data if your reference genome is poor (or non-existent), or if your primary goal is to understand alternative splicing.  In these cases, it is worth spending the extra money.
+My default answer to this question is almost always to go with single-end.  The reason for recommending this is that it is MUCH cheaper, and numerous studies, like [this one](http://CHMI-sops.github.io/papers/readlength.pdf), have shown that when it comes to measuring gene expression, once you go beyond about 50 bp of sequence, very little is gained.  I recommend paired-end data if your reference genome is poor (or non-existent), or if your primary goal is to understand alternative splicing.  In these cases, it is worth spending the extra money.
 
 ## How many replicates should I have?
 

@@ -4,7 +4,7 @@ tags: [transcriptomics]
 keywords: transcriptomics
 summary: "Using droplet-based technology to isolate and barcode individual cells"
 sidebar: mydoc_sidebar
-permalink: mydoc_scRNAseq_encapsulation.html
+permalink: mydoc_inDrop_encapsulation.html
 folder: mydoc
 ---
 
