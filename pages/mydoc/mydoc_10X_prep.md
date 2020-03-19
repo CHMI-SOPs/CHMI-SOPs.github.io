@@ -2,7 +2,7 @@
 title: Single Cell RNAseq – encapsulation
 tags: [transcriptomics, single cell genomics]
 keywords: transcriptomics
-summary: "Using droplet-based technology to isolate and barcode individual cells"
+summary: "Using the 10X Chromium Controller to encapsulate individual cells for single cell genomic experiments"
 sidebar: mydoc_sidebar
 permalink: mydoc_inDrop_encapsulation.html
 folder: mydoc
@@ -12,19 +12,15 @@ folder: mydoc
 
 ## Documentation
 
-The [InDrop platform from 1CellBio](https://1cell-bio.com/indrop/) can isolate and barcode single cells using a completely open and 'hackable' technology platform.  This technology was initialy described in [this 2015 Cell paper](https://www.cell.com/cell/abstract/S0092-8674(15)00500-0).  The steps on this page are derived from 1CellBio's [protocol for encapsulating single cells](https://1cell-bio.com/wp-content/uploads/2018/05/inDrop-Single-Cell-Encapsulation-and-Rever-se-Transcription-Protocol-Version-2.2-.pdf).
+We use the [InDrop platform from 1CellBio](https://1cell-bio.com/indrop/) to isolate and barcode single cells.  This technology was initialy described in [this 2015 Cell paper](https://www.cell.com/cell/abstract/S0092-8674(15)00500-0).  The steps on this page are derived from 1CellBio's [protocol for encapsulating single cells](https://1cell-bio.com/wp-content/uploads/2018/05/inDrop-Single-Cell-Encapsulation-and-Rever-se-Transcription-Protocol-Version-2.2-.pdf)
 
 ## What you'll need
 
-{% include important.html content="The following items are included in the InDrop kit" %}
+{% include important.html content="The following items are included in the 10X kit" %}
 
-* Barcoded Hydrogel Microspheres - 500,000 beads provided in 500ul (4C)
-* 1.3x RT Premix (-20C)
-* 2x Gel Concentration buffer (-20C)
-* Wash buffer (RT)
-* OptiPrep - density matching agent (RT)
-* Demulsifying agent - for breaking droplets (RT)
-* Separate assemblies for loading beads, oil, cells and RT mix
+* adfsadf
+* asdfasdf
+* asdfasdf
 
 {% include important.html content="The following items are __not included__ and may need to be purchased by the individual user."%}
 

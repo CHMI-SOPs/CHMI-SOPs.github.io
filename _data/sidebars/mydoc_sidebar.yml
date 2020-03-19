@@ -69,7 +69,7 @@ entries:
           url: /mydoc_RNAseq_depositToGEO.html
           output: web, pdf
 
-  - title: single cell RNAseq
+  - title: Single cell genomics
     output: web, pdf
     
     folderitems:
@@ -85,12 +85,8 @@ entries:
       url: /mydoc_inDrop_libraryPrep.html
       output: web, pdf
 
-    - title: 10X encapsulation
+    - title: 10X sample prep
       url: /mydoc_10X_encapsulation.html
-      output: web, pdf
-    
-    - title: 10X library prep
-      url: /mydoc_10X_libraryPrep.html
       output: web, pdf
     
       subfolders:

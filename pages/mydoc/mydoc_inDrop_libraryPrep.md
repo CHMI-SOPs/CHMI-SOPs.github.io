@@ -1,6 +1,6 @@
 ---
 title: Single Cell RNAseq – library prep
-tags: [transcriptomics]
+tags: [transcriptomics, library_prep, single cell genomics]
 keywords: transcriptomics
 summary: "post-encapsulation steps for preparing sequence-ready libraries for scRNAseq"
 sidebar: mydoc_sidebar
