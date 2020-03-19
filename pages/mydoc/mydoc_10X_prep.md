@@ -4,7 +4,7 @@ tags: [transcriptomics, single cell genomics]
 keywords: transcriptomics
 summary: "Using the 10X Chromium Controller to encapsulate individual cells for single cell genomic experiments"
 sidebar: mydoc_sidebar
-permalink: mydoc_inDrop_encapsulation.html
+permalink: mydoc_10X_prep.html
 folder: mydoc
 ---
 
