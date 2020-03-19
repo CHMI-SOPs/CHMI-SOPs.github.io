@@ -76,6 +76,10 @@ entries:
     - title: scRNAseq FAQs
       url: /mydoc_scRNAseq_FAQs.html
       output: web, pdf
+    
+    - title: 10X sample prep
+      url: /mydoc_10X_encapsulation.html
+      output: web, pdf
  
     - title: inDrop encapsulation
       url: /mydoc_inDrop_encapsulation.html
@@ -83,10 +87,6 @@ entries:
     
     - title: inDrop library prep
       url: /mydoc_inDrop_libraryPrep.html
-      output: web, pdf
-
-    - title: 10X sample prep
-      url: /mydoc_10X_encapsulation.html
       output: web, pdf
     
       subfolders:
