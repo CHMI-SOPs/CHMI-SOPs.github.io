@@ -21,8 +21,8 @@ The hand-held QPCR device made by Biomeme, called [The Franklin Three9](http://C
 ### Bulk mastermix
 Resuspend bulk lyophilized [LyoDNA](http://CHMI-sops.github.io/papers/LyoDNA.pdf), [LyoRNA](http://CHMI-sops.github.io/papers/LyoRNA.pdf) or [LyoGreen](http://CHMI-sops.github.io/papers/LyoGreen.pdf) master mix with 135 ul of PCR grade water (BEB buffer from the DNA extraction kits is water). This makes a 10x stock.  Add 18 ul of glycerol to allow leftover mastermix to be frozen for reuse later.  LyoRNA master mix contains a reverse transcriptase for QPCR assays where the target is a RNA molecule.  Each resuspended vial contains enough mastermix for at least 60, 20ul reactions.
 
-### LyoStrips
-LyoStrips contain Lyo MasterMix reagent lyophilized in the bottom of PCR strip tube.  No preparation is needed.  Simply add DNA or RNA extract, add primers/probes, and start the reaction.
+### Lyo GoStrips
+Lyo GoStrips contain Lyo MasterMix reagent lyophilized in the bottom of PCR strip tubes.  No preparation is needed.  Simply add DNA or RNA extract, add primers/probes, and start the reaction.
 
 
 ## Reaction set-up with Bulk LyoDNA or LyoRNA

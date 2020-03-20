@@ -78,7 +78,7 @@ entries:
       output: web, pdf
     
     - title: 10X sample prep
-      url: /mydoc_10X_encapsulation.html
+      url: /mydoc_10X_prep.html
       output: web, pdf
  
     - title: inDrop encapsulation
