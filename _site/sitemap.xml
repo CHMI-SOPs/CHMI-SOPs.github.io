@@ -34,6 +34,12 @@
   
   
   <url>
+    <loc>http://localhost:4000/mydoc_10X_prep.html</loc>
+  </url>
+  
+  
+  
+  <url>
     <loc>http://localhost:4000/mydoc_16S.html</loc>
   </url>
   
@@ -52,6 +58,24 @@
   
   
   <url>
+    <loc>http://localhost:4000/mydoc_3Dculture_microscopy.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/mydoc_CellRanger.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/mydoc_FFPE_RNAseq.html</loc>
+  </url>
+  
+  
+  
+  <url>
     <loc>http://localhost:4000/mydoc_NexteraXT.html</loc>
   </url>
   
@@ -59,6 +83,12 @@
   
   <url>
     <loc>http://localhost:4000/mydoc_RNAseq_FAQs.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/mydoc_RNAseq_QA.html</loc>
   </url>
   
   
@@ -131,6 +161,12 @@
   
   <url>
     <loc>http://localhost:4000/mydoc_build_scripts.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/mydoc_cloudMeta.html</loc>
   </url>
   
   
@@ -220,6 +256,18 @@
   
   
   <url>
+    <loc>http://localhost:4000/mydoc_inDrop_encapsulation.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/mydoc_inDrop_libraryPrep.html</loc>
+  </url>
+  
+  
+  
+  <url>
     <loc>http://localhost:4000/mydoc_install_jekyll_on_mac.html</loc>
   </url>
   
@@ -281,6 +329,12 @@
   
   <url>
     <loc>http://localhost:4000/mydoc_micro_FAQs.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/mydoc_microbiomeDB_deposit.html</loc>
   </url>
   
   
@@ -352,31 +406,19 @@
   
   
   <url>
-    <loc>http://localhost:4000/mydoc_scRNAseq_ecapsulation.html</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://localhost:4000/mydoc_scRNAseq_encapsulation.html</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://localhost:4000/mydoc_scRNAseq_libraryPrep.html</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://localhost:4000/mydoc_scroll.html</loc>
+    <loc>http://localhost:4000/mydoc_scRNAseq_FAQs.html</loc>
   </url>
   
   
   
   <url>
     <loc>http://localhost:4000/js/mydoc_scroll.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/mydoc_scroll.html</loc>
   </url>
   
   
@@ -431,6 +473,12 @@
   
   <url>
     <loc>http://localhost:4000/mydoc_software.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/mydoc_sourmash.html</loc>
   </url>
   
   
@@ -660,6 +708,10 @@
   <url>
     <loc>http://localhost:4000/p2_sample9.html</loc>
   </url>
+  
+  
+  
+  
   
   
   

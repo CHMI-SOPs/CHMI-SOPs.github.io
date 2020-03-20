@@ -38,6 +38,8 @@
 
 <link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000/feed.xml">
 
+
+
     <script>
         $(document).ready(function() {
             // Initialize navgoco with default options
@@ -198,12 +200,12 @@
         
     
     <li>
-        <a href="#">Transcriptomics</a>
+        <a href="#">Bulk RNAseq</a>
         <ul>
             
             
             
-            <li class="active"><a href="mydoc_RNAseq_FAQs.html">RNAseq FAQs</a></li>
+            <li class="active"><a href="mydoc_RNAseq_FAQs.html">FAQs</a></li>
             
             
             
@@ -231,14 +233,7 @@
             
             
             
-            <li><a href="mydoc_scRNAseq_encapsulation.html">Single cell encapsulation (InDrop)</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="mydoc_scRNAseq_libraryPrep.html">Single cell library prep</a></li>
+            <li><a href="mydoc_FFPE_RNAseq.html">FFPE-seq</a></li>
             
             
             
@@ -248,13 +243,77 @@
                     
                     
                     
-                    <li><a href="mydoc_kallisto.html">Read mapping using Kallisto</a></li>
+                    <li><a href="mydoc_RNAseq_QA.html">Project management and QA</a></li>
                     
                     
                     
                     
                     
-                    <li><a href="mydoc_RNAseq_depositToGEO.html">Submitting RNAseq data to GEO</a></li>
+                    <li><a href="mydoc_kallisto.html">Read mapping with Kallisto</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_RNAseq_depositToGEO.html">Submitting data to GEO</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Single cell genomics</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_scRNAseq_FAQs.html">scRNAseq FAQs</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_10X_prep.html">10X sample prep</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_inDrop_encapsulation.html">inDrop encapsulation</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_inDrop_libraryPrep.html">inDrop library prep</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">scRNAseq data analysis</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="mydoc_CellRanger.html">10X CellRanger</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_BUStools.html">BUStools</a></li>
                     
                     
                     
@@ -317,6 +376,18 @@
                     
                     
                     
+                    
+                    
+                    <li><a href="mydoc_microbiomeDB_deposit.html">microbiomeDB.org</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_sourmash.html">Sourmash</a></li>
+                    
+                    
+                    
                 </ul>
             </li>
             
@@ -369,6 +440,13 @@
             
             
             
+            
+            
+            <li><a href="mydoc_3Dculture_microscopy.html">Immunofluorescence for 3D cultures</a></li>
+            
+            
+            
+            
         </ul>
      </li>
        
@@ -402,12 +480,28 @@
                     
                     
                     
-                    <li><a href="mydoc_biomeme_human.html">Human</a></li>
+                    <li><a href="mydoc_biomeme_human.html">Cutaneous leishmaniasis</a></li>
                     
                     
                     
                 </ul>
             </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Workshops</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_cloudMeta.html">Metagenomics in the cloud</a></li>
             
             
             
@@ -479,7 +573,13 @@ $('#toc').on('click', 'a', function() {
 
   <h2 id="what-sequencing-hardware-do-you-have">What sequencing hardware do you have?</h2>
 
-<p>We operate an Illumina NextSeq 500 machine, which is capable of producing reads ranging in length 75-150 bp.  These reads can be produced as single- or paired-end reads (dictated by the reagents, not the hardware).  The machine has two basic operating modes.  In ‘mid-output’ mode, approximately 130 million reads are produced (or read pairs, if paired-end reagents are used).  In high-output mode, approximately 400 million reads or read pairs are produced.  The total data output depends on library quality and clustering density (more on that below).</p>
+<p>We operate an <a href="https://www.illumina.com/systems/sequencing-platforms/nextseq.html">Illumina NextSeq 500 machine</a>, which is capable of producing reads ranging in length 75-150 bp.  These reads can be produced as single- or paired-end reads (dictated by the reagents, not the hardware).  The machine has two basic operating modes.  In ‘mid-output’ mode, approximately 130 million reads are produced (or read pairs, if paired-end reagents are used).  In high-output mode, approximately 400 million reads or read pairs are produced.  The total data output depends on library quality and clustering density (more on that below).</p>
+
+<h2 id="which-library-prep-kit-should-i-use">Which library prep kit should I use?</h2>
+
+<p>The decision of which libray prep kit to use can be overwhelming.  We created this decision tree you find the kit that matches your needs.  While there are many other options for library prep technology and companies, these are the ones we use in our lab.</p>
+
+<p>We also have access to an <a href="https://www.illumina.com/systems/sequencing-platforms/miniseq.html">Illumina MiniSeq machine</a>, which is also capable of producing reads 75-150bp in length, single- or paired-end.  Like the NextSeq, the MiniSeq also has a mid and high output mode, which generate 8 or 25 million reads (or read pairs), respectively.  This machine is ideal for sequencing PCR amplicon libraries (or other low-diversity libraries), as well as for sequencing relatively small genomes (bacterial, viral, etc).</p>
 
 <h2 id="how-deep-should-i-sequence-each-sample">How ‘deep’ should I sequence each sample?</h2>
 
@@ -487,7 +587,7 @@ $('#toc').on('click', 'a', function() {
 
 <h2 id="single-end-or-paired-end">Single-end or paired-end?</h2>
 
-<p>My default answer to this question is almost always to go with single-end.  The reason for recommending this is that it is MUCH cheaper, and numerous studies, like <a href="http://CHMI-sops.github.io/papers/readlength.pdf">this one</a>, have shown that in terms of measuring gene expression, once you go beyond about 50 bp of sequence, very little is gained.  I recommend paired-end data if your reference genome is poor (or non-existent), or if your primary goal is to understand alternative splicing.  In these cases, it is worth spending the extra money.</p>
+<p>My default answer to this question is almost always to go with single-end.  The reason for recommending this is that it is MUCH cheaper, and numerous studies, like <a href="http://CHMI-sops.github.io/papers/readlength.pdf">this one</a>, have shown that when it comes to measuring gene expression, once you go beyond about 50 bp of sequence, very little is gained.  I recommend paired-end data if your reference genome is poor (or non-existent), or if your primary goal is to understand alternative splicing.  In these cases, it is worth spending the extra money.</p>
 
 <h2 id="how-many-replicates-should-i-have">How many replicates should I have?</h2>
 
@@ -503,7 +603,7 @@ $('#toc').on('click', 'a', function() {
 
 <h2 id="do-you-analyze-the-data-for-us">Do you analyze the data for us?</h2>
 
-<p>Not exactly, though we are fully capable of RNAseq data analysis.  CHMI offers a free <a href="http://DIYtranscriptomics.org">semester-long course</a> on the bioinformatics associated with RNAseq data analysis.  Assistance is also available through 1:1 consultations with Dan Beiting.</p>
+<p>Not exactly, though we are fully capable of RNAseq data analysis.  CHMI offers a free <a href="http://DIYtranscriptomics.com">semester-long course</a> on the bioinformatics associated with RNAseq data analysis.  Assistance is also available through 1:1 consultations with Dan Beiting.</p>
 
 <h2 id="so-i-can-just-give-you-my-samples-then">So I can just give you my samples then?</h2>
 
@@ -559,8 +659,8 @@ $('#toc').on('click', 'a', function() {
 <footer>
             <div class="row">
                 <div class="col-lg-12 footer">
-               &copy;2018 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
- Site last generated: Oct 2, 2018 <br />
+               &copy;2020 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
+ Site last generated: Mar 19, 2020 <br />
 <p><img src="images/CHMI_logo.png" alt="Company logo"/></p>
                 </div>
             </div>
@@ -574,5 +674,12 @@ $('#toc').on('click', 'a', function() {
     </div>
 
 </body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-131349832-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
 
 </html>

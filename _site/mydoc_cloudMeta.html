@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="This 4 hour workshop takes users through setting up their own cloud computer, intalling a Snakemake-based pipeline called Sunbeam for analysis of shotgun met...">
+<meta name="keywords" content="bioinformaticsmicrobiometutorialsmetagenomics,  ">
+<title>Metagenomics in the cloud | CHMI services</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<link rel="stylesheet" href="css/lavish-bootstrap.css">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000/feed.xml">
+
+
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Center for Host-Microbial Interactions</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:beiting@upenn.edu?subject=CHMI services feedback&body=I have some feedback about the Metagenomics in the cloud page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Metagenomics in the cloud">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+    <div class="col-lg-12">&nbsp;</div>
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+
+
+
+
+
+
+
+
+
+
+
+<ul id="mysidebar" class="nav">
+    <li class="sidebarTitle">CHMI services </li>
+    
+    
+    
+        
+    
+    <li>
+        <a href="#">Overview</a>
+        <ul>
+            
+            
+            
+            <li><a href="index.html">Welcome</a></li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Bulk RNAseq</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_RNAseq_FAQs.html">FAQs</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_TruSeq.html">mRNA library prep</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_total_TruSeq.html">Total transcriptome library prep</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_lowInput_RNAseq.html">Low input protocol</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_FFPE_RNAseq.html">FFPE-seq</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">RNAseq data analysis</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="mydoc_RNAseq_QA.html">Project management and QA</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_kallisto.html">Read mapping with Kallisto</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_RNAseq_depositToGEO.html">Submitting data to GEO</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Single cell genomics</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_scRNAseq_FAQs.html">scRNAseq FAQs</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_10X_prep.html">10X sample prep</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_inDrop_encapsulation.html">inDrop encapsulation</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_inDrop_libraryPrep.html">inDrop library prep</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">scRNAseq data analysis</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="mydoc_CellRanger.html">10X CellRanger</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_BUStools.html">BUStools</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Microbiology</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_micro_FAQs.html">Microbiology FAQs</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_16S.html">16S rRNA gene sequencing</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_NexteraXT.html">Shotgun metagenomics</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_16S_Sanger.html">Sanger sequencing of 16S</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_mock.html">Culture collection</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Data analysis</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="mydoc_qiime2.html">QIIME2</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_microbiomeDB_deposit.html">microbiomeDB.org</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_sourmash.html">Sourmash</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Compute resources</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_linux.html">Linux cluster</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_software.html">Available software</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_RStudio.html">R Studio Server</a></li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Cell culture</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_3Dculture.html">3D intestinal cultures</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_3Dculture_microscopy.html">Immunofluorescence for 3D cultures</a></li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">In the field</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_nanopore.html">Oxford Nanopore</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Biomeme portable QPCR</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="mydoc_biomeme.html">Set-up</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_biomeme_avian.html">Avian</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_biomeme_human.html">Cutaneous leishmaniasis</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Workshops</a>
+        <ul>
+            
+            
+            
+            <li class="active"><a href="mydoc_cloudMeta.html">Metagenomics in the cloud</a></li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+        
+        <!-- if you aren't using the accordion, uncomment this block:
+           <p class="external">
+               <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+           </p>
+           -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">Metagenomics in the cloud</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+    <div class="summary">This 4 hour workshop takes users through setting up their own cloud computer, intalling a Snakemake-based pipeline called Sunbeam for analysis of shotgun metagenomic data, and analyzing/discussing data from Crohn's disease patients</div>
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+    <a target="_blank" href="https://github.com/CHMI-SOPs/CHMI-SOPs.github.io/tree/master/pages/mydoc/mydoc_cloudMeta.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+    
+
+  <h2 id="workshop-outline">Workshop outline</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Start time</th>
+      <th>Description</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>1pm</strong></td>
+      <td>Welcome</td>
+      <td>talk - Kyle and Dan</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Launch Instance</td>
+      <td>activity - Dan</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>intro to command line</td>
+      <td>talk - Dan</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Install Sunbeam, get data</td>
+      <td>activity - Kyle</td>
+    </tr>
+    <tr>
+      <td><strong>2pm</strong></td>
+      <td>Shotgun sequencing intro</td>
+      <td>talk - Dan</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Initialize, configure, run</td>
+      <td>activity - Kyle</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td><em>Coffee break</em></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><strong>3pm</strong></td>
+      <td>Explore results, make report</td>
+      <td>activity - Kyle</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Download report</td>
+      <td>activity - Dan</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Discuss results</td>
+      <td>talk - Kyle and Dan</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="before-starting">Before starting</h2>
+<p>In this workshop we’ll use the Google Cloud to analyze raw ‘shotgun’ metagenomic sequence data to identify the microbial composition of stool from Crohn’s disease patients.  In addition to generating this microbial census, you’ll also assemble sequences into contigs, which can then be used to infer functional potential of the microbiome.  To accomplish these tasks we’ll use <a href="https://www.biorxiv.org/content/early/2018/05/18/326363">Sunbeam</a>, a snake-make based metagenomics pipeline developed by <a href="https://microbiome.research.chop.edu/our-team/kyle-bittinger.html">Kyle Bittinger</a> and his group at the PennCHOP Microbiome Center.</p>
+
+<p>The code below is copied from the <a href="http://sunbeam.readthedocs.io/en/latest/quickstart.html">Sunbeam Quickstart documentation</a>.  Please see the <a href="https://sunbeam.readthedocs.io/en/latest/usage.html#usage">full documentation</a> for more detailed info about using Sunbeam for your own work.</p>
+
+<p>This page is meant to serve as a guide to walk you through the workshop material, while providing a resource you can revisit after the workshop to practice and begin to adapt this workflow for your own studies.</p>
+
+<p>To participate in this workshop, you’ll only need a few things:
+* a laptop computer
+* an internet connection
+* a google account (free)
+* <a href="https://cloud.google.com">a google cloud account</a> (free sign-up comes with a $300 credit!)</p>
+
+<h2 id="lecture-slides">Lecture slides</h2>
+
+<ul>
+  <li>Dan’s slides covering the basics of working in the terminal and a quick intro to metagenomic sequencing are <a href="https://www.icloud.com/keynote/0rXSZQMTx8xTdiw2HiToUQZeQ#Metagenomics%5Fworkshop%5FUPenn%5FNov7.2018">here</a></li>
+  <li>Kyle’s slides on analysis of metagenomic data are <a href="https://docs.google.com/presentation/d/1pOK1v6CZMly23KlL1A6TPg1gMHJKNkAarYSudKUCB0U/edit?usp=sharing">here</a></li>
+</ul>
+
+<h2 id="set-up-cloud-computer">Set-up cloud computer</h2>
+
+<p>We’ll begin the workshop with a demonstration of how to launch your first Google Cloud instance to build your cloud computer to have the following specs:</p>
+
+<ul>
+  <li>8 cores</li>
+  <li>50Gb of RAM</li>
+  <li>100Gb solid state harddrive</li>
+  <li>Running Linux Ubuntu 18.04 LTS operating system</li>
+</ul>
+
+<p>Once you have finalized this instance, you have effectively rented a computer from Google, and we are all using exactly the same type of computer with the same operating system and compute resources.  In the case of the computer we set-up above, you will be charged 36 cents per hour, or about $260/month.  The more powerful the computer, the more you will be charged in rent, regardless of whether or not you actually use these resources.</p>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> This entire workshop should only take about $1 of your credit to complete.</div>
+
+<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> If you fail to delete your instance after the workshop, your credit card will be charged after ~1 month (when your $300 credit will have been spent).</div>
+
+<h2 id="install-sunbeam">Install Sunbeam</h2>
+
+<ul>
+  <li>
+    <p>Connect to your cloud computer using the ‘ssh’ button next to the instance.</p>
+  </li>
+  <li>
+    <p>Install some software using the Advanced Package Tool (apt), a free program that works with core libraries to handle the installation and removal of software on Debian, Ubuntu and other Linux distributions</p>
+  </li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="c"># first, update all current packages</span>
+sudo apt-get update
+<span class="c"># now install the R programming language </span>
+sudo apt-get install r-base
+</code></pre>
+</div>
+
+<ul>
+  <li><a href="https://github.com/eclarke/sunbeam">Download Sunbeam</a> from github using the code below</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nb">cd</span> ~
+git clone -b stable https://github.com/sunbeam-labs/sunbeam sunbeam-stable
+ls
+</code></pre>
+</div>
+<ul>
+  <li>Install Sunbeam</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nb">cd </span>sunbeam-stable
+bash install.sh
+</code></pre>
+</div>
+<ul>
+  <li>notice that we got a few warnings at the end of the Sunbeam installation.  Although Conda is now installed on our cloud computer, it has not been added to our PATH. We can do this using the following code:</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="c"># first, take a look at what is in your PATH</span>
+<span class="nb">echo</span> <span class="nv">$PATH</span>
+<span class="c"># now add the location of Conda to your PATH</span>
+<span class="nb">echo</span> <span class="s2">"export PATH=</span><span class="nv">$PATH</span><span class="s2">:/home/dbeiting/miniconda3/bin"</span> &gt;&gt; ~/.bashrc
+</code></pre>
+</div>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> the changes you made to your path will not take effect until you close and reoopen your SSH terminal.  You can do this now.</div>
+
+<ul>
+  <li>
+    <p>After opening the new SSH terminal window, check your PATH again with <code class="highlighter-rouge">echo $PATH</code>.  Notice that it has been updated with the location of the conda environments.</p>
+  </li>
+  <li>
+    <p>Since Sunbeam was installed as a Conda environment, we have to enter this environment to start using the software</p>
+  </li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nb">source </span>activate sunbeam
+</code></pre>
+</div>
+<p>This is a command you’ll want to remember for future sessions.  Each time you log into your cloud instance, you’ll need to activate the pipeline with <code class="highlighter-rouge">source activate sunbeam</code>.  Upon activation, you should see that your command prompt begins with “(sunbeam)”.  Anytime you want to exit out of sunbeam, simply type <code class="highlighter-rouge">source deactivate sunbeam</code> and hit return.</p>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> In addition to Sunbeam, there are an growing number of tools available that will install easily and quickly on cloud instances.  For example, you may want to check out <a href="https://github.com/IGS/Chiron">Chiron</a>, a suite of ‘dockerized’ tools for analysis of metagenomics data</div>
+
+<h2 id="get-data">Get data</h2>
+
+<ul>
+  <li>let’s install some additional software in our environment. SRA tools will allow us to easily retrieve raw data from NCBI’s <a href="https://www.ncbi.nlm.nih.gov/sra">Sequence Read Archive</a>.  The data is also available on github <a href="https://github.com/chvlyl/PLEASE">here</a>.</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>conda install -c bioconda sra-tools
+</code></pre>
+</div>
+<ul>
+  <li>For this workshop, we’ll use data from a <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4633303/">recent metagenomics study</a> in Crohn’s disease.  This was a large study, but for the purpose of the workshop we’ll only fetch data from 7 patients.  Note: contaminating human reads have already been removed from these files.  Let’s download these data to our cloud computer using the <code class="highlighter-rouge">fasterq-dump</code> function from the SRA tools software.</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nb">cd</span> ~
+mkdir workshop-data
+<span class="nb">cd </span>workshop-data
+fasterq-dump SRR2145310 -e 8
+fasterq-dump SRR2145329 -e 8
+fasterq-dump SRR2145381 -e 8
+fasterq-dump SRR2145353 -e 8
+fasterq-dump SRR2145354 -e 8
+fasterq-dump SRR2145492 -e 8
+fasterq-dump SRR2145498 -e 8
+</code></pre>
+</div>
+
+<h2 id="initialize-project">Initialize project</h2>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nb">cd</span> ~
+mkdir workshop-project
+sunbeam init workshop-project --data_fp workshop-data
+</code></pre>
+</div>
+
+<ul>
+  <li>Use your nano text editor to explore the samples file and configuration file.</li>
+</ul>
+
+<h2 id="download-reference-data">Download reference data</h2>
+
+<ul>
+  <li>
+    <p>We need two reference databases to run our analysis: a database of host DNA
+sequence to remove, and a database of bacterial DNA to match against.</p>
+  </li>
+  <li>
+    <p>We’ll get the human genome data from UCSC.  Filtering against the entire human
+genome takes too long, so we’ll only filter against chromosome 1.</p>
+  </li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nb">cd</span> ~
+mkdir human
+<span class="nb">cd </span>human
+wget http://hgdownload.cse.ucsc.edu/goldenPath/hg38/chromosomes/chr1.fa.gz
+gunzip chr1.fa.gz
+</code></pre>
+</div>
+
+<ul>
+  <li>Sunbeam requires that the host DNA sequence files end in “.fasta”, so it can
+find them automatically.  Let’s use the <code class="highlighter-rouge">mv</code> command to rename this file.</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>mv chr1.fa chr1.fasta
+</code></pre>
+</div>
+
+<ul>
+  <li>The database of bacterial genomes comes pre-built from the homepage of our
+taxonomic assignment software, Kraken.  We’ll download that using the <code class="highlighter-rouge">wget</code> program.</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nb">cd</span> ~
+wget https://ccb.jhu.edu/software/kraken/dl/minikraken_20171101_4GB_dustmasked.tgz
+tar xvzf minikraken_20171101_4GB_dustmasked.tgz
+</code></pre>
+</div>
+<p>## Configure Sunbeam</p>
+
+<ul>
+  <li>Now that we have reference databases, we need to add them to our configuration
+file.  We’ll use <code class="highlighter-rouge">nano</code> to open and modify this file directly in our termial</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nb">cd</span> ~
+nano workshop-project/sunbeam_config.yml
+</code></pre>
+</div>
+
+<ul>
+  <li>The configuration values are below.  You’ll need to navigate to the right spot in your configuration file, and substitute “USERNAME” with your google username.</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>host_fp: "/home/USERNAME/human"
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>kraken_db_fp: "/home/USERNAME/human/minikraken_20171101_4GB_dustmasked"
+</code></pre>
+</div>
+
+<ul>
+  <li>The default configuration for Sunbeam uses 4 threads, but we have 16 threads available, since our cloud machine has 8 cores. Let’s use all threads we have.</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>threads: 16
+</code></pre>
+</div>
+
+<h2 id="run-the-pipeline">Run the pipeline</h2>
+
+<ul>
+  <li>We are ready to actually run the pipeline.  All the information about how
+to run the pipeline is in our configuration file, so we’ll provide that to
+Sunbeam (<code class="highlighter-rouge">--configfile</code> argument).  We’ll also let Sunbeam know how many CPU
+cores we’d like to use (<code class="highlighter-rouge">--jobs</code> argument).</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nb">cd</span> ~
+sunbeam run --configfile workshop-project/sunbeam_config.yml --jobs 8
+</code></pre>
+</div>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> expect the full pipeline to take about 20 minutes to complete the analysis of these samples</div>
+
+<h2 id="explore-your-results">Explore your results</h2>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Although beyond the scope of this workshop, it is useful to check the quality of your assembled genomes.  A useful tool for this is <a href="http://ecogenomics.github.io/CheckM/">CheckM</a>, which could easily be installed on your cloud instance</div>
+
+<ul>
+  <li>Open your QC results and take notice of the number of fwd and rev reads that passed quality filter, as well number of host reads filtered out from each sample.</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nb">cd</span> ~/workshop-project/sunbeam_output/qc/reports/
+nano preprocess_summary.tsv
+</code></pre>
+</div>
+
+<ul>
+  <li>Take a look at taxanomic breakdown for one of the samples</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nb">cd</span> ~/workshop-project/sunbeam_output/classify/kraken
+nano SRR2145310-taxa.tsv
+</code></pre>
+</div>
+
+<h2 id="generate-a-report">Generate a report</h2>
+
+<ul>
+  <li>To look at some of our results, we’ll install a Sunbeam extension and generate
+a report.</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nb">cd</span> ~/sunbeam-stable/extensions
+git clone https://github.com/sunbeam-labs/sbx_report
+conda install --file sbx_report/requirements.txt
+</code></pre>
+</div>
+
+<ul>
+  <li>Now run the extension you just installed</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nb">cd</span> ~
+sunbeam run --configfile workshop-project/sunbeam_config.yml final_report
+</code></pre>
+</div>
+
+<ul>
+  <li>
+    <p>The summary report you just prepared is conveniently available as a single .html file that can be opened in any browser.  The problem is that this file resides on a google-owned harddrive and there is no simple way to open and view .html files directly in the terminal.  So, we need to transfer it to your laptop harddrive.</p>
+  </li>
+  <li>
+    <p>Notice that your SSH terminal window has a small gear icon in the upper right-hand corner of the screen.  Click on this and choose <em>Download file</em> from the dropdown menu.</p>
+  </li>
+  <li>
+    <p>In the pop-up box, enter the path to summary report  <code class="highlighter-rouge">/home/USERNAME/workshop-project/sunbeam_output/reports/final_report.html</code>, with your own username.</p>
+  </li>
+  <li>
+    <p>To wrap-up the workshop, we’ll expore and discuss the report together.  Just in case you had any issues retrieving this file from the cloud instance, you can also view a copy of the report <a href="http://CHMI-sops.github.io/papers/final_report.html">here</a>.</p>
+  </li>
+</ul>
+
+<h2 id="wrap-up">Wrap up</h2>
+
+<p>Time to take a <a href="http://etc.ch/DGRt">live survey</a>!</p>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Be sure to delete your instance right now to avoid charges to your credit card.  Your google cloud account will remain active and you will still have &gt;99% of your initial $300 credit remaining to use for analyzing your own data.).</div>
+
+<h2 id="practice-after-workshop">Practice after workshop</h2>
+
+<p>Practice makes perfect (or at least better!).  After destroying your instance, try firing up a fresh instance and run through this entire tutorial again from start to finish, exactly as we’ve outlined above.  As you do this, take some time to really think about each line of code and what is being accomplished.  If you don’t understand a command, start investigating via google.</p>
+
+
+
+    <div class="tags">
+        
+        <b>Tags: </b>
+        
+        
+        
+        <a href="tag_bioinformatics.html" class="btn btn-default navbar-btn cursorNorm" role="button">bioinformatics</a>
+        
+        
+        
+        <a href="tag_microbiome.html" class="btn btn-default navbar-btn cursorNorm" role="button">microbiome</a>
+        
+        
+        
+        <a href="tag_tutorials.html" class="btn btn-default navbar-btn cursorNorm" role="button">tutorials</a>
+        
+        
+        
+        <a href="tag_metagenomics.html" class="btn btn-default navbar-btn cursorNorm" role="button">metagenomics</a>
+        
+        
+        
+    </div>
+
+
+
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'http-hostmicrobe-org'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2020 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
+ Site last generated: Mar 19, 2020 <br />
+<p><img src="images/CHMI_logo.png" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+    </div>
+
+</body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-131349832-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+</html>

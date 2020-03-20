@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="post-encapsulation steps for preparing sequence-ready libraries for scRNAseq">
-<meta name="keywords" content="transcriptomics,  transcriptomics">
+<meta name="keywords" content="transcriptomicslibrary_prepsingle_cell_genomics,  transcriptomics">
 <title>Single Cell RNAseq – library prep | CHMI services</title>
 <link rel="stylesheet" href="css/syntax.css">
 
@@ -37,6 +37,8 @@
 <![endif]-->
 
 <link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000/feed.xml">
+
+
 
     <script>
         $(document).ready(function() {
@@ -198,12 +200,12 @@
         
     
     <li>
-        <a href="#">Transcriptomics</a>
+        <a href="#">Bulk RNAseq</a>
         <ul>
             
             
             
-            <li><a href="mydoc_RNAseq_FAQs.html">RNAseq FAQs</a></li>
+            <li><a href="mydoc_RNAseq_FAQs.html">FAQs</a></li>
             
             
             
@@ -231,14 +233,7 @@
             
             
             
-            <li><a href="mydoc_scRNAseq_encapsulation.html">Single cell encapsulation (InDrop)</a></li>
-            
-            
-            
-            
-            
-            
-            <li class="active"><a href="mydoc_scRNAseq_libraryPrep.html">Single cell library prep</a></li>
+            <li><a href="mydoc_FFPE_RNAseq.html">FFPE-seq</a></li>
             
             
             
@@ -248,13 +243,77 @@
                     
                     
                     
-                    <li><a href="mydoc_kallisto.html">Read mapping using Kallisto</a></li>
+                    <li><a href="mydoc_RNAseq_QA.html">Project management and QA</a></li>
                     
                     
                     
                     
                     
-                    <li><a href="mydoc_RNAseq_depositToGEO.html">Submitting RNAseq data to GEO</a></li>
+                    <li><a href="mydoc_kallisto.html">Read mapping with Kallisto</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_RNAseq_depositToGEO.html">Submitting data to GEO</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Single cell genomics</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_scRNAseq_FAQs.html">scRNAseq FAQs</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_10X_prep.html">10X sample prep</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_inDrop_encapsulation.html">inDrop encapsulation</a></li>
+            
+            
+            
+            
+            
+            
+            <li class="active"><a href="mydoc_inDrop_libraryPrep.html">inDrop library prep</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">scRNAseq data analysis</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="mydoc_CellRanger.html">10X CellRanger</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_BUStools.html">BUStools</a></li>
                     
                     
                     
@@ -317,6 +376,18 @@
                     
                     
                     
+                    
+                    
+                    <li><a href="mydoc_microbiomeDB_deposit.html">microbiomeDB.org</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_sourmash.html">Sourmash</a></li>
+                    
+                    
+                    
                 </ul>
             </li>
             
@@ -369,6 +440,13 @@
             
             
             
+            
+            
+            <li><a href="mydoc_3Dculture_microscopy.html">Immunofluorescence for 3D cultures</a></li>
+            
+            
+            
+            
         </ul>
      </li>
        
@@ -402,12 +480,28 @@
                     
                     
                     
-                    <li><a href="mydoc_biomeme_human.html">Human</a></li>
+                    <li><a href="mydoc_biomeme_human.html">Cutaneous leishmaniasis</a></li>
                     
                     
                     
                 </ul>
             </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Workshops</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_cloudMeta.html">Metagenomics in the cloud</a></li>
             
             
             
@@ -473,7 +567,7 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    <a target="_blank" href="https://github.com/CHMI-SOPs/CHMI-SOPs.github.io/tree/master/pages/mydoc/mydoc_scRNAseq_libraryPrep.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+    <a target="_blank" href="https://github.com/CHMI-SOPs/CHMI-SOPs.github.io/tree/master/pages/mydoc/mydoc_inDrop_libraryPrep.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
 
     
 
@@ -604,7 +698,7 @@ Total volume is 10 mL, aliquot into 1.5 mL tubes with approximately 0.5 mL per t
       <td>10.5 uL</td>
     </tr>
     <tr>
-      <td> </td>
+      <td>Total volume</td>
       <td><strong>50 uL</strong></td>
       <td><strong>100 uL</strong></td>
       <td><strong>150 uL</strong></td>
@@ -628,13 +722,16 @@ Total volume is 10 mL, aliquot into 1.5 mL tubes with approximately 0.5 mL per t
     <p>Discard the filter membrane (this contains the beads and all the particles we wanted to filter out, your sample is in the supernatant in the flow through).</p>
   </li>
   <li>
+    <p>Incubate the flow-through sample at 37C for 30 minutes.</p>
+  </li>
+  <li>
     <p>Purify the reaction by using AmpPure XP beads. At this stage, your products are RNA-cDNA hybrids. This is the general protocol for all AmpPure XP bead clean ups. Pay attention to the ratio in each step of beads: sample, the elution buffer used and the amount of elution buffer in each clean up. These will be different in the subsequent steps.</p>
   </li>
 </ol>
 
 <ul>
   <li>
-    <p>Ratio of AMpure XP beads to sample is 1.2X ; The elution buffer used here is <strong>nuclease free water</strong> at a volume of 17 uL</p>
+    <p>Ratio of AMpure XP beads to sample is 1.2X ; The elution buffer used here is <strong>nuclease free water</strong> at a volume of 19 uL</p>
   </li>
   <li>Add volume of beads directly to the sample. Vortex to mix well.</li>
   <li>Incubate the sample at room temperature for 5 minutes. Your sample will bind to the beads in this step.</li>
@@ -645,12 +742,10 @@ Total volume is 10 mL, aliquot into 1.5 mL tubes with approximately 0.5 mL per t
   <li>Repeat wash step once more.</li>
   <li>After the second wash, spin tube down to get any excess etoh off the bead, aspirate out and discard.</li>
   <li>Dry tubes at 37C with caps off for about 3 minutes or until the beads are dry. They should appear matte and begin to crack when dry.</li>
-  <li>Add 17uL of elutent and vortex, spin down, and incubate at room temperature for 5 minutes.</li>
+  <li>Add 19uL of elutent and vortex, spin down, and incubate at room temperature for 5 minutes.</li>
   <li>Return the tubes to the magnetic stand and incubate for 1 minute until supernatant is clear. supernatant now contains your sample.</li>
-  <li>Transfer the supernatant to a fresh tube, a PCR tube.</li>
+  <li>Transfer 17uL of the supernatant to a fresh PCR tube.</li>
 </ul>
-
-<h2 id="day-2">Day 2</h2>
 
 <h3 id="second-strand-synthesis-and-in-vitro-transciption-ivt">Second Strand Synthesis and In Vitro-Transciption (IVT)</h3>
 
@@ -699,15 +794,17 @@ Total volume is 10 mL, aliquot into 1.5 mL tubes with approximately 0.5 mL per t
 </table>
 
 <ol>
-  <li>Pipette to mix, spin plate down, and incubate at 37C for 13-15 hours with the lid heated to 50C.</li>
+  <li>Pipette to mix, spin plate down, and incubate at <strong>37C for 13-15 hours with the lid heated to 50C</strong>.</li>
 </ol>
 
 <ul>
-  <li><strong>Pause point</strong> After 15h the IVT reaction can be kept at 4C for two hours, this is programmed into our PCR protocol on the machine.</li>
+  <li><strong>Pause point</strong> After 15h the IVT reaction can be kept at <strong>4C for two hours</strong>, this is programmed into our PCR protocol on our machine.</li>
 </ul>
 
+<h2 id="day-2">Day 2</h2>
+
 <ol>
-  <li>Purify the reaction by using AmpPure XP beads. This is the general protocol for all AmpPure XP bead clean ups. Pay attention to the ratio in each step of beads: sample, the elution buffer used and the amount of elution buffer in each clean up. These will be different in the subsequent steps.</li>
+  <li>Immediately after incubation, purify the reaction by using AmpPure XP beads. This is the general protocol for all AmpPure XP bead clean ups. Pay attention to the ratio in each step of beads: sample, the elution buffer used and the amount of elution buffer in each clean up. These will be different in the subsequent steps.</li>
 </ol>
 
 <ul>
@@ -724,17 +821,18 @@ Total volume is 10 mL, aliquot into 1.5 mL tubes with approximately 0.5 mL per t
   <li>After the second wash, spin tube down to get any excess etoh off the bead, aspirate out and discard.</li>
   <li>Dry tubes at 37C with caps off for about 3 minutes or until the beads are dry. They should appear matte and begin to crack when dry.</li>
   <li>Add 21uL of elutent and pipette to mix, spin down, and incubate at room temperature for 5 minutes.</li>
-  <li>Return the tubes to the magnetic stand and incubate for 1 minute until supernatant is clear. supernatant now contains your sample.</li>
-  <li>Transfer 9uL of supernatant to a new PCR tube. Transfer 10uL to a LoBind tube. This can be stored in the -80C for up to 6 months, labeled as post-IVT back up.</li>
+  <li>Return the tubes to the magnetic stand and incubate for 1 minute until supernatant is clear. The supernatant now contains your sample.</li>
+  <li>Transfer 9uL of supernatant to a well in a new plate. Transfer 10uL to a LoBind tube and label as “post-IVT back up”.</li>
 </ul>
 
 <ol>
-  <li>Run a HS RNA Tapestation on the post-IVT back up before transferring to the -80C freezer.</li>
+  <li>Run HS RNA Tapestation on the post-IVT back up. Then put “post-IVT back up” into the -80C freezer, where it can be stored for up to 6 months.</li>
 </ol>
 
 <p><strong>Fragmentation of Amplified RNA</strong></p>
 
-<p>Time: 20 mins</p>
+<p>Time: 20 mins
+[SKIP THIS STEP AND PROCEED TO REVERSE TRANSCRIPTION USING RANDOM HEXAMERS IF MAJORITY OF SAMPLE IS &lt;1000 NT]</p>
 
 <ol>
   <li>Prepare Fragmentation Stop Mix for each sample:</li>
@@ -775,7 +873,7 @@ Total volume is 10 mL, aliquot into 1.5 mL tubes with approximately 0.5 mL per t
     <p>Allow the thermalcycler to reach 70C (lid at 100-110C)</p>
   </li>
   <li>
-    <p>On ice, add 1 uL of 10X RNA Fragmentation reagent to 9 uL of purified of IVT product in plate from step 12.</p>
+    <p>On ice, add 1 uL of 10X RNA Fragmentation reagent to 9 uL of purified of IVT product from previous step.</p>
   </li>
   <li>
     <p>Spin down plate and fragment on thermalcycler at 70C for about 1-3 minutes, depending on what your post IVT tapestation looked like. Here is how to determine the fragmentation time:</p>
@@ -783,7 +881,7 @@ Total volume is 10 mL, aliquot into 1.5 mL tubes with approximately 0.5 mL per t
 </ol>
 
 <ul>
-  <li>1cellbio’s general rule is fragment for around 1 min if the bulk of the sample is below 1000nt, 2 mins if the bulk of the sample is between 1000-2000nt, and 3 mins if the majority of your sample is above 2000nt.</li>
+  <li>1cellbio’s general rule is no fragmentation if the bulk of the sample is below 1000nt, 1-2 mins if the bulk of the sample is between 1000-2000nt, and 3 mins if the majority of your sample is above 2000nt.</li>
 </ul>
 
 <ol>
@@ -798,7 +896,7 @@ Total volume is 10 mL, aliquot into 1.5 mL tubes with approximately 0.5 mL per t
   </li>
 </ol>
 
-<p>Ratio of AMpure XP beads to sample is 1.3X (104uL of beads) ; The elution buffer used here is <strong>RNA Elution Buffer</strong> at a volume of 21 uL</p>
+<p>Ratio of AMpure XP beads to sample is 1.3X (104uL of beads) ; The elution buffer used here is <strong>RNA Elution Buffer</strong> at a volume of 10 uL</p>
 
 <ul>
   <li>Place the sample(s) on the magnetic stand for 3-5 minutes until the bead collects on the side of the well and the supernatant is clear.</li>
@@ -849,7 +947,7 @@ Total volume is 10 mL, aliquot into 1.5 mL tubes with approximately 0.5 mL per t
 
 <ol>
   <li>
-    <p>Pipette to mix, spin down. Incubate at 70C (lid at 105C) for exactly 3 minutes and cool immediately on ice.</p>
+    <p>Pipette to mix, spin down. Incubate at <strong>70C (lid at 105C) for exactly 3 minutes</strong> and cool immediately on ice.</p>
   </li>
   <li>
     <p>On ice, add the following components to the mix to bring the total volume to 20uL:</p>
@@ -889,7 +987,7 @@ Total volume is 10 mL, aliquot into 1.5 mL tubes with approximately 0.5 mL per t
 
 <ol>
   <li>
-    <p>Mix gently by pipetting and incubate the reaction at 30C for 10 minutes followed by 42C for 1 hour then 70C for 15 minutes to heat inactivate the enzyme.</p>
+    <p>Mix gently by pipetting and <strong>incubate the reaction at 30C for 10 minutes then 42C for 1 hour then 70C for 15 minutes to heat inactivate the enzyme</strong>.</p>
   </li>
   <li>
     <p>Add 20uL of nuclease-free water, mix by pipetting, and save 20 uL as “pre-PCR back-up” in a LoBind tube. This back up can be stored at -80C for up to 6 months.</p>
@@ -1149,11 +1247,11 @@ Total volume is 10 mL, aliquot into 1.5 mL tubes with approximately 0.5 mL per t
   <li>Transfer 20 uL of supernatant to a new well.</li>
 </ul>
 
-<p>This eluate is the final sequencing-ready library.</p>
+<p>This eluate is the <em>final sequencing-ready library</em>.</p>
 
 <ol>
   <li>
-    <p>Test library by running on the HS D1000. The library should look like a smooth hump starting at 200bp and ending at 1.5kb with an average size between 400 and 600bp.</p>
+    <p>Test library by running on the HS D1000. The library should look like a smooth hump starting at 200bp and ending at 1.5kb with an average size between 400 and 600bp. This library distribution will vary from sample to sample.</p>
   </li>
   <li>
     <p>Perform Qubit on samples using the HS DNA assay to get the concentration for pooling and sequencing.</p>
@@ -1161,6 +1259,28 @@ Total volume is 10 mL, aliquot into 1.5 mL tubes with approximately 0.5 mL per t
 </ol>
 
 <p><strong>Pause Point</strong>: store the libraries at -80C or -20C. They should be stable for at least 1 year.</p>
+
+<h2 id="sequencing-guidelines">Sequencing Guidelines</h2>
+
+<ul>
+  <li>
+    <p>We sequence on a 75 Cycle High Output NextSeq 500 kit. The run cycles are 36 x 50.</p>
+  </li>
+  <li>
+    <p>This library prep kit comes with custom primers for Read 1, Read 2, and Index reads. These are in the library preparation box in the -20C and they are to be spiked into the sequencing cartridge in wells 7, 8, and 9 respectively.</p>
+  </li>
+  <li>
+    <p>Add 6ul of each primer to 1.994mL HT1, each in its own 5mL tube.</p>
+  </li>
+  <li>
+    <p>When ready to spike into wells of sequencing cartridge, add the 2mL mixture to the appropriate well.  (7 = read 1, 8 = read 2 and 9 = index)</p>
+  </li>
+  <li>
+    <p>Ensure custom indexes R1, R2, and Index are checked off when programming run on Basespace and ensure these boxes are checked off when viewing run parameters on the sequencer.</p>
+  </li>
+</ul>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Spiking custom indexes into wells 7, 8, and 9 will not align any reads to PhiX. We do not spike in any PhiX during these runs. </div>
 
 
 
@@ -1171,6 +1291,14 @@ Total volume is 10 mL, aliquot into 1.5 mL tubes with approximately 0.5 mL per t
         
         
         <a href="tag_transcriptomics.html" class="btn btn-default navbar-btn cursorNorm" role="button">transcriptomics</a>
+        
+        
+        
+        <a href="tag_library_prep.html" class="btn btn-default navbar-btn cursorNorm" role="button">library_prep</a>
+        
+        
+        
+        <a href="tag_single_cell_genomics.html" class="btn btn-default navbar-btn cursorNorm" role="button">single_cell_genomics</a>
         
         
         
@@ -1200,8 +1328,8 @@ Total volume is 10 mL, aliquot into 1.5 mL tubes with approximately 0.5 mL per t
 <footer>
             <div class="row">
                 <div class="col-lg-12 footer">
-               &copy;2018 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
- Site last generated: Oct 2, 2018 <br />
+               &copy;2020 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
+ Site last generated: Mar 19, 2020 <br />
 <p><img src="images/CHMI_logo.png" alt="Company logo"/></p>
                 </div>
             </div>
@@ -1215,5 +1343,12 @@ Total volume is 10 mL, aliquot into 1.5 mL tubes with approximately 0.5 mL per t
     </div>
 
 </body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-131349832-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
 
 </html>

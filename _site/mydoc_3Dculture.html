@@ -38,6 +38,8 @@
 
 <link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000/feed.xml">
 
+
+
     <script>
         $(document).ready(function() {
             // Initialize navgoco with default options
@@ -198,12 +200,12 @@
         
     
     <li>
-        <a href="#">Transcriptomics</a>
+        <a href="#">Bulk RNAseq</a>
         <ul>
             
             
             
-            <li><a href="mydoc_RNAseq_FAQs.html">RNAseq FAQs</a></li>
+            <li><a href="mydoc_RNAseq_FAQs.html">FAQs</a></li>
             
             
             
@@ -231,14 +233,7 @@
             
             
             
-            <li><a href="mydoc_scRNAseq_encapsulation.html">Single cell encapsulation (InDrop)</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="mydoc_scRNAseq_libraryPrep.html">Single cell library prep</a></li>
+            <li><a href="mydoc_FFPE_RNAseq.html">FFPE-seq</a></li>
             
             
             
@@ -248,13 +243,77 @@
                     
                     
                     
-                    <li><a href="mydoc_kallisto.html">Read mapping using Kallisto</a></li>
+                    <li><a href="mydoc_RNAseq_QA.html">Project management and QA</a></li>
                     
                     
                     
                     
                     
-                    <li><a href="mydoc_RNAseq_depositToGEO.html">Submitting RNAseq data to GEO</a></li>
+                    <li><a href="mydoc_kallisto.html">Read mapping with Kallisto</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_RNAseq_depositToGEO.html">Submitting data to GEO</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Single cell genomics</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_scRNAseq_FAQs.html">scRNAseq FAQs</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_10X_prep.html">10X sample prep</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_inDrop_encapsulation.html">inDrop encapsulation</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_inDrop_libraryPrep.html">inDrop library prep</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">scRNAseq data analysis</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="mydoc_CellRanger.html">10X CellRanger</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_BUStools.html">BUStools</a></li>
                     
                     
                     
@@ -317,6 +376,18 @@
                     
                     
                     
+                    
+                    
+                    <li><a href="mydoc_microbiomeDB_deposit.html">microbiomeDB.org</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_sourmash.html">Sourmash</a></li>
+                    
+                    
+                    
                 </ul>
             </li>
             
@@ -369,6 +440,13 @@
             
             
             
+            
+            
+            <li><a href="mydoc_3Dculture_microscopy.html">Immunofluorescence for 3D cultures</a></li>
+            
+            
+            
+            
         </ul>
      </li>
        
@@ -402,12 +480,28 @@
                     
                     
                     
-                    <li><a href="mydoc_biomeme_human.html">Human</a></li>
+                    <li><a href="mydoc_biomeme_human.html">Cutaneous leishmaniasis</a></li>
                     
                     
                     
                 </ul>
             </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Workshops</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_cloudMeta.html">Metagenomics in the cloud</a></li>
             
             
             
@@ -492,78 +586,135 @@ $('#toc').on('click', 'a', function() {
 <ul>
   <li>RCCS4H 3D Cell Culture System from <a href="http://synthecon.com/pages/home.asp">Synthecon</a>.</li>
   <li>four autoclavable 55 ml slow-turning lateral vessels (STLV)</li>
-  <li>CO2 incubator at 37C.</li>
+  <li>CO2 incubator at 37C, 5% CO2</li>
   <li>Inverted light microscope.</li>
-  <li>70% ethanol</li>
+  <li>70% ethanol (in spray bottle) and 100% ethanol</li>
   <li>Sterile water</li>
   <li>Dulbecco’s Phosphate Buffered Saline (DPBS)</li>
   <li>Heat inactivated Fetal Bovine Serum (HI-FBS)</li>
-  <li>D10 media: DMEM + 10% HI-FBS + 0.05% antibiotic (Pen/Strep)</li>
-  <li>Cytodex 3 microcarrier beads (Sigma, cat# C3275).</li>
+  <li>D10 media: DMEM + 15% HI-FBS + 0.5% antibiotic (Pen/Strep)</li>
+  <li>Porcine collagen-coated Cytodex 3 microcarrier beads (Sigma, cat# C3275).</li>
+  <li>1000 ul sterile, large orifice pipette tips (USA Scientific, cat# 1011-9410)</li>
+  <li>200 ul sterile, large orifice pipette tips (USA Scientific, cat# 1011-8810)</li>
+</ul>
+
+<h2 id="making-d10-media">Making D10 Media</h2>
+<p>Materials needed:
+* 1000 mL SterioCup
+* Vacuum nozzle 
+* 1 L DMEM
+* Sodium Pyruvate
+* 100 mL fetal bovine serum (FBS)
+* Broad Spectrum Antibiotic, Pen-Strep 
+* Waste Container</p>
+
+<ol>
+  <li>Thaw 150ml fetal bovine serum (FBS) and antibiotic in water bath, spray down outside outside of tubes thoroughly with 70% ethanol and put under hood.</li>
+  <li>In a sterile environment under a cell culture hood, open 1L container of DMEM and remove/discard 150 mL of media.</li>
+  <li>Add 150 mL of FBS directly to DMEM container.</li>
+  <li>If DMEM <strong>does not</strong> contain sodium pyruvate, add 10 mL of sodium pryvate to DMEM container.</li>
+  <li>Add 5 mL of Pen-Strep Antibiotic to DMEM.</li>
+  <li>Open Steriocup packaging and attach the vacuum adapter to the container and to the vacuum nozzle in the wall but do not turn on vacuum yet.</li>
+  <li>Pour entire contents of DMEM container onto the filter portion of Steriocup and close with lid.</li>
+  <li>Turn on vacuum and wait until all contents have been filtered through to the bottom portion of the container.</li>
+  <li>Open the sterile blue lid and close steriocup.</li>
+  <li>Label with D10 media on the side of the container and on the lid with the date and your initials. Store in 4C.</li>
+</ol>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Each person should have their own media.  Do not share media with others or you increase changes of contamination.</div>
+
+<h2 id="caco-2-cell-culture">Caco-2 cell culture</h2>
+<ul>
+  <li>Prepare a T25 flask with 8mL prewarmed D10 media and place in 37C incubator to equilibrate.</li>
+  <li>Pull cells from liquid nitrogen storage. Thaw rapidly in 37C water bath.</li>
+  <li>Spray thawed vial generously with 70% ethanol</li>
+  <li>With a 2mL serological pipette, transfer thawed contents (~1mL) to the prepared T25. Pipette up and down to ensure all contents are transferred. There is no need to spin down/aspirate.</li>
+  <li>Incubate flask at 37C and wait for confluent growth (usually 3-5 days).</li>
+  <li>Expand confluent T25 to one T75 flasks (see below for how to pass cells in flasks).</li>
+  <li>Keep working cultures of the cells by subculturing them once or twice a week, as needed.</li>
+  <li>Flasks should be labeled with your name or initials, date of passage, cell line, and passage number.</li>
+</ul>
+
+<h2 id="passing-caco-2-cells">Passing caco-2 cells</h2>
+<ul>
+  <li>Warm 0.25% Trypsin-EDTA and D10 media in 37C water bath. Once pre-warmed, place under hood.</li>
+  <li>Take out flask with confluent cell growth. Remove all D10 media in flask and discard.</li>
+  <li>Wash flask with Trypsin (2mL for T25 and 5mL for T75) then immediately remove the trypsin wash and discard.</li>
+  <li>Add fresh, warm 0.25% trypsin to washed flask (0.5mL for T25 and 1.5mL for T75). Tip flask side to side and make sure trypsin coats the bottom of the flask.</li>
+  <li>Incubate flask with trypsin at 37C for 5 minutes.</li>
+  <li>Check flask under microscope to see if cells are floating in suspension or still adhered to the flask. If still adhered, place flask back into the incubator for another 5 minutes then check again.</li>
+  <li>Resuspend with 8.5 mL of D10 media.</li>
+  <li>Pass 2mL of resuspension into each of 5 T75 flasks with 23mL of prewarmed media.</li>
 </ul>
 
 <h2 id="preparing-the-stlvs">Preparing the STLVs</h2>
 
 <ul>
-  <li><strong>Day 1</strong>: Get a clean STLV, tighten the central screw and fill the vessel with 70% ethanol. Be careful when closing it. Leave overnight on the bench.</li>
-  <li><strong>Day 2</strong>: Discard ethanol of the vessel and replace it with sterilized water. Leave overnight on the benchtop.</li>
-  <li><strong>Day 3</strong>: Discard the contents and replace with another aliquot of sterilized water. Leave it overnight.</li>
-  <li><strong>Day 4</strong>: Loosen the screws halfway, take out the center port, remove the luer caps and autoclave the open vessel and the center port, inside an autoclave pouch (15 min, gravity cycle, 121C). Remove from autoclave immediately after the cycle is done. Let it cool and use it immediately or store it for later use, as needed in a clean, dry area.</li>
+  <li><strong>Day 1</strong>: Get a clean STLV, tighten the central screw and fill the vessel with 100% ethanol. Be careful when closing it. Leave overnight on the bench.</li>
+  <li><strong>Day 2</strong>: Discard ethanol of the vessel and wash 3x with sterile water. Fill with sterile water, recap and leave overnight</li>
+  <li><strong>Day 3</strong>: Loosen the screws halfway, take out the center port, remove the luer caps and autoclave the open vessel and the center port, inside an autoclave pouch (15 min, gravity cycle, 121C). Remove from autoclave immediately after the cycle is done. Let it cool and use it immediately or store it for later use, as needed in a clean, dry area. (The STLV are stored after this step in the box on our bench- they are inside their sterile autoclave bags. If this bag is tampered with or ripped in any way, go back to day 1 and redo all of the above steps before use).</li>
   <li><strong>Day before use</strong>: tighten the screw, fill the STLV with sterile DPBS, close the center port. Screw one-way stopcocks to the other two openings and plug one luer-lock syringes (5 and 10ml) in each side. Let it rotate overnight in the STLV, 20 rpm and monitor for leaks.</li>
 </ul>
 
 <h2 id="preparing-culture-beads">Preparing culture beads</h2>
 
 <ul>
-  <li>Add 250 μl of Cytodex bead solution to a 50 ml conical tube contain 15 ml of DPBS.</li>
-  <li>Autoclave it in <strong>liquid cycle</strong>, 30 min at 121C.  Keep the cap loose, and keep tube in a beaker or heat resistant rack.</li>
+  <li>Add 250 mg of Cytodex bead solution (measured on scale in weigh boat) to a 50 ml conical tube contain 15 ml of DPBS.</li>
+  <li>Autoclave it in <strong>liquid cycle</strong>, 30 min at 121C.  Keep the cap loose and fasten with tape, and keep tube in a beaker or heat resistant rack.</li>
   <li>Allow the the beads to cool and settle. Remove the supernatant and discard.</li>
   <li>Wash beads with 15 ml of  D10 media.  Agitate manually, let the beads settle and discard supernatant. Repeat 3x.</li>
 </ul>
 
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Sterile beads can be stored at 4C for weeks for later use. Do an extra wash with fresh D10 on the day of experiment and bring the final volume to ~15 ml</div>
 
-<h2 id="caco-2-cell-culture">Caco-2 cell culture</h2>
-<ul>
-  <li>Pull cells from liquid nitrogen storage.  Thaw rapidly in 37C water bath.</li>
-  <li>transfer thawed contents to a T25 flask with 8-10 ml of prewarmed D10 media.</li>
-  <li>Incubate at 37C and wait for confluent growth.</li>
-  <li>Expand cells to four T75 flasks.</li>
-  <li>Keep working cultures of the cells by subculturing them once or twice a week, as needed.</li>
-</ul>
-
 <h2 id="seeding-the-stlvs">Seeding the STLVs</h2>
 <ul>
-  <li>Remove STLV that was rotating with DPBS overnight.  Remove the syringes and the luer caps and drain the DPBS. Replace with new stopcocks and syringes (without the plungers; keep them sterile for later use).</li>
-  <li>Trypsinize one T75 flask and respend in 10 ml of DMEM. Each flask is used to seed a single reactor</li>
-  <li>Mix 10 ml bead suspension with cells to give 20 ml of volume.</li>
+  <li>Remove STLV that was rotating with DPBS overnight. Remove the syringes and the stockcocks and drain the DPBS. Replace with new stopcocks and syringes (without the plungers; keep them sterile for later use).</li>
+  <li>Trypsinize 1-2 T75 flasks for each reactor that you want to set-up.  We generally get 8-10 million Caco-2 cells from a single T75, and we need 10 million cells to set-up a single reactor.</li>
+  <li>Recover trypsinized cells in ~10ml of DMEM, spin down at 300xg for 8min, and resuspend in 10ml of fresh media.  Count cells and adjust to 1 million cells per ml.</li>
+  <li>Mix 10 ml bead suspension with 10ml of cells (10 million cells) to give 20 ml of volume.</li>
   <li>Transfer the cell-bead suspension carefully to the STLV vessel through the center port.</li>
   <li>Recover residual cell-bead mix from tube with D10 media and transfer to the STLV.</li>
-  <li>Close the center port and q.s. volume in STLV vessel to 50 ml with D10 media (until liquid starts overflow back into the syring).</li>
-  <li>Take out as many as bubbles as you can by carefully tilting the STLV and using the syringe. <em>Be careful to control pressure to not expel the center port</em>.</li>
+  <li>Close the center port and q.s. volume in STLV vessel to 50 ml with D10 media through the syringes (until liquid starts overflow back each syringe about halfway).</li>
+  <li>Remove large bubbles by carefully tilting the vessel and gently tapping the side. If cells or beads are disturbed, rest the vessel upright to allow them to settle before continuing.</li>
+  <li>Add the sterile plungers you kept in the first step to the open syringes. To remove the remaining bubbles, carefully tilt the STLV and use the syringes to get any air bubbles that you can see around the edges of the STLV. Position the bubble under one syringe and compress the other to expel the bubble. <em>Be careful to control pressure to not expel the center port</em>. Gently tap the side of the vessel to move stubborn bubbles.</li>
+  <li>Close stopcocks.</li>
   <li>Incubate the STLV for 30 minutes at 37C, 5% CO2 without movement to allow the cells to attach to the beads.</li>
-  <li>Examine the STLV and remove any remaining air bubbles</li>
-  <li>Set STLV to rotate at 20 rpm at 37C, 5% CO2 for 21-28 days,</li>
+  <li>Examine the STLV and remove any remaining air bubbles.</li>
+  <li>Set STLV to rotate at 20 rpm at 37C, 5% CO2 for 21-28 days.</li>
 </ul>
 
 <h2 id="feeding-the-stlv">Feeding the STLV</h2>
 <ul>
-  <li>Exchanging the culture medium every other day.</li>
-  <li>Remove STLV from incubator, remove syringes, let the beads settle</li>
-  <li>Hold the STLV inclined, tapping the center port for the beads to stay in the bottom side of the reactor. Carefully remove ~80% of the spent culture medium through the stopcocks,</li>
-  <li>Replace the syringe and fill the vessel with fresh D10.  Return the STLV immediately for rotation.</li>
+  <li>Change the culture medium every other day. If media begins looking exhausted, you can switch to every day.</li>
+  <li>Remove the STLV from incubator. Let the beads settle at the bottom of the vessel. While holding the STLV at a 45 degree angle over a waste container, carefully remove both syringes and discard.</li>
+  <li>Turn stopcocks to open position.  Keeping the STLV inclined at a 45 degree angle over a waste container, drain out 50-75% of the old media without allowing the beads to travel with the media. It is very important to keep the vessel still while draining the media because every time the beads are disturbed, you could potentially have them spill out into the waste. If you see beads starting to move toward the opening of the vessel, place the vessel back down on the hood and let them settle at the bottom again.</li>
+  <li>To add fresh media, remove and discard stopcocks.  Replace with new sterile stopcocks and new sterile 10cc syringes (with plungers removed and set on sterile packaging).</li>
+  <li>With the new stopcocks turned to the open position, pipette media into one of the syringes to fill reactor.  Media should back flow into both syringes.  Tap vessel on hood surface to move trapped air bubbles.</li>
+  <li>Once vessel is full and free of large bubbles, with stopcocks still in the open position, place plungers into both syringes.</li>
+  <li>Turn both stopcocks to closed position and return vessels to the incubator for rotation.</li>
 </ul>
 
 <h2 id="harvesting-cells">Harvesting cells</h2>
 <ul>
-  <li>to monitor cell growth during the culture period, a small volume of bead suspension may be removed via syringe.</li>
+  <li>To monitor cell growth during the culture period, during a regular media change use a sterile pipette tip to remove 100-200ul.  Dispense into a small plastic dish and examine under a dissecting scope.  Number of coated vs uncoated beads can be easily counted to determine number of coated beads per unit volume.</li>
 </ul>
 
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> use a 1 ml cut pippete tip to prevent shear and protect the 3D structures.</div>
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> use a 1 ml cut pippete tip (these are under the hood- already autoclaved) to prevent shearing of cells and protect the 3D structures.</div>
 
 <ul>
   <li>After 3-4 weeks of continuous culture, transfer 3D culture beads to a 50 mL conical tube.</li>
   <li>adjusted to 15 ml and use as needed for microscopic or RNA Seq experiments.</li>
+</ul>
+
+<h2 id="recovering-cells-from-beads">Recovering cells from beads</h2>
+<ul>
+  <li>To recover a single cell suspension from a reactor, remove reactor from aparatus, allow beads to settle, and remove as much media as possible (e.g. leaving approx. 15ml of media/beads remaining in the reactor).  Fill remaining volume of reactor with <strong>pre-warmed</strong> <a href="https://www.thermofisher.com/order/catalog/product/A1217701#/A1217701">10x TrypLE Select reagent</a>.  Return reactor to aparatus and allow rotation to proceed for 10min to remove cells from beads.</li>
+  <li>After incubation, recover the entire volume through the main port using a 10ml pipette and transfer to a 50ml tube by passing over a 100um cell filter to remove beads. Beads and large cell clumps will accumulate on the filter. Change to a new filter if clogging occurs as beads accumulate</li>
+  <li>Pass over a 40um cell filter to ensure that no beads have gotten through.</li>
+  <li>Spin 300xg for 8 min to pellet cells.</li>
+  <li>Resuspend in 10ml of media or PBS and pass over a new 40um filter to leave you with a single cell suspension.</li>
+  <li>Count cells on hemocytometer and check viability with trypan blue staining.  Viability should be nearly 100%, and typical cell recovery is about 6 million cells per reactor.</li>
 </ul>
 
 <h2 id="stlv-clean-up">STLV clean-up</h2>
@@ -617,8 +768,8 @@ $('#toc').on('click', 'a', function() {
 <footer>
             <div class="row">
                 <div class="col-lg-12 footer">
-               &copy;2018 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
- Site last generated: Oct 2, 2018 <br />
+               &copy;2020 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
+ Site last generated: Mar 19, 2020 <br />
 <p><img src="images/CHMI_logo.png" alt="Company logo"/></p>
                 </div>
             </div>
@@ -632,5 +783,12 @@ $('#toc').on('click', 'a', function() {
     </div>
 
 </body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-131349832-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
 
 </html>

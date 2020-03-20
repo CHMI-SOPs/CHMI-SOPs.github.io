@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Managing your RNAseq project and checking the quality of raw data are essential first steps in the analysis of any RNAseq experiment.  The protocol below out...">
+<meta name="keywords" content="bioinformaticstranscriptomics,  ">
+<title>Project management and quality assurance for RNAseq projects | CHMI services</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<link rel="stylesheet" href="css/lavish-bootstrap.css">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000/feed.xml">
+
+
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Center for Host-Microbial Interactions</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:beiting@upenn.edu?subject=CHMI services feedback&body=I have some feedback about the Project management and quality assurance for RNAseq projects page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Project management and quality assurance for RNAseq projects">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+    <div class="col-lg-12">&nbsp;</div>
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+
+
+
+
+
+
+
+
+
+
+
+<ul id="mysidebar" class="nav">
+    <li class="sidebarTitle">CHMI services </li>
+    
+    
+    
+        
+    
+    <li>
+        <a href="#">Overview</a>
+        <ul>
+            
+            
+            
+            <li><a href="index.html">Welcome</a></li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Bulk RNAseq</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_RNAseq_FAQs.html">FAQs</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_TruSeq.html">mRNA library prep</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_total_TruSeq.html">Total transcriptome library prep</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_lowInput_RNAseq.html">Low input protocol</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_FFPE_RNAseq.html">FFPE-seq</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">RNAseq data analysis</a>
+                <ul>
+                    
+                    
+                    
+                    <li class="active"><a href="mydoc_RNAseq_QA.html">Project management and QA</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_kallisto.html">Read mapping with Kallisto</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_RNAseq_depositToGEO.html">Submitting data to GEO</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Single cell genomics</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_scRNAseq_FAQs.html">scRNAseq FAQs</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_10X_prep.html">10X sample prep</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_inDrop_encapsulation.html">inDrop encapsulation</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_inDrop_libraryPrep.html">inDrop library prep</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">scRNAseq data analysis</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="mydoc_CellRanger.html">10X CellRanger</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_BUStools.html">BUStools</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Microbiology</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_micro_FAQs.html">Microbiology FAQs</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_16S.html">16S rRNA gene sequencing</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_NexteraXT.html">Shotgun metagenomics</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_16S_Sanger.html">Sanger sequencing of 16S</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_mock.html">Culture collection</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Data analysis</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="mydoc_qiime2.html">QIIME2</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_microbiomeDB_deposit.html">microbiomeDB.org</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_sourmash.html">Sourmash</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Compute resources</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_linux.html">Linux cluster</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_software.html">Available software</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_RStudio.html">R Studio Server</a></li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Cell culture</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_3Dculture.html">3D intestinal cultures</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_3Dculture_microscopy.html">Immunofluorescence for 3D cultures</a></li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">In the field</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_nanopore.html">Oxford Nanopore</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Biomeme portable QPCR</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="mydoc_biomeme.html">Set-up</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_biomeme_avian.html">Avian</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_biomeme_human.html">Cutaneous leishmaniasis</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Workshops</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_cloudMeta.html">Metagenomics in the cloud</a></li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+        
+        <!-- if you aren't using the accordion, uncomment this block:
+           <p class="external">
+               <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+           </p>
+           -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">Project management and quality assurance for RNAseq projects</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+    <div class="summary">Managing your RNAseq project and checking the quality of raw data are essential first steps in the analysis of any RNAseq experiment.  The protocol below outlines our best practices to keep  projects and data transparent, reproducible and robust.</div>
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+    <a target="_blank" href="https://github.com/CHMI-SOPs/CHMI-SOPs.github.io/tree/master/pages/mydoc/mydoc_RNAseq_QA.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+    
+
+  <h2 id="step-1-project-set-up">Step 1: project set-up</h2>
+
+<p>Quality assurance (QA) can mean many things – to us QA means not only that the raw data files are examined for any issues that could compromise downstream analyses, but also that the data is organized in a way that others can understand what was done for a given project.  This greatly improves transparency and reproducibility.  To ensure that the different file types and analyses for your RNAseq project remain clear and organized, we recommend an approach we call <a href="https://github.com/dpbisme/MIDAS_RNAseq">MInimal Directory for Analysis of Sequencing data (MIDAS)</a>.  MIDAS_RNAseq is just a directory structure that provides a simple framework for organizing your RNAseq experiment.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>|-- DATA
+    |-- raw
+        |-- sample1_mergedLanes.fastq.gz
+        |-- sample2_mergedLanes.fastq.gz
+        |-- ...
+    |-- processed
+        |-- preprocessing.sh
+        |-- sample1_mergedLanes_trim.fastq.gz
+        |-- sample2_mergedLanes_trim.fastq.gz
+        |-- ...
+|-- ANALYSIS
+    |-- code
+        |-- myProject.Rproj
+        |-- step1.R
+        |-- step2.R
+        |-- ...
+        |-- projectSummary.rmd
+        |-- projectDashboard.rmd
+    |-- readmapping
+        |-- readmapping.sh
+        |-- reference.fasta
+        |-- reference.index
+|-- QA
+    |-- library_prep
+        |-- RNAquality_tapestation.pdf
+        |-- Library_tapestation.pdf
+    |-- fastqc
+        |-- sample1.fastqc.html
+        |-- sample1.fastqc.zip
+        |-- sample2.fastqc.html
+        |-- sample2.fastqc.zip
+        |-- ...
+    |-- fastq_screen
+    |-- multiqc_report.html
+|-- studyDesign.txt
+|-- readme.txt
+
+</code></pre>
+</div>
+
+<h2 id="step-2-connect-to-a-chmi-linux-cluster">Step 2: Connect to a CHMI linux cluster</h2>
+
+<p>Once you have your directory structure set-up, you’re ready to begin using some software tools for investigating the quality of the reads in your fastq files.  These software run best on a machine with a fair amount of RAM and disk storage.  We use our <a href="https://chmi-sops.github.io/mydoc_linux.html">linux machine</a>.</p>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> if you do not have an account on our cluster and would like to get one, please contact Dan Beiting</div>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>ssh username@130.91.255.137
+</code></pre>
+</div>
+
+<h2 id="step-3-check-data-quality">Step 3: Check data quality</h2>
+
+<h3 id="fastqc">fastqc</h3>
+
+<p>Begin by using <a href="https://www.bioinformatics.babraham.ac.uk/projects/download.html">fastqc</a> to check the quality of each of your fastq files.  Throughout this protocol, we’ll assume you use a directory structure like the one outlined above.  The file paths below reference this directory structure.</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="c"># navigate to the folder with your raw fastq files</span>
+<span class="nb">cd </span>data/raw
+<span class="c"># run fastqc on all files, putting the outputs into the QA/fastqc folder</span>
+fastqc <span class="k">*</span>.gz -t 24 -o ../QA/fastqc 
+</code></pre>
+</div>
+
+<h3 id="optional-check-for-contamination">Optional: check for contamination</h3>
+
+<p>Often times there are questions about whether there may be reads, other than those from the intended sample source, present in a data file.  If you suspect contamination of a particular kind (e.g. other host, plasmid, rRNA, or some common bacterium used in lab), you can run <a href="https://www.bioinformatics.babraham.ac.uk/projects/fastq_screen/_build/html/index.html">fastq_screen</a> to check a subsample of reads from your raw fastq file against a set of reference genomes.</p>
+
+<p>fastq_screen uses bowtie2 for aligning reads to the references, so we’ve provided a set of reference genomes on our cluster to which you can easily compare.</p>
+
+<p>We’ve taken care of configurating fastq_screen so that it knows where to find bowtie2 and where to look for the reference genomes.  This information is pretty clearly outlined in the fastq_screen configuration file found at /usr/local/bin/fastq_screen_v0.12.0/fastq_screen.conf</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="nb">cd </span>data/raw
+fastq_screen --threads 24 --outdir QA/fastq_screen <span class="k">*</span>gz  
+</code></pre>
+</div>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> The reference genomes listed below have already been added to the configuration file.  If you don’t want a particular reference, and you are comfortable editing configuration files using the commnad line, feel free to comment out any of the references.  However, please <strong>do not</strong> delete the configuration file itself or <em>remove</em> any of the lines in the file!  If you want to use fastq_screen against a bowtie2 reference genome that is not listed below, please contact us for help.</div>
+
+<ul>
+  <li>Human</li>
+  <li>Mouse (<em>Mus musculus</em>)</li>
+  <li>Dog (<em>Canis familiaris</em>)</li>
+  <li>Cow (<em>Bos taurus</em>)</li>
+  <li>Horse (<em>Equus caballus</em>)</li>
+  <li>Pig (<em>Sus scrofa</em>)</li>
+  <li>Chicken (<em>Gallus gallus</em>)</li>
+  <li>Fruitfly (<em>Drosophila melanogaster</em>)</li>
+  <li>Yeast (<em>Saccharomyces cerevisiae</em>)</li>
+  <li><em>E. coli</em> (strain K12)</li>
+  <li>Staph (<em>Staphyloccous aureus</em> strain NCTC 8325)</li>
+  <li>Lambda phage (Enterobacteriophage lambda)</li>
+  <li>PhiX</li>
+  <li><a href="www.bioinformatics.babraham.ac.uk/projects/fastqc">Contaminants</a></li>
+  <li><a href="http://www.ncbi.nlm.nih.gov/VecScreen/UniVec.html">plasmids/vectors</a></li>
+</ul>
+
+<h2 id="step-4-summarize-qa-results">Step 4: Summarize QA results</h2>
+
+<p><a href="https://multiqc.info/">MultiQC</a> is a fantastic piece of software for aggregating and summarizing the outputs from many different kinds of bioinformatics programs in one convenient and interactive html file.  In this case, we’ll use it to summarize the output from fastqc.</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="c"># use the -d command to tell multiqc to look in all folders (data, analysis and qa) to find log files</span>
+<span class="nb">cd </span>MIDAS/
+multiqc -d .
+</code></pre>
+</div>
+
+<p>You should now see a multiqc_report.html file in your project directory.  Move this to your data/qa folder.  You can also copy it from our server to your local computer using an FTP client (e.g. FileZilla), then double click and explore!</p>
+
+<h2 id="reproducibility">Reproducibility</h2>
+
+<p>To document your analysis in a transparent and reproducible way, use the</p>
+
+
+
+    <div class="tags">
+        
+        <b>Tags: </b>
+        
+        
+        
+        <a href="tag_bioinformatics.html" class="btn btn-default navbar-btn cursorNorm" role="button">bioinformatics</a>
+        
+        
+        
+        <a href="tag_transcriptomics.html" class="btn btn-default navbar-btn cursorNorm" role="button">transcriptomics</a>
+        
+        
+        
+    </div>
+
+
+
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'http-hostmicrobe-org'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2020 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
+ Site last generated: Mar 19, 2020 <br />
+<p><img src="images/CHMI_logo.png" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+    </div>
+
+</body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-131349832-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+</html>

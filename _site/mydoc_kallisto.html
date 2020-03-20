@@ -4,7 +4,7 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Kallisto is our first choice for aligning reads because it combines speed, accuracy, and ability to leverage bootstraps for modeling technical variance">
+<meta name="description" content="Kallisto is our first choice for aligning reads because it combines speed, accuracy, and the ability to leverage bootstraps for modeling technical variance">
 <meta name="keywords" content="bioinformaticstranscriptomics,  ">
 <title>Kallisto | CHMI services</title>
 <link rel="stylesheet" href="css/syntax.css">
@@ -37,6 +37,8 @@
 <![endif]-->
 
 <link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000/feed.xml">
+
+
 
     <script>
         $(document).ready(function() {
@@ -198,12 +200,12 @@
         
     
     <li>
-        <a href="#">Transcriptomics</a>
+        <a href="#">Bulk RNAseq</a>
         <ul>
             
             
             
-            <li><a href="mydoc_RNAseq_FAQs.html">RNAseq FAQs</a></li>
+            <li><a href="mydoc_RNAseq_FAQs.html">FAQs</a></li>
             
             
             
@@ -231,14 +233,7 @@
             
             
             
-            <li><a href="mydoc_scRNAseq_encapsulation.html">Single cell encapsulation (InDrop)</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="mydoc_scRNAseq_libraryPrep.html">Single cell library prep</a></li>
+            <li><a href="mydoc_FFPE_RNAseq.html">FFPE-seq</a></li>
             
             
             
@@ -248,13 +243,77 @@
                     
                     
                     
-                    <li class="active"><a href="mydoc_kallisto.html">Read mapping using Kallisto</a></li>
+                    <li><a href="mydoc_RNAseq_QA.html">Project management and QA</a></li>
                     
                     
                     
                     
                     
-                    <li><a href="mydoc_RNAseq_depositToGEO.html">Submitting RNAseq data to GEO</a></li>
+                    <li class="active"><a href="mydoc_kallisto.html">Read mapping with Kallisto</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_RNAseq_depositToGEO.html">Submitting data to GEO</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Single cell genomics</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_scRNAseq_FAQs.html">scRNAseq FAQs</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_10X_prep.html">10X sample prep</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_inDrop_encapsulation.html">inDrop encapsulation</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_inDrop_libraryPrep.html">inDrop library prep</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">scRNAseq data analysis</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="mydoc_CellRanger.html">10X CellRanger</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_BUStools.html">BUStools</a></li>
                     
                     
                     
@@ -317,6 +376,18 @@
                     
                     
                     
+                    
+                    
+                    <li><a href="mydoc_microbiomeDB_deposit.html">microbiomeDB.org</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_sourmash.html">Sourmash</a></li>
+                    
+                    
+                    
                 </ul>
             </li>
             
@@ -369,6 +440,13 @@
             
             
             
+            
+            
+            <li><a href="mydoc_3Dculture_microscopy.html">Immunofluorescence for 3D cultures</a></li>
+            
+            
+            
+            
         </ul>
      </li>
        
@@ -402,12 +480,28 @@
                     
                     
                     
-                    <li><a href="mydoc_biomeme_human.html">Human</a></li>
+                    <li><a href="mydoc_biomeme_human.html">Cutaneous leishmaniasis</a></li>
                     
                     
                     
                 </ul>
             </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Workshops</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_cloudMeta.html">Metagenomics in the cloud</a></li>
             
             
             
@@ -442,7 +536,7 @@
 <div class="post-content">
 
    
-    <div class="summary">Kallisto is our first choice for aligning reads because it combines speed, accuracy, and ability to leverage bootstraps for modeling technical variance</div>
+    <div class="summary">Kallisto is our first choice for aligning reads because it combines speed, accuracy, and the ability to leverage bootstraps for modeling technical variance</div>
    
 
     
@@ -478,39 +572,42 @@ $('#toc').on('click', 'a', function() {
     
 
   <h2 id="intro">Intro</h2>
-<p><a href="https://pachterlab.github.io/kallisto/about">Kallisto</a> is a relatively new tool from Lior Pachter’s lab at UC Berkeley and is described in <a href="http://CHMI-sops.github.io/papers/Kallisto.pdf">this 2016 Nature Biotechnology paper</a>.</p>
+<p><a href="https://pachterlab.github.io/kallisto/about">Kallisto</a> is a relatively new tool from Lior Pachter’s lab at UC Berkeley and is described in <a href="http://CHMI-sops.github.io/papers/Kallisto.pdf">this 2016 Nature Biotechnology paper</a>. Kallisto and other tools like it (e.g. <a href="https://combine-lab.github.io/salmon/">Salmon</a>) have revolutionized the analysis of RNAseq data by using extremely lightweight ‘pseudomapping’ that effectively allows analyses to be carried out on a standard laptop.  If you are reluctant to try pseudomapping out of concern that it won’t produce accurate quantifications of transcripts, <a href="https://www.nature.com/articles/s41467-017-00050-4">rest assured it will</a>.</p>
 
 <h2 id="installing-kallisto-on-a-mac-os">Installing Kallisto on a Mac OS</h2>
 
 <p>If you’re running a Mac OS, then begin by downloading and installing <a href="https://brew.sh/">Homebrew</a> with this single line of code:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>/usr/bin/ruby -e <span class="s2">"</span><span class="k">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install<span class="k">)</span><span class="s2">"</span>
 </code></pre>
 </div>
 
-<p>Now, installing Kallisto is simple:
-<code class="highlighter-rouge">
-brew tap homebrew/core
+<p>Now, installing Kallisto is simple:</p>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>brew tap homebrew/core
 brew install kallisto
-</code></p>
+</code></pre>
+</div>
 
 <p>Test whether Kallisto is properly installed by typing <code class="highlighter-rouge">kallisto</code>, and you should see this output</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>kallisto 0.44.0
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>kallisto 0.45.0
 
-Usage: kallisto &lt;CMD&gt; [arguments] ..
+Usage: kallisto &lt;CMD&gt; <span class="o">[</span>arguments] ..
 
 Where &lt;CMD&gt; can be one of:
 
-    index         Builds a kallisto index
-    quant         Runs the quantification algorithm
-    pseudo        Runs the pseudoalignment step
+    index         Builds a kallisto index 
+    quant         Runs the quantification algorithm 
+    bus           Generate BUS files <span class="k">for </span>single cell data 
+    pseudo        Runs the pseudoalignment step 
+    merge         Merges several batch runs 
     h5dump        Converts HDF5-formatted results to plaintext
     inspect       Inspects and gives information about an index
     version       Prints version information
     cite          Prints citation information
 
-Running kallisto &lt;CMD&gt; without arguments prints usage information for &lt;CMD&gt;
+Running kallisto &lt;CMD&gt; without arguments prints usage information <span class="k">for</span> &lt;CMD&gt;
 </code></pre>
 </div>
 
@@ -518,44 +615,50 @@ Running kallisto &lt;CMD&gt; without arguments prints usage information for &lt;
 
 <ol>
   <li>Obtain administrative access for your computer</li>
-  <li>Go to https://pachterlab.github.io/kallisto/download</li>
-  <li>Download the latest Windows release (v0.44 for Fall 2018)</li>
-  <li>Extract to Program Files or Applications.  Kallisto is now installed on your computer but it cannot be accessed from any location in the command prompt (Windows equivalent of Terminal) until you add it to your computer’s path system variable</li>
+  <li>You will need to be able to unzip files.  If you don’t have software that can do this, you can download <a href="https://www.win-rar.com/start.html?&amp;L=0">WinRAR</a> and install it in Program Files.</li>
+  <li>Download the latest windows release of <a href="https://pachterlab.github.io/kallisto/download">Kallisto</a> (v0.45, for Spring 2019)</li>
+  <li>Right click the downloaded zip file and choose “extract here” or “extract all”. A new folder will appear called “kallisto”. Move it to your “Program Files” directory.</li>
+  <li>Kallisto is now installed on your computer but cannot be accessed from any location in the command prompt (Windows equivalent of Terminal) until you add it to your computer’s PATH system variable</li>
   <li>Add the kallisto directory to your PATH to allow for access from any directory
     <ul>
-      <li>Start the System Control Panel applet (Start -&gt; Settings -&gt; Control Panel -&gt; System)</li>
-      <li>Select the Advanced tab.</li>
-      <li>Click the Environment Variables button.</li>
-      <li>Under System Variables, select Path, then click Edit.
+      <li>Open the Control Panel and navigate to System and security -&gt; System -&gt; Advanced System Setting -&gt; Environmental Variables</li>
+      <li>Under System Variables (<strong>not</strong> User Variables), click PATH -&gt; Edit -&gt; New
 Note: You’ll see a list of folders, as this example for my system shows: C:\Program Files\Windows Resource Kits\Tools\; etc</li>
-      <li>Add the name of the path to your kallisto directory (e.g. including semicolon ;C:\Program Files\kallisto_windows-v0.43.1</li>
+      <li>Add the path to your kallisto folder to System Variables by copying the path from File Explorer (e.g. C:/Program Files\kallisto) and pasting it into the prompt.</li>
     </ul>
   </li>
-  <li>Relaunch command prompt and check for proper installation by typing kallisto</li>
-  <li>although not required for running kallisto, you should install <a href="https://www.cygwin.com/">Cygwin</a> to give your PC some linux functionality (like running shell scripts)</li>
+  <li>Relaunch command prompt and check for proper installation by typing ‘kallisto’ (without quotes).</li>
+  <li>Although not required for running kallisto, you should install <a href="https://www.cygwin.com/">Cygwin</a> to give your PC some linux functionality (like running shell scripts)</li>
 </ol>
 
 <h2 id="build-an-index-from-reference-transcriptome-fasta-file">Build an index from reference transcriptome .fasta file</h2>
 
-<p>Get reference transcriptome files from <a href="http://useast.ensembl.org/info/data/ftp/index.html">here</a>
-Choose your the cDNA file for your organism, then download the file that ends in “cDNA.all.fa.gz”</p>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> If you are working on the PennVet CHMI linux cluster, we have prebuilt kallisto indicies from mouse, human and several other species located in /data/reference_db/kallisto</div>
 
-<p>Build the index
-<code class="highlighter-rouge">
-kallisto index -i myNewIndex InputFasta.fasta
-</code></p>
+<p>Get reference transcriptome files from <a href="http://useast.ensembl.org/info/data/ftp/index.html">here</a>
+Search for your organism, select cDNA, then download the file that ends in “cDNA.all.fa.gz”</p>
+
+<p>Build the index</p>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>kallisto index -i inputFastaName.index inputFastaName.fasta
+</code></pre>
+</div>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> It’s a good idea to name you index exactly the same as your input fasta file, just replacing .fasta or .fa, with .index.  This naming convention makes it clear to others (and your future self) exactly which reference transcriptome was used for mapping.</div>
 
 <h2 id="align-single-end-reads">align single-end reads</h2>
 
-<p>Run the following command for pseudoalignment of single-end reads to index. 
-<code class="highlighter-rouge">
-kallisto quant -i myHumanIndex -o Sample1.mapped -b 60 —-single -l 275 -s 20 read1.fastq.gz
-</code>
-Once read mapping is complete, you will see a short report printed to your screen that indicates the number of reads kallisto saw in the fastq file, and the number of these that mapped to the reference.  Often times it is useful to automatically store this information in a log file so that it can be parsed by other programs, such as the incredibly useful <a href="http://multiqc.info/">multiQC</a>.  To do this, simply append the code below at the end of your alignment bit above. The outcome will be the same, but you will also produce a log file.</p>
+<p>Run the following command for pseudoalignment of single-end reads to index.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&amp;&gt; yourSampleNameHere.log
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>kallisto quant -i inputFastaName.index -o sample1_kallisto -b 60 —-single -l 275 -s 30 sample1_read1.fastq.gz
 </code></pre>
 </div>
+<p>Once read mapping is complete, you will see a short report printed to your screen that indicates the number of reads kallisto saw in the fastq file, and the number of these that mapped to the reference.  Often times it is useful to automatically store this information in a log file so that it can be parsed by other programs, such as the incredibly useful <a href="http://multiqc.info/">multiQC</a>.  To do this, simply append the code below at the end of your alignment bit above. The outcome will be the same, but instead of displaying on the screen it will be piped to a log file.</p>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">&amp;&gt; </span>sample1_kallisto.log
+</code></pre>
+</div>
+
 <div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> avoid putting hyphens in the name of the kallisto output, as this could cause problems later</div>
 
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> bootstrapping (-b command in the line above) adds significant time to the mapping, but is essential for accurate quantification. With a typical reference index for the mouse or human transcriptome, I find it takes about 15sec per bootstrap. So expect this to add ~30 min to the mapping time for each sample.</div>
@@ -565,44 +668,49 @@ Once read mapping is complete, you will see a short report printed to your scree
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> If you have multiple cores on your computer, you can speed up the aligment with the <code class="highlighter-rouge">-t</code> argument followed by the number of threads you have on your machine.  If you’re on a mac, you can find out the number of virtual cores (i.e. threads) using the <code class="highlighter-rouge">sysctl hw.ncpu</code> command directly in the terminal</div>
 
 <h2 id="align-paired-end-reads">align paired-end reads</h2>
-<div class="highlighter-rouge"><pre class="highlight"><code>kallisto quant -i myMouseIndex -o Sample1.mapped -b 100 read1.fastq.gz read2.fastq.gz
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>kallisto quant -i inputFastaName.index -o sample1_kallisto -b 100 sample1_read1.fastq.gz sample1_read2.fastq.gz
 </code></pre>
 </div>
 
 <h2 id="stranded-alignments-and-bigwigs">stranded alignments and bigwigs</h2>
-<p>In some cases, you may want to carry out a stranded alignment with the end goal of viewing read ‘pile-ups’ on a genome browser track.  This can also be done using Kallisto, but requires a few other programs and steps to get from the Kallisto alignment to bigwig.</p>
+<p>In some cases, you may want to carry out a stranded alignment with the end goal of viewing read ‘pileups’ on a genome browser track.  This can also be done using Kallisto, but requires a few other programs and steps to get from the Kallisto alignment to bigwig.</p>
 
 <div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> If you’ve been using your laptop thus far, now would be a good time to consider finding some more compute resources. Working with .bam files may be too much for your laptop to handle.</div>
 
-<p>Stranded alignment using pseudobam. SAM creation is also possible at this step.
-<code class="highlighter-rouge">
-kallisto quant -i [yourindex] -o [outputname] --fr-stranded -b 60 --pseudobam [input1] [input2] | samtools view -Sb - &gt; [kallisto.fr.bam]
-kallisto quant -i [yourindex] -o [outputname] --rf-stranded -b 60 --pseudobam [input1] [input2] | samtools view -Sb - &gt; [kallisto.rf.bam]
-</code></p>
+<p>Stranded alignment using pseudobam. SAM creation is also possible at this step.</p>
 
-<p>Sort and index using <a href="http://samtools.sourceforge.net/">samtools</a>
-<code class="highlighter-rouge">
-samtools sort -@ 24 [kallisto.fr.bam] [kallisto.fr.sorted]
-samtools sort -@ 24 [kallisto.rf.bam] [kallisto.rf.sorted]
-samtools index [kallisto.fr.sorted.bam]
-samtools index [kallisto.fr.sorted.bam]
-</code></p>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>kallisto quant -i <span class="o">[</span>yourindex] -o <span class="o">[</span>outputname] --fr-stranded -b 60 --pseudobam <span class="o">[</span>input1] <span class="o">[</span>input2] | samtools view -Sb - &gt; <span class="o">[</span>kallisto.fr.bam]
+kallisto quant -i <span class="o">[</span>yourindex] -o <span class="o">[</span>outputname] --rf-stranded -b 60 --pseudobam <span class="o">[</span>input1] <span class="o">[</span>input2] | samtools view -Sb - &gt; <span class="o">[</span>kallisto.rf.bam]
+</code></pre>
+</div>
 
-<p>BAM to BigWig conversion using <a href="https://deeptools.readthedocs.io/en/latest/">deeptools</a>
-<code class="highlighter-rouge">
-bamCoverage –b [kallisto.fr.sorted.bam] –o [kallisto.fr.sorted.bw] -p max
-bamCoverage –b [kallisto.rf.sorted.bam] –o [kallisto.rf.sorted.bw] -p max
-</code></p>
+<p>Sort and index using <a href="http://samtools.sourceforge.net/">samtools</a></p>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>samtools sort -@ 24 <span class="o">[</span>kallisto.fr.bam] <span class="o">[</span>kallisto.fr.sorted]
+samtools sort -@ 24 <span class="o">[</span>kallisto.rf.bam] <span class="o">[</span>kallisto.rf.sorted]
+samtools index <span class="o">[</span>kallisto.fr.sorted.bam]
+samtools index <span class="o">[</span>kallisto.fr.sorted.bam]
+</code></pre>
+</div>
+
+<p>BAM to BigWig conversion using <a href="https://deeptools.readthedocs.io/en/latest/">deeptools</a></p>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>bamCoverage –b <span class="o">[</span>kallisto.fr.sorted.bam] –o <span class="o">[</span>kallisto.fr.sorted.bw] -p max
+bamCoverage –b <span class="o">[</span>kallisto.rf.sorted.bam] –o <span class="o">[</span>kallisto.rf.sorted.bw] -p max
+</code></pre>
+</div>
 
 <h2 id="install-sleuth">install Sleuth</h2>
 <p>Open RStudio and install the <a href="http://bioconductor.org/packages/release/bioc/html/rhdf5.html">rhdf5 package</a> from the BioC website</p>
 
 <p>install the <a href="https://cran.r-project.org/web/packages/devtools/README.html">devtools package</a> (if you don’t already have it)</p>
 
-<p>install the <a href="https://github.com/pachterlab/sleuth">Sleuth package</a> directly from Lior Pachter’s github page using:
-<code class="highlighter-rouge">
-devtools::install_github("pachterlab/sleuth")
-</code></p>
+<p>install the <a href="https://github.com/pachterlab/sleuth">Sleuth package</a> directly from Lior Pachter’s github page using:</p>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>devtools::install_github<span class="o">(</span><span class="s2">"pachterlab/sleuth"</span><span class="o">)</span>
+</code></pre>
+</div>
 
 <h2 id="using-sleuth">Using Sleuth</h2>
 
@@ -654,8 +762,8 @@ devtools::install_github("pachterlab/sleuth")
 <footer>
             <div class="row">
                 <div class="col-lg-12 footer">
-               &copy;2018 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
- Site last generated: Oct 2, 2018 <br />
+               &copy;2020 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
+ Site last generated: Mar 19, 2020 <br />
 <p><img src="images/CHMI_logo.png" alt="Company logo"/></p>
                 </div>
             </div>
@@ -669,5 +777,12 @@ devtools::install_github("pachterlab/sleuth")
     </div>
 
 </body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-131349832-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
 
 </html>

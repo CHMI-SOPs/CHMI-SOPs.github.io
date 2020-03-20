@@ -38,6 +38,8 @@
 
 <link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000/feed.xml">
 
+
+
     <script>
         $(document).ready(function() {
             // Initialize navgoco with default options
@@ -198,12 +200,12 @@
         
     
     <li>
-        <a href="#">Transcriptomics</a>
+        <a href="#">Bulk RNAseq</a>
         <ul>
             
             
             
-            <li><a href="mydoc_RNAseq_FAQs.html">RNAseq FAQs</a></li>
+            <li><a href="mydoc_RNAseq_FAQs.html">FAQs</a></li>
             
             
             
@@ -231,14 +233,7 @@
             
             
             
-            <li><a href="mydoc_scRNAseq_encapsulation.html">Single cell encapsulation (InDrop)</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="mydoc_scRNAseq_libraryPrep.html">Single cell library prep</a></li>
+            <li><a href="mydoc_FFPE_RNAseq.html">FFPE-seq</a></li>
             
             
             
@@ -248,13 +243,77 @@
                     
                     
                     
-                    <li><a href="mydoc_kallisto.html">Read mapping using Kallisto</a></li>
+                    <li><a href="mydoc_RNAseq_QA.html">Project management and QA</a></li>
                     
                     
                     
                     
                     
-                    <li><a href="mydoc_RNAseq_depositToGEO.html">Submitting RNAseq data to GEO</a></li>
+                    <li><a href="mydoc_kallisto.html">Read mapping with Kallisto</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_RNAseq_depositToGEO.html">Submitting data to GEO</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Single cell genomics</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_scRNAseq_FAQs.html">scRNAseq FAQs</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_10X_prep.html">10X sample prep</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_inDrop_encapsulation.html">inDrop encapsulation</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_inDrop_libraryPrep.html">inDrop library prep</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">scRNAseq data analysis</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="mydoc_CellRanger.html">10X CellRanger</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_BUStools.html">BUStools</a></li>
                     
                     
                     
@@ -317,6 +376,18 @@
                     
                     
                     
+                    
+                    
+                    <li><a href="mydoc_microbiomeDB_deposit.html">microbiomeDB.org</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_sourmash.html">Sourmash</a></li>
+                    
+                    
+                    
                 </ul>
             </li>
             
@@ -369,6 +440,13 @@
             
             
             
+            
+            
+            <li><a href="mydoc_3Dculture_microscopy.html">Immunofluorescence for 3D cultures</a></li>
+            
+            
+            
+            
         </ul>
      </li>
        
@@ -402,12 +480,28 @@
                     
                     
                     
-                    <li><a href="mydoc_biomeme_human.html">Human</a></li>
+                    <li><a href="mydoc_biomeme_human.html">Cutaneous leishmaniasis</a></li>
                     
                     
                     
                 </ul>
             </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Workshops</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_cloudMeta.html">Metagenomics in the cloud</a></li>
             
             
             
@@ -477,9 +571,29 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>As much as possible, we use R for managing, analyzing and plotting data.  This preference is largely motivated by the excellent community support for R, the exceptional RStudio interface for interacting with R, and the growing number of bioinformatics tools within the <a href="https://www.bioconductor.org/">bioconductor</a> suite of applications.</p>
+  <h2 id="accessing-the-chmi-rstudio-server">Accessing the CHMI RStudio Server</h2>
 
-<p>Although we frequently use RStudio on our personal computers, it is useful to have access to a server version of RStudio, particularly when your work requires more computing power.  If you have an account on our Linux cluster, then you already have access to RStudio, without having to install any additional software.  Click <a href="http://130.91.255.137:8787"><strong>here</strong></a> to access our RStudio server directly in your web browser.  Login with the same credentials you use to access the linux machine.  Feel free to customize your RStudio server by installing any packages needed for your work.</p>
+<p>Click <a href="http://130.91.255.137:8787"><strong>HERE</strong></a> to access our RStudio server directly in your web browser.</p>
+
+<p>Login with the same credentials you use to access the linux machine.  Feel free to customize your RStudio server by installing any packages needed for your work.</p>
+
+<p>As much as possible, we use R for managing, analyzing and plotting data.  This preference is largely motivated by the excellent community support for R, the exceptional RStudio interface for interacting with R, and the growing number of bioinformatics tools within the <a href="https://www.bioconductor.org/">bioconductor</a> suite of applications.</p>
+
+<p>Although we frequently use RStudio on our personal computers, it is useful to have access to a server version of RStudio, particularly when your work requires more computing power.  If you have an account on our Linux cluster, then you already have access to RStudio, without having to install any additional software.</p>
+
+<h2 id="installing-r-packages-for-rstudio-server">Installing R packages for RStudio Server</h2>
+
+<p>Once you’ve logged into an RStudio Server session, your browser window will look pretty much indistinguishable from the stand-alone RStudio application you’re already familiar with.  One minor but important difference is that your package library can now include R packages in the System Library (available to all users on the server), as well as your User Library (available only to you).  By default, any new packages you install will be located in your User Library.  If you want to install a package in the System Library so that it is available to all users, then you will need to enter R’s shell as root.  To do this, navigate to the terminal window in RStudio and type:</p>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>sudo -i R
+</code></pre>
+</div>
+
+<p>Once in R’s shell, you would install the package directly from the command prompt in the terminal window using</p>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>install.packages<span class="o">(</span><span class="s1">'packageName'</span><span class="o">)</span>
+</code></pre>
+</div>
 
 
 
@@ -519,8 +633,8 @@ $('#toc').on('click', 'a', function() {
 <footer>
             <div class="row">
                 <div class="col-lg-12 footer">
-               &copy;2018 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
- Site last generated: Oct 2, 2018 <br />
+               &copy;2020 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
+ Site last generated: Mar 19, 2020 <br />
 <p><img src="images/CHMI_logo.png" alt="Company logo"/></p>
                 </div>
             </div>
@@ -534,5 +648,12 @@ $('#toc').on('click', 'a', function() {
     </div>
 
 </body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-131349832-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
 
 </html>

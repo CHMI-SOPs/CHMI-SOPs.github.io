@@ -1,0 +1,1411 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="This protocol walks you through preparing a total transcriptome RNA library for RNAseq when your starting amount of RNA is less than ~50ng or if you are work...">
+<meta name="keywords" content="library_preptranscriptomics,  transcriptomics, library preparation">
+<title>SMARTer Stranded Total RNA-Seq Kit v2- Pico Input Mammalian | CHMI services</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<link rel="stylesheet" href="css/lavish-bootstrap.css">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000/feed.xml">
+
+
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Center for Host-Microbial Interactions</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:beiting@upenn.edu?subject=CHMI services feedback&body=I have some feedback about the SMARTer Stranded Total RNA-Seq Kit v2- Pico Input Mammalian page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="SMARTer Stranded Total RNA-Seq Kit v2- Pico Input Mammalian">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+    <div class="col-lg-12">&nbsp;</div>
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+
+
+
+
+
+
+
+
+
+
+
+<ul id="mysidebar" class="nav">
+    <li class="sidebarTitle">CHMI services </li>
+    
+    
+    
+        
+    
+    <li>
+        <a href="#">Overview</a>
+        <ul>
+            
+            
+            
+            <li><a href="index.html">Welcome</a></li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Bulk RNAseq</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_RNAseq_FAQs.html">FAQs</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_TruSeq.html">mRNA library prep</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_total_TruSeq.html">Total transcriptome library prep</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_lowInput_RNAseq.html">Low input protocol</a></li>
+            
+            
+            
+            
+            
+            
+            <li class="active"><a href="mydoc_FFPE_RNAseq.html">FFPE-seq</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">RNAseq data analysis</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="mydoc_RNAseq_QA.html">Project management and QA</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_kallisto.html">Read mapping with Kallisto</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_RNAseq_depositToGEO.html">Submitting data to GEO</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Single cell genomics</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_scRNAseq_FAQs.html">scRNAseq FAQs</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_10X_prep.html">10X sample prep</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_inDrop_encapsulation.html">inDrop encapsulation</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_inDrop_libraryPrep.html">inDrop library prep</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">scRNAseq data analysis</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="mydoc_CellRanger.html">10X CellRanger</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_BUStools.html">BUStools</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Microbiology</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_micro_FAQs.html">Microbiology FAQs</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_16S.html">16S rRNA gene sequencing</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_NexteraXT.html">Shotgun metagenomics</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_16S_Sanger.html">Sanger sequencing of 16S</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_mock.html">Culture collection</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Data analysis</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="mydoc_qiime2.html">QIIME2</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_microbiomeDB_deposit.html">microbiomeDB.org</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_sourmash.html">Sourmash</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Compute resources</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_linux.html">Linux cluster</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_software.html">Available software</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_RStudio.html">R Studio Server</a></li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Cell culture</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_3Dculture.html">3D intestinal cultures</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_3Dculture_microscopy.html">Immunofluorescence for 3D cultures</a></li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">In the field</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_nanopore.html">Oxford Nanopore</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Biomeme portable QPCR</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="mydoc_biomeme.html">Set-up</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_biomeme_avian.html">Avian</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_biomeme_human.html">Cutaneous leishmaniasis</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Workshops</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_cloudMeta.html">Metagenomics in the cloud</a></li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+        
+        <!-- if you aren't using the accordion, uncomment this block:
+           <p class="external">
+               <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+           </p>
+           -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">SMARTer Stranded Total RNA-Seq Kit v2- Pico Input Mammalian</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+    <div class="summary">This protocol walks you through preparing a total transcriptome RNA library for RNAseq when your starting amount of RNA is less than ~50ng or if you are working with degraded/FFPE RNA samples</div>
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+    <a target="_blank" href="https://github.com/CHMI-SOPs/CHMI-SOPs.github.io/tree/master/pages/mydoc/mydoc_FFPE_RNAseq.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+    
+
+  <h2 id="documentation">Documentation</h2>
+<p><a href="https://www.takarabio.com/products/next-generation-sequencing/rna-sequencing/pico-input-strand-specific-total-rna-seq-for-illumina?utm_source=marketo&amp;utm_medium=email&amp;utm_campaign=SG_SMARTer_Pico_Tech_Note&amp;utm_content=prodpg&amp;mkt_tok=3RkMMJWWfF9wsRogv6rOZKXonjHpfsX%2b4u8uT%2frn28M3109ad%2brmPBy%2b2YUGT9Q%2fcOedCQkZHblFnVoLTq2sVbYNr6wM">Clontech Pico v2 kit</a>.  This uses random hexamer priming, without selection by polyT, to make cDNA.  This means that it works very well when your starting material is highly degraded (e.g. fixed cells or tissues).  The random priming also means that this kit amplifies cDNA from <em>all</em> transcripts, including highly abundant RNA molecules such as rRNAs.  We tend to use this kit if 1) investigators are working with highly degraded starting material, particularly FFPE tissues, or 2) if they really prefer to study total transcriptomes, rather than mRNAs.</p>
+
+<p>The protocol below uses the SMARTer Stranded Total RNA-Seq Kit, however another option for cDNA generation when starting with low-input is the <a href="http://www.clontech.com/US/Products/cDNA_Synthesis_and_Library_Construction/Next_Gen_Sequencing_Kits/Single_cell_RNA_Seq_Kits_for_mRNA_seq/High-throughput_single-cell_mRNA-seq?sitex=10020:22372:US">Clontech ‘SMART Seq HT’ for High-throughput single-cell mRNA-seq</a>. This is an excellent kit for preparing cDNA very low amounts of RNA (as little as 1-100 cells).  This kit is analgous to the well-known Clontech SMART-v4 kit, but is a faster/abbreviated workflow which combines RT/PCR steps and is roughly 30% lower cost compared to SMART-V4.</p>
+
+<h2 id="what-youll-need">What you’ll need</h2>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> The following items are included in the Clontech SMART-Seq HT kit and are stored at -20C</div>
+<ul>
+  <li>ZapR v2</li>
+  <li>RNase inhibitor (40U/ul)</li>
+  <li>SeqAmp DNA Polymerase</li>
+  <li>SeqAmp CB PCR Buffer (2x)</li>
+  <li>SMART-Seq HT Oligonucleotide</li>
+  <li>SMART Pico Oligos Mix v2</li>
+  <li>5x First-strand Buffer</li>
+  <li>Nuclease-Free Water</li>
+  <li>SMARTScribe RT (100 U/uL)</li>
+  <li>ZapR Buffer (10X)</li>
+  <li>Tris Buffer (5mM)</li>
+  <li>PCR2 Primers v2</li>
+</ul>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> The following items are included in the Clontech SMART-Seq HT kit and are stored at -80C</div>
+<ul>
+  <li>SMART TSO Mix v2</li>
+  <li>R-probes v2</li>
+  <li>Control Total RNA (1 ug/uL)</li>
+</ul>
+
+<p>Not included in kit:
+* <a href="https://www.fishersci.com/shop/products/eppendorf-twin-tec-96-lobind-pcr-plates-1/e0030129504#?keyword=lobind+96+well+plates">Eppendorf LoBind 96-well plates</a>
+* <a href="https://online-shop.eppendorf.us/US-en/Laboratory-Consumables-44512/Tubes-44515/DNA-LoBind-Tubes-PF-56252.html">Eppendorf LoBind DNA tubes</a>
+* AMPure XP Beads (4C)</p>
+
+<h2 id="a-few-important-comments-before-you-start">A few important comments before you start</h2>
+<p>Input RNA Quality and Quantity:
+* Purified total RNA samples cannot be resuspended in TE Buffer or have any EDTA in them. They should be resuspended in nuclease-free water. Any EDTA will interfere with RNA fragmentation and will decrease the efficiency of the reverse transcription.
+* Samples must be DNAse I treated.
+* If working with high quality RNA (RIN score &gt;4), follow Option 1 which includes fragmentation; the fragmentation time will vary depending in the RIN score.
+* If working with FFPE samples or highly degraded RNA, follow Option 2 which does not include fragmentation.</p>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Always use a positive and a negative control. There is Control Total RNA included with this kit and stored in our -80C freezer in box J8. Dilute the stock or use one of the dilutions in this box to match your input of RNA samples for your positive control. Use nuclease-free water for your negative control.</div>
+
+<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> R-probes v2 cannot be freeze/thawed more than 3 times. These are also aliquoted in our -80C in box J8.</div>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Add all enzymes to reaction mixtures last and thoroughly pipette up and down to mix these master-mixes.</div>
+
+<h2 id="diluting-control-rna">Diluting Control RNA</h2>
+<ul>
+  <li>To 50 ng/uL
+    <ul>
+      <li>38 uL nuclease-free water</li>
+      <li>2 uL control RNA</li>
+    </ul>
+  </li>
+  <li>To 5 ng/uL
+    <ul>
+      <li>45 uL nuclease-free water</li>
+      <li>5 uL diluted Control RNA at 50 ng/uL</li>
+    </ul>
+  </li>
+  <li>To 0.25 ng/uL</li>
+  <li>95 uL nuclease-free water</li>
+  <li>5 uL diluted Control RNA at 5 ng/uL</li>
+</ul>
+
+<h2 id="option-1-with-fragmentation-rin--4">Option 1: With Fragmentation (RIN &gt; 4)</h2>
+<ol>
+  <li>Mix the following on ice:</li>
+</ol>
+
+<table>
+  <thead>
+    <tr>
+      <th>Reagent</th>
+      <th>Volume per rxn (uL)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>RNA [5-50 ng input]</td>
+      <td>1-8 uL</td>
+    </tr>
+    <tr>
+      <td>Nuclease-free water</td>
+      <td>0-7 uL</td>
+    </tr>
+    <tr>
+      <td>SMART Pico Oligos Mix v2</td>
+      <td>1 uL</td>
+    </tr>
+    <tr>
+      <td>5x First-Strand Buffer</td>
+      <td>4 uL</td>
+    </tr>
+    <tr>
+      <td>**Total Volume</td>
+      <td>13 uL**</td>
+    </tr>
+  </tbody>
+</table>
+
+<ol>
+  <li>Incubate tubes at 94C in preheated, hot-lid thermal cycler for the amount of time recommended below:</li>
+</ol>
+
+<table>
+  <thead>
+    <tr>
+      <th>RIN Score of Input RNA</th>
+      <th>Minutes to Fragment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>RIN &gt;7</td>
+      <td>4 minutes</td>
+    </tr>
+    <tr>
+      <td>RIN 5-6</td>
+      <td>3 minutes</td>
+    </tr>
+    <tr>
+      <td>RIN 4</td>
+      <td>2 minutes</td>
+    </tr>
+  </tbody>
+</table>
+
+<ol>
+  <li>
+    <p>Immediately place samples on ice for 2 minutes.</p>
+  </li>
+  <li>
+    <p>Prepare enough First-Strand Master Mix for all reactions plus 10% by combining the following on ice:</p>
+  </li>
+</ol>
+
+<table>
+  <thead>
+    <tr>
+      <th>Kit reagent</th>
+      <th>Volume per rxn (uL)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SMART TSO Mix v2 (very viscous, mix well)</td>
+      <td>4.5</td>
+    </tr>
+    <tr>
+      <td>RNase Inhibitor</td>
+      <td>0.5</td>
+    </tr>
+    <tr>
+      <td>SMARTScribe Reverse Transcriptase</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <td>*Total Volume per reaction</td>
+      <td>7.0*</td>
+    </tr>
+  </tbody>
+</table>
+
+<ol>
+  <li>
+    <p>Add 7 uL of the First Strand Master Mix to each PCR strip tube, vortex for about 2 seconds, spin down briefly.</p>
+  </li>
+  <li>
+    <p>Incubate the tubes in a preheated hot-lid thermal cycler with the following program (OPT1_FRAG):</p>
+  </li>
+</ol>
+
+<table>
+  <thead>
+    <tr>
+      <th>Temp (C)</th>
+      <th>Time (min:sec)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>42</td>
+      <td>90:00</td>
+    </tr>
+    <tr>
+      <td>70</td>
+      <td>10:00</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>hold</td>
+    </tr>
+  </tbody>
+</table>
+
+<ol>
+  <li>Leave the samples in the thermal cycler at 4C until the next step</li>
+</ol>
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Safe stopping point. Leave the samples overnight in the thermal cycler at 4C or store the cDNA in the -20C freezer for up to 2 weeks.</div>
+
+<h2 id="option-2-without-fragmentation-rin-4-or-ffpe-samples">Option 2: Without Fragmentation (RIN&lt; 4 or FFPE Samples)</h2>
+<ol>
+  <li>Mix the following on ice:</li>
+</ol>
+
+<table>
+  <thead>
+    <tr>
+      <th>Reagent</th>
+      <th>Volume per rxn (uL)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>RNA [5-50 ng input]</td>
+      <td>1-8 uL</td>
+    </tr>
+    <tr>
+      <td>Nuclease-free water</td>
+      <td>0-7 uL</td>
+    </tr>
+    <tr>
+      <td>SMART Pico Oligos Mix v2</td>
+      <td>1 uL</td>
+    </tr>
+    <tr>
+      <td>**Total Volume</td>
+      <td>9 uL**</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>2 Incubate tubes at 72C preheated, hot-lid thermal cycler for exactly 3 minutes.</p>
+
+<ol>
+  <li>
+    <p>Immediately place samples on ice for 2 minutes.</p>
+  </li>
+  <li>
+    <p>Prepare enough First-Strand Master Mix for all reactions plus 10% by combining the following on ice:</p>
+  </li>
+</ol>
+
+<table>
+  <thead>
+    <tr>
+      <th>Kit reagent</th>
+      <th>Volume per rxn (uL)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SMART TSO Mix v2 (very viscous, mix well)</td>
+      <td>4.5</td>
+    </tr>
+    <tr>
+      <td>RNase Inhibitor</td>
+      <td>0.5</td>
+    </tr>
+    <tr>
+      <td>SMARTScribe Reverse Transcriptase</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <td>5x First-Strand Buffer</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <td>**Total Volume per reaction</td>
+      <td>11.0**</td>
+    </tr>
+  </tbody>
+</table>
+
+<ol>
+  <li>
+    <p>Add 11 uL of the First Strand Master Mix to each PCR strip tube, vortex for about 2 seconds, spin down briefly.</p>
+  </li>
+  <li>
+    <p>Incubate the tubes in a preheated hot-lid thermal cycler with the following program (OPT2_NOFRAG):</p>
+  </li>
+</ol>
+
+<table>
+  <thead>
+    <tr>
+      <th>Temp (C)</th>
+      <th>Time (min:sec)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>42</td>
+      <td>90:00</td>
+    </tr>
+    <tr>
+      <td>70C</td>
+      <td>10:00</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>hold</td>
+    </tr>
+  </tbody>
+</table>
+
+<ol>
+  <li>Leave the samples in the thermal cycler at 4C until the next step</li>
+</ol>
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Safe stopping point. Leave the samples overnight in the thermal cycler at 4C or store the cDNA in the -20C freezer for up to 2 weeks.</div>
+
+<h2 id="pcr1--addition-of-illumina-adapters-and-indexes">PCR1- Addition of Illumina Adapters and Indexes</h2>
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> If Purification of RNA-seq Library using AMPure Beads will be performed the same day, take aliquots of beads out of 4C to allow them to reach room temperature</div>
+
+<ol>
+  <li>Prepare enough PCR1 Master Mix for all reactions plus 10% by combining the following reagents in the order shown below, vortex, then spin down:</li>
+</ol>
+
+<table>
+  <thead>
+    <tr>
+      <th>Kit reagent</th>
+      <th>Volume per rxn (uL)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Nuclease-free water</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>SeqAmp CB PCR Buffer 2X</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <td>SeqAmp DNA Polymerase</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>**Total Volume per reaction</td>
+      <td>28**</td>
+    </tr>
+  </tbody>
+</table>
+
+<ol>
+  <li>
+    <p>Add 28 uL of PCR Master Mix to each sample</p>
+  </li>
+  <li>
+    <p>Add 1 uL of each 5’ PCR Primer HT to each sample</p>
+  </li>
+  <li>
+    <p>Add 1 uL of each 3’ PCR Primer HT to each sample</p>
+  </li>
+  <li>
+    <p>Tap PCR strip tubes to mix and spin down briefly</p>
+  </li>
+  <li>
+    <p>Place tubes on preheated hot-lid thermal cycler for the following program: (<strong>bold</strong> denotes steps to be run for 5 cycles)</p>
+  </li>
+</ol>
+
+<table>
+  <thead>
+    <tr>
+      <th>Temp (C)</th>
+      <th>Time (min:sec)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>94</td>
+      <td>1:00</td>
+    </tr>
+    <tr>
+      <td><strong>98</strong></td>
+      <td><strong>0:15</strong></td>
+    </tr>
+    <tr>
+      <td><strong>55</strong></td>
+      <td><strong>0:15</strong></td>
+    </tr>
+    <tr>
+      <td><strong>68</strong></td>
+      <td><strong>0:30</strong></td>
+    </tr>
+    <tr>
+      <td>62</td>
+      <td>2:00</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>hold</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Safe stopping point. Leave the samples overnight in the thermal cycler at 4C or store the cDNA in the -20C freezer for up to 2 weeks.</div>
+
+<h2 id="purification-of-rna-seq-library-using-ampure-beads">Purification of RNA-seq Library using AMPure Beads</h2>
+<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> Do not start this section unless you have enough time to perform all steps up to PCR2: Final Library Amplification; there are no safe stopping points until then.</div>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Remove ZapR Buffer from -20C storage and thaw at room temperature in preparation for next section. </div>
+
+<ol>
+  <li>
+    <p>Allow AMPure XP beads to come to room temperature for about 30 minutes before use. Vortex beads for 2 minutes to mix well. Make sure samples are in a 96 well plate that will fit on our magnetic stand. Prepare fresh 80% ethanol, you will about 400 uL per sample.</p>
+  </li>
+  <li>
+    <p>Add 40 uL of AMPure beads to each sample and pipette 10 times to mix.</p>
+  </li>
+  <li>
+    <p>Incubate at room temperature for 8 minutes to allow the DNA to bind to the beads.</p>
+  </li>
+  <li>
+    <p>Place plate on magnetic stand for 5 minutes or longer until the solution is completely clear.</p>
+  </li>
+  <li>
+    <p>While samples are on magnetic stand, remove and discard supernatant. Do not disrupt beads.</p>
+  </li>
+  <li>
+    <p>Keeping samples on magnetic stand, add 180 uL of freshly made 80% ethanol to each sample without disturbing beads. Wait 30 seconds and carefully pipette out and discard supernatant. cDNA will remain bound to beads during the washing process.</p>
+  </li>
+  <li>
+    <p>Repeat wash step above 1 more time.</p>
+  </li>
+  <li>
+    <p>Let samples air dry for about 1 minute on magnetic stand then remove any excess ethanol with a P20.</p>
+  </li>
+  <li>
+    <p>Air dry samples on magnetic stand for 3-5 minutes at room temperature until pellets appear dry and matte. Once you start to see pellets crack, take off magnetic stand to ensure you do not overdry your samples.</p>
+  </li>
+  <li>
+    <p>Once beads are dry, remove from magentic stand and add 52 uL of Nuclease- free water to cover beads, pipette to mix thoroughly until the beads are resuspended.</p>
+  </li>
+  <li>
+    <p>Incubate at room temperature for 5 minutes.</p>
+  </li>
+  <li>
+    <p>Place plate back on magnetic stand for 1 minute or longer until the supernatant is clear.</p>
+  </li>
+  <li>
+    <p>Pipette 50 uL of supernatant to new plate</p>
+  </li>
+  <li>
+    <p>Add 40 uL of vortexed AMPure XP beads to each sample and pipette to mix thoroughly 10 times.</p>
+  </li>
+  <li>
+    <p>Incubate at room temperature for 8 minutes to allow DNA to bind to the beads. During incubation, proceed to next section.</p>
+  </li>
+</ol>
+
+<h2 id="depletion-of-ribosomal-cdna-with-zapr-v2-and-r-probes-v2">Depletion of Ribosomal cDNA with ZapR v2 and R-Probes v2</h2>
+<p>In this section, the library fragments originating from rRNA (18S and 28S) and mitochondrial rRNA (m12S and m16S) are cut by ZapR v2 in the presence of R-Probes v2 (mammalian-specific). These R-probes hybridize to ribosomal RNA and mitochondrial rRNA sequences.</p>
+
+<ul>
+  <li>Must make fresh aliquot of 80% ethanol if doing on different day than previous section, you will need 400 uL per sample.</li>
+</ul>
+
+<ol>
+  <li>
+    <p>Thaw R-probes v2 (-80C, Box J8) and ZapR Buffer (-20C) at room temperature. Once R-probes v2 thaw, place immediately on ice but keep ZapR Buffer at room temperature. Thaw ZapR v2 (-20C) on ice and keep on ice at all times, return to freezer immediately after use.</p>
+  </li>
+  <li>
+    <p>Preheat PCR machine to 72C</p>
+  </li>
+  <li>
+    <p>Once 8 minute incubation of samples and AMPure XP beads is finished, place samples on magnetic stand for 5 minutes or longer until the solution is completely clear.</p>
+  </li>
+  <li>
+    <p>During the 5 minute incubation, pipette 1.5 uL of R-Probes v2 +10% per reaction into a PCR Strip tube on ice and immediately return R-Probes v2 to -80C freezer.</p>
+  </li>
+  <li>
+    <p>Incubate the PCR strip tube of R-probes v2 at 72C in preheated hot-lid thermal cycler using the following program:</p>
+  </li>
+</ol>
+
+<table>
+  <thead>
+    <tr>
+      <th>Temp (C)</th>
+      <th>Time (min:sec)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>72</td>
+      <td>2:00</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>hold</td>
+    </tr>
+  </tbody>
+</table>
+
+<ol>
+  <li>
+    <p>The PCR strip tube of R-probes should be held at 4C for anywhere between 2-10 minutes. It must be held for at least 2 minutes but not for more than 15 minutes.</p>
+  </li>
+  <li>
+    <p>Once the 5 minute incubation of RNA samples is finished on magnetic stand, pipette and discard clear supernatant without disturbing the beads.</p>
+  </li>
+  <li>
+    <p>Keeping the samples on the magnetic stand, add 180 uL of freshly made 80% ethanol to each sample without disturbing beads. Wait 30 seconds and carefully pipette out and discard supernatant. cDNA will remain bound to beads during the washing process.</p>
+  </li>
+  <li>
+    <p>Repeat wash step above 1 more time.</p>
+  </li>
+  <li>
+    <p>Let samples air dry for about 1 minute on magnetic stand then remove any excess ethanol with a P20.</p>
+  </li>
+  <li>
+    <p>Air dry samples on magnetic stand for 1-2 minutes at room temperature until pellets appear dry and matte. Once you start to see pellets crack, take off magnetic stand to ensure you do not overdry your samples.</p>
+  </li>
+  <li>
+    <p>While beads are drying, prepare the ZapR Master Mix for all reactions plus 10% by combining the following reagents in the order shown below at room temperature, vortex, then spin down:</p>
+  </li>
+</ol>
+
+<table>
+  <thead>
+    <tr>
+      <th>Kit reagent</th>
+      <th>Volume per rxn (uL)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Nuclease-free water</td>
+      <td>16.8</td>
+    </tr>
+    <tr>
+      <td>10X ZapR Buffer</td>
+      <td>2.2</td>
+    </tr>
+    <tr>
+      <td>ZapR v2</td>
+      <td>1.5</td>
+    </tr>
+    <tr>
+      <td>R-Probes v2, heated</td>
+      <td>1.5</td>
+    </tr>
+    <tr>
+      <td>**Total Volume per reaction</td>
+      <td>28**</td>
+    </tr>
+  </tbody>
+</table>
+
+<ol>
+  <li>
+    <p>Take plate off magnetic stand. To each well of dried AMPure XP beads, add 22 uL of ZapR Master Mix and pipette to mix thoroughly until the beads are resuspended.</p>
+  </li>
+  <li>
+    <p>Incubate at room temperature for 5 minutes.</p>
+  </li>
+  <li>
+    <p>Place plate back on magnetic stand for 1 minute or longer until the supernatant is clear.</p>
+  </li>
+  <li>
+    <p>Pipette out 20 uL of clear supernatant, without disturbing beads, to a new PCR strip tube.</p>
+  </li>
+  <li>
+    <p>Incubate PCR strip tubes containing supernatant in a preheated hot-lid thermal cycler using the following program:</p>
+  </li>
+</ol>
+
+<table>
+  <thead>
+    <tr>
+      <th>Temp (C)</th>
+      <th>Time (min:sec)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>37</td>
+      <td>60:00</td>
+    </tr>
+    <tr>
+      <td>72C</td>
+      <td>10:00</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>hold</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>Samples can be held at 4C for up to 1 hour but it is recommended that you proceed immediately to next section.</li>
+</ul>
+
+<h2 id="pcr2--final-rna-seq-library-amplification">PCR2- Final RNA-Seq Library Amplification</h2>
+<p>In this section, the library fragments not cleaved by the ZapR reaction will be further enriched in a second round of PCR. Illumina barcodes have already been added to the libraries so this step includes a single pair of primers that are used for all libraries.</p>
+
+<ol>
+  <li>Prepare a PCR2 Master Mix for all reactions plus 10% by combining the following reagents in the order shown below, vortex, then spin down:</li>
+</ol>
+
+<table>
+  <thead>
+    <tr>
+      <th>Kit reagent</th>
+      <th>Volume per rxn (uL)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Nuclease-free water</td>
+      <td>26</td>
+    </tr>
+    <tr>
+      <td>SeqAmp CB PCR Buffer</td>
+      <td>50</td>
+    </tr>
+    <tr>
+      <td>PCR2 Primers v2</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <td>SeqAmp DNA Polymerase</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <td>*Total Volume per reaction</td>
+      <td>80*</td>
+    </tr>
+  </tbody>
+</table>
+
+<ol>
+  <li>Add 80 uL of PCR2 Master Mix to each tube. Mix by tapping gently and spin down.</li>
+</ol>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Our thermal cycler only holds 50uL so after adding the master mix, vortexing and spinning down, split each sample into two separate PCR strip tubes with 50 uL in each one.</div>
+
+<ol>
+  <li>Place tubes in preheated hot-lid thermal cycler for the following program (PCR2):</li>
+</ol>
+
+<p>(<strong>bold</strong> denotes steps to be run for 9 to 16 cycles, depending on your input RNA, see the second table for the number of cycles.)</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Temp (C)</th>
+      <th>Time (min:sec)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>94</td>
+      <td>1:00</td>
+    </tr>
+    <tr>
+      <td><strong>98</strong></td>
+      <td><strong>0:15</strong></td>
+    </tr>
+    <tr>
+      <td><strong>55</strong></td>
+      <td><strong>0:15</strong></td>
+    </tr>
+    <tr>
+      <td><strong>68</strong></td>
+      <td><strong>0:30</strong></td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>hold</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The number of PCR cycles corresponds to the starting material. Do not perform more than 16 cycles as it can lead to amplification of background material. Use the following table below to choose appropriate cycles.</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Input of total RNA (ng)</th>
+      <th>Typical number of PCR cycles Regular RNA</th>
+      <th>Typical number of PCR cycles Regular FFPE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>50</td>
+      <td>9-10</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>12</td>
+      <td>15-16</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>14-15</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <td>0.5</td>
+      <td>16</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Safe stopping point, samples can be left overnight at 4C. If not processed within the next day, freeze the PCR prodcuts at -20C for up to 2 weeks.</div>
+
+<h2 id="purification-of-final-rna-seq-library-using-ampure-beads">Purification of Final RNA-Seq Library Using AMPure Beads</h2>
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Move samples to a 96 well plate before beginning this step. We do not have a magnetic stand that holds PCR strip tubes. You may recombine your split samples from the previous step here, or keep them split and do the bead cleanup separately on each.</div>
+
+<ol>
+  <li>
+    <p>Allow AMPure XP beads to come to room temperature for about 30 minutes before use. Vortex beads for 2 minutes to mix well. Make sure samples are in a 96 well plate that will fit on our magnetic stand. Prepare fresh 80% ethanol, you will about 400 uL per sample.</p>
+  </li>
+  <li>
+    <p>Add 100 uL of AMPure beads to each sample and pipette 10 times to mix. [This is a 1:1 ratio; if you kept each sample separated into 2 wells, add 50 uL of beads. If all 100uL of PCR product is one a single well, add 100uL of beads very carefully because this will completely fill the wells.]</p>
+  </li>
+  <li>
+    <p>Incubate at room temperature for 8 minutes to allow the DNA to bind to the beads.</p>
+  </li>
+  <li>
+    <p>Place plate on magnetic stand for 5 minutes or longer until the solution is completely clear.</p>
+  </li>
+  <li>
+    <p>While samples are on magnetic stand, remove and discard supernatant. Do not disrupt beads.</p>
+  </li>
+  <li>
+    <p>Keeping samples on magnetic stand, add 180 uL (use 180 uL per well regardless of whether samples were split) of freshly made 80% ethanol to each sample without disturbing beads. Wait 30 seconds and carefully pipette out and discard supernatant. cDNA will remain bound to beads during the washing process.</p>
+  </li>
+  <li>
+    <p>Repeat wash step above 1 more time.</p>
+  </li>
+  <li>
+    <p>Let samples air dry for about 1 minute on magnetic stand then remove any excess ethanol with a P20.</p>
+  </li>
+  <li>
+    <p>Air dry samples on magnetic stand for 3-5 minutes at room temperature until pellets appear dry and matte. Once you start to see pellets crack, take off magnetic stand to ensure you do not overdry your samples.</p>
+  </li>
+  <li>
+    <p>Once beads are dry, remove from magentic stand and add 20 uL (10uL per well if samples still split) of <strong>Tris Buffer</strong> to cover beads, pipette to mix thoroughly until the beads are resuspended.</p>
+  </li>
+  <li>
+    <p>Incubate at room temperature for 5 minutes.</p>
+  </li>
+  <li>
+    <p>Place plate back on magnetic stand for 1 minute or longer until the supernatant is clear.</p>
+  </li>
+  <li>
+    <p>Pipette 18 uL (9 uL per well if samples still split) supernatant to LoBind Tubes. This is the final product. If samples were split, recombine supernatant from both halves into a single tube with 18uL total.</p>
+  </li>
+</ol>
+
+<h2 id="quality-check-of-final-product">Quality Check of Final Product</h2>
+
+<ol>
+  <li>
+    <p>Run samples on HSD1000 Tapestation Assay.</p>
+  </li>
+  <li>
+    <p>Measure concentration with HS dsDNA Qubit assay.</p>
+  </li>
+</ol>
+
+
+    <div class="tags">
+        
+        <b>Tags: </b>
+        
+        
+        
+        <a href="tag_library_prep.html" class="btn btn-default navbar-btn cursorNorm" role="button">library_prep</a>
+        
+        
+        
+        <a href="tag_transcriptomics.html" class="btn btn-default navbar-btn cursorNorm" role="button">transcriptomics</a>
+        
+        
+        
+    </div>
+
+
+
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'http-hostmicrobe-org'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2020 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
+ Site last generated: Mar 19, 2020 <br />
+<p><img src="images/CHMI_logo.png" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+    </div>
+
+</body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-131349832-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+</html>

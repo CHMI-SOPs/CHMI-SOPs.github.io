@@ -110,7 +110,7 @@ cellranger count --id=Count_output_EpCAMrat1 \
 
 This is useful if you have multiple samples, or if you used [feature barcoding](https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/feature-bc)to multiplex multiple samples in a single well of a 10X chip.
 
-{% include note.html content="There are no "sample" or "fastqs" arguments when processing multiple samples, instead, there are two .csv files - one for libraries and a second for your feature reference." %}
+{% include note.html content="There are no ```sample``` or ```fastqs``` arguments when processing multiple samples, instead, there are two .csv files - one for libraries and a second for your feature reference." %}
 
 cellranger count --id=Count_output_combined2 \
                  --libraries=/data/brinsterlab/libraries.csv \

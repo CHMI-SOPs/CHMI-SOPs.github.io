@@ -38,6 +38,8 @@
 
 <link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000/feed.xml">
 
+
+
     <script>
         $(document).ready(function() {
             // Initialize navgoco with default options
@@ -198,12 +200,12 @@
         
     
     <li>
-        <a href="#">Transcriptomics</a>
+        <a href="#">Bulk RNAseq</a>
         <ul>
             
             
             
-            <li><a href="mydoc_RNAseq_FAQs.html">RNAseq FAQs</a></li>
+            <li><a href="mydoc_RNAseq_FAQs.html">FAQs</a></li>
             
             
             
@@ -231,14 +233,7 @@
             
             
             
-            <li><a href="mydoc_scRNAseq_encapsulation.html">Single cell encapsulation (InDrop)</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="mydoc_scRNAseq_libraryPrep.html">Single cell library prep</a></li>
+            <li><a href="mydoc_FFPE_RNAseq.html">FFPE-seq</a></li>
             
             
             
@@ -248,13 +243,77 @@
                     
                     
                     
-                    <li><a href="mydoc_kallisto.html">Read mapping using Kallisto</a></li>
+                    <li><a href="mydoc_RNAseq_QA.html">Project management and QA</a></li>
                     
                     
                     
                     
                     
-                    <li><a href="mydoc_RNAseq_depositToGEO.html">Submitting RNAseq data to GEO</a></li>
+                    <li><a href="mydoc_kallisto.html">Read mapping with Kallisto</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_RNAseq_depositToGEO.html">Submitting data to GEO</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Single cell genomics</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_scRNAseq_FAQs.html">scRNAseq FAQs</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_10X_prep.html">10X sample prep</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_inDrop_encapsulation.html">inDrop encapsulation</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_inDrop_libraryPrep.html">inDrop library prep</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">scRNAseq data analysis</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="mydoc_CellRanger.html">10X CellRanger</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_BUStools.html">BUStools</a></li>
                     
                     
                     
@@ -317,6 +376,18 @@
                     
                     
                     
+                    
+                    
+                    <li><a href="mydoc_microbiomeDB_deposit.html">microbiomeDB.org</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_sourmash.html">Sourmash</a></li>
+                    
+                    
+                    
                 </ul>
             </li>
             
@@ -369,6 +440,13 @@
             
             
             
+            
+            
+            <li><a href="mydoc_3Dculture_microscopy.html">Immunofluorescence for 3D cultures</a></li>
+            
+            
+            
+            
         </ul>
      </li>
        
@@ -402,12 +480,28 @@
                     
                     
                     
-                    <li><a href="mydoc_biomeme_human.html">Human</a></li>
+                    <li><a href="mydoc_biomeme_human.html">Cutaneous leishmaniasis</a></li>
                     
                     
                     
                 </ul>
             </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Workshops</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_cloudMeta.html">Metagenomics in the cloud</a></li>
             
             
             
@@ -479,7 +573,7 @@ $('#toc').on('click', 'a', function() {
 
   <h2 id="documentation">Documentation</h2>
 
-<p>The full protocol can be found <a href="https://support.illumina.com/content/dam/illumina-support/documents/documentation/chemistry_documentation/samplepreps_nextera/nextera-xt/nextera-xt-library-prep-reference-guide-15031942-02.pdf">here</a></p>
+<p>The full protocol can be found <a href="https://support.illumina.com/content/dam/illumina-support/documents/documentation/chemistry_documentation/samplepreps_nextera/nextera-xt/nextera-xt-library-prep-reference-guide-15031942-05.pdf">here</a></p>
 
 <h2 id="what-youll-need">What you’ll need</h2>
 
@@ -490,6 +584,7 @@ $('#toc').on('click', 'a', function() {
   <li>Amplicon Tagmentation Mix (ATM) (-20C)</li>
   <li>Neutralization buffer (NT) (Room Temperature)</li>
   <li>Nextera PCR Mix (NPM) (-20C)</li>
+  <li>Nextera Indexes (i5 and i7) (-20C)</li>
   <li>Resuspension Buffer (RSB) (-20C)</li>
   <li>TruSeq Index Plate Fixture (Room Temperature)</li>
 </ul>
@@ -500,53 +595,39 @@ $('#toc').on('click', 'a', function() {
   <li>80% Ethanol, made fresh the same day</li>
   <li>Magnetic stand</li>
   <li>AMPureXP beads (Beckman-Coulter)</li>
+  <li>Illumina Index Replacement Caps</li>
 </ul>
 
 <h2 id="a-few-important-comments-before-you-start">A few important comments before you start</h2>
-
 <ul>
-  <li>We use the Low Sample ‘LS’ protocol as we are typically working with fewer than 48 samples at a time</li>
-  <li>The recommended starting amount of total RNA is 100 ng - 1 ug, but we usually try to stay away from the extreme ends of this spectrum.</li>
-  <li>Split this protocol into two days, stopping on the first day after you have double stranded cDNA. On second day, do the A-tailing, adapter ligation, PCR, cleanup, and quality control steps.</li>
-  <li>For 12 samples, you will need approximately 6-7 hours on the first day, and 6-7 hours the second day.</li>
-  <li>Keep all reagents on ice unless otherwise stated.</li>
-  <li>We typically remove the reagents from storage during an incubation period in the previous step.</li>
-  <li>Have the beads at room temperature at least 30 minutes prior to use.</li>
-  <li>Aliquot the reagents that arrive in large quantities (such as the resuspension buffer and the bead washing buffer) into 2 mL Eppendorf tubes.</li>
-  <li>We do not perform any of the in-line controls.</li>
-  <li>We do not use the plate barcode stickers that come with the kit.</li>
-  <li>Use only filter pipette tips and clean your area so it is free of RNases.</li>
-  <li>Ensure that the AMPureXP beads are mixed well immediately prior to use.</li>
-  <li>There are many mixing steps in this protocol - I frequently use a multi-channel pipette to help speed up this process, particularly if many libraries are being prepared.</li>
-  <li>We use a Tapestation or a BioAnalyzer to assay the input RNA quality. Ribosomal integrity numbers of 7 and higher are preferred.</li>
-  <li>We quantify the input RNA using a Qubit fluorometer.</li>
+  <li>All work before the PCR step should be performed in the pre-PCR designated hood.</li>
+  <li>The i5 and i7 indexes come as Set A, B, C, or D. On the lid of the Nextera reagents in our -20C freezer, there are images of which primers belong to which set. Using indexes from one kit makes programming the run on Basespace before sequencing a lot easier.</li>
 </ul>
 
 <h2 id="step-1-quantify-dna">Step 1: Quantify DNA</h2>
 
 <p>Quantify DNA with a Qubit and then dilute each sample to 0.2 ng/uL using ultra-pure, molecular-grade water.</p>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> I usually make at least 10 uL of each DNA solution for use in the next step.</div>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> I usually make at least 10 uL of each diluted DNA solution for use in the next step.</div>
 
 <h2 id="step-2-tagment-dna">Step 2: Tagment DNA:</h2>
 
 <ul>
-  <li>Add the following items in the order listed to each well of a new PCR plate. Pipette to mix:</li>
-</ul>
-
-<p>10 uL Tagment DNA Buffer (TD)
-5 uL Normalized gDNA</p>
-
-<ul>
   <li>
-    <p>Add 5 μl ATM to each well. Pipette to mix. Seal the plate.  The total volume should be 20 uL per well.</p>
+    <p>Add the following items in the order listed to each well of a new PCR plate. Pipette to mix:</p>
+  </li>
+  <li>10 uL Tagment DNA Buffer (TD)</li>
+  <li>
+    <p>5 uL Normalized gDNA</p>
+  </li>
+  <li>5 μl Amplicon Tagment Mix (ATM)</li>
+  <li>
+    <p>Pipette to mix. Seal the plate.  The total volume should be 20 uL per well.</p>
   </li>
   <li>
     <p>Centrifuge the plate at 280 × g at 20°C for 1 minute.</p>
   </li>
-  <li>
-    <p>Place on the preprogrammed thermal cycler and run the tagmentation program.</p>
-  </li>
+  <li>Place on the preprogrammed thermal cycler and run the tagmentation program.</li>
 </ul>
 
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> This program is in the NexteraXT folder on our thermocycler and is called 55_ATM and is 5 min at 55C followed by a hold at 10C.  Immediately after the 5 min, 55C step is complete, proceed immediately to the next step.</div>
@@ -650,7 +731,7 @@ $('#toc').on('click', 'a', function() {
 
 <ul>
   <li>
-    <p>Shake at 1800 rpm for 2 minutes.</p>
+    <p>Pipette to mix around 20 times to ensure the beads are mixed well with PCR products.</p>
   </li>
   <li>
     <p>Incubate at room temperature for 5 minutes.</p>
@@ -662,7 +743,7 @@ $('#toc').on('click', 'a', function() {
     <p>Remove and discard all supernatant from each well.</p>
   </li>
   <li>Wash 2 times as follows:</li>
-  <li>Add 190 μl fresh 80% EtOH to each well.</li>
+  <li>Add 180 μl fresh 80% EtOH to each well.</li>
   <li>Incubate on the magnetic stand for 30 seconds.</li>
   <li>
     <p>Remove and discard all supernatant from each well.</p>
@@ -680,7 +761,7 @@ $('#toc').on('click', 'a', function() {
     <p>Add 52.5 μl RSB to each well.</p>
   </li>
   <li>
-    <p>Shake at 1800 rpm for 2 minutes.</p>
+    <p>Pipette to mix well.</p>
   </li>
   <li>
     <p>Incubate at room temperature for 2 minutes.</p>
@@ -756,8 +837,8 @@ $('#toc').on('click', 'a', function() {
 <footer>
             <div class="row">
                 <div class="col-lg-12 footer">
-               &copy;2018 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
- Site last generated: Oct 2, 2018 <br />
+               &copy;2020 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
+ Site last generated: Mar 19, 2020 <br />
 <p><img src="images/CHMI_logo.png" alt="Company logo"/></p>
                 </div>
             </div>
@@ -771,5 +852,12 @@ $('#toc').on('click', 'a', function() {
     </div>
 
 </body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-131349832-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
 
 </html>

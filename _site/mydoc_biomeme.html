@@ -38,6 +38,8 @@
 
 <link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000/feed.xml">
 
+
+
     <script>
         $(document).ready(function() {
             // Initialize navgoco with default options
@@ -198,12 +200,12 @@
         
     
     <li>
-        <a href="#">Transcriptomics</a>
+        <a href="#">Bulk RNAseq</a>
         <ul>
             
             
             
-            <li><a href="mydoc_RNAseq_FAQs.html">RNAseq FAQs</a></li>
+            <li><a href="mydoc_RNAseq_FAQs.html">FAQs</a></li>
             
             
             
@@ -231,14 +233,7 @@
             
             
             
-            <li><a href="mydoc_scRNAseq_encapsulation.html">Single cell encapsulation (InDrop)</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="mydoc_scRNAseq_libraryPrep.html">Single cell library prep</a></li>
+            <li><a href="mydoc_FFPE_RNAseq.html">FFPE-seq</a></li>
             
             
             
@@ -248,13 +243,77 @@
                     
                     
                     
-                    <li><a href="mydoc_kallisto.html">Read mapping using Kallisto</a></li>
+                    <li><a href="mydoc_RNAseq_QA.html">Project management and QA</a></li>
                     
                     
                     
                     
                     
-                    <li><a href="mydoc_RNAseq_depositToGEO.html">Submitting RNAseq data to GEO</a></li>
+                    <li><a href="mydoc_kallisto.html">Read mapping with Kallisto</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_RNAseq_depositToGEO.html">Submitting data to GEO</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Single cell genomics</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_scRNAseq_FAQs.html">scRNAseq FAQs</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_10X_prep.html">10X sample prep</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_inDrop_encapsulation.html">inDrop encapsulation</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_inDrop_libraryPrep.html">inDrop library prep</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">scRNAseq data analysis</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="mydoc_CellRanger.html">10X CellRanger</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_BUStools.html">BUStools</a></li>
                     
                     
                     
@@ -317,6 +376,18 @@
                     
                     
                     
+                    
+                    
+                    <li><a href="mydoc_microbiomeDB_deposit.html">microbiomeDB.org</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_sourmash.html">Sourmash</a></li>
+                    
+                    
+                    
                 </ul>
             </li>
             
@@ -369,6 +440,13 @@
             
             
             
+            
+            
+            <li><a href="mydoc_3Dculture_microscopy.html">Immunofluorescence for 3D cultures</a></li>
+            
+            
+            
+            
         </ul>
      </li>
        
@@ -402,12 +480,28 @@
                     
                     
                     
-                    <li><a href="mydoc_biomeme_human.html">Human</a></li>
+                    <li><a href="mydoc_biomeme_human.html">Cutaneous leishmaniasis</a></li>
                     
                     
                     
                 </ul>
             </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Workshops</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_cloudMeta.html">Metagenomics in the cloud</a></li>
             
             
             
@@ -442,7 +536,7 @@
 <div class="post-content">
 
    
-    <div class="summary">Most of the projects we work on, whether profiling host gene expression or micobial communities, often yield at a candidate list of genes or organisms that we believe are linked to some phenotype.  Increasingly, we are interested in methods and technology that let us quantitiatively measure these features, particularly in a way that is portable and could be deployed 'stall-side' in a barn just as easily as at a lab bench.  For this, we've been using the Biomeme platform for end-to-end QPCR-based detection in the field</div>
+    <div class="summary">Most of the projects we work on, whether profiling host gene expression or micobial communities, often yield at a candidate list of genes or organisms that we believe are linked to some phenotype.  Increasingly, we are interested in methods and technology that let us quantitiatively measure these features, particularly in a way that is portable and could be deployed in the field just as easily as at a lab bench.  For this, we've been using the Biomeme platform for end-to-end QPCR-based detection in the field</div>
    
 
     
@@ -483,12 +577,17 @@ $('#toc').on('click', 'a', function() {
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The only difference between DNA and RNA protocols are the BLB buffer in the extraction kit, and the type of master mix you will use (LyoDNA versus LyoRNA).</div>
 
 <h2 id="devices">Devices</h2>
-<p>The hand-held QPCR device made by Biomeme, called the ‘three9’, accomodates 9 tubes and three colors/tube: FAM, Cy5/ATTO647N and TexasRed.  ATTO647N is the brightest channel on the three9, so consider designing the target you anticipate being present in the lowest concentration and/or least sensitive PCR on that channel. FAM is the next brightest, followed by TexasRedX. If you are designing a triplex assay for use with the three9 that includes a positive control, use TexasRedX for the positive control.</p>
+<p>The hand-held QPCR device made by Biomeme, called <a href="http://CHMI-sops.github.io/papers/BiomemeFranklinThermocycler.pdf">The Franklin Three9</a>, accomodates 9 tubes and three colors/tube: FAM, Cy5/ATTO647N and TexasRed.  Cy5 is the brightest channel on the three9, so consider designing the target you anticipate being present in the lowest concentration and/or least sensitive PCR on that channel. FAM is the next brightest, followed by TexasRedX. If you are designing a triplex assay for use with the three9 that includes a positive control, use TexasRedX for the positive control.</p>
 
 <h2 id="preparing-mastermix">Preparing mastermix</h2>
-<p>Resuspend bulk lyophilized <a href="http://CHMI-sops.github.io/papers/LyoDNA.pdf">LyoDNA</a>, <a href="http://CHMI-sops.github.io/papers/LyoRNA.pdf">LyoRNA</a> or <a href="http://CHMI-sops.github.io/papers/LyoGreen.pdf">LyoGreen</a> master mix with 135 ul of PCR grade water + 18 ul of glycerol.  This is a 10x stock.  Addition of glyceral allows leftover mastermix to be frozen for reuse later.  LyoRNA master mix contains a reverse transcriptase for QPCR assays where the target is a RNA molecule.  Each resuspended vial contains enough mastermix for 60 reactions of 20ul/rxn.</p>
 
-<h2 id="reaction-set-up-with-lyodna-or-lyorna">Reaction set-up with LyoDNA or LyoRNA</h2>
+<h3 id="bulk-mastermix">Bulk mastermix</h3>
+<p>Resuspend bulk lyophilized <a href="http://CHMI-sops.github.io/papers/LyoDNA.pdf">LyoDNA</a>, <a href="http://CHMI-sops.github.io/papers/LyoRNA.pdf">LyoRNA</a> or <a href="http://CHMI-sops.github.io/papers/LyoGreen.pdf">LyoGreen</a> master mix with 135 ul of PCR grade water (BEB buffer from the DNA extraction kits is water). This makes a 10x stock.  Add 18 ul of glycerol to allow leftover mastermix to be frozen for reuse later.  LyoRNA master mix contains a reverse transcriptase for QPCR assays where the target is a RNA molecule.  Each resuspended vial contains enough mastermix for at least 60, 20ul reactions.</p>
+
+<h3 id="lyo-gostrips">Lyo GoStrips</h3>
+<p>Lyo GoStrips contain Lyo MasterMix reagent lyophilized in the bottom of PCR strip tubes.  No preparation is needed.  Simply add DNA or RNA extract, add primers/probes, and start the reaction.</p>
+
+<h2 id="reaction-set-up-with-bulk-lyodna-or-lyorna">Reaction set-up with Bulk LyoDNA or LyoRNA</h2>
 <p>A typical QPCR reaction on the biomeme platform contains the following components</p>
 
 <table>
@@ -521,12 +620,15 @@ $('#toc').on('click', 'a', function() {
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> 20x primer/probe stock contains 4uM of the forward primer and probe, and 8uM of the reverse primer in TE pH 8.0.  Final concentrations in the PCR reaction will be 200nM of forward and probe, 400nM of reverse.  If starting with 100 uM stocks, then add 84 uL TE, 4 uL of forward, 4 uL of probe and 8 uL of reverse, to get a 100 ul stock of 20x</div>
 
 <h2 id="run-set-up">Run set-up</h2>
-
 <ul>
   <li>To begin, launch the Biomeme app on the iPhone connected to your device.</li>
   <li>To run any assays, you’ll need to set up a data folder by selecting the ‘data management’ button on the main screen.  Name your folder, create any subfolders if necessary and save.</li>
-  <li>Back on the main screen, choose ‘protocol management’ to set up a protocol that will contain your thermocycling conditions and a standard curve (optional).  We’ve always used the standard thermocycling conditions that come pre-set on the device as follows:</li>
+  <li>Back on the main screen, choose ‘protocol management’ to set up a protocol that will contain your thermocycling conditions.</li>
 </ul>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Be sure to select a RT step at the start of a protcol if you are testing for RNA targets</div>
+
+<p>We’ve always used the standard thermocycling conditions that come pre-set on the device as follows:</p>
 
 <table>
   <thead>
@@ -562,14 +664,8 @@ $('#toc').on('click', 'a', function() {
     <p>Give your protocol a name and select ‘save’ in the upper right corner of the app</p>
   </li>
   <li>
-    <p>If you want to set-up a standard curve, select your protocol, scroll to the bottom, and select standard curve.</p>
+    <p>To begin a run, go back to the main screen of the app and choose ‘start run’.  Choose your protocol and data folder, then follow the on screen instructions to begin the run.</p>
   </li>
-</ul>
-
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> standard curves are specific to each device.  If you plan to run the same assay across multiple devices, you’ll have to run the standard curve on each device.</div>
-
-<ul>
-  <li>To begin a run, go back to the main screen of the app and choose ‘start run’.  Choose your data folder, then your protocol, then select the run type (standard curve, qualitative, etc). Hit run and follow the on screen instructions to begin the run</li>
 </ul>
 
 
@@ -614,8 +710,8 @@ $('#toc').on('click', 'a', function() {
 <footer>
             <div class="row">
                 <div class="col-lg-12 footer">
-               &copy;2018 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
- Site last generated: Oct 2, 2018 <br />
+               &copy;2020 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
+ Site last generated: Mar 19, 2020 <br />
 <p><img src="images/CHMI_logo.png" alt="Company logo"/></p>
                 </div>
             </div>
@@ -629,5 +725,12 @@ $('#toc').on('click', 'a', function() {
     </div>
 
 </body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-131349832-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
 
 </html>

@@ -38,6 +38,8 @@
 
 <link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000/feed.xml">
 
+
+
     <script>
         $(document).ready(function() {
             // Initialize navgoco with default options
@@ -198,12 +200,12 @@
         
     
     <li>
-        <a href="#">Transcriptomics</a>
+        <a href="#">Bulk RNAseq</a>
         <ul>
             
             
             
-            <li><a href="mydoc_RNAseq_FAQs.html">RNAseq FAQs</a></li>
+            <li><a href="mydoc_RNAseq_FAQs.html">FAQs</a></li>
             
             
             
@@ -231,14 +233,7 @@
             
             
             
-            <li><a href="mydoc_scRNAseq_encapsulation.html">Single cell encapsulation (InDrop)</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="mydoc_scRNAseq_libraryPrep.html">Single cell library prep</a></li>
+            <li><a href="mydoc_FFPE_RNAseq.html">FFPE-seq</a></li>
             
             
             
@@ -248,13 +243,77 @@
                     
                     
                     
-                    <li><a href="mydoc_kallisto.html">Read mapping using Kallisto</a></li>
+                    <li><a href="mydoc_RNAseq_QA.html">Project management and QA</a></li>
                     
                     
                     
                     
                     
-                    <li><a href="mydoc_RNAseq_depositToGEO.html">Submitting RNAseq data to GEO</a></li>
+                    <li><a href="mydoc_kallisto.html">Read mapping with Kallisto</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_RNAseq_depositToGEO.html">Submitting data to GEO</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Single cell genomics</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_scRNAseq_FAQs.html">scRNAseq FAQs</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_10X_prep.html">10X sample prep</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_inDrop_encapsulation.html">inDrop encapsulation</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_inDrop_libraryPrep.html">inDrop library prep</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">scRNAseq data analysis</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="mydoc_CellRanger.html">10X CellRanger</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_BUStools.html">BUStools</a></li>
                     
                     
                     
@@ -317,6 +376,18 @@
                     
                     
                     
+                    
+                    
+                    <li><a href="mydoc_microbiomeDB_deposit.html">microbiomeDB.org</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_sourmash.html">Sourmash</a></li>
+                    
+                    
+                    
                 </ul>
             </li>
             
@@ -369,6 +440,13 @@
             
             
             
+            
+            
+            <li><a href="mydoc_3Dculture_microscopy.html">Immunofluorescence for 3D cultures</a></li>
+            
+            
+            
+            
         </ul>
      </li>
        
@@ -402,12 +480,28 @@
                     
                     
                     
-                    <li><a href="mydoc_biomeme_human.html">Human</a></li>
+                    <li><a href="mydoc_biomeme_human.html">Cutaneous leishmaniasis</a></li>
                     
                     
                     
                 </ul>
             </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Workshops</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_cloudMeta.html">Metagenomics in the cloud</a></li>
             
             
             
@@ -479,31 +573,12 @@ $('#toc').on('click', 'a', function() {
 
   <h2 id="before-starting">Before starting</h2>
 <ul>
-  <li>The protocol uses three primers (two forward and one reverse) to generate amplicons for Sanger sequencing.  Combining the seqeunce data for the three amplicons generates a contiguous sequence that spans that majority of the full 16S rRNA gene, therby giving you a decent idea of bacterial identity.  PCR reactions use the <a href="https://www.promega.com/-/media/files/resources/protocols/product-information-sheets/g/gotaq-green-master-mix-protocol.pdf">GoTaq Master Mix</a></li>
-</ul>
-
-<h2 id="materials">Materials</h2>
-<ul>
-  <li>Promega GoTaq Green Master Mix (-20C)</li>
-  <li>Molecular biology grade, nuclease-free water (-20C or room temperature)</li>
-  <li>27F Primer</li>
-  <li>1492R primer</li>
-  <li>515F primer</li>
-  <li>QIAGEN QIAquick PCR purification kit</li>
-  <li>100% Ethanol</li>
-</ul>
-
-<h2 id="step-1-obtain-genomic-dna">Step 1: Obtain genomic DNA</h2>
-
-<ul>
-  <li>Extract DNA using QIAGEN DNeasy kit (bacterial protocol) or other method of bacterial DNA extraction.</li>
-  <li>Quantify DNA using the Qubit.</li>
-</ul>
-
-<h2 id="step-2-pcr-amplify-the-full-length-16s-rrna-gene">Step 2: PCR Amplify the full-length 16S rRNA gene</h2>
-
-<ul>
-  <li>PCR Primers are as follows:</li>
+  <li>
+    <p>The protocol uses three primers (two forward and one reverse) to generate amplicons for Sanger sequencing.  Combining the seqeunce data for the three amplicons generates a contiguous sequence that spans that majority of the full 16S rRNA gene, therby giving you a decent idea of bacterial identity. PCR reactions use the <a href="https://www.promega.com/-/media/files/resources/protocols/product-information-sheets/g/gotaq-green-master-mix-protocol.pdf">GoTaq Master Mix</a></p>
+  </li>
+  <li>
+    <p>PCR Primers are as follows:</p>
+  </li>
 </ul>
 
 <table>
@@ -529,8 +604,28 @@ $('#toc').on('click', 'a', function() {
   </tbody>
 </table>
 
+<h2 id="materials">Materials</h2>
 <ul>
-  <li>Prepare the following reaction mixture in each PCR well/tube</li>
+  <li>Promega GoTaq Green Master Mix (-20C)</li>
+  <li>Molecular biology grade, nuclease-free water (-20C or room temperature)</li>
+  <li>27F Primer</li>
+  <li>1492R primer</li>
+  <li>515F primer</li>
+  <li>Ampure XP Beads (remove from fridge and acclimate at room temp for 30 min before use)</li>
+  <li>100% Ethanol</li>
+</ul>
+
+<h2 id="step-1-obtain-genomic-dna">Step 1: Obtain genomic DNA</h2>
+
+<ul>
+  <li>Extract DNA using QIAGEN DNeasy kit (bacterial protocol) or other method of bacterial DNA extraction.</li>
+  <li>Quantify DNA using the Qubit.</li>
+</ul>
+
+<h2 id="step-2-pcr-amplify-the-full-length-16s-rrna-gene">Step 2: PCR Amplify the full-length 16S rRNA gene</h2>
+
+<ul>
+  <li>Prepare the following, per sample, as a master mix:</li>
 </ul>
 
 <table>
@@ -548,34 +643,42 @@ $('#toc').on('click', 'a', function() {
       <td>1X</td>
     </tr>
     <tr>
-      <td>27F primer, 10 uM</td>
-      <td>1 uL</td>
+      <td>27F primer, 100 uM</td>
+      <td>0.2 uL</td>
       <td>0.2 uM</td>
     </tr>
     <tr>
-      <td>1492R primer, 10 uM</td>
-      <td>1 uL</td>
+      <td>1492R primer, 100 uM</td>
+      <td>0.2 uL</td>
       <td>0.2 uM</td>
     </tr>
     <tr>
-      <td>DNA template</td>
-      <td>1-5 uL</td>
-      <td>~150 ng template (&lt; 250 ng)</td>
-    </tr>
-    <tr>
-      <td>Nuclease-free water to</td>
-      <td>50 uL</td>
+      <td>Nuclease-free water</td>
+      <td>19.6 uL</td>
       <td>NA</td>
+    </tr>
+    <tr>
+      <td>Total Volume</td>
+      <td>45 uL</td>
+      <td> </td>
     </tr>
   </tbody>
 </table>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> If I have many reactions to perform, I make a master mix including all of the components except for the DNA.</div>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Make a master mix including all of the components except for the DNA.</div>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The original IDT stock solutions of the primers are at a concentration of 100 uM.</div>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The original IDT stock solutions of the primers are at a concentration of 100 uM. Our primers are at this concentration in the freezer. If your primers are not this concentration, adjust the volume added.</div>
 
 <ul>
-  <li>Place in thermocycler and run the following program under CHMI -&gt; PCR -&gt; 16SFULL (bold indicates 30 cycles)</li>
+  <li>
+    <p>In a 96-well plate, pipette 45uL of prepared master mix per sample.</p>
+  </li>
+  <li>
+    <p>Add 5uL of extracted DNA template (~150 ng template (&lt; 250 ng)) and pipette to mix. Each sample will have a total volume of 50uL.</p>
+  </li>
+  <li>
+    <p>Place in thermocycler and run the following program under SANGER folder -&gt; 16SFULL (bold indicates 30 cycles)</p>
+  </li>
 </ul>
 
 <table>
@@ -613,11 +716,59 @@ $('#toc').on('click', 'a', function() {
   </tbody>
 </table>
 
-<h2 id="step-3-clean-up-the-pcr-products">Step 3. Clean up the PCR products</h2>
+<h2 id="step-3--cleanup">Step 3:  Cleanup</h2>
 
 <ul>
-  <li>Follow the QIAGEN QIAquick PCR purification protocol.</li>
+  <li>
+    <p>Vortex AMPure XP beads before each use.  Vortex AMPure XP beads frequently to make sure that beads are evenly distributed.</p>
+  </li>
+  <li>
+    <p>Add 50 μl of AMPure XP beads to each well.</p>
+  </li>
+  <li>
+    <p>Pipette to mix around 15 times to ensure the beads are mixed well with PCR products.</p>
+  </li>
+  <li>
+    <p>Incubate at room temperature for 5 minutes.</p>
+  </li>
+  <li>
+    <p>Place on a magnetic stand and wait until the liquid is clear (~2 minutes).</p>
+  </li>
+  <li>
+    <p>Remove and discard all supernatant from each well.</p>
+  </li>
+  <li>Keeping the samples on the magnetic stand, wash 2 times as follows:
+    <ul>
+      <li>Add 180 μl fresh 80% EtOH to each well.</li>
+      <li>Incubate on the magnetic stand for 30 seconds.</li>
+      <li>Remove and discard all supernatant from each well.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Using a 20 μl pipette, remove residual 80% EtOH from each well.</p>
+  </li>
+  <li>
+    <p>Let the plate stand on the magnet at RT until dry, usually less than 5 minutes. When dry, the beads will appear matte and cracked.</p>
+  </li>
+  <li>
+    <p>Remove from the magnetic stand when samples are dry.</p>
+  </li>
+  <li>
+    <p>Add 52.5 μl RSB to each well.</p>
+  </li>
+  <li>
+    <p>Pipette to mix well and resuspend beads.</p>
+  </li>
+  <li>
+    <p>Incubate at room temperature for 2 minutes.</p>
+  </li>
+  <li>
+    <p>Place on a magnetic stand and wait until the liquid is clear (~2 minutes).</p>
+  </li>
+  <li>Transfer 50 μl supernatant to a new plate.</li>
 </ul>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> This is a safe stopping point.  If you choose to stop here, seal the plate and store at -20°C for up to 7 days. Alternatively, leave in the thermal cycler overnight</div>
 
 <h2 id="step-4-qc-on-purified-pcr-products">Step 4: QC on purified PCR products</h2>
 
@@ -629,8 +780,6 @@ $('#toc').on('click', 'a', function() {
     <p>Optional: Select a few samples and run an agarose gel or tapestation (DNA 5000 tape) to ensure there is a major product at approximately 1400 bp.</p>
   </li>
 </ul>
-
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> There may be other amplification products, but as long as the 1400 bp product is the most dominant, the PCR products do not need to be gel purified.</div>
 
 <h2 id="step-5-submit-pcr-products-for-sequencing">Step 5: Submit PCR products for sequencing</h2>
 
@@ -706,8 +855,8 @@ $('#toc').on('click', 'a', function() {
 <footer>
             <div class="row">
                 <div class="col-lg-12 footer">
-               &copy;2018 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
- Site last generated: Oct 2, 2018 <br />
+               &copy;2020 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
+ Site last generated: Mar 19, 2020 <br />
 <p><img src="images/CHMI_logo.png" alt="Company logo"/></p>
                 </div>
             </div>
@@ -721,5 +870,12 @@ $('#toc').on('click', 'a', function() {
     </div>
 
 </body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-131349832-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
 
 </html>

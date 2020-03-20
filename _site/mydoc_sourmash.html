@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="QC and analysis of microbial WGS and metagenomic data using Sourmash">
+<meta name="keywords" content="bioinformaticsmicrobiome,  ">
+<title>Exploring WGS and Metagenomic data using minHash sketches | CHMI services</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<link rel="stylesheet" href="css/lavish-bootstrap.css">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000/feed.xml">
+
+
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Center for Host-Microbial Interactions</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:beiting@upenn.edu?subject=CHMI services feedback&body=I have some feedback about the Exploring WGS and Metagenomic data using minHash sketches page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Exploring WGS and Metagenomic data using minHash sketches">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+    <div class="col-lg-12">&nbsp;</div>
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+
+
+
+
+
+
+
+
+
+
+
+<ul id="mysidebar" class="nav">
+    <li class="sidebarTitle">CHMI services </li>
+    
+    
+    
+        
+    
+    <li>
+        <a href="#">Overview</a>
+        <ul>
+            
+            
+            
+            <li><a href="index.html">Welcome</a></li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Bulk RNAseq</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_RNAseq_FAQs.html">FAQs</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_TruSeq.html">mRNA library prep</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_total_TruSeq.html">Total transcriptome library prep</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_lowInput_RNAseq.html">Low input protocol</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_FFPE_RNAseq.html">FFPE-seq</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">RNAseq data analysis</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="mydoc_RNAseq_QA.html">Project management and QA</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_kallisto.html">Read mapping with Kallisto</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_RNAseq_depositToGEO.html">Submitting data to GEO</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Single cell genomics</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_scRNAseq_FAQs.html">scRNAseq FAQs</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_10X_prep.html">10X sample prep</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_inDrop_encapsulation.html">inDrop encapsulation</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_inDrop_libraryPrep.html">inDrop library prep</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">scRNAseq data analysis</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="mydoc_CellRanger.html">10X CellRanger</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_BUStools.html">BUStools</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Microbiology</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_micro_FAQs.html">Microbiology FAQs</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_16S.html">16S rRNA gene sequencing</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_NexteraXT.html">Shotgun metagenomics</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_16S_Sanger.html">Sanger sequencing of 16S</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_mock.html">Culture collection</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Data analysis</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="mydoc_qiime2.html">QIIME2</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_microbiomeDB_deposit.html">microbiomeDB.org</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li class="active"><a href="mydoc_sourmash.html">Sourmash</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Compute resources</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_linux.html">Linux cluster</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_software.html">Available software</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_RStudio.html">R Studio Server</a></li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Cell culture</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_3Dculture.html">3D intestinal cultures</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_3Dculture_microscopy.html">Immunofluorescence for 3D cultures</a></li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">In the field</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_nanopore.html">Oxford Nanopore</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Biomeme portable QPCR</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="mydoc_biomeme.html">Set-up</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_biomeme_avian.html">Avian</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_biomeme_human.html">Cutaneous leishmaniasis</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Workshops</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_cloudMeta.html">Metagenomics in the cloud</a></li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+        
+        <!-- if you aren't using the accordion, uncomment this block:
+           <p class="external">
+               <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+           </p>
+           -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">Exploring WGS and Metagenomic data using minHash sketches</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+    <div class="summary">QC and analysis of microbial WGS and metagenomic data using Sourmash</div>
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+    <a target="_blank" href="https://github.com/CHMI-SOPs/CHMI-SOPs.github.io/tree/master/pages/mydoc/mydoc_sourmash.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+    
+
+  <h2 id="before-starting">Before starting</h2>
+<p>The following protocol outlines the use of <a href="https://sourmash.readthedocs.io/en/latest/">Sourmash</a> for interpreting microbial whole genome sequence (WGS) or metagenomic data.  Sourmash computes a fingerprint or ‘sketch’ from your WGS data using minHash, and enables comparison of sketches from isolates (to understand strain relatedness, for example).  Similarly, a sketch can be compared against a large databases of sketches, stored as a Sequence Bloom Tree (SBT) for rapid searching, from RefSeq or Genbank in order to help assign identity to a sample.  SBT databases of microbial genomes from all of Genbank and RefSeq are available directly on our server for convenience.</p>
+
+<p>If you want to learn more about how Sourmash works, you could start with C. Titus Brown’s blog posts on the topic <a href="http://ivory.idyll.org/blog/2016-sourmash-sbt.html">here</a> and <a href="http://ivory.idyll.org/blog/2016-sourmash-sbt-more.html">here</a>.  Also take a look at Adam Phillippy’s <a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-0997-x">original Mash paper</a></p>
+
+<h2 id="step-1-connect-to-a-chmi-linux-cluster">Step 1: Connect to a CHMI linux cluster</h2>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> if you do not have an account on our cluster and would like to get one, please contact Dan Beiting</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ssh username@130.91.255.137
+</code></pre>
+</div>
+
+<h2 id="step-2-check-data-quality">Step 2: Check data quality</h2>
+
+<p>Begin by using <a href="https://www.bioinformatics.babraham.ac.uk/projects/download.html">fastqc</a> to check the quality of each of your fastq files.  Throughout this protocol, ‘path/to/your/data’ indicates the path to your folder on our linux server which contains raw sequence data from your WGS or metagenomics experiment.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>cd path/to/your/data
+fastqc *.gz -t 24 #uses all 24 threads available on our machine
+</code></pre>
+</div>
+
+<h2 id="step-3-summarize-qc-results">Step 3: Summarize QC results</h2>
+
+<p><a href="https://multiqc.info/">MultiQC</a> is a fantastic piece of software for aggregating and summarizing the outputs from many different kinds of bioinformatics programs in one convenient and interactive html file.  In this case, we’ll use it to summarize the output from fastqc.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>multiqc path/to/your/data
+</code></pre>
+</div>
+
+<p>You should now see an .html file in your directory.  Move it from our server to your local computer using an FTP client (e.g. FileZilla), double click, and explore!</p>
+
+<h2 id="step-4-prepare-sample-sketches">Step 4: Prepare sample ‘sketches’</h2>
+
+<p>Here, we’ll use sourmash’s <code class="highlighter-rouge">compute</code> function to prepare a sketch of each fastq file in our directory.  The <code class="highlighter-rouge">--scaled</code> option applies a 1000:1 compression ratio, which retains the ability to detect regions of similarity in the 10kb range.</p>
+
+<p>First, start up the Sourmash conda environment</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>source activate sourmash
+</code></pre>
+</div>
+
+<p>Now use the <code class="highlighter-rouge">compute</code> function to prepare a sketch for each fastq file</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sourmash compute --scaled 1000 *.gz
+</code></pre>
+</div>
+
+<h2 id="step-5-compare-sketches-to-each-other">Step 5: Compare sketches to each other</h2>
+
+<p>The Sourmash <code class="highlighter-rouge">compare</code> command computes the jaccard index between two or more sketches generated above.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sourmash compare *.sig -k 31 -o cmp
+</code></pre>
+</div>
+
+<h2 id="step-6-visualize-sample-relatedness">Step 6: Visualize sample relatedness</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sourmash plot --pdf --labels cmp
+</code></pre>
+</div>
+
+<h2 id="step-7-search-against-refseq">Step 7: Search against RefSeq</h2>
+
+<p>This Sequence Bloom Tree (SBT) database contains approximately 60,000 microbial genomes (including viral and fungal) from NBCI’s RefSeq, including:</p>
+
+<ul>
+  <li>53865 bacterial genomes</li>
+  <li>5463 viral genomes</li>
+  <li>475 archael genomes</li>
+  <li>177 fungal genomes</li>
+  <li>72 protist genomes</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sourmash search *.sig /data/reference_db/refseq-d2-k31.sbt.json -n 20 
+#shows top 20 hits
+</code></pre>
+</div>
+
+<h2 id="step-8-search-against-genbank">Step 8: Search against Genbank</h2>
+
+<p>This Sequence Bloom Tree (SBT) database contains approximately 100,000 microbial genomes (including viral and fungal) from NBCI’s GenBank.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sourmash search *.sig /data/reference_db/genbank-d2-k31.sbt.json -n 20
+#shows top 20 hits
+</code></pre>
+</div>
+
+<h2 id="optional-what-genomes-are-in-my-sample">Optional: ‘What genomes are in my sample?’</h2>
+
+<p>Often times there are questions about whether a preparation used for WGS was contaminated with another organism.  Perhaps Sanger sequencing of 16S rDNA gave murky results, or restreaking an isolate showed more than one distinct colony morphology.  Alternatively, you may <em>know</em> that your sample has multiple genomes present (e.g. metagenomics).  In either case, the Sourmash <code class="highlighter-rouge">gather</code> function allows you to ask exactly which organisms might be present in a sample based only on the sequence data.  Like the search function above, gather needs a reference database to search against.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sourmash gather -k 31 *.sig /data/reference_db/refseq-d2-k31.sbt.json #using refseq
+sourmash gather -k 31 *.sig /data/reference_db/genbank-d2-k31.sbt.json #using genbank
+</code></pre>
+</div>
+
+<p>On the other hand, if you suspect contamination of a particular kind (e.g. host, plasmid, or common bacterium used in lab), you can run <a href="https://www.bioinformatics.babraham.ac.uk/projects/fastq_screen/_build/html/index.html">fastq_screen</a> to check a subsample of reads from your raw fastq file against a set of reference genomes.  Although this has nothing to do with Sourmash or minHask sketches <em>per se</em>, it can be a useful way to confirm findings from Sourmash, or to check for organisms not well represented in the SBT reference databases provided above.</p>
+
+<p>fastq_screen uses bowtie2 for aligning reads to the references, so we’ve provided a set of reference genomes on our cluster to which you can easily compare.</p>
+
+<p>We’ve taken care of configurating fastq_screen so that it knows where to find bowtie2 and where to look for the reference genomes.  This information is pretty clearly outlined in the fastq_screen configuration file found at /usr/local/bin/fastq_screen_v0.12.0/fastq_screen.conf</p>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> The reference genomes listed below have already been added to the configuration file.  If you don’t want a particular reference, and you are comfortable editing configuration files using the commnad line, feel free to comment out any of the references.  However, please <strong>do not</strong> delete the configuration file itself or <em>remove</em> any of the lines in the file!  If you want to use fastq_screen against a bowtie2 reference genome that is not listed below, please contact us for help.</div>
+
+<ul>
+  <li>Human</li>
+  <li>Mouse (<em>Mus musculus</em>)</li>
+  <li>Dog (<em>Canis familiaris</em>)</li>
+  <li>Cow (<em>Bos taurus</em>)</li>
+  <li>Horse (<em>Equus caballus</em>)</li>
+  <li>Pig (<em>Sus scrofa</em>)</li>
+  <li>Chicken (<em>Gallus gallus</em>)</li>
+  <li>Fruitfly (<em>Drosophila melanogaster</em>)</li>
+  <li>Yeast (<em>Saccharomyces cerevisiae</em>)</li>
+  <li><em>E. coli</em> (strain K12)</li>
+  <li>Staph (<em>Staphyloccous aureus</em> strain NCTC 8325)</li>
+  <li>Lambda phage (Enterobacteriophage lambda)</li>
+  <li>PhiX</li>
+  <li><a href="www.bioinformatics.babraham.ac.uk/projects/fastqc">Contaminants</a></li>
+  <li><a href="http://www.ncbi.nlm.nih.gov/VecScreen/UniVec.html">plasmids/vectors</a></li>
+</ul>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Just as you summarized the fastqc results in Step 3 using multiQC, the same can be done with the results from fastq_screen.  Rerunning multiqc will generate a new report that incorporates both fastqc and fastq_screen outputs, as long as these outputs are in the same directory.</div>
+
+<h2 id="optional-filtering-reads">Optional: filtering reads</h2>
+
+<p>Depending on the results you get with Sourmash gather or fastq_screen above, you may want to filter reads based on alignment to a particular reference genome of interest.  This is particularly useful for removing host reads contaminating a metagenomic sample, for example.  To do this, you can use the <code class="highlighter-rouge">--tag</code> and <code class="highlighter-rouge">--filter</code> options for fastq_screen.</p>
+
+<p>First, tag each read in each fastq with the genome to which it aligns (from the available references described above)</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>fastq_screen --tag sampleX.fastq.gz
+</code></pre>
+</div>
+
+<p>Next, filter based on tags that were assigned above</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>fastq_screen --filter 1000 sampleX.fastq.gz
+</code></pre>
+</div>
+
+
+
+    <div class="tags">
+        
+        <b>Tags: </b>
+        
+        
+        
+        <a href="tag_bioinformatics.html" class="btn btn-default navbar-btn cursorNorm" role="button">bioinformatics</a>
+        
+        
+        
+        <a href="tag_microbiome.html" class="btn btn-default navbar-btn cursorNorm" role="button">microbiome</a>
+        
+        
+        
+    </div>
+
+
+
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'http-hostmicrobe-org'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2020 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
+ Site last generated: Mar 19, 2020 <br />
+<p><img src="images/CHMI_logo.png" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+    </div>
+
+</body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-131349832-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+</html>

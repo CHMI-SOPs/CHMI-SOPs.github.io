@@ -38,6 +38,8 @@
 
 <link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000/feed.xml">
 
+
+
     <script>
         $(document).ready(function() {
             // Initialize navgoco with default options
@@ -198,12 +200,12 @@
         
     
     <li>
-        <a href="#">Transcriptomics</a>
+        <a href="#">Bulk RNAseq</a>
         <ul>
             
             
             
-            <li><a href="mydoc_RNAseq_FAQs.html">RNAseq FAQs</a></li>
+            <li><a href="mydoc_RNAseq_FAQs.html">FAQs</a></li>
             
             
             
@@ -231,14 +233,7 @@
             
             
             
-            <li><a href="mydoc_scRNAseq_encapsulation.html">Single cell encapsulation (InDrop)</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="mydoc_scRNAseq_libraryPrep.html">Single cell library prep</a></li>
+            <li><a href="mydoc_FFPE_RNAseq.html">FFPE-seq</a></li>
             
             
             
@@ -248,13 +243,77 @@
                     
                     
                     
-                    <li><a href="mydoc_kallisto.html">Read mapping using Kallisto</a></li>
+                    <li><a href="mydoc_RNAseq_QA.html">Project management and QA</a></li>
                     
                     
                     
                     
                     
-                    <li><a href="mydoc_RNAseq_depositToGEO.html">Submitting RNAseq data to GEO</a></li>
+                    <li><a href="mydoc_kallisto.html">Read mapping with Kallisto</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_RNAseq_depositToGEO.html">Submitting data to GEO</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Single cell genomics</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_scRNAseq_FAQs.html">scRNAseq FAQs</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_10X_prep.html">10X sample prep</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_inDrop_encapsulation.html">inDrop encapsulation</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_inDrop_libraryPrep.html">inDrop library prep</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">scRNAseq data analysis</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="mydoc_CellRanger.html">10X CellRanger</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_BUStools.html">BUStools</a></li>
                     
                     
                     
@@ -317,6 +376,18 @@
                     
                     
                     
+                    
+                    
+                    <li><a href="mydoc_microbiomeDB_deposit.html">microbiomeDB.org</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_sourmash.html">Sourmash</a></li>
+                    
+                    
+                    
                 </ul>
             </li>
             
@@ -369,6 +440,13 @@
             
             
             
+            
+            
+            <li><a href="mydoc_3Dculture_microscopy.html">Immunofluorescence for 3D cultures</a></li>
+            
+            
+            
+            
         </ul>
      </li>
        
@@ -402,12 +480,28 @@
                     
                     
                     
-                    <li><a href="mydoc_biomeme_human.html">Human</a></li>
+                    <li><a href="mydoc_biomeme_human.html">Cutaneous leishmaniasis</a></li>
                     
                     
                     
                 </ul>
             </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Workshops</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_cloudMeta.html">Metagenomics in the cloud</a></li>
             
             
             
@@ -480,11 +574,11 @@ $('#toc').on('click', 'a', function() {
   <h1 id="day-1">Day 1</h1>
 
 <h2 id="documentation">Documentation</h2>
-<p><a href="https://support.illumina.com/content/dam/illumina-support/documents/documentation/chemistry_documentation/samplepreps_truseq/truseqstrandedmrna/truseq-stranded-mrna-sample-prep-guide-15031047-e.pdf">TruSeq Stranded mRNA Sample Prep Guide</a>. This method makes a cDNA library of the polyadenylated mRNA in your eukaryotic samples of interest.</p>
+<p><a href="https://support.illumina.com/content/dam/illumina-support/documents/documentation/chemistry_documentation/samplepreps_truseq/truseq-stranded-mrna-workflow/truseq-stranded-mrna-workflow-reference-1000000040498-00.pdf">TruSeq Stranded mRNA Sample Prep Guide</a>. This method makes a cDNA library of the polyadenylated mRNA in your eukaryotic samples of interest.</p>
 
 <h2 id="what-youll-need-for-day-1">What you’ll need for Day 1</h2>
 
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> The following items are included in the Illumina kit</div>
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> The following items are included in the Illumina kit.  We recommend kits be stored as received in the original manufacterer’s boxes and not unpacked to organize in a reagent box.  When kits go bad, it is much easier to contain the damage if reagents were stored as received.</div>
 
 <ul>
   <li>RNA purification beads (These are the oligo dT beads) (bring these to room temperature before use)</li>
@@ -510,7 +604,7 @@ $('#toc').on('click', 'a', function() {
 <h2 id="a-few-important-comments-before-you-start">A few important comments before you start</h2>
 
 <div class="bs-callout bs-callout-primary">
-- We use the Low Sample ‘LS’ protocol as we are typically working with fewer than 48 samples at a time<br />
+* We use the Low Sample ‘LS’ protocol as we are typically working with fewer than 48 samples at a time<br />
 - The recommended starting amount of total RNA is 100 ng - 4 ug, but we usually try to stay away from the extreme ends of this spectrum.<br />
 - The lowest input of RNA we have successfully used in this protocol is 70 ng.<br />
 - Split this protocol into two days, stopping on the first day after you have double stranded cDNA. On second day, do the A-tailing, adapter ligation, PCR, cleanup, and quality control steps.<br />
@@ -536,6 +630,11 @@ $('#toc').on('click', 'a', function() {
   <li>
     <p>Add 50 uL RNA purification beads to each well. Gently pipette up and down 6 times. Seal the plate with an adhesive seal.</p>
   </li>
+</ol>
+
+<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> Do not store mRNA purification beads on ice!  We have observed that the beads are very sensitive to cold temperatures.  Beads stored at &lt; 2degC may deteriorate, resulting in poor binding of mRNA, and therefore poor library prep that is heavily contaminated with excess adapter.</div>
+
+<ol>
   <li>
     <p>Place the sealed plate in the thermal cycler. Select the mRNA denaturation program (65C for 5 min, 4C hold).</p>
   </li>
@@ -578,10 +677,7 @@ $('#toc').on('click', 'a', function() {
     <p>Add 50 uL Bead Binding Buffer to each well. Gently pipette up and down 6 times. Incubate the plate at room temperature for 5 minutes.</p>
   </li>
   <li>
-    <p>Place the plate on the magnetic stand at room. Incubate the plate at room temperature for 5 minutes.</p>
-  </li>
-  <li>
-    <p>Place the plate on the magnetic stand at room temp for 5 minutes. Remove and discard the supernatant from each well.</p>
+    <p>Place the plate on the magnetic stand at room. Incubate the plate at room temperature for 5 minutes. Remove and discard the supernatant from each well.</p>
   </li>
   <li>
     <p>Wash the beads by adding 190 uL bead washing buffer. Gently pipette up and down 6 times to mix.</p>
@@ -598,6 +694,10 @@ $('#toc').on('click', 'a', function() {
 </ol>
 
 <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> For degraded mRNA or mRNA isolated from FFPE samples, you may shorten the fragmentation time. See the Illumina TruSeq instruction manual for suggested times.</div>
+
+<ul>
+  <li>If RNA is degraded and you do not want to Fragment, place samples on thermal cycler at 65C for 5 mins, 4C hold. This will elute the mRNA from the beads without degrading the RNA.</li>
+</ul>
 
 <ol>
   <li>
@@ -618,7 +718,7 @@ $('#toc').on('click', 'a', function() {
     <p>Remove First Strand Synthesis Act D Mix from -20C and thaw at RT. Centrifuge this reagent at 600 x g for 5 sec.</p>
   </li>
   <li>
-    <p>Add 50 ul SuperScript II to the First Strand Synthesis Act D Mix well. If you’re not going to use the entire well of mix, then add SuperScript at a ratio of 1 ul SuperScript for every 9 ul of First Strand reagent.  For example, for 12 reactions, mix 90 ul with 10 ul of SS II.  Excess mix can be stored in the -20C freezer.</p>
+    <p>Add 50 ul SuperScript II to the First Strand Synthesis Act D Mix well. If you’re not going to use the entire well of mix, then add SuperScript at a ratio of 1 ul SuperScript for every 9 ul of First Strand reagent.  For example, for 10 reactions, mix 90 ul with 10 ul of SS II.  Excess mix can be stored in the -20C freezer.</p>
   </li>
   <li>
     <p>Add 8 ul of First Strand SuperScript mix to each well containing the mRNA.</p>
@@ -664,7 +764,7 @@ $('#toc').on('click', 'a', function() {
     <p>Wash beads on magnet by adding 190 ul of 80% EtOH to each well, without disturbing the beads incubate 30 sec at RT.</p>
   </li>
   <li>
-    <p>Remove and discard the supernatant, repeat the wash step and remove the supernatant again. Let the plate stand on the magnet at RT for 15 min to dry.</p>
+    <p>Remove and discard the supernatant, repeat the wash step and remove the supernatant again. Let the plate stand on the magnet at RT until dry, usually less than 5 minutes. When dry, the beads will appear matte and cracked. Remove plate from magnet when all samples are dry.</p>
   </li>
 </ol>
 
@@ -762,7 +862,7 @@ $('#toc').on('click', 'a', function() {
     <p>Perform the wash step again.</p>
   </li>
   <li>
-    <p>Use a p10 pipette to remove residual ethanol. Leave the plate on the stand to dry for 15 minutes.</p>
+    <p>Use a p10 pipette to remove residual ethanol. Keep the plate on the magnet at RT until dry, usually less than 5 minutes. When dry, the beads will appear matte and cracked. Remove plate from magnet when all samples are dry.</p>
   </li>
   <li>
     <p>Remove the plate from the magnetic stand and add 52.5 ul of Resuspension Buffer to each well, and mix well by pipetting. Incubate at RT for 2 min</p>
@@ -789,7 +889,7 @@ $('#toc').on('click', 'a', function() {
     <p>With the plate on the magnetic stand, wash the beads again with 190 uL of 80% EtOH for 30 s, then remove the ethanol.</p>
   </li>
   <li>
-    <p>With the plate on the magnetic stand, use a p10 pipette to remove residual EtOH, then let the plate air dry for 15 min.</p>
+    <p>Use a p10 pipette to remove residual ethanol. Keep the plate on the magnet at RT until dry, usually less than 5 minutes. When dry, the beads will appear matte and cracked. Remove plate from magnet when all samples are dry.</p>
   </li>
   <li>
     <p>Resuspend beads in 22.5 ul of resuspension Buffer, mix well by pipetting, and incubate 2 min at RT.</p>
@@ -827,7 +927,7 @@ $('#toc').on('click', 'a', function() {
     <p>Repeat the ethanol wash step.</p>
   </li>
   <li>
-    <p>Remove residual ethanol with a p10 pipette, let the beads air dry for 15 minutes on the magnetic plate.</p>
+    <p>Use a p10 pipette to remove residual ethanol. Keep the plate on the magnet at RT until dry, usually less than 5 minutes. When dry, the beads will appear matte and cracked. Remove plate from magnet when all samples are dry.</p>
   </li>
   <li>
     <p>Remove the plate from the magnetic stand, add 32.5 ul of resuspension buffer and mix well, by pipetting, and incubate for 2 min at room temperature.</p>
@@ -888,8 +988,8 @@ $('#toc').on('click', 'a', function() {
 <footer>
             <div class="row">
                 <div class="col-lg-12 footer">
-               &copy;2018 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
- Site last generated: Oct 2, 2018 <br />
+               &copy;2020 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
+ Site last generated: Mar 19, 2020 <br />
 <p><img src="images/CHMI_logo.png" alt="Company logo"/></p>
                 </div>
             </div>
@@ -903,5 +1003,12 @@ $('#toc').on('click', 'a', function() {
     </div>
 
 </body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-131349832-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
 
 </html>

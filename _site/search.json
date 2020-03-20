@@ -17,6 +17,17 @@
 
 
 {
+"title": "Single Cell RNAseq – encapsulation",
+"tags": "transcriptomicssingle_cell_genomics",
+"keywords": "transcriptomics",
+"url": "mydoc_10X_prep.html",
+"summary": "Using the 10X Chromium Controller to encapsulate individual cells for single cell genomic experiments"
+}
+,
+
+
+
+{
 "title": "16S rRNA gene sequencing",
 "tags": "library_prepmicrobiome",
 "keywords": "",
@@ -50,6 +61,39 @@
 
 
 {
+"title": "Confocal microscopy on 3D cultures",
+"tags": "tissue culture",
+"keywords": "organotypic, in vitro assay",
+"url": "mydoc_3Dculture_microscopy.html",
+"summary": "Staining and microscopy protocol for 3D organotypic cultures"
+}
+,
+
+
+
+{
+"title": "Cell Ranger",
+"tags": "bioinformaticssingle_cell_genomics",
+"keywords": "",
+"url": "mydoc_CellRanger.html",
+"summary": "Cell Ranger is the command-line software for preprocessing raw sequence data from a 10X single cell sequencing experiment.  The output from Cell Ranger os a count matrix where rows are genes and columns are individual cells."
+}
+,
+
+
+
+{
+"title": "SMARTer Stranded Total RNA-Seq Kit v2- Pico Input Mammalian",
+"tags": "library_preptranscriptomics",
+"keywords": "transcriptomics, library preparation",
+"url": "mydoc_FFPE_RNAseq.html",
+"summary": "This protocol walks you through preparing a total transcriptome RNA library for RNAseq when your starting amount of RNA is less than ~50ng or if you are working with degraded/FFPE RNA samples"
+}
+,
+
+
+
+{
 "title": "Illumina Nextera XT Sample Preparation Protocol",
 "tags": "library_preptranscriptomicsmicrobiomemetagenomics",
 "keywords": "metagenomics, transcriptomics, library preparation",
@@ -66,6 +110,17 @@
 "keywords": "",
 "url": "mydoc_RNAseq_FAQs.html",
 "summary": "information on our technology, how you gain access, how much experiments cost, and our 'hands-on' philosophy."
+}
+,
+
+
+
+{
+"title": "Project management and quality assurance for RNAseq projects",
+"tags": "bioinformaticstranscriptomics",
+"keywords": "",
+"url": "mydoc_RNAseq_QA.html",
+"summary": "Managing your RNAseq project and checking the quality of raw data are essential first steps in the analysis of any RNAseq experiment.  The protocol below outlines our best practices to keep  projects and data transparent, reproducible and robust."
 }
 ,
 
@@ -153,7 +208,7 @@
 "tags": "QPCRmobilediagnostics",
 "keywords": "",
 "url": "mydoc_biomeme.html",
-"summary": "Most of the projects we work on, whether profiling host gene expression or micobial communities, often yield at a candidate list of genes or organisms that we believe are linked to some phenotype.  Increasingly, we are interested in methods and technology that let us quantitiatively measure these features, particularly in a way that is portable and could be deployed 'stall-side' in a barn just as easily as at a lab bench.  For this, we've been using the Biomeme platform for end-to-end QPCR-based detection in the field"
+"summary": "Most of the projects we work on, whether profiling host gene expression or micobial communities, often yield at a candidate list of genes or organisms that we believe are linked to some phenotype.  Increasingly, we are interested in methods and technology that let us quantitiatively measure these features, particularly in a way that is portable and could be deployed in the field just as easily as at a lab bench.  For this, we've been using the Biomeme platform for end-to-end QPCR-based detection in the field"
 }
 ,
 
@@ -171,11 +226,11 @@
 
 
 {
-"title": "QPCR assays for human pathogens on the Biomeme platform",
+"title": "Biomarker panel for field work on human cutaneous leishmaniasis",
 "tags": "QPCRmobilediagnostics",
 "keywords": "",
 "url": "mydoc_biomeme_human.html",
-"summary": "Biomeme protocol for detection of Leishmania braziliensis, skin commensals and host pro-inflammatory gene expression from lesion swabs in human cases of cutaneous leishmaniasis"
+"summary": "Protocol for detection of Leishmania braziliensis, skin commensals and host pro-inflammatory gene expression from lesion swabs in human cases of cutaneous leishmaniasis"
 }
 ,
 
@@ -198,6 +253,17 @@
 "keywords": "build scripts, generating outputs, building, publishing",
 "url": "mydoc_build_scripts.html",
 "summary": "You need to customize the build scripts. These script automate the publishing of your PDFs and web outputs through shell scripts on the command line."
+}
+,
+
+
+
+{
+"title": "Metagenomics in the cloud",
+"tags": "bioinformaticsmicrobiometutorialsmetagenomics",
+"keywords": "",
+"url": "mydoc_cloudMeta.html",
+"summary": "This 4 hour workshop takes users through setting up their own cloud computer, intalling a Snakemake-based pipeline called Sunbeam for analysis of shotgun metagenomic data, and analyzing/discussing data from Crohn's disease patients"
 }
 ,
 
@@ -358,6 +424,28 @@
 
 
 {
+"title": "Single Cell RNAseq – encapsulation",
+"tags": "transcriptomicssingle_cell_genomics",
+"keywords": "transcriptomics",
+"url": "mydoc_inDrop_encapsulation.html",
+"summary": "Using droplet-based technology to isolate and barcode individual cells"
+}
+,
+
+
+
+{
+"title": "Single Cell RNAseq – library prep",
+"tags": "transcriptomicslibrary_prepsingle_cell_genomics",
+"keywords": "transcriptomics",
+"url": "mydoc_inDrop_libraryPrep.html",
+"summary": "post-encapsulation steps for preparing sequence-ready libraries for scRNAseq"
+}
+,
+
+
+
+{
 "title": "Install Jekyll on Mac",
 "tags": "getting_startedtroubleshooting",
 "keywords": "",
@@ -406,7 +494,7 @@
 "tags": "bioinformaticstranscriptomics",
 "keywords": "",
 "url": "mydoc_kallisto.html",
-"summary": "Kallisto is our first choice for aligning reads because it combines speed, accuracy, and ability to leverage bootstraps for modeling technical variance"
+"summary": "Kallisto is our first choice for aligning reads because it combines speed, accuracy, and the ability to leverage bootstraps for modeling technical variance"
 }
 ,
 
@@ -439,7 +527,7 @@
 "tags": "bioinformatics",
 "keywords": "",
 "url": "mydoc_linux.html",
-"summary": "CHMI maintains a custom configured compute server that runs Linux Ubuntu 16.04 LTS.  This machine has two 6-core Intel Xeon E5-2643v4 CPUs (12 cores total), 512 Gb of RAM and 18Tb of RAID1 storage.  If you are a PennVet lab and wish to use this machine, please contact Dan Beiting (beiting@upenn.edu) for more information."
+"summary": "CHMI maintains a custom configured compute server that runs Linux Ubuntu 18.04 LTS.  This machine has two 6-core Intel Xeon E5-2643v4 CPUs (12 cores total), 512 Gb of RAM and 18Tb of RAID1 storage.  If you are a PennVet lab and wish to use this machine, please contact Dan Beiting (beiting@upenn.edu) for more information."
 }
 ,
 
@@ -473,6 +561,17 @@
 "keywords": "",
 "url": "mydoc_micro_FAQs.html",
 "summary": "information on our technology, how you gain access, how much experiments cost, and our 'hands-on' philosophy."
+}
+,
+
+
+
+{
+"title": "Preparing microbiome data for deposit to microbiomeDB.org",
+"tags": "microbiomeDBbioinformatics",
+"keywords": "",
+"url": "mydoc_microbiomeDB_deposit.html",
+"summary": "Instructions on how to prepare your raw sequence data and metadata mapping file for submission to microbiomeDB.org"
 }
 ,
 
@@ -600,44 +699,11 @@
 
 
 {
-"title": "Single Cell RNAseq – encapsulation",
-"tags": "transcriptomics",
-"keywords": "transcriptomics",
-"url": "mydoc_scRNAseq_ecapsulation.html",
-"summary": "Using droplet-based technology to barcode individual cells for RNAseq"
-}
-,
-
-
-
-{
-"title": "Single Cell RNAseq – encapsulation",
-"tags": "transcriptomics",
-"keywords": "transcriptomics",
-"url": "mydoc_scRNAseq_encapsulation.html",
-"summary": "Using droplet-based technology to isolate and barcode individual cells"
-}
-,
-
-
-
-{
-"title": "Single Cell RNAseq – library prep",
-"tags": "transcriptomics",
-"keywords": "transcriptomics",
-"url": "mydoc_scRNAseq_libraryPrep.html",
-"summary": "post-encapsulation steps for preparing sequence-ready libraries for scRNAseq"
-}
-,
-
-
-
-{
-"title": "Scroll layout",
-"tags": "special_layouts",
-"keywords": "json, scrolling, scrollto, jquery plugin",
-"url": "mydoc_scroll.html",
-"summary": "This page demonstrates how you the integration of a script called ScrollTo, which is used here to link definitions of a JSON code sample to a list of definitions for that particular term. The scenario here is that the JSON blocks are really long, with extensive nesting and subnesting, which makes it difficult for tables below the JSON to adequately explain the term in a usable way."
+"title": "scRNAseq FAQs",
+"tags": "getting_startedFAQstranscriptomicssingle_cell_genomics",
+"keywords": "",
+"url": "mydoc_scRNAseq_FAQs.html",
+"summary": "information on our single cell RNAseq (scRNAseq) technology, how you gain access, and how to think about the the cost of a typical scRNAseq experiment."
 }
 ,
 
@@ -648,6 +714,17 @@
 "tags": "special_layouts",
 "keywords": "json, scrolling, scrollto, jquery plugin",
 "url": "jsmydoc_scroll.html",
+"summary": "This page demonstrates how you the integration of a script called ScrollTo, which is used here to link definitions of a JSON code sample to a list of definitions for that particular term. The scenario here is that the JSON blocks are really long, with extensive nesting and subnesting, which makes it difficult for tables below the JSON to adequately explain the term in a usable way."
+}
+,
+
+
+
+{
+"title": "Scroll layout",
+"tags": "special_layouts",
+"keywords": "json, scrolling, scrollto, jquery plugin",
+"url": "mydoc_scroll.html",
 "summary": "This page demonstrates how you the integration of a script called ScrollTo, which is used here to link definitions of a JSON code sample to a list of definitions for that particular term. The scenario here is that the JSON blocks are really long, with extensive nesting and subnesting, which makes it difficult for tables below the JSON to adequately explain the term in a usable way."
 }
 ,
@@ -748,6 +825,17 @@
 "keywords": "",
 "url": "mydoc_software.html",
 "summary": "A summary of the bioinformatics software currently installed on our Linux cluster."
+}
+,
+
+
+
+{
+"title": "Exploring WGS and Metagenomic data using minHash sketches",
+"tags": "bioinformaticsmicrobiome",
+"keywords": "",
+"url": "mydoc_sourmash.html",
+"summary": "QC and analysis of microbial WGS and metagenomic data using Sourmash"
 }
 ,
 
@@ -1168,6 +1256,10 @@
 "summary": "This is just a sample topic..."
 }
 ,
+
+
+
+
 
 
 

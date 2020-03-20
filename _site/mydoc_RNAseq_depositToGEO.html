@@ -38,6 +38,8 @@
 
 <link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000/feed.xml">
 
+
+
     <script>
         $(document).ready(function() {
             // Initialize navgoco with default options
@@ -198,12 +200,12 @@
         
     
     <li>
-        <a href="#">Transcriptomics</a>
+        <a href="#">Bulk RNAseq</a>
         <ul>
             
             
             
-            <li><a href="mydoc_RNAseq_FAQs.html">RNAseq FAQs</a></li>
+            <li><a href="mydoc_RNAseq_FAQs.html">FAQs</a></li>
             
             
             
@@ -231,14 +233,7 @@
             
             
             
-            <li><a href="mydoc_scRNAseq_encapsulation.html">Single cell encapsulation (InDrop)</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="mydoc_scRNAseq_libraryPrep.html">Single cell library prep</a></li>
+            <li><a href="mydoc_FFPE_RNAseq.html">FFPE-seq</a></li>
             
             
             
@@ -248,13 +243,77 @@
                     
                     
                     
-                    <li><a href="mydoc_kallisto.html">Read mapping using Kallisto</a></li>
+                    <li><a href="mydoc_RNAseq_QA.html">Project management and QA</a></li>
                     
                     
                     
                     
                     
-                    <li class="active"><a href="mydoc_RNAseq_depositToGEO.html">Submitting RNAseq data to GEO</a></li>
+                    <li><a href="mydoc_kallisto.html">Read mapping with Kallisto</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li class="active"><a href="mydoc_RNAseq_depositToGEO.html">Submitting data to GEO</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Single cell genomics</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_scRNAseq_FAQs.html">scRNAseq FAQs</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_10X_prep.html">10X sample prep</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_inDrop_encapsulation.html">inDrop encapsulation</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_inDrop_libraryPrep.html">inDrop library prep</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">scRNAseq data analysis</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="mydoc_CellRanger.html">10X CellRanger</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_BUStools.html">BUStools</a></li>
                     
                     
                     
@@ -317,6 +376,18 @@
                     
                     
                     
+                    
+                    
+                    <li><a href="mydoc_microbiomeDB_deposit.html">microbiomeDB.org</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_sourmash.html">Sourmash</a></li>
+                    
+                    
+                    
                 </ul>
             </li>
             
@@ -369,6 +440,13 @@
             
             
             
+            
+            
+            <li><a href="mydoc_3Dculture_microscopy.html">Immunofluorescence for 3D cultures</a></li>
+            
+            
+            
+            
         </ul>
      </li>
        
@@ -402,12 +480,28 @@
                     
                     
                     
-                    <li><a href="mydoc_biomeme_human.html">Human</a></li>
+                    <li><a href="mydoc_biomeme_human.html">Cutaneous leishmaniasis</a></li>
                     
                     
                     
                 </ul>
             </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Workshops</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_cloudMeta.html">Metagenomics in the cloud</a></li>
             
             
             
@@ -478,14 +572,14 @@ $('#toc').on('click', 'a', function() {
     
 
   <h2 id="intro">Intro</h2>
-<p>So you’re ready to submit a manuscript describing your hard work…congratulations!  If you’re reading this page, then chances are you have RNAseq data that you want to post to an approved data repository so that you can get an accession number to include in your manuscript submission.  This is the first step in ensuring that the broader research community can access your raw and processed data from any sequencing experiment(s) carried out in your publication.  The <a href="https://www.ncbi.nlm.nih.gov/sra">Sequence Read Archive</a> (SRA) is the defacto home for all sequencing related studies, but can be confusing to navigate.  Thankfully, the <a href="https://www.ncbi.nlm.nih.gov/geo/">Gene Expression Omnibus</a>, will accept deposits of gene expression profiling data from RNAseq experiments and will pass this data onto to GEO on your behalf.  This is definitely the way to go, since the process of submitting data to GEO is pretty straightforward.  The steps below will walk you through this process.  Be aware that GEO’s own instructions are available <a href="https://www.ncbi.nlm.nih.gov/geo/info/seq.html">here</a>, but our instructions are simple.</p>
+<p>So you’re ready to submit a manuscript describing your hard work…congratulations!  If you’re reading this page, then chances are you have RNAseq data that you want to post to an approved data repository so that you can get an accession number to include in your manuscript submission.  This is the first step in ensuring that the broader research community can access your raw and processed data from any sequencing experiment(s) carried out in your publication.  The <a href="https://www.ncbi.nlm.nih.gov/sra">Sequence Read Archive</a> (SRA) is the defacto home for all sequencing related studies, but can be confusing to navigate.  Thankfully, the <a href="https://www.ncbi.nlm.nih.gov/geo/">Gene Expression Omnibus</a>, will accept deposits of gene expression profiling data from RNAseq experiments and will pass this data onto to the SRA on your behalf.  This is definitely the way to go, since the process of submitting data to GEO is pretty straightforward.  The steps below will walk you through this process.  Be aware that GEO’s own instructions are available <a href="https://www.ncbi.nlm.nih.gov/geo/info/seq.html">here</a>, but our instructions are simple.</p>
 
 <h2 id="what-youll-need">What you’ll need</h2>
 
 <ul>
   <li>an account on myNCBI.  If you don’t already have one, signup <a href="https://www.ncbi.nlm.nih.gov/account/">here</a></li>
   <li>the free FTP client, <a href="https://filezilla-project.org/">FileZilla</a></li>
-  <li>access to your raw .fastq files from your seqeuncing experiment (keep this in the compressed (.gzip) form at all times.</li>
+  <li>access to your raw .fastq files from your sequencing experiment. Keep each fastq file in the compressed (.gzip) form at all times.</li>
   <li>access to a table of ‘processed’ gene expression data.  This will need to be either raw counts, or normalized data produced by DESeq2 or EdgeR (or both files).</li>
 </ul>
 
@@ -493,7 +587,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>This is most time consuming part of whole process, but also the most important.  <a href="http://CHMI-sops.github.io/papers/GEOsubmission.xlsx">Download this example excel file</a> from one of our own RNAseq studies, and replace with the appropriate information from your own experiment.  This document should describe each sample, how it was handled, and how your samples relate to the raw fastq files.  The more ‘metadata’ you can include here, the more useful you make this data to outside investigators, so don’t skimp on the details.</p>
 
-<p>To complete this form you will need to generate a unique checksum for each file that you intend to transfer to GEO (both fastq files, as well as an process data files).  Checksums confirm that the file is not corrupt.  The are easy to generate, but do require that you open a command line program (e.g. Terminal on a Mac).  Once you have a terminal window open, navigate to the directory on your computer where you have all the files you plan to transfer.</p>
+<p>To complete this form you will need to generate a unique checksum for each file that you intend to transfer to GEO (both fastq files, as well as an process data files).  Checksums confirm that the file is not corrupt.  They are easy to generate, but do require that you open a command line program (e.g. Terminal on a Mac).  Once you have a terminal window open, navigate to the directory on your computer where you have all the files you plan to transfer.</p>
 
 <p>Use the <code class="highlighter-rouge">md5</code> command followed by the name of your file to generate the 32 character checksum.  You’ll want to copy and paste this into your excel submission form.
 Here’s an example of what this looks like:</p>
@@ -517,13 +611,15 @@ MD5 (GEOsubmission.xlsx) = 39eae0dbcc54367c588d2815876747f4
   <li>Launch FileZilla and connect to the GEO storage server using the following credentials:</li>
 </ol>
 
-<p>** Host: ftp-private.ncbi.nlm.nih.gov
-* username: geo
-* password: (this will specific to your myNCBI account)</p>
+<ul>
+  <li>Host: ftp-private.ncbi.nlm.nih.gov</li>
+  <li>username: geo</li>
+  <li>password: (this will specific to your myNCBI account). To get your user-specific password, make sure you’re logged into your myNCBI account on the web, and then <strong><a href="https://www.ncbi.nlm.nih.gov/geo/info/submissionftp.html">go to this webpage</a></strong>.  Scroll down and you see your login credentials.  You’ll need to enter this info into FileZilla to connect.</li>
+</ul>
 
 <ol>
   <li>
-    <p>Once connected, simply drag your folder from your local computer to the GEO server</p>
+    <p>Once connected via FileZilla, simply drag your folder from your local computer to the GEO server</p>
   </li>
   <li>
     <p>Now you must give the crew at GEO a heads-up that you’ve submitted data to their server.  <strong>Don’t skip this step or they will delete your submission.</strong>. <a href="geo@ncbi.nlm.nih.gov">Send an email to GEO</a>, and include the following information in the email:</p>
@@ -582,8 +678,8 @@ MD5 (GEOsubmission.xlsx) = 39eae0dbcc54367c588d2815876747f4
 <footer>
             <div class="row">
                 <div class="col-lg-12 footer">
-               &copy;2018 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
- Site last generated: Oct 2, 2018 <br />
+               &copy;2020 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
+ Site last generated: Mar 19, 2020 <br />
 <p><img src="images/CHMI_logo.png" alt="Company logo"/></p>
                 </div>
             </div>
@@ -597,5 +693,12 @@ MD5 (GEOsubmission.xlsx) = 39eae0dbcc54367c588d2815876747f4
     </div>
 
 </body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-131349832-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
 
 </html>

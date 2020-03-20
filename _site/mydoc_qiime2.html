@@ -38,6 +38,8 @@
 
 <link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000/feed.xml">
 
+
+
     <script>
         $(document).ready(function() {
             // Initialize navgoco with default options
@@ -198,12 +200,12 @@
         
     
     <li>
-        <a href="#">Transcriptomics</a>
+        <a href="#">Bulk RNAseq</a>
         <ul>
             
             
             
-            <li><a href="mydoc_RNAseq_FAQs.html">RNAseq FAQs</a></li>
+            <li><a href="mydoc_RNAseq_FAQs.html">FAQs</a></li>
             
             
             
@@ -231,14 +233,7 @@
             
             
             
-            <li><a href="mydoc_scRNAseq_encapsulation.html">Single cell encapsulation (InDrop)</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="mydoc_scRNAseq_libraryPrep.html">Single cell library prep</a></li>
+            <li><a href="mydoc_FFPE_RNAseq.html">FFPE-seq</a></li>
             
             
             
@@ -248,13 +243,77 @@
                     
                     
                     
-                    <li><a href="mydoc_kallisto.html">Read mapping using Kallisto</a></li>
+                    <li><a href="mydoc_RNAseq_QA.html">Project management and QA</a></li>
                     
                     
                     
                     
                     
-                    <li><a href="mydoc_RNAseq_depositToGEO.html">Submitting RNAseq data to GEO</a></li>
+                    <li><a href="mydoc_kallisto.html">Read mapping with Kallisto</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_RNAseq_depositToGEO.html">Submitting data to GEO</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Single cell genomics</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_scRNAseq_FAQs.html">scRNAseq FAQs</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_10X_prep.html">10X sample prep</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_inDrop_encapsulation.html">inDrop encapsulation</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_inDrop_libraryPrep.html">inDrop library prep</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">scRNAseq data analysis</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="mydoc_CellRanger.html">10X CellRanger</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_BUStools.html">BUStools</a></li>
                     
                     
                     
@@ -317,6 +376,18 @@
                     
                     
                     
+                    
+                    
+                    <li><a href="mydoc_microbiomeDB_deposit.html">microbiomeDB.org</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="mydoc_sourmash.html">Sourmash</a></li>
+                    
+                    
+                    
                 </ul>
             </li>
             
@@ -369,6 +440,13 @@
             
             
             
+            
+            
+            <li><a href="mydoc_3Dculture_microscopy.html">Immunofluorescence for 3D cultures</a></li>
+            
+            
+            
+            
         </ul>
      </li>
        
@@ -402,12 +480,28 @@
                     
                     
                     
-                    <li><a href="mydoc_biomeme_human.html">Human</a></li>
+                    <li><a href="mydoc_biomeme_human.html">Cutaneous leishmaniasis</a></li>
                     
                     
                     
                 </ul>
             </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Workshops</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_cloudMeta.html">Metagenomics in the cloud</a></li>
             
             
             
@@ -528,20 +622,38 @@ qiime tools --help
 
 <p>There are a number of ways you may have your raw data structured, depending on sequencing platform (e.g., Illumina vs Ion Torrent) and sequencing approach (e.g., single-end vs paired-end), and any pre-processing steps that have been performed by sequenencing facilities (e.g., joined paired ends, barcodes in fastq header, etc).  Check out the <a href="https://docs.qiime2.org/2018.2/tutorials/importing/">QIIME info page</a>, or consult with someone in our lab for help in preparing your data.</p>
 
+<p>Our workflow includes paired-end Illumina reads, so first we reformat the barcodes of the paired-end reads, renaming the original with a “.bak” extension</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>perl -i.bak -pe 'if (m/^\@.*?\s+.*?\+.*?$/){s/\+//;}' Undetermined_S0_L001_R1_001.fastq Undetermined_S0_L001_R2_001.fastq
+</code></pre>
+</div>
+
+<p>Now we will extract the barcodes from the paired-end reads. This is done using a QIIME1 script, so we will need to activate QIIME1.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>source activate qiime1
+
+extract_barcodes.py -f forward.fastq -r reverse.fastq -l 16 -o barcodes.fastq -c barcode_in_label
+</code></pre>
+</div>
+
+<p>At this point you should have three fastq files for your sequencing run representing your forward reads, reverse reads, and barcodes.</p>
+
 <p>Move your fastq files and your barcode file (if data is not already demultiplexed) to your working directory on the server.  The directory should contain your forward.fastq.gz, reverse.fastq.gz, and barcodes.fastq.gz</p>
 
-<p>create an artifact of your data:</p>
+<p>create an artifact of your data using QIIME2:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>qiime tools import \
-  --type EMPSingleEndSequences \
-  --input-path emp-single-end-sequences \
-  --output-path emp-single-end-sequences.qza
+<div class="highlighter-rouge"><pre class="highlight"><code>source activate qiime2
+
+qiime tools import \
+  --type EMPPairedEndSequences \
+  --input-path /path/to/your/fastq/files \
+  --output-path emp-paired-end-sequences.qza
 </code></pre>
 </div>
 
 <p>Check this artifact to make sure that QIIME now recognizes your data (.qza is a qiime zipped artifact)</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>qiime tools peek emp-single-end-sequences.qza
+<div class="highlighter-rouge"><pre class="highlight"><code>qiime tools peek emp-paired-end-sequences.qza
 </code></pre>
 </div>
 
@@ -552,7 +664,7 @@ qiime tools --help
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> If your data is already demultiplexed, you can skip this step. For single end data you would use <code class="highlighter-rouge">qiime demux emp-single</code> in the code snipet below to produce a demux.qza file</div>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>qiime demux emp-paired \
-  --i-seqs emp-single-end-sequences.qza \
+  --i-seqs emp-paired-end-sequences.qza \
   --m-barcodes-file sample-metadata.tsv \
   --m-barcodes-column BarcodeSequence \
   --o-per-sample-sequences demux.qza
@@ -571,7 +683,7 @@ qiime tools --help
 
 <h2 id="step-5-denoising-and-qc-filtering">Step 5: Denoising and QC filtering</h2>
 
-<p>The methods for processing and analysis of 16S marker gene sequencing data continue to improve.  One recent and major improvement was the introduction of two methods, <a href="https://www.nature.com/articles/nmeth.3869">Dada2</a> and <a href="http://msystems.asm.org/content/2/2/e00191-16">Deblur</a>, both of which significantly advance quality control measures by ‘denosing’ your sequences in order to better discriminate between true sequence diversity and sequencing errors.  Be sure to check out the <a href="http://CHMI-sops.github.io/papers/dada2_methods.pdf">Dada2 online methods section</a> for a more indepth (but still very readable) description of the underlying statistical method.  These methods have pushed the field from the practice of binning sequences into 97% OTUs, to effectively using the sequences themselves as the unique idenfier for a taxon (also referred to 100% OTU, sub-OTUs or amplicon sequence variants).</p>
+<p>The methods for processing and analysis of 16S marker gene sequencing data continue to improve.  One recent and major improvement was the introduction of two methods, <a href="https://www.nature.com/articles/nmeth.3869">Dada2</a> and <a href="http://msystems.asm.org/content/2/2/e00191-16">Deblur</a>, both of which significantly advance quality control measures by ‘denoising’ your sequences in order to better discriminate between true sequence diversity and sequencing errors.  Be sure to check out the <a href="http://CHMI-sops.github.io/papers/dada2_methods.pdf">Dada2 online methods section</a> for a more indepth (but still very readable) description of the underlying statistical method.  These methods have pushed the field from the practice of binning sequences into 97% OTUs, to effectively using the sequences themselves as the unique idenfier for a taxon (also referred to 100% OTU, sub-OTUs or amplicon sequence variants).</p>
 
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> DADA2 denoising will join paired reads for you.  Do not join your reads prior to running DADA2, since the program has a model for the basewise error of illumina reads, and joining reads would violate the expectations of that model.  If you’re working with single-end data, you would use <code class="highlighter-rouge">denoise-single</code> in the code below.</div>
 
@@ -580,11 +692,14 @@ qiime tools --help
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> we will trim our sequences to 120bp.  This number is a bit arbritrary but should be guided by quality scores that you observed in demux.qzv in step 4 above.  If you want to avoid trimming for any reason (for example, if you are profiling fungi by ITS sequencing), simply set this value to 0.  Avoid trimming too much so that the reads have enough overlap to be aligned</div>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>qiime dada2 denoise-paired \
-  --i-demultiplexed-seqs demux.qza \
-  --p-trim-left 0 \
-  --p-trunc-len 120 \
-  --o-representative-sequences rep-seqs-dada2.qza \
-  --o-table table-dada2.qza
+	--i-demultiplexed-seqs demux.qza \
+	--p-trim-left-f 0 \
+	--p-trim-left-r 0 \
+	--p-trunc-len-f 220 \
+	--p-trunc-len-r 200 \
+	--o-representative-sequences rep-seqs-dada2.qza \
+	--o-table pet-table.qza \
+	--p-n-threads 24
 </code></pre>
 </div>
 
@@ -627,7 +742,6 @@ qiime phylogeny fasttree \
 qiime phylogeny midpoint-root \
   --i-tree unrooted-tree.qza \
   --o-rooted-tree rooted-tree.qza
-
 </code></pre>
 </div>
 
@@ -644,11 +758,13 @@ qiime phylogeny midpoint-root \
 </code></pre>
 </div>
 
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> max-depth should be chosen based on table.qzv</div>
+
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> <strong>Interpreting alpha diversity metrics:</strong> it is important to understand that certain metrics are stricly qualitative (presence/absence), that is they only take diversity into account, often referred to as <em>richness</em> of the community (e.g. observed otus).  In contrast, other methods are quantitative in that they consider both <em>richness</em> and abundance across samples, commonly referred to as <em>evenness</em> (e.g. Shannon).  Yet other methods take phylogenetic distance into account by asking how diverse the phylogenetic tree is for each sample.  These phylogenetic tree-based methods include the popular Faith’s PD, which calculates the sum of the branch length covered by a sample</div>
 
 <h2 id="step-8-calculate-and-explore-diversity-metrics">Step 8: calculate and explore diversity metrics</h2>
 
-<p>Use QIIME2’s <code class="highlighter-rouge">diversity core-metrics-phylogenetic</code> function to calculate a whole bunch of diversity metrics all at once.  Note that you should input a sample-depth value (set at 1109 reads in the example below) based on the alpha-rarefaction analysis that you ran in step 6.</p>
+<p>Use QIIME2’s <code class="highlighter-rouge">diversity core-metrics-phylogenetic</code> function to calculate a whole bunch of diversity metrics all at once.  Note that you should input a sample-depth value (set at 1109 reads in the example below) based on the alpha-rarefaction analysis that you ran in step 7.</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>qiime diversity core-metrics-phylogenetic \
   --i-phylogeny rooted-tree.qza \
@@ -670,6 +786,11 @@ qiime diversity alpha-group-significance \
   --i-alpha-diversity core-metrics-results/evenness_vector.qza \
   --m-metadata-file sample-metadata.tsv \
   --o-visualization core-metrics-results/evenness-group-significance.qzv
+
+qiime diversity alpha-group-significance \
+  --i-alpha-diversity core-metrics-results/shannon_vector.qza \
+  --m-metadata-file sample-metadata.tsv \
+  --o-visualization core-metrics-results/shannon_group-significance.qzv
 </code></pre>
 </div>
 
@@ -759,8 +880,6 @@ qiime tools export \
   --output-dir exported-feature-table
 
 #then combine the two using the biome package (dependence loaded as part of QIIME2 install)
-
-
 </code></pre>
 </div>
 
@@ -791,8 +910,6 @@ qiime composition ancom \
 </code></pre>
 </div>
 
-<p>Once you’re confortable with the individual steps of this workflow, you could use <a href="">this shell script</a>, to run the entire workflow.</p>
-
 <div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> the additional steps outlined below are still a work in progress, and we want to spend more time exploring these steps before we can make solid recommendations….so proceed at your own risk!</div>
 
 <h2 id="step-11-supervised-machine-learning">Step 11: supervised machine learning</h2>
@@ -811,26 +928,25 @@ qiime composition ancom \
   --p-estimator RandomForestClassifier \
   --p-n-estimators 100 \
   --o-visualization moving-pictures-BodySite.qzv
-  ```
-
-
-### regressors
-For continuous data, you can use a random forest regressor.
-
- &lt;div markdown="span" class="alert alert-warning" role="alert"&gt;&lt;i class="fa fa-warning"&gt;&lt;/i&gt; &lt;b&gt;Important:&lt;/b&gt; continuous data could be age, weight, etc, for each of your samples, but it could also be quantitative levels of some metabolite, host gene expression, etc.&lt;/div&gt;
-
 </code></pre>
 </div>
-<p>qiime sample-classifier regress-samples \
-  –i-table ecam-table.qza \
-  –m-metadata-file ecam-metadata.tsv \
-  –m-metadata-column month \
-  –p-optimize-feature-selection \
-  –p-parameter-tuning \
-  –p-estimator RandomForestRegressor \
-  –p-n-estimators 100 \
-  –o-visualization ecam-month.qzv
-```</p>
+
+<h3 id="regressors">regressors</h3>
+<p>For continuous data, you can use a random forest regressor.</p>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> continuous data could be age, weight, etc, for each of your samples, but it could also be quantitative levels of some metabolite, host gene expression, etc.</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>qiime sample-classifier regress-samples \
+  --i-table ecam-table.qza \
+  --m-metadata-file ecam-metadata.tsv \
+  --m-metadata-column month \
+  --p-optimize-feature-selection \
+  --p-parameter-tuning \
+  --p-estimator RandomForestRegressor \
+  --p-n-estimators 100 \
+  --o-visualization ecam-month.qzv
+</code></pre>
+</div>
 
 <h2 id="optional-other-stuff">OPTIONAL: other stuff</h2>
 <ul>
@@ -880,8 +996,8 @@ For continuous data, you can use a random forest regressor.
 <footer>
             <div class="row">
                 <div class="col-lg-12 footer">
-               &copy;2018 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
- Site last generated: Oct 2, 2018 <br />
+               &copy;2020 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
+ Site last generated: Mar 19, 2020 <br />
 <p><img src="images/CHMI_logo.png" alt="Company logo"/></p>
                 </div>
             </div>
@@ -895,5 +1011,12 @@ For continuous data, you can use a random forest regressor.
     </div>
 
 </body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-131349832-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
 
 </html>
