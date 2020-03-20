@@ -1,6 +1,6 @@
 ---
 title: Single Cell RNAseq – encapsulation
-tags: [transcriptomics, single cell genomics]
+tags: [transcriptomics, single_cell_genomics]
 keywords: transcriptomics
 summary: "Using the 10X Chromium Controller to encapsulate individual cells for single cell genomic experiments"
 sidebar: mydoc_sidebar

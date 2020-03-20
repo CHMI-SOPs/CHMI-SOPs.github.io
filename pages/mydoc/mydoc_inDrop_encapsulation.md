@@ -1,6 +1,6 @@
 ---
 title: Single Cell RNAseq – encapsulation
-tags: [transcriptomics, single cell genomics]
+tags: [transcriptomics, single_cell_genomics]
 keywords: transcriptomics
 summary: "Using droplet-based technology to isolate and barcode individual cells"
 sidebar: mydoc_sidebar

@@ -1,6 +1,6 @@
 ---
 title: scRNAseq FAQs
-tags: [getting_started, FAQs, transcriptomics, single cell genomics]
+tags: [getting_started, FAQs, transcriptomics, single_cell_genomics]
 keywords:
 summary: "information on our single cell RNAseq (scRNAseq) technology, how you gain access, and how to think about the the cost of a typical scRNAseq experiment."
 sidebar: mydoc_sidebar
