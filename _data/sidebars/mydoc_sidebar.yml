@@ -96,7 +96,7 @@ entries:
         subfolderitems:
 
         - title: 10X CellRanger
-          url: /mydoc_cellRanger.html
+          url: /mydoc_CellRanger.html
           output: web, pdf
 
         - title: BUStools
