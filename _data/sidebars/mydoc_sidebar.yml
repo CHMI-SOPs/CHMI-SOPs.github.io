@@ -94,13 +94,12 @@ entries:
         output: web, pdf
         
         subfolderitems:
-
         - title: 10X CellRanger
           url: /mydoc_CellRanger.html
           output: web, pdf
 
         - title: BUStools
-          url: /mydoc_BUStools.html
+          url: /mydoc_CellRanger.html
           output: web, pdf
 
   - title: Microbiology
@@ -172,31 +171,29 @@ entries:
       url: /mydoc_3Dculture_microscopy.html
       output: web, pdf
 
-  - title: In the field
+  - title: Portable sequencing
     output: web, pdf
 
     folderitems:
-    - title: Oxford Nanopore
-      url: /mydoc_nanopore.html
+    - title: ONT MinION set-up
+      url: /mydoc_minion.html
+      output: web, pdf
+  
+  - title: Portable QPCR
+    output: web, pdf
+
+    folderitems:
+    - title: Biomeme setup
+      url: /mydoc_biomeme.html
       output: web, pdf
 
-      subfolders:
-      - title: Biomeme portable QPCR
-        url: /mydoc_biomeme.html
-        output: web, pdf
- 
-        subfolderitems:
-        - title: Set-up
-          url: /mydoc_biomeme.html
-          output: web, pdf
+    - title: Avian
+      url: /mydoc_biomeme_avian.html
+      output: web, pdf
 
-        - title: Avian
-          url: /mydoc_biomeme_avian.html
-          output: web, pdf
-
-        - title: Cutaneous leishmaniasis
-          url: /mydoc_biomeme_human.html
-          output: web, pdf
+    - title: Cutaneous leishmaniasis
+      url: /mydoc_biomeme_human.html
+      output: web, pdf
 
   - title: Workshops
     output: web, pdf

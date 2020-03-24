@@ -36,7 +36,7 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="" href="http://localhost:9000/feed.xml">
 
 
 
@@ -313,7 +313,7 @@
                     
                     
                     
-                    <li><a href="mydoc_BUStools.html">BUStools</a></li>
+                    <li class="active"><a href="mydoc_CellRanger.html">BUStools</a></li>
                     
                     
                     
@@ -453,39 +453,42 @@
         
     
     <li>
-        <a href="#">In the field</a>
+        <a href="#">Portable sequencing</a>
         <ul>
             
             
             
-            <li><a href="mydoc_nanopore.html">Oxford Nanopore</a></li>
+            <li><a href="mydoc_biomeme.html">ONT MinION set-up</a></li>
             
             
             
-            <li class="subfolders">
-                <a href="#">Biomeme portable QPCR</a>
-                <ul>
-                    
-                    
-                    
-                    <li><a href="mydoc_biomeme.html">Set-up</a></li>
-                    
-                    
-                    
-                    
-                    
-                    <li><a href="mydoc_biomeme_avian.html">Avian</a></li>
-                    
-                    
-                    
-                    
-                    
-                    <li><a href="mydoc_biomeme_human.html">Cutaneous leishmaniasis</a></li>
-                    
-                    
-                    
-                </ul>
-            </li>
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Portable QPCR</a>
+        <ul>
+            
+            
+            
+            <li><a href="mydoc_biomeme.html">Biomeme setup</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_biomeme_avian.html">Avian</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="mydoc_biomeme_human.html">Cutaneous leishmaniasis</a></li>
             
             
             
@@ -581,19 +584,20 @@ $('#toc').on('click', 'a', function() {
   <li>You have Cell Ranger installed on a computer with <a href="https://support.10xgenomics.com/single-cell-atac/software/overview/system-requirements">the recommended compute resources</a>.</li>
   <li>Cell Ranger is in your <a href="https://opensource.com/article/17/6/set-path-linux">$PATH</a>.</li>
   <li>You have a .csv file (e.g. in Excel) that identifies samples with barcodes</li>
-  <li>You have access to the raw .bcl file from a single cell sequencing experiment.</li>
-  <li>You have some other basic linux software installed on the same computer and also in your $PATH, including wget,</li>
+  <li>You have access to the raw .bcls file from a single cell sequencing experiment.</li>
+  <li>You have some other basic linux software installed on the same computer (also in your $PATH), including <a href="https://www.gnu.org/software/wget/">wget</a> for downloading files.</li>
+  <li>You have organized your working directory as <code class="highlighter-rouge">/data/userName/experimentName/runName/</code></li>
 </ul>
 
 <h2 id="prepare-your-reference-genome-file">Prepare your reference genome file</h2>
 
 <h3 id="mouse-and-human">mouse and human</h3>
 
-<p>If your cells came from mice or humans, then you’re in luck!  You can just download the reference file from <a href="">here</a>.</p>
+<p>If your cells came from mice or humans, then you’re in luck!  You can just download the reference file from <a href="https://support.10xgenomics.com/single-cell-gene-expression/software/downloads/latest">here</a>.  Alternatively, if you’re working on our linux machine, then you can find these references and more in <code class="highlighter-rouge">/data/reference_db/10X</code></p>
 
-<h3 id="other-genomes">other genomes</h3>
+<h3 id="other-organisms">other organisms</h3>
 
-<p>If your cells are <strong>not</strong> from mouse of humans, then you’ll need to do a bit of work to get your reference file set-up.</p>
+<p>If your cells are <strong>not</strong> mouse or human, then you’ll need to do a bit of work to get your reference file set-up.</p>
 
 <p>Begin by downloading the reference genome fasta file and .gtf file for your organism of interest.  You can browse available files at the <a href="https://useast.ensembl.org/info/data/ftp/index.html">Ensemble FTP site</a>.</p>
 
@@ -609,42 +613,40 @@ wget ftp://ftp.ensembl.org/pub/release-99/gtf/rattus_norvegicus/Rattus_norvegicu
 
 <p>Unzip both files using gunzip</p>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code>gunzip Rattus_norvegicus.Rnor_6.0.99.chr.gtf.gz
-gunzip Rattus_norvegicus.Rnor_6.0.dna.toplevel.fa.gz
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>gunzip Rattus_norvegicus.Rnor_6.0.99.chr.gtf.gz <span class="c"># gtf file from Ensembl</span>
+gunzip Rattus_norvegicus.Rnor_6.0.dna.toplevel.fa.gz <span class="c"># genome fasta from Ensembl</span>
 </code></pre>
 </div>
 
-<p>Make the GTF</p>
+<p>Use Cell Ranger’s <strong><a href="https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/advanced/references#mkgtf">mkgtf</a></strong> function to filter your original GTF file to leave only those genes that are annotated as protein coding.</p>
 
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code>cellranger mkgtf <span class="se">\</span>
-Rattus_norvegicus.Rnor_6.0.99.chr.gtf <span class="se">\</span>
-Rattus_norvegicus.Rnor_6.0.99.chr.filtered.gtf <span class="se">\</span>
---attribute<span class="o">=</span>gene_biotype:protein_coding
+Rattus_norvegicus.Rnor_6.0.99.chr.gtf <span class="se">\ </span><span class="c"># gtf file from Ensembl</span>
+Rattus_norvegicus.Rnor_6.0.99.chr.filtered.gtf <span class="se">\ </span><span class="c"># output name for filtered gtf</span>
+--attribute<span class="o">=</span>gene_biotype:protein_coding <span class="c"># filtering on protein coding genes</span>
 </code></pre>
 </div>
 
-<p>Make the reference</p>
+<p>Use Cell Ranger’s <strong><a href="https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/advanced/references#mkref">mkref</a></strong> function to build a index for read alignment.  This uses the splice-aware aligner, <a href="https://github.com/alexdobin/STAR">STAR</a> to accomplish this.</p>
 
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code>cellranger mkref <span class="se">\</span>
---genome<span class="o">=</span>Rattus_norvegicus_genome_forRNA <span class="se">\</span>
---fasta<span class="o">=</span>Rattus_norvegicus.Rnor_6.0.dna.toplevel.fa <span class="se">\</span>
---genes<span class="o">=</span>Rattus_norvegicus.Rnor_6.0.99.chr.filtered.gtf 
+--genome<span class="o">=</span>Rattus_norvegicus_genome_forRNA <span class="se">\ </span><span class="c">#output folder name</span>
+--fasta<span class="o">=</span>Rattus_norvegicus.Rnor_6.0.dna.toplevel.fa <span class="se">\ </span><span class="c"># reference fasta file </span>
+--genes<span class="o">=</span>Rattus_norvegicus.Rnor_6.0.99.chr.filtered.gtf <span class="se">\ </span><span class="c"># filtered gtf file from above</span>
+--nthreads<span class="o">=</span>24 <span class="c"># number of threads to use (set to 24 on our linux machine)</span>
 </code></pre>
 </div>
 
 <h2 id="prepare-fastq-files">Prepare fastq files</h2>
 
 <p>#go to the correct folder
-cd /data/brinsterlab/Fresh_Rat1_10x</p>
+cd /data/userName/experimentName</p>
 
-<p>#here “id” is the . “run” is t in. “csv” is a</p>
+<p>Use Cell Ranger’s <strong><a href="https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/using/mkfastq">mkfastq</a></strong> function to convert the bcl files from your illumina sequencing run to fastq files.  mkfastq is basically a wrapper around Illumina’s bcl2fastq program, but with a few extra features, namely that it handles 10X indices for demultiplexing samples, and generates some quality control metrics that are specific to the 10X platform.</p>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code>cellranger mkfastq --id<span class="o">=</span>fresh_rat_10x_1 <span class="se">\ </span>
-                    <span class="c"># name you're giving to the fastq group</span>
-                   --run<span class="o">=</span>/data/brinsterlab/BCLrun392 <span class="se">\ </span>
-                    <span class="c"># the folder with your BCL files</span>
-                   --csv<span class="o">=</span>/data/brinsterlab/Fresh_Rat1_10x/rat_samples_for_demultiplex.csv
-                    <span class="c"># csv file that contains the barcode assignments and sample names.</span>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>cellranger mkfastq --id<span class="o">=</span>fastqGroup <span class="se">\ </span><span class="c"># name you're giving to the fastq group</span>
+                   --run<span class="o">=</span>/data/userName/BCL <span class="se">\ </span><span class="c"># the folder with your BCL files</span>
+                   --csv<span class="o">=</span>/data/userName/experimentName/demux.csv <span class="c"># csv file that contains the barcode assignments and sample names.</span>
 </code></pre>
 </div>
 
@@ -652,34 +654,27 @@ cd /data/brinsterlab/Fresh_Rat1_10x</p>
 
 <h3 id="process-one-sample-at-a-time">process one sample at a time</h3>
 
-<p>Here we have a few variables to define</p>
+<p>Use Cell Ranger’s <strong><a href="https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/using/tutorial_ct">count</a></strong> function aligns sequencing reads in FASTQ files to your reference transcriptome and generates a .cloupe file for visualization and analysis in Loupe Browser, along with a number of other outputs compatible with other publicly-available tools for further analysis.</p>
 
-<p>“id” is a name for the output
-#”fastqs” is the path to the fastq files, which should end in the serial number for the flow cell used.
-#”sample” is the name of the sample to be processed - this has to match the name you gave in your csv file!
-#”transcriptome” is the path to your transcriptome
-#be aware which folder you are in when you run this command!</p>
-
-<p>cellranger count –id=Count_output_UnselectedRat1 \
-                 –fastqs=/data/brinsterlab/Fresh_Rat1_10x/fresh_rat_10x_1/outs/fastq_path/HT55LBGXC/ \
-                 –sample=FreshRatUnselected1 \
-                 –transcriptome=/data/brinsterlab/ratReferences/Rattus_norvegicus_genome_forRNA</p>
-
-<p>cellranger count –id=Count_output_EpCAMrat1 \
-                 –fastqs=/data/brinsterlab/Fresh_Rat1_10x/fresh_rat_10x_1/outs/fastq_path/HT55LBGXC/ \
-                 –sample=FreshRatEpCAM1 \
-                 –transcriptome=/data/brinsterlab/ratReferences/Rattus_norvegicus_genome_forRNA</p>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>cellranger count --id<span class="o">=</span>outputName <span class="se">\ </span><span class="c"># name for the output</span>
+                 --fastqs<span class="o">=</span>/data/userName/experimentName/fastqGroup/outs/fastq_path/serialNumber/ <span class="se">\ </span><span class="c"># path to the fastq files, which should end in the serial number for the flow cell used. Be aware which folder you are in when you run this command!</span>
+                 --sample<span class="o">=</span>sampleName <span class="se">\ </span><span class="c"># name of the sample to be processed. must match the name you gave in your csv file!</span>
+                 --transcriptome<span class="o">=</span>/data/reference_db/10X/refdata-cellranger-mm10-3.0.0 <span class="c"># path to your transcriptome created with mkref above.  This example uses mouse</span>
+</code></pre>
+</div>
 
 <h3 id="process-multiple-samples">process multiple samples</h3>
 
-<p>This is useful if you have multiple samples, or if you used <a href="https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/feature-bc">feature barcoding</a>to multiplex multiple samples in a single well of a 10X chip.</p>
+<p>This is useful if you have multiple samples, or if you used <a href="https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/feature-bc">feature barcoding</a> to multiplex multiple samples in a single well of a 10X chip.</p>
 
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> There are no <code class="highlighter-rouge">sample</code> or <code class="highlighter-rouge">fastqs</code> arguments when processing multiple samples, instead, there are two .csv files - one for libraries and a second for your feature reference.</div>
 
-<p>cellranger count –id=Count_output_combined2 \
-                 –libraries=/data/brinsterlab/libraries.csv \
-                 –feature-ref=/data/brinsterlab/featurereference.csv \
-                 –transcriptome=/home/shared/Cellranger_references/refdata-cellranger-mm10-3.0.0</p>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>cellranger count --id<span class="o">=</span>Count_output_combined2 <span class="se">\</span>
+                 --libraries<span class="o">=</span>/data/userName/libraries.csv <span class="se">\</span>
+                 --feature-ref<span class="o">=</span>/data/userName/featurereference.csv <span class="se">\</span>
+                 --transcriptome<span class="o">=</span>/data/reference_db/10X/refdata-cellranger-mm10-3.0.0
+</code></pre>
+</div>
 
 
 
@@ -724,7 +719,7 @@ cd /data/brinsterlab/Fresh_Rat1_10x</p>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
- Site last generated: Mar 19, 2020 <br />
+ Site last generated: Mar 23, 2020 <br />
 <p><img src="images/CHMI_logo.png" alt="Company logo"/></p>
                 </div>
             </div>
