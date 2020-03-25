@@ -19,7 +19,7 @@ The instructions below assume the following:
 * You have a .csv file (e.g. in Excel) that identifies samples with barcodes
 * You have access to the raw .bcls file from a single cell sequencing experiment.
 * You have some other basic linux software installed on the same computer (also in your $PATH), including [wget](https://www.gnu.org/software/wget/) for downloading files.
-* You have organized your working directory as ```/data/userName/experimentName/runName/```
+* You have organized your working directory as ```/data/[userName]/[experimentName]/[runName]/```
 
 ## Prepare your reference genome file
 
@@ -71,8 +71,7 @@ cellranger mkref \
 
 ## Prepare fastq files
 
-#go to the correct folder
-cd /data/userName/experimentName
+Navigate to ```/data/[userName]/[experimentName]```
 
 Use Cell Ranger's **[mkfastq](https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/using/mkfastq)** function to convert the bcl files from your illumina sequencing run to fastq files.  mkfastq is basically a wrapper around Illumina's bcl2fastq program, but with a few extra features, namely that it handles 10X indices for demultiplexing samples, and generates some quality control metrics that are specific to the 10X platform.
 
@@ -86,7 +85,7 @@ cellranger mkfastq --id=fastqGroup \ # name you're giving to the fastq group
 
 ### process one sample at a time
 
-Use Cell Ranger's **[count](https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/using/tutorial_ct)** function aligns sequencing reads in FASTQ files to your reference transcriptome and generates a .cloupe file for visualization and analysis in Loupe Browser, along with a number of other outputs compatible with other publicly-available tools for further analysis.
+Use Cell Ranger's **[count](https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/using/tutorial_ct)** function to align sequencing reads in FASTQ files to your reference transcriptome and generates a .cloupe file for visualization and analysis in Loupe Browser, along with a number of other outputs compatible with other publicly-available tools for further analysis.
 
 ```shell
 cellranger count --id=outputName \ # name for the output

@@ -22,5 +22,13 @@
         "workspaceRoot": "/Users/danielbeiting/CHMI-SOPs.github.io",
         "workspacePath": "_data/tags.yml",
         "id": "cUNIWdXYhPR9GOLD"
+    },
+    {
+        "type": "File",
+        "name": "/Users/danielbeiting/CHMI-SOPs.github.io/pages/mydoc/mydoc_tags.md",
+        "parent_id": null,
+        "workspaceRoot": "/Users/danielbeiting/CHMI-SOPs.github.io",
+        "workspacePath": "pages/mydoc/mydoc_tags.md",
+        "id": "4T1eARWiB5YmJaQq"
     }
 ]
