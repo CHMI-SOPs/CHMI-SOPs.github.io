@@ -31,7 +31,7 @@ We use the [10X Chromium Controller platform](https://assets.ctfassets.net/an68i
 
 ## Cell Preparation 
 
-The optimal input cell concentration is 700-1,200 cells/µl. Depending on your concentration, you will need 2.1-23.6 uL of cell suspension as input for each sample. Refer to the Cell Suspension Volume Calculator Table on the next page of this protocol. 
+The optimal input cell concentration is 700-1,200 cells/µl. Depending on your concentration, you will need 2.1-23.6 uL of cell suspension as input for each sample. Refer to the Cell Suspension Volume Calculator Table at the end of this section. 
 
 While a high concentration of cells is desirable, it also increases the rate of 'multiplets'. Multiplets occur when a single oil droplet contains 1 barcoded bead and two or more cells. Since each bead has a single barcode, transcripts from multiplets will appear as though they are from the same cell. 10X Genomics recommends 700-1,200 cells/µl in order to maximize cell encapsulation while avoiding excessive multiplets. 
 
@@ -45,6 +45,9 @@ For more detail on cell preparation, refer to 10X’s literature, which covers:
 
 * [Other details](https://support.10xgenomics.com/single-cell-gene-expression/sample-prep).
 
+<img src="images/Cell_Suspension_Volume_Calculator_Table.png"
+     alt="test"
+     style="float: center;" />
  
 ## Encapsulation
 
@@ -87,6 +90,10 @@ For more detail on cell preparation, refer to 10X’s literature, which covers:
 
 * Load Row Labeled 3 with 45uL partitioning oil, avoiding bubbles. Your chip should now look like the image below, with the unused wells filled with appropriate volumes of 50% glycerol if loading less than 8 samples. 
 
+<img src="images/Loaded_Chip.png"
+     alt="test"
+     style="float: center;" />
+
 * To attach the 10x gasket, align the notch with the top left-hand corner. Ensure the gasket holes are aligned with the wells. The smooth side of the gasket should be facing toward the wells. Do not touch the smooth side or press down on the gasket. Keep the assembly horizontal.
 
 * Bring the assembly over to the 10x Chromium Controller. Turn on the machine and press the eject button when it appears on the screen.
@@ -127,6 +134,10 @@ For more detail on cell preparation, refer to 10X’s literature, which covers:
 
 * Slowly remove and discard 125 μl Recovery Agent/Partitioning Oil (pink) from the bottom of the tube. DO NOT aspirate any aqueous sample. There will still be a small remaining volume of pink Recovery Agent/Partitioning Oil after removal. Observe these volumes across your samples as abnormal volumes may indicate a wetting failure or clog during encapsulation. Below is an example of successful samples. 
 
+<img src="images/Recovery_Agent_Post-Removal_Example.png"
+     alt="test"
+     style="float: center;" />
+
 * Prepare Dynabeads Cleanup Mix per sample (10% extra has already been included):
 
 | Component | Volume/ rxn |
@@ -141,13 +152,17 @@ For more detail on cell preparation, refer to 10X’s literature, which covers:
 
 * Incubate for 10 min at room temp. Pipette to mix again at 5 min after start of incubation.  You should end up with a large brown layer of Dynabeads Cleanup Mix at the top and a smaller white Recovery Agent/Partitioning Oil layer below. Observe these volumes across your samples as abnormal volumes may indicate a wetting failure or clog during encapsulation. Below is an example of successful samples. 
 
+<img src="images/Dyanbeads_Example.png"
+     alt="test"
+     style="float: center;" />
+
 * Prepare Elution Solution I per sample (10% extra has already been included):
 
 | Component | Volume/ rxn |
 |-------|--------|
 | Buffer EB | 107.8 uL |
 | 10% Tween 20 | 1.1 uL |
-| Reducing Agent B I | 1.1 uL |
+| Reducing Agent B | 1.1 uL |
 |  | Total 110 uL |
 
 * Vortex and centrifuge Elution Solution briefly.
@@ -229,7 +244,9 @@ For more detail on cell preparation, refer to 10X’s literature, which covers:
 * This is the end of Day 2. Store at 4°C for up to 72 h or at −20°C for up to 4 weeks.
 
 * Example cDNA trace
- 
+ <img src="images/cDNA_Example_Trace.png"
+     alt="test"
+     style="float: center;" />
  
 # Day 3
 
@@ -315,7 +332,7 @@ For more detail on cell preparation, refer to 10X’s literature, which covers:
 
 * Incubate in a thermal cycler (deep well head) with the protocol under 10x scRNAseq -> Adaptor Ligation (20C for 15min, 4C hold, lid 30C, 100uL volume).
 
-* Vortex to resuspend SPRIselectReagent. Add 80 μl SPRIselect Reagent to each sample. Pipette mix 15x (pipette set to 150 μl).
+* Vortex to resuspend SPRIselect Reagent. Add 80 μl SPRIselect Reagent to each sample. Pipette mix 15x (pipette set to 150 μl).
 
 * Incubate 5 min at room temperature.
 
@@ -403,6 +420,10 @@ For more detail on cell preparation, refer to 10X’s literature, which covers:
 * Transfer 35 μl to a new tube strip.
 
 * Run sample on Tapestation with the HSD1000 assay. There should be a peak at ~400 bp.
+
+ <img src="images/Final_Library_Example_Trace.png"
+     alt="test"
+     style="float: center;" />
 
 * Sample can be run on Qubit HS dsDNA at this point, or before sequencing.
 
