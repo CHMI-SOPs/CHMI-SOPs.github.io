@@ -622,6 +622,728 @@ $('#toc').on('click', 'a', function() {
   </li>
 </ul>
 
+<p> 
+## Encapsulation</p>
+
+<ul>
+  <li>
+    <p>Allow the Single Cell 3’ v3.1 Gel Beads to come to room temperature for 30 minutes before loading the chip.</p>
+  </li>
+  <li>
+    <p>Thaw RT Reagent B and Reducing Agent B at room temp.</p>
+  </li>
+  <li>
+    <p>If using a new kit: resuspend Template Switch Oligo in 80uL Low TE Buffer and leave at room temp for at least 30 minutes. If NOT using a new kit, retrieve Template Switch Oligo (already resuspended in TE Buffer) from -80C storage and allow to equilibrate to room temp for at least 30 minutes.</p>
+  </li>
+  <li>
+    <p>Place RT Enzyme C on ice.</p>
+  </li>
+  <li>
+    <p>Prepare Master Mix on ice, per sample (10% extra has already been included):</p>
+  </li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Component</th>
+      <th>Volume/ rxn</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>RT Reagent B</td>
+      <td>20.68 uL</td>
+    </tr>
+    <tr>
+      <td>Template Switch Oligo</td>
+      <td>2.64 uL</td>
+    </tr>
+    <tr>
+      <td>Reducing Agent B I</td>
+      <td>2.2 uL</td>
+    </tr>
+    <tr>
+      <td>RT Enzyme C</td>
+      <td>9.57 uL</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Total 35.09 uL</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>
+    <p>Add 31.8 uL Master Mix into each tube of a PCR 8-tube strip. Keep these tubes on ice.</p>
+  </li>
+  <li>
+    <p>Assemble the Next GEM Chip G by inserting it in the Secondary Holder under the guide (on the left side of the holder when open). The chip label should be at the top and facing toward you. Gently press down the right side of the chip until it clicks into place. Close the lid of the holder over the chip.</p>
+  </li>
+  <li>Each column of wells on the chip is occupied by one sample. If loading less than 8 samples on one chip, pipette 50% glycerol into the unused wells without introducing bubbles.</li>
+  <li>70 µl to unused wells in row labeled 1.</li>
+  <li>50 µl to unused wells in row labeled 2.</li>
+  <li>45 µl to unused wells in row labeled 3.</li>
+</ul>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Do not pipette anything into the NO FILL wells at the bottom row of the chip</div>
+
+<ul>
+  <li>
+    <p>Refer to the Cell Suspension Volume Calculator Table. Add the appropriate volume of nuclease free water to the Master Mix, then add the corresponding volume of cell suspension to the Master Mix, for a total of 75 µl in each tube. Gently pipette to mix the cells suspension before adding to the Master Mix. <strong>DO NOT ADD WATER DIRECTLY INTO THE CELL SUSPENSION.</strong></p>
+  </li>
+  <li>
+    <p>Load Row Labeled 1 with 70uL Master Mix without introducing bubbles.</p>
+  </li>
+  <li>
+    <p>To prepare the gel beads, place the gel bead strip into the 10x Vortex Adapter. Vortex the gel beads in the adapter for 30 seconds, then remove the gel bead strip from the holder and centrifuge ~5 seconds. Place the gel bead strip back in the holder and attach the lid.</p>
+  </li>
+  <li>
+    <p>To load Row Labeled 2, puncture the foil seal of the gel bead tubes and aspirate and dispense 50uL gel beads without introducing bubbles. Wait 30 seconds.</p>
+  </li>
+  <li>
+    <p>Load Row Labeled 3 with 45uL partitioning oil, avoiding bubbles. Your chip should now look like the image below, with the unused wells filled with appropriate volumes of 50% glycerol if loading less than 8 samples.</p>
+  </li>
+  <li>
+    <p>To attach the 10x gasket, align the notch with the top left-hand corner. Ensure the gasket holes are aligned with the wells. The smooth side of the gasket should be facing toward the wells. Do not touch the smooth side or press down on the gasket. Keep the assembly horizontal.</p>
+  </li>
+  <li>
+    <p>Bring the assembly over to the 10x Chromium Controller. Turn on the machine and press the eject button when it appears on the screen.</p>
+  </li>
+  <li>
+    <p>Place the assembled chip with the gasket in the tray, ensuring that the chip stays horizontal. The chip should be placed face up, with the notched corner in the upper left and the chip label at the top. Press the button to retract the tray. Confirm the Chromium Chip G program on screen. Press the play button. At completion of the run (~18 min), the Controller will chime. Immediately proceed to the next step.</p>
+  </li>
+</ul>
+
+<h2 id="transfer-and-gem-rt-incubation">Transfer and GEM-RT Incubation</h2>
+
+<ul>
+  <li>
+    <p>Place a tube strip on ice</p>
+  </li>
+  <li>
+    <p>Press the eject button of the Controller and remove the chip. Turn off the Controller after use.</p>
+  </li>
+  <li>
+    <p>Discard the gasket. Open the chip holder. Fold the lid back until it clicks to expose the wells at 45 degrees.</p>
+  </li>
+  <li>
+    <p>Check the volume in rows labeled 1-2. Abnormally high volume in any well indicates a clog.</p>
+  </li>
+  <li>
+    <p>Slowly aspirate 100 μl GEMs from the lowest point of each recovery well in the top row labeled 3 without creating a seal between the tip and the bottom of the well.</p>
+  </li>
+  <li>
+    <p>As you aspirate the GEMs, check their appearance in the pipette tip. GEMs should appear mostly opaque and consistent white. Excess Partitioning Oil (clear) in the pipette tip indicates a potential clog.</p>
+  </li>
+  <li>
+    <p>Over the course of ~20 sec, dispense GEMs into the tube strip on ice with the pipette tips against the sidewalls of the tubes.</p>
+  </li>
+  <li>
+    <p>Attach the deep well head to the thermocycler, if not already in place. Incubate samples in the thermocycler under the protocol 10x scRNAseq-&gt;GEM INCUBATE (53C for 45min, 85C for 5min, 4C hold, lid 53C, 125uL volume).</p>
+  </li>
+  <li>
+    <p>If doing the entire protocol in 3 days, end Day 1 here. Store at 4°C for up to 72 h or at −20°C for up to a week.</p>
+  </li>
+</ul>
+
+<h1 id="day-2">Day 2</h1>
+
+<h2 id="post-gem-rt-cleanup">Post GEM-RT Cleanup</h2>
+
+<ul>
+  <li>
+    <p>Equilibrate Reducing Agent B, cDNA primers, Dynabeads and Tapestation HSD5000 screentape and reagents to room temp for at least 30 minutes before use.</p>
+  </li>
+  <li>
+    <p>Place Amp Mix on ice.</p>
+  </li>
+  <li>
+    <p>Thaw Cleanup Buffer on heatblock at 65C for 10min, vortexing at 5min and 10min. Check that there are no visible crystals and vortex more if needed.</p>
+  </li>
+  <li>
+    <p>Add 125μl Recovery Agent to each sample at room temperature. DO NOT pipette mix or vortex the biphasic mixture. Wait 2 min. This should separate into a clear aqueous phase on top and a pink layer on bottom with no opaque emulsion. A smaller aqueous phase volume indicates a clog during GEM generation.</p>
+  </li>
+  <li>
+    <p>Slowly remove and discard 125 μl Recovery Agent/Partitioning Oil (pink) from the bottom of the tube. DO NOT aspirate any aqueous sample. There will still be a small remaining volume of pink Recovery Agent/Partitioning Oil after removal. Observe these volumes across your samples as abnormal volumes may indicate a wetting failure or clog during encapsulation. Below is an example of successful samples.</p>
+  </li>
+  <li>
+    <p>Prepare Dynabeads Cleanup Mix per sample (10% extra has already been included):</p>
+  </li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Component</th>
+      <th>Volume/ rxn</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Cleanup Buffer</td>
+      <td>200.2 uL</td>
+    </tr>
+    <tr>
+      <td>Dynabeads MyOne Silane</td>
+      <td>8.8 uL</td>
+    </tr>
+    <tr>
+      <td>Reducing Agent B I</td>
+      <td>5.5 uL</td>
+    </tr>
+    <tr>
+      <td>Nuclease-free Water</td>
+      <td>5.5 uL</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Total 220 uL</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>
+    <p>Vortex Dynabeads Cleanup Mix and add 200uL to each sample. Pipette to mix 10 times.</p>
+  </li>
+  <li>
+    <p>Incubate for 10 min at room temp. Pipette to mix again at 5 min after start of incubation.  You should end up with a large brown layer of Dynabeads Cleanup Mix at the top and a smaller white Recovery Agent/Partitioning Oil layer below. Observe these volumes across your samples as abnormal volumes may indicate a wetting failure or clog during encapsulation. Below is an example of successful samples.</p>
+  </li>
+  <li>
+    <p>Prepare Elution Solution I per sample (10% extra has already been included):</p>
+  </li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Component</th>
+      <th>Volume/ rxn</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Buffer EB</td>
+      <td>107.8 uL</td>
+    </tr>
+    <tr>
+      <td>10% Tween 20</td>
+      <td>1.1 uL</td>
+    </tr>
+    <tr>
+      <td>Reducing Agent B I</td>
+      <td>1.1 uL</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Total 110 uL</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>
+    <p>Vortex and centrifuge Elution Solution briefly.</p>
+  </li>
+  <li>
+    <p>At the end of the 10min incubation, place the sample tube strip on a 10x Magnetic Separator in the HIGH position until solution clears (~5 min).</p>
+  </li>
+  <li>
+    <p>Remove and discard the supernatant.</p>
+  </li>
+  <li>
+    <p>Keeping the samples on the magnet, add 300uL 80% ethanol.</p>
+  </li>
+  <li>
+    <p>Wait 30 sec, then remove the ethanol.</p>
+  </li>
+  <li>
+    <p>Keeping the samples on the magnet, add 200uL 80% ethanol.</p>
+  </li>
+  <li>
+    <p>Wait 30 sec, then remove the ethanol.</p>
+  </li>
+  <li>
+    <p>Centrifuge briefly. Place on the magnet on LOW</p>
+  </li>
+  <li>
+    <p>Remove remaining ethanol. Air dry for 1 min.</p>
+  </li>
+  <li>
+    <p>Remove from the magnet. Immediately add 35.5 μl Elution Solution I.</p>
+  </li>
+  <li>
+    <p>Pipette to mix (pipette set to 30 μl) without introducing bubbles.</p>
+  </li>
+  <li>
+    <p>Incubate 2 min at room temperature.</p>
+  </li>
+  <li>
+    <p>Place on the magnet on LOW until the solution clears.</p>
+  </li>
+  <li>
+    <p>Transfer 35 μl sample to a new tube strip.</p>
+  </li>
+</ul>
+
+<h2 id="cdna-amplification-cleanup-and-qc">cDNA Amplification, Cleanup, and QC</h2>
+
+<ul>
+  <li>Prepare cDNA Amplification Mix on ice (10% extra has already been included):</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Component</th>
+      <th>Volume/ rxn</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Amp Mix</td>
+      <td>55 uL</td>
+    </tr>
+    <tr>
+      <td>cDNA Primers</td>
+      <td>16.5 uL</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Total 71.5 uL</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>
+    <p>Vortex and centrifuge briefly, then add 65uL Mix to the 35uL of sample. Pipette to mix 15x (pipette set to 90uL) and centrifuge briefly.</p>
+  </li>
+  <li>
+    <p>Incubate in the thermocycler (deep well head) with the program 10x scRNAseq-&gt;cDNA Amp. Adjust the number of total cycles based on the targeted cell recovery (determined by the Cell Suspension Volume Calculator Table in Day 1).</p>
+  </li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Targeted Cell Recovery</th>
+      <th>Total Cycles</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>&lt;500</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <td>500-6000</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <td>&gt;6000</td>
+      <td>11</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>
+    <p>Vortex to resuspend the SPRIselect reagent. Add 60 μl SPRIselect reagent to each sample and pipette mix 15x (pipette set to 150 μl).</p>
+  </li>
+  <li>
+    <p>Incubate 5 min at room temperature.</p>
+  </li>
+  <li>
+    <p>Place on the magnet on HIGH until the solution clears.</p>
+  </li>
+  <li>
+    <p>Remove the supernatant.</p>
+  </li>
+  <li>
+    <p>Add 200 μl 80% ethanol to the pellet. Wait 30 sec.</p>
+  </li>
+  <li>
+    <p>Remove the ethanol.</p>
+  </li>
+  <li>
+    <p>Repeat steps 8 and 9 for a total of 2 washes.</p>
+  </li>
+  <li>
+    <p>Centrifuge briefly and place on the magnet on LOW.</p>
+  </li>
+  <li>
+    <p>Remove any remaining ethanol. Air dry for 2 min. DO NOT exceed 2 min as this will decrease elution efficiency.</p>
+  </li>
+  <li>
+    <p>Remove from the magnet. Add 40.5μl Buffer EB. Pipette mix 15x.</p>
+  </li>
+  <li>
+    <p>Incubate 2 min at room temperature.</p>
+  </li>
+  <li>
+    <p>Place the tube strip on the magnet on HIGH until the solution clears.</p>
+  </li>
+  <li>
+    <p>Transfer 40 μl sample to a new tube strip.</p>
+  </li>
+  <li>
+    <p>Run sample on Tapestation with the HSD5000 assay. There should be a broad, tall peak from ~500-3000bp. Record the concentration from the 200-9000bp region.</p>
+  </li>
+  <li>
+    <p>This is the end of Day 2. Store at 4°C for up to 72 h or at −20°C for up to 4 weeks.</p>
+  </li>
+  <li>
+    <p>Example cDNA trace</p>
+  </li>
+</ul>
+
+<p> 
+# Day 3</p>
+
+<h2 id="fragmentation-end-repair-and-a-tailing">Fragmentation, End Repair, and A-tailing</h2>
+
+<ul>
+  <li>
+    <p>Equilibrate to room temp at least 30 minutes before use: Fragmentation Buffer, Adaptor Oligos, Ligation buffer, SI Primer, Single Index Plate T Set A, and Tapestation HSD1000 screentape and reagents.</p>
+  </li>
+  <li>
+    <p>Place Fragmentation Enzyme, DNA Ligase, and Amp Mix on ice.</p>
+  </li>
+  <li>
+    <p>Start the thermocycler protocol 10x scRNAseq -&gt; Fragmentation to pre-cool block.</p>
+  </li>
+  <li>
+    <p>Vortex Fragmentation Buffer. Verify there is no precipitate.</p>
+  </li>
+  <li>
+    <p>Prepare Fragmentation Mix on ice, per sample (10% extra has already been included):</p>
+  </li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Component</th>
+      <th>Volume/ rxn</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Fragmentation Buffer</td>
+      <td>5.5 uL</td>
+    </tr>
+    <tr>
+      <td>Fragmentation Enzyme</td>
+      <td>11 uL</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Total 16.5 uL</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>
+    <p>Pipette Fragmentation Mix and centrifuge briefly. Keep on ice.</p>
+  </li>
+  <li>
+    <p>Transfer 10uL from Day 2’s purified cDNA sample into a new tube strip. The remaining 30 μl (75%) cDNA sample can be stored at 4°C for up to 72 h or at −20°C for up to 4 weeks for generating additional 3ʹ Gene Expression libraries.</p>
+  </li>
+  <li>
+    <p>Add 25 μl Buffer EB to each sample.</p>
+  </li>
+  <li>
+    <p>Add 15 μl Fragmentation Mix to each sample.</p>
+  </li>
+  <li>
+    <p>Pipette mix 15x (pipette set to 35 μl) on ice. Centrifuge briefly.</p>
+  </li>
+  <li>
+    <p>Transfer into the pre-cooled thermal cycler (4°C) and press “SKIP” to start the rest of the protocol.</p>
+  </li>
+</ul>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> This step takes ~35 minutes and is your first large break.</div>
+
+<ul>
+  <li>
+    <p>Vortex to resuspend SPRIselect reagent. Add 30 μl SPRIselect reagent to each sample. Pipette mix 15x (pipette set to 75 μl).</p>
+  </li>
+  <li>
+    <p>Incubate 5 min at room temperature.</p>
+  </li>
+  <li>
+    <p>Place on the magnet on HIGH until the solution clears. <strong>DO NOT DISCARD SUPERNATANT.</strong></p>
+  </li>
+  <li>
+    <p>Transfer 75 μl supernatant to a new tube strip.</p>
+  </li>
+  <li>
+    <p>Vortex to resuspend SPRIselect reagent. Add 10 μl SPRIselect reagent to each sample. Pipette mix 15x (pipette set to 80 μl).</p>
+  </li>
+  <li>
+    <p>Incubate 5 min at room temperature.</p>
+  </li>
+  <li>
+    <p>Place on the magnet on HIGH until the solution clears.</p>
+  </li>
+  <li>
+    <p>Remove 80 μl supernatant. DO NOT discard any beads.</p>
+  </li>
+  <li>
+    <p>Add 125 μl 80% ethanol to the pellet. Wait 30 sec.</p>
+  </li>
+  <li>
+    <p>Remove the ethanol.</p>
+  </li>
+  <li>
+    <p>Repeat steps 9 and 10 for a total of 2 washes.</p>
+  </li>
+  <li>
+    <p>Centrifuge briefly. Place on the magnet on LOW until the solution clears. Remove remaining ethanol. DO NOT over dry to ensure maximum elution efficiency.</p>
+  </li>
+  <li>
+    <p>Remove from the magnet. Add 50.5 μl Buffer EB to each sample. Pipette mix 15x.</p>
+  </li>
+  <li>
+    <p>Incubate 2 min at room temperature.</p>
+  </li>
+  <li>
+    <p>Place on the magnet on HIGH until the solution clears.</p>
+  </li>
+  <li>
+    <p>Transfer 50 μl sample to a new tube strip.</p>
+  </li>
+</ul>
+
+<h2 id="adaptor-ligation">Adaptor Ligation</h2>
+
+<ul>
+  <li>Prepare Adaptor Ligation Mix, per sample (10% extra has already been included):</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Component</th>
+      <th>Volume/ rxn</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ligation Buffer</td>
+      <td>22 uL</td>
+    </tr>
+    <tr>
+      <td>DNA Ligase</td>
+      <td>11 uL</td>
+    </tr>
+    <tr>
+      <td>Adaptor Oligos</td>
+      <td>22 uL</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Total 55 uL</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>
+    <p>Pipette mix and centrifuge briefly.</p>
+  </li>
+  <li>
+    <p>Add 50 μl Adaptor Ligation Mix to 50 μl sample. Pipette mix 15x (pipette set to 90 μl). Centrifuge briefly.</p>
+  </li>
+  <li>
+    <p>Incubate in a thermal cycler (deep well head) with the protocol under 10x scRNAseq -&gt; Adaptor Ligation (20C for 15min, 4C hold, lid 30C, 100uL volume).</p>
+  </li>
+  <li>
+    <p>Vortex to resuspend SPRIselectReagent. Add 80 μl SPRIselect Reagent to each sample. Pipette mix 15x (pipette set to 150 μl).</p>
+  </li>
+  <li>
+    <p>Incubate 5 min at room temperature.</p>
+  </li>
+  <li>
+    <p>Place on the magnet HIGH until the solution clears.</p>
+  </li>
+  <li>
+    <p>Remove the supernatant.</p>
+  </li>
+  <li>
+    <p>Add 200 μl 80% ethanol to the pellet. Wait 30 sec.</p>
+  </li>
+  <li>
+    <p>Remove the ethanol.</p>
+  </li>
+  <li>
+    <p>Repeat steps 9 and 10 for a total of 2 washes.</p>
+  </li>
+  <li>
+    <p>Centrifuge briefly. Place on the magnet on LOW.</p>
+  </li>
+  <li>
+    <p>Remove any remaining ethanol. Air dry for 2 min. DO NOT exceed 2 min as this will decrease elution efficiency.</p>
+  </li>
+  <li>
+    <p>Remove from the magnet. Add 30.5 μl Buffer EB. Pipette mix 15x.</p>
+  </li>
+  <li>
+    <p>Incubate 2 min at room temperature.</p>
+  </li>
+  <li>
+    <p>Place on the magnet on LOW until the solution clears.</p>
+  </li>
+  <li>
+    <p>Transfer 30 μl sample to a new tube strip.</p>
+  </li>
+</ul>
+
+<h2 id="pcr-cleanup-and-library-qc">PCR, Cleanup, and Library QC</h2>
+
+<ul>
+  <li>Prepare Sample Index PCR Mix, per sample (10% extra has already been included):</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Component</th>
+      <th>Volume/ rxn</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Amp Mix</td>
+      <td>55 uL</td>
+    </tr>
+    <tr>
+      <td>SI Primer</td>
+      <td>11 uL</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Total 66 uL</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>
+    <p>Add 60 μl Sample Index PCR Mix to 30 μl sample.</p>
+  </li>
+  <li>
+    <p>Add 10 μl of an individual Single Index to each well and record the well ID used. Pipette mix 5x (pipette set to 90 μl). Centrifuge briefly.</p>
+  </li>
+  <li>
+    <p>Incubate in a thermocycler (deep well head) with the protocol under 10x scRNAseq -&gt; PCR. The total number of cycles is determined by the cDNA yield and input, based on the tapestation reading for concentration at the end of Day 2.</p>
+  </li>
+</ul>
+
+<p>(cDNA concentration from tapestation ng/uL x 40uL elution volume)/4 = input</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>cDNA Input</th>
+      <th>Total Cycles</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0.25-25 ng</td>
+      <td>14-16</td>
+    </tr>
+    <tr>
+      <td>25-150 ng</td>
+      <td>12-14</td>
+    </tr>
+    <tr>
+      <td>150-500 ng</td>
+      <td>10-12</td>
+    </tr>
+    <tr>
+      <td>500-1000 ng</td>
+      <td>8-10</td>
+    </tr>
+    <tr>
+      <td>1000-1500 ng</td>
+      <td>6-8</td>
+    </tr>
+    <tr>
+      <td>&gt;1500 ng</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> This step takes ~25-40 minutes and is your second large break.</div>
+
+<ul>
+  <li>
+    <p>Vortex to resuspend the SPRIselect reagent. Add 60 μl SPRIselect Reagent to each sample. Pipette mix 15x (pipette set to 150 μl).</p>
+  </li>
+  <li>
+    <p>Incubate 5 min at room temperature.</p>
+  </li>
+  <li>
+    <p>Place the magnet on HIGH until the solution clears. DO NOT discard supernatant.</p>
+  </li>
+  <li>
+    <p>Transfer 150 μl supernatant to a new tube strip.</p>
+  </li>
+  <li>
+    <p>Vortex to resuspend the SPRIselect reagent. Add 20 μl SPRIselect Reagent to each sample. Pipette mix 15x (pipette set to 150 μl).</p>
+  </li>
+  <li>
+    <p>Incubate 5 min at room temperature.</p>
+  </li>
+  <li>
+    <p>Place the magnet on HIGH until the solution clears.</p>
+  </li>
+  <li>
+    <p>Remove 165 μl supernatant. DO NOT discard any beads.</p>
+  </li>
+  <li>
+    <p>With the tube still in the magnet, add 200 μl 80% ethanol to the pellet. Wait 30 sec.</p>
+  </li>
+  <li>
+    <p>Remove the ethanol.</p>
+  </li>
+  <li>
+    <p>Repeat steps 13 and 14 for a total of 2 washes.</p>
+  </li>
+  <li>
+    <p>Centrifuge briefly. Place on the magnet on LOW. Remove remaining ethanol.</p>
+  </li>
+  <li>
+    <p>Remove from the magnet. Add 35.5 μl Buffer EB. Pipette mix 15x.</p>
+  </li>
+  <li>
+    <p>Incubate 2 min at room temperature.</p>
+  </li>
+  <li>
+    <p>Place on the magnet on LOW until the solution clears.</p>
+  </li>
+  <li>
+    <p>Transfer 35 μl to a new tube strip.</p>
+  </li>
+  <li>
+    <p>Run sample on Tapestation with the HSD1000 assay. There should be a peak at ~400 bp.</p>
+  </li>
+  <li>
+    <p>Sample can be run on Qubit HS dsDNA at this point, or before sequencing.</p>
+  </li>
+  <li>
+    <p>Store at 4°C for up to 72 h or at −20°C for long-term storage.</p>
+  </li>
+</ul>
+
 
 
     <div class="tags">
