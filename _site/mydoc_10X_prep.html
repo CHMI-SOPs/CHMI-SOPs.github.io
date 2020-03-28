@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Using the 10X Chromium Controller to encapsulate individual cells for single cell genomic experiments">
 <meta name="keywords" content="transcriptomicssingle_cell_genomics,  transcriptomics">
-<title>Single Cell RNAseq – encapsulation | CHMI services</title>
+<title>Single Cell RNAseq – encapsulation and library prep | CHMI services</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -122,7 +122,7 @@
 
 
 
-  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:beiting@upenn.edu?subject=CHMI services feedback&body=I have some feedback about the Single Cell RNAseq – encapsulation page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:beiting@upenn.edu?subject=CHMI services feedback&body=I have some feedback about the Single Cell RNAseq – encapsulation and library prep page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
 
 </li>
 
@@ -140,7 +140,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Single Cell RNAseq – encapsulation">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Single Cell RNAseq – encapsulation and library prep">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -531,7 +531,7 @@
         <!-- Content Column -->
         <div class="col-md-9" id="tg-sb-content">
             <div class="post-header">
-   <h1 class="post-title-main">Single Cell RNAseq – encapsulation</h1>
+   <h1 class="post-title-main">Single Cell RNAseq – encapsulation and library prep</h1>
 </div>
 
 
@@ -601,7 +601,7 @@ $('#toc').on('click', 'a', function() {
 
 <h2 id="cell-preparation">Cell Preparation</h2>
 
-<p>The optimal input cell concentration is 700-1,200 cells/µl. Depending on your concentration, you will need 2.1-23.6 uL of cell suspension as input for each sample. Refer to the Cell Suspension Volume Calculator Table on the next page of this protocol.</p>
+<p>The optimal input cell concentration is 700-1,200 cells/µl. Depending on your concentration, you will need 2.1-23.6 uL of cell suspension as input for each sample. Refer to the Cell Suspension Volume Calculator Table at the end of this section.</p>
 
 <p>While a high concentration of cells is desirable, it also increases the rate of ‘multiplets’. Multiplets occur when a single oil droplet contains 1 barcoded bead and two or more cells. Since each bead has a single barcode, transcripts from multiplets will appear as though they are from the same cell. 10X Genomics recommends 700-1,200 cells/µl in order to maximize cell encapsulation while avoiding excessive multiplets.</p>
 
@@ -704,6 +704,11 @@ $('#toc').on('click', 'a', function() {
   <li>
     <p>Load Row Labeled 3 with 45uL partitioning oil, avoiding bubbles. Your chip should now look like the image below, with the unused wells filled with appropriate volumes of 50% glycerol if loading less than 8 samples.</p>
   </li>
+</ul>
+
+<p><img src="images/Loaded_Chip.png" alt="test" style="float: center;" /></p>
+
+<ul>
   <li>
     <p>To attach the 10x gasket, align the notch with the top left-hand corner. Ensure the gasket holes are aligned with the wells. The smooth side of the gasket should be facing toward the wells. Do not touch the smooth side or press down on the gasket. Keep the assembly horizontal.</p>
   </li>
@@ -767,9 +772,12 @@ $('#toc').on('click', 'a', function() {
   <li>
     <p>Slowly remove and discard 125 μl Recovery Agent/Partitioning Oil (pink) from the bottom of the tube. DO NOT aspirate any aqueous sample. There will still be a small remaining volume of pink Recovery Agent/Partitioning Oil after removal. Observe these volumes across your samples as abnormal volumes may indicate a wetting failure or clog during encapsulation. Below is an example of successful samples.</p>
   </li>
-  <li>
-    <p>Prepare Dynabeads Cleanup Mix per sample (10% extra has already been included):</p>
-  </li>
+</ul>
+
+<p><img src="images/Recovery_Agent_Post-Removal_Example.png" alt="test" style="float: center;" /></p>
+
+<ul>
+  <li>Prepare Dynabeads Cleanup Mix per sample (10% extra has already been included):</li>
 </ul>
 
 <table>
@@ -810,9 +818,12 @@ $('#toc').on('click', 'a', function() {
   <li>
     <p>Incubate for 10 min at room temp. Pipette to mix again at 5 min after start of incubation.  You should end up with a large brown layer of Dynabeads Cleanup Mix at the top and a smaller white Recovery Agent/Partitioning Oil layer below. Observe these volumes across your samples as abnormal volumes may indicate a wetting failure or clog during encapsulation. Below is an example of successful samples.</p>
   </li>
-  <li>
-    <p>Prepare Elution Solution I per sample (10% extra has already been included):</p>
-  </li>
+</ul>
+
+<p><img src="images/Dyanbeads_Example.png" alt="test" style="float: center;" /></p>
+
+<ul>
+  <li>Prepare Elution Solution I per sample (10% extra has already been included):</li>
 </ul>
 
 <table>
@@ -832,7 +843,7 @@ $('#toc').on('click', 'a', function() {
       <td>1.1 uL</td>
     </tr>
     <tr>
-      <td>Reducing Agent B I</td>
+      <td>Reducing Agent B</td>
       <td>1.1 uL</td>
     </tr>
     <tr>
@@ -995,12 +1006,12 @@ $('#toc').on('click', 'a', function() {
     <p>This is the end of Day 2. Store at 4°C for up to 72 h or at −20°C for up to 4 weeks.</p>
   </li>
   <li>
-    <p>Example cDNA trace</p>
+    <p>Example cDNA trace
+ <img src="images/cDNA_Example_Trace.png" alt="test" style="float: center;" />
+ 
+# Day 3</p>
   </li>
 </ul>
-
-<p> 
-# Day 3</p>
 
 <h2 id="fragmentation-end-repair-and-a-tailing">Fragmentation, End Repair, and A-tailing</h2>
 
@@ -1163,7 +1174,7 @@ $('#toc').on('click', 'a', function() {
     <p>Incubate in a thermal cycler (deep well head) with the protocol under 10x scRNAseq -&gt; Adaptor Ligation (20C for 15min, 4C hold, lid 30C, 100uL volume).</p>
   </li>
   <li>
-    <p>Vortex to resuspend SPRIselectReagent. Add 80 μl SPRIselect Reagent to each sample. Pipette mix 15x (pipette set to 150 μl).</p>
+    <p>Vortex to resuspend SPRIselect Reagent. Add 80 μl SPRIselect Reagent to each sample. Pipette mix 15x (pipette set to 150 μl).</p>
   </li>
   <li>
     <p>Incubate 5 min at room temperature.</p>
@@ -1335,6 +1346,11 @@ $('#toc').on('click', 'a', function() {
   <li>
     <p>Run sample on Tapestation with the HSD1000 assay. There should be a peak at ~400 bp.</p>
   </li>
+</ul>
+
+<p><img src="images/Final_Library_Example_Trace.png" alt="test" style="float: center;" /></p>
+
+<ul>
   <li>
     <p>Sample can be run on Qubit HS dsDNA at this point, or before sequencing.</p>
   </li>
@@ -1386,7 +1402,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 PennVet Center for Host-Microbial Interactions. All rights reserved. <br />
- Site last generated: Mar 26, 2020 <br />
+ Site last generated: Mar 28, 2020 <br />
 <p><img src="images/CHMI_logo.png" alt="Company logo"/></p>
                 </div>
             </div>
