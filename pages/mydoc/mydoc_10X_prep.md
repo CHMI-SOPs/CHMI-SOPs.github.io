@@ -45,6 +45,10 @@ For more detail on cell preparation, refer to 10X’s literature, which covers:
 
 * [Other details](https://support.10xgenomics.com/single-cell-gene-expression/sample-prep).
 
+<img src="images/Table.png"
+     alt="test"
+     style="float: center;" />
+
 ## Encapsulation
 
 * Allow the Single Cell 3’ v3.1 Gel Beads to come to room temperature for 30 minutes before loading the chip.
