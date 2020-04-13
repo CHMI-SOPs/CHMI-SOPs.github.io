@@ -45,7 +45,7 @@ For more detail on cell preparation, refer to 10X’s literature, which covers:
 
 * [Other details](https://support.10xgenomics.com/single-cell-gene-expression/sample-prep).
 
-<img src="images/Table.png"
+<img src="images/Cell_Suspension_Volume_Calculator_Table.png"
      alt="test"
      style="float: center;" />
 
