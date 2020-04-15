@@ -117,6 +117,10 @@ entries:
     - title: Shotgun metagenomics
       url: /mydoc_NexteraXT.html
       output: web, pdf
+      
+    - title: Shotgun metagenomics - FLEX
+      url: /mydoc_NexteraFLEX.html
+      output: web, pdf  
 
     - title: Sanger sequencing of 16S
       url: /mydoc_16S_Sanger.html
