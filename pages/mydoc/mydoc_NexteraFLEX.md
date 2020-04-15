@@ -48,7 +48,7 @@ This protocol has been adapted from Illumina's Nextera Flex Sample Preparation, 
 
 * One input option for this kit is DNA from colony-based extraction. This uses some of the Flex reagents and is an easy way to go from a colony directly to library preparation. It is included in the protocol here, but any standard DNA extraction technique may be used. 
 
-* This has been adapted from the Nextera DNA Flex Microbial Colony Extraction found [here] (https://support.illumina.com/content/dam/illumina-support/documents/documentation/chemistry_documentation/samplepreps_nextera/nextera_dna_flex/nextera-dna-flex-colony-extraction-protocol-1000000035294-01.pdf).
+* This has been adapted from the Nextera DNA Flex Microbial Colony Extraction found [here](https://support.illumina.com/content/dam/illumina-support/documents/documentation/chemistry_documentation/samplepreps_nextera/nextera_dna_flex/nextera-dna-flex-colony-extraction-protocol-1000000035294-01.pdf).
 
 ### Reagents and Equipment: 
 
@@ -134,7 +134,7 @@ You can now proceed to the Tagment DNA Step for Standard Nextera Flex.
 
 ## Step 1: Tagment DNA
 
-###Option 1: Standard Nextera Flex
+### Option 1: Standard Nextera Flex
 * Allow BLT to equilibrate to room temp on the bench top for at least 30 minutes before use. Bring TB1 to room temp.
 
 * Add 2–30 µl DNA to each well of a 96-well PCR plate so that the total input amount is 1–500 ng. If input is <100ng, quantify and normalize.
@@ -203,7 +203,7 @@ program. Your total reaction volume will be 45μl.
 * Pipette slowly until beads are fully resuspended.
 
 * Place the plate on the magnetic stand and wait until the liquid is clear (~3 minutes).
-*
+
 * Using a multichannel pipette, remove and discard supernatant.
 
 * Repeat this wash with TWB (Hackflex: 100uL LTWB).
