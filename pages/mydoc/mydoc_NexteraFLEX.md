@@ -31,8 +31,17 @@ This protocol has been adapted from Illumina's Nextera Flex Sample Preparation, 
 ### Option 2: Hackflex
 * Bead-Linked Transposomes (BLT) (Stored at 4C)
 * Lab-made Tagmentation Buffer (LTB) (-20C)
+	* 20mM Tris
+	* 20mM MgCl
+	* 50% DMF
+	* Nuclease Free Water
 * Lab-made Tagment Stop Buffer (LTSB) (Room Temperature)
+	* 0.2% SDS
+	* Nuclease Free Water
 * Lab-made Tagment Wash Buffer (LTWB) (Room Temperature) 
+	* 10% PEG 8000
+	* 0.25M NaCl
+	* TE
 * PrimeSTAR GXL DNA Polymerase kit (-20C)
 * Index Adaptors (tubes or plate) (-20C)
 * Resuspension Buffer (RSB) (4C)
