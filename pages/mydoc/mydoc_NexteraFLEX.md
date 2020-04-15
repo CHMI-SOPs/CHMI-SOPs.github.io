@@ -50,7 +50,7 @@ This protocol has been adapted from Illumina's Nextera Flex Sample Preparation, 
 
 * This has been adapted from the Nextera DNA Flex Microbial Colony Extraction found [here] (https://support.illumina.com/content/dam/illumina-support/documents/documentation/chemistry_documentation/samplepreps_nextera/nextera_dna_flex/nextera-dna-flex-colony-extraction-protocol-1000000035294-01.pdf).
 
-###Reagents and Equipment: 
+### Reagents and Equipment: 
 
 * Sample Purification Beads (SPB) (Included with Nextera FLEX kit) or AMPure XP Beads
 
@@ -68,7 +68,7 @@ This protocol has been adapted from Illumina's Nextera Flex Sample Preparation, 
 
 * Vortex-Genie 2 with vortex adapter for 1.5mL tubes (24)
 
-###Extraction
+### Extraction
 * Remove SPR or Ampure Beads from refrigerator and allow to stand for 30 minutes at room temperature. 
 
 * Add 300ul of nuclease-free water to the PowerBead tubes containing 0.5mm glass beads.
