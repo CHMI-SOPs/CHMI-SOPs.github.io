@@ -22,14 +22,13 @@ If you're running a Mac OS, then begin by downloading and installing [Homebrew](
 Now, installing Kallisto is simple:
 
 ```shell
-brew tap homebrew/core
 brew install kallisto
 ```
 
 Test whether Kallisto is properly installed by typing ```kallisto```, and you should see this output
 
 ```shell
-kallisto 0.45.0
+kallisto 0.46.2
 
 Usage: kallisto <CMD> [arguments] ..
 
@@ -37,7 +36,7 @@ Where <CMD> can be one of:
 
     index         Builds a kallisto index 
     quant         Runs the quantification algorithm 
-    bus           Generate BUS files for single cell data 
+    bus           Generate BUS files for single-cell data 
     pseudo        Runs the pseudoalignment step 
     merge         Merges several batch runs 
     h5dump        Converts HDF5-formatted results to plaintext
