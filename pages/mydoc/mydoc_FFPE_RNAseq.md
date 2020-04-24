@@ -350,3 +350,36 @@ SeqAmp DNA Polymerase | 2.0
 1. Run samples on HSD1000 Tapestation Assay.
 
 2. Measure concentration with HS dsDNA Qubit assay.
+
+
+# Sequencing Guidelines
+
+## Normalize and Pool
+
+1. If not done already, quantify each of your libraries on Qubit. For most libraries, using the HS dsDNA Qubit assay with 2uL of input will yield a reading. Record the concentration in ng/uL for each library.
+
+2. Run your samples on Tapestation with either the D1000 or the HSD1000 assay. Remember to allow Tapestation reagents to sit at room temperature for at least 30 minutes before use. Save your Tapestation results by going to File -> Create Report -> Save as pdf. This file can then be emailed or uploaded to Asana. For the base pair length, we usually use the value of the peak identified by the Tapestation analysis software. This value is shown both on the tracing itself and in the Peak Table for each sample. 
+
+3. Download our nM Conversion Calculator [here](https://drive.google.com/file/d/1IOUsWLJIetkb6ZN4B-Bdfpx-IiRB1JQa/view?usp=sharing). Enter the concentration (from Qubit) and the base pair length (from Tapestation) in the appropriate cells and it will give you the nM concentration for each library. Normalize and pool all your libraries to 4, 2, 1, or 0.5 nM in a LoBind microcentrifuge tube. If you need to dilute your libraries, we recommend using at least 2uL to minimize pipetting errors. The example sheet of the calculator provides further detail.
+
+4. Quantify your pool on Qubit and enter into the calculator sheet to check that your pool is close to the nM concentration you normalized to. 
+
+## Setup Run in Basespace
+
+1. Sign into Basespace, then go to the Prep tab, Biological Samples, and select Import Samples on the upper right. Use Illumina's Sample Import Template to enter information about your samples. The SampleID and Name can be the same, but make sure they are unique for each sample. Species can be left blank. Upload the completed .csv to import your samples.
+
+2. Continue to Prep Libraries. Select the library prep kit "TruSeqHT" If you used another index format, you will need to use a different entry for library prep kit. The your project name as the Plate ID. For each sample, check the box next to it on the left, then drag the sample name to the appropriate index well.
+
+3. Proceed to Pool Libraries. Select all your samples on the left, then drag and drop in the pool on the right. Name the pool your project name. 
+
+4. Continue to Plan Run. Select NextSeq and name your run your project name. Select Single Read or Paired End Read, then enter the cycle numbers based on your selected kit. For example, if you were doing a run using a High Output 75 Cycle kit, you would select Single Read and enter 76 for Read 1 Cycles and 0 for Read 2 Cycles. 
+
+5. Press Sequence to complete planning the run. The run will now be available for selection on the sequencer.
+
+## Loading the Sequencer
+
+The next step is to dilute and denature the prepared libraries. Illumina's general guidelines for this on the NextSeq can be found [here](https://support.illumina.com/content/dam/illumina-support/documents/documentation/system_documentation/nextseq/nextseq-500-550-denature-dilute-libraries-guide-15048776-15.pdf).
+
+Illumina's system guide for the NextSeq, which covers the sequening workflow, can be found [here](https://support.illumina.com/content/dam/illumina-support/documents/documentation/system_documentation/nextseq/nextseq-500-system-guide-15046563-06.pdf). 
+
+Your final loading concentration should be 1.3 - 1.8 pM, with most pools loaded at 1.4 or 1.5 pM.
