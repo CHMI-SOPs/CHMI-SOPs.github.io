@@ -477,7 +477,7 @@ Illumina's system guide for the NextSeq, which covers the sequencing workflow, c
 
 Your final loading concentration should be 1.8pM.
 
-{% include important.html content="These run settings generate FASTQ files that are not separated by sample and will show up in Basespace differently. To download the FASTQ from Basespace, go to the Project, Samples, Select the one that says "Undetermined," and the files will be listed. 10X recommends downloading the .bcl files and using Cell Ranger to demultiplex. More information can be found [here](https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/what-is-cell-ranger)" %}
+* These run settings generate FASTQ files that are not separated by sample and will show up in Basespace differently. To download the FASTQ from Basespace, go to the Project, Samples, Select the one that says "Undetermined," and the files will be listed. 10X recommends downloading the .bcl files and using Cell Ranger to demultiplex. More information can be found [here](https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/what-is-cell-ranger)
 
 {% include links.html %}
 
