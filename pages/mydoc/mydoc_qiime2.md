@@ -430,10 +430,11 @@ In the examples below, we sequenced fecal samples from animals at 12 timepoints 
 source activate qiime2-2019.7
 ```
 These analyses require QIIME objects generated following the steps above
-1)	mapping_file.txt
-2)	taxa_table.qza
-3)	genus_rel_freq_table.qza  
-4)	bray_curtis_distance_matrix.qza (or other beta diversity distance matrix qza object)
+1. mapping_file.txt
+2. taxa_table.qza
+3. genus_rel_freq_table.qza  
+4. bray_curtis_distance_matrix.qza (or other beta diversity distance matrix qza object)
+
 ```
 #We use the taxa table collapsed to the genus level
 qiime taxa collapse \
