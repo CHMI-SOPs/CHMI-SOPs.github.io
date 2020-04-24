@@ -458,6 +458,15 @@ For more detail on cell preparation, refer to 10X’s literature, which covers:
 | Index i5 (Index 2) | 0 |
 | Read 2 | 91 |
 
+If you choose to use a 75 Cycle High Output Kit, entering the following:
+
+| Read | Cycles |
+|-------|--------|
+| Read 1 | 28 |
+| Index i7 (Index 1) | 8 |
+| Index i5 (Index 2) | 0 |
+| Read 2 | 56 |
+
 5. Press Sequence to complete planning the run. The run will now be available for selection on the sequencer.
 
 ## Loading the Sequencer
