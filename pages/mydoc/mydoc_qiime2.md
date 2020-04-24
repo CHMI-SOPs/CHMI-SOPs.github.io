@@ -363,7 +363,25 @@ qiime composition ancom \
 
 {% include warning.html content="the additional steps outlined below are still a work in progress, and we want to spend more time exploring these steps before we can make solid recommendations....so proceed at your own risk!" %}
 
-## Step 11: supervised machine learning
+## Converting QIIME objects to a phyloseq object
+Many downstream applications for microbiome analyses require your data to be summarized as a ‘phyloseq’ object. This object combines taxonomy with your sample table.
+See the QIIME2 posts here for more information: https://forum.qiime2.org/t/tutorial-integrating-qiime2-and-r-for-data-visualization-and-analysis-using-qiime2r/4121
+https://forum.qiime2.org/t/is-there-any-way-to-summarize-taxa-plot-by-category/446
+
+
+We use the R package ‘qiime2R’ to convert our QIIME2 objects to a phyloseq-compatible object.
+```
+#combine the taxa table, rooted phylogeny, taxonomy, and mapping file metadata objects into a single phyloseq object
+physeq <- qza_to_phyloseq(
+  features="table.qza",
+  tree="rooted_tree.qza",
+  "taxonomy.qza",
+  metadata = "mapping_file.txt"
+)
+```
+
+
+## Supervised Machine Learning
 
 Beyond differential gene expression analysis, often times you will want to know which taxa (or sets of taxa) do the best job classifying particularly phenotypes, and therefore could serve as biomarkers.  There are two general types of supervised learning approaches that can be used to this: 'Classifiers' are used to find taxa that are associated with categorical metadata (Sex, disease status, etc), while 'regressors' are used with continuous metadata (age, weight, etc).  Typically, your data is split into a training set (2/3) and a test set (remaining 1/3 of data that was left out from the training).  
 
@@ -399,7 +417,137 @@ qiime sample-classifier regress-samples \
   --p-n-estimators 100 \
   --o-visualization ecam-month.qzv
 ```
+## Longitudinal Analysis
 
+This section describes how to use QIIMEs q2-longitudinal plugin for regression models using longitudinally-sampled data. The code snippets we provide here may help guide your analyses, but is no substitute for the excellent documentation provided by the QIIME2 team (including a tutorial https://docs.qiime2.org/2018.11/tutorials/longitudinal/), and so we urge you to review this documentation as you make your way through these analyses.
+
+This plugin has been included in newer versions of QIIME2, so you may need to install the new version. We have two versions of QIIME2 on the CHMI server, so we need to be sure to activate the one with q2-longitudinal installed:
+
+In the examples below, we sequenced fecal samples from animals at 12 timepoints during pregnancy and were interested if the subject’s parity, or number of previous pregnancies, affected the trajectory of the gut microbial community during pregnancy.
+
+```
+#Activate the 2019 release of qiime2 with the q2-longitudinal plugin
+source activate qiime2-2019.7
+```
+These analyses require QIIME objects generated following the steps above
+1)	mapping_file.txt
+2)	taxa_table.qza
+3)	genus_rel_freq_table.qza  
+4)	bray_curtis_distance_matrix.qza (or other beta diversity distance matrix qza object)
+```
+#We use the taxa table collapsed to the genus level
+qiime taxa collapse \
+  --i-table table.qza \
+  --i-taxonomy taxonomy.qza \
+  --p-level 6 \
+  --o-collapsed-table genus_table.qza
+```
+### Maturity Index
+Can be used to calculate a “microbial maturity” index from a regression model trained on feature data to predict a given continuous metadata column (“Timepoint”), used here to predict a subject’s age as a function of microbiota composition. 
+
+```
+qiime longitudinal maturity-index \
+  --i-table genus_table.qza \
+  --m-metadata-file mapping_file.txt \
+  --p-state-column Timepoint \
+  --p-group-by Parity \
+  --p-individual-id-column Subject_ID \
+  --p-control High \
+  --p-test-size .4 \ #what fraction of the control group to train the model on
+  --p-stratify \
+  --p-random-state 1010101 \
+  --output-dir maturity
+```
+
+### Non-parametric Microbial Interdependence Test (NMIT)
+This test calculates the longitudinal sample similarity as a function of temporal microbial composition. For each subject, NMIT computes pairwise correlations between each pair of features. Between-subject distances are then computed based on a distance norm between each subject’s microbial interdependence correlation matrix. This allows us to directly compare samples to one another by boiling all timepoints from each individual to a single “sample” representing that individual’s microbial interdependence, or “trajectory”. Please read Zhang et al., 2017 (https://doi.org/10.1002/gepi.22065) and visit the QIIME2 documentation (https://docs.qiime2.org/2018.11/tutorials/longitudinal/) for more details.
+
+```
+#Perform the NMIT
+qiime longitudinal nmit \
+  --i-table genus_rel_freq_table.qza  \
+  --m-metadata-file mapping_file.txt \
+  --p-individual-id-column Subject_ID \
+  --p-corr-method pearson \
+  --o-distance-matrix nmit_distance_matrix.qza
+
+#Export the distance matrix to a tsv
+qiime tools export \
+  --input-path nmit_distance_matrix.qza \
+  --output-path ./
+
+#Export the nmit distance matrix to a qzv object
+qiime diversity beta-group-significance \
+  --i-distance-matrix nmit_distance_matrix.qza \
+  --m-metadata-file mapping_file.txt \
+  --m-metadata-column Parity \
+  --o-visualization nmit_parity.qzv
+
+#Perform a principal coordinate analysis using the nmit distances
+qiime diversity pcoa \
+  --i-distance-matrix nmit_distance_matrix.qza \
+  --o-pcoa nmit_pcoa.qza
+
+#Visualize the nmit pcoa as a 3D Emperor plot
+  qiime emperor plot \
+  --i-pcoa nmit_pcoa.qza \
+  --m-metadata-file mapping_file.txt \
+  --o-visualization nmit_pcoa_emperor.qzv
+```
+
+### First-distances
+This function calculates the change in beta diversity over time. Here we will plot Bray-Curtis beta diversity, but feel free to use weighted UniFrac, unweighted UniFrac, or your favorite beta diversity metric instead.
+
+```
+#Compares beta diversity between each timepoint and the same individuals PREVIOUS timepoint to assess how the rate of change differs over time (e.g. Calculates the beta diversity between Timepoints 1 and 2, 2 and 3, 3 and 4, etc. in Sample_1).
+qiime longitudinal first-distances \
+  --i-distance-matrix bray_curtis_distance_matrix.qza \
+  --m-metadata-file mapping_file.txt \
+  --p-state-column Timepoint \
+  --p-individual-id-column Subject_ID \
+  --p-replicate-handling random \
+  --o-first-distances first_distances_bray.qza
+
+#Among all samples, how does beta change over time?
+#Note that you can use other metadata such as beta_diversity.qza or shannon.qza instead of first_distances.qza depending on your question.
+qiime longitudinal linear-mixed-effects \
+  --m-metadata-file first_distances_bray.qza \
+  --m-metadata-file mapping_file.txt \
+  --p-metric Distance \
+  --p-state-column Timepoint \
+  --p-individual-id-column Subject_ID \
+  --o-visualization first_distances_bray_LME.qzv
+
+#Visualize the first-distances stratifying by Parity using the --p-group-columns flag. Here we stratified by Parity to see if high and low parity have different trajectories.
+qiime longitudinal linear-mixed-effects \
+  --m-metadata-file first_distances_bray.qza \
+  --m-metadata-file mapping_file.txt \
+  --p-metric Distance \
+  --p-state-column Timepoint \
+  --p-individual-id-column Subject_ID \
+  --p-group-columns Parity \
+  --o-visualization first_distances_bray_LME_Parity.qzv
+
+#Compares beta diversity between each timepoint and the same individuals timepoint 1 (e.g. Calculates the beta diversity between Timepoints 1 and 2, 1 and 3, 1 and 4, etc. in Sample_1).
+qiime longitudinal first-distances \
+  --i-distance-matrix bray_curtis_distance_matrix.qza \
+  --m-metadata-file mapping_file.txt \
+  --p-state-column Timepoint \
+  --p-individual-id-column Pig_ID \
+  --p-replicate-handling random \
+  --p-baseline 1 \
+  --o-first-distances first_distances_bray_baseline.qza
+
+#Visualize the first-distances stratifying by Parity
+qiime longitudinal linear-mixed-effects \
+  --m-metadata-file first_distances_bray_baseline.qza \
+  --m-metadata-file PP_327_mapping_file.txt \
+  --p-metric Distance \
+  --p-state-column Timepoint \
+  --p-individual-id-column Subject_ID \
+  --p-group-columns Parity \
+  --o-visualization first_distances_bray_LME_baseline_Parity.qzv
+```
 
 ## OPTIONAL: other stuff
 * qiime taxa collapse - takes taxa table and taxonomy artifact and allows you to specify the level to which you collapse (e.g. phylum)
