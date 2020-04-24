@@ -429,6 +429,47 @@ For more detail on cell preparation, refer to 10X’s literature, which covers:
 
 * Store at 4°C for up to 72 h or at −20°C for long-term storage.
 
+# Sequencing Guidelines
+
+## Normalize and Pool
+
+1. Quantify each of your libraries on Qubit. For most libraries, using the HS dsDNA Qubit assay with 2uL of input will yield a reading. Record the concentration in ng/uL for each library.
+
+2. Run your samples on Tapestation with either the HSD5000 or the HSD1000 assay. Remember to allow Tapestation reagents to sit at room temperature for at least 30 minutes before use. Save your Tapestation results by going to File -> Create Report -> Save as pdf. This file can then be emailed or uploaded to Asana. For the base pair length, we usually use the value of the peak identified by the Tapestation analysis software. This value is shown both on the tracing itself and in the Peak Table for each sample. 
+
+3. Download our 10X nM Conversion Calculator [here](https://drive.google.com/file/d/1e5LD8GPbmewe6uYLOjgyzxTDdEI4k2Bn/view?usp=sharing). Enter the concentration (from Qubit) and the base pair length (from Tapestation) in the appropriate cells and it will give you the nM concentration for each library. You also need the Target Cell Recovery values. Normalize and pool all your libraries to 4, 2, 1, or 0.5 nM in a LoBind microcentrifuge tube. If you need to dilute your libraries, we recommend using at least 2uL to minimize pipetting errors. The example sheet of the calculator provides further detail.
+
+4. Quantify your pool on Qubit and enter into the calculator sheet to check that your pool is close to the nM concentration you normalized to. 
+
+## Setup Run in Basespace
+
+1. Sign into Basespace, then go to the Prep tab, Biological Samples, and select Import Samples on the upper right. Use Illumina's Sample Import Template, but only create a single sample for your pool. The SampleID and Name can be the same, but make sure they are unique for each sample. Species can be left blank. Upload the completed .csv to import your samples.
+
+2. Continue to Prep Libraries. This library prep requires a custom setting that gives the samples a single dummy index. On our Basespace account, select the library prep kit "10X Test" from the list. The your project name as the Plate ID. For each sample, check the box next to it on the left, then drag the sample name to the appropriate index well.
+
+3. Proceed to Pool Libraries. Select all your samples on the left, then drag and drop in the pool on the right. Name the pool your project name. 
+
+4. Continue to Plan Run. Select NextSeq and name your run your project name. Select Single Read. If using a 150 Cycle High Output Kit, enter the following cycles:
+
+| Read | Cycles |
+|-------|--------|
+| Read 1 | 28 |
+| Index i7 (Index 1) | 8 |
+| Index i5 (Index 2) | 0 |
+| Read 2 | 91 |
+
+5. Press Sequence to complete planning the run. The run will now be available for selection on the sequencer.
+
+## Loading the Sequencer
+
+The next step is to dilute and denature the prepared libraries. Illumina's general guidelines for this on the NextSeq can be found [here](https://support.illumina.com/content/dam/illumina-support/documents/documentation/system_documentation/nextseq/nextseq-500-550-denature-dilute-libraries-guide-15048776-15.pdf).
+
+Illumina's system guide for the NextSeq, which covers the sequencing workflow, can be found [here](https://support.illumina.com/content/dam/illumina-support/documents/documentation/system_documentation/nextseq/nextseq-500-system-guide-15046563-06.pdf). 
+
+Your final loading concentration should be 1.8pM.
+
+{% include important.html content="These run settings generate FASTQ files that are not separated by sample and will show up in Basespace differently. To download the FASTQ from Basespace, go to the Project, Samples, Select the one that says "Undetermined," and the files will be listed. 10X recommends downloading the .bcl files and using Cell Ranger to demultiplex. More information can be found [here](https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/what-is-cell-ranger)" %}
+
 {% include links.html %}
 
 
