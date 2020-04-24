@@ -292,7 +292,7 @@ folder: mydoc
 
 5. Press Sequence to complete planning the run. The run will now be available for selection on the sequencer.
 
-### Loading the Sequencer
+## Loading the Sequencer
 
 The next step is to dilute and denature the prepared libraries. Illumina's general guidelines for this on the NextSeq can be found [here](https://support.illumina.com/content/dam/illumina-support/documents/documentation/system_documentation/nextseq/nextseq-500-550-denature-dilute-libraries-guide-15048776-15.pdf).
 
