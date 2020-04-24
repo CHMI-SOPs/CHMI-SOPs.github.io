@@ -276,9 +276,9 @@ folder: mydoc
 
 2. Run your samples on Tapestation with either the D1000 or the HSD1000 assay. Remember to allow Tapestation reagents to sit at room temperature for at least 30 minutes before use. Save your Tapestation results by going to File -> Create Report -> Save as pdf. This file can then be emailed or uploaded to Asana. For the base pair length, we usually use the value of the peak identified by the Tapestation analysis software. This value is shown both on the tracing itself and in the Peak Table for each sample. 
 
-3. Download our nM Conversion Calculator [here](https://drive.google.com/file/d/1IOUsWLJIetkb6ZN4B-Bdfpx-IiRB1JQa/view?usp=sharing). Enter the concentration (from Qubit) and the base pair length (from Tapestation) in the appropriate cells and it will give you the nM concentration for each library. Normalize all your libraries to 4, 2, 1, or 0.5 nM. If you need to dilute your libraries, we recommend using at least 2uL to minimize pipetting errors. The example sheet of the calculator provides further detail.
+3. Download our nM Conversion Calculator [here](https://drive.google.com/file/d/1IOUsWLJIetkb6ZN4B-Bdfpx-IiRB1JQa/view?usp=sharing). Enter the concentration (from Qubit) and the base pair length (from Tapestation) in the appropriate cells and it will give you the nM concentration for each library. Normalize and pool all your libraries to 4, 2, 1, or 0.5 nM in a LoBind microcentrifuge tube. If you need to dilute your libraries, we recommend using at least 2uL to minimize pipetting errors. The example sheet of the calculator provides further detail.
 
-4. Pool your libraries in a LoBind microcentrifuge tube. 
+4. Quantify your pool on Qubit and enter into the calculator sheet to check that your pool is close to the nM concentration you normalized to. 
 
 ## Setup Run in Basespace
 
@@ -297,5 +297,7 @@ folder: mydoc
 The next step is to dilute and denature the prepared libraries. Illumina's general guidelines for this on the NextSeq can be found [here](https://support.illumina.com/content/dam/illumina-support/documents/documentation/system_documentation/nextseq/nextseq-500-550-denature-dilute-libraries-guide-15048776-15.pdf).
 
 Illumina's system guide for the NextSeq, which covers the sequening workflow, can be found [here](https://support.illumina.com/content/dam/illumina-support/documents/documentation/system_documentation/nextseq/nextseq-500-system-guide-15046563-06.pdf). 
+
+Your final loading concentration should be 1.3 - 1.8 pM, with most pools loaded at 1.4 or 1.5 pM.
 
 {% include links.html %}
