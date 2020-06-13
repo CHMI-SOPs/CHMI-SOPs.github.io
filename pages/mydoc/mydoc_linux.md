@@ -1,5 +1,5 @@
 ---
-title: CHMI linux cluster
+title: CHMI linux server
 tags: [bioinformatics]
 keywords:
 summary: "CHMI maintains a custom configured compute server that runs Linux Ubuntu 18.04 LTS.  This machine has two 6-core Intel Xeon E5-2643v4 CPUs (12 cores total), 512 Gb of RAM and 18Tb of RAID1 storage.  If you are a PennVet lab and wish to use this machine, please contact Dan Beiting (beiting@upenn.edu) for more information."
@@ -9,11 +9,11 @@ folder: mydoc
 ---
 
 ## General rules
-Use of the cluster is free-of-charge to approved labs.  However, to protect the cluster from abuse and prevent issues with storage, we have a few rules all users must follow.  Failure to adhere to these rules will result in a warning. Additional rule violations will result in suspension of your account.  Here are the rules:
+Use of the server is free-of-charge to approved labs.  However, to protect the machine from abuse and prevent issues with storage, we have a few rules all users must follow.  Failure to adhere to these rules will result in a warning. Additional rule violations will result in suspension of your account.  Here are the rules:
 
 * We will set-up your account and install any software you may need.  Please do not install software yourself.
 * In addition to your home account which is located at ```/home/username``` on the server, you will also be given a data folder that is located on ```/data/username```.  All data must be stored in this directory **not** your ```/home/username``` folder.
-* Data storage space is limited (18Tb goes quickly!), so we periodically montior storage space and may request that data not currently in use be moved off the cluster.
+* Data storage space is limited (18Tb goes quickly!), so we periodically montior storage space and may request that data not currently in use be moved off the server.
 * We require a strong password for each account.  We will set this password for you, and ask that you do not change it.
 
 ## Creating and managing user accounts (CHMI only)
