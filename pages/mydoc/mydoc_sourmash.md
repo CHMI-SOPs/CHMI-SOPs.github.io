@@ -11,7 +11,7 @@ folder: mydoc
 ## Before starting
 The following protocol outlines the use of [Sourmash](https://sourmash.readthedocs.io/en/latest/) for interpreting microbial whole genome sequence (WGS) or metagenomic data.  Sourmash computes a fingerprint or 'sketch' from your WGS data using minHash, and enables comparison of sketches from isolates (to understand strain relatedness, for example).  Similarly, a sketch can be compared against a large databases of sketches, stored as a Sequence Bloom Tree (SBT) for rapid searching, from RefSeq or Genbank in order to help assign identity to a sample.  SBT databases of microbial genomes from all of Genbank and RefSeq are available directly on our server for convenience.
 
-If you want to learn more about how Sourmash works, you could start with C. Titus Brown's blog posts on the topic [here](http://ivory.idyll.org/blog/2016-sourmash-sbt.html) and [here](http://ivory.idyll.org/blog/2016-sourmash-sbt-more.html).  Also take a look at Adam Phillippy's [original Mash paper](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-0997-x)
+If you want to learn more about how Sourmash works, you could start with the [original Sourmash paper](https://joss.theoj.org/papers/10.21105/joss.00027), and a [recent follow-up paper](https://doi.org/10.12688/f1000research.19675.1).  Also check out C. Titus Brown's blog posts on the topic [here](http://ivory.idyll.org/blog/2016-sourmash-sbt.html) and [here](http://ivory.idyll.org/blog/2016-sourmash-sbt-more.html).  Also take a look at Adam Phillippy's [original Mash paper](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-0997-x).  
 
 
 ## Step 1: Connect to a CHMI linux cluster
@@ -44,14 +44,6 @@ You should now see an .html file in your directory.  Move it from our server to 
 ## Step 4: Prepare sample 'sketches'
 
 Here, we'll use sourmash's ```compute``` function to prepare a sketch of each fastq file in our directory.  The ```--scaled``` option applies a 1000:1 compression ratio, which retains the ability to detect regions of similarity in the 10kb range.
-
-First, start up the Sourmash conda environment
-
-```
-source activate sourmash
-```
-
-Now use the ```compute``` function to prepare a sketch for each fastq file
 
 ```
 sourmash compute --scaled 1000 *.gz
@@ -123,6 +115,8 @@ We've taken care of configurating fastq_screen so that it knows where to find bo
 - Yeast (*Saccharomyces cerevisiae*)
 - *E. coli* (strain K12)
 - Staph (*Staphyloccous aureus* strain NCTC 8325)
+- *Clostridium hiranonis*
+- Porcine retrovirus
 - Lambda phage (Enterobacteriophage lambda)
 - PhiX 
 - [Contaminants](www.bioinformatics.babraham.ac.uk/projects/fastqc)
@@ -133,7 +127,7 @@ We've taken care of configurating fastq_screen so that it knows where to find bo
 
 ## Optional: filtering reads
 
-Depending on the results you get with Sourmash gather or fastq_screen above, you may want to filter reads based on alignment to a particular reference genome of interest.  This is particularly useful for removing host reads contaminating a metagenomic sample, for example.  To do this, you can use the ```--tag``` and ```--filter``` options for fastq_screen.
+Depending on the results you get with ```sourmash gather``` or ```fastq_screen``` above, you may want to filter reads based on alignment to a particular reference genome of interest.  This is particularly useful for removing host reads contaminating a metagenomic sample, for example.  To do this, you can use the ```--tag``` and ```--filter``` options for fastq_screen.
 
 First, tag each read in each fastq with the genome to which it aligns (from the available references described above)
 

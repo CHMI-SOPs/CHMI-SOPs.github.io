@@ -37,6 +37,8 @@ A typical QPCR reaction on the biomeme platform contains the following component
 
 {% include important.html content="20x primer/probe stock contains 4uM of the forward primer and probe, and 8uM of the reverse primer in TE pH 8.0.  Final concentrations in the PCR reaction will be 200nM of forward and probe, 400nM of reverse.  If starting with 100 uM stocks, then add 84 uL TE, 4 uL of forward, 4 uL of probe and 8 uL of reverse, to get a 100 ul stock of 20x" %}
 
+{% include note.html content="If you want to use LyoGreen for measuring gene expression, you'll need to add RT enzyme.  We use the Maxima H Mius Reverse Transcriptase from ThermoFisher (200U/ul) at 10U/rxn (0.05ul/20ul rxn)" %}
+
 
 ## Run set-up
 * To begin, launch the Biomeme app on the iPhone connected to your device.
